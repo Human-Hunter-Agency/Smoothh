@@ -97,3 +97,7 @@ footer#page-footer .footer-bottom-menu{
 .newsletter-input .wpcf7-spinner{
 	@apply hidden
 }
+
+.wpcf7-response-output{
+	@apply rounded-2xl text-sm !mx-0 !mt-3
+}

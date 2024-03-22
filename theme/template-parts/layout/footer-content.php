@@ -107,7 +107,9 @@
 				
 		<div class="w-full lg:w-4/12">
 			<h3>Zapisz się na newsletter i bądź na bieżąco</h3>
-			<?php echo do_shortcode('[contact-form-7 id="49bd164" title="Newsletter"]') ?>
+			<div class="mb-6">
+				<?php echo do_shortcode('[contact-form-7 id="49bd164" title="Newsletter"]') ?>
+			</div>
 			
 			<h3 class="mb-6">Sprawdź jak nas oceniają:</h3>
 			<ul class="flex gap-2.5">
