@@ -102,6 +102,18 @@ footer#page-footer .footer-bottom-menu{
 	@apply rounded-2xl text-sm !mx-0 !mt-3
 }
 
+.form-cv{
+	@apply flex flex-col
+}
+
+.form-cv input,
+.form-cv textarea{
+	@apply px-4 md:px-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary bg-white placeholder:text-foreground text-base
+}
+.form-cv textarea{
+	@apply py-4
+}
+
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev{
 	@apply !hidden xl:!flex after:hidden bg-primary hover:bg-secondary p-3 transition duration-300 rounded-[5px] items-center justify-center md:size-11

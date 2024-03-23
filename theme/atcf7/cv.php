@@ -7,29 +7,22 @@ if (!defined('ABSPATH')) {
  * */
 ?>
 
-<div class="cv-form-container">
-  <div class="row-1 mb-[42px] flex gap-[18px]">
-    <div class="cv-name-input">
-      [name* your-name id:your-name placeholder "Imię i nazwisko"]
-    </div>
-    <div class="cv-phone-input">
-      [phone* your-phone id:your-phone placeholder "Telefon"]
-    </div>
-    <div class="cv-email-input">
+<div class="form-cv">
+  <div class="mb-[18px] lg:mb-[42px] flex flex-col lg:flex-row gap-[18px]">
+      [text* your-name id:your-name placeholder "Imię i nazwisko"]
+
+      [tel* your-phone id:your-phone placeholder "Telefon"]
+      
       [email* your-email id:your-email placeholder "Adres e-mail"]
-    </div>
-    <div class="cv-file-input">
+      
       [file* your-file id:your-file placeholder "Załącz CV"]
-    </div>
   </div>
 
-  <div class="row-2">
-    <div class="cv-message-input">
-      [textarea* your-message id:your-message placeholder "Wiadomość..."]
-    </div>
+  <div class="w-full mb-[30px]">
+    [textarea* your-message id:your-message x3 placeholder "Wiadomość..."]
   </div>
 
-  <div class="submit-container">
+  <div class="text-center">
     [submit "Wyślij wiadomość"]
   </div>
 </div>

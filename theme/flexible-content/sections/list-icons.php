@@ -1,5 +1,5 @@
 <?php
-/** Template to display 'Sekcja z ikonami' - tiles_icons */
+/** Template to display 'Sekcja z listą ikon' - list_icons */
 
     $header = $args['header'];
     $list = $args['list'];

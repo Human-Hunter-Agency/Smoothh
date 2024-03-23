@@ -1,5 +1,5 @@
 <?php
-/** Template to display 'Sekcja z kafelkami stron' - tiles_pages */
+/** Template to display 'Swiper z kafelkami' - swiper_tiles */
 
     $header = $args['header'];
     $description = $args['description'];
