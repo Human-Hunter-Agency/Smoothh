@@ -10,12 +10,13 @@
  */
 
 import Swiper from 'swiper';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay,Navigation } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initMenuCollapse();
 	initHeroMarqueeSwiper();
-	initTileSwipers();
+	initMobileSwipers();
+	initDefaultSwipers();
 	initDropdowns();
 });
 
@@ -55,7 +56,7 @@ function initHeroMarqueeSwiper(){
 	}
 }
 
-function initTileSwipers(){
+function initMobileSwipers(){
 	const swiperContainers = document.querySelectorAll('[data-js="swiper-tiles-mobile"]')
 	swiperContainers.forEach(el => {
 		new Swiper(el,{
@@ -82,6 +83,39 @@ function initTileSwipers(){
 					slidesPerView: 'auto',
 					spaceBetween: 0,
 					enabled: false,
+				},
+			}
+		})
+	})
+}
+
+function initDefaultSwipers(){
+	const swiperContainers = document.querySelectorAll('[data-js="swiper-tiles-default"]')
+	swiperContainers.forEach(el => {
+		new Swiper(el,{
+			spaceBetween: 20,
+			slidesPerView: 1.2,
+			modules: [Navigation],
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			  },
+			breakpoints:{
+				560:{
+					slidesPerView: 1.5,
+					spaceBetween: 20,
+				},
+				768:{
+					slidesPerView: 2.2,
+					spaceBetween: 25,
+				},
+				1000:{
+					slidesPerView: 2.5,
+					spaceBetween: 35,
+				},
+				1280:{
+					slidesPerView: 3,
+					spaceBetween: 90,
 				},
 			}
 		})

@@ -101,3 +101,15 @@ footer#page-footer .footer-bottom-menu{
 .wpcf7-response-output{
 	@apply rounded-2xl text-sm !mx-0 !mt-3
 }
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev{
+	@apply !hidden xl:!flex after:hidden bg-primary hover:bg-secondary p-3 transition duration-300 rounded-[5px] items-center justify-center md:size-11
+}
+
+.swiper .swiper-button-next{
+	@apply min-[1537px]:-right-10
+}
+.swiper .swiper-button-prev{
+	@apply min-[1537px]:-left-10
+}

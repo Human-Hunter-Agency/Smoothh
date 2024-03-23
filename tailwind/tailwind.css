@@ -39,4 +39,4 @@
 /**
  * This injects Swiperjs styles
  */
-@import 'swiper/swiper.css';
+@import 'swiper/swiper-bundle.min.css';
