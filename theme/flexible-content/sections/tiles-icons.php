@@ -26,7 +26,7 @@
     <div class="relative z-0 w-full overflow-hidden !pb-5">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-mobile">
-                <div class="swiper-wrapper xl:!transform-none <?php if ($is_grid) : ?> xl:px-[100px] xl:box-content xl:flex-wrap xl:!gap-x-[49px] xl:!gap-y-20 xl:justify-center [&_.swiper-slide]:basis-[calc(33%_-_33px)]  <?php else : ?> xl:!gap-[60px] <?php endif; ?>">
+                <div class="swiper-wrapper xl:!transform-none <?php if ($is_grid) : ?> xl:px-[100px] xl:box-border xl:flex-wrap xl:!gap-x-[49px] xl:!gap-y-20 xl:justify-center [&_.swiper-slide]:basis-[calc(33%_-_33px)]  <?php else : ?> xl:!gap-[60px] <?php endif; ?>">
                     <?php foreach($tiles_list as $tile) : ?>
                         <div class="swiper-slide xl:flex-1 !flex items-center flex-col text-center">
                             <?php if ($tile['icon'] && $tile['icon']['url'] ) : ?>
