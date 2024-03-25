@@ -4,6 +4,7 @@
     $header = $args['header'];
     $description = $args['description'];
     $decoration = $args['decoration'];
+    $titles_primary = $args['titles_primary'];
     $tiles_list = $args['tiles_list'];
 
 ?>
@@ -42,7 +43,7 @@
                             <?php endif; ?>
                             <div class="text-center p-3 md:p-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-xl text-primary mb-9"><?php echo $tile['title']; ?></h3>
+                                    <h3 class="text-base md:text-xl mb-9 font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
