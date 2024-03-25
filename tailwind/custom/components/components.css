@@ -48,16 +48,6 @@
 	@apply !shadow-lg
 }
 
-[data-js="dropdown-toggle"] svg{
-	stroke-dasharray: 20 20 50;
-    stroke-dashoffset: 0;
-	@apply transition-all duration-300
-}
-
-[data-js="dropdown-toggle"][aria-expanded="true"] svg{
-    stroke-dashoffset: -41;
-}
-
 footer#page-footer{
 	@apply bg-[#FAFAFA]
 }
@@ -112,6 +102,13 @@ footer#page-footer .footer-bottom-menu{
 }
 .form-cv textarea{
 	@apply py-4 min-h-32 max-h-80
+}
+.form-cv #your-file{
+	@apply hidden
+}
+
+.form-cv input.wpcf7-submit{
+	@apply border-none bg-white text-primary hover:text-secondary font-bold text-base cursor-pointer w-auto pl-[30px] pr-14 transition duration-200
 }
 
 .swiper .swiper-button-next,

@@ -27,9 +27,12 @@
                     <div class="border-2 border-primary rounded-2xl mb-2.5" data-js="dropdown">
                         <div class="group flex justify-between py-5 px-6 cursor-pointer" aria-expanded="<?php if(++$i === $numItems){echo 'true';}else{echo 'false';} ?>" data-js="dropdown-toggle">
                             <h3 class="text-base md:text-[20px] md:leading-5 group-hover:text-primary transition duration-200 font-semibold"><?php echo esc_html($question); ?></h3>
-                            <div class="p-1">
-                                <svg width="35" height="12" viewBox="0 0 35 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.5 1C10.5 1 23.5 1 29 1C34.5 1 37 10.5 22.5 10.5C8 10.5 0 10.5 0 10.5" stroke="#8117EE" stroke-width="2"/>
+                            <div class="p-1 relative">
+                                <svg class="group-aria-expanded:rotate-180 transition duration-300" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line y1="10.0015" x2="20" y2="10.0015" stroke="#8117EE" stroke-width="2"/>
+                                </svg>
+                                <svg class="absolute inset-1 group-aria-expanded:rotate-90 transition duration-300" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <line x1="10" y1="19.2002" x2="10" stroke="#8117EE" stroke-width="2"/>
                                 </svg>
                             </div>
                         </div>

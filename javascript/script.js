@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMobileSwipers();
 	initDefaultSwipers();
 	initDropdowns();
+	initCvFileLabelText()
 });
 
 function initMenuCollapse() {
@@ -152,4 +153,23 @@ function toggleDropdown(expanded,btn,container) {
 	} else {
 		container.style.removeProperty('height');
 	}
+}
+
+function initCvFileLabelText(){
+	const labelEl = document.querySelector('[data-js="cv-file"]')
+	const inputEl = document.querySelector('input#your-file')
+	if (!labelEl || !inputEl) return
+	
+	const textEl = labelEl.querySelector('[data-js="cv-file-name"]')
+	const labelBtn = document.querySelector('[data-js="cv-file-icon"]')
+	inputEl.addEventListener('change',(e)=>{
+		const file = e.target.files[0]
+		if (file) {
+			textEl.innerText = file.name
+			labelBtn.classList.add('hidden')
+		}else{
+			textEl.innerText = 'Załącz CV'
+			labelBtn.classList.remove('hidden')
+		}
+	})
 }
