@@ -27,7 +27,10 @@
                     <?php foreach($tiles_list as $tile) : ?>
                         <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url'] ) : ?>
-                                <img src="<?php echo $tile['image']['url']; ?>" class="object-cover w-full h-[120px] md:h-[220px] mb-5 rounded-t-[14px]" >
+                                <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
+                                    <img src="<?php echo $tile['image']['url']; ?>" class="object-cover w-full h-[120px] md:h-[220px]" >
+                                    <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
+                                </div>
                             <?php endif; ?>
                             <div class="text-center p-3 md:p-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
