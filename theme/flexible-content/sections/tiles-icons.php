@@ -29,8 +29,8 @@
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-mobile">
                 <div class="swiper-wrapper xl:!transform-none 
-                    <?php if ($grid == 3) : ?> xl:px-[100px] xl:box-border xl:flex-wrap xl:!gap-x-[49px] xl:!gap-y-20 xl:justify-center [&_.swiper-slide]:basis-[calc(33%_-_33px)] 
-                    <?php elseif ($grid == 5) : ?> xl:flex-wrap xl:!gap-y-[60px] xl:!gap-x-10 xl:justify-center [&_.swiper-slide]:basis-[calc(20%_-_48px)]  
+                    <?php if ($grid == 3) : ?> xl:px-[100px] xl:box-border xl:flex-wrap xl:!gap-x-[49px] xl:!gap-y-20 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(33%_-_33px)] 
+                    <?php elseif ($grid == 5) : ?> xl:flex-wrap xl:!gap-y-[60px] xl:!gap-x-10 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(20%_-_48px)]  
                     <?php else : ?> xl:!gap-[60px] 
                     <?php endif; ?>">
                     
