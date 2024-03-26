@@ -4,10 +4,11 @@
     $header = $args['header'];
     $content = $args['content'];
     $decoration = $args['decoration'];
+    $has_bg = $args['has_bg'];
 
 ?>
 
-<div class="relative py-10 md:py-[100px]">
+<div class="relative py-10 md:py-20 <?php if ($has_bg) : ?> md:pt-[60px] bg-gradient-to-b from-secondary to-primary text-white <?php endif; ?>">
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
@@ -16,7 +17,7 @@
                 </h2>
             <?php endif; ?>
             <?php if ($content) : ?>        
-                <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl">
+                <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?>">
                     <?php echo $content; ?>
                 </div>
             <?php endif; ?>
