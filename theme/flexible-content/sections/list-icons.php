@@ -14,7 +14,7 @@
     </div>
 <?php endif; ?>
 <?php if ($list) : ?>
-    <div class="relative py-10 md:py-[70px] bg-gradient-to-b from-primary to-secondary">
+    <div class="relative py-10 md:py-[70px] bg-gradient-to-b from-secondary to-primary">
         <div class="container">
             <div class=" max-w-[920px] mx-auto flex flex-col gap-5 md:gap-10">
                 <?php foreach($list as $item) : ?>

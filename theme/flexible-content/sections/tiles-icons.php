@@ -4,7 +4,9 @@
     $header = $args['header'];
     $description = $args['description'];
     $tiles_list = $args['tiles_list'];
-    $is_grid = $args['grid_3']
+    $is_grid = $args['grid_3'];
+    $text_below = $args['text_below'];
+    $button = $args['button'];
 
 ?>
 
@@ -46,4 +48,26 @@
             </div>
         <?php endif; ?>
     </div>
+
+    <?php if ($text_below || $button) : ?>
+        <div class="container text-center mt-10 flex flex-col items-center">
+            <?php if ($text_below) : ?>
+                <div class="prose-smooth prose-base md:prose-xl mb-10"><?php echo $text_below; ?></div>
+            <?php endif; ?>
+
+            <?php if( $button ): 
+                $btn_url = $button['url'];
+                $btn_title = $button['title'];
+                $btn_target = $button['target'] ? $button['target'] : '_self';
+                ?>
+                <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="flex gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200" >
+                    <?php echo esc_html( $btn_title ); ?>
+                    <svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="stroke-white" cx="9.5" cy="9.5" r="9"/>
+                        <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"/>
+                    </svg>
+                </a>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
 </div>

@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMenuCollapse();
 	initHeroMarqueeSwiper();
 	initMobileSwipers();
+	initMobileNarrowSwipers();
 	initDefaultSwipers();
 	initDropdowns();
 	initCvFileLabelText()
@@ -89,6 +90,39 @@ function initMobileSwipers(){
 		})
 	})
 }
+function initMobileNarrowSwipers(){
+	const swiperContainers = document.querySelectorAll('[data-js="swiper-tiles-mobile-narrow"]')
+	swiperContainers.forEach(el => {
+		new Swiper(el,{
+			spaceBetween: 20,
+			slidesPerView: 2.5,
+			enabled: true,
+			breakpoints:{
+				560:{
+					slidesPerView: 2.5,
+					spaceBetween: 20,
+					enabled: true,
+				},
+				768:{
+					slidesPerView: 3.5,
+					spaceBetween: 20,
+					enabled: true,
+				},
+				1000:{
+					slidesPerView: 4.5,
+					spaceBetween: 20,
+					enabled: true,
+				},
+				1280:{
+					slidesPerView: 'auto',
+					spaceBetween: 0,
+					enabled: false,
+				},
+			}
+		})
+	})
+}
+
 
 function initDefaultSwipers(){
 	const swiperContainers = document.querySelectorAll('[data-js="swiper-tiles-default"]')

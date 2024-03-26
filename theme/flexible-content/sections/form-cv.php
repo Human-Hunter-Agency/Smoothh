@@ -6,7 +6,7 @@
 
 ?>
 
-<div class="w-full py-10 md:py-[70px] mb:pb-20 text-white bg-gradient-to-b from-primary to-secondary">
+<div class="w-full py-10 md:py-[70px] mb:pb-20 text-white bg-gradient-to-b from-secondary to-primary">
     <div class="container">
         <?php if ($header) : ?>
             <h2 class="text-3xl md:text-5xl text-bold font-bold mb-9 text-center" ><?php echo esc_html($header); ?></h1>
