@@ -122,3 +122,47 @@ footer#page-footer .footer-bottom-menu{
 .swiper .swiper-button-prev{
 	@apply min-[1537px]:-left-10
 }
+
+.grid-colored{
+	@apply border border-primary grid grid-cols-1 lg:grid-cols-2
+}
+
+.grid-colored-section{
+	@apply flex flex-col justify-between items-center px-2.5 py-5 md:py-10 lg:py-20 text-center
+}
+
+.grid-colored-section:nth-child(4n),
+.grid-colored-section:nth-child(4n + 1){
+	@apply lg:!bg-white lg:!text-primary
+}
+.grid-colored-section:nth-child(4n + 2),
+.grid-colored-section:nth-child(4n + 3){
+	@apply lg:!bg-primary lg:!text-white
+}
+
+.grid-colored-section:nth-child(odd){
+	@apply bg-white text-primary
+}
+.grid-colored-section:nth-child(even){
+	@apply bg-primary text-white
+}
+
+
+.grid-colored-section:nth-child(4n) .grid-section-btn,
+.grid-colored-section:nth-child(4n + 1) .grid-section-btn{
+	@apply lg:!text-white lg:!bg-primary lg:hover:!bg-primary/80
+}
+.grid-colored-section:nth-child(4n + 2) .grid-section-btn,
+.grid-colored-section:nth-child(4n + 3) .grid-section-btn{
+	@apply lg:!text-primary lg:!bg-white lg:hover:!bg-white/50
+}
+.grid-colored-section:nth-child(odd) .grid-section-btn{
+	@apply text-white bg-primary hover:bg-primary/80
+}
+.grid-colored-section:nth-child(even) .grid-section-btn{
+	@apply text-primary bg-white hover:bg-white/50
+}
+
+.grid-colored-section .grid-section-btn{
+	@apply block rounded-2xl text-[13px] font-semibold py-2 px-7 mt-10 transition duration-200
+}
