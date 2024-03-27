@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initHeroMarqueeSwiper();
 	initMobileSwipers();
 	initMobileNarrowSwipers();
+	initLogosSwipers();
 	initDefaultSwipers();
 	initDropdowns();
 	initCvFileLabelText()
@@ -151,6 +152,40 @@ function initDefaultSwipers(){
 				1280:{
 					slidesPerView: 3,
 					spaceBetween: 90,
+				},
+			}
+		})
+	})
+}
+
+function initLogosSwipers(){
+	const swiperContainers = document.querySelectorAll('[data-js="swiper-logos"]')
+	swiperContainers.forEach(el => {
+		new Swiper(el,{
+			spaceBetween: 20,
+			slidesPerView: 2.5,
+			modules: [Navigation,Autoplay],
+			autoplay: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			  },
+			breakpoints:{
+				560:{
+					slidesPerView: 2.5,
+					spaceBetween: 20,
+				},
+				768:{
+					slidesPerView: 3.5,
+					spaceBetween: 20,
+				},
+				1000:{
+					slidesPerView: 5.2,
+					spaceBetween: 20,
+				},
+				1280:{
+					slidesPerView: 6,
+					spaceBetween: 40,
 				},
 			}
 		})
