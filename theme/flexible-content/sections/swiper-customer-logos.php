@@ -23,7 +23,7 @@
             <div class="swiper !container !overflow-visible" data-js="swiper-logos">
                 <div class="swiper-wrapper items-center">
                     <?php foreach($logos as $logo) : ?>
-                        <div class="swiper-slide mr-5 md:px-5">
+                        <div class="swiper-slide mr-5 md:px-5 opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <img class="object-contain max-h-28" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" alt="<?php echo $logo['title']; ?>" />
                         </div>
                     <?php endforeach; ?>

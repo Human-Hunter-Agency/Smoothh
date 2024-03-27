@@ -25,7 +25,7 @@
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper">
                     <?php foreach($tiles_list as $tile) : ?>
-                        <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
+                        <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <?php if ($tile['image'] && $tile['image']['url'] ) : ?>
                                 <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
                                     <img src="<?php echo $tile['image']['url']; ?>" class="object-cover w-full h-[120px] md:h-[220px]" >

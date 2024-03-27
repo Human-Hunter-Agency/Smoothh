@@ -132,10 +132,12 @@ function initDefaultSwipers(){
 			spaceBetween: 20,
 			slidesPerView: 1.2,
 			modules: [Navigation],
+			watchSlidesProgress: true,
 			navigation: {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
 			  },
+			  
 			breakpoints:{
 				560:{
 					slidesPerView: 1.5,
@@ -166,6 +168,8 @@ function initLogosSwipers(){
 			slidesPerView: 2.5,
 			modules: [Navigation,Autoplay],
 			autoplay: true,
+			watchSlidesProgress: true,
+			speed: 600,
 			navigation: {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
