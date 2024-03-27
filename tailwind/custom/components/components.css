@@ -92,24 +92,42 @@ footer#page-footer .footer-bottom-menu{
 	@apply rounded-2xl text-sm !mx-0 !mt-3
 }
 
-.form-cv{
+.form-basic{
 	@apply flex flex-col
 }
 
-.form-cv input,
-.form-cv textarea{
+.form-basic input,
+.form-basic textarea{
 	@apply px-4 md:px-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary bg-white placeholder:text-foreground text-foreground text-base
 }
-.form-cv textarea{
+.form-basic textarea{
 	@apply py-4 min-h-32 max-h-80
 }
-.form-cv #your-file{
+.form-basic #your-file{
 	@apply hidden
 }
 
-.form-cv input.wpcf7-submit{
-	@apply border-none bg-white text-primary hover:text-secondary font-bold text-base cursor-pointer w-auto pl-[30px] pr-14 transition duration-200
+.form-basic input.wpcf7-submit{
+	@apply font-bold text-base cursor-pointer w-auto pl-[30px] pr-14 transition duration-200
 }
+.form-basic .btn-white input.wpcf7-submit{
+	@apply border-none bg-white text-primary hover:text-secondary 
+}
+.form-basic .btn-color input.wpcf7-submit{
+	@apply border-none bg-gradient-to-b from-primary to-secondary text-white 
+}
+
+.form-basic .wpcf7-list-item{
+	@apply !mx-auto
+}
+.form-basic .wpcf7-list-item a{
+	@apply font-semibold text-primary
+}
+
+.form-basic .wpcf7-list-item input[type="checkbox"]{
+	@apply !size-5 mr-4 accent-primary shrink-0 align-sub
+}
+
 
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev{

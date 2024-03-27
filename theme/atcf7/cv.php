@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
  * */
 ?>
 
-<div class="form-cv">
+<div class="form-basic">
   <div class="mb-[18px] lg:mb-[42px] flex flex-col lg:flex-row gap-[18px] lg:[&_p]:w-[calc(25%_-_13.5px)] ">
       [text* your-name placeholder "Imię i nazwisko"]
 
@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
     [textarea* your-message x3 placeholder "Wiadomość..."]
   </div>
 
-  <div class="relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 [&_svg_path]:hover:fill-secondary [&_svg_circle]:hover:stroke-secondary">
+  <div class="btn-white relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 [&_svg_path]:hover:fill-secondary [&_svg_circle]:hover:stroke-secondary">
     [submit "Wyślij wiadomość"]
     <svg class="absolute right-5 top-[18px]" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle class="stroke-primary transition duration-200" cx="9.5" cy="9.5" r="9"/>
