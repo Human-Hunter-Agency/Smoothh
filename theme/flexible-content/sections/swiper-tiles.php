@@ -34,10 +34,10 @@
                             <?php endif; ?>
                             <div class="text-center p-3 md:p-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-xl text-primary mb-9"><?php echo $tile['title']; ?></h3>
+                                    <h3 class="text-base md:text-xl text-primary mb-9 font-semibold"><?php echo $tile['title']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
-                                    <p class="text-sm md:text-base italic"><?php echo $tile['description']; ?></p>
+                                    <p class="text-sm md:text-base italic font-medium"><?php echo $tile['description']; ?></p>
                                 <?php endif; ?>
                             </div>
                             <?php if( $tile['button'] ): 

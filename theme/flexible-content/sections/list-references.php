@@ -24,7 +24,7 @@
                             <?php endif; ?>
     
                             <?php if( $item['review'] ): ?> 
-                                <p class="text-base md:text-xl italic mb-5"><?php echo esc_attr( $item['review'] ); ?></p>
+                                <p class="text-base md:text-xl md:leading-8 italic mb-5"><?php echo esc_attr( $item['review'] ); ?></p>
                             <?php endif; ?>
                         </div>
 
