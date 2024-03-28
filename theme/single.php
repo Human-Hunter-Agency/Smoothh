@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<section id="primary">
+	<section id="primary" class="container flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-[70px]">
 		<main id="main">
 
 			<?php
@@ -33,17 +33,16 @@ get_header();
 					);
 				}
 
-				// If comments are open, or we have at least one comment, load
-				// the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
 				// End the loop.
 			endwhile;
 			?>
 
 		</main><!-- #main -->
+		<aside>
+			<ul class="list-none [&>li]:text-3xl font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
+				<?php wp_list_categories() ?>
+			</ul>
+		</aside>
 	</section><!-- #primary -->
 
 <?php

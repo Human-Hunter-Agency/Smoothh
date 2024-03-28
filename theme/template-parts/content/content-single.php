@@ -11,15 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<?php if ( ! is_page() ) : ?>
-			<div class="entry-meta">
-				<?php smoothh_entry_meta(); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
 
 	<?php smoothh_post_thumbnail(); ?>
 
@@ -40,17 +32,7 @@
 			)
 		);
 
-		wp_link_pages(
-			array(
-				'before' => '<div>' . __( 'Pages:', 'smoothh' ),
-				'after'  => '</div>',
-			)
-		);
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php smoothh_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 
 </article><!-- #post-${ID} -->
