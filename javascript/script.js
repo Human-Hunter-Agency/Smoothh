@@ -10,13 +10,17 @@
  */
 
 import Swiper from 'swiper';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay,Navigation } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
 	initMenuCollapse();
 	initHeroMarqueeSwiper();
-	initTileSwipers();
+	initMobileSwipers();
+	initMobileNarrowSwipers();
+	initLogosSwipers();
+	initDefaultSwipers();
 	initDropdowns();
+	initCvFileLabelText()
 });
 
 function initMenuCollapse() {
@@ -55,7 +59,7 @@ function initHeroMarqueeSwiper(){
 	}
 }
 
-function initTileSwipers(){
+function initMobileSwipers(){
 	const swiperContainers = document.querySelectorAll('[data-js="swiper-tiles-mobile"]')
 	swiperContainers.forEach(el => {
 		new Swiper(el,{
@@ -82,6 +86,110 @@ function initTileSwipers(){
 					slidesPerView: 'auto',
 					spaceBetween: 0,
 					enabled: false,
+				},
+			}
+		})
+	})
+}
+function initMobileNarrowSwipers(){
+	const swiperContainers = document.querySelectorAll('[data-js="swiper-tiles-mobile-narrow"]')
+	swiperContainers.forEach(el => {
+		new Swiper(el,{
+			spaceBetween: 20,
+			slidesPerView: 2.5,
+			enabled: true,
+			breakpoints:{
+				560:{
+					slidesPerView: 2.5,
+					spaceBetween: 20,
+					enabled: true,
+				},
+				768:{
+					slidesPerView: 3.5,
+					spaceBetween: 20,
+					enabled: true,
+				},
+				1000:{
+					slidesPerView: 4.5,
+					spaceBetween: 20,
+					enabled: true,
+				},
+				1280:{
+					slidesPerView: 'auto',
+					spaceBetween: 0,
+					enabled: false,
+				},
+			}
+		})
+	})
+}
+
+
+function initDefaultSwipers(){
+	const swiperContainers = document.querySelectorAll('[data-js="swiper-tiles-default"]')
+	swiperContainers.forEach(el => {
+		new Swiper(el,{
+			spaceBetween: 20,
+			slidesPerView: 1.2,
+			modules: [Navigation],
+			watchSlidesProgress: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			  },
+			  
+			breakpoints:{
+				560:{
+					slidesPerView: 1.5,
+					spaceBetween: 20,
+				},
+				768:{
+					slidesPerView: 2.2,
+					spaceBetween: 25,
+				},
+				1000:{
+					slidesPerView: 2.5,
+					spaceBetween: 35,
+				},
+				1280:{
+					slidesPerView: 3,
+					spaceBetween: 90,
+				},
+			}
+		})
+	})
+}
+
+function initLogosSwipers(){
+	const swiperContainers = document.querySelectorAll('[data-js="swiper-logos"]')
+	swiperContainers.forEach(el => {
+		new Swiper(el,{
+			spaceBetween: 20,
+			slidesPerView: 2.5,
+			modules: [Navigation,Autoplay],
+			autoplay: true,
+			watchSlidesProgress: true,
+			speed: 600,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			  },
+			breakpoints:{
+				560:{
+					slidesPerView: 2.5,
+					spaceBetween: 20,
+				},
+				768:{
+					slidesPerView: 3.5,
+					spaceBetween: 20,
+				},
+				1000:{
+					slidesPerView: 5.2,
+					spaceBetween: 20,
+				},
+				1280:{
+					slidesPerView: 6,
+					spaceBetween: 40,
 				},
 			}
 		})
@@ -118,4 +226,23 @@ function toggleDropdown(expanded,btn,container) {
 	} else {
 		container.style.removeProperty('height');
 	}
+}
+
+function initCvFileLabelText(){
+	const labelEl = document.querySelector('[data-js="cv-file"]')
+	const inputEl = document.querySelector('input#your-file')
+	if (!labelEl || !inputEl) return
+	
+	const textEl = labelEl.querySelector('[data-js="cv-file-name"]')
+	const labelBtn = document.querySelector('[data-js="cv-file-icon"]')
+	inputEl.addEventListener('change',(e)=>{
+		const file = e.target.files[0]
+		if (file) {
+			textEl.innerText = file.name
+			labelBtn.classList.add('hidden')
+		}else{
+			textEl.innerText = 'Załącz CV'
+			labelBtn.classList.remove('hidden')
+		}
+	})
 }

@@ -17,7 +17,7 @@
         <img src="<?php echo $hero_bg_url; ?>" class="absolute inset-0 -z-20 object-cover h-full w-full" >
     <?php endif; ?>
 
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/80"></div>
 
     <div class="relative z-0 flex flex-col items-center justify-center container">
         <?php if ($display_logo && is_front_page()) : ?>
@@ -25,11 +25,11 @@
                 <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/img/logo-white.svg' ); ?>
             </div>
         <?php elseif ($display_logo && ! is_front_page()) : ?>
-            <span class="text-5xl md:text-[66px] text-white" >SMOOTHH®</span>
+            <span class="text-5xl md:text-[66px] text-white font-bold leading-tight" >SMOOTHH®</span>
         <?php endif; ?>
         
         <?php if ($hero_text) : ?>
-            <h1 class="text-3xl md:text-5xl text-bold text-white" ><?php echo $hero_text; ?></h1>
+            <h1 class="<?php if ($display_logo) : ?>text-3xl md:text-5xl<?php else : ?>text-5xl md:text-[66px]<?php endif; ?> text-bold text-white font-bold" ><?php echo $hero_text; ?></h1>
         <?php endif; ?>
     </div>
 

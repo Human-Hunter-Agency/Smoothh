@@ -29,8 +29,11 @@ get_header();
 
 				if ( $sections ) :
 					foreach ( $sections as $section ) :
-						$template = str_replace( '_', '-', $section['acf_fc_layout'] );
-						get_template_part( 'flexible-content/sections/' . $template, '', $section );
+						$section_visible = $section['isSectionVisible'];
+						if (isset($section_visible) && $section_visible == true) {
+							$template = str_replace( '_', '-', $section['acf_fc_layout'] );
+							get_template_part( 'flexible-content/sections/' . $template, '', $section );
+						}
 					endforeach;
 				endif;
 

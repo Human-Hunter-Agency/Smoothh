@@ -7,7 +7,8 @@
  * @package Smoothh
  */
 
- $brand_info = get_field('brand_info', 'option');
+ $brand_location = get_field('brand_location', 'option');
+ $brand_contact = get_field('brand_contact', 'option');
  $social_links = get_field('social_links', 'option');
 
 ?>
@@ -17,7 +18,8 @@
 		<div class="w-full mb-6 sm:pr-5 sm:w-2/5 lg:w-3/12">
 			<h3>Dane firmy i kontaktowe</h3>
 			<div class="prose-base [&_p]:!leading-8 [&_a]:text-foreground hover:[&_a]:text-primary [&_a]:transition [&_a]:duration-200">
-				<?php echo $brand_info ?>
+				<?php echo $brand_location ?>
+				<?php echo $brand_contact ?>
 			</div>
 		</div>
 		

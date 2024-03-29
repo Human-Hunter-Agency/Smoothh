@@ -13,12 +13,6 @@
 	@apply max-w-content mx-auto mb-6 text-3xl font-extrabold text-neutral-900;
 }
 
-.page-content > *,
-.entry-content > * {
-	/* Content width from the `theme.json` file */
-	@apply max-w-content mx-auto;
-}
-
 .entry-content > .alignwide {
 	/* Wide width from the `theme.json` file */
 	@apply max-w-wide;
@@ -46,16 +40,6 @@
 
 [aria-expanded="true"].menu-btn ~ #site-navigation{
 	@apply !shadow-lg
-}
-
-[data-js="dropdown-toggle"] svg{
-	stroke-dasharray: 20 20 50;
-    stroke-dashoffset: 0;
-	@apply transition-all duration-300
-}
-
-[data-js="dropdown-toggle"][aria-expanded="true"] svg{
-    stroke-dashoffset: -41;
 }
 
 footer#page-footer{
@@ -100,4 +84,97 @@ footer#page-footer .footer-bottom-menu{
 
 .wpcf7-response-output{
 	@apply rounded-2xl text-sm !mx-0 !mt-3
+}
+
+.form-basic{
+	@apply flex flex-col
+}
+
+.form-basic input,
+.form-basic textarea{
+	@apply px-4 md:px-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary bg-white placeholder:text-foreground text-foreground text-base
+}
+.form-basic textarea{
+	@apply py-4 min-h-32 max-h-80
+}
+.form-basic #your-file{
+	@apply hidden
+}
+
+.form-basic input.wpcf7-submit{
+	@apply font-bold text-base cursor-pointer w-auto pl-[30px] pr-14 transition duration-200
+}
+.form-basic .btn-white input.wpcf7-submit{
+	@apply border-none bg-white text-primary hover:text-secondary 
+}
+.form-basic .btn-color input.wpcf7-submit{
+	@apply border-none bg-gradient-to-b from-primary to-secondary text-white 
+}
+
+.form-basic .wpcf7-list-item{
+	@apply !mx-auto
+}
+.form-basic .wpcf7-list-item a{
+	@apply font-semibold text-primary
+}
+
+.form-basic .wpcf7-list-item input[type="checkbox"]{
+	@apply !size-5 mr-4 accent-primary shrink-0 align-sub
+}
+
+
+.swiper .swiper-button-next,
+.swiper .swiper-button-prev{
+	@apply !hidden xl:!flex after:hidden bg-primary hover:bg-secondary p-3 transition duration-300 rounded-[5px] items-center justify-center md:size-11
+}
+
+.swiper .swiper-button-next{
+	@apply min-[1537px]:-right-10
+}
+.swiper .swiper-button-prev{
+	@apply min-[1537px]:-left-10
+}
+
+.grid-colored{
+	@apply border border-primary grid grid-cols-1 lg:grid-cols-2
+}
+
+.grid-colored-section{
+	@apply flex flex-col justify-between items-center px-2.5 py-5 md:py-10 lg:py-20 text-center
+}
+
+.grid-colored-section:nth-child(4n),
+.grid-colored-section:nth-child(4n + 1){
+	@apply lg:!bg-white lg:!text-primary
+}
+.grid-colored-section:nth-child(4n + 2),
+.grid-colored-section:nth-child(4n + 3){
+	@apply lg:!bg-primary lg:!text-white
+}
+
+.grid-colored-section:nth-child(odd){
+	@apply bg-white text-primary
+}
+.grid-colored-section:nth-child(even){
+	@apply bg-primary text-white
+}
+
+
+.grid-colored-section:nth-child(4n) .grid-section-btn,
+.grid-colored-section:nth-child(4n + 1) .grid-section-btn{
+	@apply lg:!text-white lg:!bg-primary lg:hover:!bg-primary/80
+}
+.grid-colored-section:nth-child(4n + 2) .grid-section-btn,
+.grid-colored-section:nth-child(4n + 3) .grid-section-btn{
+	@apply lg:!text-primary lg:!bg-white lg:hover:!bg-white/50
+}
+.grid-colored-section:nth-child(odd) .grid-section-btn{
+	@apply text-white bg-primary hover:bg-primary/80
+}
+.grid-colored-section:nth-child(even) .grid-section-btn{
+	@apply text-primary bg-white hover:bg-white/50
+}
+
+.grid-colored-section .grid-section-btn{
+	@apply block rounded-2xl text-[13px] font-semibold py-2 px-7 mt-10 transition duration-200
 }

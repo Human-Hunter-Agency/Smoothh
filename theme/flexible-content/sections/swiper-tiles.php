@@ -1,40 +1,29 @@
 <?php
-/** Template to display 'Sekcja z kafelkami stron' - tiles_pages */
+/** Template to display 'Swiper z kafelkami' - swiper_tiles */
 
     $header = $args['header'];
-    $description = $args['description'];
-    $decoration = $args['decoration'];
-    $titles_primary = $args['titles_primary'];
     $tiles_list = $args['tiles_list'];
 
 ?>
 
 <div class="relative py-10 md:py-[60px] mb:pb-[60px]">
-    <?php if ($decoration) : ?>        
-        <div class="absolute right-7 top-7 -z-10 opacity-5 max-w-[90px] lg:max-w-[180px]">
-            <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/img/decor.svg' ); ?>
-        </div>
-    <?php endif; ?>
     
-    <div class="container">
-        <div class="relative z-0">
-            <?php if ($header) : ?>
+    <?php if ($header) : ?>
+        <div class="container">
+            <div class="relative z-0">
                 <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
                     <?php echo esc_html($header); ?>
                 </h2>
-            <?php endif; ?>
-            <?php if ($description) : ?>
-                <div class="prose-smoothh prose md:prose-xl text-center mb-10" ><?php echo $description; ?></div>
-            <?php endif; ?>
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
 
     <div class="relative z-0 w-full overflow-hidden !pb-5">
         <?php if ($tiles_list) : ?>
-            <div class="swiper !container !overflow-visible" data-js="swiper-tiles-mobile">
-                <div class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:justify-center xl:!transform-none">
+            <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
+                <div class="swiper-wrapper">
                     <?php foreach($tiles_list as $tile) : ?>
-                        <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] border-2 border-[#EFEFEF] rounded-2xl">
+                        <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <?php if ($tile['image'] && $tile['image']['url'] ) : ?>
                                 <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
                                     <img src="<?php echo $tile['image']['url']; ?>" class="object-cover w-full h-[120px] md:h-[220px]" >
@@ -43,10 +32,10 @@
                             <?php endif; ?>
                             <div class="text-center p-3 md:p-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-xl mb-9 font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
+                                    <h3 class="text-base md:text-xl text-primary mb-9 font-semibold"><?php echo $tile['title']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
-                                    <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
+                                    <p class="text-sm md:text-base italic font-medium"><?php echo $tile['description']; ?></p>
                                 <?php endif; ?>
                             </div>
                             <?php if( $tile['button'] ): 
@@ -58,6 +47,16 @@
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
+                </div>
+                <div class="swiper-button-prev">
+                    <svg width="12" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M-0.00195312 8.99988L11.998 0.33962L11.998 17.6601L-0.00195312 8.99988Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="swiper-button-next">
+                    <svg width="12" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 9L0 17.6603V0.339746L12 9Z" fill="white"/>
+                    </svg>
                 </div>
             </div>
         <?php endif; ?>
