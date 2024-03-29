@@ -2,7 +2,6 @@
 /** Template to display 'Sekcja z kafelkami numerowana' - tiles_numbered */
 
     $header = $args['header'];
-    $description = $args['description'];
     $tiles_list = $args['tiles_list'];
 
 ?>

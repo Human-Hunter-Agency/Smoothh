@@ -2,8 +2,6 @@
 /** Template to display 'Swiper z kafelkami' - swiper_tiles */
 
     $header = $args['header'];
-    $description = $args['description'];
-    $decoration = $args['decoration'];
     $tiles_list = $args['tiles_list'];
 
 ?>
