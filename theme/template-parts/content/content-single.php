@@ -26,20 +26,22 @@
 
 
 	<div class="container flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-[60px]">
+		<div class="mb-5 md:mb-8">
+			<?php if ($title) : ?>
+				<h2 class="text-2xl font-bold text-primary mb-1"><?php echo esc_html($title) ?></h2>
+			<?php endif; ?>
+			<span>
+				<?php 
+					if ($author) {
+						echo $author . ' / ';
+					} 
+					$post_time = get_post_time();
+					$formatted_time = date('d.m.Y', $post_time);
+					echo 'Data publikacji: ' . $formatted_time
+				?>
+			</span>
+		</div>
 		<div <?php smoothh_content_class( 'entry-content' ); ?>>
-			<div>
-				<?php if ($title) : ?>
-					<h2 class="text-2xl font-bold text-primary"><?php echo esc_html($title) ?></h2>
-				<?php endif; ?>
-				<span>
-					<?php 
-						if ($author) {
-							echo $author . ' / ';
-						} 
-						echo 'Data publikacji: ' . get_post_time()
-					?>
-				</span>
-			</div>
 			<?php
 			the_content(
 				sprintf(
