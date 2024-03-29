@@ -15,9 +15,6 @@
                     <?php echo esc_html($header); ?>
                 </h2>
             <?php endif; ?>
-            <?php if ($description) : ?>
-                <div class="prose-smoothh prose md:prose-xl text-center mb-10" ><?php echo $description; ?></div>
-            <?php endif; ?>
         </div>
     </div>
 
