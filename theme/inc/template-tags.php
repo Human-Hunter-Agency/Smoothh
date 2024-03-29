@@ -196,7 +196,7 @@ if ( ! function_exists( 'smoothh_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<figure>
+			<figure class="absolute inset-0 -z-20 h-full w-full [&_img]:object-cover [&_img]:size-full">
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
