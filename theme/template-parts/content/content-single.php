@@ -61,8 +61,8 @@
 			?>
 		</div><!-- .entry-content -->
 		<aside class="md:basis-1/4 lg:shrink-0 ">
-			<h5 class="mb-8 text-2xl md:text-3xl font-semibold">Kategorie wpisów</h5>
-			<ul class="list-none [&_.cat-item]:mb-4 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
+			<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Kategorie wpisów</h5>
+			<ul class="list-none [&_.cat-item]:mb-4 md:[&_.cat-item]:mb-6 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
 				<?php wp_list_categories(array('title_li' => '')) ?>
 			</ul>
 		</aside>
