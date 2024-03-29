@@ -7,7 +7,7 @@
 ?>
 
 <div class="relative pb-5 pt-10 md:pt-[60px]">
-    <div class="container">
+    <div class="container !max-w-[1410px]">
         <?php if ($header) : ?>
             <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
                 <?php echo esc_html($header); ?>
