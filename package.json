@@ -51,7 +51,8 @@
 		"production": "run-p \"production:**\"",
 		"prod": "npm run production",
 		"zip": "node node_scripts/zip.js smoothh",
-		"bundle": "run-s production zip"
+		"bundle": "run-s production zip",
+		"deploy": "npm run production"
 	},
 	"prettier": "@wordpress/prettier-config",
 	"dependencies": {
