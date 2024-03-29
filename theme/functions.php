@@ -38,7 +38,7 @@ if ( ! defined( 'SMOOTHH_TYPOGRAPHY_CLASSES' ) ) {
 	 */
 	define(
 		'SMOOTHH_TYPOGRAPHY_CLASSES',
-		'prose prose-neutral max-w-none prose-a:text-primary'
+		'prose prose-neutral max-w-none prose-a:text-primary prose-figure:mt-0'
 	);
 }
 

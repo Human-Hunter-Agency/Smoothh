@@ -23,11 +23,11 @@
 }
 
 .entry-content > .alignleft {
-	@apply float-left mr-8;
+	@apply float-left mr-5;
 }
 
 .entry-content > .alignright {
-	@apply float-right ml-8;
+	@apply float-right ml-5;
 }
 
 #primary-menu{
