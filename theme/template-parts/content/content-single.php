@@ -32,7 +32,12 @@
 					<h2 class="text-2xl font-bold text-primary"><?php echo esc_html($title) ?></h2>
 				<?php endif; ?>
 				<span>
-
+					<?php 
+						if ($author) {
+							echo $author . ' / ';
+						} 
+						echo 'Data publikacji: ' . get_post_time()
+					?>
 				</span>
 			</div>
 			<?php
