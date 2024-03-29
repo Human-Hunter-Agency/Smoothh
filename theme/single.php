@@ -53,8 +53,8 @@ get_header();
 				$posts = get_posts($args);
 				foreach ($posts as $post) : ?>
 				<div>
-					<h4><?php echo $post['post_title']; ?></h4>
-					<p><?php echo get_the_excerpt($post['ID']); ?></p>
+					<h4><?php echo $post->post_title; ?></h4>
+					<p><?php echo get_the_excerpt($post->ID); ?></p>
 				</div>
 			
 			<?php
