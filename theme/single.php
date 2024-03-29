@@ -46,7 +46,7 @@ get_header();
 			)
 		?>
 			<div>
-				<?php echo get_posts($args) ?>
+				<?php print_r(get_posts($args)); ?>
 			</div>
 		<?php endforeach; ?>
 </section>
