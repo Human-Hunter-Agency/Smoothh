@@ -39,9 +39,14 @@ get_header();
 		<?php endforeach; ?>
 	</ul>
 	<?php
-		foreach ($categories as $category) : ?>
+		foreach ($categories as $category) : 
+			$args = array(
+				'category' => $category->name,
+				'numberposts' => 6
+			)
+		?>
 			<div>
-				<?php echo $category->name ?> content
+				<?php get_posts($args) ?>
 			</div>
 		<?php endforeach; ?>
 </section>
