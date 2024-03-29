@@ -41,12 +41,12 @@ get_header();
 	<?php
 		foreach ($categories as $category) : 
 			$args = array(
-				'category' => $category->name,
+				'category' => $category->id,
 				'numberposts' => 6
 			)
 		?>
 			<div>
-				<?php get_posts($args) ?>
+				<?php echo get_posts($args) ?>
 			</div>
 		<?php endforeach; ?>
 </section>
