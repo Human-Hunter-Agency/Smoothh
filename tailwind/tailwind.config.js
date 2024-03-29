@@ -25,8 +25,10 @@ module.exports = {
 			fontSize: {
 				xl: '1.375rem',
 				'5xl': ['2.625rem','2.625rem']
+			},
+			screens:{
+				'3xl': '1640px'
 			}
-			
 
 		},
 	},
