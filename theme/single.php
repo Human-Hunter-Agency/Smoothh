@@ -29,7 +29,7 @@ get_header();
 </section><!-- #primary -->
 <section class="container">
 	<h2 class="text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe materiały eksperckie z naszego bloga</h2>
-	<ul class="px-2.5 py-2 w-fit rounded-full bg-[#F2F2F2] flex items-center gap-2 max-w-screen-md w-fit mx-auto mb-5 md:mb-10">
+	<ul class="px-2.5 py-2 rounded-full bg-[#F2F2F2] flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-5 md:mb-10">
 		<?php
 		$categories = get_categories();
 		foreach ($categories as $category) : ?>
