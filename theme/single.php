@@ -71,12 +71,15 @@ get_header();
 /* CTA */
 
 	$cta = get_field('cta');
-    $background = $cta['background'];
-    if ($background['url']) {
-        $bg_url = $background['url'];
-    }
-    $header = $cta['header'];
-    $button = $cta['button'];
+	echo $cta;
+	if ($cta) {
+		$background = $cta['background'];
+		if ($background['url']) {
+			$bg_url = $background['url'];
+		}
+		$header = $cta['header'];
+		$button = $cta['button'];
+	}
 
 ?>
 
