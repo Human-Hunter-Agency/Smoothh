@@ -64,7 +64,11 @@ $cta = get_field('cta');
 		</div><!-- .entry-content -->
 		<aside class="md:basis-1/4 lg:shrink-0 ">
 			<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Najważniejsze informacje</h5>
-
+			<div class="case-study-info-box">
+				<p><span class="font-semibold">Kient: </span>Klient X</p>
+				<p><span class="font-semibold">Data: </span><?php echo $formatted_time; ?></p>
+				<p>Nulla id tellus scelerisque, fringilla ex vitae, cursus tortor. Pellentesque vitae auctor dolor. Donec rhoncus risus eget scelerisque bibendum. Aliquam erat volutpat. Integer nec orci congue libero ultrices placerat ut quis mi. Praesent nec accumsan massa, nec laoreet dolor. Aliquam erat volutpat. Integer nec orci congue libero ultrices placerat ut quis mi. Praesent nec accumsan massa, nec laoreet dolor. </p>
+			</div>
 		</aside>
 	</div>
 
@@ -81,25 +85,7 @@ $cta = get_field('cta');
 		'exclude' => get_the_ID()
 	);
 	?>
-	<div class="w-full relative min-h-32" data-js="tab-content-">
-		<?php
-		// The Query.
-		$the_query = new WP_Query($args);
-
-		// The Loop.
-		if ($the_query->have_posts()) {
-			echo '<ul>';
-			while ($the_query->have_posts()) {
-				$the_query->the_post();
-				echo '<li>' . esc_html(get_the_title()) . '</li>';
-			}
-			echo '</ul>';
-		} else {
-			esc_html_e('Sorry, no posts matched your criteria.');
-		}
-		// Restore original Post Data.
-		wp_reset_postdata();
-		?>
+	<div class="w-full relative min-h-32">
 		<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:!transform-none">
 			<?php
 			$posts = get_posts($args);
@@ -110,11 +96,9 @@ $cta = get_field('cta');
 					<p><?php echo get_the_excerpt($post->ID); ?></p>
 					<a href="<?php echo get_permalink($post->ID); ?>">Czytaj więcej</a>
 				</li>
-
 			<?php
 			endforeach;
 			?>
-
 		</ul>
 		<div class="w-full p-10 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
 			<span class="mx-auto block size-7 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
