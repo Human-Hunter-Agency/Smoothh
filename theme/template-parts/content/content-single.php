@@ -83,6 +83,7 @@
 			</li>
 		<?php endforeach; ?>
 	</ul>
+
 	<?php
 	$i = 0;
 	foreach ($categories as $category) :
@@ -107,10 +108,12 @@
 			
 			<?php
 				endforeach;
-
-				if($count > $visible_posts ) :
 			?>
-				<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="flex gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200">
+				<div class="w-full p-10 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
+					<span class="mx-auto block size-7 border-2 border-solid border-secondary border-b-transparent animate-spin"></span>
+				</div>
+
+				<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="<?php if ($count <= $visible_posts) {echo 'hidden';} ?>flex gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200">
 					Więcej wpisów
 					<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
@@ -118,7 +121,6 @@
                     </svg>
                 </button>
 			<?php 
-				endif;
 			endif; 
 			?>
 		</div>

@@ -256,17 +256,21 @@ function initRelatedPosts(){
 	const tabs = Array.from(tabButtons).reduce((acc,val) => {
 		const id = val.dataset.jsTabBtn;
 		const contentEl = document.querySelector(`[data-js="tab-content-${id}"]`)
+		const loadMoreBtn = document.querySelector(`[data-js="tab-loadmore-${id}"]`)
+		const loaderEl = document.querySelector(`[data-js="tab-loader-${id}"]`)
 		const postCount = contentEl.querySelectorAll('.post-tile').length
 		return ({ ...acc, [id]: {
 			id: id,
 			tabBtn: val,
 			contentEl: contentEl,
+			loaderEl: loaderEl,
+			loadMoreBtn: loadMoreBtn,
 			postCount: postCount
 		}})
 	},{})
 
 	Object.values(tabs).forEach(tab => {
-		tab.tabBtn.addEventListener('click',()=>{
+		tab.tabBtn.addEventListener('click',async ()=>{
 			Object.values(tabs).forEach(tab => {
 				tab.tabBtn.classList.remove('active');
 				tab.contentEl.classList.add('hidden')
@@ -274,7 +278,32 @@ function initRelatedPosts(){
 
 			tab.tabBtn.classList.add('active')
 			tab.contentEl.classList.remove('hidden')
+			if (tab.postCount == 0) {
+				tab.loaderEl.classList.remove('hidden')
+				const posts = await loadPosts(tab.id,1)
+				console.log(posts);
+				tab.postCount += posts.length
+				tab.loaderEl.classList.add('hidden')
+			}
 		})
 	})
+}
 
+async function loadPosts(catId,page,exclude=''){
+	const perPage = 6
+	const baseUrl = 'https://smoothh.domain.org.pl/wp-json/wp/v2/posts'
+	const params = `/?_fields=featured_media,excerpt,title,link&categories=${catId}&exclude=${exclude}&per_page=${perPage}&page=${page}`
+	const url = baseUrl + params
+
+	try {
+        const response = await fetch(url);        
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching posts:', error.message);
+        return null;
+    }
 }
