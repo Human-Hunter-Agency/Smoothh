@@ -23,7 +23,7 @@
 	<?php smoothh_post_thumbnail(); ?>
 
 	<div <?php smoothh_content_class( 'entry-content' ); ?>>
-		<!-- <?php the_excerpt(); ?> -->
+		<?php the_excerpt(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

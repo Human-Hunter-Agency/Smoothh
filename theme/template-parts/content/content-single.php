@@ -96,7 +96,7 @@
 		);
 	?>
 		<div class="w-full relative min-h-32 <?php if ($i !== 0) {echo 'hidden';} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
-			<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:justify-center xl:!transform-none">
+			<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:!transform-none">
 			<?php if ($i === 0) :
 				++$i;
 				$posts = get_posts($args);

@@ -192,7 +192,7 @@ footer#page-footer .footer-bottom-menu{
 }
 
 .post-tile img{
-	@apply relative mb-5 rounded-t-[14px] overflow-hidden object-cover w-full h-[120px] md:h-[220px]
+	@apply relative mb-5 rounded-t-[14px] overflow-hidden object-cover w-full h-[120px] md:h-[220px] indent-[-9999px] text-[0px]
 }
 
 .post-tile img::after{
@@ -206,6 +206,9 @@ footer#page-footer .footer-bottom-menu{
 
 .post-tile p {
 	@apply text-center text-sm md:text-base italic font-medium px-3 md:px-6 pb-3 md:pb-6
+}
+.post-tile p a {
+	@apply hidden
 }
 
 .post-tile a{
