@@ -71,7 +71,7 @@ get_header();
 /* CTA */
 
 	$cta = get_field('cta');
-	echo $cta;
+
 	if ($cta) {
 		$background = $cta['background'];
 		if ($background['url']) {
@@ -82,6 +82,7 @@ get_header();
 	}
 
 ?>
+<?php echo get_fields() ?>
 
 <div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
 
@@ -92,11 +93,11 @@ get_header();
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
 
     <div class="relative z-0 flex flex-col items-center justify-center container">
-        <?php if ($header) : ?>
+        <?php if (isset($header)) : ?>
             <h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9" ><?php echo esc_html($header); ?></h1>
         <?php endif; ?>
 
-        <?php if( $button ): 
+        <?php if( isset($button) ): 
             $btn_url = $button['url'];
             $btn_title = $button['title'];
             $btn_target = $button['target'] ? $button['target'] : '_self';
