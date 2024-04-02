@@ -263,9 +263,11 @@ function initRelatedPosts(){
 			id: id,
 			tabBtn: val,
 			contentEl: contentEl,
+			contentUlEl: contentEl.querySelector('ul'),
 			loaderEl: loaderEl,
 			loadMoreBtn: loadMoreBtn,
-			postCount: postCount
+			postCount: postCount,
+			page: postCount > 0 ? 1 : 0
 		}})
 	},{})
 
@@ -280,9 +282,12 @@ function initRelatedPosts(){
 			tab.contentEl.classList.remove('hidden')
 			if (tab.postCount == 0) {
 				tab.loaderEl.classList.remove('hidden')
-				const posts = await loadPosts(tab.id,1)
-				if (posts) {
+				const postsData = await loadPosts(tab.id,++tab.page)
+				if (postsData.posts) {
 					console.log(posts);
+
+					insertPosts(contentUlEl,posts)
+
 					tab.postCount += posts.length
 				}
 				tab.loaderEl.classList.add('hidden')
@@ -302,10 +307,26 @@ async function loadPosts(catId,page,exclude=''){
         if (!response.ok) {
             throw new Error('Failed to fetch data');
         }
+        const totalPages = response.headers.get('X-WP-TotalPages');
         const data = await response.json();
-        return data;
+        return { posts: data, totalPages: totalPages };
     } catch (error) {
         console.error('Error fetching posts:', error.message);
-        return null;
+        return { posts: null, totalPages: null };
     }
+}
+
+function insertPosts(container,posts){
+	let combinedHTML = ''
+	posts.forEach(post=>{
+		combinedHTML += 
+		`<li class="post-tile">
+			<img src="${post.fimg_url}" alt="${post.title}">
+			<h3>${post.title}</h3>
+			<p>${post.excerpt}</p>
+			<a href="${post.link}">Czytaj więcej</a>
+		</li>`
+
+	})
+	container.insertAdjacentHTML('beforeend',combinedHTML)
 }

@@ -102,8 +102,10 @@
 				$posts = get_posts($args);
 				foreach ($posts as $post) : ?>
 				<li class="post-tile">
-					<h4><?php echo $post->post_title; ?></h4>
+					<img src="<?php echo get_the_post_thumbnail_url($post->ID) ?>" alt="<?php echo $post->post_title; ?>">
+					<h3><?php echo $post->post_title; ?></h3>
 					<p><?php echo get_the_excerpt($post->ID); ?></p>
+					<button>Czytaj więcej</button>
 				</li>
 			
 			<?php
