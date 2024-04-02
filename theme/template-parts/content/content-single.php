@@ -9,6 +9,7 @@
 
  $title = get_field('title');
  $author = get_field('author');
+ $cta = get_field('cta');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -110,13 +111,8 @@
 	<?php endforeach; ?>
 </section>
 
-<?php
-/* CTA */
-
-	$cta = get_field('cta');
-
-?>
-
+<?php print_r(get_fields()) ?>
+<?php print_r($cta) ?>
 <?php if ($cta) : 
 	$background = $cta['background'];
 	if ($background['url']) {
