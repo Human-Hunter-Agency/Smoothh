@@ -82,6 +82,24 @@ $cta = get_field('cta');
 	);
 	?>
 	<div class="w-full relative min-h-32" data-js="tab-content-">
+		<?php
+		// The Query.
+		$the_query = new WP_Query($args);
+
+		// The Loop.
+		if ($the_query->have_posts()) {
+			echo '<ul>';
+			while ($the_query->have_posts()) {
+				$the_query->the_post();
+				echo '<li>' . esc_html(get_the_title()) . '</li>';
+			}
+			echo '</ul>';
+		} else {
+			esc_html_e('Sorry, no posts matched your criteria.');
+		}
+		// Restore original Post Data.
+		wp_reset_postdata();
+		?>
 		<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:!transform-none">
 			<?php
 			$posts = get_posts($args);
@@ -96,6 +114,7 @@ $cta = get_field('cta');
 			<?php
 			endforeach;
 			?>
+
 		</ul>
 		<div class="w-full p-10 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
 			<span class="mx-auto block size-7 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
