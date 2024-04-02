@@ -256,7 +256,7 @@ function initRelatedPosts(){
 	const tabs = Array.from(tabButtons).reduce((acc,val) => {
 		const id = val.dataset.jsTabBtn;
 		const contentEl = document.querySelector(`[data-js="tab-content-${id}"]`)
-		const postCount = currentEl.querySelectorAll('.post-tile').length
+		const postCount = contentEl.querySelectorAll('.post-tile').length
 		return ({ ...acc, [id]: {
 			id: id,
 			tabBtn: val,
