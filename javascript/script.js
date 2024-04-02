@@ -294,7 +294,7 @@ function initRelatedPosts(){
 async function loadPosts(catId,page,exclude=''){
 	const perPage = 6
 	const baseUrl = 'https://smoothh.domain.org.pl/wp-json/wp/v2/posts'
-	const params = `/?_fields=excerpt,title,link,fimg_url&categories=${catId}&exclude=${exclude}&per_page=${perPage}&page=${page}`
+	const params = `/?_fields=excerpt,title,link,featured_media,fimg_url&categories=${catId}&exclude=${exclude}&per_page=${perPage}&page=${page}`
 	const url = baseUrl + params
 
 	try {
