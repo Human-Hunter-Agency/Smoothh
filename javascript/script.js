@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initLogosSwipers();
 	initDefaultSwipers();
 	initDropdowns();
-	initCvFileLabelText()
+	initCvFileLabelText();
+	initRelatedPosts()
 });
 
 function initMenuCollapse() {
@@ -270,7 +271,7 @@ function initRelatedPosts(){
 				tab.tabBtn.classList.remove('active');
 				tab.contentEl.classList.add('hidden')
 			})
-			
+
 			btn.classList.add('active')
 			tabs.contentEl.classList.remove('hidden')
 		})
