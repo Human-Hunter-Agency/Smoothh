@@ -287,7 +287,7 @@ function initRelatedPosts(){
 					let postsList = postsData.posts
 					console.log(postsList);
 
-					insertPosts(contentUlEl,postsList)
+					insertPosts(tab.contentUlEl,postsList)
 
 					tab.postCount += postsList.length
 				}
