@@ -281,8 +281,10 @@ function initRelatedPosts(){
 			if (tab.postCount == 0) {
 				tab.loaderEl.classList.remove('hidden')
 				const posts = await loadPosts(tab.id,1)
-				console.log(posts);
-				tab.postCount += posts.length
+				if (posts) {
+					console.log(posts);
+					tab.postCount += posts.length
+				}
 				tab.loaderEl.classList.add('hidden')
 			}
 		})
@@ -292,7 +294,7 @@ function initRelatedPosts(){
 async function loadPosts(catId,page,exclude=''){
 	const perPage = 6
 	const baseUrl = 'https://smoothh.domain.org.pl/wp-json/wp/v2/posts'
-	const params = `/?_fields=fimg_url,excerpt,title,link&categories=${catId}&exclude=${exclude}&per_page=${perPage}&page=${page}`
+	const params = `/?categories=${catId}&exclude=${exclude}&per_page=${perPage}&page=${page}`
 	const url = baseUrl + params
 
 	try {
