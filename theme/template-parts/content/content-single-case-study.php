@@ -68,13 +68,15 @@ $cta = get_field('cta');
 			?>
 		</div><!-- .entry-content -->
 		<aside class="md:basis-1/4 lg:shrink-0 ">
-			<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Najważniejsze informacje</h5>
-			<div class="case-study-info-box">
-				<p><span class="font-bold">Klient: </span><?php echo $client; ?></p>
-				<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
-				<p><span class="font-bold">Parametr: </span><?php echo $param1; ?></p>
-				<p class="mb-4"><span class="font-bold">Parametr: </span><?php echo $param2; ?></p>
-				<p><?php echo $shortDescription; ?></p>
+			<div class="aside-container p-5 border-[1px] border-[#888888] rounded-[15px]">
+				<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Najważniejsze informacje</h5>
+				<div class="case-study-info-box">
+					<p><span class="font-bold">Klient: </span><?php echo $client; ?></p>
+					<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
+					<p><span class="font-bold">Parametr: </span><?php echo $param1; ?></p>
+					<p class="mb-4"><span class="font-bold">Parametr: </span><?php echo $param2; ?></p>
+					<p><?php echo $shortDescription; ?></p>
+				</div>
 			</div>
 		</aside>
 	</div>
