@@ -43,7 +43,8 @@ get_header();
 	foreach ($categories as $category) :
 		$args = array(
 			'category' => $category->term_id,
-			'numberposts' => 6
+			'numberposts' => 6,
+			'exclude' => get_the_ID()
 		);
 	?>
 		<div class="w-full relative min-h-32 <?php if ($i !== 0) {echo 'hidden';} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
