@@ -112,7 +112,7 @@
 			?>
 			</ul>
 				<div class="w-full p-10 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
-					<span class="mx-auto block size-7 border-2 border-solid border-secondary border-b-transparent animate-spin"></span>
+					<span class="mx-auto block size-7 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
 				</div>
 			<?php if ($i === 0) :?>
 				<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="<?php if ($count <= $visible_posts) {echo 'hidden';} ?>flex gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200">
