@@ -34,7 +34,7 @@ get_header();
 		$categories = get_categories();
 		foreach ($categories as $category) : ?>
 			<li class="flex-1">
-				<button data-js="<?php echo 'tab-btn-' . $category->id; ?>" class="w-full px-5 py-2 font-semibold rounded-[10px] text-base bg-white text-primary hover:bg-primary/10 transition duration-300 whitespace-nowrap"><?php echo $category->name ?></button>
+				<button data-js="<?php echo 'tab-btn-' . $category->term_id; ?>" class="w-full px-5 py-2 font-semibold rounded-[10px] text-base bg-white text-primary hover:bg-primary/10 transition duration-300 whitespace-nowrap"><?php echo $category->name ?></button>
 			</li>
 		<?php endforeach; ?>
 	</ul>
@@ -42,13 +42,12 @@ get_header();
 	$i = 0;
 	foreach ($categories as $category) :
 		$args = array(
-			'category' => $category->id,
+			'category' => $category->term_id,
 			'numberposts' => 6,
 			'exclude' => get_the_ID()
 		);
-		echo $category
 	?>
-		<div class="w-full relative min-h-32 <?php if ($i !== 0) {echo 'hidden';} ?>" data-js="<?php echo 'tab-content-' . $category->id; ?>">
+		<div class="w-full relative min-h-32 <?php if ($i !== 0) {echo 'hidden';} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
 			<?php 
 			if ($i === 0) :
 				++$i;
