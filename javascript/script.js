@@ -284,11 +284,12 @@ function initRelatedPosts(){
 				tab.loaderEl.classList.remove('hidden')
 				const postsData = await loadPosts(tab.id,++tab.page)
 				if (postsData.posts) {
-					console.log(posts);
+					let postsList = postsData.posts
+					console.log(postsList);
 
-					insertPosts(contentUlEl,posts)
+					insertPosts(contentUlEl,postsList)
 
-					tab.postCount += posts.length
+					tab.postCount += postsList.length
 				}
 				tab.loaderEl.classList.add('hidden')
 			}
