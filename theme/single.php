@@ -82,7 +82,7 @@ get_header();
 	}
 
 ?>
-<?php echo get_fields() ?>
+<?php print_r(get_fields()) ?>
 
 <div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
 
