@@ -13,6 +13,7 @@ $author = get_field('author');
 $client = get_field('klient');
 $param1 = get_field('parametr_1');
 $param2 = get_field('parametr_2');
+$shortDescription = get_field('krotki_opis');
 $customer_logos = get_field('customer_logos');
 $cta = get_field('cta');
 ?>
@@ -73,7 +74,7 @@ $cta = get_field('cta');
 				<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
 				<p><span class="font-bold">Parametr: </span><?php echo $param1; ?></p>
 				<p class="mb-4"><span class="font-bold">Parametr: </span><?php echo $param2; ?></p>
-				<p>Nulla id tellus scelerisque, fringilla ex vitae, cursus tortor. Pellentesque vitae auctor dolor. Donec rhoncus risus eget scelerisque bibendum. Aliquam erat volutpat. Integer nec orci congue libero ultrices placerat ut quis mi. Praesent nec accumsan massa, nec laoreet dolor. Aliquam erat volutpat. Integer nec orci congue libero ultrices placerat ut quis mi. Praesent nec accumsan massa, nec laoreet dolor. </p>
+				<p><?php echo $shortDescription; ?></p>
 			</div>
 		</aside>
 	</div>
