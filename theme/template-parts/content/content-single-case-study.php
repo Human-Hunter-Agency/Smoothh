@@ -65,8 +65,10 @@ $cta = get_field('cta');
 		<aside class="md:basis-1/4 lg:shrink-0 ">
 			<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Najważniejsze informacje</h5>
 			<div class="case-study-info-box">
-				<p><span class="font-semibold">Kient: </span>Klient X</p>
-				<p><span class="font-semibold">Data: </span><?php echo $formatted_time; ?></p>
+				<p><span class="font-bold">Kient: </span>Klient X</p>
+				<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
+				<p><span class="font-bold">Parametr: </span><?php echo '#1'; ?></p>
+				<p class="mb-4"><span class="font-bold">Parametr: </span><?php echo '#2'; ?></p>
 				<p>Nulla id tellus scelerisque, fringilla ex vitae, cursus tortor. Pellentesque vitae auctor dolor. Donec rhoncus risus eget scelerisque bibendum. Aliquam erat volutpat. Integer nec orci congue libero ultrices placerat ut quis mi. Praesent nec accumsan massa, nec laoreet dolor. Aliquam erat volutpat. Integer nec orci congue libero ultrices placerat ut quis mi. Praesent nec accumsan massa, nec laoreet dolor. </p>
 			</div>
 		</aside>
