@@ -265,15 +265,15 @@ function initRelatedPosts(){
 		}})
 	},{})
 
-	tabButtons.forEach(btn => {
-		btn.addEventListener('click',()=>{
+	Object.values(tabs).forEach(tab => {
+		tab.tabBtn.addEventListener('click',()=>{
 			Object.values(tabs).forEach(tab => {
 				tab.tabBtn.classList.remove('active');
 				tab.contentEl.classList.add('hidden')
 			})
 
-			btn.classList.add('active')
-			tabs.contentEl.classList.remove('hidden')
+			tab.tabBtn.classList.add('active')
+			tab.contentEl.classList.remove('hidden')
 		})
 	})
 
