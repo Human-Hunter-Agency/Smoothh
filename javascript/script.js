@@ -246,3 +246,34 @@ function initCvFileLabelText(){
 		}
 	})
 }
+
+function initRelatedPosts(){
+	const container = document.getElementById('posts-related')
+	if (!container) return
+
+	const tabButtons = document.querySelectorAll('[data-js-tab-btn]')
+	const tabs = Array.from(tabButtons).reduce((acc,val) => {
+		const id = val.dataset.jsTabBtn;
+		const contentEl = document.querySelector(`[data-js="tab-content-${id}"]`)
+		const postCount = currentEl.querySelectorAll('.post-tile').length
+		return ({ ...acc, [id]: {
+			id: id,
+			tabBtn: val,
+			contentEl: contentEl,
+			postCount: postCount
+		}})
+	},{})
+
+	tabButtons.forEach(btn => {
+		btn.addEventListener('click',()=>{
+			Object.values(tabs).forEach(tab => {
+				tab.tabBtn.classList.remove('active');
+				tab.contentEl.classList.add('hidden')
+			})
+			
+			btn.classList.add('active')
+			tabs.contentEl.classList.remove('hidden')
+		})
+	})
+
+}

@@ -71,14 +71,15 @@
 
 </article><!-- #post-${ID} -->
 
-<section class="container my-10 md:mt-20 md:mb-16">
+<section id="posts-related" class="container my-10 md:mt-20 md:mb-16">
 	<h2 class="text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe materiały eksperckie z naszego bloga</h2>
 	<ul class="p-2 rounded-2xl bg-[#F2F2F2] flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-5 md:mb-10">
 		<?php
 		$categories = get_categories();
+		$i = 0;
 		foreach ($categories as $category) : ?>
 			<li class="flex-1">
-				<button data-js="<?php echo 'tab-btn-' . $category->term_id; ?>" class="w-full px-5 py-2 font-semibold rounded-[10px] text-base bg-white text-primary hover:bg-primary/10 transition duration-300 whitespace-nowrap"><?php echo $category->name ?></button>
+				<button data-js-tab-btn="<?php echo $category->term_id; ?>" class="<?php if($i++ === 0){echo 'active';} ?> tab-btn"><?php echo $category->name ?></button>
 			</li>
 		<?php endforeach; ?>
 	</ul>
@@ -99,14 +100,14 @@
 				++$i;
 				$posts = get_posts($args);
 				foreach ($posts as $post) : ?>
-				<div>
+				<div class="post-tile">
 					<h4><?php echo $post->post_title; ?></h4>
 					<p><?php echo get_the_excerpt($post->ID); ?></p>
 				</div>
 			
 			<?php
 				endforeach;
-				echo $count;
+
 				if($count > $visible_posts ) :
 			?>
 				<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="flex gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200">
