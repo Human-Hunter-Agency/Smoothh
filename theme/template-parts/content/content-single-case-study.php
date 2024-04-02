@@ -63,10 +63,8 @@ $cta = get_field('cta');
 			?>
 		</div><!-- .entry-content -->
 		<aside class="md:basis-1/4 lg:shrink-0 ">
-			<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Kategorie Case Study</h5>
-			<ul class="list-none [&_.cat-item]:mb-4 md:[&_.cat-item]:mb-6 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
-				<?php wp_list_categories(array('title_li' => '')) ?>
-			</ul>
+			<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Najważniejsze informacje</h5>
+
 		</aside>
 	</div>
 
@@ -74,25 +72,14 @@ $cta = get_field('cta');
 
 <section id="posts-related" class="container my-10 md:mt-20 md:mb-16">
 	<h2 class="text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe case study ze zrealizowanych przez SMOOTHH® projektów rekrutacyjnych:</h2>
-	<ul class="p-2 rounded-2xl bg-[#F2F2F2] flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-5 md:mb-10">
-		<?php
-		$categories = get_categories();
-		$i = 0;
-		foreach ($categories as $category) : ?>
-			<li class="flex-1">
-				<button data-js-tab-btn="<?php echo $category->term_id; ?>" class="<?php if ($i++ === 0) {
-																																							echo 'active';
-																																						} ?> tab-btn"><?php echo $category->name ?></button>
-			</li>
-		<?php endforeach; ?>
-	</ul>
 
 	<?php
 	$i = 0;
 	foreach ($categories as $category) :
 		$count = $category->category_count;
-		$visible_posts = 6;
+		$visible_posts = 3;
 		$args = array(
+			'post_type' => 'case-study',
 			'category' => $category->term_id,
 			'numberposts' => $visible_posts,
 			'exclude' => get_the_ID()
