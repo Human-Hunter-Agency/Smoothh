@@ -71,7 +71,7 @@
 
 </article><!-- #post-${ID} -->
 
-<section class="container mt-10 md:mt-20">
+<section class="container my-10 md:mt-20 md:mb-16">
 	<h2 class="text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe materiały eksperckie z naszego bloga</h2>
 	<ul class="p-2 rounded-2xl bg-[#F2F2F2] flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-5 md:mb-10">
 		<?php
