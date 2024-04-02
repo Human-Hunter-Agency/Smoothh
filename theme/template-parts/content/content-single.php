@@ -67,5 +67,6 @@
 			</ul>
 		</aside>
 	</div>
+	<?php print_r(get_fields()) ?>
 
 </article><!-- #post-${ID} -->
