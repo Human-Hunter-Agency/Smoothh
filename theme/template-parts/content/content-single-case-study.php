@@ -10,8 +10,10 @@
 
 $title = get_field('title');
 $author = get_field('author');
+$client = get_field('klient');
 $param1 = get_field('parametr_1');
 $param2 = get_field('parametr_2');
+$customer_logos = get_field('customer_logos');
 $cta = get_field('cta');
 ?>
 
@@ -67,7 +69,7 @@ $cta = get_field('cta');
 		<aside class="md:basis-1/4 lg:shrink-0 ">
 			<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Najważniejsze informacje</h5>
 			<div class="case-study-info-box">
-				<p><span class="font-bold">Kient: </span>Klient X</p>
+				<p><span class="font-bold">Klient: </span><?php echo $client; ?></p>
 				<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
 				<p><span class="font-bold">Parametr: </span><?php echo $param1; ?></p>
 				<p class="mb-4"><span class="font-bold">Parametr: </span><?php echo $param2; ?></p>
