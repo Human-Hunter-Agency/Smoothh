@@ -74,54 +74,33 @@ $cta = get_field('cta');
 	<h2 class="text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe case study ze zrealizowanych przez SMOOTHH® projektów rekrutacyjnych:</h2>
 
 	<?php
-	$i = 0;
-	foreach ($categories as $category) :
-		$count = $category->category_count;
-		$visible_posts = 3;
-		$args = array(
-			'post_type' => 'case-study',
-			'category' => $category->term_id,
-			'numberposts' => $visible_posts,
-			'exclude' => get_the_ID()
-		);
+	$visible_posts = 3;
+	$args = array(
+		'post_type' => 'case-study',
+		'numberposts' => $visible_posts,
+		'exclude' => get_the_ID()
+	);
 	?>
-		<div class="w-full relative min-h-32 <?php if ($i !== 0) {
-																						echo 'hidden';
-																					} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
-			<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:!transform-none">
-				<?php if ($i === 0) :
-					++$i;
-					$posts = get_posts($args);
-					foreach ($posts as $post) : ?>
-						<li class="post-tile">
-							<img src="<?php echo get_the_post_thumbnail_url($post->ID) ?>" alt="<?php echo $post->post_title; ?>">
-							<h3><?php echo $post->post_title; ?></h3>
-							<p><?php echo get_the_excerpt($post->ID); ?></p>
-							<a href="<?php echo get_permalink($post->ID); ?>">Czytaj więcej</a>
-						</li>
+	<div class="w-full relative min-h-32" data-js="tab-content-">
+		<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:!transform-none">
+			<?php
+			$posts = get_posts($args);
+			foreach ($posts as $post) : ?>
+				<li class="post-tile">
+					<img src="<?php echo get_the_post_thumbnail_url($post->ID) ?>" alt="<?php echo $post->post_title; ?>">
+					<h3><?php echo $post->post_title; ?></h3>
+					<p><?php echo get_the_excerpt($post->ID); ?></p>
+					<a href="<?php echo get_permalink($post->ID); ?>">Czytaj więcej</a>
+				</li>
 
-				<?php
-					endforeach;
-				endif;
-				?>
-			</ul>
-			<div class="w-full p-10 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
-				<span class="mx-auto block size-7 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
-			</div>
-			<?php if ($i === 0) : ?>
-				<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="<?php if ($count <= $visible_posts) {
-																																												echo 'hidden';
-																																											} ?>flex gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200">
-					Więcej wpisów
-					<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
-						<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
-					</svg>
-				</button>
-			<?php endif; ?>
+			<?php
+			endforeach;
+			?>
+		</ul>
+		<div class="w-full p-10 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
+			<span class="mx-auto block size-7 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
 		</div>
-
-	<?php endforeach; ?>
+	</div>
 </section>
 
 <?php if ($cta) :
