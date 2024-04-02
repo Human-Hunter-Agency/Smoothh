@@ -10,6 +10,8 @@
 
 $title = get_field('title');
 $author = get_field('author');
+$param1 = get_field('parametr_1');
+$param2 = get_field('parametr_2');
 $cta = get_field('cta');
 ?>
 
@@ -67,8 +69,8 @@ $cta = get_field('cta');
 			<div class="case-study-info-box">
 				<p><span class="font-bold">Kient: </span>Klient X</p>
 				<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
-				<p><span class="font-bold">Parametr: </span><?php echo '#1'; ?></p>
-				<p class="mb-4"><span class="font-bold">Parametr: </span><?php echo '#2'; ?></p>
+				<p><span class="font-bold">Parametr: </span><?php echo $param1; ?></p>
+				<p class="mb-4"><span class="font-bold">Parametr: </span><?php echo $param2; ?></p>
 				<p>Nulla id tellus scelerisque, fringilla ex vitae, cursus tortor. Pellentesque vitae auctor dolor. Donec rhoncus risus eget scelerisque bibendum. Aliquam erat volutpat. Integer nec orci congue libero ultrices placerat ut quis mi. Praesent nec accumsan massa, nec laoreet dolor. Aliquam erat volutpat. Integer nec orci congue libero ultrices placerat ut quis mi. Praesent nec accumsan massa, nec laoreet dolor. </p>
 			</div>
 		</aside>
