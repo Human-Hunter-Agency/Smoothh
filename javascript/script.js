@@ -322,9 +322,9 @@ function insertPosts(container,posts){
 	posts.forEach(post=>{
 		combinedHTML += 
 		`<li class="post-tile">
-			<img src="${post.fimg_url}" alt="${post.title}">
-			<h3>${post.title}</h3>
-			<p>${post.excerpt}</p>
+			<img src="${post.fimg_url}" alt="${post.title.rendered}">
+			<h3>${post.title.rendered}</h3>
+			${post.excerpt.rendered}
 			<a href="${post.link}">Czytaj więcej</a>
 		</li>`
 

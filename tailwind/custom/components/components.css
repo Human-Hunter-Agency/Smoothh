@@ -196,6 +196,7 @@ footer#page-footer .footer-bottom-menu{
 }
 
 .post-tile img::after{
+	content: '';
 	@apply absolute z-10 inset-0 bg-gradient-to-b from-primary/20 to-secondary/20
 }
 
