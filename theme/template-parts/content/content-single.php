@@ -111,8 +111,6 @@
 	<?php endforeach; ?>
 </section>
 
-<?php print_r(get_fields()) ?>
-<?php print_r($cta) ?>
 <?php if ($cta) : 
 	$background = $cta['background'];
 	if ($background['url']) {
