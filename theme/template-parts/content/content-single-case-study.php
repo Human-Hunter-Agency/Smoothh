@@ -13,9 +13,10 @@ $author = get_field('author');
 $client = get_field('klient');
 $parametersList = get_field('parameters');
 $shortDescription = get_field('krotki_opis');
-$customer_logos = get_field('customer_logos');
 $cta = get_field('cta');
 $client_logos = get_field('client_logos', 'option');
+$header = $args['header'];
+$description = $args['description'];
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -158,13 +159,23 @@ $client_logos = get_field('client_logos', 'option');
 		<?php endif; ?>
 	</div>
 
-	<?php if ($client_logos) : ?>
-		<div class="flex flex-wrap gap-5 lg:gap-16 xl:gap-[68px] justify-center items-center">
-			<?php foreach ($client_logos as $logo) : ?>
-				<img class="object-contain grayscale w-[76px] md:w-36 xl:w-[188px]" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" alt="<?php echo $logo['title']; ?>" />
-			<?php endforeach; ?>
+	<div class="relative py-10 md:py-20">
+		<div class="container">
+			<?php if ($header) : ?>
+				<h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+					<?php echo esc_html($header); ?>
+				</h2>
+			<?php endif; ?>
+			<?php if ($description) : ?>
+				<div class="prose-smoothh prose md:prose-xl text-center mb-10 md:mb-14"><?php echo $description; ?></div>
+			<?php endif; ?>
+			<div class="flex flex-wrap gap-5 lg:gap-16 xl:gap-[68px] justify-center items-center">
+				<?php foreach ($client_logos as $logo) : ?>
+					<img class="object-contain grayscale w-[76px] md:w-36 xl:w-[188px]" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" alt="<?php echo $logo['title']; ?>" />
+				<?php endforeach; ?>
+			</div>
 		</div>
-	<?php endif; ?>
+	</div>
 
 
 </section>
