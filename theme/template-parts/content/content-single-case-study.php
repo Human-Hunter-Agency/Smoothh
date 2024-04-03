@@ -11,7 +11,8 @@
 $title = get_field('title');
 $author = get_field('author');
 $client = get_field('klient');
-$parametersList = $args['parameters'];
+// $parametersList = $args['parameters'];
+$parametersList = get_field('parameters');
 $shortDescription = get_field('krotki_opis');
 $customer_logos = get_field('customer_logos');
 $cta = get_field('cta');
