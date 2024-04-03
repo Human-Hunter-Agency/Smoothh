@@ -122,7 +122,7 @@ $cta = get_field('cta');
 									<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo $post->post_title; ?>">
 									<div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
 								</div>
-							<?php endif; ?>
+							<?php endif ?>
 							<div class="text-center p-3 md:p-6 !pt-0">
 								<?php if ($post->post_title) : ?>
 									<h3 class="text-base md:text-xl text-primary mb-9 font-semibold"><?php echo $post->post_title; ?></h3>
