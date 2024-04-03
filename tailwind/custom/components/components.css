@@ -188,7 +188,7 @@ footer#page-footer .footer-bottom-menu{
 }
 
 .post-tile{
-	@apply !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] border-2 border-[#EFEFEF] rounded-2xl
+	@apply !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl
 }
 
 .post-tile img{
