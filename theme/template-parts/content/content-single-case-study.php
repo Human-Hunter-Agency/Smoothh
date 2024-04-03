@@ -11,8 +11,7 @@
 $title = get_field('title');
 $author = get_field('author');
 $client = get_field('klient');
-$param1 = get_field('parametr_1');
-$param2 = get_field('parametr_2');
+$parametersList = $args['parametry'];
 $shortDescription = get_field('krotki_opis');
 $customer_logos = get_field('customer_logos');
 $cta = get_field('cta');
@@ -73,8 +72,13 @@ $cta = get_field('cta');
 				<div class="case-study-info-box">
 					<p><span class="font-bold">Klient: </span><?php echo $client; ?></p>
 					<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
-					<p><span class="font-bold">Parametr: </span><?php echo $param1; ?></p>
-					<p class="mb-4"><span class="font-bold">Parametr: </span><?php echo $param2; ?></p>
+					<ul>
+						<?php foreach ($parametersList as $parameter) : ?>
+							<li>
+								<p class="mb-4"><span class="font-bold"><?php echo $parameter['title'] . ': ' ?></span><?php echo $parameter['description']; ?></p>
+							</li>
+						<?php endforeach; ?>
+					</ul>
 					<p><?php echo $shortDescription; ?></p>
 				</div>
 			</div>
