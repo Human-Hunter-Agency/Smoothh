@@ -300,6 +300,8 @@ function initRelatedPosts(){
 				tab.loaderEl.classList.add('hidden')
 			}
 		})
+
+		tab.loadMoreBtn.addEventListener('click',loadMore)
 	})
 }
 
