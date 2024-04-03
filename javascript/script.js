@@ -285,7 +285,7 @@ function initRelatedPosts(){
 			}
 		})
 
-		tab.loadMoreBtn.addEventListener('click',loadMore(tab))
+		tab.loadMoreBtn.addEventListener('click',() => loadMore(tab))
 	})
 }
 
