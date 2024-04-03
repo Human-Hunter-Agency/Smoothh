@@ -324,7 +324,7 @@ function insertPosts(container,posts){
 	let combinedHTML = ''
 	posts.forEach(post=>{
 		combinedHTML += 
-		`<li class="post-tile">
+		`<li class="post-tile swiper-slide">
 			<img src="${post.fimg_url}" alt="${post.title.rendered}">
 			<h3>${post.title.rendered}</h3>
 			${post.excerpt.rendered}
