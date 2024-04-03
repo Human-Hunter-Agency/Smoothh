@@ -73,13 +73,15 @@ $cta = get_field('cta');
 					<p><span class="font-bold">Klient: </span><?php echo $client; ?></p>
 					<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
 					<?php echo $parametersList; ?>
-					<ul>
-						<?php foreach ($parametersList as $parameter) : ?>
-							<li>
-								<p class="mb-4"><span class="font-bold"><?php echo $parameter['title'] . ': ' ?></span><?php echo $parameter['description']; ?></p>
-							</li>
-						<?php endforeach; ?>
-					</ul>
+					<?php if ($parametersList) : ?>
+						<ul>
+							<?php foreach ($parametersList as $parameter) : ?>
+								<li>
+									<p class="mb-4"><span class="font-bold"><?php echo $parameter['title'] . ': ' ?></span><?php echo $parameter['description']; ?></p>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					<?php endif; ?>
 					<p><?php echo $shortDescription; ?></p>
 				</div>
 			</div>
