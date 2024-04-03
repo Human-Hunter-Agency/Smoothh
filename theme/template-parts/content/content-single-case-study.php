@@ -73,7 +73,7 @@ $cta = get_field('cta');
 				<div class="case-study-info-box">
 					<p><span class="font-bold">Klient: </span><?php echo $client; ?></p>
 					<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
-					<?php echo $parametersList; ?>
+					<?php print_r($parametersList); ?>
 					<?php if ($parametersList) : ?>
 						<ul>
 							<?php foreach ($parametersList as $parameter) : ?>
