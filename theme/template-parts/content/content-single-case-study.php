@@ -115,14 +115,14 @@ $cta = get_field('cta');
 		<?php if ($posts) : ?>
 			<div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
 				<div class="swiper-wrapper">
-					<?php foreach ($posts as $post) : ?> ?>
+					<?php foreach ($posts as $post) : ?>
 						<div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
 							<?php if (get_the_post_thumbnail_url($post->ID)) : ?>
 								<div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
 									<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo $post->post_title; ?>">
 									<div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
 								</div>
-							<?php endif ?>
+							<?php endif; ?>
 							<div class="text-center p-3 md:p-6 !pt-0">
 								<?php if ($post->post_title) : ?>
 									<h3 class="text-base md:text-xl text-primary mb-9 font-semibold"><?php echo $post->post_title; ?></h3>
