@@ -302,9 +302,9 @@ async function loadMore(tab){
 		tab.postCount += postsList.length
 
 		if (postsData.totalPages >= tab.page) {
-			tab.loadMoreBtn.classList.add('hidden')
+			tab.loadMoreBtn.classList.add('!hidden')
 		}else{
-			tab.loadMoreBtn.classList.remove('hidden')
+			tab.loadMoreBtn.classList.remove('!hidden')
 		}
 	}
 	tab.loaderEl.classList.add('hidden')
