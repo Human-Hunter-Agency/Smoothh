@@ -87,15 +87,14 @@ $cta = get_field('cta');
 	<h2 class="text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe case study ze zrealizowanych przez SMOOTHH® projektów rekrutacyjnych:</h2>
 
 	<?php
-	$visible_posts = 3;
 	$args = array(
 		'post_type' => 'case-study',
-		'numberposts' => $visible_posts,
+		'numberposts' => 5,
 		'exclude' => get_the_ID()
 	);
 	?>
 	<div class="w-full relative min-h-32">
-		<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:!transform-none">
+		<ul class="swiper-wrapper grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-x-[90px] xl:gap-y-20">
 			<?php
 			$posts = get_posts($args);
 			foreach ($posts as $post) : ?>
