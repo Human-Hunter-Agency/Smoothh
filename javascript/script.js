@@ -259,11 +259,13 @@ function initRelatedPosts(){
 		const loadMoreBtn = document.querySelector(`[data-js="tab-loadmore-${id}"]`)
 		const loaderEl = document.querySelector(`[data-js="tab-loader-${id}"]`)
 		const postCount = contentEl.querySelectorAll('.post-tile').length
+		const swiperEl = contentEl.querySelector('[data-js="swiper-tiles-mobile-categories"]')
 		return ({ ...acc, [id]: {
 			id: id,
 			tabBtn: val,
 			contentEl: contentEl,
 			contentUlEl: contentEl.querySelector('ul'),
+			swiper: initPostsSwiper(swiperEl),
 			loaderEl: loaderEl,
 			loadMoreBtn: loadMoreBtn,
 			postCount: postCount,
@@ -272,6 +274,7 @@ function initRelatedPosts(){
 	},{})
 
 	Object.values(tabs).forEach(tab => {
+		
 		tab.tabBtn.addEventListener('click',async ()=>{
 			Object.values(tabs).forEach(tab => {
 				tab.tabBtn.classList.remove('active');
@@ -330,4 +333,35 @@ function insertPosts(container,posts){
 
 	})
 	container.insertAdjacentHTML('beforeend',combinedHTML)
+}
+
+function initPostsSwiper(el){
+	if (!el) return
+	return new Swiper(el,{
+		spaceBetween: 20,
+		slidesPerView: 1.2,
+		enabled: true,
+		breakpoints:{
+			560:{
+				slidesPerView: 1.5,
+				spaceBetween: 20,
+				enabled: true,
+			},
+			768:{
+				slidesPerView: 2.2,
+				spaceBetween: 25,
+				enabled: true,
+			},
+			1000:{
+				slidesPerView: 2.5,
+				spaceBetween: 35,
+				enabled: true,
+			},
+			1280:{
+				slidesPerView: 'auto',
+				spaceBetween: 0,
+				enabled: false,
+			},
+		}
+	})
 }
