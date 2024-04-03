@@ -15,7 +15,6 @@ $parametersList = get_field('parameters');
 $shortDescription = get_field('krotki_opis');
 $cta = get_field('cta');
 $client_logos = get_field('client_logos', 'option');
-$header = get_field('header');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -90,8 +89,8 @@ $header = get_field('header');
 
 </article><!-- #post-${ID} -->
 
-<section id="posts-related" class="relative py-10 md:py-[60px] mb:pb-[60px]">
-	<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe case study ze zrealizowanych przez SMOOTHH® projektów rekrutacyjnych:</h2>
+<section id="posts-related" class="relative py-10 md:py-[120px] mb:pb-[60px]">
+	<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-14 text-center">Zobacz pozostałe case study ze zrealizowanych przez SMOOTHH® projektów rekrutacyjnych:</h2>
 
 	<?php
 	$args = array(
@@ -158,7 +157,9 @@ $header = get_field('header');
 		<?php endif; ?>
 	</div>
 
-	<?php if ($client_logos) : ?>
+	<?php if ($client_logos) :
+		$header = $client_logos['header']
+	?>
 		<div class="relative py-10 md:py-20">
 			<div class="container">
 				<?php if ($header) : ?>
@@ -187,7 +188,6 @@ $header = get_field('header');
 	$button = $cta['button'];
 ?>
 	<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
-
 		<?php if (isset($bg_url)) : ?>
 			<img src="<?php echo $bg_url; ?>" class="absolute inset-0 -z-20 object-cover h-full w-full">
 		<?php endif; ?>
