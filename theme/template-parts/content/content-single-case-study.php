@@ -131,11 +131,7 @@ $cta = get_field('cta');
 									<p class="text-sm md:text-base italic font-medium"><?php echo get_the_excerpt($post->ID); ?></p>
 								<?php endif; ?>
 							</div>
-							<?php if (get_permalink($post->ID)) :
-								$btn_url = $tile['button']['url'];
-								$btn_title = $tile['button']['title'];
-								$btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
-							?>
+							<?php if (get_permalink($post->ID)) : ?>
 								<a href="<?php echo get_permalink($post->ID); ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">Czytaj więcej></a>
 							<?php endif; ?>
 						</div>
