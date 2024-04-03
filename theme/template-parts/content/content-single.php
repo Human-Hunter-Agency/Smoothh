@@ -96,7 +96,7 @@
 		);
 	?>
 		<div class="w-full relative min-h-32 <?php if ($i !== 0) {echo 'hidden';} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
-			<ul class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-10 xl:gap-x-[90px] xl:gap-y-20">
+			<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-x-[90px] xl:gap-y-20">
 			<?php if ($i === 0) :
 				++$i;
 				$posts = get_posts($args);
@@ -117,7 +117,7 @@
 					<span class="mx-auto block size-7 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
 				</div>
 			<?php if ($i === 0) :?>
-				<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="<?php if ($count <= $visible_posts) {echo 'hidden';} ?>flex gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200">
+				<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="<?php if ($count >= $visible_posts) {echo 'hidden';} ?>flex gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200 disabled:pointer-events-none disabled:opacity-80">
 					Więcej wpisów
 					<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>

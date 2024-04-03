@@ -290,11 +290,40 @@ function initRelatedPosts(){
 					insertPosts(tab.contentUlEl,postsList)
 
 					tab.postCount += postsList.length
+
+					if (postsData.totalPages >= tab.page) {
+						tab.loadMoreBtn.classList.add('hidden')
+					}else{
+						tab.loadMoreBtn.classList.remove('hidden')
+					}
 				}
 				tab.loaderEl.classList.add('hidden')
 			}
 		})
 	})
+}
+
+async function loadMore(tab){
+	tab.loaderEl.classList.remove('hidden')
+	tab.loadMoreBtn.setAttribute('disabled',true)
+	const postsData = await loadPosts(tab.id,++tab.page)
+	if (postsData.posts) {
+		let postsList = postsData.posts
+		console.log(postsList);
+
+		insertPosts(tab.contentUlEl,postsList)
+
+		tab.postCount += postsList.length
+
+		if (postsData.totalPages >= tab.page) {
+			tab.loadMoreBtn.classList.add('hidden')
+		}else{
+			tab.loadMoreBtn.classList.remove('hidden')
+		}
+	}
+	tab.loaderEl.classList.add('hidden')
+	tab.loadMoreBtn.setAttribute('disabled',false)
+
 }
 
 async function loadPosts(catId,page,exclude=''){
