@@ -295,20 +295,17 @@ async function loadMore(tab){
 	const postsData = await loadPosts(tab.id,++tab.page)
 	if (postsData.posts) {
 		let postsList = postsData.posts
-		console.log(postsList);
-
 		insertPosts(tab.contentUlEl,postsList)
-
 		tab.postCount += postsList.length
 
 		if (postsData.totalPages >= tab.page) {
-			tab.loadMoreBtn.classList.add('!hidden')
-		}else{
 			tab.loadMoreBtn.classList.remove('!hidden')
+		}else{
+			tab.loadMoreBtn.classList.add('!hidden')
 		}
 	}
 	tab.loaderEl.classList.add('hidden')
-	tab.loadMoreBtn.setAttribute('disabled',false)
+	tab.loadMoreBtn.removeAttribute('disabled')
 
 }
 
@@ -337,7 +334,7 @@ function insertPosts(container,posts){
 	posts.forEach(post=>{
 		combinedHTML += 
 		`<li class="post-tile">
-			<img src="${post.fimg_url}" alt="${post.title.rendered}">
+			<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
 			<h3>${post.title.rendered}</h3>
 			${post.excerpt.rendered}
 			<a href="${post.link}">Czytaj więcej</a>
