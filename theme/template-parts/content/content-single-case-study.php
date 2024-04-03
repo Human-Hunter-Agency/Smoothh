@@ -163,7 +163,7 @@ $header = get_field('header');
 			<div class="container">
 				<?php if ($header) : ?>
 					<h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
-						<?php echo esc_html($header); ?>
+						<?php echo $header ?>
 					</h2>
 				<?php endif; ?>
 				<div class="flex flex-wrap gap-5 lg:gap-16 xl:gap-[68px] justify-center items-center">
