@@ -158,7 +158,8 @@ $client_logos = get_field('client_logos', 'option');
 	</div>
 
 	<?php if ($client_logos) :
-		$header = $client_logos['header'];
+		// $header = $client_logos['header'];
+		$header = $args['header'];
 		print_r($header)
 	?>
 		<div class="relative py-10 md:py-20">
