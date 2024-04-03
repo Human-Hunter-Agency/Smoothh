@@ -205,11 +205,11 @@ footer#page-footer .footer-bottom-menu{
 }
 
 .post-tile h3 {
-	@apply text-center text-base md:text-xl text-primary mb-9 font-semibold px-3 md:px-6 
+	@apply text-center text-base md:text-xl text-primary mb-9 font-semibold px-3 md:px-6 grow
 }
 
 .post-tile p {
-	@apply text-center text-sm md:text-base italic font-medium px-3 md:px-6 pb-3 md:pb-6
+	@apply text-center text-sm md:text-base italic font-medium px-3 md:px-6 pb-3 md:pb-6 grow
 }
 .post-tile p a {
 	@apply hidden
