@@ -298,7 +298,7 @@ async function loadMore(tab){
 		insertPosts(tab.contentUlEl,postsList)
 		tab.postCount += postsList.length
 
-		if (postsData.totalPages >= tab.page) {
+		if (postsData.totalPages > tab.page) {
 			tab.loadMoreBtn.classList.remove('!hidden')
 		}else{
 			tab.loadMoreBtn.classList.add('!hidden')
