@@ -71,11 +71,11 @@
 
 </article><!-- #post-${ID} -->
 
-<?php get_template_part('flexible-content/sections/blog-posts.php') ?>
+<?php get_template_part(get_template_file_directory_path().'/flexible-content/sections/blog-posts') ?>
 
 <?php if ($cta) : 
 	$background = $cta['background'];
-	if (isset($background) && $background['url']) {
+	if (isset($background) && isset($background['url']) && $background['url']) {
 		$bg_url = $background['url'];
 	}
 	$header = $cta['header'];
