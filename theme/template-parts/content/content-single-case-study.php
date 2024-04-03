@@ -167,7 +167,7 @@ $client_logos = get_field('client_logos', 'option');
 						<?php echo $header ?>
 					</h2>
 				<?php endif; ?>
-				<div class="flex flex-wrap gap-5 lg:gap-16 xl:gap-[68px] justify-center items-center">
+				<div class="flex flex-wrap gap-5 justify-center items-center">
 					<?php foreach ($client_logos as $logo) : ?>
 						<img class="object-contain grayscale w-[76px] md:w-36 xl:w-[188px]" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" alt="<?php echo $logo['title']; ?>" />
 					<?php endforeach; ?>
