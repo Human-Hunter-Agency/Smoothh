@@ -281,27 +281,11 @@ function initRelatedPosts(){
 			tab.tabBtn.classList.add('active')
 			tab.contentEl.classList.remove('hidden')
 			if (tab.postCount == 0) {
-				tab.loaderEl.classList.remove('hidden')
-				const postsData = await loadPosts(tab.id,++tab.page)
-				if (postsData.posts) {
-					let postsList = postsData.posts
-					console.log(postsList);
-
-					insertPosts(tab.contentUlEl,postsList)
-
-					tab.postCount += postsList.length
-
-					if (postsData.totalPages >= tab.page) {
-						tab.loadMoreBtn.classList.add('hidden')
-					}else{
-						tab.loadMoreBtn.classList.remove('hidden')
-					}
-				}
-				tab.loaderEl.classList.add('hidden')
+				loadMore(tab)
 			}
 		})
 
-		tab.loadMoreBtn.addEventListener('click',loadMore)
+		tab.loadMoreBtn.addEventListener('click',loadMore(tab))
 	})
 }
 
