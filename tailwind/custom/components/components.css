@@ -195,7 +195,7 @@ footer#page-footer .footer-bottom-menu{
 	@apply relative mb-5 rounded-t-[14px] overflow-hidden object-cover w-full h-[120px] md:h-[220px] indent-[-9999px] text-[0px]
 }
 
-.post-tile::before{
+.post-tile img::before{
 	content: '';
 	@apply absolute z-10 top-0 inset-x-0 rounded-t-[14px] h-[120px] md:h-[220px] bg-gradient-to-b from-primary/20 to-secondary/20
 }
