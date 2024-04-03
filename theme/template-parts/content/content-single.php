@@ -71,20 +71,18 @@
 
 </article><!-- #post-${ID} -->
 
-<section id="posts-related" class="my-10 md:mt-20 md:mb-16">
-	<div class="container">
-		<h2 class="text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe materiały eksperckie z naszego bloga</h2>
-		<ul class="p-2 rounded-2xl bg-[#F2F2F2] flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-5 md:mb-10">
-			<?php
-			$categories = get_categories();
-			$i = 0;
-			foreach ($categories as $category) : ?>
-				<li class="flex-1">
-					<button data-js-tab-btn="<?php echo $category->term_id; ?>" class="<?php if($i++ === 0){echo 'active';} ?> tab-btn"><?php echo $category->name ?></button>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-	</div>
+<section id="posts-related" class="container my-10 md:mt-20 md:mb-16">
+	<h2 class="text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-10 text-center">Zobacz pozostałe materiały eksperckie z naszego bloga</h2>
+	<ul class="p-2 rounded-2xl bg-[#F2F2F2] flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-5 md:mb-10">
+		<?php
+		$categories = get_categories();
+		$i = 0;
+		foreach ($categories as $category) : ?>
+			<li class="flex-1">
+				<button data-js-tab-btn="<?php echo $category->term_id; ?>" class="<?php if($i++ === 0){echo 'active';} ?> tab-btn"><?php echo $category->name ?></button>
+			</li>
+		<?php endforeach; ?>
+	</ul>
 
 	<?php
 	$i = 0;
@@ -98,25 +96,23 @@
 		);
 	?>
 		<div class="w-full relative min-h-32 <?php if ($i !== 0) {echo 'hidden';} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
-			<div class="swiper !container !overflow-visible" data-js="swiper-tiles-mobile-categories">
-				<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:!transform-none">
-				<?php if ($i === 0) :
-					++$i;
-					$posts = get_posts($args);
-					foreach ($posts as $post) : ?>
-					<li class="post-tile">
-						<img src="<?php echo get_the_post_thumbnail_url($post->ID) ?>" alt="<?php echo $post->post_title; ?>">
-						<h3><?php echo $post->post_title; ?></h3>
-						<p><?php echo get_the_excerpt($post->ID); ?></p>
-						<a href="<?php echo get_permalink($post->ID); ?>">Czytaj więcej</a>
-					</li>
-				
-				<?php
-					endforeach;
-					endif;
-				?>
-				</ul>
-			</div>
+			<ul class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:!transform-none">
+			<?php if ($i === 0) :
+				++$i;
+				$posts = get_posts($args);
+				foreach ($posts as $post) : ?>
+				<li class="post-tile">
+					<img src="<?php echo get_the_post_thumbnail_url($post->ID) ?>" alt="<?php echo $post->post_title; ?>">
+					<h3><?php echo $post->post_title; ?></h3>
+					<p><?php echo get_the_excerpt($post->ID); ?></p>
+					<a href="<?php echo get_permalink($post->ID); ?>">Czytaj więcej</a>
+				</li>
+			
+			<?php
+				endforeach;
+				endif;
+			?>
+			</ul>
 				<div class="w-full p-10 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
 					<span class="mx-auto block size-7 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
 				</div>
