@@ -94,7 +94,7 @@ $cta = get_field('cta');
 	);
 	?>
 
-	<div class="w-full relative min-h-32">
+	<div class="hidden w-full relative min-h-32">
 		<ul class="swiper-wrapper grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-x-[90px] xl:gap-y-20">
 			<?php
 			$posts = get_posts($args);
