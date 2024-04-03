@@ -71,7 +71,7 @@
 
 </article><!-- #post-${ID} -->
 
-<?php get_template_part(get_template_file_directory_path().'/flexible-content/sections/blog-posts') ?>
+<?php get_template_part('flexible-content/sections/blog-posts') ?>
 
 <?php if ($cta) : 
 	$background = $cta['background'];
