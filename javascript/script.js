@@ -290,9 +290,11 @@ function initRelatedPosts(){
 }
 
 async function loadMore(tab){
+	const currentPostEl = document.querySelector('[data-js-post-id]')
+	const currentPostId = currentPostEl.dataset.jsPostId
 	tab.loaderEl.classList.remove('hidden')
 	tab.loadMoreBtn.setAttribute('disabled',true)
-	const postsData = await loadPosts(tab.id,++tab.page)
+	const postsData = await loadPosts(tab.id,++tab.page,currentPostId)
 	if (postsData.posts) {
 		let postsList = postsData.posts
 		insertPosts(tab.contentUlEl,postsList)
