@@ -40,8 +40,8 @@
 				endif;
 			?>
 			</ul>
-				<div class="w-full p-10 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
-					<span class="mx-auto block size-7 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
+				<div class="w-full px-10 py-20 hidden" data-js="<?php echo 'tab-loader-' . $category->term_id; ?>">
+					<span class="mx-auto block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
 				</div>
 				<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="<?php if (($count <= $visible_posts) || ($i > 1)) {echo '!hidden';} ?> flex mx-auto mt-14 gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary to-secondary transition duration-200 disabled:pointer-events-none disabled:opacity-80">
 					Więcej wpisów
