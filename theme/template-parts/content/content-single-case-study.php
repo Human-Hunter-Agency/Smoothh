@@ -131,7 +131,7 @@ $cta = get_field('cta');
 									<p class="text-sm md:text-base italic font-medium"><?php echo get_the_excerpt($post->ID); ?></p>
 								<?php endif; ?>
 							</div>
-							<?php if (get_permalink($post->ID);) :
+							<?php if (get_permalink($post->ID)) :
 								$btn_url = $tile['button']['url'];
 								$btn_title = $tile['button']['title'];
 								$btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
