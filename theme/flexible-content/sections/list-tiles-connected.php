@@ -30,12 +30,13 @@ $list = $args['list'];
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base p-5 rounded-2xl border border-primary"><?php echo $item['description']; ?></div>
-                                        <div class="w-full h-[1px] border-t-[2px] border-t-dotted border-t-primary"></div>
                                     <?php endif; ?>
 
                                 <?php else : ?>
 
                                     <div class="flex items-center justify-center size-[72px] rounded-2xl border border-primary"><?php echo $i; ?></div>
+                                    <div class="w-full h-[2px] border-t-[1px] border-t-dotted border-t-primary"></div>
+
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
                                     <?php endif; ?>
