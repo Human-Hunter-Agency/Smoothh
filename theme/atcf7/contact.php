@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
   </div>
 
   <div class="w-full mb-5">
-    [textarea* your-message x3 placeholder "Twoja wiadomość"]
+    [textarea your-message x3 placeholder "Twoja wiadomość"]
   </div>
   <div class="mb-5 text-center">
     [acceptance acceptance-939] Przeczytałem/am i akceptuję <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/regulamin/">regulamin</a> oraz <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/polityka-prywatnosci/">politykę prywatności</a> [/acceptance]
