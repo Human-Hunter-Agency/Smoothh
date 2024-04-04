@@ -24,7 +24,7 @@ $list = $args['list'];
                     foreach ($list as $item) :
                         $i++
                     ?>
-                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5">
+                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto">
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
 
@@ -35,7 +35,7 @@ $list = $args['list'];
                                 <?php else : ?>
 
                                     <div class="flex items-center justify-center size-[72px] rounded-2xl border border-primary bg-white z-[1]"><?php echo $i; ?></div>
-                                    <div class="<?php echo $i == 1 || $i == 6 ? 'w-1/2' : 'w-[99.2%]'; ?> h-[2px] border-t-[1px] border-dotted border-t-[#8117EE50] absolute top-[15%] <?php echo $i == 5 || $i == 9 ? '!w-1/2 left-0' : 'right-0'; ?>  z-[-1]"></div>
+                                    <div class="<?php echo $i == 1 || $i == 6 ? 'w-1/2' : 'w-[99.2%]'; ?> h-[2px] border-t-[1px] border-dotted border-t-[#8117EE50] absolute top-[10%] md:top-[15%] <?php echo $i == 5 ? '!w-1/2 left-0' : 'right-0'; ?>  z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
