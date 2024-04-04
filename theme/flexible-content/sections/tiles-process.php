@@ -15,13 +15,13 @@
     </div>
     <div class="w-full overflow-hidden ">
         <?php if ($tiles) : ?>
-            <div class="swiper !container !overflow-visible mx-auto max-w-screen-lg" data-js="swiper-tiles-mobile-narrow">
+            <div class="swiper !container !overflow-visible mx-auto !max-w-screen-lg" data-js="swiper-tiles-mobile-narrow">
                 <div class="swiper-wrapper xl:gap-16 2xl:!gap-x-[100px] xl:!transform-none xl:!flex-wrap">
                     <?php foreach($tiles as $tile) : ?>
                         <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-[calc(33%-70px)]">
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($tile['icon'] && $tile['icon']['url'] ) : ?>
-                                    <img src="<?php echo $tile['icon']['url']; ?>" class="object-contain size-20 md:size-32 xl:size-[170px] mb-8 md:mb-14" >
+                                    <img src="<?php echo $tile['icon']['url']; ?>" class="object-contain size-20 md:size-28 xl:size-[170px] mb-8 md:mb-14" >
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
