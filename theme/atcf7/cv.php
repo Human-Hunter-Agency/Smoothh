@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
     [textarea* your-message x3 placeholder "Wiadomość..."]
   </div>
 
-  <div class="mb-5 text-center [&_a]:!text-white [&_a]:underline hover:[&_a]:!text-white">
+  <div class="mb-5 text-center [&_a]:!text-white [&_a]:underline hover:[&_a]:!text-white [&_input]:!accent-secondary">
     [acceptance acceptance-939] Przeczytałem/am i akceptuję <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/regulamin/">regulamin</a> oraz <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/polityka-prywatnosci/">politykę prywatności</a> [/acceptance]
   </div>
 
