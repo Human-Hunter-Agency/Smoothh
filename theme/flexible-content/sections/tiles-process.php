@@ -24,7 +24,7 @@
                                     <img src="<?php echo $tile['icon']['url']; ?>" class="object-contain size-20 md:size-28 xl:size-[170px] mb-8 md:mb-14" >
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
-                                    <div class="prose prose-sm md:prose-base !text-white"><?php echo $tile['description']; ?></div>
+                                    <div class="prose prose-sm md:prose-base [&_*]:!text-white"><?php echo $tile['description']; ?></div>
                                 <?php endif; ?>
                             </div>
                         </div>
