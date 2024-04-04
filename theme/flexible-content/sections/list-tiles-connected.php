@@ -35,7 +35,7 @@ $list = $args['list'];
                                 <?php else : ?>
 
                                     <div class="flex items-center justify-center size-[72px] rounded-2xl border border-primary bg-white z-[1]"><?php echo $i; ?></div>
-                                    <div class="<?php echo $i = 1 ? 'w-[50%]' : 'w-full' ?>w-full h-[2px] border-t-[1px] border-dotted border-t-primary absolute top-[15%] right-0 z-[-1]"></div>
+                                    <div class="<?php echo $i = 1 ? 'w-[50%]' : 'w-full' ?> w-full h-[2px] border-t-[1px] border-dotted border-t-primary absolute top-[15%] right-0 z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
