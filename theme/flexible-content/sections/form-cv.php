@@ -3,6 +3,7 @@
 
     $header = $args['header'];
     $description = $args['description'];
+    $hide_message_field = $args['hide_message_field'];
 
 ?>
 
@@ -14,7 +15,7 @@
         <?php if ($description) : ?>
             <div class="prose-smoothh prose md:prose-xl text-white text-center mb-10" ><?php echo $description; ?></div>
         <?php endif; ?>
-        <div class="!max-w-[1410px] mx-auto">
+        <div class="!max-w-[1410px] mx-auto [&_.message-container]:hidden">
             <?php echo do_shortcode('[contact-form-7 id="841318a" title="CV"]'); ?>
         </div>
     </div>

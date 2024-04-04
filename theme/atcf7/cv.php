@@ -26,8 +26,12 @@ if (!defined('ABSPATH')) {
       </label>[file* your-file id:your-file placeholder "Załącz CV"]
   </div>
 
-  <div class="w-full mb-[30px]">
+  <div class="message-container w-full mb-[30px]">
     [textarea* your-message x3 placeholder "Wiadomość..."]
+  </div>
+
+  <div class="mb-5 text-center [&_a]:!text-white [&_a]:underline hover:[&_a]:!text-white">
+    [acceptance acceptance-939] Przeczytałem/am i akceptuję <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/regulamin/">regulamin</a> oraz <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/polityka-prywatnosci/">politykę prywatności</a> [/acceptance]
   </div>
 
   <div class="btn-white relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 [&_svg_path]:hover:fill-secondary [&_svg_circle]:hover:stroke-secondary">
