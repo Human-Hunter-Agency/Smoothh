@@ -28,9 +28,11 @@
                         <h4 class="text-lg md:text-xl text-primary font-semibold">
                             <?php echo get_the_title() ?>
                         </h4>
-                        <span class="text-lg md:text-xl">
-                            <?php echo wc_get_price_excluding_tax($product)?> netto
-                        </span>
+                        <?php if (is_user_logged_in()) : ?>
+                            <span class="text-lg md:text-xl">
+                                <?php echo wc_get_price_excluding_tax($product)?> netto
+                            </span>
+                        <?php endif; ?>
                     </div>
                     <p class="text-sm md:text-base prose-strong:font-semibold">
                         <?php echo $product->get_short_description() ?>
