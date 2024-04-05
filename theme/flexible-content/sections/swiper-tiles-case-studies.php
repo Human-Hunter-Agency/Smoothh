@@ -1,5 +1,5 @@
 <?php
-/** Template to display 'Swiper z kafelkami' - swiper_tiles */
+/** Template to display 'Swiper z kafelkami case studies' - swiper_tiles_case_studies */
 
     $header = $args['header'];
     $tiles_list = $args['tiles_list'];
@@ -22,10 +22,10 @@
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper">
-                    <?php foreach($tiles_list as $tile) : ?>
+                    <?php print_r($tiles_list); ?>
+                    <!-- <?php foreach($tiles_list as $tile) : ?>
                         <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <?php if ($tile['image'] && $tile['image']['url'] ) : ?>
-                                <?php print_r($tile); ?>
                                 <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
                                     <img src="<?php echo $tile['image']['url']; ?>" class="object-cover w-full h-[120px] md:h-[220px]" >
                                     <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
@@ -47,7 +47,7 @@
                                 <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200" ><?php echo esc_html( $btn_title ); ?></a>
                             <?php endif; ?>
                         </div>
-                    <?php endforeach; ?>
+                    <?php endforeach; ?> -->
                 </div>
                 <div class="swiper-button-prev">
                     <svg width="12" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
