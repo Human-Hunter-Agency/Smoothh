@@ -14,7 +14,7 @@
 <div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center">
 
     <?php if (isset($hero_bg_url)) : ?>
-        <img src="<?php echo $hero_bg_url; ?>" class="absolute inset-0 -z-20 object-cover h-full w-full" >
+        <img src="<?php echo $hero_bg_url; ?>" class="absolute inset-0 -z-20 object-cover !h-full w-full" >
     <?php endif; ?>
 
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/80"></div>
@@ -29,7 +29,7 @@
         <?php endif; ?>
         
         <?php if ($hero_text) : ?>
-            <h1 class="<?php if ($display_logo) : ?>text-3xl md:text-5xl<?php else : ?>text-5xl md:text-[66px]<?php endif; ?> text-bold text-white font-bold" ><?php echo $hero_text; ?></h1>
+            <h1 class="<?php if ($display_logo) : ?>text-3xl md:text-5xl<?php else : ?>text-5xl md:text-[66px] max-w-[710px] leading-none<?php endif; ?> text-bold text-white font-bold" ><?php echo $hero_text; ?></h1>
         <?php endif; ?>
     </div>
 
