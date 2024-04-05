@@ -25,7 +25,7 @@
                     <?php foreach($posts_list as $post) : ?>
                         <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
-                                <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" class="object-cover w-full h-[120px] md:h-[220px]" >
+                                <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" class="object-cover w-full !h-[190px] md:!h-[220px]" >
                                 <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                             </div>
                             <div class="text-center p-3 md:p-6 !pt-0">
