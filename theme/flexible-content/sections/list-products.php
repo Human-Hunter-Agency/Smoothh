@@ -24,9 +24,11 @@
                     <h4>
                         <?php echo get_the_title() ?>
                     </h4>
+                    <div>
+                        <?php echo get_short_description() ?>
+                    </div>
                 </a>
             </li>
-            echo '<br /><a href="' . get_permalink() . '">' . woocommerce_get_product_thumbnail() . ' ' . get_the_title() . '</a>';
         <?php endwhile;
 
         wp_reset_query();
