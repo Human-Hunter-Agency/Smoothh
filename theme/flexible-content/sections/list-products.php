@@ -21,11 +21,16 @@
             <li>
                 <a href="<?php echo get_permalink() ?>">
                     <?php echo woocommerce_get_product_thumbnail() ?>
-                    <h4>
-                        <?php echo get_the_title() ?>
-                    </h4>
                     <div>
-                        <?php echo get_short_description() ?>
+                        <h4>
+                            <?php echo get_the_title() ?>
+                        </h4>
+                        <span>
+                            <?php echo $product -> get_price() ?>
+                        </span>
+                    </div>
+                    <div>
+                        <?php echo $product -> get_short_description() ?>
                     </div>
                 </a>
             </li>
