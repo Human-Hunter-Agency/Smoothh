@@ -26,11 +26,11 @@
                             <?php echo get_the_title() ?>
                         </h4>
                         <span>
-                            <?php echo $product -> get_price() ?>
+                            <?php echo $product->get_price() ?>
                         </span>
                     </div>
                     <div>
-                        <?php echo $product -> get_short_description() ?>
+                        <?php echo $product->get_short_description() ?>
                     </div>
                 </a>
             </li>
