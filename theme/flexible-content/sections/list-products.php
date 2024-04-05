@@ -23,8 +23,8 @@
                     <?php echo woocommerce_get_product_thumbnail() ?>
                     <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                 </div>
-                <div class="p-3 md:p-6">
-                    <div class="flex flex-col-reverse md:flex-row gap-2.5 md:gap-5 justify-between mb-5">
+                <div class="flex-1 p-3 md:p-6">
+                    <div class="gap-2.5 md:gap-5 justify-between mb-5">
                         <h4 class="text-lg md:text-xl text-primary font-semibold">
                             <?php echo get_the_title() ?>
                         </h4>
