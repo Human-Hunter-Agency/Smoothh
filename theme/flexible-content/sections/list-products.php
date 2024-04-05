@@ -19,7 +19,7 @@
 
         ?>
             <li class="flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
-                <div class="relative overflow-hidden w-full h-[120px] md:h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
+                <div class="relative overflow-hidden rounded-t-[14px] w-full h-[120px] md:h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                     <?php echo woocommerce_get_product_thumbnail() ?>
                     <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                 </div>
@@ -35,9 +35,10 @@
                     <p class="text-sm md:text-base prose-strong:font-semibold">
                         <?php echo $product->get_short_description() ?>
                     </p>
-                    <a href="<?php echo get_permalink() ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">
-                    </a>
                 </div>
+                <a href="<?php echo get_permalink() ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">
+                    Zobacz produkt
+                </a>
             </li>
         <?php endwhile;
 
