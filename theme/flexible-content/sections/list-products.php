@@ -6,7 +6,7 @@
 
 
 <div class="container">
-    <ul>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-[90px]">
         <?php
         $args = array(
             'post_type'      => 'product',
@@ -18,21 +18,26 @@
             global $product;
 
         ?>
-            <li>
-                <a href="<?php echo get_permalink() ?>">
+            <li class="flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
+                <div class="relative overflow-hidden w-full h-[120px] md:h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                     <?php echo woocommerce_get_product_thumbnail() ?>
-                    <div>
-                        <h4>
+                    <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
+                </div>
+                <div class="p-3 md:p-6">
+                    <div class="flex flex-col-reverse md:flex-row gap-2.5 md:gap-5 justify-between mb-5">
+                        <h4 class="text-lg md:text-xl text-primary font-semibold">
                             <?php echo get_the_title() ?>
                         </h4>
-                        <span>
+                        <span class="text-lg md:text-xl">
                             <?php echo $product->get_price() ?>
                         </span>
                     </div>
-                    <div>
+                    <p class="text-sm md:text-base prose-strong:font-semibold">
                         <?php echo $product->get_short_description() ?>
-                    </div>
-                </a>
+                    </p>
+                    <a href="<?php echo get_permalink() ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">
+                    </a>
+                </div>
             </li>
         <?php endwhile;
 
