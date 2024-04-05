@@ -24,12 +24,12 @@
                     <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                 </div>
                 <div class="flex-1 p-3 md:p-6">
-                    <div class="gap-2.5 md:gap-5 justify-between mb-5">
+                    <div class="flex gap-2.5 md:gap-5 justify-between mb-5">
                         <h4 class="text-lg md:text-xl text-primary font-semibold">
                             <?php echo get_the_title() ?>
                         </h4>
                         <span class="text-lg md:text-xl">
-                            <?php echo $product->get_price() ?>
+                            <?php echo wc_get_price_excluding_tax($product)?> netto
                         </span>
                     </div>
                     <p class="text-sm md:text-base prose-strong:font-semibold">
