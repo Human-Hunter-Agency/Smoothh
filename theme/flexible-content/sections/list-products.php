@@ -5,7 +5,7 @@
 ?>
 
 
-<div class="container">
+<div class="container mb-10">
     <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-[90px]">
         <?php
         $args = array(
