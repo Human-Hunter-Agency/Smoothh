@@ -24,17 +24,17 @@ $list = $args['list'];
                     foreach ($list as $item) :
                         $i++
                     ?>
-                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto">
+                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto last:!px-0">
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
 
                                     <?php if ($item['description']) : ?>
-                                        <div class="prose prose-sm md:prose-base p-5 rounded-2xl border border-primary"><?php echo $item['description']; ?></div>
+                                        <div class="prose prose-sm md:prose-base p-2.5 rounded-2xl border-2 border-primary prose-strong:text-primary"><?php echo $item['description']; ?></div>
                                     <?php endif; ?>
 
                                 <?php else : ?>
 
-                                    <div class="flex items-center justify-center size-[72px] rounded-2xl border border-primary bg-white z-[1] font-semibold"><?php echo $i; ?></div>
+                                    <div class="flex items-center justify-center size-[72px] rounded-2xl border-2 border-primary bg-white z-[1] font-semibold"><?php echo $i; ?></div>
                                     <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[2px] border-t-[1px] border-dotted border-t-[#8117EE50] absolute top-[10%] lg:top-[12%] xl:top-[15%] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
