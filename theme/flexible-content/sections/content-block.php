@@ -1,10 +1,11 @@
 <?php
+
 /** Template to display 'Blok z treścią' - content_block */
 
-    $header = $args['header'];
-    $content = $args['content'];
-    $decoration = $args['decoration'];
-    $has_bg = $args['has_bg'];
+$header = $args['header'];
+$content = $args['content'];
+$decoration = $args['decoration'];
+$has_bg = $args['has_bg'];
 
 ?>
 
@@ -16,16 +17,16 @@
                     <?php echo esc_html($header); ?>
                 </h2>
             <?php endif; ?>
-            <?php if ($content) : ?>        
-                <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?> [&>div>p>img]:inline [&>div>p>img]:w-[70px] [&>div>p>img]:h-[70px] [&>div>p>img]:!m-0">
+            <?php if ($content) : ?>
+                <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?> [&>p>img]:inline [&>p>img]:w-[70px] [&>p>img]:h-[70px] [&>p>img]:!m-0">
                     <?php echo $content; ?>
                 </div>
             <?php endif; ?>
         </div>
     </div>
-    <?php if ($decoration) : ?>        
+    <?php if ($decoration) : ?>
         <div class="absolute right-7 top-7 -z-10 opacity-5 max-w-[220px] lg:max-w-[360px]">
-            <?php echo file_get_contents( get_stylesheet_directory_uri() . '/assets/img/decor.svg' ); ?>
+            <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/decor.svg'); ?>
         </div>
     <?php endif; ?>
 </div>
