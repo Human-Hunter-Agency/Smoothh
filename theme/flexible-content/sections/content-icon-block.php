@@ -10,7 +10,7 @@ $has_bg = $args['has_bg'];
 
 ?>
 
-<div class="relative py-10 md:py-20 <?php if ($has_bg) : ?> md:pt-[60px] bg-gradient-to-b from-secondary to-primary text-white <?php endif; ?>">
+<div class="relative <?php if ($has_bg) : ?> md:pt-[60px] bg-gradient-to-b from-secondary to-primary text-white <?php endif; ?>">
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
@@ -20,12 +20,7 @@ $has_bg = $args['has_bg'];
             <?php endif; ?>
             <?php if ($content) : ?>
                 <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?>">
-                    <?php echo $content; ?>
-                    <?php if ($iconContent) : ?>
-                        <div class="w-[70px] h-[70px] rounded-full bg-primary flex items-center justify-center">
-                            <?php echo '<' . $iconContent . ' %'; ?>
-                        </div>
-                    <?php endif; ?>
+                    <p><?php echo $content; ?><span class="w-[70px] h-[70px] rounded-full bg-primary flex items-center justify-center text-white font-semibold"><?php echo '< ' . $iconContent . ' %'; ?></span></p>
                 </div>
             <?php endif; ?>
         </div>
