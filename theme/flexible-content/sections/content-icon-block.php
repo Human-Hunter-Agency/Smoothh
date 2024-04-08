@@ -20,7 +20,7 @@ $has_bg = $args['has_bg'];
             <?php endif; ?>
             <?php if ($content) : ?>
                 <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7 flex items-center justify-center gap-4 [&>p]:mb-0 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?>">
-                    <?php echo $content; ?><span class="w-[70px] h-[70px] rounded-full bg-primary flex items-center justify-center text-white font-semibold"><?php echo '< ' . $iconContent . ' %'; ?></span>
+                    <?php echo $content; ?><span class="w-[70px] h-[70px] rounded-full bg-primary flex items-center justify-center text-white font-medium"><?php echo '< ' . $iconContent . ' %'; ?></span>
                 </div>
             <?php endif; ?>
         </div>
