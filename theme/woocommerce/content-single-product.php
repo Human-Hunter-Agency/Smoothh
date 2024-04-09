@@ -68,8 +68,8 @@ if (post_password_required()) {
 		</div>
 		<aside class="md:basis-1/4 md:grow-0 md:shrink-0">
 			<?php if ($cart && !$cart->is_empty()) : ?>
-				<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px]">
-					<span class=" font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
+				<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
+					<span class="block font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
 					<ul class="flex flex-col gap-8">
 						<?php foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) : 
 							$product = $cart_item['data'];
@@ -78,7 +78,7 @@ if (post_password_required()) {
 						?>
 						<li class="flex flex-col lg:flex-row gap-2.5 justify-between">
 							<div>
-								<p class="text-base md:text-2xl mb-4">
+								<p class="text-base md:text-2xl mb-3">
 									<?php echo $product->get_title(); ?>
 								</p>
 								<span class="text-sm md:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
@@ -91,6 +91,26 @@ if (post_password_required()) {
 					</ul>
 				</div>
 			<?php endif ?>
+
+			<div class="px-[18px]">
+				<h5 class="mb-4 md:mb-6 text-2xl md:text-3xl font-semibold text-primary">Kategorie produktów</h5>
+				<?php
+				$args = array(
+					'taxonomy'     => 'product_cat',
+					'title_li'     => '',
+				);
+				$all_categories = get_categories( $args );
+				
+				if ($all_categories): ?>
+				
+					<ul class="list-none [&_.cat-item]:mb-4 md:[&_.cat-item]:mb-6 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
+						<?php foreach($all_categories as $cat){
+							echo '<li class="cat-item"><a href="'. get_term_link($cat->slug, 'product_cat') .'">'. $cat->name .'</a></li>';
+						}?>
+					</ul>
+				
+				<?php endif ?>
+			</div>
 
 		</aside>
 	</div>
