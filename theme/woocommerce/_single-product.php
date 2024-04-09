@@ -32,7 +32,7 @@ get_header( 'shop' ); ?>
 	?>
 
 		<?php while ( have_posts() ) : ?>
-			<?php wc_get_template_part( 'woocommerce/content', 'single-product' ); ?>
+			<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
