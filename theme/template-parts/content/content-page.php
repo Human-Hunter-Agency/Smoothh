@@ -14,7 +14,7 @@
 	<?php smoothh_post_thumbnail(); ?>
 
 	<div <?php smoothh_content_class( 'entry-content' ); ?>>
-		<?php if (!empty($the_content)): ?>
+		<?php if (get_the_content()): ?>
 			<div class="container">
 				<?php the_content(); ?>
 			</div>

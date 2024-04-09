@@ -79,7 +79,7 @@ if (post_password_required()) {
 						?>
 						<li class="flex justify-between">
 							<div>
-								<?php echo $product['name'] ?>
+								<?php echo $product->get_title(); ?>
 								<span><?php echo $quantity ?></span>
 							</div>
 							<div >
