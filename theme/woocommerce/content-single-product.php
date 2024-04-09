@@ -62,28 +62,29 @@ if (post_password_required()) {
 		do_action( 'woocommerce_single_product_summary' );
 		?>
 	</div>
-	<div class="container flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-[60px]">
+	<div class="container flex flex-col md:flex-row gap-5 md:gap-6 lg:gap-10">
 		<div class="prose-smoothh prose prose-base md:prose-h2:text-xl">
 			<?php the_content() ?>
 		</div>
-		<aside class="md:basis-1/4 md: grow-0">
+		<aside class="md:basis-1/4 md:grow-0 md:shrink-0">
 			<?php if ($cart && !$cart->is_empty()) : ?>
-				<div class="p-5 border border-[#888888] rounded-[15px]">
+				<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px]">
 					<span class=" font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
 					<ul class="flex flex-col gap-8">
 						<?php foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) : 
 							$product = $cart_item['data'];
 							$quantity = $cart_item['quantity'];
-							$price = $cart->get_product_price( $product );
 							$link = $product->get_permalink( $cart_item );
 						?>
-						<li class="flex justify-between">
+						<li class="flex flex-col lg:flex-row gap-2.5 justify-between">
 							<div>
-								<?php echo $product->get_title(); ?>
-								<span><?php echo $quantity ?></span>
+								<p class="text-base md:text-2xl mb-4">
+									<?php echo $product->get_title(); ?>
+								</p>
+								<span class="text-sm md:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
 							</div>
-							<div >
-								<?php echo $product->get_regular_price() ?>
+							<div class="text-base md:text-xl text-primary shrink-0">
+								<?php echo wc_get_price_excluding_tax($product)?> netto
 							</div>
 						</li>
 						<?php endforeach; ?>
