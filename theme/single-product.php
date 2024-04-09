@@ -18,7 +18,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
- ?>
+
+get_header(); ?>
 
 	<?php
 		/**
@@ -56,5 +57,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	?>
 
 <?php
+get_footer();
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
