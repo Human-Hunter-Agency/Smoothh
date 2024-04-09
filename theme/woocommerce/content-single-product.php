@@ -78,12 +78,12 @@ if (post_password_required()) {
 						?>
 						<li class="flex flex-col lg:flex-row gap-2.5 justify-between">
 							<div>
-								<p class="text-base md:text-2xl mb-3">
+								<a href="<?php echo $link ?>" class="text-base lg:text-2xl lg:mb-3 transition duration hover:text-primary">
 									<?php echo $product->get_title(); ?>
-								</p>
-								<span class="text-sm md:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
+								</a>
+								<span class="text-sm lg:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
 							</div>
-							<div class="text-base md:text-xl text-primary shrink-0">
+							<div class="text-base lg:text-xl text-primary shrink-0">
 								<?php echo wc_get_price_excluding_tax($product)?> netto
 							</div>
 						</li>
