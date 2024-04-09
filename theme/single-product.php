@@ -32,8 +32,7 @@ get_header( 'shop' ); ?>
 	?>
 
 		<?php while ( have_posts() ) : ?>
-			TEST
-			<!-- <?php wc_get_template_part( 'content', 'single-product' ); ?> -->
+			<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
