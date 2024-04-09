@@ -241,3 +241,7 @@ function smoothh_add_woocommerce_support() {
 }
 
 add_action( 'after_setup_theme', 'smoothh_add_woocommerce_support' );
+
+function smoothh_remove_breadcrumbs() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
