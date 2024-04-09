@@ -235,3 +235,9 @@ function get_rest_featured_image( $object, $field_name, $request ) {
     }
     return false;
 }
+
+function smoothh_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+add_action( 'after_setup_theme', 'smoothh_add_woocommerce_support' );
