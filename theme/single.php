@@ -12,6 +12,7 @@ get_header();
 ?>
 
 <section id="primary">
+	<?php echo get_post_format() ?>
 	<main id="main">
 
 		<?php
