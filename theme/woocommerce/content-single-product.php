@@ -46,7 +46,7 @@ if (post_password_required()) {
 
 	<div class="container">
 		<div class="prose-smoothh prose prose-base">
-			<?php echo $product->get_description(); ?>
+			<?php the_content() ?>
 		</div>
 	</div>
 
