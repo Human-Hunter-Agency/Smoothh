@@ -44,10 +44,47 @@ if (post_password_required()) {
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="prose-smoothh prose prose-base">
+	<div class="hidden">
+		<?php
+		/**
+		 * Hook: woocommerce_single_product_summary.
+		 *
+		 * @hooked woocommerce_template_single_title - 5
+		 * @hooked woocommerce_template_single_rating - 10
+		 * @hooked woocommerce_template_single_price - 10
+		 * @hooked woocommerce_template_single_excerpt - 20
+		 * @hooked woocommerce_template_single_add_to_cart - 30
+		 * @hooked woocommerce_template_single_meta - 40
+		 * @hooked woocommerce_template_single_sharing - 50
+		 * @hooked WC_Structured_Data::generate_product_data() - 60
+		 */
+		do_action( 'woocommerce_single_product_summary' );
+		?>
+	</div>
+	<div class="container flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-[60px]">
+		<div class="prose-smoothh prose prose-base md:prose-h2:text-xl">
 			<?php the_content() ?>
 		</div>
+		<aside class="md:basis-1/4 lg:shrink-0">
+			<?php if (!$cart->is_empty()) : ?>
+				<div class="p-5 border border-[#888888] rounded-[15px]">
+					<span>Twój koszyk</span>
+					<ul>
+						<?php foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) : 
+							$product = $cart_item['data'];
+							$quantity = $cart_item['quantity'];
+							$price = $cart->get_product_price( $product );
+							$link = $product->get_permalink( $cart_item );
+						?>
+						<li>
+							<?php print_r($product) ?>
+						</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			<?php endif ?>
+
+		</aside>
 	</div>
 
 	<?php
