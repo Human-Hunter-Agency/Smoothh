@@ -19,6 +19,7 @@
 defined('ABSPATH') || exit;
 
 global $product;
+global $cart;
 
 /**
  * Hook: woocommerce_before_single_product.
@@ -66,7 +67,7 @@ if (post_password_required()) {
 			<?php the_content() ?>
 		</div>
 		<aside class="md:basis-1/4 lg:shrink-0">
-			<?php if (!$cart->is_empty()) : ?>
+			<?php if ($cart && !$cart->is_empty()) : ?>
 				<div class="p-5 border border-[#888888] rounded-[15px]">
 					<span>Twój koszyk</span>
 					<ul>
