@@ -78,7 +78,7 @@ if (post_password_required()) {
 						?>
 						<li class="flex flex-col lg:flex-row gap-2.5 justify-between">
 							<div>
-								<a href="<?php echo $link ?>" class="text-base lg:text-2xl lg:mb-3 transition duration hover:text-primary">
+								<a href="<?php echo $link ?>" class="block text-base md:text-2xl lg:mb-3 transition duration hover:text-primary">
 									<?php echo $product->get_title(); ?>
 								</a>
 								<span class="text-sm lg:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
