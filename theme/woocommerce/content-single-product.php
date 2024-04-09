@@ -19,7 +19,7 @@
 defined('ABSPATH') || exit;
 
 global $product;
-global $cart;
+$cart = WC()->cart;
 
 /**
  * Hook: woocommerce_before_single_product.
