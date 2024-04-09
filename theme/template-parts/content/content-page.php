@@ -14,8 +14,12 @@
 	<?php smoothh_post_thumbnail(); ?>
 
 	<div <?php smoothh_content_class( 'entry-content' ); ?>>
-		<?php
-		the_content();
+		<?php if (!empty($the_content)): ?>
+			<div class="container">
+				<?php the_content(); ?>
+			</div>
+
+		<?php endif; 
 
 		wp_link_pages(
 			array(

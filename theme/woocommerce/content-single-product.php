@@ -66,19 +66,25 @@ if (post_password_required()) {
 		<div class="prose-smoothh prose prose-base md:prose-h2:text-xl">
 			<?php the_content() ?>
 		</div>
-		<aside class="md:basis-1/4 lg:shrink-0">
+		<aside class="md:basis-1/4 md: grow-0">
 			<?php if ($cart && !$cart->is_empty()) : ?>
 				<div class="p-5 border border-[#888888] rounded-[15px]">
-					<span>Twój koszyk</span>
-					<ul>
+					<span class=" font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
+					<ul class="flex flex-col gap-8">
 						<?php foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) : 
 							$product = $cart_item['data'];
 							$quantity = $cart_item['quantity'];
 							$price = $cart->get_product_price( $product );
 							$link = $product->get_permalink( $cart_item );
 						?>
-						<li>
-							<?php print_r($product) ?>
+						<li class="flex justify-between">
+							<div>
+								<?php echo $product['name'] ?>
+								<span><?php echo $quantity ?></span>
+							</div>
+							<div >
+								<?php echo $product->get_regular_price() ?>
+							</div>
 						</li>
 						<?php endforeach; ?>
 					</ul>
