@@ -72,7 +72,7 @@ if (post_password_required()) {
 			<?php if ($cart && !$cart->is_empty()) : ?>
 				<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
 					<span class="block font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
-					<ul class="flex flex-col gap-8">
+					<ul class="flex flex-col gap-8 mb-8">
 						<?php foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) : 
 							$product = $cart_item['data'];
 							$quantity = $cart_item['quantity'];
@@ -91,7 +91,7 @@ if (post_password_required()) {
 						</li>
 						<?php endforeach; ?>
 					</ul>
-					<a href="<?php echo wc_get_cart_url() ?>" class="w-full border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] px-5 xl:px-12 !rounded-[15px] font-bold flex items-center justify-center gap-5">
+					<a href="<?php echo wc_get_cart_url() ?>" class="w-full border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] px-5 xl:px-12 xl:pr-8 !rounded-[15px] font-bold flex items-center justify-center gap-5">
 						Przejdź do zamówienia
 						<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
