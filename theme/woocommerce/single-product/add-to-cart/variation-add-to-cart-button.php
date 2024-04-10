@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 ?>
-<div class="woocommerce-variation-add-to-cart variations_button">
+<div class="woocommerce-variation-add-to-cart variations_button [&_.quantity]:!hidden">
 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
 	<?php
@@ -28,7 +28,12 @@ global $product;
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
 
-	<button type="submit" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">TEST</button>
+	<button type="submit" class="single_add_to_cart_button button border-none bg-gradient-to-b from-primary to-secondary text-white h-[55px] px-5 md:px-12 rounded-[15px] font-bold flex items-center justify-center gap-5 alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?>
+        <svg class="" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
+            <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
+        </svg>
+    </button>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 
