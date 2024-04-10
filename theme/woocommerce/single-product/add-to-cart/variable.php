@@ -27,7 +27,7 @@ $variations_attr = function_exists('wc_esc_json') ? wc_esc_json($variations_json
 do_action('woocommerce_before_add_to_cart_form'); ?>
 
 <form class="variations_form cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint($product->get_id()); ?>" data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok. 
-																																																																							?>">
+																																																																						?>">
 	<?php do_action('woocommerce_before_variations_form'); ?>
 
 	<?php if (empty($available_variations) && false !== $available_variations) : ?>
@@ -38,9 +38,10 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 				<?php foreach ($attributes as $attribute_name => $options) : ?>
 					<div class="variations !mb-0">
 						<label class="block text-lg md:text-xl font-bold mb-5" for="<?php echo esc_attr(sanitize_title($attribute_name)); ?>">
-							<?php echo wc_attribute_label($attribute_name); // WPCS: XSS ok.?>
+							<?php echo wc_attribute_label($attribute_name); // WPCS: XSS ok.
+							?>
 						</label>
-						<div>
+						<div class="relative">
 							<?php
 							wc_dropdown_variation_attribute_options(
 								array(
@@ -50,9 +51,12 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 								)
 							);
 							?>
+							<svg class="absolute z-10 right-5 transition duration-300 pointer-events-none" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.9595 0.75L7 9.1368L1.04047 0.75H12.9595Z" fill="%238117EE" stroke="%238117EE" />
+							</svg>
 						</div>
 					</div>
-				<?php endforeach; ?>				
+				<?php endforeach; ?>
 			</div>
 
 			<div class="single_variation_wrap [&_.woocommerce-variation]:!hidden">
@@ -61,7 +65,7 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 				 * Hook: woocommerce_before_single_variation.
 				 */
 				do_action('woocommerce_before_single_variation');
-	
+
 				/**
 				 * Hook: woocommerce_single_variation. Used to output the cart button and placeholder for variation data.
 				 *
@@ -70,7 +74,7 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 				 * @hooked woocommerce_single_variation_add_to_cart_button - 20 Qty and cart button.
 				 */
 				do_action('woocommerce_single_variation');
-	
+
 				/**
 				 * Hook: woocommerce_after_single_variation.
 				 */
