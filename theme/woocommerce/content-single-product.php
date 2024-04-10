@@ -47,7 +47,7 @@ if (post_password_required()) {
 
 	<div class="container flex flex-col md:flex-row gap-5 md:gap-6 lg:gap-10">
 		<div>
-			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl">
+			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-8 md:mb-[50px]">
 				<?php the_content() ?>
 			</div>
 			<div>

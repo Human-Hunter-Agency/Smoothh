@@ -33,9 +33,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 	<?php else : ?>
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 					<div class="variations">
-                        <span>
-                            <label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label>
-                        </span>
+						<label class="text-lg md:text-xl font-bold" for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label>
                         <div>
 							<?php
 								wc_dropdown_variation_attribute_options(
@@ -56,7 +54,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				/**
 				 * Hook: woocommerce_before_single_variation.
 				 */
-				do_action( 'woocommerce_before_single_variation' );
+				// do_action( 'woocommerce_before_single_variation' );
 
 				/**
 				 * Hook: woocommerce_single_variation. Used to output the cart button and placeholder for variation data.
