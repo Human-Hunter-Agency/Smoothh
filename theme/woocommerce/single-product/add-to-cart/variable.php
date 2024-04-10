@@ -32,13 +32,11 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<p class="stock out-of-stock"><?php echo esc_html( apply_filters( 'woocommerce_out_of_stock_message', __( 'This product is currently out of stock and unavailable.', 'woocommerce' ) ) ); ?></p>
 	<?php else : ?>
 				<?php foreach ( $attributes as $attribute_name => $options ) : ?>
-					<div>
+					<div class="variations">
                         <span>
                             <label for="<?php echo esc_attr( sanitize_title( $attribute_name ) ); ?>"><?php echo wc_attribute_label( $attribute_name ); // WPCS: XSS ok. ?></label>
                         </span>
                         <div>
-
-                        </div>
 							<?php
 								wc_dropdown_variation_attribute_options(
 									array(
@@ -48,6 +46,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 									)
 								);
 							?>
+                        </div>
                     </div>
 				<?php endforeach; ?>
 		<?php do_action( 'woocommerce_after_variations_table' ); ?>
