@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 
 if ($related_products) : ?>
 
-    <section class="relative py-10 md:py-[60px] mb:pb-[60px]">
+    <section class="relative pb-10 mb:pb-[60px]">
 
         <?php
         $heading = apply_filters('woocommerce_product_related_products_heading', __('Related products', 'woocommerce'));
