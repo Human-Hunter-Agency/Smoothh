@@ -2,7 +2,7 @@
 /** Template to display 'Swiper z logami klientów' - swiper_customer_logos */
 
     $header = $args['header'];
-    $logos = $args['logos'];
+    $client_logos = get_field('client_logos', 'option');
 
 ?>
 
@@ -19,10 +19,10 @@
     <?php endif; ?>
 
     <div class="relative z-0 w-full overflow-hidden !pb-5">
-        <?php if ($logos) : ?>
+        <?php if ($client_logos) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-logos">
                 <div class="swiper-wrapper items-center">
-                    <?php foreach($logos as $logo) : ?>
+                    <?php foreach($client_logos as $logo) : ?>
                         <div class="swiper-slide mr-5 md:px-5 opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <img class="object-contain max-h-28" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" alt="<?php echo $logo['title']; ?>" />
                         </div>
