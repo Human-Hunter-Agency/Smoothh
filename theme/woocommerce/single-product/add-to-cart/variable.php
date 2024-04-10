@@ -33,8 +33,8 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 	<?php if (empty($available_variations) && false !== $available_variations) : ?>
 		<p class="stock out-of-stock"><?php echo esc_html(apply_filters('woocommerce_out_of_stock_message', __('This product is currently out of stock and unavailable.', 'woocommerce'))); ?></p>
 	<?php else : ?>
-		<div class="flex flex-col md:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px]">
-			<div>
+		<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end">
+			<div class="grow">
 				<?php foreach ($attributes as $attribute_name => $options) : ?>
 					<div class="variations">
 						<label class="text-lg md:text-xl font-bold" for="<?php echo esc_attr(sanitize_title($attribute_name)); ?>">
