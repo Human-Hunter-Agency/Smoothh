@@ -220,5 +220,5 @@ footer#page-footer .footer-bottom-menu{
 }
 
 .variations select{
-	@apply h-[55px] rounded-[15px] border border-primary px-5 transition duration-200 hover:border-secondary accent-primary
+	@apply h-[55px] rounded-[15px] border border-primary px-5 transition duration-200 hover:border-secondary accent-primary w-full !m-0
 }
