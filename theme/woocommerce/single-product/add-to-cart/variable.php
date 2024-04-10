@@ -51,8 +51,8 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 								)
 							);
 							?>
-							<svg class="absolute z-10 right-5 transition duration-300 pointer-events-none" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M12.9595 0.75L7 9.1368L1.04047 0.75H12.9595Z" fill="%238117EE" stroke="%238117EE" />
+							<svg class="absolute z-10 right-5 top-[23px] transition duration-300 pointer-events-none" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12.9595 0.75L7 9.1368L1.04047 0.75H12.9595Z" fill="#8117EE" stroke="#8117EE" />
 							</svg>
 						</div>
 					</div>
