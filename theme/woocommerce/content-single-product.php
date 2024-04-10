@@ -136,7 +136,7 @@ if (post_password_required()) {
 	?>
 
 	<?php 
-	$above_footer_fields = get_field('product_sections_settings');
+	$above_footer_fields = get_field('product_sections_settings','option');
 	$client_logos = get_field('client_logos', 'option');
 	if ($above_footer_fields) {
 		$header_logos = $above_footer_fields['header_logos'];
@@ -183,7 +183,7 @@ if (post_password_required()) {
 				</div>
 			<?php endif; ?>
 		</div>
-		
+
 	</section>
 </div>
 
