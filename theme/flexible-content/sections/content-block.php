@@ -18,7 +18,7 @@ $has_bg = $args['has_bg'];
                 </h2>
             <?php endif; ?>
             <?php if ($content) : ?>
-                <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?> [&_.circled]:size-10 md:[&_.circled]:size-[70px] [&_.circled]:rounded-full [&_.circled]:bg-primary [&_.circled]:text-center [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
+                <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?> [&_.circled]:p-2.5 md:[&_.circled]:p-6 [&_.circled]:align-middle [&_.circled]:rounded-full [&_.circled]:bg-primary [&_.circled]:text-white [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
                     <?php echo $content; ?>
                 </div>
             <?php endif; ?>
