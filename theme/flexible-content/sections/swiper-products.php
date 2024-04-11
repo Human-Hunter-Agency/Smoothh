@@ -2,6 +2,8 @@
 
 /** Template to display 'Lista produktów' - list_products */
 
+$header = $args['header']
+
 ?>
 
 <div class="relative py-10 md:pt-[50px] md:pb-[60px] bg-gradient-to-b from-secondary to-primary">
@@ -31,13 +33,13 @@
                             <?php echo $product->get_image() ?>
                             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                         </div>
-                        <div class="flex-1 p-3 md:p-6">
+                        <div class="flex-1 p-3 md:p-6 text-white">
                             <div class="flex gap-2.5 md:gap-5 justify-between mb-5">
-                                <h4 class="text-lg md:text-xl font-semibold">
+                                <h4 class="text-lg md:text-xl font-semibold text-center">
                                     <?php echo get_the_title($product->get_id()) ?>
                                 </h4>
                             </div>
-                            <p class="text-sm md:text-base prose-strong:font-semibold">
+                            <p class="text-sm md:text-base prose-strong:font-semibold text-center">
                                 <?php echo $product->get_short_description() ?>
                             </p>
                         </div>
