@@ -135,8 +135,8 @@ if (post_password_required()) {
 	do_action('woocommerce_after_single_product_summary');
 	?>
 
-	<?php 
-	$above_footer_fields = get_field('product_sections_settings','option');
+	<?php
+	$above_footer_fields = get_field('product_sections_settings', 'option');
 	$client_logos = get_field('client_logos', 'option');
 	if ($above_footer_fields) {
 		$header_logos = $above_footer_fields['header_logos'];
@@ -145,7 +145,7 @@ if (post_password_required()) {
 		$cta_btn = $above_footer_fields['cta_btn'];
 		$cta_bg = $above_footer_fields['cta_bg'];
 	}
-	
+
 	?>
 
 	<section class="relative py-10 md:py-[60px] mb:pb-[60px]">
@@ -184,63 +184,65 @@ if (post_password_required()) {
 	</section>
 
 	<div class="relative py-10 md:py-[60px] mb:pb-[60px]">
-    
-		
-	<section class="relative z-0 w-full overflow-hidden !pb-5">
-		<?php if (isset($header_case_studies) && $header_case_studies) : ?>
-			<div class="container">
-				<div class="relative z-0">
-					<h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
-						<?php echo esc_html($header_case_studies); ?>
-					</h2>
+
+
+		<section class="relative z-0 w-full overflow-hidden !pb-5">
+			<?php if (isset($header_case_studies) && $header_case_studies) : ?>
+				<div class="container">
+					<div class="relative z-0">
+						<h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+							<?php echo esc_html($header_case_studies); ?>
+						</h2>
+					</div>
 				</div>
-			</div>
-		<?php endif; 
+			<?php endif;
 			$args = array(
 				'post_type' => 'case-study',
 				'numberposts' => 5,
-				'exclude' => get_the_ID()
+				'orderby' => 'date',
+				'order' => 'DESC',
+				'exclude' => get_post_type(get_the_ID()) == 'case-stuty' ? get_the_ID() : '',
 			);
 			$posts = get_posts($args);
 			if ($posts) : ?>
-			<div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
-				<div class="swiper-wrapper">
-					<?php foreach ($posts as $post) : ?>
-						<div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
-							<?php if (get_the_post_thumbnail_url($post->ID)) : ?>
-								<div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
-									<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo $post->post_title; ?>">
-									<div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
-								</div>
-							<?php endif; ?>
-							<div class="text-center p-3 md:p-6 !pt-0">
-								<?php if ($post->post_title) : ?>
-									<h3 class="text-base md:text-xl text-primary mb-9 font-semibold"><?php echo $post->post_title; ?></h3>
+				<div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
+					<div class="swiper-wrapper">
+						<?php foreach ($posts as $post) : ?>
+							<div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
+								<?php if (get_the_post_thumbnail_url($post->ID)) : ?>
+									<div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
+										<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo $post->post_title; ?>">
+										<div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
+									</div>
 								<?php endif; ?>
-								<?php if (get_the_excerpt($post->ID)) : ?>
-									<p class="text-sm md:text-base italic font-medium"><?php echo get_the_excerpt($post->ID); ?></p>
+								<div class="text-center p-3 md:p-6 !pt-0">
+									<?php if ($post->post_title) : ?>
+										<h3 class="text-base md:text-xl text-primary mb-9 font-semibold"><?php echo $post->post_title; ?></h3>
+									<?php endif; ?>
+									<?php if (get_the_excerpt($post->ID)) : ?>
+										<p class="text-sm md:text-base italic font-medium"><?php echo get_the_excerpt($post->ID); ?></p>
+									<?php endif; ?>
+								</div>
+								<?php if (get_permalink($post->ID)) : ?>
+									<a href="<?php echo get_permalink($post->ID); ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">Czytaj więcej></a>
 								<?php endif; ?>
 							</div>
-							<?php if (get_permalink($post->ID)) : ?>
-								<a href="<?php echo get_permalink($post->ID); ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">Czytaj więcej></a>
-							<?php endif; ?>
-						</div>
-					<?php endforeach; ?>
+						<?php endforeach; ?>
+					</div>
+					<div class="swiper-button-prev">
+						<svg width="12" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M-0.00195312 8.99988L11.998 0.33962L11.998 17.6601L-0.00195312 8.99988Z" fill="white" />
+						</svg>
+					</div>
+					<div class="swiper-button-next">
+						<svg width="12" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 9L0 17.6603V0.339746L12 9Z" fill="white" />
+						</svg>
+					</div>
 				</div>
-				<div class="swiper-button-prev">
-					<svg width="12" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M-0.00195312 8.99988L11.998 0.33962L11.998 17.6601L-0.00195312 8.99988Z" fill="white" />
-					</svg>
-				</div>
-				<div class="swiper-button-next">
-					<svg width="12" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M12 9L0 17.6603V0.339746L12 9Z" fill="white" />
-					</svg>
-				</div>
-			</div>
-		<?php endif; ?>
-	</section>
-</div>
+			<?php endif; ?>
+		</section>
+	</div>
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>
