@@ -98,7 +98,7 @@ $client_logos = get_field('client_logos', 'option');
 		'numberposts' => 5,
 		'orderby' => 'date',
 		'order' => 'DESC',
-		'exclude' => get_post_type(get_the_ID()) == 'case-stuty' ? get_the_ID() : '',
+		'exclude' => get_post_type(get_the_ID()) == 'case-study' ? get_the_ID() : '',
 	);
 	$posts = get_posts($args);
 	
