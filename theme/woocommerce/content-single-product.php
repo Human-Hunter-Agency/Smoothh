@@ -68,57 +68,59 @@ if (post_password_required()) {
 				?>
 			</div>
 		</div>
-		<aside class="md:basis-1/4 md:grow-0 md:shrink-0">
-			<?php if ($cart && !$cart->is_empty() && is_user_logged_in()) : ?>
-				<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
-					<span class="block font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
-					<ul class="flex flex-col gap-8 mb-8">
-						<?php foreach ($cart->get_cart() as $cart_item_key => $cart_item) :
-							$product = $cart_item['data'];
-							$quantity = $cart_item['quantity'];
-							$link = $product->get_permalink($cart_item);
-						?>
-							<li class="flex flex-col lg:flex-row gap-2.5 justify-between">
-								<div>
-									<a href="<?php echo $link ?>" class="block text-base md:text-2xl lg:mb-3 transition duration hover:text-primary">
-										<?php echo $product->get_title(); ?>
-									</a>
-									<span class="text-sm lg:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
-								</div>
-								<div class="text-base lg:text-xl text-primary shrink-0">
-									<?php echo wc_get_price_excluding_tax($product) ?> netto
-								</div>
-							</li>
-						<?php endforeach; ?>
-					</ul>
-					<a href="<?php echo wc_get_cart_url() ?>" class="w-full border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] px-5 xl:px-12 xl:pr-8 !rounded-[15px] font-bold flex items-center justify-center gap-5">
-						Przejdź do zamówienia
-						<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
-							<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
-						</svg>
-					</a>
-				</div>
-			<?php endif ?>
-
-			<div class="px-[18px]">
-				<h5 class="mb-4 md:mb-6 text-2xl md:text-3xl font-semibold text-primary">Kategorie produktów</h5>
-				<?php
-				$args = array(
-					'taxonomy'     => 'product_cat',
-					'title_li'     => '',
-				);
-				$all_categories = get_categories($args);
-
-				if ($all_categories) : ?>
-
-					<ul class="list-none [&_.cat-item]:mb-4 md:[&_.cat-item]:mb-6 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
-						<?php foreach ($all_categories as $cat) {
-							echo '<li class="cat-item"><a href="' . get_term_link($cat->slug, 'product_cat') . '">' . $cat->name . '</a></li>';
-						} ?>
-					</ul>
-
+		<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
+			<div class="md:sticky top-[115px]">
+				<?php if ($cart && !$cart->is_empty() && is_user_logged_in()) : ?>
+					<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
+						<span class="block font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
+						<ul class="flex flex-col gap-8 mb-8">
+							<?php foreach ($cart->get_cart() as $cart_item_key => $cart_item) :
+								$product = $cart_item['data'];
+								$quantity = $cart_item['quantity'];
+								$link = $product->get_permalink($cart_item);
+							?>
+								<li class="flex flex-col lg:flex-row gap-2.5 justify-between">
+									<div>
+										<a href="<?php echo $link ?>" class="block text-base md:text-2xl lg:mb-3 transition duration hover:text-primary">
+											<?php echo $product->get_title(); ?>
+										</a>
+										<span class="text-sm lg:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
+									</div>
+									<div class="text-base lg:text-xl text-primary shrink-0">
+										<?php echo wc_get_price_excluding_tax($product) ?> netto
+									</div>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+						<a href="<?php echo wc_get_cart_url() ?>" class="w-full border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] px-5 xl:px-12 xl:pr-8 !rounded-[15px] font-bold flex items-center justify-center gap-5">
+							Przejdź do zamówienia
+							<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
+								<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
+							</svg>
+						</a>
+					</div>
 				<?php endif ?>
+	
+				<div class="px-[18px]">
+					<h5 class="mb-4 md:mb-6 text-2xl md:text-3xl font-semibold text-primary">Kategorie produktów</h5>
+					<?php
+					$args = array(
+						'taxonomy'     => 'product_cat',
+						'title_li'     => '',
+					);
+					$all_categories = get_categories($args);
+	
+					if ($all_categories) : ?>
+	
+						<ul class="list-none [&_.cat-item]:mb-4 md:[&_.cat-item]:mb-6 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
+							<?php foreach ($all_categories as $cat) {
+								echo '<li class="cat-item"><a href="' . get_term_link($cat->slug, 'product_cat') . '">' . $cat->name . '</a></li>';
+							} ?>
+						</ul>
+	
+					<?php endif ?>
+				</div>
 			</div>
 
 		</aside>
