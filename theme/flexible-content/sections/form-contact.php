@@ -6,7 +6,7 @@
 
 ?>
 
-<div class="container mt-[50px]">    
+<div class="container mt-[50px] mb-10">    
     <?php if ($header) : ?>
         <h3 class="text-3xl md:text-5xl text-bold font-bold mb-10 md:mb-14 text-center" ><?php echo esc_html($header); ?></h1>
     <?php endif; ?>        
