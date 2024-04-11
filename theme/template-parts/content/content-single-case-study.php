@@ -98,24 +98,8 @@ $client_logos = get_field('client_logos', 'option');
 		'numberposts' => 5,
 		'exclude' => get_the_ID()
 	);
+	$posts = get_posts($args);
 	?>
-
-	<div class="hidden w-full relative min-h-32">
-		<ul class="swiper-wrapper grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-x-[90px] xl:gap-y-20">
-			<?php
-			$posts = get_posts($args);
-			foreach ($posts as $post) : ?>
-				<li class="post-tile">
-					<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="<?php echo $post->post_title; ?>">
-					<h3><?php echo $post->post_title; ?></h3>
-					<p><?php echo get_the_excerpt($post->ID); ?></p>
-					<a href="<?php echo get_permalink($post->ID); ?>">Czytaj więcej</a>
-				</li>
-			<?php
-			endforeach;
-			?>
-		</ul>
-	</div>
 
 	<div class="relative z-0 w-full overflow-hidden !pb-5">
 		<?php if ($posts) : ?>
