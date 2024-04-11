@@ -23,15 +23,15 @@ do_action('woocommerce_before_cart'); ?>
 <form class="woocommerce-cart-form not-prose border border-[#888888] rounded-[15px] p-5 lg:p-[30px] mt-10 lg:mt-[100px]" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
     <?php do_action('woocommerce_before_cart_table'); ?>
     
-    <h2 class="text-2xl md:text-3xl text-primary !mb-10 lg:!mb-12 !mt-0"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
+    <h2 class="text-2xl md:text-3xl text-primary !mb-10 lg:!mb-12 !mt-0 font-semibold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
 
-    <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+    <table class="shop_table_responsive cart woocommerce-cart-form__contents w-full" cellspacing="0">
         <thead>
             <tr>
-                <th class="product-name"><?php esc_html_e('Product', 'woocommerce'); ?>:</th>
-                <th class="product-price"><?php esc_html_e('Price', 'woocommerce'); ?>:</th>
-                <th class="product-quantity"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</th>
-                <th class="product-subtotal"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</th>
+                <th class="product-name text-left"><?php esc_html_e('Product', 'woocommerce'); ?>:</th>
+                <th class="product-price text-right"><?php esc_html_e('Price', 'woocommerce'); ?>:</th>
+                <th class="product-quantity text-right"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</th>
+                <th class="product-subtotal text-right"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</th>
             </tr>
         </thead>
         <tbody>
@@ -81,13 +81,13 @@ do_action('woocommerce_before_cart'); ?>
                             ?>
                         </td>
 
-                        <td class="product-price" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
+                        <td class="product-price text-right" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
                             <?php
                             echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
                         </td>
 
-                        <td class="product-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+                        <td class="product-quantity text-right" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                             <?php
                             if ($_product->is_sold_individually()) {
                                 $min_quantity = 1;
@@ -113,7 +113,7 @@ do_action('woocommerce_before_cart'); ?>
                             ?>
                         </td>
 
-                        <td class="product-subtotal" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
+                        <td class="product-subtotal text-right" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                             <?php
                             echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
