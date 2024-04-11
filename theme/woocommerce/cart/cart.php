@@ -20,10 +20,10 @@ defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_cart'); ?>
 
-<form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
+<form class="woocommerce-cart-form not-prose border border-[#888888] rounded-[15px] p-5 lg:p-[30px] mt-10 lg:mt-[100px]" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
     <?php do_action('woocommerce_before_cart_table'); ?>
     
-    <h2><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
+    <h2 class="text-2xl md:text-3xl text-primary !mb-10 lg:!mb-12 !mt-0"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
 
     <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
         <thead>
