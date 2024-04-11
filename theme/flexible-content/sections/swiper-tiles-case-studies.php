@@ -18,7 +18,7 @@
         </div>
     <?php endif; 
     
-    get_template_part( 'flexible-content/sections/partials/case-studies-swiper', '', array($posts) );
+    get_template_part( 'flexible-content/sections/partials/case-studies-swiper', '', array('posts' => $posts) );
     ?>
     
 </div>
