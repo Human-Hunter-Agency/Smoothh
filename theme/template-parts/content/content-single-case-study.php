@@ -13,6 +13,7 @@ $author = get_field('author');
 $client = get_field('client');
 $parametersList = get_field('parameters');
 $shortDescription = get_field('short_description');
+$headerPostRelated = get_field('header_post_related');
 $cta = get_field('cta');
 $logoHeader = get_field('header_clients_logos');
 $client_logos = get_field('client_logos', 'option');
@@ -91,7 +92,7 @@ $client_logos = get_field('client_logos', 'option');
 </article><!-- #post-${ID} -->
 
 <section id="posts-related" class="relative py-10 md:py-[120px] mb:pb-[60px]">
-	<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-14 text-center">Zobacz pozostałe case study ze zrealizowanych przez SMOOTHH® projektów rekrutacyjnych:</h2>
+	<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-14 text-center"><?php echo $headerPostRelated; ?></h2>
 
 	<?php
 	$args = array(
