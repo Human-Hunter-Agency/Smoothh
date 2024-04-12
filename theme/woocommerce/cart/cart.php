@@ -86,7 +86,7 @@ do_action('woocommerce_before_cart'); ?>
                             echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
                             <?php
-                            print_r($cart_item); // PHPCS: XSS ok.
+                            echo($cart_item['line_total']);
                             ?>
 
                             </td>
