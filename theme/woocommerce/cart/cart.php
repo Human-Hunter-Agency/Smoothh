@@ -85,7 +85,7 @@ do_action('woocommerce_before_cart'); ?>
                             <?php
                             echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
-                            <?php if (WC()->cart->get_coupons()) {
+                            <?php if (WC()->cart->has_discount()) {
                                 echo($cart_item['line_subtotal'] - $cart_item['line_total']);
                             }
                             ?>
