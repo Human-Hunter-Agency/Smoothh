@@ -32,7 +32,7 @@ do_action('woocommerce_before_cart'); ?>
             <span class="product-quantity grow-0 w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
             <span class="product-subtotal grow-0 w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
             <?php if(WC()->cart->has_discount()) : ?>
-                <span class="product-subtotal grow-0 w-[10%] text-right"><?php esc_html_e('Discount', 'woocommerce'); ?>:</span>
+                <span class="product-subtotal grow-0 w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Discount', 'woocommerce'); ?>:</span>
             <?php endif; ?>
         </div>
         <?php do_action('woocommerce_before_cart_contents'); ?>
@@ -55,7 +55,7 @@ do_action('woocommerce_before_cart'); ?>
                 if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
                     $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
             ?>
-                    <li class="woocommerce-cart-form__cart-item flex gap-2.5 mb-5 lg:mb-8<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+                    <li class="woocommerce-cart-form__cart-item cart_item flex gap-2.5 mb-5 lg:mb-8<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
                         <div class="product-name grow w-1/2" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                             <?php
@@ -67,7 +67,7 @@ do_action('woocommerce_before_cart'); ?>
                                  *
                                  * @since 2.1.0
                                  */
-                                echo wp_kses_post(apply_filters('woocommerce_cart_item_name', sprintf('<a href="%s">%s</a>', esc_url($product_permalink), $_product->get_name()), $cart_item, $cart_item_key));
+                                echo wp_kses_post(apply_filters('woocommerce_cart_item_name', sprintf('<a class="hover:text-primary transition duration-200" href="%s">%s</a>', esc_url($product_permalink), $_product->get_name()), $cart_item, $cart_item_key));
                             }
 
                             do_action('woocommerce_after_cart_item_name', $cart_item, $cart_item_key);
@@ -121,8 +121,8 @@ do_action('woocommerce_before_cart'); ?>
                             ?>
                         </div>
                         <?php if(WC()->cart->has_discount()) : ?>
-                            <div class="grow-0 w-[10%]">
-                                <span class="text-right">
+                            <div class="grow-0 w-[10%] text-right">
+                                <span>
                                     <?php echo($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
                                 </span>
                             </div>
