@@ -14,6 +14,7 @@ $client = get_field('client');
 $parametersList = get_field('parameters');
 $shortDescription = get_field('short_description');
 $cta = get_field('cta');
+$logoHeader = get_field('header_clients_logos')
 $client_logos = get_field('client_logos', 'option');
 ?>
 
@@ -113,6 +114,7 @@ $client_logos = get_field('client_logos', 'option');
 	?>
 		<div class="relative py-10 md:py-20">
 			<div class="container">
+				<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-14 text-center"><?php echo $logoHeader; ?></h2>
 				<div class="flex flex-wrap gap-5 justify-center items-center">
 					<?php foreach ($client_logos as $logo) : ?>
 						<img class="object-contain grayscale w-[76px] md:w-36 xl:w-[188px]" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" alt="<?php echo $logo['title']; ?>" />
