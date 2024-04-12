@@ -25,12 +25,12 @@ do_action('woocommerce_before_cart'); ?>
     
     <h2 class="text-2xl md:text-3xl text-primary !mb-10 lg:!mb-12 !mt-0 font-semibold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
 
-    <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full mb-8">
-        <div class="flex gap-2.5 text-base lg:text-xl font-semibold">
-            <span class="product-name w-1/2 text-left"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
-            <span class="product-price grow-0 w-[10%] text-right"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
-            <span class="product-quantity grow-0 w-[10%] text-right"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
-            <span class="product-subtotal grow-0 w-[10%] text-right"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
+    <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
+        <div class="flex gap-2.5 mb-8">
+            <span class="product-name grow w-1/2 text-left text-base lg:text-xl font-semibold"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
+            <span class="product-price grow-0 w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
+            <span class="product-quantity grow-0 w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
+            <span class="product-subtotal grow-0 w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
             <?php if(WC()->cart->has_discount()) : ?>
                 <span class="product-subtotal grow-0 w-[10%] text-right"><?php esc_html_e('Discount', 'woocommerce'); ?>:</span>
             <?php endif; ?>
@@ -57,7 +57,7 @@ do_action('woocommerce_before_cart'); ?>
             ?>
                     <li class="woocommerce-cart-form__cart-item flex gap-2.5 mb-5 lg:mb-8<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
-                        <div class="product-name w-1/2" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
+                        <div class="product-name grow w-1/2" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                             <?php
                             if (!$product_permalink) {
                                 echo wp_kses_post($product_name . '&nbsp;');
