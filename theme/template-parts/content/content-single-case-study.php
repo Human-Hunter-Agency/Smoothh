@@ -109,9 +109,7 @@ $client_logos = get_field('client_logos', 'option');
 
 
 
-	<?php if ($client_logos) :
-		// $header = $client_logos['header'];
-	?>
+	<?php if ($client_logos) : ?>
 		<div class="relative py-10 md:py-20">
 			<div class="container">
 				<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-14 text-center"><?php echo $logoHeader; ?></h2>
