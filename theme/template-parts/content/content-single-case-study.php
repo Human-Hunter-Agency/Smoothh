@@ -10,9 +10,9 @@
 
 $title = get_field('title');
 $author = get_field('author');
-$client = get_field('klient');
+$client = get_field('client');
 $parametersList = get_field('parameters');
-$shortDescription = get_field('krotki_opis');
+$shortDescription = get_field('short_description');
 $cta = get_field('cta');
 $client_logos = get_field('client_logos', 'option');
 ?>
@@ -101,9 +101,9 @@ $client_logos = get_field('client_logos', 'option');
 		'exclude' => get_post_type(get_the_ID()) == 'case-study' ? get_the_ID() : '',
 	);
 	$posts = get_posts($args);
-	
-	
-		get_template_part( 'flexible-content/sections/partials/case-studies-swiper', '', array('posts' => $posts) );
+
+
+	get_template_part('flexible-content/sections/partials/case-studies-swiper', '', array('posts' => $posts));
 	?>
 
 
