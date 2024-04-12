@@ -25,9 +25,9 @@ do_action('woocommerce_before_cart'); ?>
     
     <h2 class="text-2xl md:text-3xl text-primary !mb-10 lg:!mb-12 !mt-0 font-semibold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
 
-    <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full " cellspacing="0">
-        <div class="flex gap-2.5">
-            <span class="product-name grow-0 w-1/2 text-left"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
+    <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full mb-8">
+        <div class="flex gap-2.5 text-base lg:text-xl font-semibold">
+            <span class="product-name w-1/2 text-left"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
             <span class="product-price grow-0 w-[10%] text-right"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
             <span class="product-quantity grow-0 w-[10%] text-right"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
             <span class="product-subtotal grow-0 w-[10%] text-right"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
@@ -35,8 +35,9 @@ do_action('woocommerce_before_cart'); ?>
                 <span class="product-subtotal grow-0 w-[10%] text-right"><?php esc_html_e('Discount', 'woocommerce'); ?>:</span>
             <?php endif; ?>
         </div>
-            <?php do_action('woocommerce_before_cart_contents'); ?>
-
+        <?php do_action('woocommerce_before_cart_contents'); ?>
+        
+        <ul class="text-xl border-b border-[#F2F2F2]">
             <?php
             foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
                 $_product   = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
@@ -54,9 +55,9 @@ do_action('woocommerce_before_cart'); ?>
                 if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
                     $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
             ?>
-                    <div class="woocommerce-cart-form__cart-item flex gap-2.5 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+                    <li class="woocommerce-cart-form__cart-item flex gap-2.5 mb-5 lg:mb-8<?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
-                        <div class="product-name grow-0 w-1/2" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
+                        <div class="product-name w-1/2" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                             <?php
                             if (!$product_permalink) {
                                 echo wp_kses_post($product_name . '&nbsp;');
@@ -124,11 +125,12 @@ do_action('woocommerce_before_cart'); ?>
                                 <?php echo($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
                             </div>
                         <?php endif; ?>
-                    </div>
+                    </li>
             <?php
                 }
             }
             ?>
+        </ul>
 
             <?php do_action('woocommerce_cart_contents'); ?>
 
