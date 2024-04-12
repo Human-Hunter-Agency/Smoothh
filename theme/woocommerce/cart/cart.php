@@ -37,7 +37,7 @@ do_action('woocommerce_before_cart'); ?>
         </div>
         <?php do_action('woocommerce_before_cart_contents'); ?>
         
-        <ul class="text-xl border-b border-[#F2F2F2]">
+        <ul class="text-xl border-b border-[#F2F2F2] mb-4">
             <?php
             foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
                 $_product   = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
@@ -133,6 +133,13 @@ do_action('woocommerce_before_cart'); ?>
             }
             ?>
         </ul>
+            <div class="flex gap-2.5 justify-end text-xl">
+                <span class="w-[10%] text-right text-primary font-semibold"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></span>
+			    <span class="w-[10%] text-right text-primary font-semibold" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
+                <?php if(WC()->cart->has_discount()) : ?>
+                    <span class="grow-0 w-[10%] text-right"><?php get_total_discount(); ?></span>
+                <?php endif; ?>
+            </div>
 
             <?php do_action('woocommerce_cart_contents'); ?>
 
@@ -148,7 +155,7 @@ do_action('woocommerce_before_cart'); ?>
                         </div>
                     <?php } ?>
 
-                    <button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+                    <button type="submit" class="hidden button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
 
                     <?php do_action('woocommerce_cart_actions'); ?>
 
