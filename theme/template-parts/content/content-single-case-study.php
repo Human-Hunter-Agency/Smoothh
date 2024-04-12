@@ -14,7 +14,7 @@ $client = get_field('client');
 $parametersList = get_field('parameters');
 $shortDescription = get_field('short_description');
 $cta = get_field('cta');
-$logoHeader = get_field('header_clients_logos')
+$logoHeader = get_field('header_clients_logos');
 $client_logos = get_field('client_logos', 'option');
 ?>
 
