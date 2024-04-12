@@ -137,7 +137,7 @@ do_action('woocommerce_before_cart'); ?>
                 <span class="w-[10%] text-right text-primary font-semibold"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
 			    <span class="w-[10%] text-right text-primary font-semibold" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
                 <?php if(WC()->cart->has_discount()) : ?>
-                    <span class="grow-0 w-[10%] text-right"><?php WC()->cart->get_total_discount(); ?></span>
+                    <span class="grow-0 w-[10%] text-right"><?php echo WC()->cart->get_total_discount(); ?></span>
                 <?php endif; ?>
             </div>
 
