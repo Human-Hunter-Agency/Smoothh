@@ -25,16 +25,16 @@ do_action('woocommerce_before_cart'); ?>
     
     <h2 class="text-2xl md:text-3xl text-primary !mb-10 lg:!mb-12 !mt-0 font-semibold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
 
-    <table class="shop_table_responsive cart woocommerce-cart-form__contents w-full" cellspacing="0">
-        <thead>
-            <tr>
-                <th class="product-name text-left"><?php esc_html_e('Product', 'woocommerce'); ?>:</th>
-                <th class="product-price text-right"><?php esc_html_e('Price', 'woocommerce'); ?>:</th>
-                <th class="product-quantity text-right"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</th>
-                <th class="product-subtotal text-right"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full " cellspacing="0">
+        <div class="flex gap-2.5">
+            <span class="product-name grow-0 w-1/2 text-left"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
+            <span class="product-price grow-0 w-[10%] text-right"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
+            <span class="product-quantity grow-0 w-[10%] text-right"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
+            <span class="product-subtotal grow-0 w-[10%] text-right"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
+            <?php if(WC()->cart->has_discount()) : ?>
+                <span class="product-subtotal grow-0 w-[10%] text-right"><?php esc_html_e('Discount', 'woocommerce'); ?>:</span>
+            <?php endif; ?>
+        </div>
             <?php do_action('woocommerce_before_cart_contents'); ?>
 
             <?php
@@ -54,9 +54,9 @@ do_action('woocommerce_before_cart'); ?>
                 if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
                     $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
             ?>
-                    <tr class="woocommerce-cart-form__cart-item <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+                    <div class="woocommerce-cart-form__cart-item flex gap-2.5 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
-                        <td class="product-name" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
+                        <div class="product-name grow-0 w-1/2" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                             <?php
                             if (!$product_permalink) {
                                 echo wp_kses_post($product_name . '&nbsp;');
@@ -79,20 +79,16 @@ do_action('woocommerce_before_cart'); ?>
                                 echo wp_kses_post(apply_filters('woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__('Available on backorder', 'woocommerce') . '</p>', $product_id));
                             }
                             ?>
-                        </td>
+                        </div>
 
-                        <td class="product-price text-right" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
+                        <div class="product-price grow-0 w-[10%] text-right" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
                             <?php
                             echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
-                            <?php if (WC()->cart->has_discount()) {
-                                echo($cart_item['line_subtotal'] - $cart_item['line_total']);
-                            }
-                            ?>
 
-                            </td>
+                            </div>
 
-                        <td class="product-quantity text-right" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+                        <div class="product-quantity grow-0 w-[10%] text-right" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                             <?php
                             if ($_product->is_sold_individually()) {
                                 $min_quantity = 1;
@@ -116,14 +112,19 @@ do_action('woocommerce_before_cart'); ?>
 
                             echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
                             ?>
-                        </td>
+                        </div>
 
-                        <td class="product-subtotal text-right" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
+                        <div class="product-subtotal grow-0 w-[10%] text-right" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                             <?php
                             echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
-                        </td>
-                    </tr>
+                        </div>
+                        <?php if(WC()->cart->has_discount()) : ?>
+                            <div class="grow-0 w-[10%]">
+                                <?php echo($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
             <?php
                 }
             }
@@ -131,9 +132,7 @@ do_action('woocommerce_before_cart'); ?>
 
             <?php do_action('woocommerce_cart_contents'); ?>
 
-            <tr>
-                <td colspan="6" class="actions">
-
+            <div>
                     <?php if (wc_coupons_enabled()) { ?>
                         <div class="coupon">
                             <label for="coupon_code" class="screen-reader-text"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" /> <button type="submit" class="button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_html_e('Apply coupon', 'woocommerce'); ?></button>
@@ -146,12 +145,10 @@ do_action('woocommerce_before_cart'); ?>
                     <?php do_action('woocommerce_cart_actions'); ?>
 
                     <?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?>
-                </td>
-            </tr>
+            </div>
 
             <?php do_action('woocommerce_after_cart_contents'); ?>
-        </tbody>
-    </table>
+    </div>
     <?php do_action('woocommerce_after_cart_table'); ?>
 </form>
 
