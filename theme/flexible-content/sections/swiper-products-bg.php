@@ -6,6 +6,9 @@ $header = $args['header'];
 
 if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = $args['products_list'];
+    foreach ($products as $product) {
+        $product = wc_get_product($product);
+    }
 } else {
     $products_args = array(
         'limit' => 10,
