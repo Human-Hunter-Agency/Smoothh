@@ -28,11 +28,11 @@ do_action('woocommerce_before_cart'); ?>
     <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
         <div class="flex gap-2.5 lg:gap-5 items-end">
             <span class="product-name grow md:w-2/5 lg:w-1/2 text-left text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
-            <span class="product-price grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
-            <span class="product-quantity grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
-            <span class="product-subtotal grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
+            <span class="product-price grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
+            <span class="product-quantity grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
+            <span class="product-subtotal grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
             <?php if(WC()->cart->has_discount()) : ?>
-                <span class="product-subtotal grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold p-5 lg:p-7 lg:pb-8 rounded-t-[15px] bg-primary text-white"><?php esc_html_e('Discount', 'woocommerce'); ?>:</span>
+                <span class="product-subtotal grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold p-5 lg:p-7 lg:pb-8 min-w-32 lg:min-w-40 rounded-t-[15px] bg-primary text-white"><?php esc_html_e('Discount', 'woocommerce'); ?>:</span>
             <?php endif; ?>
         </div>
         <?php do_action('woocommerce_before_cart_contents'); ?>
@@ -121,7 +121,7 @@ do_action('woocommerce_before_cart'); ?>
                             ?>
                         </div>
                         <?php if(WC()->cart->has_discount()) : ?>
-                            <div class="grow-0 w-[15%] lg:w-[10%] p-5 lg:pb-8 lg:px-7 !pt-0 text-right text-white bg-primary">
+                            <div class="grow-0 w-[15%] lg:w-[10%] p-5 lg:pb-8 lg:px-7 !pt-0 text-right text-white bg-primary min-w-32 lg:min-w-40">
                                 <span>
                                     <?php echo wc_price($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
                                 </span>
@@ -137,7 +137,7 @@ do_action('woocommerce_before_cart'); ?>
                 <span class="w-[15%] lg:w-[10%] text-right text-primary font-semibold"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
 			    <span class="w-[15%] lg:w-[10%] text-right text-primary font-semibold" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
                 <?php if(WC()->cart->has_discount()) : ?>
-                    <span class="grow-0 w-[15%] lg:w-[10%] text-right p-5 pt-2.5 lg:pb-7 lg:px-7 bg-primary text-white rounded-b-[15px]"><?php echo WC()->cart->get_total_discount(); ?></span>
+                    <span class="grow-0 w-[15%] lg:w-[10%] text-right p-5 pt-2.5 lg:pb-7 lg:px-7 bg-primary text-white rounded-b-[15px] min-w-32 lg:min-w-40"><?php echo WC()->cart->get_total_discount(); ?></span>
                 <?php endif; ?>
             </div>
 
