@@ -149,6 +149,13 @@ do_action('woocommerce_before_cart'); ?>
             <div class="flex flex-col lg:flex-row justify-between gap-5">
                 <div>
                     <?php if (wc_coupons_enabled()) { ?>
+                        <?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+                            <div class="mb-2.5">
+                                <span class="block mb-1.5"><?php wc_cart_totals_coupon_label( $coupon ); ?></span>
+                                <span class="block"><?php wc_cart_totals_coupon_html( $coupon ); ?></span>
+                            </div>
+                        <?php endforeach; ?>
+
                         <div class="coupon flex">
                             <label for="coupon_code" class="screen-reader-text"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label> 
                             <input type="text" name="coupon_code" class="input-text h-[55px] w-full max-w-80 pl-3 md:pl-[18px] pr-4 min-w-0 text-base bg-transparent placeholder:text-foreground border border-r-0 border-primary rounded-l-2xl" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
@@ -167,7 +174,7 @@ do_action('woocommerce_before_cart'); ?>
                 </div>
 
                 <div class="text-base flex flex-col md:flex-row gap-5">
-                    <a href="/sklep" class="w-full border-2 border-[#F2F2F2] text-black min-h-[55px] px-5 xl:px-10 rounded-[15px] font-bold flex items-center justify-center gap-8">
+                    <a href="/sklep" class="whitespace-nowrap w-full border-2 border-[#F2F2F2] text-black min-h-[55px] px-5 xl:px-10 rounded-[15px] font-bold flex items-center justify-center gap-8">
                         <?php esc_attr_e('Continue Shopping', 'woocommerce'); ?>
                         <svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle class="stroke-black" cx="9.5" cy="9.5" r="9"></circle>
@@ -185,7 +192,7 @@ do_action('woocommerce_before_cart'); ?>
 
 <?php do_action('woocommerce_before_cart_collaterals'); ?>
 
-<div class="cart-collaterals">
+<!-- <div class="cart-collaterals">
     <?php
     /**
      * Cart collaterals hook.
@@ -193,8 +200,8 @@ do_action('woocommerce_before_cart'); ?>
      * @hooked woocommerce_cross_sell_display
      * @hooked woocommerce_cart_totals - 10
      */
-    do_action('woocommerce_cart_collaterals');
-    ?>
-</div>
+    // do_action('woocommerce_cart_collaterals');
+    // ?>
+</div> -->
 
 <?php do_action('woocommerce_after_cart'); ?>
