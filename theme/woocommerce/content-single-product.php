@@ -195,19 +195,10 @@ if (post_password_required()) {
 				</div>
 			</div>
 		<?php endif;
-		$args = array(
-			'post_type' => 'case-study',
-			'numberposts' => 5,
-			'orderby' => 'date',
-			'order' => 'DESC',
-			'exclude' => get_post_type(get_the_ID()) == 'case-study' ? get_the_ID() : '',
-		);
-		$posts = get_posts($args);
-		if ($posts) : 
-		    get_template_part( 'flexible-content/sections/partials/case-studies-swiper', '', array('posts' => $posts) );
+		
+		    get_template_part( 'flexible-content/sections/partials/case-studies-swiper', '' );
 		?>
 			
-		<?php endif; ?>
 	</section>
 </div>
 

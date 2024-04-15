@@ -95,17 +95,7 @@ $client_logos = get_field('client_logos', 'option');
 	<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-14 text-center"><?php echo $headerPostRelated; ?></h2>
 
 	<?php
-	$args = array(
-		'post_type' => 'case-study',
-		'numberposts' => 5,
-		'orderby' => 'date',
-		'order' => 'DESC',
-		'exclude' => get_post_type(get_the_ID()) == 'case-study' ? get_the_ID() : '',
-	);
-	$posts = get_posts($args);
-
-
-	get_template_part('flexible-content/sections/partials/case-studies-swiper', '', array('posts' => $posts));
+		get_template_part('flexible-content/sections/partials/case-studies-swiper', '');
 	?>
 </section>
 
