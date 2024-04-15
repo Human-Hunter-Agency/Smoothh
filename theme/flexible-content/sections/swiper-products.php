@@ -7,6 +7,7 @@ $header = $args['header'];
 if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = $args['products_list'];
     foreach ($products as $product) {
+        echo $product->ID;
         $product = wc_get_product_object('',$product->ID);
     }
     
