@@ -57,7 +57,7 @@ do_action('woocommerce_before_cart'); ?>
             ?>
                     <li class="woocommerce-cart-form__cart-item cart_item flex gap-2.5 lg:gap-5 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
-                        <div class="product-name grow md:w-2/5 lg:w-1/2 p-5 lg:pb-8 lg:px-7 !pt-0 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
+                        <div class="product-name grow md:w-2/5 lg:w-1/2 pb-5 lg:pb-8 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                             <?php
                             if (!$product_permalink) {
                                 echo wp_kses_post($product_name . '&nbsp;');
@@ -133,13 +133,13 @@ do_action('woocommerce_before_cart'); ?>
             }
             ?>
         </ul>
-            <div class="flex justify-end text-xl">
+            <div class="flex justify-end text-xl mb-5">
                 <div class="grow border-t border-[#F2F2F2]"></div>
-                <span class="w-[15%] lg:w-[10%] pr-2.5 lg:pr-5 text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
-			    <span class="w-[15%] lg:w-[10%] pr-1.5 mr-1 lg:pr-4 text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
+                <span class="w-[calc(15%_+_10px)] lg:w-[calc(10%_+_20px)] pr-2.5 lg:pr-5 text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
+			    <span class="w-[calc(15%_+_5px)] lg:w-[calc(10%_+_15px)] mr-[5px] pr-2 lg:pr-[15px] text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
                 <?php if(WC()->cart->has_discount()) : ?>
                     <div class="grow-0 w-[15%] lg:w-[10%] px-5 lg:px-7 bg-primary rounded-b-[15px] min-w-32 lg:min-w-40 ">
-                        <div class="text-right pt-2.5 lg:pb-7 text-white border-t border-white"><?php echo WC()->cart->get_total_discount(); ?></div>
+                        <div class="text-right pt-2.5 pb-5 lg:pb-7 text-white border-t border-white"><?php echo WC()->cart->get_total_discount(); ?></div>
                     </div>
                 <?php endif; ?>
             </div>
@@ -158,7 +158,7 @@ do_action('woocommerce_before_cart'); ?>
                     </div>
                 <?php } ?>
 
-                <button type="submit" class="hidden button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+                <button type="submit" class="!hidden button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
 
                 <?php do_action('woocommerce_cart_actions'); ?>
 
