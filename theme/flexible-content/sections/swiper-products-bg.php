@@ -7,7 +7,7 @@ $header = $args['header'];
 if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = $args['products_list'];
     foreach ($products as $product) {
-        $product = wc_get_product($product);
+        $product = wc_get_product_object('',$product->ID);
     }
 } else {
     $products_args = array(
@@ -18,7 +18,6 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     );
     $products = wc_get_products($products_args);
 }
-print_r($products);
 
 ?>
 
