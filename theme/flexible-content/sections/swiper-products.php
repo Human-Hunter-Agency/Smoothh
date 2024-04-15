@@ -1,6 +1,6 @@
 <?php
 
-/** Template to display 'Lista produktów' - list_products */
+/** Template to display 'Swiper z produktami' - swiper_products */
 
 $header = $args['header']
 

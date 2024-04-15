@@ -58,7 +58,7 @@ if ($related_products) : ?>
                                     </h4>
                                     <?php if (is_user_logged_in()) : ?>
                                         <span class="text-lg md:text-xl">
-                                            <?php echo wc_get_price_excluding_tax($related_product) ?> netto
+                                            <?php echo wc_price(wc_get_price_excluding_tax($related_product)) ?> netto
                                         </span>
                                     <?php endif; ?>
                                 </div>

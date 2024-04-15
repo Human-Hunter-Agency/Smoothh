@@ -123,7 +123,7 @@ do_action('woocommerce_before_cart'); ?>
                         <?php if(WC()->cart->has_discount()) : ?>
                             <div class="grow-0 w-[10%] text-right">
                                 <span>
-                                    <?php echo($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
+                                    <?php echo wc_price($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
                                 </span>
                             </div>
                         <?php endif; ?>
