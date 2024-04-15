@@ -39,6 +39,9 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                             <?php //echo $product->get_image() ?>
                             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                         </div>
+
+                        <?php print_r($product) ?>
+
                         <div class="flex-1 p-3 md:p-6 text-white text-center">
                             <h4 class="text-lg md:text-xl font-semibold mb-5">
                                 <?php //echo get_the_title($product->get_id()) ?>
@@ -47,7 +50,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                                 <?php //echo $product->get_short_description() ?>
                             </p>
                         </div>
-                        <a href="<?php echo get_permalink($product->get_id()) ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-primary bg-white hover:text-secondary transition duration-200">
+                        <a href="<?php //echo get_permalink($product->get_id()) ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-primary bg-white hover:text-secondary transition duration-200">
                             Zobacz produkt
                         </a>
                     </div>

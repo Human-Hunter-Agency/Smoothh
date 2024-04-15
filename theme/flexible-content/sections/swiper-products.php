@@ -37,7 +37,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                 <?php foreach ($products as $product) : ?>
                     <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
-                            <?php echo $product->get_image() ?>
+                            <?php //echo $product->get_image() ?>
                             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                         </div>
                         <div class="flex-1 p-3 md:p-6">
