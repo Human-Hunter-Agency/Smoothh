@@ -4,6 +4,8 @@
     $shortcode = $args['shortcode'];
 
 ?>
-<?php if (isset($shortcode) && $shortcode){
-    echo do_shortcode($shortcode);
-} ?>
+<?php if (isset($shortcode) && $shortcode) : ?>
+    <div class="container">
+        <?php echo do_shortcode($shortcode); ?>
+    </div>
+<?php endif ; ?>
