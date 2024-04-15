@@ -7,7 +7,7 @@ $header = $args['header'];
 if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = $args['products_list'];
     foreach ($products as $product) {
-        $product = wc_get_product_object('',$product->ID);
+        $product = wc_get_product_object('variable',$product->ID);
     }
 } else {
     $products_args = array(
@@ -17,6 +17,8 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
         'exclude' => get_post_type(get_the_ID()) == 'product' ? get_the_ID() : '',
     );
     $products = wc_get_products($products_args);
+    print_r($products);
+
 }
 
 ?>
