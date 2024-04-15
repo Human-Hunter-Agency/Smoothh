@@ -17,6 +17,15 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = get_posts($products_args);
 }
 
+print_r($args);
+echo '--------';
+print_r($args['products_list']);
+echo '--------';
+print_r(isset($args['products_list']) && !empty($args['products_list']));
+echo '--------';
+print_r($products);
+echo '--------';
+
 ?>
 
 <section class="relative pb-10 mb:pb-[60px]">
