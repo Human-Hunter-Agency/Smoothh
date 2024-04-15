@@ -37,25 +37,25 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                 <?php foreach ($products as $product) : ?>
                     <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
-                            <?php echo $related_product->get_image() ?>
+                            <?php echo $product->get_image() ?>
                             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                         </div>
                         <div class="flex-1 p-3 md:p-6">
                             <div class="flex gap-2.5 md:gap-5 justify-between mb-5">
                                 <h4 class="text-lg md:text-xl text-primary font-semibold">
-                                    <?php echo get_the_title($related_product->get_id()) ?>
+                                    <?php echo get_the_title($product->get_id()) ?>
                                 </h4>
                                 <?php if (is_user_logged_in()) : ?>
                                     <span class="text-lg md:text-xl">
-                                        <?php echo wc_price(wc_get_price_excluding_tax($related_product)) ?> netto
+                                        <?php echo wc_price(wc_get_price_excluding_tax($product)) ?> netto
                                     </span>
                                 <?php endif; ?>
                             </div>
                             <p class="text-sm md:text-base prose-strong:font-semibold">
-                                <?php echo $related_product->get_short_description() ?>
+                                <?php echo $product->get_short_description() ?>
                             </p>
                         </div>
-                        <a href="<?php echo get_permalink($related_product->get_id()) ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">
+                        <a href="<?php echo get_permalink($product->get_id()) ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">
                             Zobacz produkt
                         </a>
                     </div>

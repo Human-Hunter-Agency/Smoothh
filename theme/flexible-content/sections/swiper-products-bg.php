@@ -17,6 +17,10 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = get_posts($products_args);
 }
 
+print_r($args['products_list']);
+echo '--------'
+print_r($products);
+
 ?>
 
 <div class="relative py-10 md:pt-[50px] md:pb-[60px] bg-gradient-to-b from-secondary to-primary">
