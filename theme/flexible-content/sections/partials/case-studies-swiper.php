@@ -1,9 +1,9 @@
 <?php
 /** Template to display inner case-studies swiper */
 
-    $posts = $args['posts'];
-    
-    if (!isset($posts)) {
+    if (isset($args['posts'])) {
+        $posts = $args['posts'];
+    }else{
         $posts_args = array(
             'post_type' => 'case-study',
             'numberposts' => 5,
