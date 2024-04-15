@@ -1,7 +1,7 @@
 <?php
 /** Template to display inner case-studies swiper */
 
-    if (isset($args['posts'])) {
+    if (isset($args['posts']) && !empty($args['posts'])) {
         $posts = $args['posts'];
     }else{
         $posts_args = array(
