@@ -4,7 +4,7 @@
     $header = $args['header'];
     $posts = $args['tiles_list'];
 
-    if (!isset($posts) || !$posts) {
+    if (!isset($posts)) {
         $posts_args = array(
             'post_type' => 'case-study',
             'numberposts' => 5,
