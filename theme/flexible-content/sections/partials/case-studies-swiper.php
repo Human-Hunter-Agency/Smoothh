@@ -2,6 +2,17 @@
 /** Template to display inner case-studies swiper */
 
     $posts = $args['posts'];
+    
+    if (!isset($posts)) {
+        $posts_args = array(
+            'post_type' => 'case-study',
+            'numberposts' => 5,
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'exclude' => get_post_type(get_the_ID()) == 'case-study' ? get_the_ID() : '',
+        );
+        $posts = get_posts($posts_args);
+    }
 
 ?>
 
