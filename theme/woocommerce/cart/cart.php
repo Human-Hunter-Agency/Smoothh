@@ -26,7 +26,7 @@ do_action('woocommerce_before_cart'); ?>
     <h2 class="text-2xl md:text-3xl text-primary !mb-5 !mt-0 font-semibold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
 
     <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
-        <div class="flex gap-2.5 lg:gap-5 items-end">
+        <div class="hidden lg:flex gap-2.5 lg:gap-5 items-end">
             <span class="product-name grow md:w-2/5 lg:w-1/2 text-left text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
             <span class="product-price grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
             <span class="product-quantity grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
@@ -55,9 +55,9 @@ do_action('woocommerce_before_cart'); ?>
                 if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
                     $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
             ?>
-                    <li class="woocommerce-cart-form__cart-item cart_item flex gap-2.5 lg:gap-5 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+                    <li class="woocommerce-cart-form__cart-item cart_item flex flex-col md:flex-row gap-2.5 lg:gap-5 mb-5 md:mb-0 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
-                        <div class="product-name grow md:w-2/5 lg:w-1/2 pb-5 lg:pb-8 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
+                        <div class="product-name grow md:w-2/5 lg:w-1/2 md:pb-5 lg:pb-8 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                             <?php
                             if (!$product_permalink) {
                                 echo wp_kses_post($product_name . '&nbsp;');
@@ -82,14 +82,14 @@ do_action('woocommerce_before_cart'); ?>
                             ?>
                         </div>
 
-                        <div class="product-price grow-0 w-[15%] lg:w-[10%] text-right" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
+                        <div class="product-price grow-0 md:w-[15%] lg:w-[10%] text-right" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
                             <?php
                             echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
 
                             </div>
 
-                        <div class="product-quantity grow-0 w-[15%] lg:w-[10%] text-right" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+                        <div class="product-quantity grow-0 md:w-[15%] lg:w-[10%] text-right" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                             <?php
                             if ($_product->is_sold_individually()) {
                                 $min_quantity = 1;
@@ -115,13 +115,13 @@ do_action('woocommerce_before_cart'); ?>
                             ?>
                         </div>
 
-                        <div class="product-subtotal grow-0 w-[15%] lg:w-[10%] text-right" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
+                        <div class="product-subtotal grow-0 md:w-[15%] lg:w-[10%] text-right" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                             <?php
                             echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
                         </div>
                         <?php if(WC()->cart->has_discount()) : ?>
-                            <div class="grow-0 w-[15%] lg:w-[10%] p-5 lg:pb-8 lg:px-7 !pt-0 text-right text-white bg-primary min-w-32 lg:min-w-40">
+                            <div class="grow-0 md:w-[15%] lg:w-[10%] p-2 md:p-5 lg:pb-8 lg:px-7 !pt-0 text-right text-white bg-primary rounded-md md:rounded-none min-w-32 lg:min-w-40">
                                 <span>
                                     <?php echo wc_price($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
                                 </span>
@@ -133,12 +133,12 @@ do_action('woocommerce_before_cart'); ?>
             }
             ?>
         </ul>
-            <div class="flex justify-end text-xl mb-5">
+            <div class="flex flex-col md:flex-row justify-end text-xl mb-5">
                 <div class="grow border-t border-[#F2F2F2]"></div>
-                <span class="w-[calc(15%_+_10px)] lg:w-[calc(10%_+_20px)] text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
-			    <span class="w-[calc(15%_+_10px)] lg:w-[calc(10%_+_20px)] <?php if(WC()->cart->has_discount()) : ?>mr-5<?php endif; ?> text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
+                <span class="md:w-[calc(15%_+_10px)] lg:w-[calc(10%_+_20px)] text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
+			    <span class="md:w-[calc(15%_+_10px)] lg:w-[calc(10%_+_20px)] <?php if(WC()->cart->has_discount()) : ?>mr-5<?php endif; ?> text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
                 <?php if(WC()->cart->has_discount()) : ?>
-                    <div class="grow-0 w-[15%] lg:w-[10%] px-5 lg:px-7 bg-primary rounded-b-[15px] min-w-32 lg:min-w-40 ">
+                    <div class="grow-0 md:w-[15%] lg:w-[10%] px-5 lg:px-7 bg-primary rounded-b-[15px] min-w-32 lg:min-w-40 ">
                         <div class="text-right pt-2.5 pb-5 lg:pb-7 text-white border-t border-white"><?php echo WC()->cart->get_total_discount(); ?></div>
                     </div>
                 <?php endif; ?>
@@ -146,7 +146,7 @@ do_action('woocommerce_before_cart'); ?>
 
             <?php do_action('woocommerce_cart_contents'); ?>
 
-            <div class="flex flex-col lg:flex-row justify-between items-end gap-5">
+            <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-5">
                 <div>
                     <?php if (wc_coupons_enabled()) { ?>
                         <?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
