@@ -135,8 +135,8 @@ do_action('woocommerce_before_cart'); ?>
         </ul>
             <div class="flex justify-end text-xl mb-5">
                 <div class="grow border-t border-[#F2F2F2]"></div>
-                <span class="w-[calc(15%_+_10px)] lg:w-[calc(10%_+_20px)] pr-2.5 lg:pr-5 text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
-			    <span class="w-[calc(15%_+_5px)] lg:w-[calc(10%_+_15px)] mr-[5px] pr-2 lg:pr-[15px] text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
+                <span class="w-[calc(15%_+_10px)] lg:w-[calc(10%_+_20px)] text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
+			    <span class="w-[calc(15%_+_10px)] lg:w-[calc(10%_+_20px)] <?php if(WC()->cart->has_discount()) : ?>mr-5<?php endif; ?> text-right pt-2.5 text-primary font-semibold border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
                 <?php if(WC()->cart->has_discount()) : ?>
                     <div class="grow-0 w-[15%] lg:w-[10%] px-5 lg:px-7 bg-primary rounded-b-[15px] min-w-32 lg:min-w-40 ">
                         <div class="text-right pt-2.5 pb-5 lg:pb-7 text-white border-t border-white"><?php echo WC()->cart->get_total_discount(); ?></div>
