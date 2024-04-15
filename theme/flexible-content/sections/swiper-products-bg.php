@@ -2,7 +2,20 @@
 
 /** Template to display 'Swiper z produktami z tłem' - swiper_products_bg */
 
-$header = $args['header']
+$header = $args['header'];
+
+if (isset($args['products_list']) && !empty($args['products_list'])) {
+    $products = $args['products_list'];
+} else {
+    $products_args = array(
+        'post_type' => 'product',
+        'numberposts' => 10,
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'exclude' => get_post_type(get_the_ID()) == 'product' ? get_the_ID() : '',
+    );
+    $products = get_posts($products_args);
+}
 
 ?>
 
@@ -20,14 +33,7 @@ $header = $args['header']
     <div class="relative z-0 w-full overflow-hidden !pb-5">
         <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
             <div class="swiper-wrapper">
-                <?php
-                $args = array(
-                    'post_type'      => 'product',
-                );
-                $loop = new WP_Query($args);
-                while ($loop->have_posts()) : $loop->the_post();
-                    global $product;
-                ?>
+                <?php foreach ($products as $product) : ?>
                     <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                             <?php echo $product->get_image() ?>
@@ -45,10 +51,7 @@ $header = $args['header']
                             Zobacz produkt
                         </a>
                     </div>
-                <?php endwhile;
-
-                wp_reset_query();
-                ?>
+                <?php endforeach; ?>
 
             </div>
             <div class="swiper-button-prev">
