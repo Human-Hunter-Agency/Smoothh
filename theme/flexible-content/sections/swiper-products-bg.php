@@ -18,6 +18,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     );
     $products = wc_get_products($products_args);
 }
+print_r($products);
 
 ?>
 
