@@ -26,7 +26,7 @@ do_action('woocommerce_before_cart'); ?>
     <h2 class="text-2xl md:text-3xl text-primary !mb-5 !mt-0 font-semibold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
 
     <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
-        <div class="hidden lg:flex gap-2.5 lg:gap-5 items-end">
+        <div class="hidden md:flex gap-2.5 lg:gap-5 items-end">
             <span class="product-name grow md:w-2/5 lg:w-1/2 text-left text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
             <span class="product-price grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
             <span class="product-quantity grow-0 w-[15%] lg:w-[10%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
