@@ -146,13 +146,13 @@ do_action('woocommerce_before_cart'); ?>
 
             <?php do_action('woocommerce_cart_contents'); ?>
 
-            <div class="flex flex-col lg:flex-row justify-between gap-5">
+            <div class="flex flex-col lg:flex-row justify-between items-end gap-5">
                 <div>
                     <?php if (wc_coupons_enabled()) { ?>
                         <?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
-                            <div class="mb-2.5">
-                                <span class="block mb-1.5"><?php wc_cart_totals_coupon_label( $coupon ); ?></span>
-                                <span class="block"><?php wc_cart_totals_coupon_html( $coupon ); ?></span>
+                            <div class="mb-4 leading-tight">
+                                <span class="block font-semibold"><?php wc_cart_totals_coupon_label( $coupon ); ?></span>
+                                <span class="block [&_a]:text-primary"><?php wc_cart_totals_coupon_html( $coupon ); ?></span>
                             </div>
                         <?php endforeach; ?>
 
