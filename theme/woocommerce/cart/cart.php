@@ -28,7 +28,7 @@ do_action('woocommerce_before_cart'); ?>
     <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
         <table>
 
-            <thead class="hidden gap-2.5 lg:gap-5 items-end">
+            <thead class="hidden md:table-header-group gap-2.5 lg:gap-5 items-end">
                 <th class="product-name grow md:w-2/5 text-left text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?>:</th>
                 <th class="product-price grow-0 w-[15%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Price', 'woocommerce'); ?>:</th>
                 <th class="product-quantity grow-0 w-[15%] text-right text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</th>
@@ -57,9 +57,9 @@ do_action('woocommerce_before_cart'); ?>
                     if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
                         $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
                 ?>
-                        <tr class="woocommerce-cart-form__cart-item cart_item flex md:table-cell flex-col gap-2.5 mb-5 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+                        <tr class="woocommerce-cart-form__cart-item cart_item flex md:table-row flex-col gap-2.5 mb-5 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
     
-                            <td class="product-name  grow md:w-2/5 md:pb-5 lg:pb-8 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
+                            <td class="product-name grow md:w-2/5 md:pb-5 lg:pb-8 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                                 <?php
                                 if (!$product_permalink) {
                                     echo wp_kses_post($product_name . '&nbsp;');
