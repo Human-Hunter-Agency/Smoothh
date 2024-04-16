@@ -353,7 +353,7 @@ function insertPosts(container,posts){
 function initQtyInputs(){
 	const qtyWrappers = document.querySelectorAll('[data-js="qty-control"]')
 	qtyWrappers.forEach(wrapper => {
-		const inputField = wrapper.querySelector('input');
+		const inputField = wrapper.querySelector('input.qty');
 		const upBtn = wrapper.querySelector('[data-js="up"]');
 		const downBtn = wrapper.querySelector('[data-js="down"]');
 
@@ -361,18 +361,20 @@ function initQtyInputs(){
 
 		upBtn.addEventListener('click', ()=>{
 			let currentValue = parseInt(inputField.value); 
-			let maxValue = parseInt(inputField.max); 
+			let maxValue = parseInt(inputField.max) || Infinity; 
 		
 			if (currentValue < maxValue) {
 				inputField.value = currentValue + 1;
+				inputField.dispatchEvent(new Event('change',{bubbles: true}))
 			}
 		})
 		downBtn.addEventListener('click', ()=>{
 			let currentValue = parseInt(inputField.value); 
-			let minValue = parseInt(inputField.min); 
+			let minValue = parseInt(inputField.min) || 0; 
 		
 			if (currentValue > minValue) {
 				inputField.value = currentValue - 1;
+				inputField.dispatchEvent(new Event('change',{bubbles: true}))
 			}
 		})
 	})
