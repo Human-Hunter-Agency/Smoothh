@@ -124,7 +124,7 @@ do_action('woocommerce_before_cart'); ?>
                             ?>
                         </div>
                         <?php if(WC()->cart->has_discount()) : ?>
-                            <div class="flex justify-between md:justify-end items-center grow-0 md:w-[15%] md:p-5 lg:pb-8 lg:px-7 md:!pt-0 text-right md:bg-primary min-w-32 lg:min-w-40">
+                            <div class="flex justify-between md:justify-end items-center md:items-start grow-0 md:w-[15%] md:p-5 lg:pb-8 lg:px-7 md:!pt-0 text-right md:bg-primary min-w-32 lg:min-w-40">
                                 <span class="md:hidden text-base"><?php esc_html_e('Discount', 'woocommerce'); ?>:</span>
                                 <span class="bg-primary p-2 md:p-0 rounded-md text-white">
                                     <?php echo wc_price($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
