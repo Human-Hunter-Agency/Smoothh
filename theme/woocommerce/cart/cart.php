@@ -139,9 +139,9 @@ do_action('woocommerce_before_cart'); ?>
         </ul>
             <div class="flex flex-col gap-2.5 md:gap-0 md:flex-row justify-end text-xl mb-5">
                 <div class="grow border-t border-[#F2F2F2]"></div>
-                <div class="flex items-center md:items-start justify-between md:w-[calc(30%_+_20px)] lg:w-[calc(30%_+_40px)]">
+                <div class="flex items-center md:items-start justify-between md:justify-end md:w-[calc(30%_+_20px)] lg:w-[calc(30%_+_40px)]">
                     <span class="lg:w-[calc(50%_+_20px)] lg:min-w-28 text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?>:</span>
-                    <span class="md:w-[calc(50%_+_10px)] lg:w-[calc(50%_+_20px)] <?php if(WC()->cart->has_discount()) : ?>md:mr-2.5 lg:mr-5<?php endif; ?> text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
+                    <span class="lg:w-[calc(50%_+_20px)] pl-2.5 <?php if(WC()->cart->has_discount()) : ?> md:mr-2.5 lg:mr-5 <?php endif; ?> text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></span>
                 </div>
                 <?php if(WC()->cart->has_discount()) : ?>
                     <div class="flex flex-row justify-between md:justify-end items-center grow-0 md:w-[15%] md:px-5 lg:px-7 md:bg-primary rounded-b-[15px] min-w-32 lg:min-w-40 ">
