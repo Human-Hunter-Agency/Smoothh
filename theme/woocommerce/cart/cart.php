@@ -166,7 +166,7 @@ do_action('woocommerce_before_cart'); ?>
                         <div class="coupon flex">
                             <label for="coupon_code" class="screen-reader-text"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label> 
                             <input type="text" name="coupon_code" class="input-text h-[55px] w-full max-w-80 pl-3 md:pl-[18px] pr-4 min-w-0 text-base bg-transparent placeholder:text-foreground border border-r-0 border-primary rounded-l-2xl" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
-                            <button type="submit" class="!ml-[-15px] shrink-0 !relative z-10 h-auto !text-base !text-white !font-bold !text-center !rounded-2xl !bg-gradient-to-b hover:!bg-gradient-to-b from-primary to-secondary !p-2 md:!px-5 xl:!px-[50px] button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>">
+                            <button type="submit" class="!ml-[-15px] shrink-0 !relative z-10 h-auto !text-base !text-white !font-bold !text-center !rounded-2xl !bg-gradient-to-b hover:!bg-gradient-to-b from-primary to-secondary !p-2 !px-5 xl:!px-[50px] button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>">
                                 <?php esc_html_e('Apply coupon', 'woocommerce'); ?>
                             </button>
                             <?php do_action('woocommerce_cart_coupon'); ?>
