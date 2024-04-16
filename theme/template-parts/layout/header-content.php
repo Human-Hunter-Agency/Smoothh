@@ -92,7 +92,7 @@
 						</defs>
 					</svg>
 				</a>
-				<a class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary to-secondary text-white text-center shadow-sm shadow-black/15"><?php esc_html_e('Log in', 'smoothh'); ?></a>
+				<a href="/logowanie" class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary to-secondary text-white text-center shadow-sm shadow-black/15"><?php esc_html_e('Log in', 'smoothh'); ?></a>
 			
 			</nav><!-- #site-navigation -->
 		</div>
