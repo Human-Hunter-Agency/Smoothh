@@ -145,8 +145,8 @@ do_action('woocommerce_before_cart'); ?>
                 </div>
                 <?php if(WC()->cart->has_discount()) : ?>
                     <div class="flex flex-row justify-between md:justify-end items-center grow-0 shrink-0 md:w-[15%] 2xl:w-[10%] md:px-5 lg:px-7 md:bg-primary rounded-b-[15px] min-w-32 lg:min-w-40 ">
-                        <span class="md:hidden text-base"><?php esc_html_e('Discount sum', 'woocommerce'); ?>:</span>
-                        <div class="text-right p-2 md:pt-2.5 md:pb-5 lg:pb-7 text-white md:border-t border-white md:px-0 rounded-md md:rounded-none bg-primary"><?php echo WC()->cart->get_total_discount(); ?></div>
+                        <span class="md:hidden text-base"><?php esc_html_e('Discount sum', 'smoothh'); ?>:</span>
+                        <div class="text-right p-2 md:pt-2.5 md:pb-5 lg:pb-7 text-white font-semibold md:border-t border-white md:px-0 rounded-md md:rounded-none bg-primary"><?php echo WC()->cart->get_total_discount(); ?></div>
                     </div>
                 <?php endif; ?>
             </div>
