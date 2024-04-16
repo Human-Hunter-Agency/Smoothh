@@ -24,7 +24,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
 <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
-  <div class="u-columns col2-set" id="customer_login">
+  <div class="flex gap-5" id="customer_login">
 
     <div class="u-column1 col-1">
 
@@ -38,12 +38,12 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
       <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
         <label for="username"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
-                                                                                                                                                                                                                                                    ?>
+        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" name="username" id="username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
+                                                                                                                                                                                                                                                                                                                                                                                  ?>
       </p>
       <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
         <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-        <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
+        <input class="woocommerce-Input woocommerce-Input--text input-text h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" type="password" name="password" id="password" autocomplete="current-password" />
       </p>
 
       <?php do_action('woocommerce_login_form'); ?>
