@@ -33,8 +33,8 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
 	 */
 	do_action( 'woocommerce_before_quantity_input_field' );
 	?>
-    <div data-js="qty-control">
-        <button data-js="up" class="appearance-none h-8 w-[30px] bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xl text-center cursor-pointer">+</button>
+    <div data-js="qty-control" class="flex">
+        <button data-js="up" type="button" class="appearance-none h-8 w-[30px] bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xl text-center cursor-pointer">+</button>
         <label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
         <input
             type="<?php echo esc_attr( $type ); ?>"
@@ -54,7 +54,7 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
                 autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
             <?php endif; ?>
         />
-        <button data-js="down" class="appearance-none h-8 w-[30px] bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xl text-center cursor-pointer">-</button>
+        <button data-js="down" type="button" class="appearance-none h-8 w-[30px] bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xl text-center cursor-pointer">-</button>
     </div>
 	<?php
 	/**

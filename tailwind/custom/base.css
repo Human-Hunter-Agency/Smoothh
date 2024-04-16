@@ -14,3 +14,11 @@
 body {
 	@apply bg-background text-foreground font-sans;
 }
+
+[data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
+[data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,
+[data-js="qty-control"] input[type='number'] {
+	-webkit-appearance: none;
+	margin: 0;
+	-moz-appearance: textfield !important;
+}

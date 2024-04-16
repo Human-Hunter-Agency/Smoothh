@@ -357,7 +357,7 @@ function initQtyInputs(){
 		const upBtn = wrapper.querySelector('[data-js="up"]');
 		const downBtn = wrapper.querySelector('[data-js="down"]');
 
-		if (!input || !upBtn || !downBtn) return
+		if (!inputField || !upBtn || !downBtn) return
 
 		upBtn.addEventListener('click', ()=>{
 			let currentValue = parseInt(inputField.value); 
