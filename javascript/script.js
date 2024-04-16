@@ -381,6 +381,7 @@ function initQtyInputs(){
 }
 
 function initCartUpdate(){
+	const DELAY = 400;
 	const cartForm = document.querySelector('form.woocommerce-cart-form')
 	const updateBtn = document.querySelector('button[name="update_cart"]')
 	
@@ -395,7 +396,7 @@ function initCartUpdate(){
 			}
 			timeout = setTimeout(()=>{
 				updateBtn.click()
-			},700)
+			},DELAY)
 		}
 	})
 }
