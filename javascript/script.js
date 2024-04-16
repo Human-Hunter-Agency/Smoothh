@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initDefaultSwipers();
 	initDropdowns();
 	initCvFileLabelText();
-	initRelatedPosts()
+	initRelatedPosts();
+	initCart();
 });
 
 function initMenuCollapse() {
@@ -347,4 +348,64 @@ function insertPosts(container,posts){
 
 	})
 	container.insertAdjacentHTML('beforeend',combinedHTML)
+}
+
+function initQtyInputs(){
+	const qtyWrappers = document.querySelectorAll('[data-js="qty-control"]')
+	qtyWrappers.forEach(wrapper => {
+		const inputField = wrapper.querySelector('input');
+		const upBtn = wrapper.querySelector('[data-js="up"]');
+		const downBtn = wrapper.querySelector('[data-js="down"]');
+
+		if (!input || !upBtn || !downBtn) return
+
+		upBtn.addEventListener('click', ()=>{
+			let currentValue = parseInt(inputField.value); 
+			let maxValue = parseInt(inputField.max); 
+		
+			if (currentValue < maxValue) {
+				inputField.value = currentValue + 1;
+			}
+		})
+		downBtn.addEventListener('click', ()=>{
+			let currentValue = parseInt(inputField.value); 
+			let minValue = parseInt(inputField.min); 
+		
+			if (currentValue > minValue) {
+				inputField.value = currentValue - 1;
+			}
+		})
+	})
+}
+
+function initCartUpdate(){
+	const cartForm = document.querySelector('form.woocommerce-cart-form')
+	const updateBtn = document.querySelector('button[name="update_cart"]')
+	
+	if (!cartForm || !updateBtn) return
+
+	let timeout;
+
+	cartForm.addEventListener('change',(e)=>{
+		if (e.target.matches('input.qty')) {
+			if ( timeout !== undefined ) {
+				clearTimeout( timeout );
+			}
+			timeout = setTimeout(()=>{
+				updateBtn.click()
+			},700)
+		}
+	})
+}
+
+function initCart(){
+	initQtyInputs();
+	initCartUpdate();
+
+	if (typeof jQuery !== 'undefined') {
+		jQuery(document.body).on('updated_cart_totals', () => {
+			initQtyInputs();
+			initCartUpdate();
+		} );
+	}
 }
