@@ -292,7 +292,7 @@ function initRelatedPosts(){
 	const urlParams = new URLSearchParams(window.location.search)
 	const catSlug = urlParams.get('tab')
 	if (!catSlug) return
-	switchTabBySlug(catSlug,tabButtons)
+	switchTabBySlug(catSlug,tabButtons,container)
 }
 
 function switchTabBySlug(slug,buttons,container){
