@@ -304,7 +304,7 @@ function switchTabBySlug(slug,tabs){
 		slug = slug.slice(0, -1);
 	}
 
-	const tabBtn = Object.values(tabs).find(tab => tab.tabBtn.dataset.jsTabSlug === catSlug)
+	const tabBtn = Object.values(tabs).find(tab => tab.tabBtn.dataset.jsTabSlug === slug)
 	if (tabBtn) {
 		tabBtn.click()
 	}
