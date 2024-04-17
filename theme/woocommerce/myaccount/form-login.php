@@ -69,8 +69,8 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <div class="login-with-socials w-full">
           <p class="mb-3 text-center">lub kontynuuj z</p>
-          <div class="login-btns mb-5 md:flex justify-between">
-            <div class="fb-login flex gap-2 xl:gap-0 items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
+          <div class="login-btns mb-5 md:flex gap-2 justify-between">
+            <div class="fb-login mb-2 md:mb-0 mr-2 xl:mr-0 flex items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
               <svg class="inline mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <rect width="14" height="14" fill="url(#pattern0_71_3899)" />
                 <defs>
