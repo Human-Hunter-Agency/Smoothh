@@ -26,7 +26,7 @@
 	</div>
 
 
-	<div class="container flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-[60px]">
+	<div class="container flex flex-col md:flex-row md:justify-between gap-5 md:gap-10 lg:gap-[60px]">
 		<div <?php smoothh_content_class( 'entry-content' ); ?>>
 			<div class="mb-5 md:mb-6">
 				<?php if ($title) : ?>
@@ -63,8 +63,18 @@
 		</div><!-- .entry-content -->
 		<aside class="md:basis-1/4 lg:shrink-0 ">
 			<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Kategorie wpisów</h5>
-			<ul class="list-none [&_.cat-item]:mb-4 md:[&_.cat-item]:mb-6 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
-				<?php wp_list_categories(array('title_li' => '')) ?>
+			<ul class="list-none">
+				<?php
+					$blog_page_id = 20;
+					$categories = get_categories();
+
+					foreach ($categories as $cat) :
+				 #wp_list_categories(array('title_li' => '')) 
+				 ?>
+				 	<li class="mb-4 md:mb-6">
+						<a href="<?php echo get_permalink($blog_page_id) . '?tab=' . $cat->slug ?>" class="font-semibold text-base md:text-xl transition duration-200 hover:text-primary"><?php echo $cat->name ?></a>
+					</li>
+				 <?php endforeach ?>
 			</ul>
 		</aside>
 	</div>
