@@ -96,17 +96,20 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide p-0 mb-5">
             <!-- <label for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
-                                                                                                                                                                                                                                                                                                                                                                                                                      ?>
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
           </p>
 
         <?php endif; ?>
 
-        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
-          <!-- <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
-          <input type="email" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" name="email" placeholder="Adres e-mail" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
-                                                                                                                                                                                                                                                                                                                                                                                                                                  ?>
-        </p>
+        <div class="register-fields flex">
+          <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
+            <!-- <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
+            <input type="email" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary min-w-[300px]" name="email" placeholder="Adres e-mail*" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" />
+          </p>
+          <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
+            <input type="name" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary min-w-[300px]" name="name" placeholder="Adres e-mail*" id="reg_name" autocomplete="name" value="<?php echo (!empty($_POST['name'])) ? esc_attr(wp_unslash($_POST['name'])) : ''; ?>" />
+          </p>
+        </div>
 
         <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
 
@@ -123,7 +126,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <?php do_action('woocommerce_register_form'); ?>
 
-        <p class="woocommerce-form-row form-row">
+        <div class="woocommerce-form-row form-row">
           <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
           <button type="submit" class="woocommerce-Button woocommerce-button button h-[55px] w-full !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
             <?php esc_html_e('Register', 'woocommerce'); ?>
@@ -132,7 +135,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
               <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
             </svg>
           </button>
-        </p>
+        </div>
 
         <?php do_action('woocommerce_register_form_end'); ?>
 
