@@ -26,7 +26,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
   <div class="py-20 flex gap-5" id="customer_login">
 
-    <div class="_u-column1 _col-1 basis-1/3 xl:basis-1/4">
+    <div class="_u-column1 _col-1 basis-1/3 2xl:basis-1/4">
 
     <?php endif; ?>
 
@@ -104,7 +104,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     </div>
 
-    <div class="_u-column2 _col-2 basis-2/3 xl:basis-3/4">
+    <div class="_u-column2 _col-2 basis-2/3 2xl:basis-3/4">
       <form method="post" class="woocommerce-form woocommerce-form-register register !px-8 !pt-9 !pb-6 !border-[#888] !rounded-[15px]" <?php do_action('woocommerce_register_form_tag'); ?>>
 
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Zarejestruj się', 'woocommerce'); ?></h2>
@@ -151,11 +151,30 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <?php else : ?>
 
-          <p><?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?></p>
+          <p class="mb-5"><?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?></p>
 
         <?php endif; ?>
 
         <?php do_action('woocommerce_register_form'); ?>
+
+        <div class="checkboxes">
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox !border !border-red-500 !border-[2px]" name="markall" type="checkbox" id="markall" value="forever" />
+            <span class="text-primary font-semibold">Zaznacz wszystkie zgody</span>
+          </label>
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox !border !border-red-500 !border-[2px]" name="checkbox2" type="checkbox" id="checkbox2" value="forever" />
+            <span class="text-primary font-semibold">Sed sit amet faucibus mi, et blandit lacus. Maecenas ipsum elit, hendrerit quis quam eu, finibus venenatis massa. Sed dapibus dui posuere ultricies viverra. Suspendisse nec dui sit amet urna efficitur hendrerit. Vivamus eu metus nec mauris gravida scelerisque vitae quis ex. </span>
+          </label>
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox !border !border-red-500 !border-[2px]" name="checkbox3" type="checkbox" id="checkbox3" value="forever" />
+            <span class="text-primary font-semibold">Phasellus ut dictum augue. Sed velit risus, gravida eget iaculis et, ultricies non elit. Morbi nisi ipsum, ultrices condimentum urna efficitur, consectetur laoreet orci. Etiam pharetra dui vestibulum eros venenatis pretium. Proin feugiat ipsum ex, quis porta orci suscipit vel. Sed ultrices massa tortor, et lacinia magna vestibulum et. Nam luctus, nibh vel faucibus vestibulum, est elit malesuada lorem.</span>
+          </label>
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox !border !border-red-500 !border-[2px]" name="checkbox4" type="checkbox" id="checkbox4" value="forever" />
+            <span class="text-primary font-semibold">Przeczytałem/am i akceptuję <span class="text-primary font-semibold">regulamin*</span></span>
+          </label>
+        </div>
 
         <div class="woocommerce-form-row form-row">
           <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
