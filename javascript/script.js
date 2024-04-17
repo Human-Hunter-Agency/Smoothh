@@ -292,20 +292,21 @@ function initRelatedPosts(){
 	const urlParams = new URLSearchParams(window.location.search)
 	const catSlug = urlParams.get('tab')
 	if (!catSlug) return
-	container.scrollIntoView({behavior:'instant',})
-	const yOffset = container.getBoundingClientRect().top + window.scrollY - 200
-	window.scrollTo({top: yOffset,behavior:'instant'})
 	switchTabBySlug(catSlug,tabButtons)
 }
 
-function switchTabBySlug(slug,buttons){
+function switchTabBySlug(slug,buttons,container){
 
 	if (slug.endsWith('/')) {
 		slug = slug.slice(0, -1);
 	}
 
 	const tabBtn = Object.values(buttons).find(btn => btn.dataset.jsTabSlug === slug)
-	tabBtn && tabBtn.click()
+	if (tabBtn) {
+		tabBtn.click()
+		const yOffset = container.offsetTop - 100
+		window.scrollTo({top: yOffset,behavior:'smooth'})
+	}
 	
 }
 
