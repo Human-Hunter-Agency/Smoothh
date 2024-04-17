@@ -30,9 +30,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     <?php endif; ?>
 
-    <form class="woocommerce-form woocommerce-form-login login !px-7 !py-9 !border-[#888] !rounded-[15px]" method="post">
+    <form class="woocommerce-form woocommerce-form-login login !px-8 pt-9 !border-[#888] !rounded-[15px]" method="post">
 
-      <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Login', 'woocommerce'); ?></h2>
+      <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Zaloguj się', 'woocommerce'); ?></h2>
 
       <?php do_action('woocommerce_login_form_start'); ?>
 
@@ -41,7 +41,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" name="username" id="username" placeholder="Login" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
                                                                                                                                                                                                                                                                                                                                                                                                                                   ?>
       </p>
-      <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide mb-5">
+      <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
         <!-- <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
         <input class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" type="password" name="password" id="password" autocomplete="current-password" placeholder="Hasło" />
       </p>
@@ -59,13 +59,13 @@ do_action('woocommerce_before_customer_login_form'); ?>
           </p>
         </div>
 
-        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit h-[55px] w-full mb-5 text-white !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px]<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
+        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit h-[55px] w-full !mb-5 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px]<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
 
         <div class="login-with-socials w-full">
           <p class="mb-5 text-center">lub kontynuuj z</p>
           <div class="login-btns mb-5 flex space-between">
-            <div class="fb-login rounded-[15px] border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full">Facebook</div>
-            <div class="google-login rounded-[15px] border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full">Google</div>
+            <div class="fb-login rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">Facebook</div>
+            <div class="google-login rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">Google</div>
           </div>
 
         </div>
