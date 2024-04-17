@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 
 if ($upsells) : ?>
 
-    <section class="relative pb-10 mb:pb-[60px]">
+    <section class="relative py-10 mb:py-[60px]">
 
         <?php
         $heading = apply_filters('woocommerce_product_upsells_products_heading', __('You may also like&hellip;', 'woocommerce'));
