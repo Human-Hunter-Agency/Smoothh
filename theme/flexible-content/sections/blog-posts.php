@@ -6,7 +6,7 @@
 		$i = 0;
 		foreach ($categories as $category) : ?>
 			<li class="flex-1">
-				<button data-js-tab-btn="<?php echo $category->term_id; ?>" class="<?php if($i++ === 0){echo 'active';} ?> tab-btn"><?php echo $category->name ?></button>
+				<button data-js-tab-btn="<?php echo $category->term_id; ?>" data-js-tab-slug="<?php echo $category->slug; ?>" class="<?php if($i++ === 0){echo 'active';} ?> tab-btn"><?php echo $category->name ?></button>
 			</li>
 		<?php endforeach; ?>
 	</ul>

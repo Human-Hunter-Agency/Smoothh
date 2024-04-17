@@ -288,6 +288,27 @@ function initRelatedPosts(){
 
 		tab.loadMoreBtn.addEventListener('click',() => loadMore(tab))
 	})
+
+	const urlParams = new URLSearchParams(window.location.search)
+	const catSlug = urlParams.get('tab')
+	if (!catSlug) return
+	container.scrollIntoView({behavior:'instant',})
+	const yOffset = container.getBoundingClientRect().top + window.scrollY - 200
+	window.scrollTo({top: yOffset,behavior:'instant'})
+	switchTabBySlug(catSlug,tabs)
+}
+
+function switchTabBySlug(slug,tabs){
+
+	if (slug.endsWith('/')) {
+		slug = slug.slice(0, -1);
+	}
+
+	const tabBtn = Object.values(tabs).find(tab => tab.tabBtn.dataset.jsTabSlug === catSlug)
+	if (tabBtn) {
+		tabBtn.click()
+	}
+	
 }
 
 async function loadMore(tab){
