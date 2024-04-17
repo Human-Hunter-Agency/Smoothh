@@ -158,7 +158,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <?php do_action('woocommerce_register_form'); ?>
 
         <div class="checkboxes my-5 flex flex-col gap-y-4">
-          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start justify-center gap-x-2">
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start gap-x-2">
             <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="markall" type="checkbox" id="markall" value="forever" />
             <span class="text-primary font-semibold">Zaznacz wszystkie zgody</span>
           </label>
@@ -170,7 +170,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
             <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="checkbox3" type="checkbox" id="checkbox3" value="forever" />
             <span class="">Phasellus ut dictum augue. Sed velit risus, gravida eget iaculis et, ultricies non elit. Morbi nisi ipsum, ultrices condimentum urna efficitur, consectetur laoreet orci. Etiam pharetra dui vestibulum eros venenatis pretium. Proin feugiat ipsum ex, quis porta orci suscipit vel. Sed ultrices massa tortor, et lacinia magna vestibulum et. Nam luctus, nibh vel faucibus vestibulum, est elit malesuada lorem.</span>
           </label>
-          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start justify-center gap-x-2">
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start gap-x-2">
             <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="checkbox4" type="checkbox" id="checkbox4" value="forever" />
             <span class="">Przeczytałem/am i akceptuję <span class="text-primary font-semibold">regulamin*</span></span>
           </label>
@@ -178,7 +178,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <div class="woocommerce-form-row form-row">
           <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
-          <button type="submit" class="woocommerce-Button woocommerce-button button h-[55px] w-full !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
+          <button type="submit" class="woocommerce-Button woocommerce-button button h-[55px] !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
             <?php esc_html_e('Zarejestruj konto', 'woocommerce'); ?>
             <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
