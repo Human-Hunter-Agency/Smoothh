@@ -70,7 +70,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <div class="login-with-socials w-full">
           <p class="mb-3 text-center">lub kontynuuj z</p>
           <div class="login-btns mb-5 flex justify-between">
-            <div class="fb-login rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
+            <div class="fb-login flex items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
               <svg class="inline-block mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <rect width="14" height="14" fill="url(#pattern0_71_3899)" />
                 <defs>
@@ -82,7 +82,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
               </svg>
               Facebook
             </div>
-            <div class="google-login rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
+            <div class="google-login flex items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
               <svg class="inline-block mr-2" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2314 7.40086C13.2317 6.93783 13.1905 6.47571 13.1084 6.02002L6.75098 6.02002V8.63093H10.3842C10.2315 9.46597 9.74368 10.2021 9.03412 10.6681V12.3617H11.216C12.5603 11.0683 13.2928 9.26532 13.2314 7.40086Z" fill="#4285F4" />
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.7504 14.0013C8.39363 14.0457 9.99172 13.4605 11.2177 12.3654L9.03579 10.6718C7.97823 11.3504 6.66666 11.5028 5.48168 11.0848C4.2967 10.6669 3.37099 9.72534 2.97316 8.53345H0.717773V10.2826C1.86398 12.5629 4.19823 14.0018 6.7504 14.0013Z" fill="#34A853" />
@@ -157,21 +157,21 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <?php do_action('woocommerce_register_form'); ?>
 
-        <div class="checkboxes mt-5 flex flex-col gap-y-4">
-          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-            <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="markall" type="checkbox" id="markall" value="forever" />
+        <div class="checkboxes my-5 flex flex-col gap-y-4">
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start justify-center gap-x-2">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="markall" type="checkbox" id="markall" value="forever" />
             <span class="text-primary font-semibold">Zaznacz wszystkie zgody</span>
           </label>
-          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-            <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="checkbox2" type="checkbox" id="checkbox2" value="forever" />
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start justify-center gap-x-2">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="checkbox2" type="checkbox" id="checkbox2" value="forever" />
             <span class="">Sed sit amet faucibus mi, et blandit lacus. Maecenas ipsum elit, hendrerit quis quam eu, finibus venenatis massa. Sed dapibus dui posuere ultricies viverra. Suspendisse nec dui sit amet urna efficitur hendrerit. Vivamus eu metus nec mauris gravida scelerisque vitae quis ex. </span>
           </label>
-          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-            <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="checkbox3" type="checkbox" id="checkbox3" value="forever" />
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start justify-center gap-x-2">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="checkbox3" type="checkbox" id="checkbox3" value="forever" />
             <span class="">Phasellus ut dictum augue. Sed velit risus, gravida eget iaculis et, ultricies non elit. Morbi nisi ipsum, ultrices condimentum urna efficitur, consectetur laoreet orci. Etiam pharetra dui vestibulum eros venenatis pretium. Proin feugiat ipsum ex, quis porta orci suscipit vel. Sed ultrices massa tortor, et lacinia magna vestibulum et. Nam luctus, nibh vel faucibus vestibulum, est elit malesuada lorem.</span>
           </label>
-          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-            <input class="woocommerce-form__input woocommerce-form__input-checkbox" name="checkbox4" type="checkbox" id="checkbox4" value="forever" />
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start justify-center gap-x-2">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="checkbox4" type="checkbox" id="checkbox4" value="forever" />
             <span class="">Przeczytałem/am i akceptuję <span class="text-primary font-semibold">regulamin*</span></span>
           </label>
         </div>
@@ -179,7 +179,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <div class="woocommerce-form-row form-row">
           <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
           <button type="submit" class="woocommerce-Button woocommerce-button button h-[55px] w-full !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
-            <?php esc_html_e('Register', 'woocommerce'); ?>
+            <?php esc_html_e('Zarejestruj konto', 'woocommerce'); ?>
             <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
               <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
