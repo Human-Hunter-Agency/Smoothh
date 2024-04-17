@@ -26,7 +26,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
   <div class="py-20 flex gap-5" id="customer_login">
 
-    <div class="_u-column1 _col-1 basis-1/3">
+    <div class="_u-column1 _col-1 basis-1/3 xl:basis:1/4">
 
     <?php endif; ?>
 
@@ -85,7 +85,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     </div>
 
-    <div class="_u-column2 _col-2 basis-2/3">
+    <div class="_u-column2 _col-2 basis-2/3 xl:basis:3/4">
       <form method="post" class="woocommerce-form woocommerce-form-register register !px-8 !pt-9 !pb-6 !border-[#888] !rounded-[15px]" <?php do_action('woocommerce_register_form_tag'); ?>>
 
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Zarejestruj się', 'woocommerce'); ?></h2>
@@ -101,7 +101,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <?php endif; ?>
 
-        <div class="register-fields flex">
+        <div class="register-fields flex flex-wrap gap-12">
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
             <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary min-w-[300px]" name="name" placeholder="Imię*" id="reg_name" autocomplete="name" value="<?php echo (!empty($_POST['name'])) ? esc_attr(wp_unslash($_POST['name'])) : ''; ?>" />
           </p>
