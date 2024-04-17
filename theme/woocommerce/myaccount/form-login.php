@@ -59,7 +59,13 @@ do_action('woocommerce_before_customer_login_form'); ?>
           </p>
         </div>
 
-        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit h-[55px] w-full !mb-5 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px]<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
+        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit h-[55px] w-full !mb-5 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>">
+          <?php esc_html_e('Log in', 'woocommerce'); ?>
+          <svg class="absolute right-5 top-[18px] -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
+            <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
+          </svg>
+        </button>
 
         <div class="login-with-socials w-full">
           <p class="mb-5 text-center">lub kontynuuj z</p>
