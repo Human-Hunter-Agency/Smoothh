@@ -30,16 +30,16 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     <?php endif; ?>
 
-    <form class="woocommerce-form woocommerce-form-login login px-7 py-9 border border-[#888] rounded-[15px]" method="post">
+    <form class="woocommerce-form woocommerce-form-login login px-7 py-9 1border !border-[#888] !rounded-[15px]" method="post">
 
       <h2 class="mb-12 text-xl font-bold"><?php esc_html_e('Login', 'woocommerce'); ?></h2>
 
       <?php do_action('woocommerce_login_form_start'); ?>
 
-      <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !p-0 mb-5">
-        <label for="username hidden"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" name="username" id="username" placeholder="Login" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
-                                                                                                                                                                                                                                                                                                                                                                                                      ?>
+      <p class="woocommerce-form-row woocommerce-form-row--wide _form-row form-row-wide p-0 mb-5">
+        <label for="username !hidden"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+        <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" name="username" id="username" placeholder="Login" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
+                                                                                                                                                                                                                                                                                                                                                                                                                                  ?>
       </p>
       <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
         <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label>
