@@ -70,7 +70,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <div class="login-with-socials w-full">
           <p class="mb-3 text-center">lub kontynuuj z</p>
           <div class="login-btns mb-5 flex justify-between">
-            <div class="fb-login md:flex items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
+            <div class="fb-login mb-2 md:mb-0 md:flex items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
               <svg class="inline-block mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <rect width="14" height="14" fill="url(#pattern0_71_3899)" />
                 <defs>
@@ -120,7 +120,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <?php endif; ?>
 
-        <div class="register-fields flex flex-wrap gap-x-12">
+        <div class="register-fields md:flex md:flex-wrap md:gap-x-12">
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
             <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full md:min-w-[300px]" name="name" placeholder="Imię*" id="reg_name" autocomplete="name" value="<?php echo (!empty($_POST['name'])) ? esc_attr(wp_unslash($_POST['name'])) : ''; ?>" />
           </p>
