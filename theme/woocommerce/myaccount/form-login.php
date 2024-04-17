@@ -24,7 +24,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
 <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
 
-  <div class="py-20 flex gap-5" id="customer_login">
+  <div class="py-20 flex flex-col md:flex-row gap-5" id="customer_login">
 
     <div class="_u-column1 _col-1 basis-1/3 2xl:basis-1/4">
 
