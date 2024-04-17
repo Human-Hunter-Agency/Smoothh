@@ -295,19 +295,17 @@ function initRelatedPosts(){
 	container.scrollIntoView({behavior:'instant',})
 	const yOffset = container.getBoundingClientRect().top + window.scrollY - 200
 	window.scrollTo({top: yOffset,behavior:'instant'})
-	switchTabBySlug(catSlug,tabs)
+	switchTabBySlug(catSlug,tabButtons)
 }
 
-function switchTabBySlug(slug,tabs){
+function switchTabBySlug(slug,buttons){
 
 	if (slug.endsWith('/')) {
 		slug = slug.slice(0, -1);
 	}
 
-	const tabBtn = Object.values(tabs).find(tab => tab.tabBtn.dataset.jsTabSlug === slug)
-	if (tabBtn) {
-		tabBtn.click()
-	}
+	const tabBtn = Object.values(buttons).find(btn => btn.dataset.jsTabSlug === slug)
+	tabBtn && tabBtn.click()
 	
 }
 
