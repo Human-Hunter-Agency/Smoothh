@@ -26,13 +26,13 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
   <div class="py-20 flex gap-5" id="customer_login">
 
-    <div class="u-column1 col-1">
+    <div class="_u-column1 _col-1 basis-1/4">
 
     <?php endif; ?>
 
-    <h2 class="text-xl font-bold"><?php esc_html_e('Login', 'woocommerce'); ?></h2>
-
     <form class="woocommerce-form woocommerce-form-login login" method="post">
+
+      <h2 class="text-xl font-bold"><?php esc_html_e('Login', 'woocommerce'); ?></h2>
 
       <?php do_action('woocommerce_login_form_start'); ?>
 
@@ -70,11 +70,10 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     </div>
 
-    <div class="u-column2 col-2">
-
-      <h2><?php esc_html_e('Register', 'woocommerce'); ?></h2>
-
+    <div class="_u-column2 _col-2 basis-3/4">
       <form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action('woocommerce_register_form_tag'); ?>>
+
+        <h2><?php esc_html_e('Register', 'woocommerce'); ?></h2>
 
         <?php do_action('woocommerce_register_form_start'); ?>
 
