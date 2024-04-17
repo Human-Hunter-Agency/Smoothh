@@ -30,36 +30,37 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     <?php endif; ?>
 
-    <form class="woocommerce-form woocommerce-form-login login px-7 py-9 1border !border-[#888] !rounded-[15px]" method="post">
+    <form class="woocommerce-form woocommerce-form-login login !px-7 !py-9 !border-[#888] !rounded-[15px]" method="post">
 
       <h2 class="mb-12 text-xl font-bold"><?php esc_html_e('Login', 'woocommerce'); ?></h2>
 
       <?php do_action('woocommerce_login_form_start'); ?>
 
       <p class="woocommerce-form-row woocommerce-form-row--wide _form-row form-row-wide p-0 mb-5">
-        <label for="username !hidden"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+        <!-- <label for="username !hidden"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label> -->
         <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" name="username" id="username" placeholder="Login" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
                                                                                                                                                                                                                                                                                                                                                                                                                                   ?>
       </p>
       <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-        <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label>
-        <input class="woocommerce-Input woocommerce-Input--text input-text h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" type="password" name="password" id="password" autocomplete="current-password" placeholder="Hasło" />
+        <!-- <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
+        <input class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full" type="password" name="password" id="password" autocomplete="current-password" placeholder="Hasło" />
       </p>
 
       <?php do_action('woocommerce_login_form'); ?>
 
-      <p class="form-row">
-      <div class="flex gap-5">
-        <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-          <input class="woocommerce-form__input woocommerce-form__input-checkbox border border-red-500 border-[2px]" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e('Remember me', 'woocommerce'); ?></span>
-        </label>
-        <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
-        <p class="woocommerce-LostPassword lost_password">
-          <a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Lost your password?', 'woocommerce'); ?></a>
-        </p>
+      <div class="_form-row">
+        <div class="flex gap-5 mb-5">
+          <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox !border !border-red-500 !border-[2px]" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e('Remember me', 'woocommerce'); ?></span>
+          </label>
+          <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
+          <p class="woocommerce-LostPassword lost_password text-primary">
+            <a href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Lost your password?', 'woocommerce'); ?></a>
+          </p>
+        </div>
+
+        <button type="submit" class="woocommerce-button button woocommerce-form-login__submit !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px]<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
       </div>
-      <button type="submit" class="woocommerce-button button woocommerce-form-login__submit rounded-2xl bg-gradient-to-b from-primary to-secondary cursor-pointer py-2 px-5 xl:px-[50px]<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>"><?php esc_html_e('Log in', 'woocommerce'); ?></button>
-      </p>
 
       <?php do_action('woocommerce_login_form_end'); ?>
 
