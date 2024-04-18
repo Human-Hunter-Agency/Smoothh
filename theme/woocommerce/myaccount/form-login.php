@@ -121,6 +121,10 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <?php endif; ?>
 
         <div class="register-fields md:flex md:flex-wrap md:gap-x-12">
+          <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+            <label for="account_first_name"><?php esc_html_e('First name', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" autocomplete="given-name" value="<?php echo esc_attr($user->first_name); ?>" />
+          </p>
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
             <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full md:min-w-[300px]" name="name" placeholder="Imię*" id="reg_name" autocomplete="name" value="<?php echo (!empty($_POST['name'])) ? esc_attr(wp_unslash($_POST['name'])) : ''; ?>" />
           </p>
