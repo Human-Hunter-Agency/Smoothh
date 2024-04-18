@@ -426,9 +426,10 @@ function initCart(){
 	initCartUpdate();
 
 	if (typeof jQuery !== 'undefined') {
-		jQuery(document.body).on('updated_cart_totals', () => {
+		jQuery(document.body).on('removed_from_cart updated_cart_totals', () => {
 			initQtyInputs();
 			initCartUpdate();
+			jQuery(document.body).trigger('wc_fragment_refresh');
 		} );
 	}
 }
