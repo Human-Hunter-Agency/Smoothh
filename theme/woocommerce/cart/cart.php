@@ -118,7 +118,7 @@ do_action('woocommerce_before_cart'); ?>
                         </div>
 
                         <div class="product-subtotal flex justify-between md:justify-end grow-0 md:w-[15%] text-right" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
-                            <span class="md:hidden text-base"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
+                            <span class="md:hidden text-base"><?php esc_html_e('Total', 'woocommerce'); ?>:</span>
                             <?php
                             echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
                             ?>
