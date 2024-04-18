@@ -58,7 +58,7 @@
                             </p>
                         </div>
                         <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary group-hover:bg-secondary transition duration-200">
-                            Pokaż
+                            <?php esc_html_e('Show','smoothh') ?>
                         </span>
                     </a>
                 </li>

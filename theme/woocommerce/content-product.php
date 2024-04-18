@@ -17,51 +17,37 @@
 
 defined( 'ABSPATH' ) || exit;
 
-global $product;
+global $product;    
+
 
 // Ensure visibility.
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
-	<?php
-	/**
-	 * Hook: woocommerce_before_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_open - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
-
-	/**
-	 * Hook: woocommerce_before_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_show_product_loop_sale_flash - 10
-	 * @hooked woocommerce_template_loop_product_thumbnail - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
-	?>
+<li>
+    <a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="group h-full flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
+        <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
+            <?php echo $product->get_image() ?>
+            <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
+        </div>
+        <div class="flex-1 p-3 md:p-6">
+            <div class="flex gap-2.5 md:gap-5 justify-between mb-5">
+                <h4 class="text-lg md:text-xl text-primary font-semibold">
+                    <?php echo get_the_title($product->get_id()) ?> 
+                </h4>
+                <?php if (is_user_logged_in()) : ?>
+                    <span class="text-lg md:text-xl">
+                        <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
+                    </span>
+                <?php endif; ?>
+            </div>
+            <p class="text-sm md:text-base prose-strong:font-semibold">
+                <?php echo $product->get_short_description() ?>
+            </p>
+        </div>
+        <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary group-hover:bg-secondary transition duration-200">
+            <?php esc_html_e('Show product','smoothh') ?>
+        </span>
+    </a>
 </li>

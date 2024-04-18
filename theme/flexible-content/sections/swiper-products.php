@@ -59,7 +59,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                             </p>
                         </div>
                         <a href="<?php echo get_permalink($product->get_id()) ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">
-                            Zobacz produkt
+                            <?php esc_html_e('Show product','smoothh') ?>
                         </a>
                     </div>
                 <?php endforeach; ?>

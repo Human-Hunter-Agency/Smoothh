@@ -71,7 +71,7 @@ do_action( 'woocommerce_before_main_content' );
         do_action( 'woocommerce_before_shop_loop' );
 
         ?>
-            <div class="grid">
+            <ul class="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-[90px]">
         <?php
         //woocommerce_product_loop_start();
 
@@ -90,7 +90,7 @@ do_action( 'woocommerce_before_main_content' );
 
         //woocommerce_product_loop_end();
         ?>
-            </div>
+            </ul>
         <?php
 
         /**
