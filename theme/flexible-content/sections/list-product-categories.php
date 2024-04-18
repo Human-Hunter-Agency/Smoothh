@@ -31,7 +31,7 @@
                     $min_price = min($all_prices);
             ?>
                 <li>
-                    <a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="group flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
+                    <a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="group h-full flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
                         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                             <?php
                                 $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
