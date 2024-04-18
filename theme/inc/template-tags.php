@@ -191,27 +191,13 @@ if ( ! function_exists( 'smoothh_post_thumbnail' ) ) :
 	function smoothh_post_thumbnail() {
 		if ( ! smoothh_can_show_post_thumbnail() ) {
 			return;
-		}
-
-		if ( is_singular() ) :
-			?>
+		}?>
 
 			<figure class="absolute inset-0 -z-20 h-full w-full [&_img]:object-cover [&_img]:size-full">
 				<?php the_post_thumbnail(); ?>
 			</figure><!-- .post-thumbnail -->
 
-			<?php
-		else :
-			?>
-
-			<figure>
-				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail(); ?>
-				</a>
-			</figure>
-
-			<?php
-		endif; // End is_singular().
+		<?php
 	}
 endif;
 
