@@ -46,7 +46,7 @@
                             </h4>
                             <?php if (is_user_logged_in()) : ?>
                                 <span class="text-lg md:text-xl">
-                                    <?php echo preg_replace( '/[^.\d]/', '', '100.00 zł' );?> netto
+                                    <?php echo preg_replace( '/[^.\d]/', '', $min_price  );?> netto
                                 </span>
                             <?php endif; ?>
                         </div>
