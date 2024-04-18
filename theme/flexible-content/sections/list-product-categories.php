@@ -25,7 +25,7 @@
                     $all_prices[] = array();
 
                     foreach ($products as $product) {
-                        $all_prices[] = $product->get_price();
+                        $all_prices[] = wc_get_price_excluding_tax($product);
                     }
 
                     $min_price = min($all_prices);

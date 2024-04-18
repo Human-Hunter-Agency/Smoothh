@@ -87,7 +87,7 @@ if (post_password_required()) {
 										<span class="text-sm lg:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
 									</div>
 									<div class="text-base lg:text-xl text-primary shrink-0">
-										<?php echo wc_get_price_excluding_tax($product) ?> netto
+										<?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
 									</div>
 								</li>
 							<?php endforeach; ?>

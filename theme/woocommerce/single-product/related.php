@@ -39,8 +39,6 @@ if ($related_products) : ?>
         <?php endif; ?>
 
 
-
-
         <div class="relative z-0 w-full overflow-hidden !pb-5">
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper">
@@ -58,7 +56,7 @@ if ($related_products) : ?>
                                     </h4>
                                     <?php if (is_user_logged_in()) : ?>
                                         <span class="text-lg md:text-xl">
-                                            <?php echo wc_price(wc_get_price_excluding_tax($related_product)) ?> netto
+                                            <?php echo number_format( wc_get_price_excluding_tax($related_product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
                                         </span>
                                     <?php endif; ?>
                                 </div>
