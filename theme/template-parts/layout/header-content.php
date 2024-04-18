@@ -92,8 +92,11 @@
 						</defs>
 					</svg>
 				</a>
-				<a href="/logowanie" class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary to-secondary text-white text-center shadow-sm shadow-black/15"><?php esc_html_e('Log in', 'smoothh'); ?></a>
-			
+				<?php if (is_user_logged_in()) : ?>
+					<a href="<?php echo get_option( 'woocommerce_logout_endpoint', 'customer-logout' ) ?>" class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary to-secondary text-white text-center shadow-sm shadow-black/15"><?php echo __( 'Log out', 'woocommerce' ) ?></a>
+				<?php else : ?>
+					<a href="/logowanie" class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary to-secondary text-white text-center shadow-sm shadow-black/15"><?php esc_html_e('Log in', 'smoothh'); ?></a>
+				<?php endif; ?>
 			</nav><!-- #site-navigation -->
 		</div>
 	</div>
