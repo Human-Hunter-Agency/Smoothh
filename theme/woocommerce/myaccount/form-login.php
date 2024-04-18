@@ -121,28 +121,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <?php endif; ?>
 
         <div class="register-fields md:flex md:flex-wrap md:gap-x-12">
-          <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-            <label for="account_first_name"><?php esc_html_e('First name', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="account_first_name" id="account_first_name" autocomplete="given-name" value="" />
-          </p>
-          <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full md:min-w-[300px]" name="name" placeholder="Imię*" id="reg_name" autocomplete="name" value="<?php echo (!empty($_POST['name'])) ? esc_attr(wp_unslash($_POST['name'])) : ''; ?>" />
-          </p>
-          <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full md:min-w-[300px]" name="lastname" placeholder="Nazwisko*" id="reg_lastname" autocomplete="lastname" value="<?php echo (!empty($_POST['lastname'])) ? esc_attr(wp_unslash($_POST['lastname'])) : ''; ?>" />
-          </p>
-          <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full md:min-w-[300px]" name="company" placeholder="Nazwa Firmy*" id="reg_company" autocomplete="company" value="<?php echo (!empty($_POST['company'])) ? esc_attr(wp_unslash($_POST['company'])) : ''; ?>" />
-          </p>
-          <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full md:min-w-[300px]" name="nip" placeholder="NIP*" id="reg_nip" autocomplete="nip" value="<?php echo (!empty($_POST['nip'])) ? esc_attr(wp_unslash($_POST['nip'])) : ''; ?>" />
-          </p>
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
             <!-- <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
             <input type="email" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary min-w-[300px]" name="email" placeholder="Adres e-mail*" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" />
-          </p>
-          <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !mb-5">
-            <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full md:min-w-[300px]" name="phone" placeholder="Numer telefonu*" id="reg_phone" autocomplete="phone" value="<?php echo (!empty($_POST['phone'])) ? esc_attr(wp_unslash($_POST['phone'])) : ''; ?>" />
           </p>
         </div>
 
