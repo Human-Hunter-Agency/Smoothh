@@ -45,6 +45,7 @@
                                 <?php echo $cat->name ?>
                             </h4>
                             <?php if (is_user_logged_in()) : ?>
+                                <?php echo strip_tags(wc_price($min_price)) ;?>
                                 <span class="text-lg md:text-xl">
                                     <?php echo preg_replace( '/[^.\d]/', '', strip_tags(wc_price($min_price))  );?> netto
                                 </span>
