@@ -55,7 +55,7 @@
                         </p>
                     </div>
                     <a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">
-                        Zobacz produkt
+                        Pokaż
                     </a>
                 </li>
             <?php endforeach;?>
