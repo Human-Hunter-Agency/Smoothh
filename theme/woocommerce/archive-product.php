@@ -68,12 +68,12 @@ do_action( 'woocommerce_before_main_content' );
          * @hooked woocommerce_result_count - 20
          * @hooked woocommerce_catalog_ordering - 30
          */
-        //do_action( 'woocommerce_before_shop_loop' );
+        do_action( 'woocommerce_before_shop_loop' );
 
         ?>
             <div class="grid">
         <?php
-        woocommerce_product_loop_start();
+        //woocommerce_product_loop_start();
 
         if ( wc_get_loop_prop( 'total' ) ) {
             while ( have_posts() ) {
@@ -88,7 +88,7 @@ do_action( 'woocommerce_before_main_content' );
             }
         }
 
-        woocommerce_product_loop_end();
+        //woocommerce_product_loop_end();
         ?>
             </div>
         <?php
@@ -98,7 +98,7 @@ do_action( 'woocommerce_before_main_content' );
          *
          * @hooked woocommerce_pagination - 10
          */
-        //do_action( 'woocommerce_after_shop_loop' );
+        do_action( 'woocommerce_after_shop_loop' );
     } else {
         /**
          * Hook: woocommerce_no_products_found.
