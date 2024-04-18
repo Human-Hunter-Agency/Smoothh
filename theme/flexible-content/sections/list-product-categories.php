@@ -26,9 +26,9 @@
 
                     foreach ($products as $product) {
                         $all_prices[] = wc_get_price_excluding_tax($product);
-                        echo $product->get_price() . ' excl: ' . wc_get_price_excluding_tax($product);
                     }
-
+                    
+                    print_r($all_prices);
                     $min_price = min($all_prices);
             ?>
                 <li>
