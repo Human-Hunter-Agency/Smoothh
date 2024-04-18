@@ -47,8 +47,7 @@
                             <?php if (is_user_logged_in()) : ?>
                                 <span class="text-lg md:text-xl">
                                     <?php
-                                        $price_no_tags = str_replace('&nbsp;','',strip_tags(wc_price($min_price)));
-                                        echo preg_replace( '/[^.,\d]/', '', $price_no_tags );
+                                        echo number_format( $min_price, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
                                     ?> netto
                                 </span>
                             <?php endif; ?>
