@@ -22,13 +22,12 @@
                         'category' => array($cat->slug),
                     ));
 
-                    $all_prices[] = array();
+                    $all_prices = array();
 
                     foreach ($products as $product) {
                         $all_prices[] = wc_get_price_excluding_tax($product);
                     }
                     
-                    print_r($all_prices);
                     $min_price = min($all_prices);
             ?>
                 <li>
