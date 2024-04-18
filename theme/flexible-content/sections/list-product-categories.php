@@ -1,6 +1,6 @@
 <?php
 
-/** Template to display 'Lista produktów' - list_products */
+/** Template to display 'Lista kategorii produktów' - list_product_categories */
 
 ?>
 
@@ -46,7 +46,7 @@
                             </h4>
                             <?php if (is_user_logged_in()) : ?>
                                 <span class="text-lg md:text-xl">
-                                    <?php echo wc_price($min_price)?> netto
+                                    <?php echo preg_replace( '/[^.\d]/', '', wc_price($min_price)  );?> netto
                                 </span>
                             <?php endif; ?>
                         </div>
