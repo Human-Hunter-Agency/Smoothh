@@ -311,3 +311,17 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	$fragments['a.cart-icon-desktop'] = ob_get_clean();
 	return $fragments;
 }
+
+function is_prod_guest_available($product) {
+    $guest_categories = get_field('guest_categories', 'option');
+
+    $guest_available = false;
+
+    if ($guest_categories && is_array($guest_categories)) {
+        $prod_categories = $product->get_category_ids();
+        $common_values = array_intersect($prod_categories, $guest_categories);
+        $guest_available = !empty($common_values);
+    }
+
+    return $guest_available;
+}

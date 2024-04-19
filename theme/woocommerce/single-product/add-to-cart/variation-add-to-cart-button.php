@@ -28,7 +28,7 @@ global $product;
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 	?>
 
-	<?php if (is_user_logged_in()) : ?>
+	<?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
 		<button type="submit" class="single_add_to_cart_button whitespace-nowrap button border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?>
 			<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
