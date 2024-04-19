@@ -23,6 +23,8 @@ if ( ! $product->is_purchasable() ) {
 	return;
 }
 
+
+
 echo wc_get_stock_html( $product ); // WPCS: XSS ok.
 
 if ( $product->is_in_stock() ) : ?>
@@ -46,7 +48,19 @@ if ( $product->is_in_stock() ) : ?>
 		do_action( 'woocommerce_after_add_to_cart_quantity' );
 		?>
 
-        <?php if (is_user_logged_in()) : ?>
+        <?php 
+		$guest_categories = get_field('guest_categories', 'option');
+		$guest_available = false;
+
+		function arrays_have_common_value($array1, $array2) {
+			return !empty(array_intersect($array1, $array2));
+		}
+
+		if ($guest_categories) {
+			$guest_available = arrays_have_common_value($product->get_category_ids(),$guest_categories);
+		}
+		
+		if (is_user_logged_in() || $guest_available) : ?>
 		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?> whitespace-nowrap button border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?>
 			<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
