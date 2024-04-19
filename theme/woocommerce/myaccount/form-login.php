@@ -127,6 +127,10 @@ do_action('woocommerce_before_customer_login_form'); ?>
           </p>
         </div>
 
+        <div>
+          <?php echo get_field('name'); ?>
+        </div>
+
         <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
 
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
