@@ -198,6 +198,7 @@ do_action('woocommerce_before_cart'); ?>
 </form>
 
 <?php do_action('woocommerce_before_cart_collaterals'); ?>
+<p class="text-sm md:text-base my-5 text-right w-full text-[#B2B2B2]"><?php echo esc_html_e('* Prices displayed in net', 'smoothh'); ?></p>
 
 <!-- <div class="cart-collaterals">
     <?php
