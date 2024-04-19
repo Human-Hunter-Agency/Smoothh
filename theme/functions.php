@@ -312,6 +312,18 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
+function is_category_guest_available($category){
+	$guest_categories = get_field('guest_categories', 'option');
+    $guest_available = false;
+	$category_id = $category->term_id;
+
+	if ($guest_categories && is_array($guest_categories)) {
+        $guest_available = in_array($category_id,$guest_categories);
+    }
+
+	return $guest_available;
+}
+
 function is_prod_guest_available($product) {
     $guest_categories = get_field('guest_categories', 'option');
 

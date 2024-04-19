@@ -71,7 +71,7 @@ if (post_password_required()) {
 		<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
 			<div class="md:sticky top-[115px]">
 				<?php 
-				if ($cart && !$cart->is_empty() && is_user_logged_in()) : ?>
+				if ($cart && !$cart->is_empty()) : ?>
 					<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
 						<span class="block font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
 						<ul class="flex flex-col gap-8 mb-8">
