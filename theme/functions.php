@@ -358,7 +358,7 @@ function wooc_extra_register_fields()
 { ?>
 	<p class="form-row form-row-wide">
 		<label for="reg_billing_phone"><?php _e('Phone', 'woocommerce'); ?></label>
-		<input type="text" class="input-text" name="billing_phone" id="reg_billing_phone" value="<?php esc_attr_e($_POST['billing_phone']); ?>" />
+		<input type="text" class="input-text" name="billing_phone" id="reg_billing_phone" value="<?php esc_attr_e(!empty($_POST['billing_phone'])); ?>" />
 	</p>
 	<p class="form-row form-row-first">
 		<label for="reg_billing_first_name"><?php _e('First name', 'woocommerce'); ?><span class="required">*</span></label>
