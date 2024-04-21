@@ -30,7 +30,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     <?php endif; ?>
 
-    <form class="woocommerce-form woocommerce-form-login login !px-8 !pt-9 !pb-6 !border-[#888] !rounded-[15px]" method="post">
+    <form class="woocommerce-form woocommerce-form-login login !px-8 !pt-9 !pb-6 !my-0 !border-[#888] !rounded-[15px]" method="post">
 
       <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Zaloguj się', 'woocommerce'); ?></h2>
 
