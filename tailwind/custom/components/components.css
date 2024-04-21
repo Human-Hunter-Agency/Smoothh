@@ -30,199 +30,201 @@
 	@apply float-right ml-5;
 }
 
-#primary-menu{
-	@apply flex flex-col md:flex-row md:items-center gap-2.5 md:gap-5 flex-wrap md:justify-end
+#primary-menu {
+	@apply flex flex-col md:flex-row md:items-center gap-2.5 md:gap-5 flex-wrap md:justify-end;
 }
 
-#primary-menu a{
-	@apply transition duration-200 hover:text-primary
+#primary-menu a {
+	@apply transition duration-200 hover:text-primary;
 }
 
-[aria-expanded="true"].menu-btn ~ #site-navigation{
-	@apply !shadow-lg
+[aria-expanded="true"].menu-btn ~ #site-navigation {
+	@apply !shadow-lg;
 }
 
-footer#page-footer{
-	@apply bg-[#FAFAFA]
+footer#page-footer {
+	@apply bg-[#FAFAFA];
 }
 
-footer#page-footer h3{
-	@apply text-primary font-bold mb-4
+footer#page-footer h3 {
+	@apply text-primary font-bold mb-4;
 }
 
 footer#page-footer .footer-menu a {
-	@apply block py-1 text-base hover:text-primary transition duration-200
+	@apply block py-1 text-base hover:text-primary transition duration-200;
 }
 
-footer#page-footer .footer-bottom-menu{
-	@apply flex flex-col md:flex-row md:items-center gap-3 md:gap-5 text-sm font-bold
+footer#page-footer .footer-bottom-menu {
+	@apply flex flex-col md:flex-row md:items-center gap-3 md:gap-5 text-sm font-bold;
 }
 
-.newsletter-input{
-	@apply flex w-full
+.newsletter-input {
+	@apply flex w-full;
 }
 
-.newsletter-input #your-email{
-	@apply h-[55px] w-[calc(100%_+_15px)] pl-3 md:pl-[18px] pr-4 min-w-0 text-base bg-transparent placeholder:text-foreground border border-r-0 border-primary rounded-l-2xl
+.newsletter-input #your-email {
+	@apply h-[55px] w-[calc(100%_+_15px)] pl-3 md:pl-[18px] pr-4 min-w-0 text-base bg-transparent placeholder:text-foreground border border-r-0 border-primary rounded-l-2xl;
 }
 
-.newsletter-input .submit-container{
-	@apply h-[55px] relative shrink-0
+.newsletter-input .submit-container {
+	@apply h-[55px] relative shrink-0;
 }
 
-.newsletter-input .submit-container p{
-	@apply h-full 
+.newsletter-input .submit-container p {
+	@apply h-full;
 }
 
-.newsletter-input .wpcf7-submit{
-	@apply relative z-10 h-full text-base text-white font-bold text-center rounded-2xl bg-gradient-to-b from-primary to-secondary cursor-pointer py-2 px-5 xl:px-[50px]
+.newsletter-input .wpcf7-submit {
+	@apply relative z-10 h-full text-base text-white font-bold text-center rounded-2xl bg-gradient-to-b from-primary to-secondary cursor-pointer py-2 px-5 xl:px-[50px];
 }
 
-.newsletter-input .wpcf7-spinner{
-	@apply hidden
+.newsletter-input .wpcf7-spinner {
+	@apply hidden;
 }
 
-.wpcf7-response-output{
-	@apply rounded-2xl text-sm !mx-0 !mt-3
+.wpcf7-response-output {
+	@apply rounded-2xl text-sm !mx-0 !mt-3;
 }
 
-.form-basic{
-	@apply flex flex-col
+.form-basic {
+	@apply flex flex-col;
 }
 
 .form-basic input,
-.form-basic textarea{
-	@apply px-4 md:px-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary bg-white placeholder:text-foreground text-foreground text-base
+.form-basic textarea {
+	@apply px-4 md:px-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary bg-white placeholder:text-foreground text-foreground text-base;
 }
-.form-basic textarea{
-	@apply py-4 min-h-32 max-h-80
+.form-basic textarea {
+	@apply py-4 min-h-32 max-h-80;
 }
-.form-basic #your-file{
-	@apply hidden
-}
-
-.form-basic input.wpcf7-submit{
-	@apply font-bold text-base cursor-pointer w-auto pl-[30px] pr-14 transition duration-200
-}
-.form-basic .btn-white input.wpcf7-submit{
-	@apply border-none bg-white text-primary hover:text-secondary 
-}
-.form-basic .btn-color input.wpcf7-submit{
-	@apply border-none bg-gradient-to-b from-primary to-secondary text-white 
+.form-basic #your-file {
+	@apply hidden;
 }
 
-.form-basic .wpcf7-list-item{
-	@apply !mx-auto
+.form-basic input.wpcf7-submit {
+	@apply font-bold text-base cursor-pointer w-auto pl-[30px] pr-14 transition duration-200;
 }
-.form-basic .wpcf7-list-item a{
-	@apply font-semibold text-primary
+.form-basic .btn-white input.wpcf7-submit {
+	@apply border-none bg-white text-primary hover:text-secondary;
+}
+.form-basic .btn-color input.wpcf7-submit {
+	@apply border-none bg-gradient-to-b from-primary to-secondary text-white;
 }
 
-.form-basic .wpcf7-list-item input[type="checkbox"]{
-	@apply !size-5 mr-4 accent-primary shrink-0 align-sub
+.form-basic .wpcf7-list-item {
+	@apply !mx-auto;
+}
+.form-basic .wpcf7-list-item a {
+	@apply font-semibold text-primary;
 }
 
+.form-basic .wpcf7-list-item input[type="checkbox"] {
+	@apply !size-5 mr-4 accent-primary shrink-0 align-sub;
+}
 
 .swiper .swiper-button-next,
-.swiper .swiper-button-prev{
-	@apply !hidden xl:!flex after:hidden bg-primary hover:bg-secondary p-3 transition duration-300 rounded-[5px] items-center justify-center md:size-11
+.swiper .swiper-button-prev {
+	@apply !hidden xl:!flex after:hidden bg-primary hover:bg-secondary p-3 transition duration-300 rounded-[5px] items-center justify-center md:size-11;
 }
 
-.swiper .swiper-button-next{
-	@apply min-[1537px]:-right-10
+.swiper .swiper-button-next {
+	@apply min-[1537px]:-right-10;
 }
-.swiper .swiper-button-prev{
-	@apply min-[1537px]:-left-10
-}
-
-.grid-colored{
-	@apply border border-primary grid grid-cols-1 lg:grid-cols-2
+.swiper .swiper-button-prev {
+	@apply min-[1537px]:-left-10;
 }
 
-.grid-colored-section{
-	@apply flex flex-col justify-between items-center px-2.5 py-5 md:py-10 lg:py-20 text-center
+.grid-colored {
+	@apply border border-primary grid grid-cols-1 lg:grid-cols-2;
+}
+
+.grid-colored-section {
+	@apply flex flex-col justify-between items-center px-2.5 py-5 md:py-10 lg:py-20 text-center;
 }
 
 .grid-colored-section:nth-child(4n),
-.grid-colored-section:nth-child(4n + 1){
-	@apply lg:!bg-white lg:!text-primary
+.grid-colored-section:nth-child(4n + 1) {
+	@apply lg:!bg-white lg:!text-primary;
 }
 .grid-colored-section:nth-child(4n + 2),
-.grid-colored-section:nth-child(4n + 3){
-	@apply lg:!bg-primary lg:!text-white
+.grid-colored-section:nth-child(4n + 3) {
+	@apply lg:!bg-primary lg:!text-white;
 }
 
-.grid-colored-section:nth-child(odd){
-	@apply bg-white text-primary
+.grid-colored-section:nth-child(odd) {
+	@apply bg-white text-primary;
 }
-.grid-colored-section:nth-child(even){
-	@apply bg-primary text-white
+.grid-colored-section:nth-child(even) {
+	@apply bg-primary text-white;
 }
-
 
 .grid-colored-section:nth-child(4n) .grid-section-btn,
-.grid-colored-section:nth-child(4n + 1) .grid-section-btn{
-	@apply lg:!text-white lg:!bg-primary lg:hover:!bg-primary/80
+.grid-colored-section:nth-child(4n + 1) .grid-section-btn {
+	@apply lg:!text-white lg:!bg-primary lg:hover:!bg-primary/80;
 }
 .grid-colored-section:nth-child(4n + 2) .grid-section-btn,
-.grid-colored-section:nth-child(4n + 3) .grid-section-btn{
-	@apply lg:!text-primary lg:!bg-white lg:hover:!bg-white/50
+.grid-colored-section:nth-child(4n + 3) .grid-section-btn {
+	@apply lg:!text-primary lg:!bg-white lg:hover:!bg-white/50;
 }
-.grid-colored-section:nth-child(odd) .grid-section-btn{
-	@apply text-white bg-primary hover:bg-primary/80
+.grid-colored-section:nth-child(odd) .grid-section-btn {
+	@apply text-white bg-primary hover:bg-primary/80;
 }
-.grid-colored-section:nth-child(even) .grid-section-btn{
-	@apply text-primary bg-white hover:bg-white/50
-}
-
-.grid-colored-section .grid-section-btn{
-	@apply block rounded-2xl text-[13px] font-semibold py-2 px-7 mt-10 transition duration-200
+.grid-colored-section:nth-child(even) .grid-section-btn {
+	@apply text-primary bg-white hover:bg-white/50;
 }
 
-.tab-btn{
-	@apply w-full px-5 py-2 font-semibold rounded-[10px] text-base bg-white text-primary hover:bg-primary/10 transition duration-300 whitespace-nowrap
+.grid-colored-section .grid-section-btn {
+	@apply block rounded-2xl text-[13px] font-semibold py-2 px-7 mt-10 transition duration-200;
 }
 
-.tab-btn.active{
-	@apply !bg-primary !text-white
+.tab-btn {
+	@apply w-full px-5 py-2 font-semibold rounded-[10px] text-base bg-white text-primary hover:bg-primary/10 transition duration-300 whitespace-nowrap;
 }
 
-.post-tile{
-	@apply relative !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl
+.tab-btn.active {
+	@apply !bg-primary !text-white;
 }
 
-.post-tile img{
-	@apply relative mb-5 rounded-t-[14px] overflow-hidden object-cover w-full !h-[190px] md:!h-[220px] indent-[-9999px] text-[0px]
+.post-tile {
+	@apply relative !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl;
 }
 
-.post-tile img[src=""]{
-	@apply opacity-0 pointer-events-none
+.post-tile img {
+	@apply relative mb-5 rounded-t-[14px] overflow-hidden object-cover w-full !h-[190px] md:!h-[220px] indent-[-9999px] text-[0px];
 }
 
-.post-tile::before{
-	content: '';
-	@apply absolute z-10 inset-x-0 top-0 bg-gradient-to-b from-primary/20 to-secondary/20 !h-[190px] md:!h-[220px] rounded-t-[14px]
+.post-tile img[src=""] {
+	@apply opacity-0 pointer-events-none;
+}
+
+.post-tile::before {
+	content: "";
+	@apply absolute z-10 inset-x-0 top-0 bg-gradient-to-b from-primary/20 to-secondary/20 !h-[190px] md:!h-[220px] rounded-t-[14px];
 }
 
 .post-tile h3 {
-	@apply text-center text-base md:text-xl text-primary mb-9 font-semibold px-3 md:px-6 grow
+	@apply text-center text-base md:text-xl text-primary mb-9 font-semibold px-3 md:px-6 grow;
 }
 
 .post-tile p {
-	@apply text-center text-sm md:text-base italic font-medium px-3 md:px-6 pb-3 md:pb-6 grow
+	@apply text-center text-sm md:text-base italic font-medium px-3 md:px-6 pb-3 md:pb-6 grow;
 }
 .post-tile p a {
-	@apply hidden
+	@apply hidden;
 }
 
-.post-tile a{
-	@apply translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200
+.post-tile a {
+	@apply translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200;
 }
 
-.variations select{
-	@apply relative z-0 h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none
+.variations select {
+	@apply relative z-0 h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 
-.variations select:focus ~ svg{
-	@apply rotate-180
+.variations select:focus ~ svg {
+	@apply rotate-180;
+}
+
+.show-password-input {
+	@apply hidden;
 }

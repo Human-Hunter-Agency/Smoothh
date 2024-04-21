@@ -139,7 +139,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
           <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-              <label for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label>
+              <!-- <label for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
               <input type="password" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary min-w-[300px]" name="password" id="reg_password" autocomplete="new-password" placeholder="Hasło*" />
             </p>
           <?php else : ?>
