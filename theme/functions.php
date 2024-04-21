@@ -431,10 +431,10 @@ function wooc_validate_extra_register_fields($username, $email, $validation_erro
 
 		$validation_errors->add('billing_billing_country', __('Country is required.', 'woocommerce'));
 	}
-	if (isset($_POST['billing_state']) && empty($_POST['billing_state'])) {
+	// if (isset($_POST['billing_state']) && empty($_POST['billing_state'])) {
 
-		$validation_errors->add('billing_billing_state', __('State is required.', 'woocommerce'));
-	}
+	// 	$validation_errors->add('billing_billing_state', __('State is required.', 'woocommerce'));
+	// }
 }
 add_action('woocommerce_register_post', 'wooc_validate_extra_register_fields', 10, 3);
 /**
@@ -483,10 +483,10 @@ function wooc_save_extra_register_fields($customer_id)
 		// WooCommerce billing_city
 		update_user_meta($customer_id, 'billing_city', sanitize_text_field($_POST['billing_city']));
 	}
-	if (isset($_POST['billing_state'])) {
-		// WooCommerce billing_state
-		update_user_meta($customer_id, 'billing_state', sanitize_text_field($_POST['billing_state']));
-	}
+	// if (isset($_POST['billing_state'])) {
+	// 	// WooCommerce billing_state
+	// 	update_user_meta($customer_id, 'billing_state', sanitize_text_field($_POST['billing_state']));
+	// }
 	if (isset($_POST['billing_country'])) {
 		// WooCommerce billing_country
 		update_user_meta($customer_id, 'billing_country', sanitize_text_field($_POST['billing_country']));
