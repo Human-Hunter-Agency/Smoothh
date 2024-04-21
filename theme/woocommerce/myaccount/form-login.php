@@ -100,7 +100,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     </form>
 
-    <div class="order-as-guest !px-8 !pt-9 !pb-6 !border-[#888] !rounded-[15px]">
+    <div class="order-as-guest !px-8 !pt-9 !pb-6 border !border-[#888] !rounded-[15px]">
       <h2 class="mb-10 text-3xl font-semibold">Zamów jako gość</h2>
       <button type="submit" class="woocommerce-button button woocommerce-form-login__submit h-[55px] w-full !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !to-secondary !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>">
         <?php esc_html_e('Continue without login', 'woocommerce'); ?>
@@ -136,15 +136,20 @@ do_action('woocommerce_before_customer_login_form'); ?>
             <!-- <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
             <input type="email" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary min-w-[300px]" name="email" placeholder="Adres e-mail*" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" />
           </p>
+          
+          <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
+          <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+            <label for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+            <input type="password" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary min-w-[300px]" name="password" id="reg_password" autocomplete="new-password" />
+          </p>
+        <?php else : ?>
         </div>
 
         <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
-
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <label for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-            <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
+            <input type="password" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary min-w-[300px]" name="password" id="reg_password" autocomplete="new-password" />
           </p>
-
         <?php else : ?>
 
           <p class="mb-5"><?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?></p>
