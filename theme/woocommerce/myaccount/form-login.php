@@ -116,7 +116,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
     </div>
 
     <div class="_u-column2 _col-2 basis-2/3 2xl:basis-3/4">
-      <form method="post" class="woocommerce-form woocommerce-form-register register !px-8 !pt-9 !pb-6 !border-[#888] !rounded-[15px]" <?php do_action('woocommerce_register_form_tag'); ?>>
+      <form method="post" class="woocommerce-form woocommerce-form-register register !px-8 !pt-9 !pb-6 !mb-0 !border-[#888] !rounded-[15px] h-full" <?php do_action('woocommerce_register_form_tag'); ?>>
 
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Zarejestruj się', 'woocommerce'); ?></h2>
 
