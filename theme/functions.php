@@ -356,22 +356,74 @@ function is_prod_guest_available($product)
 // Custom account fields
 function woocommerce_smoothh_account_extra_fields() {
     return apply_filters( 'woocommerce_forms_field', array(
-        'company_nip' => array(
+        'billing_first_name' => array(
+            'type'        => 'text',
+            'placeholder' => __( 'First name', 'woocommerce' ),
+            'required'    => true,
+		),
+		'billing_last_name' => array(
+            'type'        => 'text',
+            'placeholder' => __( 'Last name', 'woocommerce' ),
+            'required'    => true,
+		),
+		'billing_company' => array(
+            'type'        => 'text',
+            'placeholder' => __( 'Company Name', 'woocommerce' ),
+            'required'    => true,
+		),
+		'company_nip' => array(
             'type'        => 'text',
             'placeholder' => __( 'NIP Number', 'smoothh' ),
             'required'    => true,
-        )
+		),
+		'billing_phone' => array(
+            'type'        => 'text',
+            'placeholder' => __( 'Phone', 'woocommerce' ),
+            'required'    => true,
+		),
     ) );
 }
 function smoothh_save_extra_fields( $customer_id ) {
+	if ( isset( $_POST['billing_first_name'] ) ) {
+		// WordPress default first name field.
+		update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
+		// WooCommerce billing first name.
+		update_user_meta( $customer_id, 'billing_first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
+  	}
+ 	if ( isset( $_POST['billing_last_name'] ) ) {
+		// WordPress default last name field.
+		update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['billing_last_name'] ) );
+		// WooCommerce billing last name.
+		update_user_meta( $customer_id, 'billing_last_name', sanitize_text_field( $_POST['billing_last_name'] ) );
+	}
+	if ( isset( $_POST['billing_company'] ) ) {
+		// WooCommerce billing_company
+		update_user_meta( $customer_id, 'billing_company', sanitize_text_field( $_POST['billing_company'] ) );
+ 	}
 	if ( isset( $_POST['company_nip'] ) ) {
 		update_user_meta( $customer_id, 'company_nip', sanitize_text_field( $_POST['company_nip'] ) );
 	}
+	if ( isset( $_POST['billing_phone'] ) ) {
+		// WooCommerce billing phone
+		update_user_meta( $customer_id, 'billing_phone', sanitize_text_field( $_POST['billing_phone'] ) );
+ 	}
 }
 function smoothh_validate_extra_fields($errors){
+	if ( isset( $_POST['billing_first_name'] ) && empty( $_POST['billing_first_name'] ) ) {
+		$errors->add( 'billing_first_name_error', __( 'First name is required.', 'woocommerce' ) );
+	} 
+	if ( isset( $_POST['billing_last_name'] ) && empty( $_POST['billing_last_name'] ) ) {
+		$errors->add( 'billing_last_name_error', __( 'Last name is required.', 'woocommerce' ) );
+	} 
+	if ( isset( $_POST['billing_company'] ) && empty( $_POST['billing_company'] ) ) {
+		$errors->add( 'billing_billing_company', __( 'Company Name is required.', 'woocommerce' ) );
+ 	} 
 	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
 		$errors->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
 	} 
+	if ( isset( $_POST['billing_phone'] ) && empty( $_POST['billing_phone'] ) ) {
+		$errors->add( 'billing_phone_error', __( 'Phone is required.', 'woocommerce' ) );
+ 	}
 }
 
 // Register page
@@ -384,7 +436,7 @@ function smoothh_my_account_page_woocommerce() {
 function smoothh_validate_extra_fields_my_account( $username, $email, $validation_errors ) {
 	smoothh_validate_extra_fields($validation_errors);
 }
-add_action( 'woocommerce_register_form', 'smoothh_my_account_page_woocommerce', 15 );
+add_action( 'woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15 );
 add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
 add_action( 'woocommerce_created_customer', 'smoothh_save_extra_fields' );
 
