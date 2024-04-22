@@ -386,6 +386,7 @@ function woocommerce_smoothh_account_extra_fields() {
 function smoothh_save_extra_fields( $customer_id ) {
 	if ( isset( $_POST['first_name'] ) ) {
 		// WordPress default first name field.
+		update_user_meta( $customer_id, 'name', sanitize_text_field( $_POST['first_name'] ) );
 		update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['first_name'] ) );
 		update_user_meta( $customer_id, 'shipping_first_name', sanitize_text_field( $_POST['first_name'] ) );
   	}
@@ -400,6 +401,7 @@ function smoothh_save_extra_fields( $customer_id ) {
  	}
 	if ( isset( $_POST['company_nip'] ) ) {
 		update_user_meta( $customer_id, 'company_nip', sanitize_text_field( $_POST['company_nip'] ) );
+		update_user_meta( $customer_id, 'shipping_company_nip', sanitize_text_field( $_POST['company_nip'] ) );
 	}
 	if ( isset( $_POST['shipping_phone'] ) ) {
 		// WooCommerce billing phone
@@ -460,12 +462,16 @@ function smoothh_shipping_address_add_nip( $fields ) {
 		'required'     => true,
 		'placeholder'  => __( 'NIP Number', 'smoothh' ),
 	);
+	var_dump($fields);
 	$fields[ 'shipping_company_nip' ]['default'] = 'test';
-	$fields[ 'shipping_company_nip' ]['value'] = 'test2';
+	echo '-------------';
+	var_dump($fields);
 	
 	return $fields;
 }
 
+
+// Display custom field in user BO
 function smoothh_show_extra_account_details( $user ) {
 	$company_nip = get_user_meta( $user->ID, 'company_nip', true );
 
