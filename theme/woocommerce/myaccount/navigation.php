@@ -27,8 +27,8 @@ do_action('woocommerce_before_account_navigation');
   <h2 class="mb-10 text-3xl font-semibold">Twoje konto</h2>
   <ul>
     <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
-      <li class="py-2<?php echo wc_get_account_menu_item_classes($endpoint); ?>">
-        <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>"><?php echo esc_html($label); ?></a>
+      <li class="py-2 <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
+        <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>" class=" text-lgtransition duration-200 hover:text-primary"><?php echo esc_html($label); ?></a>
       </li>
     <?php endforeach; ?>
   </ul>
