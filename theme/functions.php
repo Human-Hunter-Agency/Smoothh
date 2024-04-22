@@ -457,7 +457,7 @@ function smoothh_shipping_address_add_nip( $fields ) {
 
 	$company_nip = get_user_meta( get_current_user_id(), 'company_nip', true ) ?? null;
 	
-	$fields[ 'shipping_company_nip' ] = array(
+	$fields[ 'company_nip' ] = array(
 		'type'		   => 'text',
 		'required'     => true,
 		'placeholder'  => __( 'NIP Number', 'smoothh' ),
