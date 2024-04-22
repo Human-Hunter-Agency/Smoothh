@@ -369,3 +369,10 @@ function edit_my_account_page_woocommerce() {
     }
 }
 add_action( 'woocommerce_register_form', 'edit_my_account_page_woocommerce', 15 );
+
+function smoothh_save_extra_register_fields( $customer_id ) {
+	if ( isset( $_POST['company_nip'] ) ) {
+		update_user_meta( $customer_id, 'company_nip', sanitize_text_field( $_POST['company_nip'] ) );
+	}
+}
+add_action( 'woocommerce_created_customer', 'smoothh_save_extra_register_fields' );
