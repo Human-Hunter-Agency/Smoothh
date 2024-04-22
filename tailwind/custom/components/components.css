@@ -228,3 +228,13 @@ footer#page-footer .footer-bottom-menu {
 .show-password-input {
 	@apply hidden;
 }
+
+.register-fields{
+	@apply md:flex md:flex-wrap gap-5 lg:gap-x-12
+}
+.register-fields .form-row{
+	@apply !m-0 !p-0
+}
+.register-fields .input-text{
+	@apply placeholder:text-foreground h-[55px] rounded-[15px] border border-primary px-5 transition duration-200 hover:border-secondary focus:border-secondary accent-primary w-full md:w-[calc(50%_-_10px)] lh:w-[calc(33.33%_-_32px)]
+}

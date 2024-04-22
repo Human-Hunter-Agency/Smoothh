@@ -377,7 +377,7 @@ function woocommerce_smoothh_account_extra_fields() {
             'required'    => true,
 		),
 		'billing_phone' => array(
-            'type'        => 'text',
+            'type'        => 'tel',
             'placeholder' => __( 'Phone', 'woocommerce' ),
             'required'    => true,
 		),
