@@ -257,6 +257,9 @@ footer#page-footer .footer-bottom-menu {
 .woocommerce-address-fields
 	.woocommerce-address-fields__field-wrapper
 	.woocommerce-input-wrapper
-	.select2-container {
-	@apply rounded-[15px] border border-primary;
+	.select2-container
+	.selection
+	.select2-selection
+	.select2-selection--single {
+	@apply !rounded-[15px] !border !border-primary;
 }
