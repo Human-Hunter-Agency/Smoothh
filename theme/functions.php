@@ -454,14 +454,11 @@ function smoothh_billing_address_add_nip( $fields ) {
 
 add_filter( 'woocommerce_shipping_fields', 'smoothh_shipping_address_add_nip' );
 function smoothh_shipping_address_add_nip( $fields ) {
-
-	$company_nip = get_user_meta( get_current_user_id(), 'company_nip', true ) ?? null;
 	
-	$fields[ 'company_nip' ] = array(
+	$fields[ 'shipping_company_nip' ] = array(
 		'type'		   => 'text',
 		'required'     => true,
 		'placeholder'  => __( 'NIP Number', 'smoothh' ),
-		'value' 	   => '999'
 	);
 	
 	return $fields;
@@ -470,7 +467,7 @@ function smoothh_shipping_address_add_nip( $fields ) {
 
 // Display custom field in user BO
 function smoothh_show_extra_account_details( $user ) {
-	$company_nip = get_user_meta( $user->ID, 'company_nip', true );
+	$company_nip = get_user_meta( $user->ID, 'shipping_company_nip', true );
 
 	if ( empty( $company_nip ) ) {
 		return;
