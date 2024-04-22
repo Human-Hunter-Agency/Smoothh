@@ -353,7 +353,7 @@ function is_prod_guest_available($product)
 	return $guest_available;
 }
 
-function woocommerce_edit_my_account_page() {
+function woocommerce_smoothh_my_account_page() {
     return apply_filters( 'woocommerce_forms_field', array(
         'company_nip' => array(
             'type'        => 'text',
@@ -362,13 +362,22 @@ function woocommerce_edit_my_account_page() {
         )
     ) );
 }
-function edit_my_account_page_woocommerce() {
-    $fields = woocommerce_edit_my_account_page();
+function smoothh_my_account_page_woocommerce() {
+    $fields = woocommerce_smoothh_my_account_page();
     foreach ( $fields as $key => $field_args ) {
         woocommerce_form_field( $key, $field_args );
     }
 }
-add_action( 'woocommerce_register_form', 'edit_my_account_page_woocommerce', 15 );
+add_action( 'woocommerce_register_form', 'smoothh_my_account_page_woocommerce', 15 );
+
+function smoothh_validate_extra_register_fields( $username, $email, $validation_errors ) {
+	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
+
+		   $validation_errors->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
+
+	} 
+}
+add_action( 'woocommerce_register_post', 'smoothh_validate_extra_register_fields', 10, 3 );
 
 function smoothh_save_extra_register_fields( $customer_id ) {
 	if ( isset( $_POST['company_nip'] ) ) {
@@ -376,3 +385,30 @@ function smoothh_save_extra_register_fields( $customer_id ) {
 	}
 }
 add_action( 'woocommerce_created_customer', 'smoothh_save_extra_register_fields' );
+
+
+function woocommerce_smoothh_edit_account_page() {
+	$user = wp_get_current_user();
+    return apply_filters( 'woocommerce_forms_field', array(
+        'company_nip' => array(
+            'type'        => 'text',
+            'placeholder' => __( 'NIP Number', 'smoothh' ),
+            'required'    => true,
+			'value'		  => esc_attr( $user->company_nip )
+        )
+    ) );
+}
+function smoothh_edit_account_page_woocommerce() {
+    $fields = woocommerce_smoothh_edit_account_page();
+    foreach ( $fields as $key => $field_args ) {
+        woocommerce_form_field( $key, $field_args );
+    }
+}
+add_action( 'woocommerce_edit_account_form', 'smoothh_edit_account_page_woocommerce', 15 );
+
+function smoothh_save_account_details( $user_id ) {
+	if ( isset( $_POST['company_nip'] ) ) {
+		update_user_meta( $user_id, 'company_nip', sanitize_text_field( $_POST['company_nip'] ) );
+	}
+}
+add_action( 'woocommerce_save_account_details', 'smoothh_save_account_details' );
