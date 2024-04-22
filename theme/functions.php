@@ -390,7 +390,7 @@ function smoothh_save_extra_fields( $customer_id ) {
   	}
  	if ( isset( $_POST['last_name'] ) ) {
 		// WordPress default last name field.
-		update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['shipping_last_name'] ) );
+		update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['last_name'] ) );
 	}
 	if ( isset( $_POST['shipping_company'] ) ) {
 		// WooCommerce shipping_company
@@ -435,3 +435,26 @@ function smoothh_validate_extra_fields_my_account( $username, $email, $validatio
 add_action( 'woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15 );
 add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
 add_action( 'woocommerce_created_customer', 'smoothh_save_extra_fields' );
+
+add_action( 'show_user_profile', 'smoothh_show_extra_account_details', 15 );
+add_action( 'edit_user_profile', 'smoothh_show_extra_account_details', 15 );
+
+function smoothh_show_extra_account_details( $user ) {
+	$company_nip = get_user_meta( $user->company_nip, 'company_nip', true );
+
+	if ( empty( $company_nip ) ) {
+		return;
+	}
+
+	?>
+	<h3><?php esc_html_e( 'Extra account details', 'smoothh' ); ?></h3>
+	<table class="form-table">
+	<tr>
+		<th><?php esc_html_e( 'Company NIP', 'smoothh' ); ?></label></th>
+		<td>
+			<p><?php echo esc_html( $company_nip ); ?></p>
+		</td>
+	</tr>
+	</table>
+<?php
+}
