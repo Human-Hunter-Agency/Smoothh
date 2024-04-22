@@ -23,8 +23,9 @@ if (!defined('ABSPATH')) {
 do_action('woocommerce_before_account_navigation');
 ?>
 
-<div class="nav-container py-10 ">
-  <nav class="woocommerce-MyAccount-navigation border border-[#888] rounded-[15px]">
+
+<nav class="woocommerce-MyAccount-navigation">
+  <div class="nav-container py-10 border border-[#888] rounded-[15px] ">
     <h2 class="mb-10 text-3xl font-semibold">Twoje konto</h2>
     <ul>
       <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
@@ -33,7 +34,7 @@ do_action('woocommerce_before_account_navigation');
         </li>
       <?php endforeach; ?>
     </ul>
-  </nav>
-</div>
+  </div>
+</nav>
 
 <?php do_action('woocommerce_after_account_navigation'); ?>
