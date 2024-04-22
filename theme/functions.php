@@ -391,7 +391,7 @@ function smoothh_edit_account_page_woocommerce() {
     $fields = woocommerce_smoothh_account_extra_fields();
 	$user = wp_get_current_user();
     foreach ( $fields as $key => $field_args ) {
-		$val = $user[$key] ?? '';
+		$val = $user[$key] ?? null;
         woocommerce_form_field( $key, $field_args, $val );
     }
 }
