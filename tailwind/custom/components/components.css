@@ -259,5 +259,5 @@ footer#page-footer .footer-bottom-menu {
 	@apply h-[55px] flex items-center rounded-[15px] border border-primary px-3 transition duration-200 hover:border-secondary focus:border-secondary accent-primary w-full;
 }
 .select2-selection__arrow {
-	@apply top-4;
+	@apply !top-4;
 }
