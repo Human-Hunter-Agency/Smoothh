@@ -368,6 +368,11 @@ function smoothh_save_extra_fields( $customer_id ) {
 		update_user_meta( $customer_id, 'company_nip', sanitize_text_field( $_POST['company_nip'] ) );
 	}
 }
+function smoothh_validate_extra_fields($errors){
+	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
+		$errors->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
+	} 
+}
 
 // Register page
 function smoothh_my_account_page_woocommerce() {
@@ -377,9 +382,7 @@ function smoothh_my_account_page_woocommerce() {
     }
 }
 function smoothh_validate_extra_fields_my_account( $username, $email, $validation_errors ) {
-	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
-		$validation_errors->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
-	} 
+	smoothh_validate_extra_fields($validation_errors);
 }
 add_action( 'woocommerce_register_form', 'smoothh_my_account_page_woocommerce', 15 );
 add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
@@ -396,9 +399,7 @@ function smoothh_edit_account_page_woocommerce() {
     }
 }
 function smoothh_validate_extra_fields_edit_account( $args ) {
-	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
-		$args->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
-	} 
+	smoothh_validate_extra_fields($args);
 }
 
 add_action( 'woocommerce_edit_account_form', 'smoothh_edit_account_page_woocommerce', 15 );
