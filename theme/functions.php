@@ -461,11 +461,8 @@ function smoothh_shipping_address_add_nip( $fields ) {
 		'type'		   => 'text',
 		'required'     => true,
 		'placeholder'  => __( 'NIP Number', 'smoothh' ),
+		'value' 	   => '999'
 	);
-	var_dump($fields);
-	$fields[ 'shipping_company_nip' ]['default'] = 'test';
-	echo '-------------';
-	var_dump($fields);
 	
 	return $fields;
 }
