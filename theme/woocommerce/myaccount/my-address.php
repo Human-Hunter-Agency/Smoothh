@@ -43,13 +43,13 @@ $oldcol = 1;
 $col    = 1;
 ?>
 
-<p class="mb-5">
+<p>
   <?php echo apply_filters('woocommerce_my_account_my_address_description', esc_html__('The following addresses will be used on the checkout page by default.', 'woocommerce')); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
   ?>
 </p>
 
 <?php if (!wc_ship_to_billing_address_only() && wc_shipping_enabled()) : ?>
-  <div class="u-columns woocommerce-Addresses col2-set addresses flex gap-10">
+  <div class="u-columns woocommerce-Addresses col2-set addresses flex gap-10 flex-col-reverse">
   <?php endif; ?>
 
   <?php foreach ($get_addresses as $name => $address_title) : ?>
