@@ -23,15 +23,17 @@ if (!defined('ABSPATH')) {
 do_action('woocommerce_before_account_navigation');
 ?>
 
-<nav class="woocommerce-MyAccount-navigation !px-8 !pt-9 !pb-6 !mt-0 !mb-5 !border-[#888] !rounded-[15px]">
-  <h2 class="mb-10 text-3xl font-semibold">Twoje konto</h2>
-  <ul>
-    <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
-      <li class="py-2 <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
-        <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>" class=" text-lgtransition duration-200 hover:text-primary"><?php echo esc_html($label); ?></a>
-      </li>
-    <?php endforeach; ?>
-  </ul>
-</nav>
+<div class="nav-container py-10 ">
+  <nav class="woocommerce-MyAccount-navigation border border-[#888] rounded-[15px]">
+    <h2 class="mb-10 text-3xl font-semibold">Twoje konto</h2>
+    <ul>
+      <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
+        <li class="py-1 <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
+          <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>" class=" text-lgtransition duration-200 hover:text-primary"><?php echo esc_html($label); ?></a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </nav>
+</div>
 
 <?php do_action('woocommerce_after_account_navigation'); ?>
