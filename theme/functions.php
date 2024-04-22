@@ -371,7 +371,7 @@ function woocommerce_smoothh_account_extra_fields() {
             'placeholder' => __( 'Company Name', 'woocommerce' ),
             'required'    => true,
 		),
-		'company_nip' => array(
+		'shipping_company_nip' => array(
             'type'        => 'text',
             'placeholder' => __( 'NIP Number', 'smoothh' ),
             'required'    => true,
@@ -399,9 +399,8 @@ function smoothh_save_extra_fields( $customer_id ) {
 		// WooCommerce shipping_company
 		update_user_meta( $customer_id, 'shipping_company', sanitize_text_field( $_POST['shipping_company'] ) );
  	}
-	if ( isset( $_POST['company_nip'] ) ) {
-		update_user_meta( $customer_id, 'company_nip', sanitize_text_field( $_POST['company_nip'] ) );
-		update_user_meta( $customer_id, 'shipping_company_nip', sanitize_text_field( $_POST['company_nip'] ) );
+	if ( isset( $_POST['shipping_company_nip'] ) ) {
+		update_user_meta( $customer_id, 'shipping_company_nip', sanitize_text_field( $_POST['shipping_company_nip'] ) );
 	}
 	if ( isset( $_POST['shipping_phone'] ) ) {
 		// WooCommerce billing phone
@@ -418,8 +417,8 @@ function smoothh_validate_extra_fields($errors){
 	if ( isset( $_POST['shipping_company'] ) && empty( $_POST['shipping_company'] ) ) {
 		$errors->add( 'shipping_company_error', __( 'Company Name is required.', 'woocommerce' ) );
  	} 
-	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
-		$errors->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
+	if ( isset( $_POST['shipping_company_nip'] ) && empty( $_POST['shipping_company_nip'] ) ) {
+		$errors->add( 'shipping_company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
 	} 
 	if ( isset( $_POST['shipping_phone'] ) && empty( $_POST['shipping_phone'] ) ) {
 		$errors->add( 'shipping_phone_error', __( 'Phone is required.', 'woocommerce' ) );
