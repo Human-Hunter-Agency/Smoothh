@@ -387,10 +387,12 @@ function smoothh_save_extra_fields( $customer_id ) {
 	if ( isset( $_POST['first_name'] ) ) {
 		// WordPress default first name field.
 		update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['first_name'] ) );
+		update_user_meta( $customer_id, 'shipping_first_name', sanitize_text_field( $_POST['shipping_first_name'] ) );
   	}
  	if ( isset( $_POST['last_name'] ) ) {
 		// WordPress default last name field.
 		update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['last_name'] ) );
+		update_user_meta( $customer_id, 'shipping_last_name', sanitize_text_field( $_POST['shipping_last_name'] ) );
 	}
 	if ( isset( $_POST['shipping_company'] ) ) {
 		// WooCommerce shipping_company
@@ -436,11 +438,23 @@ add_action( 'woocommerce_register_form_start', 'smoothh_my_account_page_woocomme
 add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
 add_action( 'woocommerce_created_customer', 'smoothh_save_extra_fields' );
 
-add_action( 'show_user_profile', 'smoothh_show_extra_account_details', 15 );
-add_action( 'edit_user_profile', 'smoothh_show_extra_account_details', 15 );
+add_filter( 'woocommerce_default_address_fields', 'smoothh_address_add_nip' );
+function smoothh_address_add_nip( $fields ) {
+
+	$company_nip = get_user_meta( get_current_user_id(), 'company_nip', true );
+	
+	$fields[ 'company_nip' ]   = array(
+		'type'		   => 'text',
+		'required'     => true,
+		'placeholder'  => __( 'NIP Number', 'smoothh' ),
+		'default'	   => $company_nip ?? ''
+	);
+	
+	return $fields;
+}
 
 function smoothh_show_extra_account_details( $user ) {
-	$company_nip = get_user_meta( $user->company_nip, 'company_nip', true );
+	$company_nip = get_user_meta( $user->ID, 'company_nip', true );
 
 	if ( empty( $company_nip ) ) {
 		return;
@@ -455,6 +469,9 @@ function smoothh_show_extra_account_details( $user ) {
 			<p><?php echo esc_html( $company_nip ); ?></p>
 		</td>
 	</tr>
-	</table>
+</table>
 <?php
 }
+
+add_action( 'show_user_profile', 'smoothh_show_extra_account_details', 15 );
+add_action( 'edit_user_profile', 'smoothh_show_extra_account_details', 15 );
