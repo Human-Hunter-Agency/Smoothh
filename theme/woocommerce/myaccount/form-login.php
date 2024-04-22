@@ -120,7 +120,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
 
-        <div class="register-fields">
+        <div class="register-fields smoothh-inputs-basic">
           <?php do_action('woocommerce_register_form_start'); ?>
 
           <?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
