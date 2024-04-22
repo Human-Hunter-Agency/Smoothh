@@ -356,17 +356,17 @@ function is_prod_guest_available($product)
 // Custom account fields
 function woocommerce_smoothh_account_extra_fields() {
     return apply_filters( 'woocommerce_forms_field', array(
-        'billing_first_name' => array(
+        'first_name' => array(
             'type'        => 'text',
             'placeholder' => __( 'First name', 'woocommerce' ),
             'required'    => true,
 		),
-		'billing_last_name' => array(
+		'last_name' => array(
             'type'        => 'text',
             'placeholder' => __( 'Last name', 'woocommerce' ),
             'required'    => true,
 		),
-		'billing_company' => array(
+		'shipping_company' => array(
             'type'        => 'text',
             'placeholder' => __( 'Company Name', 'woocommerce' ),
             'required'    => true,
@@ -376,7 +376,7 @@ function woocommerce_smoothh_account_extra_fields() {
             'placeholder' => __( 'NIP Number', 'smoothh' ),
             'required'    => true,
 		),
-		'billing_phone' => array(
+		'shipping_phone' => array(
             'type'        => 'tel',
             'placeholder' => __( 'Phone', 'woocommerce' ),
             'required'    => true,
@@ -384,45 +384,41 @@ function woocommerce_smoothh_account_extra_fields() {
     ) );
 }
 function smoothh_save_extra_fields( $customer_id ) {
-	if ( isset( $_POST['billing_first_name'] ) ) {
+	if ( isset( $_POST['first_name'] ) ) {
 		// WordPress default first name field.
-		update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
-		// WooCommerce billing first name.
-		update_user_meta( $customer_id, 'billing_first_name', sanitize_text_field( $_POST['billing_first_name'] ) );
+		update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['first_name'] ) );
   	}
- 	if ( isset( $_POST['billing_last_name'] ) ) {
+ 	if ( isset( $_POST['last_name'] ) ) {
 		// WordPress default last name field.
-		update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['billing_last_name'] ) );
-		// WooCommerce billing last name.
-		update_user_meta( $customer_id, 'billing_last_name', sanitize_text_field( $_POST['billing_last_name'] ) );
+		update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['shipping_last_name'] ) );
 	}
-	if ( isset( $_POST['billing_company'] ) ) {
-		// WooCommerce billing_company
-		update_user_meta( $customer_id, 'billing_company', sanitize_text_field( $_POST['billing_company'] ) );
+	if ( isset( $_POST['shipping_company'] ) ) {
+		// WooCommerce shipping_company
+		update_user_meta( $customer_id, 'shipping_company', sanitize_text_field( $_POST['shipping_company'] ) );
  	}
 	if ( isset( $_POST['company_nip'] ) ) {
 		update_user_meta( $customer_id, 'company_nip', sanitize_text_field( $_POST['company_nip'] ) );
 	}
-	if ( isset( $_POST['billing_phone'] ) ) {
+	if ( isset( $_POST['shipping_phone'] ) ) {
 		// WooCommerce billing phone
-		update_user_meta( $customer_id, 'billing_phone', sanitize_text_field( $_POST['billing_phone'] ) );
+		update_user_meta( $customer_id, 'shipping_phone', sanitize_text_field( $_POST['shipping_phone'] ) );
  	}
 }
 function smoothh_validate_extra_fields($errors){
-	if ( isset( $_POST['billing_first_name'] ) && empty( $_POST['billing_first_name'] ) ) {
-		$errors->add( 'billing_first_name_error', __( 'First name is required.', 'woocommerce' ) );
+	if ( isset( $_POST['first_name'] ) && empty( $_POST['first_name'] ) ) {
+		$errors->add( 'first_name_error', __( 'First name is required.', 'woocommerce' ) );
 	} 
-	if ( isset( $_POST['billing_last_name'] ) && empty( $_POST['billing_last_name'] ) ) {
-		$errors->add( 'billing_last_name_error', __( 'Last name is required.', 'woocommerce' ) );
+	if ( isset( $_POST['last_name'] ) && empty( $_POST['last_name'] ) ) {
+		$errors->add( 'last_name_error', __( 'Last name is required.', 'woocommerce' ) );
 	} 
-	if ( isset( $_POST['billing_company'] ) && empty( $_POST['billing_company'] ) ) {
-		$errors->add( 'billing_billing_company', __( 'Company Name is required.', 'woocommerce' ) );
+	if ( isset( $_POST['shipping_company'] ) && empty( $_POST['shipping_company'] ) ) {
+		$errors->add( 'shipping_company_error', __( 'Company Name is required.', 'woocommerce' ) );
  	} 
 	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
 		$errors->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
 	} 
-	if ( isset( $_POST['billing_phone'] ) && empty( $_POST['billing_phone'] ) ) {
-		$errors->add( 'billing_phone_error', __( 'Phone is required.', 'woocommerce' ) );
+	if ( isset( $_POST['shipping_phone'] ) && empty( $_POST['shipping_phone'] ) ) {
+		$errors->add( 'shipping_phone_error', __( 'Phone is required.', 'woocommerce' ) );
  	}
 }
 
@@ -439,21 +435,3 @@ function smoothh_validate_extra_fields_my_account( $username, $email, $validatio
 add_action( 'woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15 );
 add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
 add_action( 'woocommerce_created_customer', 'smoothh_save_extra_fields' );
-
-
-// Account details page
-function smoothh_edit_account_page_woocommerce() {
-    $fields = woocommerce_smoothh_account_extra_fields();
-	$user = wp_get_current_user();
-    foreach ( $fields as $key => $field_args ) {
-		$val = $user->$key ?? null;
-        woocommerce_form_field( $key, $field_args, $val );
-    }
-}
-function smoothh_validate_extra_fields_edit_account( $args ) {
-	smoothh_validate_extra_fields($args);
-}
-
-add_action( 'woocommerce_edit_account_form', 'smoothh_edit_account_page_woocommerce', 15 );
-add_action( 'woocommerce_save_account_details_errors','smoothh_validate_extra_fields_edit_account', 10, 1 );
-add_action( 'woocommerce_save_account_details', 'smoothh_save_extra_fields' );
