@@ -24,8 +24,8 @@ do_action('woocommerce_before_account_navigation');
 ?>
 
 
-<nav class="woocommerce-MyAccount-navigation">
-  <div class="nav-container py-10 border border-[#888] rounded-[15px] ">
+<nav class="woocommerce-MyAccount-navigation py-10">
+  <div class="nav-container p-10 border border-[#888] rounded-[15px] ">
     <h2 class="mb-10 text-3xl font-semibold">Twoje konto</h2>
     <ul>
       <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
