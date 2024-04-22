@@ -247,7 +247,8 @@ footer#page-footer .footer-bottom-menu {
 	@apply !text-primary !font-medium;
 }
 
-.woocommerce-MyAccount-content .woocommerce-info .button {
+.woocommerce-MyAccount-content .woocommerce-info .button,
+.woocommerce-address-fields .button {
 	@apply rounded-[14px] text-[13px] font-bold py-2 px-7 !text-white bg-primary hover:bg-secondary transition duration-200;
 }
 .woocommerce-address-fields .input-text {
