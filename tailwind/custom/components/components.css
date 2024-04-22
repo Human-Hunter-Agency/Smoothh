@@ -230,7 +230,7 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .smoothh-inputs-basic{
-	@apply flex flex-wrap justify-between gap-5 lg:gap-x-12 mb-5
+	@apply flex flex-wrap justify-between gap-5 xl:gap-x-12 mb-5
 }
 .smoothh-inputs-basic .form-row{
 	@apply !m-0 !p-0 w-full lg:w-[calc(50%_-_10px)] xl:w-[calc(33.33%_-_32px)]
