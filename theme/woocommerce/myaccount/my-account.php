@@ -26,12 +26,14 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_account_navigation'); ?>
 
 <div class="woocommerce-MyAccount-content py-10">
-  <?php
-  /**
-   * My Account content.
-   *
-   * @since 2.6.0
-   */
-  do_action('woocommerce_account_content');
-  ?>
+  <div class="nav-container p-10 border border-[#888] rounded-[15px] ">
+    <?php
+    /**
+     * My Account content.
+     *
+     * @since 2.6.0
+     */
+    do_action('woocommerce_account_content');
+    ?>
+  </div>
 </div>
