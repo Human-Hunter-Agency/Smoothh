@@ -438,16 +438,17 @@ add_action( 'woocommerce_register_form_start', 'smoothh_my_account_page_woocomme
 add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
 add_action( 'woocommerce_created_customer', 'smoothh_save_extra_fields' );
 
-add_filter( 'woocommerce_default_address_fields', 'smoothh_address_add_nip' );
+add_filter( 'woocommerce_billing_fields', 'smoothh_address_add_nip' );
 function smoothh_address_add_nip( $fields ) {
 
-	$company_nip = get_user_meta( get_current_user_id(), 'company_nip', true );
+	$company_nip = get_user_meta( get_current_user_id(), 'company_nip', true ) ?? null;
 	
-	$fields[ 'company_nip' ]   = array(
+	$fields[ 'billing_company_nip' ]   = array(
+		'label' => $company_nip,
 		'type'		   => 'text',
 		'required'     => true,
 		'placeholder'  => __( 'NIP Number', 'smoothh' ),
-		'default'	   => $company_nip ?? ''
+		'default'	   => $company_nip
 	);
 	
 	return $fields;
