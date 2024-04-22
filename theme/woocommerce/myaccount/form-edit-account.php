@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_edit_account_form'); ?>
 
-<h3 class="mb-10 text-3xl font-semibold">Twoje dane</h3>
+<h3 class="mb-5 font-semibold">Twoje dane</h3>
 
 <form class="woocommerce-EditAccountForm edit-account" action="" method="post" <?php do_action('woocommerce_edit_account_form_tag'); ?>>
 
