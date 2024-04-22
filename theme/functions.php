@@ -363,11 +363,6 @@ function woocommerce_smoothh_account_extra_fields() {
         )
     ) );
 }
-function smoothh_validate_extra_fields( $username, $email, $validation_errors ) {
-	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
-		$validation_errors->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
-	} 
-}
 function smoothh_save_extra_fields( $customer_id ) {
 	if ( isset( $_POST['company_nip'] ) ) {
 		update_user_meta( $customer_id, 'company_nip', sanitize_text_field( $_POST['company_nip'] ) );
@@ -381,8 +376,13 @@ function smoothh_my_account_page_woocommerce() {
         woocommerce_form_field( $key, $field_args );
     }
 }
+function smoothh_validate_extra_fields_my_account( $username, $email, $validation_errors ) {
+	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
+		$validation_errors->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
+	} 
+}
 add_action( 'woocommerce_register_form', 'smoothh_my_account_page_woocommerce', 15 );
-add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields', 10, 3 );
+add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
 add_action( 'woocommerce_created_customer', 'smoothh_save_extra_fields' );
 
 
@@ -395,6 +395,12 @@ function smoothh_edit_account_page_woocommerce() {
         woocommerce_form_field( $key, $field_args, $val );
     }
 }
+function smoothh_validate_extra_fields_edit_account( $args ) {
+	if ( isset( $_POST['company_nip'] ) && empty( $_POST['company_nip'] ) ) {
+		$args->add( 'company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
+	} 
+}
+
 add_action( 'woocommerce_edit_account_form', 'smoothh_edit_account_page_woocommerce', 15 );
-add_action( 'woocommerce_save_account_details_errors','smoothh_validate_extra_fields', 10, 1 );
+add_action( 'woocommerce_save_account_details_errors','smoothh_validate_extra_fields_edit_account', 10, 1 );
 add_action( 'woocommerce_save_account_details', 'smoothh_save_extra_fields' );
