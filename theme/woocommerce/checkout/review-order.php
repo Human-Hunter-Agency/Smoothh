@@ -105,8 +105,8 @@ defined('ABSPATH') || exit;
     <?php do_action('woocommerce_review_order_before_order_total'); ?>
 
     <tr class="order-total">
-      <th class="text-primary"><?php esc_html_e('Total', 'woocommerce'); ?></th>
-      <td class="[&>span]:text-primary"><?php wc_cart_totals_order_total_html(); ?></td>
+      <th class="text-primary font-semibold !border-none"><?php esc_html_e('Total', 'woocommerce'); ?></th>
+      <td class="[&>strong]:text-primary !border-none"><?php wc_cart_totals_order_total_html(); ?></td>
     </tr>
 
     <?php do_action('woocommerce_review_order_after_order_total'); ?>
