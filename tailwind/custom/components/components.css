@@ -255,7 +255,8 @@ footer#page-footer .footer-bottom-menu {
 .woocommerce-EditAccountForm .input-text,
 .woocommerce-billing-fields .input-text,
 .woocommerce-shipping-fields .input-text,
-#order_comments_field .input-text {
+#order_comments_field .input-text,
+.woocommerce-form-coupon .input-text {
 	@apply placeholder:text-foreground h-[55px] rounded-[15px] border border-primary px-5 transition duration-200 hover:border-secondary focus:border-secondary accent-primary w-full;
 }
 #order_comments_field .input-text {
@@ -284,6 +285,7 @@ i.theChampLogin {
 	@apply font-normal !border-none;
 }
 
+.woocommerce-form-coupon-toggle .woocommerce-info,
 #payment > ul > li > div.woocommerce-info {
 	@apply !border-t-primary;
 }
