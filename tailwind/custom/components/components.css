@@ -252,7 +252,8 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .woocommerce-address-fields .input-text,
-.woocommerce-EditAccountForm .input-text {
+.woocommerce-EditAccountForm .input-text,
+.woocommerce-billing-fields .input-text {
 	@apply placeholder:text-foreground h-[55px] rounded-[15px] border border-primary px-5 transition duration-200 hover:border-secondary focus:border-secondary accent-primary w-full;
 }
 .select2-selection.select2-selection--single {
@@ -262,6 +263,6 @@ footer#page-footer .footer-bottom-menu {
 	@apply !top-4;
 }
 
-i.theChampLogin{
-	@apply rounded-full border-primary hover:border-secondary transition duration-200
+i.theChampLogin {
+	@apply rounded-full border-primary hover:border-secondary transition duration-200;
 }
