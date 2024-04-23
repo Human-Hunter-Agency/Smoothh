@@ -491,22 +491,13 @@ add_action( 'edit_user_profile', 'smoothh_show_extra_account_details', 15 );
 add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' );
 
 function smoothh_override_checkout_fields( $fields ) {
-    $fields['shipping']['shipping_company'] = array(
-		'type'		   => 'text',
-		'required'     => true,
-		'label'  => __( 'Company Name', 'woocommerce' ),
-	);
+	var_dump($fields);
 	$fields['shipping']['shipping_company_nip'] = array(
 		'type'		   => 'text',
 		'required'     => true,
 		'label'  => __( 'NIP Number', 'smoothh' ),
 	);
 
-	$fields['billing']['billing_company'] = array(
-		'type'		   => 'text',
-		'required'     => true,
-		'label'  => __( 'Company Name', 'woocommerce' ),
-	);
 	$fields['billing']['billing_company_nip'] = array(
 		'type'		   => 'text',
 		'required'     => true,
