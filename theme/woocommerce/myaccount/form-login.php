@@ -102,7 +102,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     <?php 
       $login_page_id = 848;
-      if ($post->ID == $login_page_id):
+      if (get_the_ID() == $login_page_id):
     ?>
       <div class="px-8 pt-9 pb-6 border border-[#888] rounded-[15px]">
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Order as a guest', 'smoothh'); ?></h2>
