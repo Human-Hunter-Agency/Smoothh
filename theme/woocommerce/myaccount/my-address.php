@@ -60,7 +60,7 @@ $col    = 1;
     ?>
 
     <div class="woocommerce-Address md:w-[60%]">
-      <header class="woocommerce-Address-title title flex justify-between md:justify-start items-center">
+      <div class="woocommerce-Address-title title flex justify-between md:justify-start items-center">
         <h3 class="font-semibold md:mr-20 w-1/2"><?php echo esc_html($address_title); ?></h3>
         <a href="<?php echo esc_url(wc_get_endpoint_url('edit-address', $name)); ?>" class="edit whitespace-nowrap border-2 border-[#F2F2F2] text-black min-h-[55px] px-5 rounded-[15px] font-semibold flex items-center justify-center gap-5"><?php echo $address ? esc_html__('Edit', 'woocommerce') : esc_html__('Add', 'woocommerce'); ?>
           <svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@ $col    = 1;
             <path class="fill-black" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
           </svg>
         </a>
-      </header>
+      </div>
       <address>
         <?php
         echo $address ? wp_kses_post($address) : esc_html_e('You have not set up this type of address yet.', 'woocommerce');
