@@ -277,9 +277,7 @@ i.theChampLogin {
 	@apply !content-none;
 }
 
-.woocommerce table.shop_table tfoot th {
-	@apply font-normal !border-none;
-}
+.woocommerce table.shop_table tfoot th,
 .woocommerce table.shop_table tbody th,
 .woocommerce table.shop_table tfoot td,
 .woocommerce table.shop_table tfoot th {
