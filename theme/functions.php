@@ -525,7 +525,8 @@ add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' )
 function check_if_logged_in()
 {
 	$pageid = get_option( 'woocommerce_checkout_page_id' );
-    if(!is_user_logged_in() && is_page($pageid)){
+	$is_guest = $_GET['is_guest'];
+    if(!is_user_logged_in() && is_page($pageid) && !isset($is_guest)){
         $url = add_query_arg(
             'redirect_to',
             get_permalink($pageid),
