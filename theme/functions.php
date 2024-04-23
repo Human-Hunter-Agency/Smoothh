@@ -445,7 +445,7 @@ function smoothh_billing_address_add_nip( $fields ) {
 	$fields[ 'billing_company_nip' ]   = array(
 		'type'		   => 'text',
 		'required'     => true,
-		'placeholder'  => __( 'NIP Number', 'smoothh' ),
+		'label'  => __( 'NIP Number', 'smoothh' ),
 	);
 	
 	return $fields;
@@ -457,7 +457,7 @@ function smoothh_shipping_address_add_nip( $fields ) {
 	$fields[ 'shipping_company_nip' ] = array(
 		'type'		   => 'text',
 		'required'     => true,
-		'placeholder'  => __( 'NIP Number', 'smoothh' ),
+		'label'  => __( 'NIP Number', 'smoothh' ),
 	);
 	
 	return $fields;
@@ -487,3 +487,31 @@ function smoothh_show_extra_account_details( $user ) {
 
 add_action( 'show_user_profile', 'smoothh_show_extra_account_details', 15 );
 add_action( 'edit_user_profile', 'smoothh_show_extra_account_details', 15 );
+
+add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' );
+
+function smoothh_override_checkout_fields( $fields ) {
+    $fields['shipping']['shipping_company'] = array(
+		'type'		   => 'text',
+		'required'     => true,
+		'label'  => __( 'Company Name', 'woocommerce' ),
+	);
+	$fields['shipping']['shipping_company_nip'] = array(
+		'type'		   => 'text',
+		'required'     => true,
+		'label'  => __( 'NIP Number', 'smoothh' ),
+	);
+
+	$fields['billing']['billing_company'] = array(
+		'type'		   => 'text',
+		'required'     => true,
+		'label'  => __( 'Company Name', 'woocommerce' ),
+	);
+	$fields['billing']['billing_company_nip'] = array(
+		'type'		   => 'text',
+		'required'     => true,
+		'label'  => __( 'NIP Number', 'smoothh' ),
+	);
+
+    return $fields;
+}
