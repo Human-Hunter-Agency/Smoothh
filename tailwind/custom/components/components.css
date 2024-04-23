@@ -277,6 +277,11 @@ i.theChampLogin {
 	@apply !content-none;
 }
 
-.woocommerce-shipping-totals .shipping {
-	@apply [&>th]:font-normal;
+/* .woocommerce table.shop_table tfoot th {
+	font-weight: 700;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+} */
+
+.woocommerce table.shop_table tfoot th {
+	@apply font-normal border-none;
 }
