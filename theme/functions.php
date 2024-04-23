@@ -508,21 +508,7 @@ function smoothh_override_checkout_fields( $fields ) {
 add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' );
 
 
-// function add_login_check()
-// {
-    // if (is_user_logged_in()) {
-	// 	$login_page_id = 848;
-    //     if (is_page($login_page_id)){
-    //         wp_redirect(get_permalink( wc_get_page_id( 'myaccount' ) ));
-    //         exit; 
-    //     }
-//     }
-// }
-
-// add_action('template_redirect', 'add_login_check');
-
-
-function check_if_logged_in()
+function login_page_redirects()
 {
 	$pageid = get_option( 'woocommerce_checkout_page_id' );
 	$is_guest = $_GET['is_guest'] ?? false;
@@ -542,7 +528,7 @@ function check_if_logged_in()
             exit; 
 	}
 }
-add_action('template_redirect','check_if_logged_in');
+add_action('template_redirect','login_page_redirects');
 
 
 function after_login_redirect($redirect_to) {
