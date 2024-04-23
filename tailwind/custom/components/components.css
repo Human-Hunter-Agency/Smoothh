@@ -271,3 +271,7 @@ footer#page-footer .footer-bottom-menu {
 i.theChampLogin {
 	@apply rounded-full border-primary hover:border-secondary transition duration-200;
 }
+
+.col2-set::before {
+	content: none !important;
+}
