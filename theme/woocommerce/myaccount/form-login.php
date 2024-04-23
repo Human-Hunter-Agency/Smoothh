@@ -30,7 +30,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     <?php endif; ?>
 
-    <form class="woocommerce-form woocommerce-form-login login !px-4 md:!px-8 !pt-4 md:!pt-9 !pb-6 !mt-0 !mb-5 !border-[#888] !rounded-[15px]" method="post">
+    <form class="woocommerce-form woocommerce-form-login login !px-5 md:!px-8 !pt-9 !pb-6 !mt-0 !mb-5 !border-[#888] !rounded-[15px]" method="post">
 
       <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Log in', 'woocommerce'); ?></h2>
 
@@ -122,7 +122,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
     </div>
 
     <div class="_u-column2 _col-2 basis-2/3 2xl:basis-3/4">
-      <form method="post" class="woocommerce-form woocommerce-form-register register !px-4 md:!px-8 !pt-4 md:!pt-9 !pb-6 !my-0 !border-[#888] !rounded-[15px] h-full" <?php do_action('woocommerce_register_form_tag'); ?>>
+      <form method="post" class="woocommerce-form woocommerce-form-register register !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-[#888] !rounded-[15px] h-full" <?php do_action('woocommerce_register_form_tag'); ?>>
 
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
 
