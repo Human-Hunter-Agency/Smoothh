@@ -30,7 +30,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     <?php endif; ?>
 
-    <form class="woocommerce-form woocommerce-form-login login !px-8 !pt-9 !pb-6 !mt-0 !mb-5 !border-[#888] !rounded-[15px]" method="post">
+    <form class="woocommerce-form woocommerce-form-login login !px-4 md:!px-8 !pt-4 md:!pt-9 !pb-6 !mt-0 !mb-5 !border-[#888] !rounded-[15px]" method="post">
 
       <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Log in', 'woocommerce'); ?></h2>
 
@@ -51,7 +51,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
       <div class="_form-row">
         <div class="flex gap-5 mb-5">
           <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-            <input class="woocommerce-form__input woocommerce-form__input-checkbox !border !border-red-500 !border-[2px]" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e('Remember me', 'woocommerce'); ?></span>
+            <input class="woocommerce-form__input woocommerce-form__input-checkbox !border-red-500 !border-[2px]" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e('Remember me', 'woocommerce'); ?></span>
           </label>
           <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
           <p class="woocommerce-LostPassword lost_password text-primary">
@@ -101,13 +101,13 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
     </form>
 
-    <?php 
-      $login_page_id = 848;
-      if (get_the_ID() == $login_page_id):
+    <?php
+    $login_page_id = 848;
+    if (get_the_ID() == $login_page_id) :
     ?>
       <div class="px-8 pt-9 pb-6 border border-[#888] rounded-[15px]">
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Order as a guest', 'smoothh'); ?></h2>
-        <a href="<?php echo get_permalink( wc_get_page_id( 'checkout' ) ) . '?is_guest=true'; ?>" class="h-[55px] w-full !mb-3 flex items-center justify-center gap-4 !text-white !font-semibold rounded-2xl bg-gradient-to-b from-primary to-secondary py-2 px-5 xl:px-[50px] 2xl:px-8">
+        <a href="<?php echo get_permalink(wc_get_page_id('checkout')) . '?is_guest=true'; ?>" class="h-[55px] w-full !mb-3 flex items-center justify-center gap-4 !text-white !font-semibold rounded-2xl bg-gradient-to-b from-primary to-secondary py-2 px-5 xl:px-[50px] 2xl:px-8">
           <?php esc_html_e('Continue as a guest', 'smoothh'); ?>
           <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
@@ -122,7 +122,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
     </div>
 
     <div class="_u-column2 _col-2 basis-2/3 2xl:basis-3/4">
-      <form method="post" class="woocommerce-form woocommerce-form-register register !px-8 !pt-9 !pb-6 !my-0 !border-[#888] !rounded-[15px] h-full" <?php do_action('woocommerce_register_form_tag'); ?>>
+      <form method="post" class="woocommerce-form woocommerce-form-register register !px-4 md:!px-8 !pt-4 md:!pt-9 !pb-6 !my-0 !border-[#888] !rounded-[15px] h-full" <?php do_action('woocommerce_register_form_tag'); ?>>
 
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
 
