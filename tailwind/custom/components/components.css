@@ -272,6 +272,7 @@ i.theChampLogin {
 	@apply rounded-full border-primary hover:border-secondary transition duration-200;
 }
 
-.col2-set::before {
+.col2-set::before,
+.col2-set::after {
 	@apply !content-none;
 }

@@ -36,7 +36,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
     <?php do_action('woocommerce_checkout_before_customer_details'); ?>
 
-    <div class="col2-set flex justify-between" id="customer_details">
+    <div class="col2-set mb-8 flex justify-between" id="customer_details">
       <div class="col-1 px-5 md:px-8 py-9 border border-[#888] rounded-[15px]">
         <?php do_action('woocommerce_checkout_billing'); ?>
       </div>
