@@ -540,9 +540,9 @@ add_action('template_redirect','check_if_logged_in');
 
 
 function login_redirect($redirect_to) {
-	$redirect = $_GET['redirect_to'] ?? false;
-	if(is_user_logged_in() && $redirect !== false){
-		return $redirect;
+	$redirect_to = $_GET['redirect_to'] ?? false;
+	if(is_user_logged_in() && $redirect_to !== false){
+		return $redirect_to;
 	}
 }
 add_filter('woocommerce_login_redirect', 'login_redirect');
