@@ -434,8 +434,27 @@ function smoothh_my_account_page_woocommerce() {
 }
 function smoothh_validate_extra_fields_my_account( $username, $email, $validation_errors ) {
 	smoothh_validate_extra_fields($validation_errors);
+
+	if ( ! isset( $_POST['terms'] ) )
+        $validation_errors->add( 'terms_error', __( 'Terms and condition are not checked!', 'woocommerce' ) );
 }
+
+function smoothh_terms_and_conditions_to_registration() {
+	
+	if ( wc_get_page_id( 'terms' ) > 0 ) {
+		?>
+        <p class="form-row terms wc-terms-and-conditions">
+			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2">
+				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-primary" name="terms" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> id="terms" /> <span><?php printf( __( 'I&rsquo;ve read and accept the <a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link">terms &amp; conditions</a>', 'woocommerce' ), esc_url( wc_get_page_permalink( 'terms' ) ) ); ?></span> <span class="required">*</span>
+            </label>
+            <input type="hidden" name="terms-field" value="1" />
+        </p>
+		<?php
+    }
+}
+
 add_action( 'woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15 );
+add_action( 'woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 20 );
 add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
 add_action( 'woocommerce_created_customer', 'smoothh_save_extra_fields' );
 
@@ -462,32 +481,6 @@ function smoothh_shipping_address_add_nip( $fields ) {
 	
 	return $fields;
 }
-
-// Add term and conditions check box on registration form
-add_action( 'woocommerce_register_form', 'add_terms_and_conditions_to_registration', 20 );
-function add_terms_and_conditions_to_registration() {
-
-    if ( wc_get_page_id( 'terms' ) > 0 && is_account_page() ) {
-        ?>
-        <p class="form-row terms wc-terms-and-conditions">
-            <label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2">
-                <input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1" name="terms" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> id="terms" /> <span><?php printf( __( 'I&rsquo;ve read and accept the <a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link">terms &amp; conditions</a>', 'woocommerce' ), esc_url( wc_get_page_permalink( 'terms' ) ) ); ?></span> <span class="required">*</span>
-            </label>
-            <input type="hidden" name="terms-field" value="1" />
-        </p>
-    <?php
-    }
-}
-
-// Validate required term and conditions check box
-add_action( 'woocommerce_register_post', 'terms_and_conditions_validation', 20, 3 );
-function terms_and_conditions_validation( $username, $email, $validation_errors ) {
-    if ( ! isset( $_POST['terms'] ) )
-        $validation_errors->add( 'terms_error', __( 'Terms and condition are not checked!', 'woocommerce' ) );
-
-    return $validation_errors;
-}
-
 
 // Display custom field in user BO
 function smoothh_show_extra_account_details( $user ) {
