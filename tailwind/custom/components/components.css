@@ -283,3 +283,7 @@ i.theChampLogin {
 .woocommerce table.shop_table tfoot th {
 	@apply font-normal !border-none;
 }
+
+#payment > ul > li > div.woocommerce-info {
+	@apply !border-t-primary;
+}
