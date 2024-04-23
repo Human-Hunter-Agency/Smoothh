@@ -525,8 +525,7 @@ add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' )
 function check_if_logged_in()
 {
 	$pageid = get_option( 'woocommerce_checkout_page_id' );
-    if(!is_user_logged_in() && is_page($pageid))
-    {
+    if(!is_user_logged_in() && is_page($pageid)){
         $url = add_query_arg(
             'redirect_to',
             get_permalink($pageid),
@@ -537,3 +536,12 @@ function check_if_logged_in()
     }
 }
 add_action('template_redirect','check_if_logged_in');
+
+
+function login_redirect($redirect_to) {
+	$has_redirect = $_GET['redirect_to'];
+	if(is_user_logged_in() && isset($has_redirect)){
+		return get_permalink( wc_get_page_id( 'checkout' ) );
+	}
+}
+add_filter('woocommerce_login_redirect', 'login_redirect');
