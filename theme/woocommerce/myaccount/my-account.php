@@ -26,7 +26,7 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_account_navigation'); ?>
 
 <div class="woocommerce-MyAccount-content py-10">
-  <div class="nav-container p-10 border border-[#888] rounded-[15px] text-lg">
+  <div class="nav-container px-5 md:px-8 py-9 border border-[#888] rounded-[15px] text-lg">
     <?php
     /**
      * My Account content.
