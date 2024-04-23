@@ -278,5 +278,5 @@ i.theChampLogin {
 }
 
 .woocommerce-shipping-totals .shipping {
-	@apply font-normal;
+	@apply [&>th]:font-normal;
 }
