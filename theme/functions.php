@@ -508,15 +508,32 @@ function smoothh_override_checkout_fields( $fields ) {
 add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' );
 
 
-function add_login_check()
+// function add_login_check()
+// {
+//     if (is_user_logged_in()) {
+// 		$login_page_id = 848;
+//         if (is_page($login_page_id)){
+//             wp_redirect(get_permalink( wc_get_page_id( 'myaccount' ) ));
+//             exit; 
+//         }
+//     }
+// }
+
+// add_action('template_redirect', 'add_login_check');
+
+
+function check_if_logged_in()
 {
-    if (is_user_logged_in()) {
-		$login_page_id = 848;
-        if (is_page($login_page_id)){
-            wp_redirect(get_permalink( wc_get_page_id( 'myaccount' ) ));
-            exit; 
-        }
+	$pageid = get_option( 'woocommerce_checkout_page_id' );
+    if(!is_user_logged_in() && is_page($pageid))
+    {
+        $url = add_query_arg(
+            'redirect_to',
+            get_permalink($pageid),
+            site_url('/logowanie/')
+        );
+        wp_redirect($url);
+        exit;
     }
 }
-
-add_action('wp', 'add_login_check');
+add_action('template_redirect','check_if_logged_in');
