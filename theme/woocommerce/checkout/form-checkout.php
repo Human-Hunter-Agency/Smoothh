@@ -41,7 +41,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
         <?php do_action('woocommerce_checkout_billing'); ?>
       </div>
 
-      <div class="col-2">
+      <div class="col-2 px-5 md:px-8 py-9 border border-[#888] rounded-[15px]">
         <?php do_action('woocommerce_checkout_shipping'); ?>
       </div>
     </div>
