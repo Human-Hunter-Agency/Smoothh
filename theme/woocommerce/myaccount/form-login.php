@@ -68,8 +68,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
         </button>
 
         <div class="login-with-socials w-full">
-          <p class="mb-3 text-center">lub kontynuuj z</p>
+          <p class="mb-3 text-center"><?php esc_html_e('or continue with', 'smoothh'); ?></p>
           <div class="login-btns mb-5 md:flex gap-2 justify-between">
+            <?php do_shortcode('[TheChamp-Login]') ?>
             <div class="fb-login mb-2 md:mb-0 flex items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
               <svg class="inline mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <rect width="14" height="14" fill="url(#pattern0_71_3899)" />
@@ -107,7 +108,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
       <div class="px-8 pt-9 pb-6 border border-[#888] rounded-[15px]">
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Order as a guest', 'smoothh'); ?></h2>
         <a href="<?php echo get_permalink( wc_get_page_id( 'checkout' ) ) . '?is_guest=true'; ?>" class="h-[55px] w-full !mb-3 flex items-center gap-4 !text-white !font-semibold rounded-2xl bg-gradient-to-b from-primary to-secondary py-2 px-5 xl:px-[50px] 2xl:px-8">
-          <?php esc_html_e('Kontynuuj bez logowania', 'woocommerce'); ?>
+          <?php esc_html_e('Continue as a guest', 'smoothh'); ?>
           <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
             <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
