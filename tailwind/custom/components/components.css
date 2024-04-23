@@ -276,3 +276,7 @@ i.theChampLogin {
 .col2-set::after {
 	@apply !content-none;
 }
+
+.woocommerce-shipping-totals .shipping {
+	@apply font-normal;
+}
