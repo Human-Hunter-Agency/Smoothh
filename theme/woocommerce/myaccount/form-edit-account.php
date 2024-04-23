@@ -20,7 +20,9 @@ defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_edit_account_form'); ?>
 
-<form class="woocommerce-EditAccountForm edit-account py-20" action="" method="post" <?php do_action('woocommerce_edit_account_form_tag'); ?>>
+<h3 class="mb-5 text-2xl font-semibold">Twoje dane</h3>
+
+<form class="woocommerce-EditAccountForm edit-account" action="" method="post" <?php do_action('woocommerce_edit_account_form_tag'); ?>>
 
 	<?php do_action('woocommerce_edit_account_form_start'); ?>
 
@@ -80,7 +82,7 @@ do_action('woocommerce_before_edit_account_form'); ?>
 
 	<p>
 		<?php wp_nonce_field('save_account_details', 'save-account-details-nonce'); ?>
-		<button type="submit" class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="save_account_details" value="<?php esc_attr_e('Save changes', 'woocommerce'); ?>"><?php esc_html_e('Save changes', 'woocommerce'); ?></button>
+		<button type="submit" class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> !mt-5 !rounded-[14px] !py-3 !px-7 !bg-gradient-to-b !from-primary !to-secondary !text-white !text-center !font-medium !shadow-sm !shadow-black/15" name="save_account_details" value="<?php esc_attr_e('Save changes', 'woocommerce'); ?>"><?php esc_html_e('Save changes', 'woocommerce'); ?></button>
 		<input type="hidden" name="action" value="save_account_details" />
 	</p>
 

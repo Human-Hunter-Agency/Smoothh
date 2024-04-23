@@ -251,12 +251,13 @@ footer#page-footer .footer-bottom-menu {
 	@apply rounded-[14px] text-[13px] font-bold py-2 px-7 !text-white bg-primary hover:bg-secondary transition duration-200;
 }
 
-.woocommerce-address-fields .input-text {
+.woocommerce-address-fields .input-text,
+.woocommerce-EditAccountForm .input-text {
 	@apply placeholder:text-foreground h-[55px] rounded-[15px] border border-primary px-5 transition duration-200 hover:border-secondary focus:border-secondary accent-primary w-full;
 }
-.woocommerce-address-fields
-	.woocommerce-address-fields__field-wrapper
-	.woocommerce-input-wrapper
-	.select2-container {
-	@apply rounded-[15px] border border-primary;
+.select2-selection.select2-selection--single {
+	@apply h-[55px] flex items-center rounded-[15px] border border-primary px-3 transition duration-200 hover:border-secondary focus:border-secondary accent-primary w-full;
+}
+.select2-selection__arrow {
+	@apply !top-4;
 }
