@@ -273,5 +273,5 @@ i.theChampLogin {
 }
 
 .col2-set::before {
-	content: none !important;
+	@apply content-none;
 }
