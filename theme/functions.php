@@ -488,7 +488,6 @@ function smoothh_show_extra_account_details( $user ) {
 add_action( 'show_user_profile', 'smoothh_show_extra_account_details', 15 );
 add_action( 'edit_user_profile', 'smoothh_show_extra_account_details', 15 );
 
-add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' );
 
 function smoothh_override_checkout_fields( $fields ) {
 	$fields['shipping']['shipping_company_nip'] = array(
@@ -496,12 +495,28 @@ function smoothh_override_checkout_fields( $fields ) {
 		'required'     => true,
 		'label'  => __( 'NIP Number', 'smoothh' ),
 	);
-
+	
 	$fields['billing']['billing_company_nip'] = array(
 		'type'		   => 'text',
 		'required'     => true,
 		'label'  => __( 'NIP Number', 'smoothh' ),
 	);
-
+	
     return $fields;
 }
+
+add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' );
+
+
+function add_login_check()
+{
+    if (is_user_logged_in()) {
+		$login_page_id = 848;
+        if (is_page($login_page_id)){
+            wp_redirect(get_permalink( wc_get_page_id( 'myaccount' ) ));
+            exit; 
+        }
+    }
+}
+
+add_action('wp', 'add_login_check');
