@@ -69,9 +69,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <div class="login-with-socials w-full">
           <p class="mb-3 text-center"><?php esc_html_e('or continue with', 'smoothh'); ?></p>
-          <div class="login-btns mb-5 md:flex gap-2 justify-between">
+          <div class="mb-5 md:flex gap-2 justify-between items-center">
             <?php echo do_shortcode('[TheChamp-Login]') ?>
-            <div class="fb-login mb-2 md:mb-0 flex items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
+            <!-- <div class="fb-login mb-2 md:mb-0 flex items-center justify-center rounded-[15px] border border-primary px-6 py-2 transition duration-200 hover:border-secondary accent-primary cursor-pointer">
               <svg class="inline mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <rect width="14" height="14" fill="url(#pattern0_71_3899)" />
                 <defs>
@@ -91,7 +91,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6.75098 3.1856C7.71061 3.16938 8.63796 3.53212 9.33189 4.19516L11.2678 2.25929C10.046 1.11142 8.42728 0.481082 6.75098 0.500433C4.19752 0.500433 1.86355 1.93979 0.717773 4.22032L2.97374 5.96827C3.50573 4.32662 5.02541 3.20708 6.75098 3.1856Z" fill="#EA4335" />
               </svg>
               Google
-            </div>
+            </div> -->
           </div>
 
         </div>
@@ -159,7 +159,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <?php do_action('woocommerce_register_form'); ?>
 
-        <div class="checkboxes my-5 flex flex-col gap-y-4">
+        <!-- <div class="checkboxes my-5 flex flex-col gap-y-4">
           <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start gap-x-2">
             <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="markall" type="checkbox" id="markall" value="forever" />
             <span class="text-primary font-semibold">Zaznacz wszystkie zgody</span>
@@ -176,7 +176,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
             <input class="woocommerce-form__input woocommerce-form__input-checkbox mt-1" name="checkbox4" type="checkbox" id="checkbox4" value="forever" />
             <span class="">Przeczytałem/am i akceptuję <span class="text-primary font-semibold">regulamin*</span></span>
           </label>
-        </div>
+        </div> -->
 
         <div class="woocommerce-form-row form-row">
           <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>

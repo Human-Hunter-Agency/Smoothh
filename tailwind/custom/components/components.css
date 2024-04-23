@@ -261,3 +261,7 @@ footer#page-footer .footer-bottom-menu {
 .select2-selection__arrow {
 	@apply !top-4;
 }
+
+i.theChampLogin{
+	@apply rounded-full border-primary hover:border-secondary transition duration-200
+}
