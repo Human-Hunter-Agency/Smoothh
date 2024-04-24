@@ -68,8 +68,8 @@ $client_logos = get_field('client_logos', 'option');
 
 			?>
 		</div><!-- .entry-content -->
-		<aside class="md:basis-1/4 lg:shrink-0 ">
-			<div class="aside-container p-5 border-[1px] border-[#888888] rounded-[15px]">
+		<aside class="md:basis-1/4 lg:shrink-0 relative">
+			<div class="aside-container p-5 border-[1px] border-[#888888] rounded-[15px] md:sticky top-[115px]">
 				<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Najważniejsze informacje</h5>
 				<div class="case-study-info-box">
 					<p><span class="font-bold">Klient: </span><?php echo $client; ?></p>
@@ -95,7 +95,7 @@ $client_logos = get_field('client_logos', 'option');
 	<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-14 text-center"><?php echo $headerPostRelated; ?></h2>
 
 	<?php
-		get_template_part('flexible-content/sections/partials/case-studies-swiper', '');
+	get_template_part('flexible-content/sections/partials/case-studies-swiper', '');
 	?>
 </section>
 
