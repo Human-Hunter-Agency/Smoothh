@@ -50,10 +50,8 @@ if ($product->is_in_stock()) : ?>
 		?>
 
 		<?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
-			<div class="product-price">
-				<?php print_r($product) ?>
-				<?php print_r($product->get_price());  ?>
-				<?php print_r($product->get_id());  ?>
+			<div class="product-price inline mr-3 text-base lg:text-xl text-primary shrink-0">
+				<?php print_r($product->get_price());  ?> <?php esc_html_e('net', 'smoothh'); ?>
 			</div>
 			<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> whitespace-nowrap button border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html($product->single_add_to_cart_text()); ?>
 				<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
