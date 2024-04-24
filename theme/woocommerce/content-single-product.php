@@ -51,7 +51,9 @@ if (post_password_required()) {
 				<?php the_content() ?>
 			</div>
 			<div class="ml-auto w-fit">
-				<p>test</p>
+				<div class="product-price inline text-4xl text-primary shrink-0">
+					<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php esc_html_e('net', 'smoothh'); ?>
+				</div>
 				<?php
 				/**
 				 * Hook: woocommerce_single_product_summary.
