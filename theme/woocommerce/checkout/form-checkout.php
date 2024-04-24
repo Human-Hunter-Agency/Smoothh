@@ -31,7 +31,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 ?>
 
 <?php do_action('woocommerce_checkout_before_customer_details'); ?>
-<form name="checkout" method="post" class="checkout woocommerce-checkout flex flex-col md:flex-row justify-between gap-6 [&_.form-row]:!p-0 mb-20" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
+<form name="checkout" method="post" class="checkout woocommerce-checkout flex flex-col md:flex-row justify-between gap-6 xl:gap-12 [&_.form-row]:!p-0 mb-20" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
 
   <?php if ($checkout->get_checkout_fields()) : ?>
 
