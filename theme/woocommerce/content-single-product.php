@@ -50,7 +50,7 @@ if (post_password_required()) {
 			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-8 md:mb-[50px]">
 				<?php the_content() ?>
 			</div>
-			<div class="ml-auto w-fit">
+			<div class="ml-auto w-fit flex gap-4 md:gap-10 flex-col md:flex-row items-center">
 				<div class="product-price inline text-4xl text-primary shrink-0">
 					<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php esc_html_e('net', 'smoothh'); ?>
 				</div>
