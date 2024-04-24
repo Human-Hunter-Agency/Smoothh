@@ -51,6 +51,7 @@ if (post_password_required()) {
 				<?php the_content() ?>
 			</div>
 			<div class="ml-auto w-fit">
+				<p>test</p>
 				<?php
 				/**
 				 * Hook: woocommerce_single_product_summary.
