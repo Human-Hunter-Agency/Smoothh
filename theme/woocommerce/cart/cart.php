@@ -181,7 +181,7 @@ do_action('woocommerce_before_cart'); ?>
                 </div>
 
                 <div class="text-base flex flex-col md:flex-row gap-5">
-                    <a href="/sklep" class="whitespace-nowrap w-full border-2 border-[#F2F2F2] text-black min-h-[55px] px-5 xl:px-10 rounded-[15px] font-bold flex items-center justify-center gap-8">
+                    <a href="/sklep" class="whitespace-nowrap w-full border-2 border-[#F2F2F2] hover:border-primary hover:text-primary transition duration-200 text-black min-h-[55px] px-5 xl:px-10 rounded-[15px] font-bold flex items-center justify-center gap-8">
                         <?php esc_attr_e('Continue shopping', 'woocommerce'); ?>
                         <svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle class="stroke-black" cx="9.5" cy="9.5" r="9"></circle>
