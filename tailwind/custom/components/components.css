@@ -285,3 +285,16 @@ i.theChampLogin {
 	display: inline-block;
 	flex-shrink: 0;
 }
+
+.wc-empty-cart-message,
+.woocommerce-notices-wrapper{
+	@apply px-5
+}
+
+.woocommerce-error, .woocommerce-info, .woocommerce-message{
+	@apply mt-5 rounded-[15px] max-w-screen-sm mx-auto !border
+}
+
+.woocommerce-error{@apply !border-red-500}
+.woocommerce-info{@apply !border-secondary}
+.woocommerce-message{@apply !border-green-400}
