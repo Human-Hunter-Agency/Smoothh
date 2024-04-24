@@ -73,7 +73,7 @@ if (post_password_required()) {
 				<?php
 				if ($cart && !$cart->is_empty()) : ?>
 					<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
-						<span class="block font-semibold text-xl md:text-3xl mb-7"><?php esc_html_e('Twój koszyk', 'smoothh'); ?></span>
+						<span class="block font-semibold text-xl md:text-3xl mb-7"><?php esc_html_e('Your cart', 'smoothh'); ?></span>
 						<ul class="flex flex-col gap-8 mb-8">
 							<?php foreach ($cart->get_cart() as $cart_item_key => $cart_item) :
 								$product = $cart_item['data'];
