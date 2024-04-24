@@ -23,6 +23,8 @@ if (!wp_doing_ajax()) {
 }
 ?>
 <div id="payment" class="woocommerce-checkout-payment !bg-white">
+  <h3 class="!mt-0 mb-9 text-2xl text-primary"><?php esc_html_e('Payment methods', 'woocommerce'); ?></h3>
+
   <?php if (WC()->cart->needs_payment()) : ?>
     <ul class="wc_payment_methods payment_methods methods">
       <?php
