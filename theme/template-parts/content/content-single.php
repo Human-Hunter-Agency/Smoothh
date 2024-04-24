@@ -64,7 +64,7 @@ $cta = get_field('cta');
 		</div><!-- .entry-content -->
 		<aside class="md:basis-1/4 lg:shrink-0 ">
 			<div class="md:sticky top-[115px]">
-				<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Kategorie wpisów</h5>
+				<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold"><?php esc_html_e('Post categories: ', 'smoothh'); ?></h5>
 				<ul class="list-none">
 					<?php
 					$blog_page_id = 20;
