@@ -114,7 +114,7 @@ $social_links = get_field('social_links', 'option');
 				<?php echo do_shortcode('[contact-form-7 id="49bd164" title="Newsletter"]') ?>
 			</div>
 
-			<h3 class="mb-6">Sprawdź jak nas oceniają:</h3>
+			<h3 class="mb-6"><?php esc_html_e('Check how they rate us:', 'smoothh'); ?></h3>
 			<ul class="flex gap-2.5">
 				<?php for ($i = 0; $i < 5; $i++) : ?>
 					<li class="grow-0 shrink-0">
