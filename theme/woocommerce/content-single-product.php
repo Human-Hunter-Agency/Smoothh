@@ -55,21 +55,23 @@ if (post_password_required()) {
 					<div class="product-price inline text-4xl text-primary shrink-0">
 						<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php esc_html_e('net', 'smoothh'); ?>
 					</div>
-					<?php
-					/**
-					 * Hook: woocommerce_single_product_summary.
-					 *
-					 * @hooked woocommerce_template_single_title - 5 -removed
-					 * @hooked woocommerce_template_single_rating - 10 -removed
-					 * @hooked woocommerce_template_single_price - 10 -removed
-					 * @hooked woocommerce_template_single_excerpt - 20 -removed
-					 * @hooked woocommerce_template_single_add_to_cart - 30
-					 * @hooked woocommerce_template_single_meta - 40 -removed
-					 * @hooked woocommerce_template_single_sharing - 50
-					 * @hooked WC_Structured_Data::generate_product_data() - 60
-					 */
-					do_action('woocommerce_single_product_summary');
-					?>
+					<div>
+						<?php
+						/**
+						 * Hook: woocommerce_single_product_summary.
+						 *
+						 * @hooked woocommerce_template_single_title - 5 -removed
+						 * @hooked woocommerce_template_single_rating - 10 -removed
+						 * @hooked woocommerce_template_single_price - 10 -removed
+						 * @hooked woocommerce_template_single_excerpt - 20 -removed
+						 * @hooked woocommerce_template_single_add_to_cart - 30
+						 * @hooked woocommerce_template_single_meta - 40 -removed
+						 * @hooked woocommerce_template_single_sharing - 50
+						 * @hooked WC_Structured_Data::generate_product_data() - 60
+						 */
+						do_action('woocommerce_single_product_summary');
+						?>
+					</div>
 				</div>
 			</div>
 			<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
