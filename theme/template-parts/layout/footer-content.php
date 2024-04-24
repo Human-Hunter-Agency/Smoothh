@@ -70,7 +70,7 @@ $social_links = get_field('social_links', 'option');
 				$socials_count = count(array_filter(array_values($social_links)));
 				if ($socials_count > 0) :
 				?>
-					<h3 class="!mb-[5px]">Śledź nas:</h3>
+					<h3 class="!mb-[5px]"><?php esc_html_e('Follow us:', 'smoothh'); ?></h3>
 					<ul class="flex gap-3">
 						<?php if ($social_links['linkedin']) : ?>
 							<li class="shrink-0">
@@ -109,7 +109,7 @@ $social_links = get_field('social_links', 'option');
 		</div>
 
 		<div class="w-full lg:w-4/12">
-			<h3>Zapisz się na newsletter i bądź na bieżąco</h3>
+			<h3><?php esc_html_e('Sign up for the newsletter and stay up to date', 'smoothh'); ?></h3>
 			<div class="mb-6">
 				<?php echo do_shortcode('[contact-form-7 id="49bd164" title="Newsletter"]') ?>
 			</div>
