@@ -572,4 +572,5 @@ function after_login_redirect($redirect_to) {
 }
 add_filter('woocommerce_login_redirect', 'after_login_redirect', 999);
 
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
