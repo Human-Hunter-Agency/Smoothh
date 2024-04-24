@@ -51,7 +51,7 @@ if ($product->is_in_stock()) : ?>
 
 		<?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
 			<div class="flex gap-4 md:gap-10 flex-col md:flex-row items-center">
-				<div class="product-price inline text-4xl text-primary shrink-0">
+				<div class="product-price hidden text-4xl text-primary shrink-0">
 					<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php esc_html_e('net', 'smoothh'); ?>
 				</div>
 				<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> whitespace-nowrap button border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html($product->single_add_to_cart_text()); ?>
