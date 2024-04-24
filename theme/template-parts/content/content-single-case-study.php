@@ -70,10 +70,10 @@ $client_logos = get_field('client_logos', 'option');
 		</div><!-- .entry-content -->
 		<aside class="md:basis-1/4 lg:shrink-0 relative">
 			<div class="aside-container p-5 border-[1px] border-[#888888] rounded-[15px] md:sticky top-[115px]">
-				<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold">Najważniejsze informacje</h5>
+				<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold"><?php esc_html_e('The most important information', 'smoothh'); ?></h5>
 				<div class="case-study-info-box">
-					<p><span class="font-bold">Klient: </span><?php echo $client; ?></p>
-					<p class="mb-4"><span class="font-bold">Data: </span><?php echo $formatted_time; ?></p>
+					<p><span class="font-bold"><?php esc_html_e('Client: ', 'smoothh'); ?></span><?php echo $client; ?></p>
+					<p class="mb-4"><span class="font-bold"><?php esc_html_e('Date: ', 'smoothh'); ?></span><?php echo $formatted_time; ?></p>
 					<?php if ($parametersList) : ?>
 						<ul class="mb-4">
 							<?php foreach ($parametersList as $parameter) : ?>
