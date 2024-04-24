@@ -31,17 +31,17 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 ?>
 
 <?php do_action('woocommerce_checkout_before_customer_details'); ?>
-<form name="checkout" method="post" class="checkout woocommerce-checkout flex justify-between gap-6 [&_.form-row]:!p-0" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
+<form name="checkout" method="post" class="checkout woocommerce-checkout flex justify-between gap-6 [&_.form-row]:!p-0 mb-20" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
 
   <?php if ($checkout->get_checkout_fields()) : ?>
 
     
     <div id="customer_details" class="flex-1">
-      <div class="px-5 md:px-8 py-9 border border-[#888] rounded-[15px] mb-6">
+      <div class="px-5 xl:px-8 py-9 border border-[#888] rounded-[15px] mb-6">
         <?php do_action('woocommerce_checkout_billing'); ?>
       </div>
 
-      <div class="px-5 md:px-8 py-9 border border-[#888] rounded-[15px]">
+      <div class="px-5 xl:px-8 py-9 border border-[#888] rounded-[15px]">
         <?php do_action('woocommerce_checkout_shipping'); ?>
       </div>
     </div>
