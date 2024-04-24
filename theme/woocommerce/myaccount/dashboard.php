@@ -29,7 +29,7 @@ $allowed_html = array(
 );
 ?>
 
-<p class="mb-5 text-lg">
+<p class="mb-5 text-lg [&_a]:text-primary">
   <?php
   printf(
     /* translators: 1: user display name 2: logout url */

@@ -59,7 +59,7 @@ $col    = 1;
     $oldcol  = $oldcol * -1;
     ?>
 
-    <div class="woocommerce-Address md:w-[60%]">
+    <div class="woocommerce-Address md:w-3/5 mt-5">
       <div class="woocommerce-Address-title flex justify-between md:justify-start items-center">
         <h3 class="font-semibold md:mr-20 w-1/2"><?php echo esc_html($address_title); ?></h3>
         <a href="<?php echo esc_url(wc_get_endpoint_url('edit-address', $name)); ?>" class="edit whitespace-nowrap border-2 border-[#F2F2F2] text-black min-h-[55px] px-5 rounded-[15px] font-semibold flex items-center justify-center gap-5"><?php echo $address ? esc_html__('Edit', 'woocommerce') : esc_html__('Add', 'woocommerce'); ?>
