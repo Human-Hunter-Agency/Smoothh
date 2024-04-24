@@ -85,7 +85,7 @@ if (post_password_required()) {
 										<a href="<?php echo $link ?>" class="block text-base md:text-2xl lg:mb-3 transition duration hover:text-primary">
 											<?php echo $product->get_title(); ?>
 										</a>
-										<span class="text-sm lg:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
+										<span class="text-sm lg:text-base text-[#B2B2B2]"><?php esc_html_e('Quantity: ', 'smoothh'); ?><?php echo $quantity ?></span>
 									</div>
 									<div class="text-base lg:text-xl text-primary shrink-0">
 										<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
