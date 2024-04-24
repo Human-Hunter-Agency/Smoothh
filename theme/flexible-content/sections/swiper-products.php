@@ -7,9 +7,8 @@ $header = $args['header'];
 if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = $args['products_list'];
     foreach ($products as &$product) {
-        $product = wc_get_product_object('variable',$product->ID);
+        $product = wc_get_product_object('variable', $product->ID);
     }
-    
 } else {
     $products_args = array(
         'limit' => 10,
@@ -18,7 +17,6 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
         'exclude' => get_post_type(get_the_ID()) == 'product' ? get_the_ID() : '',
     );
     $products = wc_get_products($products_args);
-    
 }
 ?>
 
@@ -50,7 +48,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                                 </h4>
                                 <?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
                                     <span class="text-lg md:text-xl">
-                                        <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
+                                        <?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php esc_html_e('net', 'smoothh'); ?>
                                     </span>
                                 <?php endif; ?>
                             </div>
@@ -59,7 +57,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                             </p>
                         </div>
                         <a href="<?php echo get_permalink($product->get_id()) ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200">
-                            <?php esc_html_e('Show product','smoothh') ?>
+                            <?php esc_html_e('Show product', 'smoothh') ?>
                         </a>
                     </div>
                 <?php endforeach; ?>
