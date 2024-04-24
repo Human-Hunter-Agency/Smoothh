@@ -313,3 +313,10 @@ i.theChampLogin {
 .woocommerce-info{@apply !border-secondary !bg-secondary/[0.02]}
 .woocommerce-message{@apply !border-green-500 !bg-green-500/[0.02]}
 .woocommerce-message::before {@apply !text-green-500}
+
+.woocommerce-checkout .woocommerce-error{
+	padding: 1em 2em 1em 3.5em !important;
+}
+.woocommerce-checkout .woocommerce-error li{
+	@apply !mt-0;
+}
