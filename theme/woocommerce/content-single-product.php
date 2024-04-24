@@ -88,13 +88,13 @@ if (post_password_required()) {
 										<span class="text-sm lg:text-base text-[#B2B2B2]"><?php esc_html_e('Quantity: ', 'smoothh'); ?><?php echo $quantity ?></span>
 									</div>
 									<div class="text-base lg:text-xl text-primary shrink-0">
-										<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
+										<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php esc_html_e('net', 'smoothh'); ?>
 									</div>
 								</li>
 							<?php endforeach; ?>
 						</ul>
 						<a href="<?php echo wc_get_cart_url() ?>" class="w-full border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] px-5 xl:px-12 xl:pr-8 !rounded-[15px] font-bold flex items-center justify-center gap-5">
-							Przejdź do zamówienia
+							<?php esc_html_e('Go to order', 'smoothh'); ?>
 							<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
 								<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
