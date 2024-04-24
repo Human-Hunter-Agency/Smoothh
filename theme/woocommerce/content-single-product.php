@@ -104,7 +104,7 @@ if (post_password_required()) {
 				<?php endif ?>
 
 				<div class="px-[18px]">
-					<h5 class="mb-4 md:mb-6 text-2xl md:text-3xl font-semibold text-primary">Kategorie produktów</h5>
+					<h5 class="mb-4 md:mb-6 text-2xl md:text-3xl font-semibold text-primary"><?php esc_html_e('Product categories', 'smoothh'); ?></h5>
 					<?php
 					$args = array(
 						'taxonomy'     => 'product_cat',
