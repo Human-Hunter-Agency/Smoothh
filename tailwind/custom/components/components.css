@@ -297,4 +297,5 @@ i.theChampLogin {
 
 .woocommerce-error{@apply !border-red-500}
 .woocommerce-info{@apply !border-secondary}
-.woocommerce-message{@apply !border-green-400}
+.woocommerce-message{@apply !border-green-500}
+.woocommerce-message::before {@apply !bg-green-500}
