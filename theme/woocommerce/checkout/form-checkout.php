@@ -34,7 +34,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
   
 <?php if ($checkout->get_checkout_fields()) : ?>
   
-  <div class="prose flex flex-col md:flex-row justify-between gap-6 xl:gap-12 [&_.form-row]:!p-0 mb-20 mt-10">
+  <div class="!prose flex flex-col md:flex-row justify-between gap-6 xl:gap-12 [&_.form-row]:!p-0 mb-20 mt-10">
     <div id="customer_details" class="flex-1">
       <?php do_action('woocommerce_checkout_before_customer_details'); ?>
       <div class="p-5 xl:p-8 border border-[#888] rounded-[15px] mb-6">
