@@ -34,7 +34,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
   
 <?php if ($checkout->get_checkout_fields()) : ?>
   
-  <div class="flex flex-col md:flex-row justify-between gap-6 xl:gap-12 [&_.form-row]:!p-0 mb-20">
+  <div class="flex flex-col md:flex-row justify-between gap-6 xl:gap-12 [&_.form-row]:!p-0 mb-20 mt-10">
     <div id="customer_details" class="flex-1">
       <?php do_action('woocommerce_checkout_before_customer_details'); ?>
       <div class="px-5 xl:px-8 py-9 border border-[#888] rounded-[15px] mb-6">
@@ -44,7 +44,10 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
       <div class="px-5 xl:px-8 py-9 border border-[#888] rounded-[15px]">
         <?php do_action('woocommerce_checkout_shipping'); ?>
       </div>
-      <?php do_action('woocommerce_checkout_after_customer_details'); ?>
+
+      <div class="px-5 xl:px-8 py-9 border border-[#888] rounded-[15px]">
+        <?php do_action('woocommerce_checkout_after_customer_details'); ?>
+      </div>
     </div>
   
     <?php endif; ?>

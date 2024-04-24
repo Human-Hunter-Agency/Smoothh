@@ -574,3 +574,6 @@ add_filter('woocommerce_login_redirect', 'after_login_redirect', 999);
 
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+add_action('woocommerce_checkout_after_customer_details','woocommerce_checkout_payment',20);
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
