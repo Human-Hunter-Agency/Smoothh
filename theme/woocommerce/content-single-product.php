@@ -70,10 +70,10 @@ if (post_password_required()) {
 		</div>
 		<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
 			<div class="md:sticky top-[115px]">
-				<?php 
+				<?php
 				if ($cart && !$cart->is_empty()) : ?>
 					<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
-						<span class="block font-semibold text-xl md:text-3xl mb-7">Twój koszyk</span>
+						<span class="block font-semibold text-xl md:text-3xl mb-7"><?php esc_html_e('Twój koszyk', 'smoothh'); ?></span>
 						<ul class="flex flex-col gap-8 mb-8">
 							<?php foreach ($cart->get_cart() as $cart_item_key => $cart_item) :
 								$product = $cart_item['data'];
@@ -88,7 +88,7 @@ if (post_password_required()) {
 										<span class="text-sm lg:text-base text-[#B2B2B2]">Sztuk: <?php echo $quantity ?></span>
 									</div>
 									<div class="text-base lg:text-xl text-primary shrink-0">
-										<?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
+										<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
 									</div>
 								</li>
 							<?php endforeach; ?>
@@ -102,7 +102,7 @@ if (post_password_required()) {
 						</a>
 					</div>
 				<?php endif ?>
-	
+
 				<div class="px-[18px]">
 					<h5 class="mb-4 md:mb-6 text-2xl md:text-3xl font-semibold text-primary">Kategorie produktów</h5>
 					<?php
@@ -111,15 +111,15 @@ if (post_password_required()) {
 						'title_li'     => '',
 					);
 					$all_categories = get_categories($args);
-	
+
 					if ($all_categories) : ?>
-	
+
 						<ul class="list-none [&_.cat-item]:mb-4 md:[&_.cat-item]:mb-6 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
 							<?php foreach ($all_categories as $cat) {
 								echo '<li class="cat-item"><a href="' . get_term_link($cat->slug, 'product_cat') . '">' . $cat->name . '</a></li>';
 							} ?>
 						</ul>
-	
+
 					<?php endif ?>
 				</div>
 			</div>
@@ -196,10 +196,10 @@ if (post_password_required()) {
 				</div>
 			</div>
 		<?php endif;
-		
-		    get_template_part( 'flexible-content/sections/partials/case-studies-swiper', '' );
+
+		get_template_part('flexible-content/sections/partials/case-studies-swiper', '');
 		?>
-			
+
 	</section>
 </div>
 
