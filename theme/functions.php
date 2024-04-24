@@ -528,9 +528,9 @@ add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' )
 
 function login_page_redirects()
 {
-	$pageid = get_option( 'woocommerce_checkout_page_id' );
+	$checkout_pageid = get_option( 'woocommerce_checkout_page_id' );
 	$is_guest = $_GET['is_guest'] ?? false;
-    if(!is_user_logged_in() && is_page($pageid) && !$is_guest){
+    if(!is_user_logged_in() && is_page($checkout_pageid) && !$is_guest){
         $url = add_query_arg(
             'redirect_to',
             get_permalink($pageid),
@@ -545,6 +545,18 @@ function login_page_redirects()
             wp_redirect(get_permalink( wc_get_page_id( 'myaccount' ) ));
             exit; 
 	}
+
+	$panel_page_id = 650;
+	if (!is_user_logged_in() && is_page($panel_page_id)) {
+		$url = add_query_arg(
+            'redirect_to',
+            get_permalink($panel_page_id),
+            get_permalink( wc_get_page_id( 'myaccount' ) )
+        );
+        wp_redirect($url);
+        exit;
+	}
+
 }
 add_action('template_redirect','login_page_redirects');
 
