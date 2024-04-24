@@ -26,7 +26,7 @@ do_action('woocommerce_before_account_navigation');
 
 <nav class="woocommerce-MyAccount-navigation py-10">
   <div class="nav-container px-5 md:px-8 py-9 border border-[#888] rounded-[15px] ">
-    <h2 class="mb-10 text-3xl font-semibold">Twoje konto</h2>
+    <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Twoje konto', 'smoothh'); ?></h2>
     <ul>
       <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
         <li class="py-1 <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
