@@ -50,7 +50,7 @@ if (post_password_required()) {
 			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-8 md:mb-[50px]">
 				<?php the_content() ?>
 			</div>
-			<div class="ml-auto w-fit flex gap-4 md:gap-10 flex-col md:flex-row items-center">
+			<div class="ml-auto w-fit flex gap-4 md:gap-10 flex-col md:flex-row items-end mb-5">
 				<?php
 				/**
 				 * Hook: woocommerce_single_product_summary.

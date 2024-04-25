@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?> shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary [&_bdi]:text-4xl [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-xl [&_del_bdi]:!text-black [&_del]:!decoration-black [&_del_bdi]:mr-1.5">
+<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?> flex items-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary [&_bdi]:text-4xl [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-xl [&_del_bdi]:!text-black [&_del]:!decoration-black [&_del_bdi]:mr-1.5">
     <span class="flex flex-col"><?php echo $product->get_price_html(); ?> </span>
-    <span class="text-primary font-normal text-xl md:text-4xl"><?php esc_html_e('net','smoothh') ?></span>
+    <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php esc_html_e('net','smoothh') ?></span>
 </p>
