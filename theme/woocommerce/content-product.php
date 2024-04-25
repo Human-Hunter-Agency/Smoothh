@@ -38,7 +38,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                 </h4>
                 <?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
                     <div class="flex text-lg md:text-xl">
-                        <div class="flex flex-col items-end">
+                        <div class="flex flex-col items-end mr-2">
                             <span>
                                 <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?>
                             </span>
