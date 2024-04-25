@@ -36,7 +36,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
         <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
             <div class="swiper-wrapper">
                 <?php foreach ($products as $product) : ?>
-                    <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
+                    <a href="<?php echo get_permalink($product->get_id()) ?>" class="group swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                             <?php echo $product->get_image() ?>
                             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
@@ -49,10 +49,10 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                                 <?php echo $product->get_short_description() ?>
                             </p>
                         </div>
-                        <a href="<?php echo get_permalink($product->get_id()) ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-primary bg-white hover:text-secondary transition duration-200">
+                        <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-primary bg-white group-hover:text-secondary transition duration-200">
                             <?php esc_html_e('Show product','smoothh') ?>
-                        </a>
-                    </div>
+                        </span>
+                    </a>
                 <?php endforeach; ?>
 
             </div>
