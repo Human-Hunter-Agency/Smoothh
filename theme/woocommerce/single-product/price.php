@@ -22,4 +22,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?> shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden [&_bdi]:text-4xl [&_bdi]:text-primary [&_del_bdi]:!text-xl [&_del_bdi]:text-[#B2B2B2]"><?php echo $product->get_price_html(); ?><?php esc_html_e('net','smoothh') ?></p>
+<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?> shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary [&_bdi]:text-4xl [&_bdi]:text-primary [&_bdi]:no-underline [&_del_bdi]:!text-xl [&_del_bdi]:!text-[#B2B2B2] [&_del_bdi]:!decoration-[#B2B2B2] [&_del_bdi]:mr-2.5"><?php echo $product->get_price_html(); ?><?php esc_html_e('net','smoothh') ?></p>
