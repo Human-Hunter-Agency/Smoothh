@@ -37,8 +37,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                     <?php echo get_the_title($product->get_id()) ?> 
                 </h4>
                 <?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
-                    <div>
-                        <div class="flex flex-col">
+                    <div class="flex">
+                        <div class="flex flex-col items-end">
                             <span class="text-lg md:text-xl">
                                 <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?>
                             </span>
