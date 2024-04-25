@@ -30,7 +30,7 @@
                                 <?php if ($post -> post_title) : ?>
                                     <h3 class="text-base md:text-xl text-primary mb-9 font-semibold"><?php echo $post -> post_title; ?></h3>
                                 <?php endif; ?>
-                                <p class="text-sm md:text-base italic font-medium"><?php echo wp_trim_excerpt(get_the_excerpt($post->ID)); ?></p>
+                                <!-- <p class="text-sm md:text-base italic font-medium"><?php echo wp_trim_excerpt(get_the_excerpt($post->ID)); ?></p> -->
                             </div>
                             <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200" ><?php esc_html_e('Read more','smoothh') ?></span>
                         </a>
