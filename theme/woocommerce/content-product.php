@@ -38,14 +38,14 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                 </h4>
                 <?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
                     <div class="flex flex-col">
+                        <span class="text-lg md:text-xl">
+                            <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
+                        </span>
                         <?php if($product->is_on_sale()): ?>
                             <span class="!text-lg h-6 text-black opacity-50 line-through font-normal">
                                 <?php echo $product->get_regular_price() ?>                        
                             </span>
                         <?php endif ?>
-                        <span class="text-lg md:text-xl">
-                            <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> netto
-                        </span>
                     </div>
                 <?php endif; ?>
             </div>
