@@ -16,7 +16,13 @@ module.exports = {
 		// Extend the default Tailwind theme.
 		container: {
 			center: true,
-			padding: '1.25rem',
+			padding: {
+				DEFAULT: '1.25rem',
+				sm: '2rem',
+				lg: '4rem',
+				xl: '5rem',
+				'2xl': '6rem',
+			},
 		},
 		extend: {
 			fontFamily: {
