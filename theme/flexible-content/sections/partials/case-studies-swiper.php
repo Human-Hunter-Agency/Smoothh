@@ -21,7 +21,7 @@
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper">
                     <?php foreach($posts as $post) : ?>
-                        <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
+                        <a href="<?php echo get_permalink($psot->ID) ?>" class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
                                 <img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" class="object-cover w-full !h-[190px] md:!h-[220px]" >
                                 <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
@@ -32,8 +32,8 @@
                                 <?php endif; ?>
                                 <p class="text-sm md:text-base italic font-medium"><?php echo get_the_excerpt($post->ID); ?></p>
                             </div>
-                            <a href="<?php echo get_permalink($post->ID); ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200" >Czytaj więcej</a>
-                        </div>
+                            <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200" >Czytaj więcej</span>
+                        </a>
                     <?php endforeach; ?>
                 </div>
                 <div class="swiper-button-prev">
