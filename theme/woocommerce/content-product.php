@@ -39,7 +39,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                 <?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
                     <div class="flex flex-col">
                         <?php if($product->is_on_sale()): ?>
-                            <span class="text-xl text-black opacity-50 overline font-normal">
+                            <span class="!text-lg h-6 text-black opacity-50 overline font-normal">
                                 <?php echo $product->get_regular_price() ?>                        
                             </span>
                         <?php endif ?>
