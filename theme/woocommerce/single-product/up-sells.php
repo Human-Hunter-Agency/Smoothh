@@ -58,11 +58,11 @@ if ($upsells) : ?>
                                         <div class="flex text-lg md:text-xl shrink-0">
                                             <div class="flex flex-col items-end mr-2">
                                                 <span>
-                                                    <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?>
+                                                    <?php echo number_format( wc_get_price_excluding_tax($upsell), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?>
                                                 </span>
-                                                <?php if($product->is_on_sale()): ?>
+                                                <?php if($upsell->is_on_sale()): ?>
                                                     <span class="!text-lg !leading-4 h-5 text-black opacity-50 line-through font-normal">
-                                                        <?php echo number_format( $product->get_regular_price(), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?>                        
+                                                        <?php echo number_format( $upsell->get_regular_price(), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?>                        
                                                     </span>
                                                 <?php endif ?>
                                             </div>
