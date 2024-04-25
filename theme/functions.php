@@ -576,3 +576,9 @@ remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_
 
 add_action('woocommerce_checkout_after_customer_details','woocommerce_checkout_payment',20);
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+
+// Remove read more from excerpt
+function change_excerpt( $more ) {
+	return '';
+}
+add_filter('excerpt_more', 'change_excerpt');
