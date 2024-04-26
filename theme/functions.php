@@ -588,9 +588,9 @@ function filter_woocommerce_get_availability_text( $availability, $product ) {
     // Only for 'outofstock'
     if ( $product->get_stock_status() == 'outofstock' ) {
         // Get custom stock status
-        $is_variable_price = get_field( 'variable_price',$product->get_id() );
+        $has_variable_price = get_field( 'variable_price',$product->get_id() );
 
-		if (isset($is_variable_price) && $is_variable_price == true) {
+		if (isset($has_variable_price) && $is_variable_price == true) {
 			return '';
 		}
     }
