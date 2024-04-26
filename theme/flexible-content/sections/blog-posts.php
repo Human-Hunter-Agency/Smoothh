@@ -29,10 +29,12 @@
 				$posts = get_posts($args);
 				foreach ($posts as $post) : ?>
 				<li class="post-tile">
-					<img src="<?php echo get_the_post_thumbnail_url($post->ID) ?>" alt="<?php echo $post->post_title; ?>">
-					<h3><?php echo $post->post_title; ?></h3>
-					<p><?php echo get_the_excerpt($post->ID); ?></p>
-					<a href="<?php echo get_permalink($post->ID); ?>">Czytaj więcej</a>
+					<a href="<?php echo get_permalink($post->ID); ?>">
+						<img src="<?php echo get_the_post_thumbnail_url($post->ID) ?>" alt="<?php echo $post->post_title; ?>">
+						<h3><?php echo $post->post_title; ?></h3>
+						<p><?php echo get_the_excerpt($post->ID); ?></p>
+						<span href="<?php echo get_permalink($post->ID); ?>">Czytaj więcej</span>
+					</a>
 				</li>
 			
 			<?php

@@ -186,6 +186,10 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .post-tile {
+	@apply !h-auto;
+}
+
+.post-tile a{
 	@apply relative !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl;
 }
 
@@ -197,7 +201,7 @@ footer#page-footer .footer-bottom-menu {
 	@apply opacity-0 pointer-events-none;
 }
 
-.post-tile::before {
+.post-tile a::before {
 	content: "";
 	@apply absolute z-10 inset-x-0 top-0 bg-gradient-to-b from-primary/20 to-secondary/20 !h-[190px] md:!h-[220px] rounded-t-[14px];
 }
@@ -209,12 +213,13 @@ footer#page-footer .footer-bottom-menu {
 .post-tile p {
 	@apply text-center text-sm md:text-base italic font-medium px-3 md:px-6 pb-3 md:pb-6 grow;
 }
-.post-tile p a {
-	@apply hidden;
+
+.post-tile span {
+	@apply translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary transition duration-200;
 }
 
-.post-tile a {
-	@apply translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200;
+.post-tile a:hover span{
+	@apply bg-secondary
 }
 
 .variations select {
