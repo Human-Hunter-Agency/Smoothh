@@ -582,3 +582,19 @@ function change_excerpt( $more ) {
 	return '';
 }
 add_filter('excerpt_more', 'change_excerpt');
+
+// Availability text
+function filter_woocommerce_get_availability_text( $availability, $product ) {
+    // Only for 'outofstock'
+    if ( $product->get_stock_status() == 'outofstock' ) {
+        // Get custom stock status
+        $is_variable_price = get_field( 'variable_price',$product->get_id() );
+
+		if (isset($is_variable_price) && $is_variable_price == true) {
+			return '';
+		}
+    }
+
+    return $availability; 
+}
+add_filter( 'woocommerce_get_availability_text', 'filter_woocommerce_get_availability_text', 10, 2 );
