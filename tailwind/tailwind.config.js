@@ -21,7 +21,7 @@ module.exports = {
 				lg: '2rem',
 				xl: '3rem',
 				'2xl': '5rem',
-				'3xl': '3.25rem'
+				'3xl': '12rem'
 			},
 		},
 		extend: {
@@ -33,7 +33,7 @@ module.exports = {
 				'5xl': ['2.625rem','2.625rem']
 			},
 			screens:{
-				'3xl': '1640px'
+				'3xl': '1920px'
 			}
 
 		},
