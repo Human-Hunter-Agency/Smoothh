@@ -21,7 +21,7 @@ module.exports = {
 				lg: '2rem',
 				xl: '3rem',
 				'2xl': '5rem',
-				'3xl': '12rem'
+				'3xl': '9rem'
 			},
 		},
 		extend: {
