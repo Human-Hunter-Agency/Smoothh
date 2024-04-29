@@ -441,7 +441,7 @@ function initPopups(){
 	const togglers = document.querySelectorAll('[data-js-popup-toggle]')
 	togglers.forEach(toggle => {
 		toggle.addEventListener('click',()=>{
-			const popupContainerName = toggle.dataset.jsPopupContainer
+			const popupContainerName = toggle.dataset.jsPopupToggle
 			if (!popupContainerName) return
 
 			const popupContainer = document.querySelector(`[data-js-popup-container='${popupContainerName}']`)
