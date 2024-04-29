@@ -319,7 +319,7 @@ function woocommerce_header_add_to_cart_fragment($fragments)
 		}
 		?>
 	</a>
-<?php
+	<?php
 	$fragments['a.cart-icon-desktop'] = ob_get_clean();
 	return $fragments;
 }
@@ -353,263 +353,276 @@ function is_prod_guest_available($product)
 }
 
 // Custom account fields
-function woocommerce_smoothh_account_extra_fields() {
-    return apply_filters( 'woocommerce_forms_field', array(
-        'first_name' => array(
-            'type'        => 'text',
-            'placeholder' => __( 'First name', 'woocommerce' ),
-            'required'    => true,
+function woocommerce_smoothh_account_extra_fields()
+{
+	return apply_filters('woocommerce_forms_field', array(
+		'first_name' => array(
+			'type'        => 'text',
+			'placeholder' => __('First name', 'woocommerce'),
+			'required'    => true,
 		),
 		'last_name' => array(
-            'type'        => 'text',
-            'placeholder' => __( 'Last name', 'woocommerce' ),
-            'required'    => true,
+			'type'        => 'text',
+			'placeholder' => __('Last name', 'woocommerce'),
+			'required'    => true,
 		),
 		'billing_company' => array(
-            'type'        => 'text',
-            'placeholder' => __( 'Company Name', 'woocommerce' ),
-            'required'    => true,
+			'type'        => 'text',
+			'placeholder' => __('Nazwa Firmy', 'woocommerce'),
+			'required'    => true,
 		),
 		'billing_company_nip' => array(
-            'type'        => 'text',
-            'placeholder' => __( 'NIP Number', 'smoothh' ),
-            'required'    => true,
+			'type'        => 'text',
+			'placeholder' => __('NIP Number', 'smoothh'),
+			'required'    => true,
 		),
 		'billing_phone' => array(
-            'type'        => 'tel',
-            'placeholder' => __( 'Phone', 'woocommerce' ),
-            'required'    => true,
+			'type'        => 'tel',
+			'placeholder' => __('Phone', 'woocommerce'),
+			'required'    => true,
 		),
-    ) );
+	));
 }
-function smoothh_save_extra_fields( $customer_id ) {
-	if ( isset( $_POST['first_name'] ) ) {
+function smoothh_save_extra_fields($customer_id)
+{
+	if (isset($_POST['first_name'])) {
 		// WordPress default first name field.
-		update_user_meta( $customer_id, 'name', sanitize_text_field( $_POST['first_name'] ) );
-		update_user_meta( $customer_id, 'first_name', sanitize_text_field( $_POST['first_name'] ) );
-		update_user_meta( $customer_id, 'billing_first_name', sanitize_text_field( $_POST['first_name'] ) );
-  	}
- 	if ( isset( $_POST['last_name'] ) ) {
+		update_user_meta($customer_id, 'name', sanitize_text_field($_POST['first_name']));
+		update_user_meta($customer_id, 'first_name', sanitize_text_field($_POST['first_name']));
+		update_user_meta($customer_id, 'billing_first_name', sanitize_text_field($_POST['first_name']));
+	}
+	if (isset($_POST['last_name'])) {
 		// WordPress default last name field.
-		update_user_meta( $customer_id, 'last_name', sanitize_text_field( $_POST['last_name'] ) );
-		update_user_meta( $customer_id, 'billing_last_name', sanitize_text_field( $_POST['last_name'] ) );
+		update_user_meta($customer_id, 'last_name', sanitize_text_field($_POST['last_name']));
+		update_user_meta($customer_id, 'billing_last_name', sanitize_text_field($_POST['last_name']));
 	}
-	if ( isset( $_POST['billing_company'] ) ) {
+	if (isset($_POST['billing_company'])) {
 		// WooCommerce billing_company
-		update_user_meta( $customer_id, 'billing_company', sanitize_text_field( $_POST['billing_company'] ) );
- 	}
-	if ( isset( $_POST['billing_company_nip'] ) ) {
-		update_user_meta( $customer_id, 'billing_company_nip', sanitize_text_field( $_POST['billing_company_nip'] ) );
+		update_user_meta($customer_id, 'billing_company', sanitize_text_field($_POST['billing_company']));
 	}
-	if ( isset( $_POST['billing_phone'] ) ) {
+	if (isset($_POST['billing_company_nip'])) {
+		update_user_meta($customer_id, 'billing_company_nip', sanitize_text_field($_POST['billing_company_nip']));
+	}
+	if (isset($_POST['billing_phone'])) {
 		// WooCommerce billing phone
-		update_user_meta( $customer_id, 'billing_phone', sanitize_text_field( $_POST['billing_phone'] ) );
- 	}
+		update_user_meta($customer_id, 'billing_phone', sanitize_text_field($_POST['billing_phone']));
+	}
 }
-function smoothh_validate_extra_fields($errors){
-	if ( isset( $_POST['first_name'] ) && empty( $_POST['first_name'] ) ) {
-		$errors->add( 'first_name_error', __( 'First name is required.', 'woocommerce' ) );
-	} 
-	if ( isset( $_POST['last_name'] ) && empty( $_POST['last_name'] ) ) {
-		$errors->add( 'last_name_error', __( 'Last name is required.', 'woocommerce' ) );
-	} 
-	if ( isset( $_POST['billing_company'] ) && empty( $_POST['billing_company'] ) ) {
-		$errors->add( 'billing_company_error', __( 'Company Name is required.', 'woocommerce' ) );
- 	} 
-	if ( isset( $_POST['billing_company_nip'] ) && empty( $_POST['billing_company_nip'] ) ) {
-		$errors->add( 'billing_company_nip_error', __( 'Company NIP is required.', 'smoothh' ) );
-	} 
-	if ( isset( $_POST['billing_phone'] ) && empty( $_POST['billing_phone'] ) ) {
-		$errors->add( 'billing_phone_error', __( 'Phone is required.', 'woocommerce' ) );
- 	}
+function smoothh_validate_extra_fields($errors)
+{
+	if (isset($_POST['first_name']) && empty($_POST['first_name'])) {
+		$errors->add('first_name_error', __('First name is required.', 'woocommerce'));
+	}
+	if (isset($_POST['last_name']) && empty($_POST['last_name'])) {
+		$errors->add('last_name_error', __('Last name is required.', 'woocommerce'));
+	}
+	if (isset($_POST['billing_company']) && empty($_POST['billing_company'])) {
+		$errors->add('billing_company_error', __('Company Name is required.', 'woocommerce'));
+	}
+	if (isset($_POST['billing_company_nip']) && empty($_POST['billing_company_nip'])) {
+		$errors->add('billing_company_nip_error', __('Company NIP is required.', 'smoothh'));
+	}
+	if (isset($_POST['billing_phone']) && empty($_POST['billing_phone'])) {
+		$errors->add('billing_phone_error', __('Phone is required.', 'woocommerce'));
+	}
 }
 
 // Register page
-function smoothh_my_account_page_woocommerce() {
-    $fields = woocommerce_smoothh_account_extra_fields();
-    foreach ( $fields as $key => $field_args ) {
-        woocommerce_form_field( $key, $field_args );
-    }
+function smoothh_my_account_page_woocommerce()
+{
+	$fields = woocommerce_smoothh_account_extra_fields();
+	foreach ($fields as $key => $field_args) {
+		woocommerce_form_field($key, $field_args);
+	}
 }
-function smoothh_validate_extra_fields_my_account( $username, $email, $validation_errors ) {
+function smoothh_validate_extra_fields_my_account($username, $email, $validation_errors)
+{
 	smoothh_validate_extra_fields($validation_errors);
 
-	if ( ! isset( $_POST['terms'] ) )
-        $validation_errors->add( 'terms_error', __( 'Terms and condition are not checked!', 'woocommerce' ) );
+	if (!isset($_POST['terms']))
+		$validation_errors->add('terms_error', __('Terms and condition are not checked!', 'woocommerce'));
 }
 
-function smoothh_terms_and_conditions_to_registration() {
-	
-	if ( wc_get_page_id( 'terms' ) > 0 ) {
-		?>
-        <p class="form-row terms wc-terms-and-conditions">
+function smoothh_terms_and_conditions_to_registration()
+{
+
+	if (wc_get_page_id('terms') > 0) {
+	?>
+		<p class="form-row terms wc-terms-and-conditions">
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary">
-				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" <?php checked( apply_filters( 'woocommerce_terms_is_checked_default', isset( $_POST['terms'] ) ), true ); ?> id="terms" /> <span><?php printf( __( 'I&rsquo;ve read and accept the <a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link">terms &amp; conditions</a>', 'woocommerce' ), esc_url( wc_get_page_permalink( 'terms' ) ) ); ?></span> <span class="required">*</span>
-            </label>
-            <input type="hidden" name="terms-field" value="1" />
-        </p>
-		<?php
-    }
+				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" <?php checked(apply_filters('woocommerce_terms_is_checked_default', isset($_POST['terms'])), true); ?> id="terms" /> <span><?php printf(__('I&rsquo;ve read and accept the <a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link">terms &amp; conditions</a>', 'woocommerce'), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
+			</label>
+			<input type="hidden" name="terms-field" value="1" />
+		</p>
+	<?php
+	}
 }
 
-add_action( 'woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15 );
-add_action( 'woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 20 );
-add_action( 'woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3 );
-add_action( 'woocommerce_created_customer', 'smoothh_save_extra_fields' );
+add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
+add_action('woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 20);
+add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
+add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
 
-add_filter( 'woocommerce_billing_fields', 'smoothh_billing_address_add_nip' );
-function smoothh_billing_address_add_nip( $fields ) {
-	
-	$fields[ 'billing_company_nip' ]   = array(
+add_filter('woocommerce_billing_fields', 'smoothh_billing_address_add_nip');
+function smoothh_billing_address_add_nip($fields)
+{
+
+	$fields['billing_company_nip']   = array(
 		'type'		   => 'text',
 		'required'     => true,
-		'label'  => __( 'NIP Number', 'smoothh' ),
+		'label'  => __('NIP Number', 'smoothh'),
 	);
-	
+
 	return $fields;
 }
 
-add_filter( 'woocommerce_shipping_fields', 'smoothh_shipping_address_add_nip' );
-function smoothh_shipping_address_add_nip( $fields ) {
-	
-	$fields[ 'shipping_company_nip' ] = array(
+add_filter('woocommerce_shipping_fields', 'smoothh_shipping_address_add_nip');
+function smoothh_shipping_address_add_nip($fields)
+{
+
+	$fields['shipping_company_nip'] = array(
 		'type'		   => 'text',
 		'required'     => true,
-		'label'  => __( 'NIP Number', 'smoothh' ),
+		'label'  => __('NIP Number', 'smoothh'),
 	);
-	
+
 	return $fields;
 }
 
 // Display custom field in user BO
-function smoothh_show_extra_account_details( $user ) {
-	$company_nip = get_user_meta( $user->ID, 'billing_company_nip', true );
+function smoothh_show_extra_account_details($user)
+{
+	$company_nip = get_user_meta($user->ID, 'billing_company_nip', true);
 
-	if ( empty( $company_nip ) ) {
+	if (empty($company_nip)) {
 		return;
 	}
 
 	?>
-	<h3><?php esc_html_e( 'Extra account details', 'smoothh' ); ?></h3>
+	<h3><?php esc_html_e('Extra account details', 'smoothh'); ?></h3>
 	<table class="form-table">
-	<tr>
-		<th><?php esc_html_e( 'Company NIP', 'smoothh' ); ?></label></th>
-		<td>
-			<p><?php echo esc_html( $company_nip ); ?></p>
-		</td>
-	</tr>
-</table>
+		<tr>
+			<th><?php esc_html_e('Company NIP', 'smoothh'); ?></label></th>
+			<td>
+				<p><?php echo esc_html($company_nip); ?></p>
+			</td>
+		</tr>
+	</table>
 <?php
 }
 
-add_action( 'show_user_profile', 'smoothh_show_extra_account_details', 15 );
-add_action( 'edit_user_profile', 'smoothh_show_extra_account_details', 15 );
+add_action('show_user_profile', 'smoothh_show_extra_account_details', 15);
+add_action('edit_user_profile', 'smoothh_show_extra_account_details', 15);
 
 
-function smoothh_override_checkout_fields( $fields ) {
+function smoothh_override_checkout_fields($fields)
+{
 	$fields['shipping']['shipping_company_nip'] = array(
 		'type'		   => 'text',
 		'required'     => true,
-		'label'  => __( 'NIP Number', 'smoothh' ),
+		'label'  => __('NIP Number', 'smoothh'),
 	);
-	
+
 	$fields['billing']['billing_company_nip'] = array(
 		'type'		   => 'text',
 		'required'     => true,
-		'label'  => __( 'NIP Number', 'smoothh' ),
+		'label'  => __('NIP Number', 'smoothh'),
 	);
-	
-    return $fields;
+
+	return $fields;
 }
 
-add_filter( 'woocommerce_checkout_fields' , 'smoothh_override_checkout_fields' );
+add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
 
 
 function login_page_redirects()
 {
-	$checkout_pageid = get_option( 'woocommerce_checkout_page_id' );
+	$checkout_pageid = get_option('woocommerce_checkout_page_id');
 	$is_guest = $_GET['is_guest'] ?? false;
-    if(!is_user_logged_in() && is_page($checkout_pageid) && !$is_guest){
-        $url = add_query_arg(
-            'redirect_to',
-            get_permalink($pageid),
-            site_url('/logowanie/')
-        );
-        wp_redirect($url);
-        exit;
-    }
+	if (!is_user_logged_in() && is_page($checkout_pageid) && !$is_guest) {
+		$url = add_query_arg(
+			'redirect_to',
+			get_permalink($pageid),
+			site_url('/logowanie/')
+		);
+		wp_redirect($url);
+		exit;
+	}
 
 	$login_page_id = 848;
 	if (empty($_GET) && is_page($login_page_id)) {
-            wp_redirect(get_permalink( wc_get_page_id( 'myaccount' ) ));
-            exit; 
+		wp_redirect(get_permalink(wc_get_page_id('myaccount')));
+		exit;
 	}
 
 	$panel_page_id = 650;
 	if (!is_user_logged_in() && is_page($panel_page_id)) {
 		$url = add_query_arg(
-            'redirect_to',
-            get_permalink($panel_page_id),
-            get_permalink( wc_get_page_id( 'myaccount' ) )
-        );
-        wp_redirect($url);
-        exit;
+			'redirect_to',
+			get_permalink($panel_page_id),
+			get_permalink(wc_get_page_id('myaccount'))
+		);
+		wp_redirect($url);
+		exit;
 	}
-
 }
-add_action('template_redirect','login_page_redirects');
+add_action('template_redirect', 'login_page_redirects');
 
 
-function after_login_redirect($redirect_to) {
-    $redirect_param = isset($_GET['redirect_to']) ? $_GET['redirect_to'] : false;
-    
-    if (is_user_logged_in() && $redirect_param !== false) {
-        return $redirect_param;
-    } else {
-        return $redirect_to;
-    }
+function after_login_redirect($redirect_to)
+{
+	$redirect_param = isset($_GET['redirect_to']) ? $_GET['redirect_to'] : false;
+
+	if (is_user_logged_in() && $redirect_param !== false) {
+		return $redirect_param;
+	} else {
+		return $redirect_to;
+	}
 }
 add_filter('woocommerce_login_redirect', 'after_login_redirect', 999);
 
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10 );
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);
+remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
 
-add_action('woocommerce_checkout_after_customer_details','woocommerce_checkout_payment',20);
-remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 20);
+remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
 
 // Remove read more from excerpt
-function change_excerpt( $more ) {
+function change_excerpt($more)
+{
 	return '';
 }
 add_filter('excerpt_more', 'change_excerpt');
 
 // Availability text
-function filter_woocommerce_get_availability_text( $availability, $product ) {
-    // Only for 'outofstock'
-    if ( $product->get_stock_status() == 'outofstock' ) {
-        // Get custom stock status
-        $has_variable_price = get_field( 'variable_price',$product->get_id() );
+function filter_woocommerce_get_availability_text($availability, $product)
+{
+	// Only for 'outofstock'
+	if ($product->get_stock_status() == 'outofstock') {
+		// Get custom stock status
+		$has_variable_price = get_field('variable_price', $product->get_id());
 
 		if (isset($has_variable_price) && $has_variable_price == true) {
 			return '';
 		}
-    }
+	}
 
-    return $availability; 
+	return $availability;
 }
-add_filter( 'woocommerce_get_availability_text', 'filter_woocommerce_get_availability_text', 10, 2 );
+add_filter('woocommerce_get_availability_text', 'filter_woocommerce_get_availability_text', 10, 2);
 
 
-add_filter( 'shortcode_atts_wpcf7', 'custom_shortcode_atts_wpcf7_filter', 10, 3 );
- 
-function custom_shortcode_atts_wpcf7_filter( $out, $pairs, $atts ) {
-  $custom_attrs = ['prod-id','prod-name'];
- 
-  foreach ($custom_attrs as $attr) {
-    if ( isset( $atts[$attr] ) ) {
-      $out[$attr] = $atts[$attr];
-    }
-  }
- 
-  return $out;
+add_filter('shortcode_atts_wpcf7', 'custom_shortcode_atts_wpcf7_filter', 10, 3);
+
+function custom_shortcode_atts_wpcf7_filter($out, $pairs, $atts)
+{
+	$custom_attrs = ['prod-id', 'prod-name'];
+
+	foreach ($custom_attrs as $attr) {
+		if (isset($atts[$attr])) {
+			$out[$attr] = $atts[$attr];
+		}
+	}
+
+	return $out;
 }
