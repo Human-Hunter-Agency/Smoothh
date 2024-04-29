@@ -337,7 +337,7 @@ i.theChampLogin {
 }
 
 .popup-inner{
-	@apply flex flex-col transition duration-300 max-h-full max-w-screen-lg p-5 md:p-10 bg-white shadow-2xl rounded-[15px] relative
+	@apply flex flex-col transition duration-300 max-h-full max-w-screen-lg px-5 py-2 md:py-5 md:p-10 bg-white shadow-2xl rounded-[15px] relative
 }
 
 .popup-hidden .popup-inner {
