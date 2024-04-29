@@ -75,8 +75,8 @@ if ($product->is_in_stock() && $has_variable_price == false) : ?>
 	
 	<div data-js-popup-container="quote-form" class="popup-container popup-hidden">
 		<div class="popup-inner">
-			<div class="flex justify-end p-1 max-h-full">
-				<button data-js-popup-toggle="quote-form" class=" p-2 group">				
+			<div class="flex justify-end p-1">
+				<button data-js-popup-toggle="quote-form" class="p-1 md:p-2 group">				
 					<svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 						viewBox="0 0 460.775 460.775" xml:space="preserve">
 					<path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55

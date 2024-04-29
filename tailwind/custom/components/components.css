@@ -330,14 +330,14 @@ i.theChampLogin {
 .popup-container{
 	max-height: 100dvh;
 	max-height: 100vh;
-	@apply fixed z-50 inset-0 bg-black/15 overflow-auto flex items-center justify-center p-5 md:px-10 xl:px-20 transition duration-300
+	@apply fixed z-50 inset-0 bg-black/15 overflow-auto flex items-center justify-center px-5 py-2 md:py-5 md:px-10 xl:px-20 transition duration-300
 }
 .popup-hidden{
 	@apply opacity-0 pointer-events-none
 }
 
 .popup-inner{
-	@apply transition duration-300 max-w-screen-lg p-5 md:p-10 bg-white shadow-2xl rounded-[15px] relative
+	@apply flex flex-col transition duration-300 max-h-full max-w-screen-lg p-5 md:p-10 bg-white shadow-2xl rounded-[15px] relative
 }
 
 .popup-hidden .popup-inner {
