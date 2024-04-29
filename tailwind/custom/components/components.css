@@ -325,3 +325,7 @@ i.theChampLogin {
 .woocommerce-checkout .woocommerce-error li{
 	@apply !mt-0;
 }
+
+.popup-hidden{
+	@apply opacity-0 pointer-events-none
+}

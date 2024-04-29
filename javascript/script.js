@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initCvFileLabelText();
 	initRelatedPosts();
 	initCart();
+	initPopups();
 });
 
 function initMenuCollapse() {
@@ -434,4 +435,19 @@ function initCart(){
 			jQuery(document.body).trigger('wc_fragment_refresh');
 		} );
 	}
+}
+
+function initPopups(){
+	const togglers = document.querySelectorAll('[data-js-popup-toggle]')
+	togglers.forEach(toggle => {
+		toggle.addEventListener('click',()=>{
+			const popupContainerName = toggle.dataset.jsPopupContainer
+			if (!popupContainerName) return
+
+			const popupContainer = document.querySelector(`[data-js-popup-container='${popupContainerName}']`)
+			if (!popupContainer) return
+
+			popupContainer.classList.toggle('popup-hidden')
+		})
+	}) 
 }

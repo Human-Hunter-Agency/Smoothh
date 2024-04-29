@@ -23,12 +23,11 @@ global $product;
 if (!$product->is_purchasable()) {
 	return;
 }
-
-
+$has_variable_price = get_field('variable_price');
 
 echo wc_get_stock_html($product); // WPCS: XSS ok.
 
-if ($product->is_in_stock()) : ?>
+if ($product->is_in_stock() && $has_variable_price == false) : ?>
 
 	<?php do_action('woocommerce_before_add_to_cart_form'); ?>
 
@@ -61,5 +60,34 @@ if ($product->is_in_stock()) : ?>
 	</form>
 
 	<?php do_action('woocommerce_after_add_to_cart_form'); ?>
+
+<?php 
+	endif;
+	if ($has_variable_price) : 
+?>
+	<button data-js-popup-toggle="quote-form" class="button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> whitespace-nowrap button border-none !bg-gradient-to-b from-primary to-secondary text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>">
+		<?php echo esc_html_e('Get a quote','smoothh'); ?>
+		<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
+			<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
+		</svg>
+	</button>
+	
+	<div data-js-popup-container="quote-form" class="fixed z-50 inset-0 bg-black/5 flex items-center p-5 md:px-10 xl:px-20 popup-hidden transition duration-500">
+		<div class="max-w-screen-lg p-5 md:p-10 bg-white shadow-2xl rounded-[15px] relative">
+			<button data-js-popup-toggle="quote-form" class="absolute top-1 right-1 p-1">				
+				<svg fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+					viewBox="0 0 460.775 460.775" xml:space="preserve">
+				<path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+					c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+					c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+					c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+					l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+					c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+				</svg>
+			</button>
+			<?php echo do_shortcode('[contact-form-7 id="f3dc97a" title="Kontakt"]'); ?>
+		</div>
+	</div>
 
 <?php endif; ?>
