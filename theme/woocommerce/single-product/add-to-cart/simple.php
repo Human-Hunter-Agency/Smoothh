@@ -75,22 +75,26 @@ if ($product->is_in_stock() && $has_variable_price == false) : ?>
 	
 	<div data-js-popup-container="quote-form" class="popup-container popup-hidden">
 		<div class="popup-inner">
-			<button data-js-popup-toggle="quote-form" class="absolute top-1 right-1 p-2 group">				
-				<svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-					viewBox="0 0 460.775 460.775" xml:space="preserve">
-				<path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
-					c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
-					c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
-					c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
-					l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
-					c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
-				</svg>
-			</button>
-			<h3 class="mb-5"><?php esc_html_e('Ask about this service ','smoothh'); ?></h3>
-			<p class="mb-10 text-base"><?php echo $product->get_title() ?></p>
-			<?php 
-				$shortcode = '[contact-form-7 id="3dc6e27" prod-id="' . $product->get_id() . '" prod-name="'. $product->get_title() . '" title="Wycena"]';
-				echo do_shortcode($shortcode); ?>
+			<div class="flex justify-end p-1 max-h-full">
+				<button data-js-popup-toggle="quote-form" class=" p-2 group">				
+					<svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+						viewBox="0 0 460.775 460.775" xml:space="preserve">
+					<path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+						c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+						c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+						c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+						l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+						c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+					</svg>
+				</button>
+			</div>
+			<div class="overflow-auto">
+				<h3 class="mb-2 text-2xl md:text-3xl font-semibold"><?php esc_html_e('Ask about this service','smoothh'); ?></h3>
+				<p class="mb-8 text-base"><?php echo $product->get_title() ?></p>
+				<?php 
+					$shortcode = '[contact-form-7 id="3dc6e27" prod-id="' . $product->get_id() . '" prod-name="'. $product->get_title() . '" title="Wycena"]';
+					echo do_shortcode($shortcode); ?>
+			</div>
 		</div>
 	</div>
 
