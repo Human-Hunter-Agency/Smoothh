@@ -203,7 +203,7 @@ if (post_password_required()) {
 	</section>
 	<section>
 	<?php if ($cta_bg || $cta_header || $cta_btn) :
-	
+
 		if ($cta_bg['url']) {
 			$bg_url = $cta_bg['url'];
 		}
@@ -216,7 +216,7 @@ if (post_password_required()) {
 			<div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
 
 			<div class="relative z-0 flex flex-col items-center justify-center container">
-				<?php if (isset($header)) : ?>
+				<?php if (isset($cta_header)) : ?>
 					<h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9"><?php echo esc_html($cta_header); ?></h1>
 					<?php endif; ?>
 
