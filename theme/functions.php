@@ -454,7 +454,7 @@ function smoothh_terms_and_conditions_to_registration()
 				<span>
 					<?php esc_html_e('I&rsquo;ve read and accept the', 'smoothh'); ?>
 					<a href="<?php print_r(get_term_link()); ?>" target="_blank" class="woocommerce-terms-and-conditions-link inline"><?php esc_html_e('terms & conditions', 'smoothh'); ?></a>
-					<?php printf(__('<a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link">terms and conditions</a>', 'woocommerce'), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
+					<?php printf(__('<a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link">terms and conditions</a>', 'smoothh'), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
 			</label>
 			<input type="hidden" name="terms-field" value="1" />
 		</p>
