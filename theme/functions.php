@@ -603,10 +603,12 @@ add_filter( 'woocommerce_get_availability_text', 'filter_woocommerce_get_availab
 add_filter( 'shortcode_atts_wpcf7', 'custom_shortcode_atts_wpcf7_filter', 10, 3 );
  
 function custom_shortcode_atts_wpcf7_filter( $out, $pairs, $atts ) {
-  $my_attr = 'destination-email';
+  $custom_attrs = ['prod-id','prod-name'];
  
-  if ( isset( $atts[$my_attr] ) ) {
-    $out[$my_attr] = $atts[$my_attr];
+  foreach ($custom_attrs as $attr) {
+    if ( isset( $atts[$attr] ) ) {
+      $out[$attr] = $atts[$attr];
+    }
   }
  
   return $out;
