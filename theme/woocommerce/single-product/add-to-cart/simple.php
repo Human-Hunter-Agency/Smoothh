@@ -86,6 +86,8 @@ if ($product->is_in_stock() && $has_variable_price == false) : ?>
 					c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
 				</svg>
 			</button>
+			<h3 class="mb-5"><?php esc_html_e('Ask about this service ','smoothh'); ?></h3>
+			<p class="mb-10 text-base"><?php echo $product->get_title() ?></p>
 			<?php 
 				$shortcode = '[contact-form-7 id="3dc6e27" prod-id="' . $product->get_id() . '" prod-name="'. $product->get_title() . '" title="Wycena"]';
 				echo do_shortcode($shortcode); ?>
