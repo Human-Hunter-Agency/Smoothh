@@ -453,7 +453,7 @@ function smoothh_terms_and_conditions_to_registration()
 				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" <?php checked(apply_filters('woocommerce_terms_is_checked_default', isset($_POST['terms'])), true); ?> id="terms" />
 				<span>
 					<?php esc_html_e('I&rsquo;ve read and accept the', 'smoothh'); ?>
-					<a href="<?php esc_url(wc_get_page_permalink('terms')) ?>" target="_blank" class="woocommerce-terms-and-conditions-link inline"><?php esc_html_e('terms & conditions', 'smoothh'); ?></a>
+					<a href="%s<?php esc_url(wc_get_page_permalink('terms')) ?>" target="_blank" class="woocommerce-terms-and-conditions-link inline"><?php esc_html_e('terms & conditions', 'smoothh'); ?></a>
 					<?php printf(__('<a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link hidden default">terms &amp; conditions</a>', 'woocommerce'), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
 			</label>
 			<input type="hidden" name="terms-field" value="1" />
