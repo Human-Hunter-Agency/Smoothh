@@ -202,10 +202,10 @@ if (post_password_required()) {
 
 	</section>
 	<section>
-	<?php if ($cta_bg) :
-		$background = $cta_bg['background'];
-		if ($background['url']) {
-			$bg_url = $background['url'];
+	<?php if ($cta_bg || $cta_header || $cta_btn) :
+	
+		if ($cta_bg['url']) {
+			$bg_url = $cta_bg['url'];
 		}
 	?>
 		<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
