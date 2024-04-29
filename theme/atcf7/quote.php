@@ -15,8 +15,6 @@ if (!defined('ABSPATH')) {
 
       [text* your-company placeholder "Firma"]
 
-      [text* your-name placeholder "Imię i nazwisko"]
-
       [hidden prod-id default:shortcode_attr]
 
       [hidden prod-name default:shortcode_attr]

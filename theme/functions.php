@@ -598,3 +598,16 @@ function filter_woocommerce_get_availability_text( $availability, $product ) {
     return $availability; 
 }
 add_filter( 'woocommerce_get_availability_text', 'filter_woocommerce_get_availability_text', 10, 2 );
+
+
+add_filter( 'shortcode_atts_wpcf7', 'custom_shortcode_atts_wpcf7_filter', 10, 3 );
+ 
+function custom_shortcode_atts_wpcf7_filter( $out, $pairs, $atts ) {
+  $my_attr = 'destination-email';
+ 
+  if ( isset( $atts[$my_attr] ) ) {
+    $out[$my_attr] = $atts[$my_attr];
+  }
+ 
+  return $out;
+}
