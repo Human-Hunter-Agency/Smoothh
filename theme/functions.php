@@ -368,7 +368,7 @@ function woocommerce_smoothh_account_extra_fields()
 		),
 		'billing_company' => array(
 			'type'        => 'text',
-			'placeholder' => __('Nazwa Firmy', 'woocommerce'),
+			'placeholder' => __('Company Name', 'smoothh'),
 			'required'    => true,
 		),
 		'billing_company_nip' => array(
