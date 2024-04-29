@@ -590,7 +590,7 @@ function filter_woocommerce_get_availability_text( $availability, $product ) {
         // Get custom stock status
         $has_variable_price = get_field( 'variable_price',$product->get_id() );
 
-		if (isset($has_variable_price) && $is_variable_price == true) {
+		if (isset($has_variable_price) && $has_variable_price == true) {
 			return '';
 		}
     }
