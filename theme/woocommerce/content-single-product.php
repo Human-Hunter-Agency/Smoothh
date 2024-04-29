@@ -210,7 +210,7 @@ if (post_password_required()) {
 	?>
 		<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
 			<?php if (isset($bg_url)) : ?>
-				<img src="<?php echo $bg_url; ?>" class="absolute inset-0 -z-20 object-cover h-full w-full">
+				<img src="<?php echo $bg_url; ?>" class="absolute inset-0 -z-20 object-cover !h-full w-full">
 			<?php endif; ?>
 
 			<div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
