@@ -50,7 +50,7 @@ if (post_password_required()) {
 			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-8 md:mb-[50px]">
 				<?php the_content() ?>
 			</div>
-			<div class="ml-auto flex gap-4 flex-col md:flex-row items-end mb-5 <?php if(!$product->is_type('variable')){echo ' md:flex-row md:gap-10';} ?> ">
+			<div class="ml-auto flex gap-4 flex-col items-end justify-end mb-5 <?php if(!$product->is_type('variable')){echo ' md:flex-row md:gap-10';} ?> ">
 				<?php
 				/**
 				 * Hook: woocommerce_single_product_summary.
