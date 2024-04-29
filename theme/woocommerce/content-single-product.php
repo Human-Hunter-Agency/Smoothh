@@ -201,6 +201,37 @@ if (post_password_required()) {
 		?>
 
 	</section>
+	<section>
+	<?php if ($cta_bg) :
+		$background = $cta_bg['background'];
+		if ($background['url']) {
+			$bg_url = $background['url'];
+		}
+	?>
+		<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
+			<?php if (isset($bg_url)) : ?>
+				<img src="<?php echo $bg_url; ?>" class="absolute inset-0 -z-20 object-cover h-full w-full">
+			<?php endif; ?>
+
+			<div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
+
+			<div class="relative z-0 flex flex-col items-center justify-center container">
+				<?php if (isset($header)) : ?>
+					<h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9"><?php echo esc_html($cta_header); ?></h1>
+					<?php endif; ?>
+
+					<?php if (isset($cta_btn)) :
+						$btn_url = $cta_btn['url'];
+						$btn_title = $cta_btn['title'];
+						$btn_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
+					?>
+						<a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-[14px] text-[13px] font-bold py-2 px-7 md:px-[70px] border-2 border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
+					<?php endif; ?>
+			</div>
+
+		</div>
+	<?php endif; ?>
+</section>
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>
