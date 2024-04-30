@@ -92,7 +92,7 @@ footer#page-footer .footer-bottom-menu {
 
 .form-basic input,
 .form-basic textarea {
-	@apply px-4 md:px-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary hover:border-secondary outline-0 [outline-style:solid] focus:outline-1 focus:border-secondary outline-secondary transition-all duration-200 bg-white placeholder:text-foreground text-foreground text-base;
+	@apply px-4 md:px-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary hover:border-secondary outline-1 outline-transparent [outline-style:solid] focus:outline-1 focus:border-secondary focus:outline-secondary transition-all duration-200 bg-white placeholder:text-foreground text-foreground text-base;
 }
 .form-basic textarea {
 	@apply py-4 min-h-32 max-h-80;
