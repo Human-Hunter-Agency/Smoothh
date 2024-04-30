@@ -276,13 +276,18 @@ footer#page-footer .footer-bottom-menu {
 .select2-selection__arrow {
 	@apply !top-4 !right-4;
 }
+
+.select2-container--default.select2-container--open{
+	border-width: 0 8px 12px 8px !important;
+	@apply !border-b-primary	
+}
 .select2-selection__arrow b{
-	border-width: 11px 8px 0 8px !important;
-	@apply !border-b-primary
+	border-width: 12px 8px 0 8px !important;
+	@apply !border-t-primary
 }
 
 .select2-dropdown--below{
-	@apply !border-2 !border-secondary shadow-lg
+	@apply !border-2 !border-secondary shadow-lg !rounded-b-[15px]
 }
 .select2-search--dropdown,
 .select2-results__option{
