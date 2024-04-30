@@ -12,6 +12,8 @@
 import Swiper from 'swiper';
 import { Autoplay,Navigation } from 'swiper/modules';
 
+const { __, _x, _n, sprintf } = wp.i18n;
+
 document.addEventListener('DOMContentLoaded', () => {
 	initMenuCollapse();
 	initHeroMarqueeSwiper();
@@ -365,7 +367,7 @@ function insertPosts(container,posts){
 				<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
 				<h3>${post.title.rendered}</h3>
 				${post.excerpt.rendered}
-				<span>Czytaj więcej</span>
+				<span>${__('Read more','smoothh')}</span>
 			</a>
 		</li>`
 
