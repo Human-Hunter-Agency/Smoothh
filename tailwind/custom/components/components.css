@@ -274,10 +274,10 @@ footer#page-footer .footer-bottom-menu {
 	@apply h-[55px] flex items-center rounded-[15px] border border-primary px-3 hover:border-secondary aria-expanded:border-secondary accent-primary w-full !outline-1 !-outline-offset-2 !outline-transparent ![outline-style:solid] aria-expanded:!outline-1 aria-expanded:!outline-secondary transition-all duration-200;
 }
 .select2-selection__arrow {
-	@apply !top-4 !right-4;
+	@apply !top-3 !right-4;
 }
 
-.select2-container--default.select2-container--open{
+.select2-container--default.select2-container--open .select2-selection__arrow b{
 	border-width: 0 8px 12px 8px !important;
 	@apply !border-b-primary	
 }
