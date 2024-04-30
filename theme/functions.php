@@ -449,7 +449,7 @@ function smoothh_terms_and_conditions_to_registration()
 	if (wc_get_page_id('terms') > 0) {
 	?>
 		<p class="form-row terms wc-terms-and-conditions">
-			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary">
+			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline">
 				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" <?php checked(apply_filters('woocommerce_terms_is_checked_default', isset($_POST['terms'])), true); ?> id="terms" />
 				<span>
 					<?php esc_html_e('I&rsquo;ve read and accept the', 'smoothh'); ?>
