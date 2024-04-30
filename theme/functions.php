@@ -1,4 +1,7 @@
 <?php
+/*
+    Text Domain: smoothh
+*/
 
 /**
  * Smoothh functions and definitions
