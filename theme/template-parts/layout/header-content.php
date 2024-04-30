@@ -93,9 +93,9 @@
 					</svg>
 				</a>
 				<?php if (is_user_logged_in()) : ?>
-					<a href="<?php echo esc_url( wc_get_account_endpoint_url( get_option( 'woocommerce_logout_endpoint', 'customer-logout' ) ) ); ?>" class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 transition-all duration-200 text-white text-center shadow-sm shadow-black/15"><?php echo __( 'Log out', 'woocommerce' ) ?></a>
+					<a href="<?php echo esc_url( wc_get_account_endpoint_url( get_option( 'woocommerce_logout_endpoint', 'customer-logout' ) ) ); ?>" class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] transition-all duration-200 text-white text-center shadow-sm shadow-black/15"><?php echo __( 'Log out', 'woocommerce' ) ?></a>
 				<?php else : ?>
-					<a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>" class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 transition-all duration-200 text-white text-center shadow-sm shadow-black/15"><?php esc_html_e('Log in', 'smoothh'); ?></a>
+					<a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>" class="shrink-0 rounded-[14px] py-1.5 px-7 bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] transition-all duration-200 text-white text-center shadow-sm shadow-black/15"><?php esc_html_e('Log in', 'smoothh'); ?></a>
 				<?php endif; ?>
 			</nav><!-- #site-navigation -->
 		</div>
