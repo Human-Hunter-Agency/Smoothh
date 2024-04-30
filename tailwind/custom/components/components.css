@@ -261,7 +261,7 @@ footer#page-footer .footer-bottom-menu {
 
 .place-order a.woocommerce-privacy-policy-link,
 .place-order a.woocommerce-terms-and-conditions-link{
-	@apply !no-underline hover:!underline
+	@apply !no-underline hover:!underline font-semibold
 }
 
 .woocommerce-address-fields .input-text,
