@@ -115,7 +115,7 @@ footer#page-footer .footer-bottom-menu {
 	@apply !mx-auto;
 }
 .form-basic .wpcf7-list-item a {
-	@apply font-semibold text-primary;
+	@apply font-semibold text-primary hover:underline;
 }
 
 .form-basic .wpcf7-list-item input[type="checkbox"] {
