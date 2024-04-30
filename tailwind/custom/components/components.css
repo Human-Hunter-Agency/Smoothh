@@ -244,7 +244,7 @@ footer#page-footer .footer-bottom-menu {
 	opacity: 1 !important;
 }
 .smoothh-inputs-basic .input-text {
-	@apply placeholder:text-foreground h-[55px] rounded-[15px] border border-primary px-5 hover:border-secondary accent-primary w-full outline-1 -outline-offset-2 outline-transparent [outline-style:solid] focus:outline-1 focus:border-secondary focus:outline-secondary transition-all duration-200;
+	@apply placeholder:text-foreground h-[55px] rounded-[15px] border border-primary px-5 hover:border-secondary accent-primary w-full !outline-1 !-outline-offset-2 !outline-transparent ![outline-style:solid] focus:!outline-1 focus:border-secondary focus:!outline-secondary transition-all duration-200;
 }
 
 .smoothh-inputs-basic .input-text ~ span {
