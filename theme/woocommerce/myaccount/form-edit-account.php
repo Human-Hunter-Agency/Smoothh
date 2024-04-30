@@ -84,7 +84,7 @@ do_action('woocommerce_before_edit_account_form'); ?>
 
 	<p>
 		<?php wp_nonce_field('save_account_details', 'save-account-details-nonce'); ?>
-		<button type="submit" class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> !mt-5 !rounded-[14px] !py-3 !px-7 !bg-gradient-to-b !from-primary !to-secondary !text-white !text-center !font-medium !shadow-sm !shadow-black/15" name="save_account_details" value="<?php esc_attr_e('Save changes', 'woocommerce'); ?>"><?php esc_html_e('Save changes', 'woocommerce'); ?></button>
+		<button type="submit" class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> !mt-5 !rounded-[14px] !py-3 !px-7 !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !text-white !text-center !font-medium !shadow-sm !shadow-black/15" name="save_account_details" value="<?php esc_attr_e('Save changes', 'woocommerce'); ?>"><?php esc_html_e('Save changes', 'woocommerce'); ?></button>
 		<input type="hidden" name="action" value="save_account_details" />
 	</p>
 
