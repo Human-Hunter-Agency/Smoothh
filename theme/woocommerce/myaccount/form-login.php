@@ -107,7 +107,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
     ?>
       <div class="px-8 pt-9 pb-6 border border-[#888] rounded-[15px]">
         <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Order as a guest', 'smoothh'); ?></h2>
-        <a href="<?php echo get_permalink(wc_get_page_id('checkout')) . '?is_guest=true'; ?>" class="h-[55px] w-full !mb-3 flex items-center justify-center gap-4 !text-white !font-semibold rounded-2xl bg-gradient-to-b from-primary to-secondary py-2 px-5 xl:px-[50px] 2xl:px-8">
+        <a href="<?php echo get_permalink(wc_get_page_id('checkout')) . '?is_guest=true'; ?>" class="h-[55px] w-full !mb-3 flex items-center justify-center gap-4 !text-white !font-semibold rounded-2xl bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 transition-all duration-200 py-2 px-5 xl:px-[50px] 2xl:px-8">
           <?php esc_html_e('Continue as a guest', 'smoothh'); ?>
           <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
