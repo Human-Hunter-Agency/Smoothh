@@ -1,3 +1,7 @@
+/*
+Text Domain: smoothh
+*/
+
 /**
  * Front-end JavaScript
  *
@@ -246,7 +250,7 @@ function initCvFileLabelText(){
 			textEl.innerText = file.name
 			labelBtn.classList.add('hidden')
 		}else{
-			textEl.innerText = 'Załącz CV'
+			textEl.innerText = __('Include CV','smoothh')
 			labelBtn.classList.remove('hidden')
 		}
 	})
