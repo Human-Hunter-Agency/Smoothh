@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
       
       [email* your-email placeholder "Adres e-mail"]
       
-      <label for="your-file" class="flex justify-between items-center pl-4 pr-3 md:pl-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary bg-white placeholder:text-foreground text-foreground text-base cursor-pointer [&_br]:hidden" data-js="cv-file">
+      <label for="your-file" class="flex justify-between items-center pl-4 pr-3 md:pl-6 min-w-0 w-full h-[55px] rounded-2xl border border-primary hover:border-secondary transition duration-200 bg-white placeholder:text-foreground text-foreground text-base cursor-pointer [&_br]:hidden" data-js="cv-file">
         <span class="truncate" data-js="cv-file-name">
           Załącz CV
         </span>  
