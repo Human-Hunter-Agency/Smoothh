@@ -259,6 +259,11 @@ footer#page-footer .footer-bottom-menu {
 	@apply !mt-5
 }
 
+.place-order a.woocommerce-privacy-policy-link,
+.place-order a.woocommerce-terms-and-conditions-link{
+	@apply !no-underline hover:!underline
+}
+
 .woocommerce-address-fields .input-text,
 .woocommerce-EditAccountForm .input-text,
 .woocommerce-billing-fields .input-text,
