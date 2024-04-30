@@ -259,10 +259,6 @@ footer#page-footer .footer-bottom-menu {
 	@apply !mt-5
 }
 
-.woocommerce-orders-table__row .button{
-	@apply
-}
-
 .woocommerce-address-fields .input-text,
 .woocommerce-EditAccountForm .input-text,
 .woocommerce-billing-fields .input-text,
