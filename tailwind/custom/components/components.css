@@ -371,3 +371,7 @@ i.theChampLogin {
 .popup-hidden .popup-inner {
 	@apply translate-y-5
 }
+
+.woocommerce-password-strength{
+	@apply mt-2.5 rounded-[15px]
+}
