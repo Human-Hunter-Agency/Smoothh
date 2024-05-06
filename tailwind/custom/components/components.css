@@ -231,7 +231,7 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .show-password-input {
-	@apply hidden;
+	@apply !top-[17px] !m-0 !leading-6;
 }
 
 .smoothh-inputs-basic {
