@@ -19,7 +19,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
             <?php echo $product->get_image() ?>
             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
         </div>
-        <div class="flex-1 p-3 md:p-6">
+        <div class="w-full flex-1 p-3 md:p-6">
             <div class="flex gap-2.5 md:gap-5 justify-between mb-5">
                 <h4 class="text-lg md:text-xl text-primary font-semibold">
                     <?php echo get_the_title($product->get_id()) ?>
