@@ -33,8 +33,9 @@ if (post_password_required()) {
 	return;
 }
 
+$selected_categories = array(26);
 $prod_categories = $product->get_category_ids();
-$common_values = array_intersect($prod_categories, array(26));
+$common_values = array_intersect($prod_categories, $selected_categories);
 $show_select_cat_products = !empty($common_values);
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
@@ -55,8 +56,21 @@ $show_select_cat_products = !empty($common_values);
 				<?php the_content() ?>
 			</div>
 			<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end">
-				<?php if($show_select_cat_products == true): ?>
-					<div>other cat products</div>
+				<?php if($show_select_cat_products == true):
+					$products_args = array(
+						'exclude' => the_ID(),
+						'product_category_id' => $selected_categories
+					);
+					$products = wc_get_products($products_args);
+
+					?>
+					<select>
+						<?php foreach ($products as $product) : ?>
+							<option value="<?php echo get_permalink($product->get_id()) ?>">
+								<?php echo get_the_title($product->get_id()) ?>
+							</option>
+						<?php endforeach; ?>
+					</select>
 				<?php endif ?>
 				<div class="w-full flex <?php if($show_select_cat_products == true || $product->is_type('variable')): ?> gap-2 flex-col <?php else: ?> gap-4 <?php endif ?> items-end justify-end ">
 					<?php
