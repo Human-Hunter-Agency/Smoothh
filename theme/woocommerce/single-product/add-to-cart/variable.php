@@ -58,7 +58,7 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 				<?php endforeach; ?>
 			</div>
 
-			<div class="single_variation_wrap [&_.woocommerce-variation]:!hidden">
+			<div class="single_variation_wrap">
 				<?php
 				/**
 				 * Hook: woocommerce_before_single_variation.
