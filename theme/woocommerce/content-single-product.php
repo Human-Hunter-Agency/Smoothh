@@ -58,7 +58,7 @@ $show_select_cat_products = !empty($common_values);
 				<?php if($show_select_cat_products == true): ?>
 					<div>other cat products</div>
 				<?php endif ?>
-				<div class="ml-auto flex <?php if($show_select_cat_products == true): ?> gap-2 flex-col <?php else: ?> gap-4 <?php endif ?> items-end justify-end mb-5 ">
+				<div class="ml-auto flex <?php if($show_select_cat_products == true || $product->is_type('variable')): ?> gap-2 flex-col <?php else: ?> gap-4 <?php endif ?> items-end justify-end ">
 					<?php
 					/**
 					 * Hook: woocommerce_single_product_summary.
