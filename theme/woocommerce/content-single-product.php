@@ -64,7 +64,7 @@ $show_select_cat_products = !empty($common_values);
 					$products = wc_get_products($products_args);
 
 					?>
-					<div class="relative">
+					<div class="relative w-full">
 						<select id="product-select-from-cat">
 							<option><?php echo esc_html_e( 'Select option', 'woocommerce' ); ?></option>
 							<?php foreach ($products as $product) : ?>
@@ -78,7 +78,7 @@ $show_select_cat_products = !empty($common_values);
 						</svg>
 					</div>
 				<?php endif ?>
-				<div class="w-full flex <?php if($show_select_cat_products == true || $product->is_type('variable')): ?> gap-2 flex-col <?php else: ?> gap-4 <?php endif ?> items-end justify-end ">
+				<div class="ml-auto flex <?php if($show_select_cat_products == true || $product->is_type('variable')): ?> gap-2 flex-col <?php else: ?> gap-4 <?php endif ?> items-end justify-end ">
 					<?php
 					/**
 					 * Hook: woocommerce_single_product_summary.

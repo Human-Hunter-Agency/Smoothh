@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initRelatedPosts();
 	initCart();
 	initPopups();
+	initProdSelectRedirect();
 });
 
 function initMenuCollapse() {
@@ -456,4 +457,12 @@ function initPopups(){
 			popupContainer.classList.toggle('popup-hidden')
 		})
 	}) 
+}
+
+function initProdSelectRedirect(){
+	const select = document.getElementById('product-select-from-cat')
+	if (!select) return
+	select.addEventListener('change',(e)=>{
+		window.location.href = e.target.value
+	})
 }
