@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
           <line y1="5.50293" x2="10" y2="5.50293" stroke="#8117EE"/>
           <line x1="5" y1="0.5" x2="5" y2="10.5" stroke="#8117EE"/>
         </svg>
-      </label>[file* your-file id:your-file placeholder "Załącz CV"]
+      </label>[file* your-file id:your-file placeholder "Załącz CV*"]
   </div>
 
   <div class="message-container w-full mb-[30px]">
