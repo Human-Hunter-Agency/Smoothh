@@ -58,7 +58,7 @@ $show_select_cat_products = !empty($common_values);
 			<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end">
 				<?php if($show_select_cat_products == true):
 					$products_args = array(
-						'exclude' => $product->get_id(),
+						'exclude' => array($product->get_id()),
 						'product_category_id' => $selected_categories
 					);
 					$products = wc_get_products($products_args);
