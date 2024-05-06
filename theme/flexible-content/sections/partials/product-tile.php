@@ -14,7 +14,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
 
 <?php if($product): ?>
 
-    <a href="<?php echo get_permalink($product->get_id()) ?>" class="!h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl group <?php if ($is_swiper_slide) : ?> swiper-slide opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 <?php endif ?>">
+    <a href="<?php echo get_permalink($product->get_id()) ?>" class="!flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl group <?php if ($is_swiper_slide) : ?> swiper-slide !h-auto opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 <?php endif ?>">
         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
             <?php echo $product->get_image() ?>
             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
