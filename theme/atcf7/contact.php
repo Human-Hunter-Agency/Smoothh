@@ -9,11 +9,11 @@ if (!defined('ABSPATH')) {
 
 <div class="form-basic">
   <div class="mb-[18px] flex flex-col lg:flex-row gap-[18px] lg:[&_p]:w-[calc(33%_-_12px)] ">
-      [text* your-name placeholder "Imię i nazwisko"]
+      [text* your-name placeholder "Imię i nazwisko*"]
 
-      [tel* your-phone placeholder "Telefon"]
+      [tel* your-phone placeholder "Telefon*"]
       
-      [email* your-email placeholder "Adres e-mail"]
+      [email* your-email placeholder "Adres e-mail*"]
   </div>
 
   <div class="w-full mb-5">
