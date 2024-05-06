@@ -629,3 +629,20 @@ function custom_shortcode_atts_wpcf7_filter($out, $pairs, $atts)
 
 	return $out;
 }
+
+add_filter( 'woocommerce_get_script_data', 'pwd_strength_meter_settings', 20, 2 );
+
+function pwd_strength_meter_settings( $params, $handle  ) {
+
+if( $handle === 'wc-password-strength-meter' ) {
+
+    $params = array_merge( $params, array(
+
+        'min_password_strength' => 2,
+    ) );
+
+
+}
+return $params;
+
+}
