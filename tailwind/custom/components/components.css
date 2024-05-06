@@ -231,7 +231,11 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .show-password-input {
-	@apply !top-[17px] !m-0 !leading-6;
+	@apply !top-[17px] !m-0 !leading-6 after:text-gray-500;
+}
+
+.show-password-input.display-password:after {
+	@apply !text-primary;
 }
 
 .smoothh-inputs-basic {
