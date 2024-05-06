@@ -32,6 +32,10 @@ if (post_password_required()) {
 	echo get_the_password_form(); // WPCS: XSS ok.
 	return;
 }
+
+$prod_categories = $product->get_category_ids();
+$common_values = array_intersect($prod_categories, array(26));
+$show_select_cat_products = !empty($common_values);
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
 	<div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
@@ -50,22 +54,27 @@ if (post_password_required()) {
 			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-8 md:mb-[50px]">
 				<?php the_content() ?>
 			</div>
-			<div class="ml-auto flex gap-4 flex-col items-end justify-end mb-5 <?php if(!$product->is_type('variable')){echo ' md:flex-row md:gap-10';} ?> ">
-				<?php
-				/**
-				 * Hook: woocommerce_single_product_summary.
-				 *
-				 * @hooked woocommerce_template_single_title - 5 -removed
-				 * @hooked woocommerce_template_single_rating - 10 -removed
-				 * @hooked woocommerce_template_single_price - 10
-				 * @hooked woocommerce_template_single_excerpt - 20 -removed
-				 * @hooked woocommerce_template_single_add_to_cart - 30
-				 * @hooked woocommerce_template_single_meta - 40 -removed
-				 * @hooked woocommerce_template_single_sharing - 50
-				 * @hooked WC_Structured_Data::generate_product_data() - 60
-				 */
-				do_action('woocommerce_single_product_summary');
-				?>
+			<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end">
+				<?php if($show_select_cat_products == true): ?>
+					<div>other cat products</div>
+				<?php endif ?>
+				<div class="ml-auto flex <?php if($show_select_cat_products == true): ?> gap-2 flex-col <?php else: ?> gap-4 <?php endif ?> items-end justify-end mb-5 ">
+					<?php
+					/**
+					 * Hook: woocommerce_single_product_summary.
+					 *
+					 * @hooked woocommerce_template_single_title - 5 -removed
+					 * @hooked woocommerce_template_single_rating - 10 -removed
+					 * @hooked woocommerce_template_single_price - 10
+					 * @hooked woocommerce_template_single_excerpt - 20 -removed
+					 * @hooked woocommerce_template_single_add_to_cart - 30
+					 * @hooked woocommerce_template_single_meta - 40 -removed
+					 * @hooked woocommerce_template_single_sharing - 50
+					 * @hooked WC_Structured_Data::generate_product_data() - 60
+					 */
+					do_action('woocommerce_single_product_summary');
+					?>
+				</div>
 			</div>
 		</div>
 		<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
