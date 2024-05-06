@@ -58,19 +58,25 @@ $show_select_cat_products = !empty($common_values);
 			<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end">
 				<?php if($show_select_cat_products == true):
 					$products_args = array(
-						'exclude' => the_ID(),
+						'exclude' => $product->get_id(),
 						'product_category_id' => $selected_categories
 					);
 					$products = wc_get_products($products_args);
 
 					?>
-					<select>
-						<?php foreach ($products as $product) : ?>
-							<option value="<?php echo get_permalink($product->get_id()) ?>">
-								<?php echo get_the_title($product->get_id()) ?>
-							</option>
-						<?php endforeach; ?>
-					</select>
+					<div class="relative">
+						<select id="product-select-from-cat">
+							<option><?php echo esc_html_e( 'Select option', 'woocommerce' ); ?></option>
+							<?php foreach ($products as $product) : ?>
+								<option value="<?php echo get_permalink($product->get_id()) ?>">
+									<?php echo get_the_title($product->get_id()) ?>
+								</option>
+							<?php endforeach; ?>
+						</select>
+						<svg class="absolute z-10 right-5 top-[23px] transition duration-300 pointer-events-none" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12.9595 0.75L7 9.1368L1.04047 0.75H12.9595Z" fill="#8117EE" stroke="#8117EE"></path>
+						</svg>
+					</div>
 				<?php endif ?>
 				<div class="w-full flex <?php if($show_select_cat_products == true || $product->is_type('variable')): ?> gap-2 flex-col <?php else: ?> gap-4 <?php endif ?> items-end justify-end ">
 					<?php

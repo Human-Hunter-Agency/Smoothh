@@ -222,11 +222,13 @@ footer#page-footer .footer-bottom-menu {
 	@apply bg-secondary
 }
 
-.variations select {
+.variations select,
+#product-select-from-cat {
 	@apply relative z-0 h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 
-.variations select:focus ~ svg {
+.variations select:focus ~ svg,
+#product-select-from-cat:focus ~ svg{
 	@apply rotate-180;
 }
 
