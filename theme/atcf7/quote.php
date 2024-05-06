@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
 
       [tel* your-phone placeholder "Numer tel."]
 
-      [text your-location placeholder "Lokalizacja zatrudnienia"]
+      [text* your-location placeholder "Lokalizacja zatrudnienia"]
 
       [text your-company placeholder "Firma"]
 
