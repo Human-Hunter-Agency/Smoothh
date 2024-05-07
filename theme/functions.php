@@ -360,11 +360,13 @@ function woocommerce_smoothh_account_extra_fields()
 			'type'        => 'text',
 			'placeholder' => __('First name', 'woocommerce') . '*',
 			'required'    => true,
+			'autocomplete'=> 'given-name'
 		),
 		'last_name' => array(
 			'type'        => 'text',
 			'placeholder' => __('Last name', 'woocommerce') . '*',
 			'required'    => true,
+			'autocomplete'=> 'family-name'
 		),
 		'billing_company' => array(
 			'type'        => 'text',
@@ -380,6 +382,7 @@ function woocommerce_smoothh_account_extra_fields()
 			'type'        => 'tel',
 			'placeholder' => __('Phone', 'woocommerce') . '*',
 			'required'    => true,
+			'autocomplete'=> 'tel'
 		),
 	));
 }
