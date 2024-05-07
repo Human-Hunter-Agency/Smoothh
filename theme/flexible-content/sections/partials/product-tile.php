@@ -24,7 +24,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                 <h4 class="text-lg md:text-xl text-primary font-semibold">
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
-                <?php if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
+                <?php // if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
                     <div class="flex text-lg md:text-xl shrink-0">
                         <div class="flex flex-col items-end mr-2">
                             <span>
@@ -38,7 +38,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                         </div>
                         <span><?php esc_html_e('net','smoothh') ?></span>
                     </div>
-                <?php endif; ?>
+                <?php //endif; ?>
             </div>
             <p class="text-sm md:text-base prose-strong:font-semibold">
                 <?php echo $product->get_short_description() ?>

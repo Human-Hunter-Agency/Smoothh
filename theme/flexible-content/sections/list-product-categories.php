@@ -45,13 +45,13 @@
                                 <h4 class="text-lg md:text-xl text-primary font-semibold">
                                     <?php echo $cat->name ?> 
                                 </h4>
-                                <?php if (is_user_logged_in() || is_category_guest_available($cat)) : ?>
+                                <?php // if (is_user_logged_in() || is_category_guest_available($cat)) : ?>
                                     <span class="text-lg md:text-xl shrink-0">
                                         <?php
                                             echo number_format( $min_price, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
                                         ?> <?php esc_html_e('net','smoothh') ?>
                                     </span>
-                                <?php endif; ?>
+                                <?php // endif; ?>
                             </div>
                             <p class="text-sm md:text-base prose-strong:font-semibold">
                                 <?php echo $cat->description ?>
