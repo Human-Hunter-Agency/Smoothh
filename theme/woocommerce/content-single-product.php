@@ -55,7 +55,7 @@ $show_select_cat_products = !empty($common_values);
 			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-8 md:mb-[50px]">
 				<?php the_content() ?>
 			</div>
-			<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end">
+			<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end p-5 border-2 border-[#EFEFEF] rounded-2xl">
 				<?php if($show_select_cat_products == true):
 					$products_args = array(
 						'exclude' => array($product->get_id()),
