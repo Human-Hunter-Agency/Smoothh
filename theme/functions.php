@@ -580,7 +580,9 @@ function after_login_redirect($redirect_to)
 
 	if (is_user_logged_in() && $redirect_param !== false) {
 		return $redirect_param;
-	} else {
+	}elseif(empty($_GET)){
+		return $redirect_to;
+	}else {
 		return $panel_page_link;
 	}
 }
