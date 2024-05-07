@@ -581,9 +581,9 @@ function after_login_redirect($redirect_to)
 	if (is_user_logged_in() && $redirect_param !== false) {
 		return $redirect_param;
 	}elseif(empty($_GET)){
-		return $redirect_to;
-	}else {
 		return $panel_page_link;
+	}else {
+		return $redirect_to;
 	}
 }
 add_filter('woocommerce_login_redirect', 'after_login_redirect', 999);
