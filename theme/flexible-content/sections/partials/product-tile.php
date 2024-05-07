@@ -30,7 +30,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                             $has_variable_price = get_field('variable_price', $product->get_id());
                             if (isset($has_variable_price) && $has_variable_price):
                             ?> 
-                            <span class="text-foreground font-normal text-base md:text-lg mr-1"><?php esc_html_e('From','smoothh') ?></span>
+                            <span class="text-foreground font-normal text-base leading-loose mr-1"><?php esc_html_e('From','smoothh') ?></span>
                         <?php endif ?>
                         <div class="flex flex-col items-end mr-2">
                             <span>
