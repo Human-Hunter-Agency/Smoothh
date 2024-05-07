@@ -575,11 +575,13 @@ add_action('template_redirect', 'login_page_redirects');
 function after_login_redirect($redirect_to)
 {
 	$redirect_param = isset($_GET['redirect_to']) ? $_GET['redirect_to'] : false;
+	$panel_page_id = 650;
+	$panel_page_link = get_permalink($panel_page_id);
 
 	if (is_user_logged_in() && $redirect_param !== false) {
 		return $redirect_param;
 	} else {
-		return $redirect_to;
+		return $panel_page_link;
 	}
 }
 add_filter('woocommerce_login_redirect', 'after_login_redirect', 999);
