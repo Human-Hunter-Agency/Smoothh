@@ -66,10 +66,10 @@ $show_select_cat_products = !empty($common_values);
 					?>
 					<div class="relative w-full">
 						<select id="product-select-from-cat">
-							<option><?php echo esc_html_e( 'Select an option', 'woocommerce' ); ?></option>
-							<?php foreach ($products as $product) : ?>
-								<option value="<?php echo get_permalink($product->get_id()) ?>">
-									<?php echo get_the_title($product->get_id()) ?>
+							<option selected="selected"><?php echo get_the_title($product->get_id()) ?></option>
+							<?php foreach ($products as $cat_product) : ?>
+								<option value="<?php echo get_permalink($cat_product->get_id()) ?>">
+									<?php echo get_the_title($cat_product->get_id()) ?>
 								</option>
 							<?php endforeach; ?>
 						</select>
