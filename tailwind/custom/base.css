@@ -18,6 +18,9 @@ body {
 .input-invalid.input-invalid{
 	@apply invalid:!border-red-500 focus:invalid:!outline-red-500
 }
+.input-error{
+	@apply mt-2 text-red-500
+}
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
 [data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,

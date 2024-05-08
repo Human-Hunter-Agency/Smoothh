@@ -474,15 +474,28 @@ function initInputsValidation(){
 
 	inputs.forEach(input=>{
 		input.addEventListener('change',()=>{
-			input.reportValidity()
 			if (!input.checkValidity()) {
 				input.classList.add('input-invalid')
+				
+				let validationMessage = input.validationMessage
+				if (input.name == 'billing_company_nip') {
+					const nipPattern = new RegExp('^([0-9]){10}$')
+					if (!nipPattern.test(input.value)) {
+						validationMessage = input.title
+					}	
+				}
+				if (validationMessage) {
+					const errorEl = `<span class='input-error'>${input.validationMessage}</span>`
+					input.insertAdjacentHTML('afterend', errorEl )
+				}
 			}
 		})
 		
 		input.addEventListener('input',()=>{
 			if (input.checkValidity()) {
 				input.classList.remove('input-invalid')
+				const errorEl = input.parentElement.getElementsByClassName('input-error')
+				if(errorEl) errorEl.remove()
 			}
 		})
 	})
