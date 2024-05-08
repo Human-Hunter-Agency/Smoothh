@@ -473,7 +473,7 @@ function initInputsValidation(){
 	if (inputs.length < 1) return
 
 	inputs.forEach(input=>{
-		input.addEventListener('blur',()=>{
+		input.addEventListener('change',()=>{
 			input.reportValidity()
 			if (!input.checkValidity()) {
 				input.classList.add('input-invalid')
