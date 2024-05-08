@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initCart();
 	initPopups();
 	initProdSelectRedirect();
+	initInputsValidation();
 });
 
 function initMenuCollapse() {
@@ -464,5 +465,25 @@ function initProdSelectRedirect(){
 	if (!select) return
 	select.addEventListener('change',(e)=>{
 		window.location.href = e.target.value
+	})
+}
+
+function initInputsValidation(){
+	const inputs = document.querySelectorAll('.smoothh-inputs-validation input')
+	if (inputs.length < 1) return
+
+	inputs.forEach(input=>{
+		input.addEventListener('change',()=>{
+			input.reportValidity()
+			if (!input.checkValidity()) {
+				input.classList.add('input-invalid')
+			}
+		})
+		
+		input.addEventListener('input',()=>{
+			if (input.checkValidity()) {
+				input.classList.remove('input-invalid')
+			}
+		})
 	})
 }
