@@ -15,7 +15,8 @@ body {
 	@apply bg-background text-foreground font-sans;
 }
 
-.input-invalid.input-invalid{
+.input-invalid.input-invalid,
+.wpcf7-not-valid{
 	@apply invalid:!border-red-500 focus:invalid:!outline-red-500
 }
 .input-error{
