@@ -478,12 +478,11 @@ function initInputsValidation(){
 				input.classList.add('input-invalid')
 				
 				let validationMessage = input.validationMessage
+
 				if (input.name == 'billing_company_nip') {
-					const nipPattern = new RegExp('^([0-9]){10}$')
-					if (!nipPattern.test(input.value)) {
-						validationMessage = input.title
-					}	
+					validationMessage = input.title
 				}
+
 				if (validationMessage) {
 					const errorEl = input.parentElement.querySelector('.input-error')
 					if (errorEl) {
