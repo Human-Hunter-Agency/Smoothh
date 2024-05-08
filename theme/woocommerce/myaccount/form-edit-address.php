@@ -38,7 +38,7 @@ do_action('woocommerce_before_edit_account_address_form'); ?>
         <?php
         foreach ($address as $key => $field) {
 
-          if (isset($field['required']) && $field['required'] === true) {
+          if (!isset($field['custom_attributes']) && isset($field['required']) && $field['required'] === true) {
             $field['custom_attributes'] = array('required' => 'required');
           }
           
