@@ -380,7 +380,10 @@ function woocommerce_smoothh_account_extra_fields()
 			'type'        => 'text',
 			'placeholder' => __('NIP Number', 'smoothh') . '*',
 			'required'    => true,
-			'custom_attributes' => array( 'required' => 'required' ),
+			'custom_attributes' => array( 
+				'required' => 'required',
+				'pattern'  => '^\d+(?:-\d+)*$',
+				'title'    => __('Please, use digits only', 'smoothh')	 ),
 		),
 		'billing_phone' => array(
 			'type'        => 'tel',

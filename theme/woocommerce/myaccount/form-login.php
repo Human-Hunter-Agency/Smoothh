@@ -140,7 +140,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <!-- <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
-            <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" required name="email" placeholder="Adres e-mail*" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" />
+            <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="woocommerce-Input woocommerce-Input--text input-text" required name="email" placeholder="Adres e-mail*" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" />
           </p>
 
           <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
