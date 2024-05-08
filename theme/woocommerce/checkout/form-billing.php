@@ -36,11 +36,10 @@ defined('ABSPATH') || exit;
     <?php
     $fields = $checkout->get_checkout_fields('billing');
 
-    if (!isset($field['custom_attributes']) && isset($field['required']) && $field['required'] === true) {
-      $field['custom_attributes'] = array('required' => 'required');
-    }
-
     foreach ($fields as $key => $field) {
+      if (!isset($field['custom_attributes']) && isset($field['required']) && $field['required'] === true) {
+        $field['custom_attributes'] = array('required' => 'required');
+      }
       woocommerce_form_field($key, $field, $checkout->get_value($key));
     }
     ?>
