@@ -479,7 +479,7 @@ function initInputsValidation(){
 				
 				let validationMessage = input.validationMessage
 
-				if (input.name == 'billing_company_nip') {
+				if (input.name == 'billing_company_nip' || input.name == 'shipping_company_nip') {
 					validationMessage = input.title
 				}
 

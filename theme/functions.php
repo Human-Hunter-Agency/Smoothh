@@ -543,12 +543,20 @@ function smoothh_override_checkout_fields($fields)
 		'type'		   => 'text',
 		'required'     => true,
 		'label'  => __('NIP Number', 'smoothh'),
+		'custom_attributes' => array( 
+			'required' => 'required',
+			'pattern'  => '^([0-9]){10}$',
+			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
 
 	$fields['billing']['billing_company_nip'] = array(
 		'type'		   => 'text',
 		'required'     => true,
 		'label'  => __('NIP Number', 'smoothh'),
+		'custom_attributes' => array( 
+			'required' => 'required',
+			'pattern'  => '^([0-9]){10}$',
+			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
 
 	return $fields;
