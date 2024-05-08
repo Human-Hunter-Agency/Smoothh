@@ -485,8 +485,13 @@ function initInputsValidation(){
 					}	
 				}
 				if (validationMessage) {
-					const errorEl = `<span class='input-error'>${input.validationMessage}</span>`
-					input.insertAdjacentHTML('afterend', errorEl )
+					const errorEl = input.parentElement.querySelector('.input-error')
+					if (errorEl) {
+						errorEl.innerText = validationMessage
+					}else{
+						const errorElHTML = `<span class='input-error'>${validationMessage}</span>`
+						input.insertAdjacentHTML('afterend', errorElHTML )
+					}
 				}
 			}
 		})
@@ -494,7 +499,7 @@ function initInputsValidation(){
 		input.addEventListener('input',()=>{
 			if (input.checkValidity()) {
 				input.classList.remove('input-invalid')
-				const errorEl = input.parentElement.getElementsByClassName('input-error')
+				const errorEl = input.parentElement.querySelector('.input-error')
 				if(errorEl) errorEl.remove()
 			}
 		})
