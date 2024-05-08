@@ -16,7 +16,7 @@ body {
 }
 
 .input-invalid{
-	@apply invalid:!border-red-500 invalid:focus:!outline-red-500
+	@apply invalid:!border-red-500 focus:invalid:!outline-red-500
 }
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
