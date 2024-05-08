@@ -16,8 +16,13 @@ body {
 }
 
 .input-invalid.input-invalid,
-.wpcf7-not-valid{
+.wpcf7-not-valid,
+.woocommerce form .form-row.woocommerce-invalid input.input-text{
 	@apply invalid:!border-red-500 focus:invalid:!outline-red-500
+}
+
+.woocommerce form .form-row.woocommerce-invalid label{
+	@apply !text-red-500
 }
 
 .input-error{
