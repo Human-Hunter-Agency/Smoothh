@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
     [textarea your-message x3 placeholder "Twoja wiadomość"]
   </div>
   <div class="mb-5 text-center">
-    [checkbox* acceptance-939 "Przeczytałem/am i akceptuję <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/regulamin/">regulamin</a> oraz <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/polityka-prywatnosci/">politykę prywatności</a>"]
+    [acceptance* acceptance-939] Przeczytałem/am i akceptuję <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/regulamin/">regulamin</a> oraz <a href="http://serwer264851.lh.pl/autoinstalator/serwer264851.lh.pl/wordpress60112/index.php/polityka-prywatnosci/">politykę prywatności</a> [/acceptance]
   </div>
   <div class="btn-color relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 mb-9 ">
     [submit "Wyślij wiadomość"]
