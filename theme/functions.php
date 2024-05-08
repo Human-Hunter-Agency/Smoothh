@@ -360,28 +360,33 @@ function woocommerce_smoothh_account_extra_fields()
 			'type'        => 'text',
 			'placeholder' => __('First name', 'woocommerce') . '*',
 			'required'    => true,
+			'custom_attributes' => array( 'required' => 'required' ),
 			'autocomplete'=> 'given-name'
 		),
 		'last_name' => array(
 			'type'        => 'text',
 			'placeholder' => __('Last name', 'woocommerce') . '*',
 			'required'    => true,
+			'custom_attributes' => array( 'required' => 'required' ),
 			'autocomplete'=> 'family-name'
 		),
 		'billing_company' => array(
 			'type'        => 'text',
 			'placeholder' => __('Company Name', 'smoothh') . '*',
 			'required'    => true,
+			'custom_attributes' => array( 'required' => 'required' ),
 		),
 		'billing_company_nip' => array(
 			'type'        => 'text',
 			'placeholder' => __('NIP Number', 'smoothh') . '*',
 			'required'    => true,
+			'custom_attributes' => array( 'required' => 'required' ),
 		),
 		'billing_phone' => array(
 			'type'        => 'tel',
 			'placeholder' => __('Phone', 'woocommerce') . '*',
 			'required'    => true,
+			'custom_attributes' => array( 'required' => 'required' ),
 			'autocomplete'=> 'tel'
 		),
 	));
