@@ -133,20 +133,20 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
               <!-- <label for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
-              <input type="text" class="woocommerce-Input woocommerce-Input--text input-text " name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
+              <input type="text" class="woocommerce-Input woocommerce-Input--text input-text " required name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
             </p>
 
           <?php endif; ?>
 
           <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
             <!-- <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
-            <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" placeholder="Adres e-mail*" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" />
+            <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" required name="email" placeholder="Adres e-mail*" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" />
           </p>
 
           <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
               <!-- <label for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
-              <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" placeholder="Hasło*" />
+              <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" required name="password" id="reg_password" autocomplete="new-password" placeholder="Hasło*" />
             </p>
           <?php else : ?>
 
