@@ -19,8 +19,13 @@ body {
 .wpcf7-not-valid{
 	@apply invalid:!border-red-500 focus:invalid:!outline-red-500
 }
+
 .input-error{
 	@apply mt-2 text-red-500
+}
+
+.wpcf7-response-output{
+	@apply !hidden
 }
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
