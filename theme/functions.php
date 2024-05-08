@@ -383,7 +383,7 @@ function woocommerce_smoothh_account_extra_fields()
 			'custom_attributes' => array( 
 				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
-				'title'    => __('NIP number requires 10 digits', 'smoothh')	 ),
+				'title'    => __('NIP number requires 10 digits', 'smoothh')),
 		),
 		'billing_phone' => array(
 			'type'        => 'tel',
@@ -485,6 +485,10 @@ function smoothh_billing_address_add_nip($fields)
 		'type'		   => 'text',
 		'required'     => true,
 		'label'  => __('NIP Number', 'smoothh'),
+		'custom_attributes' => array( 
+			'required' => 'required',
+			'pattern'  => '^([0-9]){10}$',
+			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
 
 	return $fields;
@@ -498,6 +502,10 @@ function smoothh_shipping_address_add_nip($fields)
 		'type'		   => 'text',
 		'required'     => true,
 		'label'  => __('NIP Number', 'smoothh'),
+		'custom_attributes' => array( 
+			'required' => 'required',
+			'pattern'  => '^([0-9]){10}$',
+			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
 
 	return $fields;
