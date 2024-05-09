@@ -372,8 +372,7 @@ function woocommerce_smoothh_account_extra_fields()
 		),
 		'billing_company' => array(
 			'type'        => 'text',
-			'placeholder' => __('Company Name', 'smoothh') . '*',
-			'required'    => true,
+			'placeholder' => __('Company Name', 'smoothh'),
 			'custom_attributes' => array( 'required' => 'required' ),
 		),
 		'billing_company_nip' => array(
@@ -385,7 +384,7 @@ function woocommerce_smoothh_account_extra_fields()
 		),
 		'billing_phone' => array(
 			'type'        => 'tel',
-			'placeholder' => __('Phone', 'woocommerce') . '*',
+			'placeholder' => __('Phone Number', 'woocommerce'),
 			'autocomplete'=> 'tel'
 		),
 	));
@@ -422,9 +421,6 @@ function smoothh_validate_extra_fields($errors)
 	}
 	if (isset($_POST['last_name']) && empty($_POST['last_name'])) {
 		$errors->add('last_name_error', __('Last name is required.', 'woocommerce'));
-	}
-	if (isset($_POST['billing_company']) && empty($_POST['billing_company'])) {
-		$errors->add('billing_company_error', __('Company Name is required.', 'woocommerce'));
 	}
 }
 
