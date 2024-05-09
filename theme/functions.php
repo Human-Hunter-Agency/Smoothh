@@ -386,8 +386,6 @@ function woocommerce_smoothh_account_extra_fields()
 		'billing_phone' => array(
 			'type'        => 'tel',
 			'placeholder' => __('Phone', 'woocommerce') . '*',
-			'required'    => true,
-			'custom_attributes' => array( 'required' => 'required' ),
 			'autocomplete'=> 'tel'
 		),
 	));
@@ -427,9 +425,6 @@ function smoothh_validate_extra_fields($errors)
 	}
 	if (isset($_POST['billing_company']) && empty($_POST['billing_company'])) {
 		$errors->add('billing_company_error', __('Company Name is required.', 'woocommerce'));
-	}
-	if (isset($_POST['billing_phone']) && empty($_POST['billing_phone'])) {
-		$errors->add('billing_phone_error', __('Phone is required.', 'woocommerce'));
 	}
 }
 
@@ -553,8 +548,17 @@ function smoothh_override_checkout_fields($fields)
 	$fields['shipping']['shipping_company']['class'] = array('form-row-first');
 	$fields['billing']['billing_company']['class'] = array('form-row-first');
 
-	$fields['shipping']['shipping_postcode']['class'] = array('form-row-first');
-	$fields['billing']['billing_postcode']['class'] = array('form-row-first');
+	$fields['shipping']['shipping_email']['class'] = array('form-row-first');
+	$fields['billing']['billing_email']['class'] = array('form-row-first');
+	
+	$fields['shipping']['shipping_phone']['class'] = array('form-row-last');
+	$fields['billing']['billing_phone']['class'] = array('form-row-last');
+	$fields['shipping']['shipping_phone']['priority'] = 120;
+	$fields['billing']['billing_phone']['priority'] = 120;
+
+
+	// $fields['shipping']['shipping_postcode']['class'] = array('form-row-first');
+	// $fields['billing']['billing_postcode']['class'] = array('form-row-first');
 
 	// $fields['shipping']['shipping_city']['class'] = array('form-row-last');
 	// $fields['billing']['billing_city']['class'] = array('form-row-last');
@@ -575,7 +579,7 @@ function smoothh_override_default_locale_fields( $fields ) {
     $fields['city']['class'] = array('form-row-last');
     $fields['country']['priority'] = 75;
     unset($fields['address_2']);
-	
+
     return $fields;
 }
 add_filter( 'woocommerce_default_address_fields', 'smoothh_override_default_locale_fields' );
