@@ -378,7 +378,7 @@ function woocommerce_smoothh_account_extra_fields()
 		),
 		'billing_company_nip' => array(
 			'type'        => 'text',
-			'placeholder' => __('NIP Number', 'smoothh') . '*',
+			'placeholder' => __('NIP Number', 'smoothh'),
 			'custom_attributes' => array( 
 				'pattern'  => '^([0-9]){10}$',
 				'title'    => __('NIP number requires 10 digits', 'smoothh')),
