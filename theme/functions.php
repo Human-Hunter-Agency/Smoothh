@@ -379,9 +379,7 @@ function woocommerce_smoothh_account_extra_fields()
 		'billing_company_nip' => array(
 			'type'        => 'text',
 			'placeholder' => __('NIP Number', 'smoothh') . '*',
-			'required'    => true,
 			'custom_attributes' => array( 
-				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
 				'title'    => __('NIP number requires 10 digits', 'smoothh')),
 		),
@@ -429,9 +427,6 @@ function smoothh_validate_extra_fields($errors)
 	}
 	if (isset($_POST['billing_company']) && empty($_POST['billing_company'])) {
 		$errors->add('billing_company_error', __('Company Name is required.', 'woocommerce'));
-	}
-	if (isset($_POST['billing_company_nip']) && empty($_POST['billing_company_nip'])) {
-		$errors->add('billing_company_nip_error', __('Company NIP is required.', 'smoothh'));
 	}
 	if (isset($_POST['billing_phone']) && empty($_POST['billing_phone'])) {
 		$errors->add('billing_phone_error', __('Phone is required.', 'woocommerce'));
@@ -483,10 +478,8 @@ function smoothh_billing_address_add_nip($fields)
 
 	$fields['billing_company_nip']   = array(
 		'type'		   => 'text',
-		'required'     => true,
 		'label'  => __('NIP Number', 'smoothh'),
 		'custom_attributes' => array( 
-			'required' => 'required',
 			'pattern'  => '^([0-9]){10}$',
 			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
@@ -500,10 +493,8 @@ function smoothh_shipping_address_add_nip($fields)
 
 	$fields['shipping_company_nip'] = array(
 		'type'		   => 'text',
-		'required'     => true,
 		'label'  => __('NIP Number', 'smoothh'),
 		'custom_attributes' => array( 
-			'required' => 'required',
 			'pattern'  => '^([0-9]){10}$',
 			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
@@ -541,20 +532,16 @@ function smoothh_override_checkout_fields($fields)
 {
 	$fields['shipping']['shipping_company_nip'] = array(
 		'type'		   => 'text',
-		'required'     => true,
 		'label'  => __('NIP Number', 'smoothh'),
 		'custom_attributes' => array( 
-			'required' => 'required',
 			'pattern'  => '^([0-9]){10}$',
 			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
 
 	$fields['billing']['billing_company_nip'] = array(
 		'type'		   => 'text',
-		'required'     => true,
 		'label'  => __('NIP Number', 'smoothh'),
 		'custom_attributes' => array( 
-			'required' => 'required',
 			'pattern'  => '^([0-9]){10}$',
 			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
