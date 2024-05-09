@@ -550,33 +550,16 @@ function smoothh_override_checkout_fields($fields)
 			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
 
-	$fields['shipping']['shipping_company'] = array(
-		'class' => array('form-row-first'),
-	);
-	$fields['billing']['billing_company'] = array(
-		'class' => array('form-row-first'),
-	);
+	$fields['shipping']['shipping_company']['class'] = array('form-row-first');
+	$fields['billing']['billing_company']['class'] = array('form-row-first');
 
-	$fields['shipping']['shipping_postcode'] = array(
-		'class' => array('form-row-first'),
-	);
-	$fields['billing']['billing_postcode'] = array(
-		'class' => array('form-row-first'),
-	);
-	$fields['shipping']['shipping_city'] = array(
-		'class' => array('form-row-last'),
-	);
-	$fields['billing']['billing_city'] = array(
-		'class' => array('form-row-last'),
-	);
+	$fields['shipping']['shipping_postcode']['class'] = array('form-row-first');
+	$fields['billing']['billing_postcode']['class'] = array('form-row-first');
+	$fields['shipping']['shipping_city']['class'] = array('form-row-last');
+	$fields['billing']['billing_city']['class'] = array('form-row-last');
 
-	$fields['billing']['billing_country'] = array(
-		'priority' => 75
-	);
-	$fields['shipping']['shipping_country'] = array(
-		'priority' => 75
-	);
-
+	$fields['billing']['billing_country']['priority'] = 75;
+	$fields['shipping']['shipping_country']['priority'] = 75;
 
 	$fields['shipping']['shipping_address_2'] = false;
 	$fields['billing']['billing_address_2'] = false;
