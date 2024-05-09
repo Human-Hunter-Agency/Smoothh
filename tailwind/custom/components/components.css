@@ -246,6 +246,9 @@ footer#page-footer .footer-bottom-menu {
 .smoothh-inputs-basic .form-row {
 	@apply !m-0 !p-0 w-full lg:w-[calc(50%_-_10px)] xl:w-[calc(33.33%_-_32px)];
 }
+.form-row .optional{
+	@apply hidden
+}
 .woocommerce form .form-row [placeholder]:focus::-webkit-input-placeholder{
 	opacity: 1 !important;
 }

@@ -471,9 +471,13 @@ add_filter('woocommerce_billing_fields', 'smoothh_billing_address_add_nip');
 function smoothh_billing_address_add_nip($fields)
 {
 
+	$fields['billing_company']['class'] = array('form-row-first');
+
 	$fields['billing_company_nip']   = array(
 		'type'		   => 'text',
 		'label'  => __('NIP Number', 'smoothh'),
+		'priority'=> 35,
+		'class' => array('form-row-last'),
 		'custom_attributes' => array( 
 			'pattern'  => '^([0-9]){10}$',
 			'title'    => __('NIP number requires 10 digits', 'smoothh')),
@@ -486,9 +490,13 @@ add_filter('woocommerce_shipping_fields', 'smoothh_shipping_address_add_nip');
 function smoothh_shipping_address_add_nip($fields)
 {
 
+	$fields['shipping_company']['class'] = array('form-row-first');
+
 	$fields['shipping_company_nip'] = array(
 		'type'		   => 'text',
 		'label'  => __('NIP Number', 'smoothh'),
+		'priority'=> 35,
+		'class' => array('form-row-last'),
 		'custom_attributes' => array( 
 			'pattern'  => '^([0-9]){10}$',
 			'title'    => __('NIP number requires 10 digits', 'smoothh')),
