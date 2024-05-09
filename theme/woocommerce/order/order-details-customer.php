@@ -33,9 +33,9 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 	<address>
 		<?php echo wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
 
-		<?php if ( get_post_meta( $order->get_id(), 'billing_company_nip', true ) ) : ?>
-			NIP: <?php echo esc_html( get_post_meta( $order->get_id(), 'billing_company_nip', true ) ); ?>
+		<?php if ( $order->get_meta('billing_company_nip') ) : ?>
 			<br>
+			NIP: <?php echo esc_html( $order->get_meta('billing_company_nip') ); ?>
 		<?php endif; ?>
 		
 		<?php if ( $order->get_billing_phone() ) : ?>
