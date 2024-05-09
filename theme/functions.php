@@ -574,8 +574,8 @@ function smoothh_override_default_locale_fields( $fields ) {
     $fields['postcode']['class'] = array('form-row-first');
     $fields['city']['class'] = array('form-row-last');
     $fields['country']['priority'] = 75;
-    $fields['address_1'] = false;
-    $fields['address_2'] = false;
+    unset($fields['address_2']);
+	
     return $fields;
 }
 add_filter( 'woocommerce_default_address_fields', 'smoothh_override_default_locale_fields' );
