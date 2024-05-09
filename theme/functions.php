@@ -575,9 +575,23 @@ add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
 
 function smoothh_checkout_fields_update_order_meta( $order_id ) {
 	update_post_meta( $order_id, 'billing_company_nip', sanitize_text_field( $_POST['billing_company_nip'] ) );
+	update_post_meta( $order_id, 'shipping_company_nip', sanitize_text_field( $_POST['shipping_company_nip'] ) );
 }
 
 add_action( 'woocommerce_checkout_update_order_meta', 'smoothh_checkout_fields_update_order_meta' );
+
+// Display the custom-field in admin orders view
+function my_custom_checkout_field_display_admin_order_meta_billing($order)
+{     
+	echo '<p>'.__('NIP Number', 'smoothh').': ' . get_post_meta( $order->get_id(), 'billing_company_nip', true ) . '</p>'; 
+}
+add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta_billing', 10, 1 );
+
+function my_custom_checkout_field_display_admin_order_meta_shipping($order)
+{     
+	echo '<p>'.__('NIP Number', 'smoothh').': ' . get_post_meta( $order->get_id(), 'shipping_company_nip', true ) . '</p>'; 
+}
+add_action( 'woocommerce_admin_order_data_after_shipping_address', 'my_custom_checkout_field_display_admin_order_meta_shipping', 10, 1 );
 
 function smoothh_override_default_locale_fields( $fields ) {
     $fields['postcode']['class'] = array('form-row-first');
