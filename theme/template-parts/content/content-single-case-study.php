@@ -99,7 +99,7 @@ $logoHeader = get_field('header_clients_logos');
 </section>
 
 <section id="clients-logos">
-	<?php get_template_part('flexible-content/sections/swiper-customer-logos', '', array('header' => $logoHeader));?>
+	<?php get_template_part('flexible-content/sections/swiper-customer-logos', '', array('header' => $logoHeader,'description'=> false));?>
 </section>
 
 <section class="cta">
