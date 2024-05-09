@@ -555,6 +555,8 @@ function smoothh_override_checkout_fields($fields)
 	$fields['billing']['billing_phone']['class'] = array('form-row-last');
 	$fields['shipping']['shipping_phone']['priority'] = 120;
 	$fields['billing']['billing_phone']['priority'] = 120;
+	$fields['shipping']['shipping_phone']['required'] = false;
+	$fields['billing']['billing_phone']['required'] = false;
 
 
 	// $fields['shipping']['shipping_postcode']['class'] = array('form-row-first');
