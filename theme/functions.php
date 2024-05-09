@@ -560,19 +560,8 @@ function smoothh_override_checkout_fields($fields)
 	$fields['billing']['billing_phone']['priority'] = 120;
 	$fields['shipping']['shipping_phone']['required'] = false;
 	$fields['billing']['billing_phone']['required'] = false;
-
-
-	// $fields['shipping']['shipping_postcode']['class'] = array('form-row-first');
-	// $fields['billing']['billing_postcode']['class'] = array('form-row-first');
-
-	// $fields['shipping']['shipping_city']['class'] = array('form-row-last');
-	// $fields['billing']['billing_city']['class'] = array('form-row-last');
-
-	// $fields['shipping']['shipping_country']['priority'] = 75;
-	// $fields['billing']['billing_country']['priority'] = 75;
-
-	// $fields['shipping']['shipping_address_2'] = false;
-	// $fields['billing']['billing_address_2'] = false;
+	unset($fields['shipping']['shipping_phone']['custom_attributes']);
+	unset($fields['billing']['billing_phone']['custom_attributes']);
 
 	return $fields;
 }
