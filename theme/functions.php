@@ -587,12 +587,6 @@ function my_custom_checkout_field_display_admin_order_meta_billing($order)
 }
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta_billing', 10, 1 );
 
-function my_custom_checkout_field_display_admin_order_meta_shipping($order)
-{     
-	echo '<p>'.__('NIP Number', 'smoothh').': ' . get_post_meta( $order->get_id(), 'shipping_company_nip', true ) . '</p>'; 
-}
-add_action( 'woocommerce_admin_order_data_after_shipping_address', 'my_custom_checkout_field_display_admin_order_meta_shipping', 10, 1 );
-
 function smoothh_override_default_locale_fields( $fields ) {
     $fields['postcode']['class'] = array('form-row-first');
     $fields['city']['class'] = array('form-row-last');
