@@ -384,7 +384,9 @@ function woocommerce_smoothh_account_extra_fields()
 		'billing_phone' => array(
 			'type'        => 'tel',
 			'placeholder' => __('Phone Number', 'woocommerce'),
-			'autocomplete'=> 'tel'
+			'autocomplete'=> 'tel',
+			'required'    => false,
+			'custom_attributes' => array()
 		),
 	));
 }
