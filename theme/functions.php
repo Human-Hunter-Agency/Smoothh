@@ -573,6 +573,12 @@ function smoothh_override_checkout_fields($fields)
 
 add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
 
+function smoothh_checkout_fields_update_order_meta( $order_id ) {
+	update_post_meta( $order_id, 'billing_company_nip', sanitize_text_field( $_POST['billing_company_nip'] ) );
+}
+
+add_action( 'woocommerce_checkout_update_order_meta', 'smoothh_checkout_fields_update_order_meta' );
+
 function smoothh_override_default_locale_fields( $fields ) {
     $fields['postcode']['class'] = array('form-row-first');
     $fields['city']['class'] = array('form-row-last');
