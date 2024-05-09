@@ -2,6 +2,7 @@
 /** Template to display 'Swiper z logami klientów' - swiper_customer_logos */
 
     $header = $args['header'];
+    $description = $args['description'];
     $client_logos = get_field('client_logos', 'option');
 
 ?>
@@ -11,9 +12,12 @@
     <?php if ($header) : ?>
         <div class="container">
             <div class="relative z-0">
-                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-5">
+                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl <?php if ($description) : ?> mb-9 md:mb-14 <?php else: ?> mb-5 <?php endif; ?>">
                     <?php echo esc_html($header); ?>
                 </h2>
+                <?php if ($description) : ?>
+                    <div class="prose-smoothh prose md:prose-xl text-center mb-10 md:mb-14" ><?php echo $description; ?></div>
+                <?php endif; ?>
             </div>
         </div>
     <?php endif; ?>
