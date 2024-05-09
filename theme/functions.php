@@ -555,19 +555,30 @@ function smoothh_override_checkout_fields($fields)
 
 	$fields['shipping']['shipping_postcode']['class'] = array('form-row-first');
 	$fields['billing']['billing_postcode']['class'] = array('form-row-first');
-	$fields['shipping']['shipping_city']['class'] = array('form-row-last');
-	$fields['billing']['billing_city']['class'] = array('form-row-last');
 
-	$fields['billing']['billing_country']['priority'] = 75;
-	$fields['shipping']['shipping_country']['priority'] = 75;
+	// $fields['shipping']['shipping_city']['class'] = array('form-row-last');
+	// $fields['billing']['billing_city']['class'] = array('form-row-last');
 
-	$fields['shipping']['shipping_address_2'] = false;
-	$fields['billing']['billing_address_2'] = false;
+	// $fields['shipping']['shipping_country']['priority'] = 75;
+	// $fields['billing']['billing_country']['priority'] = 75;
+
+	// $fields['shipping']['shipping_address_2'] = false;
+	// $fields['billing']['billing_address_2'] = false;
 
 	return $fields;
 }
 
 add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
+
+function smoothh_override_default_locale_fields( $fields ) {
+    $fields['postcode']['class'] = array('form-row-first');
+    $fields['city']['class'] = array('form-row-last');
+    $fields['country']['priority'] = 75;
+    $fields['address_1'] = false;
+    $fields['address_2'] = false;
+    return $fields;
+}
+add_filter( 'woocommerce_default_address_fields', 'smoothh_override_default_locale_fields' );
 
 
 function login_page_redirects()
