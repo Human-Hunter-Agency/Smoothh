@@ -576,7 +576,7 @@ add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
 function smoothh_checkout_fields_update_order_meta( $order_id ) {
 	if ( ! empty( $_POST['billing_company_nip'] ) ) {
         $order = wc_get_order( $order_id );
-        $order->update_meta_data( 'My billing_company_nip', sanitize_text_field( $_POST['billing_company_nip'] ) );
+        $order->update_meta_data( 'billing_company_nip', sanitize_text_field( $_POST['billing_company_nip'] ) );
         $order->save_meta_data();
     }
 }
@@ -586,7 +586,7 @@ add_action( 'woocommerce_checkout_update_order_meta', 'smoothh_checkout_fields_u
 // Display the custom-field in admin orders view
 function my_custom_checkout_field_display_admin_order_meta_billing($order)
 {     
-	echo '<p>'.__('NIP Number', 'smoothh').': ' . $order->get_meta('billing_company_nip') . '</p>'; 
+	echo '<p><strong>'.__('NIP Number', 'smoothh').': </strong><span>' . $order->get_meta('billing_company_nip') . '</span></p>'; 
 }
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta_billing', 10, 1 );
 
