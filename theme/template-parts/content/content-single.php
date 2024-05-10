@@ -13,7 +13,17 @@ $author = get_field('author');
 $cta = get_field('cta');
 ?>
 
-<article id="post-<?php the_ID(); ?>" data-js-post-id="<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" data-js-post-id="<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
+	<?php if ($title) : ?>
+		<meta itemprop="name" content="<?php esc_html($title); ?>">
+	<?php endif; ?>
+	<?php if ($author) : ?>
+		<meta itemprop="author" content="<?php esc_html($author); ?>">
+	<?php endif; ?>
+	<meta itemprop="description" content="<?php the_excerpt(); ?>">
+	<?php if (get_post_thumbnail_id( $post->ID )) : ?>
+		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?>">
+	<?php endif; ?>
 
 	<div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
 
