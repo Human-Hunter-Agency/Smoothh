@@ -24,6 +24,7 @@
 	if ($sections) {
 		$hero_img_url = array_reduce($sections, function($carry, $section) {
 			if ($section['acf_fc_layout'] == 'hero' && isset($section['hero_background']) && isset($section['hero_background']['url'])) {
+				echo $section['hero_background']['url'];
 				return $section['hero_background']['url'];
 			}
 			return $carry;
