@@ -19,9 +19,9 @@ module.exports = {
 			padding: {
 				DEFAULT: '1.25rem',
 				lg: '2rem',
-				xl: '3rem',
-				'2xl': '5rem',
-				'3xl': '9rem'
+				xl: '4rem',
+				'2xl': '6rem',
+				'3xl': '10rem'
 			},
 		},
 		extend: {
