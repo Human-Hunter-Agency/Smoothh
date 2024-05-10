@@ -249,6 +249,9 @@ footer#page-footer .footer-bottom-menu {
 .form-row .optional{
 	@apply hidden
 }
+.woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last{
+	width: 49% !important
+}
 .woocommerce form .form-row [placeholder]:focus::-webkit-input-placeholder{
 	opacity: 1 !important;
 }
