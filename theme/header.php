@@ -19,12 +19,22 @@
 			return $carry || $section['acf_fc_layout'] == 'list_faq';
 		}, false);
 	}
+
+	$has_hero_img = false;
+	if ($sections) {
+		$has_hero_img = array_reduce($sections, function($carry, $section) {
+			return $carry || ($section['acf_fc_layout'] == 'hero' && isset($section['hero_background']) && isset($section['hero_background']['url']));
+		}, false);
+	}
 ?>
 <html <?php language_attributes(); ?> <?php if($has_faq){ echo 'itemscope itemtype="https://schema.org/FAQPage"'; } ?> >
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<?php if($has_hero_img): ?>
+		<meta property="og:image" content="<?php echo $section['hero_background']['url'] ?>" />
+	<?php endif; ?>
 	<?php wp_head(); ?>
 </head>
 
