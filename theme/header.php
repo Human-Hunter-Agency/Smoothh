@@ -11,7 +11,14 @@
  */
 
 ?><!doctype html>
-<html <?php language_attributes(); ?>>
+<?php
+	$sections = get_field( 'sections' );
+
+	$has_faq = array_reduce($sections, function($carry, $section) {
+        return $carry || $section['acf_fc_layout'] == 'list_faq';
+    }, false);
+?>
+<html <?php language_attributes(); ?> <?php if($has_faq){ echo 'itemscope itemtype="https://schema.org/FAQPage"'; } ?> >
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
