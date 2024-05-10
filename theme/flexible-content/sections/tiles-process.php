@@ -10,7 +10,7 @@
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
-            <h2 class="text-3xl md:text-5xl text-bold font-bold mb-10 md:mb-14 text-center" ><?php echo esc_html($header); ?></h1>
+            <h2 class="text-3xl md:text-5xl text-bold font-bold mb-10 md:mb-14 text-center" ><?php echo esc_html($header); ?></h2>
         <?php endif; ?>        
     </div>
     <div class="w-full overflow-hidden ">
