@@ -19,7 +19,7 @@ $cta = get_field('cta');
 		<meta itemprop="author" content="<?php echo esc_html($author); ?>">
 	<?php endif; ?>
 
-	<meta itemprop="datePublished" content="<?php echo get_post_time(); ?>">
+	<meta itemprop="datePublished" content="<?php the_time('c'); ?>">
 	<?php if (get_post_thumbnail_id( $post->ID )) : ?>
 		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?>">
 	<?php endif; ?>
@@ -49,7 +49,7 @@ $cta = get_field('cta');
 					}
 					$post_time = get_post_time();
 					$formatted_time = date('d.m.Y', $post_time);
-					echo 'Data publikacji: ' . $formatted_time
+					echo __('Date published: ','smoothh') . $formatted_time
 					?>
 				</span>
 			</div>
