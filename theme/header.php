@@ -13,10 +13,12 @@
 ?><!doctype html>
 <?php
 	$sections = get_field( 'sections' );
-
-	$has_faq = array_reduce($sections, function($carry, $section) {
-        return $carry || $section['acf_fc_layout'] == 'list_faq';
-    }, false);
+	$has_faq = false;
+	if ($sections) {
+		$has_faq = array_reduce($sections, function($carry, $section) {
+			return $carry || $section['acf_fc_layout'] == 'list_faq';
+		}, false);
+	}
 ?>
 <html <?php language_attributes(); ?> <?php if($has_faq){ echo 'itemscope itemtype="https://schema.org/FAQPage"'; } ?> >
 <head>
