@@ -28,7 +28,8 @@
 			}
 			return $carry;
 		}, false);
-	}elseif(get_post_thumbnail_id( $post->ID )){
+	}
+	if($hero_img_url == false && get_post_thumbnail_id( $post->ID )){
 		$hero_img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 	}
 	echo $hero_img_url;
