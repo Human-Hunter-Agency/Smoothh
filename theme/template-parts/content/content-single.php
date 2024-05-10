@@ -14,16 +14,12 @@ $cta = get_field('cta');
 ?>
 
 <article id="post-<?php the_ID(); ?>" data-js-post-id="<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
-	<?php if ($title) : ?>
-		<meta itemprop="name" content="<?php echo esc_html($title); ?>">
-	<?php endif; ?>
+		<meta itemprop="name" content="<?php the_title(); ?>">
 	<?php if ($author) : ?>
 		<meta itemprop="author" content="<?php echo esc_html($author); ?>">
 	<?php endif; ?>
-	<?php if ($author) : ?>
-		<meta itemprop="author" content="<?php echo esc_html($author); ?>">
-	<?php endif; ?>
-	<meta itemprop="datePublished" content="<?php echo get_post_time(); ?>">
+
+	<meta itemprop="datePublished" content="<?php echo date("c", strtotime(get_post_time())); ?>">
 	<?php if (get_post_thumbnail_id( $post->ID )) : ?>
 		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?>">
 	<?php endif; ?>
