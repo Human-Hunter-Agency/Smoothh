@@ -18,7 +18,16 @@ $cta = get_field('cta');
 $logoHeader = get_field('header_clients_logos');
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
+	<meta itemprop="headline" content="<?php the_title(); ?>">
+	<meta itemprop="url" content="<?php echo get_permalink(); ?>">
+	<?php if ($author) : ?>
+		<meta itemprop="author" content="<?php echo esc_html($author); ?>">
+	<?php endif; ?>
+	<meta itemprop="datePublished" content="<?php the_time('c'); ?>">
+	<?php if (get_post_thumbnail_id( $post->ID )) : ?>
+		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?>">
+	<?php endif; ?>
 
 	<div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
 
