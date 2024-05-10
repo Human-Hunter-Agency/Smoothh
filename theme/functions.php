@@ -470,7 +470,6 @@ function smoothh_billing_address_add_nip($fields)
 	$fields['billing_phone']['required'] = false;
 	$fields['billing_phone']['custom_attributes'] = array();
 
-
 	$fields['billing_company_nip']   = array(
 		'type'		   => 'text',
 		'label'  => __('NIP Number', 'smoothh'),
@@ -489,8 +488,11 @@ function smoothh_shipping_address_add_nip($fields)
 {
 
 	$fields['shipping_company']['class'] = array('form-row-first');
-	$fields['shipping_phone']['required'] = false;
-	$fields['shipping_phone']['custom_attributes'] = array();
+	$fields['shipping_phone'] = array(
+		'type'        => 'tel',
+		'placeholder' => __('Phone Number', 'woocommerce'),
+		'autocomplete'=> 'tel'
+	);
 
 	$fields['shipping_company_nip'] = array(
 		'type'		   => 'text',
