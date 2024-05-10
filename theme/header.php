@@ -20,7 +20,7 @@
 		}, false);
 	}
 
-	$has_hero_img = false;
+	$hero_img_url = false;
 	if ($sections) {
 		$hero_img_url = array_reduce($sections, function($carry, $section) {
 			if ($section['acf_fc_layout'] == 'hero' && isset($section['hero_background']) && isset($section['hero_background']['url'])) {
@@ -32,14 +32,13 @@
 	if($hero_img_url == false && get_post_thumbnail_id( $post->ID )){
 		$hero_img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
 	}
-	echo $hero_img_url;
 ?>
 <html <?php language_attributes(); ?> <?php if($has_faq){ echo 'itemscope itemtype="https://schema.org/FAQPage"'; } ?> >
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<?php if($has_hero_img): ?>
+	<?php if($hero_img_url): ?>
 		<meta property="og:image" content="<?php echo $hero_img_url ?>" />
 		<meta name="twitter:image" content="<?php echo $hero_img_url ?>"/>
 	<?php endif; ?>
