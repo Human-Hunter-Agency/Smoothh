@@ -14,7 +14,8 @@ $cta = get_field('cta');
 ?>
 
 <article id="post-<?php the_ID(); ?>" data-js-post-id="<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
-		<meta itemprop="name" content="<?php the_title(); ?>">
+	<meta itemprop="headline" content="<?php the_title(); ?>">
+	<meta itemprop="url" content="<?php echo get_permalink(); ?>">
 	<?php if ($author) : ?>
 		<meta itemprop="author" content="<?php echo esc_html($author); ?>">
 	<?php endif; ?>
