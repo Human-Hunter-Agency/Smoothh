@@ -30,7 +30,7 @@
 		}, false);
 	}
 	if($hero_img_url == false && get_post_thumbnail_id( $post->ID )){
-		$hero_img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) )[0];
+		$hero_img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
 	}
 ?>
 <html <?php language_attributes(); ?> <?php if($has_faq){ echo 'itemscope itemtype="https://schema.org/FAQPage"'; } ?> >
