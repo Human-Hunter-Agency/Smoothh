@@ -490,7 +490,7 @@ function smoothh_shipping_address_add_nip($fields)
 	$fields['shipping_company']['class'] = array('form-row-first');
 	$fields['shipping_phone'] = array(
 		'type'        => 'tel',
-		'placeholder' => __('Phone Number', 'woocommerce'),
+		'label' => __('Phone Number', 'woocommerce'),
 		'autocomplete'=> 'tel'
 	);
 
@@ -596,6 +596,7 @@ function smoothh_override_default_locale_fields( $fields ) {
     $fields['postcode']['class'] = array('form-row-first');
     $fields['city']['class'] = array('form-row-last');
     $fields['country']['priority'] = 75;
+	$fields['company_nip']['priority'] = 35;
     unset($fields['address_2']);
 
     return $fields;
