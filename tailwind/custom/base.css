@@ -21,8 +21,15 @@ body {
 	@apply invalid:!border-red-500 focus:invalid:!outline-red-500
 }
 
+.woocommerce-checkout #payment ul.payment_methods li label{
+	@apply inline-flex
+}
 .woocommerce form .form-row.woocommerce-invalid label{
 	@apply !text-red-500
+}
+
+.payu-list-banks label{
+	@apply rounded-md
 }
 
 .input-error{
