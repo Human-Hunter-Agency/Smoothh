@@ -129,20 +129,20 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <div class="register-fields smoothh-inputs-basic smoothh-inputs-validation">
           <?php do_action('woocommerce_register_form_start'); ?>
 
-          <div class="mb-5" data-priority="0">
+          <div class="form-row !w-full !mb-5 !px-0" data-priority="5">
             <p class="mb-2">
               <?php esc_html_e('Account type:', 'smoothh'); ?>
             </p>
             <ul class="flex items-center gap-2">
               <li>
                 <input type="radio" class="hidden peer" name="user_type" id="candidate" value="candidate" checked/>
-                <label for="candidate" class="px-4 py-2 rounded-lg text-base border-primary peer-checked:bg-primary/5 transition duration-200 cursor-pointer">
+                <label for="candidate" class="px-4 py-2 rounded-lg text-base border border-primary bg-transparent peer-checked:bg-primary/5 transition duration-200 cursor-pointer">
                   <?php esc_html_e('Candidate', 'smoothh'); ?>
                 </label>
               </li>
               <li>
                 <input type="radio" class="hidden peer" name="user_type" id="client" value="client"/>
-                <label for="client" class="px-4 py-2 rounded-lg text-base border-primary peer-checked:bg-primary/5 transition duration-200 cursor-pointer">
+                <label for="client" class="px-4 py-2 rounded-lg text-base border border-primary bg-transparent peer-checked:bg-primary/5 transition duration-200 cursor-pointer">
                   <?php esc_html_e('Client', 'smoothh'); ?>
                 </label>
               </li>
