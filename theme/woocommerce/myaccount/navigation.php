@@ -24,7 +24,7 @@ do_action('woocommerce_before_account_navigation');
 ?>
 
 
-<nav class="woocommerce-MyAccount-navigation py-10">
+<nav class="woocommerce-MyAccount-navigation pt-10 md:pb-10 !w-full float-none lg:float-left lg:!w-[30%] ">
   <div class="nav-container px-5 md:px-8 py-9 border border-[#888] rounded-[15px] ">
     <h2 class="mb-10 text-3xl font-semibold"><?php esc_html_e('Your account', 'smoothh'); ?></h2>
     <ul>
