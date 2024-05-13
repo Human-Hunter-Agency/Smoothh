@@ -109,7 +109,7 @@ $show_select_cat_products = !empty($common_values);
 								$quantity = $cart_item['quantity'];
 								$link = $product->get_permalink($cart_item);
 							?>
-								<li class="flex flex-col lg:flex-row gap-2.5 justify-between">
+								<li class="flex flex-col 2xl:flex-row gap-2.5 justify-between">
 									<div>
 										<a href="<?php echo $link ?>" class="block text-base md:text-2xl lg:mb-3 transition duration hover:text-primary">
 											<?php echo $product->get_title(); ?>
