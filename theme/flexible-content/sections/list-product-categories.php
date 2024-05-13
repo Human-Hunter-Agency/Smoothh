@@ -41,7 +41,7 @@
                             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                         </div>
                         <div class="w-full flex-1 p-3 md:p-6">
-                            <div class="flex gap-2.5 md:gap-5 justify-between mb-5">
+                            <div class="flex flex-col gap-2 justify-between mb-5">
                                 <h4 class="text-lg md:text-xl text-primary font-semibold">
                                     <?php echo $cat->name ?> 
                                 </h4>
