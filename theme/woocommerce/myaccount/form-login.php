@@ -129,20 +129,24 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <div class="register-fields smoothh-inputs-basic smoothh-inputs-validation">
           <?php do_action('woocommerce_register_form_start'); ?>
 
-          <div class="mb-5">
-            <p>
+          <div class="mb-5" data-priority="0">
+            <p class="mb-2">
               <?php esc_html_e('Account type:', 'smoothh'); ?>
             </p>
-            <div class="flex items-center gap-2">
-              <input type="radio" class="hidden peer" name="user_type" id="candidate" value="candidate" checked/>
-              <label for="candidate" class="px-3 py-2 rounded-lg text-base border-primary peer-checked:border-secondary peer-checked:bg-secondary/5 transition duration-200">
-                <?php esc_html_e('Candidate', 'smoothh'); ?>
-              </label>
-              <input type="radio" class="hidden peer" name="user_type" id="client" value="client"/>
-              <label for="client" class="px-3 py-2 rounded-lg text-base border-primary peer-checked:border-secondary peer-checked:bg-secondary/5 transition duration-200">
-                <?php esc_html_e('Client', 'smoothh'); ?>
-              </label>
-            </div>
+            <ul class="flex items-center gap-2">
+              <li>
+                <input type="radio" class="hidden peer" name="user_type" id="candidate" value="candidate" checked/>
+                <label for="candidate" class="px-4 py-2 rounded-lg text-base border-primary peer-checked:bg-primary/5 transition duration-200 cursor-pointer">
+                  <?php esc_html_e('Candidate', 'smoothh'); ?>
+                </label>
+              </li>
+              <li>
+                <input type="radio" class="hidden peer" name="user_type" id="client" value="client"/>
+                <label for="client" class="px-4 py-2 rounded-lg text-base border-primary peer-checked:bg-primary/5 transition duration-200 cursor-pointer">
+                  <?php esc_html_e('Client', 'smoothh'); ?>
+                </label>
+              </li>
+            </ul>
           </div>
 
           <?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
