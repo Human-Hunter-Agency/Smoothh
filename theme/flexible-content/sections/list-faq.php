@@ -26,7 +26,7 @@ $list = $args['list'];
         ?>
             <?php if ($question && $answer) : ?>
                 <div class="border-2 border-primary rounded-2xl mb-2.5" data-js="dropdown" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <div class="group flex justify-between py-5 px-6 cursor-pointer" 
+                    <div class="group flex justify-between items-center py-5 px-6 cursor-pointer" 
                     aria-expanded="<?php if (++$i === $numItems) { echo 'true';} else { echo 'false';} ?>" data-js="dropdown-toggle">
                         <h3 class="text-base md:text-[20px] md:leading-5 group-hover:text-primary transition duration-200 font-semibold" itemprop="name"><?php echo esc_html($question); ?></h3>
                         <div class="p-1 relative">

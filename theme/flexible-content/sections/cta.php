@@ -20,7 +20,7 @@
 
     <div class="relative z-0 flex flex-col items-center justify-center container">
         <?php if ($header) : ?>
-            <h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9" ><?php echo esc_html($header); ?></h1>
+            <h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9 text-center" ><?php echo esc_html($header); ?></h1>
         <?php endif; ?>
 
         <?php if( $button ): 
