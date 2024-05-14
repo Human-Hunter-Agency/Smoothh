@@ -694,13 +694,13 @@ function new_item_query_vars( $vars ) {
 add_filter( 'query_vars', 'new_item_query_vars' );
 
 function add_new_item_tab( $items ) {
-	$items['consents'] = 'Zgody';
+	$items['consents'] = esc_html_e('Consents', 'smoothh');
 	return $items;
 }
 add_filter( 'woocommerce_account_menu_items', 'add_new_item_tab' );
 
 function add_new_item_content() {
-	echo 'New Item Contents here!';
+	echo do_shortcode('[gdpr_privacy_tools]');
 }
 add_action( 'woocommerce_account_consents_endpoint', 'add_new_item_content' );
 
