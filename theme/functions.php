@@ -465,7 +465,7 @@ add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommer
 add_action('woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 20);
 add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
 add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
-add_action('user_register', 'smoothh_save_user_default_type', 10, 1 );
+add_action('user_register', 'smoothh_save_user_default_type', 30, 1 );
 
 add_filter('woocommerce_billing_fields', 'smoothh_billing_address_add_nip');
 function smoothh_billing_address_add_nip($fields)
