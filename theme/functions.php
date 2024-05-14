@@ -430,29 +430,8 @@ function smoothh_validate_extra_fields_my_account($username, $email, $validation
 {
 	smoothh_validate_extra_fields($validation_errors);
 
-	if (!isset($_POST['terms'])){
-		$validation_errors->add('terms_error', __('Terms and condition are not checked!', 'smoothh'));
-	}
 	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'customer') ) ) {
 		$validation_errors->add('account_type_error', __('Account type is required.', 'smoothh'));
-	}
-}
-
-function smoothh_terms_and_conditions_to_registration()
-{
-
-	if (wc_get_page_id('terms') > 0) {
-	?>
-		<p class="form-row terms wc-terms-and-conditions">
-			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline">
-				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" required <?php checked(apply_filters('woocommerce_terms_is_checked_default', isset($_POST['terms'])), true); ?> id="terms" />
-				<span>
-					<?php esc_html_e('I&rsquo;ve read and accept the', 'smoothh'); ?>
-					<?php printf(__('<a href="%s" target="_blank" class="woocommerce-terms-and-conditions-link">terms and conditions</a>', 'smoothh'), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
-			</label>
-			<input type="hidden" name="terms-field" value="1" />
-		</p>
-	<?php
 	}
 }
 
@@ -462,7 +441,6 @@ function smoothh_save_user_default_type($user_id){
 }
 
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
-add_action('woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 20);
 add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
 add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
 add_action('user_register', 'smoothh_save_user_default_type', 10, 1 );
