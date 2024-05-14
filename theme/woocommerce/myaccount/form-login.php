@@ -176,8 +176,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
         </div>
 
 
-
-        <?php do_action('woocommerce_register_form'); ?>
+        <div class="[&_label_a]:text-primary [&_label_a]:font-semibold [&_label_a:hover]:underline">
+          <?php do_action('woocommerce_register_form'); ?>
+        </div>
 
         <!-- <div class="checkboxes my-5 flex flex-col gap-y-4">
           <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme flex items-start gap-x-2">
