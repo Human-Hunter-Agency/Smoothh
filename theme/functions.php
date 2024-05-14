@@ -423,6 +423,9 @@ function smoothh_my_account_page_woocommerce()
 {
 	$fields = woocommerce_smoothh_account_extra_fields();
 	foreach ($fields as $key => $field_args) {
+		if($key == 'gdpr_woo_consent'){
+			$field_args['custom_attributes'] = array( 'required' => 'required' );
+		}
 		woocommerce_form_field($key, $field_args);
 	}
 }
@@ -431,7 +434,7 @@ function smoothh_validate_extra_fields_my_account($username, $email, $validation
 	smoothh_validate_extra_fields($validation_errors);
 
 	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'customer') ) ) {
-		$validation_errors->add('account_type_error', __('Account type is required.', 'smoothh'));
+		$validation_errors->add('account_type_error', $_POST['account_type']);
 	}
 }
 
