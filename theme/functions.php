@@ -423,10 +423,6 @@ function smoothh_my_account_page_woocommerce()
 {
 	$fields = woocommerce_smoothh_account_extra_fields();
 	foreach ($fields as $key => $field_args) {
-		if($key == 'gdpr_woo_consent'){
-			$field_args['custom_attributes'] = array( 'required' => 'required' );
-		}
-		echo $key;
 		woocommerce_form_field($key, $field_args);
 	}
 }
