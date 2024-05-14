@@ -385,6 +385,7 @@ function woocommerce_smoothh_account_extra_fields()
 }
 function smoothh_save_extra_fields($customer_id)
 {
+	echo 'TEST';
 	if (isset($_POST['first_name'])) {
 		// WordPress default first name field.
 		update_user_meta($customer_id, 'name', sanitize_text_field($_POST['first_name']));
@@ -407,6 +408,8 @@ function smoothh_save_extra_fields($customer_id)
 	if (isset($_POST['account_type'])) {
 		update_user_meta($customer_id, 'account_type', sanitize_text_field($_POST['account_type']));
 	}else{
+
+		echo 'TEST2';
 		$default_type = 'candidate';
 		update_user_meta($customer_id, 'account_type', sanitize_text_field($default_type));
 	}
