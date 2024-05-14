@@ -403,9 +403,12 @@ function smoothh_save_extra_fields($customer_id)
 	if (isset($_POST['billing_company_nip'])) {
 		update_user_meta($customer_id, 'billing_company_nip', sanitize_text_field($_POST['billing_company_nip']));
 	}
+	// Custom account_type client/candidate
 	if (isset($_POST['account_type'])) {
-		// Custom account_type client/candidate
 		update_user_meta($customer_id, 'account_type', sanitize_text_field($_POST['account_type']));
+	}else{
+		$default_type = 'candidate';
+		update_user_meta($customer_id, 'account_type', $default_type);
 	}
 }
 function smoothh_validate_extra_fields($errors)
