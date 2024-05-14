@@ -406,8 +406,6 @@ function smoothh_save_extra_fields($customer_id)
 	// Custom account_type client/candidate
 	if (isset($_POST['account_type'])) {
 		update_user_meta($customer_id, 'account_type', sanitize_text_field($_POST['account_type']));
-	}else{
-		smoothh_save_user_default_type($customer_id);
 	}
 }
 function smoothh_validate_extra_fields($errors)
