@@ -434,7 +434,7 @@ function smoothh_validate_extra_fields_my_account($username, $email, $validation
 		$validation_errors->add('terms_error', __('Terms and condition are not checked!', 'smoothh'));
 	}
 	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'customer') ) ) {
-		$validation_errors->add('account_type_error', __('Account type is required.', 'smoothh'));
+		$validation_errors->add('account_type_error', !isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'customer') ));
 	}
 }
 
@@ -465,7 +465,7 @@ add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommer
 add_action('woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 20);
 add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
 add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
-add_action('user_register', 'smoothh_save_user_default_type', 30, 1 );
+add_action('user_register', 'smoothh_save_user_default_type', 10, 1 );
 
 add_filter('woocommerce_billing_fields', 'smoothh_billing_address_add_nip');
 function smoothh_billing_address_add_nip($fields)
