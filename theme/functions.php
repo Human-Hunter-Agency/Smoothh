@@ -416,9 +416,6 @@ function smoothh_validate_extra_fields($errors)
 	if (isset($_POST['last_name']) && empty($_POST['last_name'])) {
 		$errors->add('last_name_error', __('Last name is required.', 'woocommerce'));
 	}
-	if (isset($_POST['account_type']) && empty($_POST['account_type'])) {
-		$errors->add('account_type_error', __('Account type is required.', 'woocommerce'));
-	}
 }
 
 // Register page
@@ -433,8 +430,12 @@ function smoothh_validate_extra_fields_my_account($username, $email, $validation
 {
 	smoothh_validate_extra_fields($validation_errors);
 
-	if (!isset($_POST['terms']))
+	if (!isset($_POST['terms'])){
 		$validation_errors->add('terms_error', __('Terms and condition are not checked!', 'smoothh'));
+	}
+	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'customer') ) ) {
+		$errors->add('account_type_error', __('Account type is required.', 'smoothh'));
+	}
 }
 
 function smoothh_terms_and_conditions_to_registration()
