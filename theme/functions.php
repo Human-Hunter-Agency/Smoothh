@@ -381,11 +381,6 @@ function woocommerce_smoothh_account_extra_fields()
 				'pattern'  => '^([0-9]){10}$',
 				'title'    => __('NIP number requires 10 digits', 'smoothh')),
 		),
-		'billing_phone' => array(
-			'type'        => 'tel',
-			'placeholder' => __('Phone Number', 'woocommerce'),
-			'autocomplete'=> 'tel'
-		),
 	));
 }
 function smoothh_save_extra_fields($customer_id)
