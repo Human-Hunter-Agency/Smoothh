@@ -694,7 +694,7 @@ function new_item_query_vars( $vars ) {
 add_filter( 'query_vars', 'new_item_query_vars' );
 
 function add_new_item_tab( $items ) {
-	$items['consents'] = esc_html_e('Consents', 'smoothh');
+	$items['consents'] = __('Consents', 'smoothh');
 	return $items;
 }
 add_filter( 'woocommerce_account_menu_items', 'add_new_item_tab' );
