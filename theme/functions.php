@@ -408,7 +408,7 @@ function smoothh_save_extra_fields($customer_id)
 		update_user_meta($customer_id, 'account_type', sanitize_text_field($_POST['account_type']));
 	}else{
 		$default_type = 'candidate';
-		update_user_meta($customer_id, 'account_type', $default_type);
+		update_user_meta($customer_id, 'account_type', sanitize_text_field($default_type));
 	}
 }
 function smoothh_validate_extra_fields($errors)
