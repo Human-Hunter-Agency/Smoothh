@@ -408,9 +408,9 @@ function smoothh_save_extra_fields($customer_id)
 	if (isset($_POST['billing_company_nip'])) {
 		update_user_meta($customer_id, 'billing_company_nip', sanitize_text_field($_POST['billing_company_nip']));
 	}
-	if (isset($_POST['billing_phone'])) {
-		// WooCommerce billing phone
-		update_user_meta($customer_id, 'billing_phone', sanitize_text_field($_POST['billing_phone']));
+	if (isset($_POST['account_type'])) {
+		// Custom account_type client/candidate
+		update_user_meta($customer_id, 'account_type', sanitize_text_field($_POST['account_type']));
 	}
 }
 function smoothh_validate_extra_fields($errors)
@@ -420,6 +420,9 @@ function smoothh_validate_extra_fields($errors)
 	}
 	if (isset($_POST['last_name']) && empty($_POST['last_name'])) {
 		$errors->add('last_name_error', __('Last name is required.', 'woocommerce'));
+	}
+	if (isset($_POST['account_type']) && empty($_POST['account_type'])) {
+		$errors->add('account_type_error', __('Account type is required.', 'woocommerce'));
 	}
 }
 
@@ -507,26 +510,40 @@ function smoothh_shipping_address_add_nip($fields)
 	return $fields;
 }
 
-// Display custom field in user BO
+// Display custom fields in user BO
 function smoothh_show_extra_account_details($user)
 {
 	$company_nip = get_user_meta($user->ID, 'billing_company_nip', true);
-
-	if (empty($company_nip)) {
-		return;
-	}
+	$account_type = get_user_meta($user->ID, 'account_type', true);
 
 	?>
-	<h3><?php esc_html_e('Extra account details', 'smoothh'); ?></h3>
-	<table class="form-table">
-		<tr>
-			<th><?php esc_html_e('Company NIP', 'smoothh'); ?></label></th>
-			<td>
-				<p><?php echo esc_html($company_nip); ?></p>
-			</td>
-		</tr>
-	</table>
-<?php
+		<h3><?php esc_html_e('Extra account details', 'smoothh'); ?></h3>
+		<table class="form-table">
+		<?php
+		if (!empty($company_nip)) :
+		?>
+
+			<tr>
+				<th><?php esc_html_e('Company NIP', 'smoothh'); ?></label></th>
+				<td>
+					<p><?php echo esc_html($company_nip); ?></p>
+				</td>
+			</tr>
+
+		<?php endif; ?>
+		<?php
+		if (!empty($account_type)) :
+		?>
+			<tr>
+				<th><?php esc_html_e('Account type', 'smoothh'); ?></label></th>
+				<td>
+					<p><?php echo esc_html($account_type); ?></p>
+				</td>
+			</tr>		
+		<?php endif; ?>
+	
+		</table>
+	<?php
 }
 
 add_action('show_user_profile', 'smoothh_show_extra_account_details', 15);
