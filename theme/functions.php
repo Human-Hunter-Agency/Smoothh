@@ -680,6 +680,32 @@ remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_f
 add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 20);
 remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
 
+
+// Add consents page
+function register_new_item_endpoint() {
+	add_rewrite_endpoint( 'consents', EP_ROOT | EP_PAGES );
+}
+add_action( 'init', 'register_new_item_endpoint');
+
+function new_item_query_vars( $vars ) {
+	$vars[] = 'consents';
+	return $vars;
+}
+add_filter( 'query_vars', 'new_item_query_vars' );
+
+function add_new_item_tab( $items ) {
+	$items['consents'] = 'Zgody';
+	return $items;
+}
+add_filter( 'woocommerce_account_menu_items', 'add_new_item_tab' );
+
+function add_new_item_content() {
+	echo 'New Item Contents here!';
+}
+add_action( 'woocommerce_account_consents_endpoint', 'add_new_item_content' );
+
+
+
 // Remove read more from excerpt
 function change_excerpt($more)
 {
