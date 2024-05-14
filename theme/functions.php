@@ -434,7 +434,7 @@ function smoothh_validate_extra_fields_my_account($username, $email, $validation
 		$validation_errors->add('terms_error', __('Terms and condition are not checked!', 'smoothh'));
 	}
 	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'customer') ) ) {
-		$errors->add('account_type_error', __('Account type is required.', 'smoothh'));
+		$validation_errors->add('account_type_error', __('Account type is required.', 'smoothh'));
 	}
 }
 
