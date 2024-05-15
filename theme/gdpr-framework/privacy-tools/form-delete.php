@@ -1,7 +1,6 @@
 <?php global $gdpr; ?>
 
 <h2><?= ($gdpr->Options->get('gdpr_delete_text') != '') ? $gdpr->Options->get('gdpr_delete_text') : __('Delete my user and data', 'gdpr-framework') ?></h2>
-<br/>
 <p class="description">
     <?= __('Delete all data we have gathered about you.', 'gdpr-framework') ?> <br/>
     <?= __('If you have a user account on our site, it will also be deleted.', 'gdpr-framework') ?> <br/>
@@ -42,6 +41,3 @@
 
    
 </div>
-
-
-<hr>
