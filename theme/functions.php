@@ -442,7 +442,8 @@ function smoothh_save_user_default_type($user_id){
 
 
 function smoothh_filter_woocommerce_form_field_checkbox( $field, $key, $args, $value ) {
-	echo $key;
+	echo $args;
+	echo $field;
     if ( $key == 'gdpr_woo_consent' ) {
 		$args['custom_attributes'] = array( 'required' => 'required' );
 	}
