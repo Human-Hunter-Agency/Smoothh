@@ -441,9 +441,9 @@ function smoothh_save_user_default_type($user_id){
 }
 
 function smoothh_register_form_end($fields){
-	foreach ($fields as $key => $field_args) {
-		echo $key;
-	}
+	// foreach ($fields as $key => $field_args) {
+		echo $fields;
+	// }
 }
 
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
