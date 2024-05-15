@@ -445,7 +445,6 @@ function smoothh_register_form_end($fields){
 	return $fields;
 }
 
-add_filter('woocommerce_register_form_end', 'smoothh_register_form_end',15);
 add_filter('woocommerce_register_form', 'smoothh_register_form_end',15);
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
 add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
