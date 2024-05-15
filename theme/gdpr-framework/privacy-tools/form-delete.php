@@ -13,7 +13,7 @@
     <?php } ?>
 </p>
 <br/>
-<div class="gdpr-delete-button !mx-0 flex justify-end">
+<div class="gdpr-delete-button !mx-0 w-full !flex justify-end">
 <?php add_thickbox(); ?>
 
 <a href="#TB_inline?width=600&height=239&inlineId=gdprmodal-window-id" class="thickbox button-primary whitespace-nowrap border-2 border-[#F2F2F2] hover:border-primary hover:text-primary transition duration-200 text-black min-h-[55px] px-5 rounded-[15px] font-semibold flex items-center justify-center gap-5">

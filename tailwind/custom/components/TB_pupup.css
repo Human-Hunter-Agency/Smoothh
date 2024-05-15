@@ -1,9 +1,12 @@
 #TB_window{
-    @apply max-w-screen-lg px-5 py-2 md:py-5 md:p-10 shadow-2xl rounded-[15px]
+    @apply max-w-[calc(100%_-_20px)] !ml-0 -translate-x-1/2 lg:max-w-screen-lg px-5 py-2 md:py-5 md:p-10 shadow-2xl rounded-[15px]
 }
 
 #TB_title{
     @apply !border-b-0
+}
+#TB_ajaxContent{
+    @apply !w-full
 }
 
 #TB_closeAjaxWindow{
