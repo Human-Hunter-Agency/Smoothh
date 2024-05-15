@@ -5,7 +5,7 @@
     <?= __('Alternatively, you can export it in machine-readable JSON format.', 'gdpr-framework') ?>
 </p>
 
-<div class="flex justify-end">
+<div class="flex justify-end flex-wrap">
     <div class="gdpr-download-button">
         <form method="POST">
             <input type="hidden" name="gdpr_nonce" value="<?= $nonce; ?>" />
