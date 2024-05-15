@@ -442,7 +442,7 @@ function smoothh_save_user_default_type($user_id){
 
 function smoothh_register_form_end($fields){
 	foreach ($fields as $key => $field_args) {
-		if ($key == 'gdpr_woo_consent') {
+		if ($key == 'gdpr_woo_consent_field') {
 			$field_args['custom_attributes'] = array( 'required' => 'required' );
 		}
 	}
