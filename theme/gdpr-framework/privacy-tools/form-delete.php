@@ -6,7 +6,7 @@
     <?= __('If you have a user account on our site, it will also be deleted.', 'gdpr-framework') ?> <br/>
     <?= __('Be careful - this action is permanent and CANNOT be undone.', 'gdpr-framework') ?>
     <?php if ($gdpr->Options->get('enable_woo_compatibility') && class_exists('Woocommerce')){?>
-        <br/><strong class="gdpr_woo_note mt-5"><?= __("Note Regarding Order:", 'gdpr-framework') ?></strong><br/>
+        <br/><strong class="gdpr_woo_note block mt-5"><?= __("Note Regarding Order:", 'gdpr-framework') ?></strong>
         <?= __("Your order with status Processing will not get deleted until status change.", 'gdpr-framework') ?><br/>
         <?= __("Your order with status Completed will get anonymize.", 'gdpr-framework') ?><br/>
         <?= __("If you delete Completed order you can't apply for refund.", 'gdpr-framework') ?><br/>
