@@ -440,7 +440,14 @@ function smoothh_save_user_default_type($user_id){
 	update_user_meta($user_id, 'account_type', $default_type);
 }
 
+function smoothh_register_form_end($fields){
+	foreach ($fields as $key => $field_args) {
+		echo $key;
+	}
+}
+
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
+add_action('woocommerce_register_form_end', 'smoothh_register_form_end', 30);
 add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
 add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
 add_action('user_register', 'smoothh_save_user_default_type', 10, 1 );
