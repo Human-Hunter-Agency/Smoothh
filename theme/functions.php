@@ -440,13 +440,15 @@ function smoothh_save_user_default_type($user_id){
 	update_user_meta($user_id, 'account_type', $default_type);
 }
 
-function smoothh_register_form_end($fields){
-	echo $fields;
-	// $fields['gdpr_woo_consent']['custom_attributes'] = array( 'required' => 'required' );
-	return $fields;
-}
 
-add_filter('woocommerce_register_form', 'smoothh_register_form_end',15);
+function smoothh_filter_woocommerce_form_field_checkbox( $field, $key, $args, $value ) {
+    if ( $key == 'gdpr_woo_consent' ) {
+		$args['custom_attributes'] = array( 'required' => 'required' );
+	}
+    return $field;
+}
+add_filter( 'woocommerce_form_field_checkbox', 'filter_woocommerce_form_field_radio', 10, 4 );
+
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
 add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
 add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
