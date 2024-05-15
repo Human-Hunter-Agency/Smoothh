@@ -442,10 +442,12 @@ function smoothh_save_user_default_type($user_id){
 
 
 function smoothh_filter_woocommerce_form_field_checkbox( $field, $key, $args, $value ) {
-	echo $args;
-	echo $field;
+	print_r($args);
     if ( $key == 'gdpr_woo_consent' ) {
 		$args['custom_attributes'] = array( 'required' => 'required' );
+		$field = '<label class="checkbox ' . implode( ' ', $args['label_class'] ) .'" ' . implode( ' ', $args['custom_attributes'] ) . '>
+						<input type="' . esc_attr( $args['type'] ) . '" class="input-checkbox ' . esc_attr( implode( ' ', $args['input_class'] ) ) .'" name="' . esc_attr( $key ) . '" id="' . esc_attr( $args['id'] ) . '" value="1" '.checked( $value, 1, false ) .' /> '
+						 . $args['label'] . $args['required'] . '</label>';
 	}
     return $field;
 }
