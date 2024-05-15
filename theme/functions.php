@@ -447,7 +447,7 @@ function smoothh_filter_woocommerce_form_field_checkbox( $field, $key, $args, $v
 	}
     return $field;
 }
-add_filter( 'woocommerce_form_field_checkbox', 'filter_woocommerce_form_field_radio', 10, 4 );
+add_filter( 'woocommerce_form_field_checkbox', 'smoothh_filter_woocommerce_form_field_checkbox', 10, 4 );
 
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
 add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
