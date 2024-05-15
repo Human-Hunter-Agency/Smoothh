@@ -441,7 +441,8 @@ function smoothh_save_user_default_type($user_id){
 }
 
 function smoothh_register_form_end($fields){
-	$fields['gdpr_woo_consent']['custom_attributes'] = array( 'required' => 'required' );
+	echo $fields;
+	// $fields['gdpr_woo_consent']['custom_attributes'] = array( 'required' => 'required' );
 	return $fields;
 }
 
