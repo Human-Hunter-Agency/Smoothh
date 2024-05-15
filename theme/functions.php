@@ -447,6 +447,7 @@ function smoothh_register_form_end($fields){
 			$field_args['custom_attributes'] = array( 'required' => 'required' );
 		}
 	}
+	return $fields;
 }
 
 add_filter('woocommerce_register_form_end', 'smoothh_register_form_end',15);
