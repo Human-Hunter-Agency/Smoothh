@@ -5,20 +5,18 @@
         <p>
             <?= __('Here you can withdraw any consents you have given.', 'gdpr-framework'); ?>
         </p>
-        <table class="gdpr-consent">
-            <th colspan="4"><?= __('Consent types', 'gdpr-framework'); ?></th>
+        <ul class="gdpr-consent flex flex-col gap-5">
             <?php foreach ($consentData as $item): ?>
-                <tr>
-                    <td>
-                        &#10004;
-                    </td>
-                    <td>
-                        <?= $item['title']; ?>
-                    </td>
-                    <td>
-                        <em><?= $item['description']; ?></em>
-                    </td>
-                    <td>
+                <li class="flex justify-between flex-col lg:flex-row gap-3 lg:gap-4">
+                    <div class="lg:w-44">
+                        <strong>
+                            <?= $item['title']; ?>
+                        </strong>
+                    </div>
+                    <div>
+                        <p><?= $item['description']; ?></p>
+                    </div>
+                    <div class="shrink-0">
                         <?php if ('privacy-policy' !== $item['slug']): ?>
                             <a href="<?= esc_url($item['withdraw_url']); ?>" class="whitespace-nowrap border-2 border-[#F2F2F2] hover:border-primary hover:text-primary transition duration-200 text-black min-h-[55px] px-5 rounded-[15px] font-semibold flex items-center justify-center gap-5">
                                 <?= __('Withdraw', 'gdpr-framework'); ?>
@@ -28,10 +26,10 @@
                                 </svg>
                             </a>
                         <?php endif; ?>
-                    </td>
-                </tr>
+                    </div>
+                </li>
             <?php endforeach; ?>
-        </table>
+        </ul>
     <?php endif; ?>
 
     <?php if ($consentInfo): ?>
