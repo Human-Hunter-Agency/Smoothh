@@ -441,9 +441,11 @@ function smoothh_save_user_default_type($user_id){
 }
 
 function smoothh_register_form_end($fields){
-	// foreach ($fields as $key => $field_args) {
-		echo $fields;
-	// }
+	foreach ($fields as $key => $field_args) {
+		if ($key == 'gdpr_woo_consent') {
+			$field_args['custom_attributes'] = array( 'required' => 'required' );
+		}
+	}
 }
 
 apply_filters('woocommerce_register_form_end', 'smoothh_register_form_end');
