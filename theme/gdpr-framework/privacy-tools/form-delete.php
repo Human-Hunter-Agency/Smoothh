@@ -16,7 +16,7 @@
 <div class="gdpr-delete-button !mx-0 flex justify-end">
 <?php add_thickbox(); ?>
 
-<a href="#TB_inline?width=600&height=239&inlineId=gdprmodal-window-id" class="thickbox button button-primary whitespace-nowrap border-2 border-[#F2F2F2] hover:border-primary hover:text-primary transition duration-200 text-black min-h-[55px] px-5 rounded-[15px] font-semibold flex items-center justify-center gap-5">
+<a href="#TB_inline?width=600&height=239&inlineId=gdprmodal-window-id" class="thickbox button-primary whitespace-nowrap border-2 border-[#F2F2F2] hover:border-primary hover:text-primary transition duration-200 text-black min-h-[55px] px-5 rounded-[15px] font-semibold flex items-center justify-center gap-5">
     <?= __('Delete my data', 'gdpr-framework') ?>
     <svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle class="stroke-black" cx="9.5" cy="9.5" r="9"></circle>
