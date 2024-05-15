@@ -443,7 +443,7 @@ function smoothh_save_user_default_type($user_id){
 
 function smoothh_filter_woocommerce_form_field_checkbox( $field, $key, $args, $value ) {
     if ( $key == 'gdpr_woo_consent' ) {
-		str_replace('<input ','<input required="required" ',$field);
+		$field = str_replace('<input ','<input required="required" ',$field);
 	}
     return $field;
 }
