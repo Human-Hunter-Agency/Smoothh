@@ -213,7 +213,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
         <?php do_action('woocommerce_register_form_end'); ?>
 
       </form>
-
+      <div class="hidden" data-js="hidden-inputs"></div>
     </div>
 
   </div>

@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initPopups();
 	initProdSelectRedirect();
 	initInputsValidation();
+	registerClientFieldsToggle();
 });
 
 function initMenuCollapse() {
@@ -503,4 +504,35 @@ function initInputsValidation(){
 			}
 		})
 	})
+}
+
+function registerClientFieldsToggle(){
+	const registerForm = document.querySelector('.woocommerce-form-register')
+	if (!registerForm) return
+
+	const hiddenContainer = document.querySelector('data-js="hidden-inputs"')
+	const accountTypeRadios = registerForm.querySelectorAll('input[name="account_type"]')
+	const clientInputs = {
+		billing_company_field: registerForm.querySelector('input[name="billing_company"]'),
+		billing_company_nip_field: registerForm.querySelector('input[name="billing_company_nip"]') 
+
+	}
+
+	accountTypeRadios.forEach(function (radio) {
+		radio.addEventListener('change', function () {
+			let value = document.querySelector('input[name="account_type"]:checked').value;
+
+			if (value == 'client') {
+				for (const fieldId in clientInputs) {
+					const formFieldWrapper = registerForm.querySelector(`#${fieldId} .woocommerce-input-wrapper`);
+					clientInputs[fieldId].prependTo(formFieldWrapper);
+				}
+			} else {
+				for (const fieldId in clientInputs) {
+					clientInputs[fieldId].prependTo(hiddenContainer);
+				}
+			}
+		});
+	});
+
 }
