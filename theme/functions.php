@@ -422,6 +422,16 @@ function smoothh_validate_extra_fields($errors)
 	if (isset($_POST['last_name']) && empty($_POST['last_name'])) {
 		$errors->add('last_name_error', __('Last name is required.', 'woocommerce'));
 	}
+
+	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'candidate') ) ) {
+		$errors->add('account_type_error', __('Account type is required.', 'smoothh'));
+	}
+	if (isset($_POST['account_type']) && $_POST['account_type'] == 'client' && empty($_POST['billing_company'])) {
+		$errors->add('billing_company_error', __('Company is required.', 'smoothh'));
+	}
+	if (isset($_POST['account_type']) && $_POST['account_type'] == 'client' && empty($_POST['billing_company_nip'])) {
+		$errors->add('billing_company_nip_error', __('Company NIP is required.', 'smoothh'));
+	}
 }
 
 // Register page
@@ -436,17 +446,6 @@ function smoothh_validate_extra_fields_my_account($username, $email, $validation
 {
 	smoothh_validate_extra_fields($validation_errors);
 
-	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'candidate') ) ) {
-		$validation_errors->add('account_type_error', __('Account type is required.', 'smoothh'));
-	}
-
-	if (isset($_POST['account_type']) && $_POST['account_type'] == 'client' && empty($_POST['billing_company'])) {
-		$validation_errors->add('billing_company_error', __('Company is required.', 'smoothh'));
-	}
-
-	if (isset($_POST['account_type']) && $_POST['account_type'] == 'client' && empty($_POST['billing_company_nip'])) {
-		$validation_errors->add('billing_company_nip_error', __('Company NIP is required.', 'smoothh'));
-	}
 }
 
 function smoothh_save_user_default_type($user_id){
