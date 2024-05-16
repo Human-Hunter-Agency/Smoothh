@@ -529,10 +529,10 @@ function registerClientFieldsToggle(){
 		for (const fieldId in clientInputs) {
 			const formFieldWrapper = registerForm.querySelector(`#${fieldId} .woocommerce-input-wrapper`);
 			if (visible) {
-				formFieldWrapper.classList.remove('hidden')
+				formFieldWrapper.parentElement.classList.remove('hidden')
 				formFieldWrapper.appendChild(clientInputs[fieldId]);
 			}else{
-				formFieldWrapper.classList.add('hidden')
+				formFieldWrapper.parentElement.classList.add('hidden')
 				hiddenContainer.appendChild(clientInputs[fieldId]);
 			}
 		}
