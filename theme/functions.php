@@ -666,7 +666,7 @@ add_filter( 'woocommerce_default_address_fields', 'smoothh_override_default_loca
 function login_page_redirects()
 {
 	$checkout_pageid = get_option('woocommerce_checkout_page_id');
-	$is_guest = $_GET['is_guest'] || $_POST['is_guest'] ?? false;
+	$is_guest = ($_GET['is_guest'] || $_POST['is_guest']) ?? false;
 	if (!is_user_logged_in() && is_page($checkout_pageid) && !$is_guest) {
 		$url = add_query_arg(
 			'redirect_to',
