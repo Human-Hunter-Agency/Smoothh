@@ -598,6 +598,9 @@ function smoothh_override_checkout_fields($fields)
 					'pattern'  => '^([0-9]){10}$',
 					'title'    => __('NIP number requires 10 digits', 'smoothh')),
 			);
+		}else{
+			unset($fields['shipping']['shipping_company']);
+			unset($fields['billing']['billing_company']);
 		}
 	}
 
@@ -642,7 +645,7 @@ function smoothh_override_default_locale_fields( $fields ) {
     $fields['postcode']['class'] = array('form-row-first');
     $fields['city']['class'] = array('form-row-last');
     $fields['country']['priority'] = 75;
-	if ($fields['company_nip']) {
+	if (isset($fields['company_nip'])) {
 		$fields['company_nip']['priority'] = 35;
 	}
     unset($fields['address_2']);
