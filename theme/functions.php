@@ -396,16 +396,20 @@ function smoothh_save_extra_fields($customer_id)
 		update_user_meta($customer_id, 'last_name', sanitize_text_field($_POST['last_name']));
 		update_user_meta($customer_id, 'billing_last_name', sanitize_text_field($_POST['last_name']));
 	}
-	if (isset($_POST['billing_company'])) {
-		// WooCommerce billing_company
-		update_user_meta($customer_id, 'billing_company', sanitize_text_field($_POST['billing_company']));
-	}
-	if (isset($_POST['billing_company_nip'])) {
-		update_user_meta($customer_id, 'billing_company_nip', sanitize_text_field($_POST['billing_company_nip']));
-	}
+
 	// Custom account_type client/candidate
 	if (isset($_POST['account_type'])) {
 		update_user_meta($customer_id, 'account_type', sanitize_text_field($_POST['account_type']));
+		
+		if ($_POST['account_type'] == 'client') {
+			// WooCommerce billing_company
+			if (isset($_POST['billing_company'])) {
+				update_user_meta($customer_id, 'billing_company', sanitize_text_field($_POST['billing_company']));
+			}
+			if (isset($_POST['billing_company_nip'])) {
+				update_user_meta($customer_id, 'billing_company_nip', sanitize_text_field($_POST['billing_company_nip']));
+			}
+		}
 	}
 }
 function smoothh_validate_extra_fields($errors)
@@ -433,6 +437,14 @@ function smoothh_validate_extra_fields_my_account($username, $email, $validation
 	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'candidate') ) ) {
 		$validation_errors->add('account_type_error', __('Account type is required.', 'smoothh'));
 	}
+
+	if (isset($_POST['account_type']) && $_POST['account_type'] == 'client' && empty($_POST['billing_company'])) {
+		$validation_errors->add('billing_company_error', __('Company is required.', 'smoothh'));
+	}
+
+	if (isset($_POST['account_type']) && $_POST['account_type'] == 'client' && empty($_POST['billing_company_nip'])) {
+		$validation_errors->add('billing_company_nip_error', __('Company NIP is required.', 'smoothh'));
+	}
 }
 
 function smoothh_save_user_default_type($user_id){
@@ -457,20 +469,29 @@ add_action('user_register', 'smoothh_save_user_default_type', 10, 1 );
 add_filter('woocommerce_billing_fields', 'smoothh_billing_address_add_nip');
 function smoothh_billing_address_add_nip($fields)
 {
+	$user_id = get_current_user_id();
+	if ($user_id) {
+		$account_type = get_user_meta($user_id, 'account_type', true);
+		if ($account_type == 'client') {
+			$fields['billing_company']['class'] = array('form-row-first');
+			$fields['billing_company']['required'] = true;
+			$fields['billing_company_nip']   = array(
+				'type'		   => 'text',
+				'label'  => __('NIP Number', 'smoothh'),
+				'priority'=> 35,
+				'required' => true,
+				'class' => array('form-row-last'),
+				'custom_attributes' => array( 
+					'pattern'  => '^([0-9]){10}$',
+					'title'    => __('NIP number requires 10 digits', 'smoothh')),
+			);
+		}else{
+			unset($fields['billing_company']);
+		}
+	}
 
-	$fields['billing_company']['class'] = array('form-row-first');
 	$fields['billing_phone']['required'] = false;
 	$fields['billing_phone']['custom_attributes'] = array();
-
-	$fields['billing_company_nip']   = array(
-		'type'		   => 'text',
-		'label'  => __('NIP Number', 'smoothh'),
-		'priority'=> 35,
-		'class' => array('form-row-last'),
-		'custom_attributes' => array( 
-			'pattern'  => '^([0-9]){10}$',
-			'title'    => __('NIP number requires 10 digits', 'smoothh')),
-	);
 
 	return $fields;
 }
@@ -479,21 +500,31 @@ add_filter('woocommerce_shipping_fields', 'smoothh_shipping_address_add_nip');
 function smoothh_shipping_address_add_nip($fields)
 {
 
-	$fields['shipping_company']['class'] = array('form-row-first');
+	$user_id = get_current_user_id();
+	if ($user_id) {
+		$account_type = get_user_meta($user_id, 'account_type', true);
+		if ($account_type == 'client') {
+			$fields['shipping_company']['class'] = array('form-row-first');
+			$fields['shipping_company']['required'] = true;
+			$fields['shipping_company_nip'] = array(
+				'type'		   => 'text',
+				'label'  => __('NIP Number', 'smoothh'),
+				'priority'=> 35,
+				'required' => true,
+				'class' => array('form-row-last'),
+				'custom_attributes' => array( 
+					'pattern'  => '^([0-9]){10}$',
+					'title'    => __('NIP number requires 10 digits', 'smoothh')),
+			);
+		}else{
+			unset($fields['shipping_company']);
+		}
+	}
+
 	$fields['shipping_phone'] = array(
 		'type'        => 'tel',
 		'label' => __('Phone Number', 'woocommerce'),
 		'autocomplete'=> 'tel'
-	);
-
-	$fields['shipping_company_nip'] = array(
-		'type'		   => 'text',
-		'label'  => __('NIP Number', 'smoothh'),
-		'priority'=> 35,
-		'class' => array('form-row-last'),
-		'custom_attributes' => array( 
-			'pattern'  => '^([0-9]){10}$',
-			'title'    => __('NIP number requires 10 digits', 'smoothh')),
 	);
 
 	return $fields;
@@ -582,7 +613,7 @@ function smoothh_override_checkout_fields($fields)
 add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
 
 function smoothh_checkout_fields_update_order_meta( $order_id ) {
-	if ( ! empty( $_POST['billing_company_nip'] ) ) {
+	if (  isset( $_POST['billing_company_nip'] ) && !empty( $_POST['billing_company_nip'] ) ) {
         $order = wc_get_order( $order_id );
         $order->update_meta_data( 'billing_company_nip', sanitize_text_field( $_POST['billing_company_nip'] ) );
         $order->save_meta_data();
