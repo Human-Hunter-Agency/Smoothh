@@ -515,24 +515,26 @@ function registerClientFieldsToggle(){
 	const clientInputs = {
 		billing_company_field: registerForm.querySelector('input[name="billing_company"]'),
 		billing_company_nip_field: registerForm.querySelector('input[name="billing_company_nip"]') 
-
 	}
 
+	toggleFieldsPlacement(false)
 	accountTypeRadios.forEach(function (radio) {
 		radio.addEventListener('change', function () {
 			let value = document.querySelector('input[name="account_type"]:checked').value;
-
-			if (value == 'client') {
-				for (const fieldId in clientInputs) {
-					const formFieldWrapper = registerForm.querySelector(`#${fieldId} .woocommerce-input-wrapper`);
-					formFieldWrapper.appendChild(clientInputs[fieldId]);
-				}
-			} else {
-				for (const fieldId in clientInputs) {
-					hiddenContainer.appendChild(clientInputs[fieldId]);
-				}
-			}
+			toggleFieldsPlacement(value == 'client')
 		});
 	});
 
+	function toggleFieldsPlacement(visible){
+		for (const fieldId in clientInputs) {
+			const formFieldWrapper = registerForm.querySelector(`#${fieldId} .woocommerce-input-wrapper`);
+			if (visible) {
+				formFieldWrapper.classList.remove('hidden')
+				formFieldWrapper.appendChild(clientInputs[fieldId]);
+			}else{
+				formFieldWrapper.classList.add('hidden')
+				hiddenContainer.appendChild(clientInputs[fieldId]);
+			}
+		}
+	}
 }
