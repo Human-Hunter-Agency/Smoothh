@@ -574,25 +574,32 @@ add_action('edit_user_profile', 'smoothh_show_extra_account_details', 15);
 
 function smoothh_override_checkout_fields($fields)
 {
-	$fields['shipping']['shipping_company_nip'] = array(
-		'type'		   => 'text',
-		'label'  => __('NIP Number', 'smoothh'),
-		'priority'=> 35,
-		'class' => array('form-row-last'),
-		'custom_attributes' => array(
-			'pattern'  => '^([0-9]){10}$',
-			'title'    => __('NIP number requires 10 digits', 'smoothh')),
-	);
 
-	$fields['billing']['billing_company_nip'] = array(
-		'type'		   => 'text',
-		'label'  => __('NIP Number', 'smoothh'),
-		'priority'=> 35,
-		'class' => array('form-row-last'),
-		'custom_attributes' => array( 
-			'pattern'  => '^([0-9]){10}$',
-			'title'    => __('NIP number requires 10 digits', 'smoothh')),
-	);
+	$user_id = get_current_user_id();
+	if ($user_id) {
+		$account_type = get_user_meta($user_id, 'account_type', true);
+		if ($account_type == 'client') {
+			$fields['shipping']['shipping_company_nip'] = array(
+				'type'		   => 'text',
+				'label'  => __('NIP Number', 'smoothh'),
+				'priority'=> 35,
+				'class' => array('form-row-last'),
+				'custom_attributes' => array(
+					'pattern'  => '^([0-9]){10}$',
+					'title'    => __('NIP number requires 10 digits', 'smoothh')),
+			);
+		
+			$fields['billing']['billing_company_nip'] = array(
+				'type'		   => 'text',
+				'label'  => __('NIP Number', 'smoothh'),
+				'priority'=> 35,
+				'class' => array('form-row-last'),
+				'custom_attributes' => array( 
+					'pattern'  => '^([0-9]){10}$',
+					'title'    => __('NIP number requires 10 digits', 'smoothh')),
+			);
+		}
+	}
 
 	$fields['shipping']['shipping_company']['class'] = array('form-row-first');
 	$fields['billing']['billing_company']['class'] = array('form-row-first');
@@ -635,7 +642,9 @@ function smoothh_override_default_locale_fields( $fields ) {
     $fields['postcode']['class'] = array('form-row-first');
     $fields['city']['class'] = array('form-row-last');
     $fields['country']['priority'] = 75;
-	$fields['company_nip']['priority'] = 35;
+	if ($fields['company_nip']) {
+		$fields['company_nip']['priority'] = 35;
+	}
     unset($fields['address_2']);
 
     return $fields;
