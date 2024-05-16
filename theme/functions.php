@@ -502,8 +502,7 @@ function smoothh_shipping_address_add_nip($fields)
 {
 
 	$user_id = get_current_user_id();
-	if ($user_id) {
-		$account_type = get_user_meta($user_id, 'account_type', true);
+	if ($user_id && ($account_type = get_user_meta($user_id, 'account_type', true)) && $account_type == 'client') {
 		if ($account_type == 'client') {
 			$fields['shipping_company']['class'] = array('form-row-first');
 			$fields['shipping_company']['required'] = true;
@@ -576,8 +575,7 @@ function smoothh_override_checkout_fields($fields)
 {
 
 	$user_id = get_current_user_id();
-	if ($user_id) {
-		$account_type = get_user_meta($user_id, 'account_type', true);
+	if ($user_id && ($account_type = get_user_meta($user_id, 'account_type', true)) && $account_type == 'client') {
 		if ($account_type == 'client') {
 			$fields['shipping']['shipping_company_nip'] = array(
 				'type'		   => 'text',
