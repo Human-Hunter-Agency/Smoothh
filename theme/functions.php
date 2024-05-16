@@ -509,21 +509,19 @@ function smoothh_shipping_address_add_nip($fields)
 
 	$user_id = get_current_user_id();
 	if ($user_id && ($account_type = get_user_meta($user_id, 'account_type', true)) && $account_type == 'client') {
-		if ($account_type == 'client') {
-			$fields['shipping_company']['class'] = array('form-row-first');
-			$fields['shipping_company']['required'] = true;
-			$fields['shipping_company_nip'] = array(
-				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh'),
-				'priority'=> 35,
-				'required' => true,
-				'class' => array('form-row-last'),
-				'custom_attributes' => array( 
-					'required' => 'required',
-					'pattern'  => '^([0-9]){10}$',
-					'title'    => __('NIP number requires 10 digits', 'smoothh')),
-			);
-		}
+		$fields['shipping_company']['class'] = array('form-row-first');
+		$fields['shipping_company']['required'] = true;
+		$fields['shipping_company_nip'] = array(
+			'type'		   => 'text',
+			'label'  => __('NIP Number', 'smoothh'),
+			'priority'=> 35,
+			'required' => true,
+			'class' => array('form-row-last'),
+			'custom_attributes' => array( 
+				'required' => 'required',
+				'pattern'  => '^([0-9]){10}$',
+				'title'    => __('NIP number requires 10 digits', 'smoothh')),
+		);
 	}else{
 		unset($fields['shipping_company']);
 		unset($fields['shipping_company_nip']);
@@ -583,35 +581,32 @@ function smoothh_override_checkout_fields($fields)
 
 	$user_id = get_current_user_id();
 	if ($user_id && ($account_type = get_user_meta($user_id, 'account_type', true)) && $account_type == 'client') {
-		if ($account_type == 'client') {
-			$fields['shipping']['shipping_company_nip'] = array(
-				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh'),
-				'priority'=> 35,
-				'required' => true,
-				'class' => array('form-row-last'),
-				'custom_attributes' => array(
-					'required' => 'required',
-					'pattern'  => '^([0-9]){10}$',
-					'title'    => __('NIP number requires 10 digits', 'smoothh')),
-			);
-		
-			$fields['billing']['billing_company_nip'] = array(
-				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh'),
-				'priority'=> 35,
-				'required' => true,
-				'class' => array('form-row-last'),
-				'custom_attributes' => array( 
-					'required' => 'required',
-					'pattern'  => '^([0-9]){10}$',
-					'title'    => __('NIP number requires 10 digits', 'smoothh')),
-			);
+		$fields['shipping']['shipping_company_nip'] = array(
+			'type'		   => 'text',
+			'label'  => __('NIP Number', 'smoothh'),
+			'priority'=> 35,
+			'required' => true,
+			'class' => array('form-row-last'),
+			'custom_attributes' => array(
+				'required' => 'required',
+				'pattern'  => '^([0-9]){10}$',
+				'title'    => __('NIP number requires 10 digits', 'smoothh')),
+		);
+	
+		$fields['billing']['billing_company_nip'] = array(
+			'type'		   => 'text',
+			'label'  => __('NIP Number', 'smoothh'),
+			'priority'=> 35,
+			'required' => true,
+			'class' => array('form-row-last'),
+			'custom_attributes' => array( 
+				'required' => 'required',
+				'pattern'  => '^([0-9]){10}$',
+				'title'    => __('NIP number requires 10 digits', 'smoothh')),
+		);
 
-			$fields['shipping']['shipping_company']['class'] = array('form-row-first');
-			$fields['billing']['billing_company']['class'] = array('form-row-first');
-		
-		}
+		$fields['shipping']['shipping_company']['class'] = array('form-row-first');
+		$fields['billing']['billing_company']['class'] = array('form-row-first');
 	}else{
 		unset($fields['shipping']['shipping_company']);
 		unset($fields['billing']['billing_company']);
@@ -653,12 +648,16 @@ function my_custom_checkout_field_display_admin_order_meta_billing($order)
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta_billing', 10, 1 );
 
 function smoothh_override_default_locale_fields( $fields ) {
+	$user_id = get_current_user_id();
+	if ($user_id && ($account_type = get_user_meta($user_id, 'account_type', true)) && $account_type == 'client') {
+		$fields['company_nip']['priority'] = 35;
+	}else{
+		unset($fields['company']);
+	}
+
     $fields['postcode']['class'] = array('form-row-first');
     $fields['city']['class'] = array('form-row-last');
     $fields['country']['priority'] = 75;
-	if (isset($fields['company_nip'])) {
-		$fields['company_nip']['priority'] = 35;
-	}
     unset($fields['address_2']);
 
     return $fields;
