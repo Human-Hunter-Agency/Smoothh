@@ -510,7 +510,7 @@ function registerClientFieldsToggle(){
 	const registerForm = document.querySelector('.woocommerce-form-register')
 	if (!registerForm) return
 
-	const hiddenContainer = document.querySelector('data-js="hidden-inputs"')
+	const hiddenContainer = document.querySelector('[data-js="hidden-inputs"]')
 	const accountTypeRadios = registerForm.querySelectorAll('input[name="account_type"]')
 	const clientInputs = {
 		billing_company_field: registerForm.querySelector('input[name="billing_company"]'),
