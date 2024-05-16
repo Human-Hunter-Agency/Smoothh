@@ -482,7 +482,7 @@ function smoothh_billing_address_add_nip($fields)
 			$fields['billing_company']['required'] = true;
 			$fields['billing_company_nip']   = array(
 				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh') . '*',
+				'label'  => __('NIP Number', 'smoothh'),
 				'priority'=> 35,
 				'required' => true,
 				'class' => array('form-row-last'),
@@ -514,7 +514,7 @@ function smoothh_shipping_address_add_nip($fields)
 			$fields['shipping_company']['required'] = true;
 			$fields['shipping_company_nip'] = array(
 				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh') . '*',
+				'label'  => __('NIP Number', 'smoothh'),
 				'priority'=> 35,
 				'required' => true,
 				'class' => array('form-row-last'),
@@ -586,7 +586,7 @@ function smoothh_override_checkout_fields($fields)
 		if ($account_type == 'client') {
 			$fields['shipping']['shipping_company_nip'] = array(
 				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh') . '*',
+				'label'  => __('NIP Number', 'smoothh'),
 				'priority'=> 35,
 				'required' => true,
 				'class' => array('form-row-last'),
@@ -598,7 +598,7 @@ function smoothh_override_checkout_fields($fields)
 		
 			$fields['billing']['billing_company_nip'] = array(
 				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh') . '*',
+				'label'  => __('NIP Number', 'smoothh'),
 				'priority'=> 35,
 				'required' => true,
 				'class' => array('form-row-last'),
