@@ -372,18 +372,18 @@ function woocommerce_smoothh_account_extra_fields()
 		),
 		'billing_company' => array(
 			'type'        => 'text',
-			'placeholder' => __('Company Name', 'smoothh'),
+			'placeholder' => __('Company Name', 'smoothh') . '*',
 			'required' => true,
 			'custom_attributes' => array( 'required' => 'required' ),
 		),
 		'billing_company_nip' => array(
 			'type'        => 'text',
-			'placeholder' => __('NIP Number', 'smoothh'),
+			'placeholder' => __('NIP Number', 'smoothh') . '*',
 			'required' => true,
 			'custom_attributes' => array( 
+				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
 				'title'    => __('NIP number requires 10 digits', 'smoothh')),
-				'required' => 'required',
 		),
 	));
 }
@@ -480,14 +480,14 @@ function smoothh_billing_address_add_nip($fields)
 			$fields['billing_company']['required'] = true;
 			$fields['billing_company_nip']   = array(
 				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh'),
+				'label'  => __('NIP Number', 'smoothh') . '*',
 				'priority'=> 35,
 				'required' => true,
 				'class' => array('form-row-last'),
 				'custom_attributes' => array( 
+					'required' => 'required',
 					'pattern'  => '^([0-9]){10}$',
 					'title'    => __('NIP number requires 10 digits', 'smoothh')),
-					'required' => 'required',
 			);
 		}
 	}else{
@@ -512,14 +512,14 @@ function smoothh_shipping_address_add_nip($fields)
 			$fields['shipping_company']['required'] = true;
 			$fields['shipping_company_nip'] = array(
 				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh'),
+				'label'  => __('NIP Number', 'smoothh') . '*',
 				'priority'=> 35,
 				'required' => true,
 				'class' => array('form-row-last'),
 				'custom_attributes' => array( 
+					'required' => 'required',
 					'pattern'  => '^([0-9]){10}$',
 					'title'    => __('NIP number requires 10 digits', 'smoothh')),
-					'required' => 'required',
 			);
 		}
 	}else{
@@ -584,26 +584,26 @@ function smoothh_override_checkout_fields($fields)
 		if ($account_type == 'client') {
 			$fields['shipping']['shipping_company_nip'] = array(
 				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh'),
+				'label'  => __('NIP Number', 'smoothh') . '*',
 				'priority'=> 35,
 				'required' => true,
 				'class' => array('form-row-last'),
 				'custom_attributes' => array(
+					'required' => 'required',
 					'pattern'  => '^([0-9]){10}$',
 					'title'    => __('NIP number requires 10 digits', 'smoothh')),
-					'required' => 'required',
 			);
 		
 			$fields['billing']['billing_company_nip'] = array(
 				'type'		   => 'text',
-				'label'  => __('NIP Number', 'smoothh'),
+				'label'  => __('NIP Number', 'smoothh') . '*',
 				'priority'=> 35,
 				'required' => true,
 				'class' => array('form-row-last'),
 				'custom_attributes' => array( 
+					'required' => 'required',
 					'pattern'  => '^([0-9]){10}$',
 					'title'    => __('NIP number requires 10 digits', 'smoothh')),
-					'required' => 'required',
 			);
 
 			$fields['shipping']['shipping_company']['class'] = array('form-row-first');
@@ -646,7 +646,7 @@ add_action( 'woocommerce_checkout_update_order_meta', 'smoothh_checkout_fields_u
 // Display the custom-field in admin orders view
 function my_custom_checkout_field_display_admin_order_meta_billing($order)
 {     
-	echo '<p><strong>'.__('NIP Number', 'smoothh').': </strong><span>' . $order->get_meta('billing_company_nip') . '</span></p>'; 
+	echo '<p><strong>'.__('NIP Number', 'smoothh'). ' *: </strong><span>' . $order->get_meta('billing_company_nip') . '</span></p>'; 
 }
 add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta_billing', 10, 1 );
 
