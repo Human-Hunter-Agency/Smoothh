@@ -525,11 +525,11 @@ function registerClientFieldsToggle(){
 			if (value == 'client') {
 				for (const fieldId in clientInputs) {
 					const formFieldWrapper = registerForm.querySelector(`#${fieldId} .woocommerce-input-wrapper`);
-					clientInputs[fieldId].prependTo(formFieldWrapper);
+					formFieldWrapper.appendChild(clientInputs[fieldId]);
 				}
 			} else {
 				for (const fieldId in clientInputs) {
-					clientInputs[fieldId].prependTo(hiddenContainer);
+					hiddenContainer.appendChild(clientInputs[fieldId]);
 				}
 			}
 		});
