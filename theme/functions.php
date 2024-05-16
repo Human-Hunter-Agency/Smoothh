@@ -485,10 +485,10 @@ function smoothh_billing_address_add_nip($fields)
 					'pattern'  => '^([0-9]){10}$',
 					'title'    => __('NIP number requires 10 digits', 'smoothh')),
 			);
-		}else{
-			unset($fields['billing_company']);
-			unset($fields['billing_company_nip']);
 		}
+	}else{
+		unset($fields['billing_company']);
+		unset($fields['billing_company_nip']);
 	}
 
 	$fields['billing_phone']['required'] = false;
@@ -517,10 +517,10 @@ function smoothh_shipping_address_add_nip($fields)
 					'pattern'  => '^([0-9]){10}$',
 					'title'    => __('NIP number requires 10 digits', 'smoothh')),
 			);
-		}else{
-			unset($fields['shipping_company']);
-			unset($fields['shipping_company_nip']);
 		}
+	}else{
+		unset($fields['shipping_company']);
+		unset($fields['shipping_company_nip']);
 	}
 
 	$fields['shipping_phone'] = array(
@@ -602,10 +602,10 @@ function smoothh_override_checkout_fields($fields)
 			$fields['shipping']['shipping_company']['class'] = array('form-row-first');
 			$fields['billing']['billing_company']['class'] = array('form-row-first');
 		
-		}else{
-			unset($fields['shipping']['shipping_company']);
-			unset($fields['billing']['billing_company']);
 		}
+	}else{
+		unset($fields['shipping']['shipping_company']);
+		unset($fields['billing']['billing_company']);
 	}
 
 
