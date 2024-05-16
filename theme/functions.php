@@ -487,6 +487,7 @@ function smoothh_billing_address_add_nip($fields)
 			);
 		}else{
 			unset($fields['billing_company']);
+			unset($fields['billing_company_nip']);
 		}
 	}
 
@@ -518,6 +519,7 @@ function smoothh_shipping_address_add_nip($fields)
 			);
 		}else{
 			unset($fields['shipping_company']);
+			unset($fields['shipping_company_nip']);
 		}
 	}
 
