@@ -598,14 +598,16 @@ function smoothh_override_checkout_fields($fields)
 					'pattern'  => '^([0-9]){10}$',
 					'title'    => __('NIP number requires 10 digits', 'smoothh')),
 			);
+
+			$fields['shipping']['shipping_company']['class'] = array('form-row-first');
+			$fields['billing']['billing_company']['class'] = array('form-row-first');
+		
 		}else{
 			unset($fields['shipping']['shipping_company']);
 			unset($fields['billing']['billing_company']);
 		}
 	}
 
-	$fields['shipping']['shipping_company']['class'] = array('form-row-first');
-	$fields['billing']['billing_company']['class'] = array('form-row-first');
 
 	$fields['shipping']['shipping_email']['class'] = array('form-row-first');
 	$fields['billing']['billing_email']['class'] = array('form-row-first');
