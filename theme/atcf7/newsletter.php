@@ -7,6 +7,9 @@ if (!defined('ABSPATH')) {
  * */
 ?>
 
+<div>
+  [response]
+</div>
 <div class="newsletter-input">
 [email* your-email id:your-email placeholder "Adres e-mail"]
     <div class="submit-container">
