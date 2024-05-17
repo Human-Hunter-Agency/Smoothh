@@ -9,7 +9,7 @@
             <?php foreach ($consentData as $item): ?>
                 <li class="flex justify-between flex-col lg:flex-row gap-3 lg:gap-4">
                     <div>
-                        <p class="lg:w-44 [&_a]:!text-primary mb-2">
+                        <p class="[&_a]:!text-primary mb-2">
                             <strong>
                                 <?= $item['title']; ?>
                             </strong>
