@@ -29,7 +29,7 @@ if (!defined('ABSPATH')) {
     [textarea your-message x3 placeholder "Twoja wiadomość"]
   </div>
   <div class="mb-5 text-center">
-    [acceptance acceptance-939] Przeczytałem/am i akceptuję <a href="<?php echo get_permalink(wc_terms_and_conditions_page_id()) ?>">regulamin</a> oraz <a href="<?php echo get_permalink(wc_privacy_policy_page_id()) ?>">politykę prywatności</a> [/acceptance]
+    [acceptance contact_acceptance] Przeczytałem/am i akceptuję <a href="<?php echo get_permalink(wc_terms_and_conditions_page_id()) ?>">regulamin</a> oraz <a href="<?php echo get_permalink(wc_privacy_policy_page_id()) ?>">politykę prywatności</a> [/acceptance]
   </div>
   <div class="btn-color relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 mb-9 ">
     [submit "Wyślij wiadomość"]

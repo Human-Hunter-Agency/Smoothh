@@ -841,4 +841,10 @@ function gdpr_register_smoothh_consents()
 		__('Consent to be contacted via email for updates','smoothh'),
 		true
 	  );
+	  gdpr('consent')->register(
+		'candidate_acceptance', 
+		__('Candidate consent', 'smoothh' ),
+		__('Consent to the processing of my personal data for recruitment purposes','smoothh'),
+		true
+	  );
 }
