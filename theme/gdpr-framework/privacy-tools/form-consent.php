@@ -8,12 +8,12 @@
         <ul class="gdpr-consent flex flex-col gap-5">
             <?php foreach ($consentData as $item): ?>
                 <li class="flex justify-between flex-col lg:flex-row gap-3 lg:gap-4">
-                    <div class="lg:w-44">
-                        <strong>
-                            <?= $item['title']; ?>
-                        </strong>
-                    </div>
                     <div>
+                        <p class="lg:w-44 [&_a]:!text-primary mb-2">
+                            <strong>
+                                <?= $item['title']; ?>
+                            </strong>
+                        </p>
                         <p><?= $item['description']; ?></p>
                     </div>
                     <div class="shrink-0">
