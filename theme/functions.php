@@ -829,9 +829,16 @@ add_action('init', 'gdpr_register_smoothh_consents');
 function gdpr_register_smoothh_consents()
 {
     gdpr('consent')->register(
-      'gdpr_terms_consent', 
+      'contact_acceptance', 
       sprintf( __( '<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh' ), get_permalink(wc_terms_and_conditions_page_id()) ),
       __('This consent is visible by default on woocommerce checkout page. If someone wishes to withdraw it, they should simply request to delete all their data','gdpr-framework'),
       true
     );
+
+	gdpr('consent')->register(
+		'contact_acceptance', 
+		__('Contact consent', 'smoothh' ),
+		__('Consent to be contacted via email for updates','smoothh'),
+		true
+	  );
 }
