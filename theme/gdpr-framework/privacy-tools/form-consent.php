@@ -5,7 +5,7 @@
         <p>
             <?= __('Here you can withdraw any consents you have given.', 'gdpr-framework'); ?>
         </p>
-        <ul class="gdpr-consent flex flex-col gap-5">
+        <ul class="gdpr-consent flex flex-col gap-5 not-prose">
             <?php foreach ($consentData as $item): ?>
                 <li class="flex justify-between flex-col lg:flex-row gap-3 lg:gap-4">
                     <div>
