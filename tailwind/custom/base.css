@@ -36,10 +36,6 @@ body {
 	@apply mt-2 text-red-500
 }
 
-.wpcf7-response-output{
-	@apply !hidden
-}
-
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
 [data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,
 [data-js="qty-control"] input[type='number'] {
