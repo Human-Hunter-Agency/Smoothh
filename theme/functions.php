@@ -446,10 +446,35 @@ function smoothh_my_account_page_woocommerce()
 		woocommerce_form_field($key, $field_args);
 	}
 }
-function smoothh_validate_extra_fields_my_account($username, $email, $validation_errors)
+function smoothh_after_register_actions($username, $email, $validation_errors)
 {
 	smoothh_validate_extra_fields($validation_errors);
 
+	if (!isset($_POST['gdpr_terms_consent'])){
+		$validation_errors->add('gdpr_terms_consent_error', __('Terms and condition are not checked!', 'smoothh'));
+	}
+
+	if (isset($_POST['gdpr_terms_consent']) && $_POST['gdpr_terms_consent'] === 'yes') { 
+		$dataSubject = gdpr('data-subject')->getByEmail($_POST['email']);
+		$dataSubject->giveConsent('gdpr_terms_consent');
+	}
+}
+
+function smoothh_terms_and_conditions_to_registration()
+{
+
+	if (wc_get_page_id('terms') > 0) {
+	?>
+		<p class="form-row terms wc-terms-and-conditions">
+			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline">
+				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="gdpr_terms_consent" id="gdpr_terms_consent" required value="yes" />
+				<span>
+					<?php esc_html_e('I&rsquo;ve read and accept the', 'smoothh'); ?>
+					<?php printf(__('<a href="%s" target="_blank" >terms and conditions</a>', 'smoothh'), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
+			</label>
+		</p>
+	<?php
+	}
 }
 
 function smoothh_save_user_default_type($user_id){
@@ -467,7 +492,8 @@ function smoothh_filter_woocommerce_form_field_checkbox( $field, $key, $args, $v
 add_filter( 'woocommerce_form_field_checkbox', 'smoothh_filter_woocommerce_form_field_checkbox', 10, 4 );
 
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
-add_action('woocommerce_register_post', 'smoothh_validate_extra_fields_my_account', 10, 3);
+add_action('woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 20);
+add_action('woocommerce_register_post', 'smoothh_after_register_actions', 10, 3);
 add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
 add_action('user_register', 'smoothh_save_user_default_type', 10, 1 );
 
@@ -797,4 +823,15 @@ if( $handle === 'wc-password-strength-meter' ) {
 }
 return $params;
 
+}
+
+add_action('init', 'gdpr_register_smoothh_consents'); 
+function gdpr_register_smoothh_consents()
+{
+    gdpr('consent')->register(
+      'gdpr_terms_consent', 
+      sprintf( __( '<a href="%s">Terms and Conditions</a> consent', 'smoothh' ), get_permalink(wc_terms_and_conditions_page_id()) ),
+      __('This consent is visible by default on woocommerce checkout page. If someone wishes to withdraw it, they should simply request to delete all their data','gdpr-framework'),
+      true
+    );
 }
