@@ -35,7 +35,14 @@
 <?php do_action( 'wpo_wcpdf_after_document_label', $this->get_type(), $this->order ); ?>
 
 <div>
+	<pre>
+		<?php print_r($this->order->data); ?>
+	</pre>
+
 	TEST
+	<pre>
+		<?php print_r($this->order->data['customer_id']); ?>
+	</pre>
 	<br>
 	<pre>
 		<?php print_r($this); ?>
