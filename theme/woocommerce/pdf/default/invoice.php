@@ -34,19 +34,6 @@
 
 <?php do_action( 'wpo_wcpdf_after_document_label', $this->get_type(), $this->order ); ?>
 
-<div>
-
-		<?php if ( $this->order->data['customer_id'] ) : ?>
-			<br>
-			NIP: <?php echo get_user_meta($this->order->data['customer_id'], 'billing_company_nip', true); ?>
-		<?php endif; ?>
-	TEST
-		<?php echo get_user_meta($user->ID, 'billing_company_nip', true); ?>
-		<?php if ( $this->order->get_meta('billing_company_nip') ) : ?>
-			<br>
-			NIP: <?php echo esc_html( $this->order->get_meta('billing_company_nip') ); ?>
-		<?php endif; ?>
-</div>
 <table class="order-data-addresses">
 	<tr>
 		<td class="address billing-address">
@@ -54,6 +41,9 @@
 			<?php do_action( 'wpo_wcpdf_before_billing_address', $this->get_type(), $this->order ); ?>
 			<?php $this->billing_address(); ?>
 			<?php do_action( 'wpo_wcpdf_after_billing_address', $this->get_type(), $this->order ); ?>
+			<?php if ( $this->order->get_meta('billing_company_nip') ) : ?>
+				<div>NIP: <?php echo esc_html( $this->order->get_meta('billing_company_nip') ); ?></div>
+			<?php endif; ?>
 			<?php if ( isset( $this->settings['display_email'] ) ) : ?>
 				<div class="billing-email"><?php $this->billing_email(); ?></div>
 			<?php endif; ?>
