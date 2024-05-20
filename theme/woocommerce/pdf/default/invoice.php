@@ -36,13 +36,10 @@
 
 <div>
 	<pre>
-		<?php print_r($this->order->data); ?>
+		<?php print_r($this->order->data['customer_id']); ?>
 	</pre>
 
 	TEST
-	<pre>
-		<?php print_r($this->order->data['customer_id']); ?>
-	</pre>
 	<br>
 	<pre>
 		<?php print_r($this); ?>
