@@ -37,7 +37,9 @@
 <div>
 	TEST
 	<br>
-	<?php print_r($this->customer_Id); ?>
+	<pre>
+		<?php print_r($this,true); ?>
+	</pre>
 </div>
 <table class="order-data-addresses">
 	<tr>
