@@ -156,7 +156,7 @@ do_action('woocommerce_before_cart'); ?>
             <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-5">
                 <div>
                     <?php if(!(WC()->cart->has_discount( 'EXTRA10' ))):?>
-                        <p class="max-w-80 mb-2.5"><?php __('For orders of at least 100USD, get a <b>10%</b> discount with the code <b>EXTRA10</b>.', 'smoothh'); ?></p>
+                        <p class="max-w-80 mb-2.5"><?php echo __('For orders of at least 100USD, get a <b>10%</b> discount with the code <b>EXTRA10</b>.', 'smoothh'); ?></p>
                     <?php endif;?>
                     <?php if (wc_coupons_enabled()) { ?>
                         <?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
