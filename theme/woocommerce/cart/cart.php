@@ -24,7 +24,9 @@ do_action('woocommerce_before_cart'); ?>
     <?php do_action('woocommerce_before_cart_table'); ?>
     
     <h2 class="text-2xl md:text-3xl text-primary !mb-5 !mt-0 font-semibold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
-
+    <?php if(!(WC()->cart->has_discount( 'EXTRA10' ))):?>
+        <p class="max-w-[440px] mb-5"><?php echo __('For orders of at least 100USD, get a <b>10%</b> discount with the code <b>EXTRA10</b>.', 'smoothh'); ?></p>
+    <?php endif;?>
     <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
         <div class="hidden md:flex gap-2.5 lg:gap-5 items-end">
             <span class="product-name grow md:w-2/5 text-left text-base lg:text-xl font-semibold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
@@ -155,9 +157,6 @@ do_action('woocommerce_before_cart'); ?>
 
             <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-5">
                 <div>
-                    <?php if(!(WC()->cart->has_discount( 'EXTRA10' ))):?>
-                        <p class="max-w-80 mb-2.5"><?php echo __('For orders of at least 100USD, get a <b>10%</b> discount with the code <b>EXTRA10</b>.', 'smoothh'); ?></p>
-                    <?php endif;?>
                     <?php if (wc_coupons_enabled()) { ?>
                         <?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
                             <div class="mb-4 leading-tight">
