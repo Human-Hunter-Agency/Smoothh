@@ -38,7 +38,7 @@
 	TEST
 	<br>
 	<pre>
-		<?php print_r($this,true); ?>
+		<?php print_r($this); ?>
 	</pre>
 </div>
 <table class="order-data-addresses">
