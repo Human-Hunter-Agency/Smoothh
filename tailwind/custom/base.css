@@ -40,11 +40,11 @@ body {
 	@apply !max-w-[300px] !block !ml-auto !rounded-[15px] !overflow-hidden
 }
 
-.privacy-policy .list-alpha{
+.list-alpha{
 	list-style: lower-alpha !important;
 }
 
-.privacy-policy .list-roman{
+.list-roman{
 	list-style: lower-roman !important;
 }
 
