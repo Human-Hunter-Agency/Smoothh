@@ -40,6 +40,14 @@ body {
 	@apply !max-w-[300px] !block !ml-auto !rounded-[15px] !overflow-hidden
 }
 
+.privacy-policy .list-alpha{
+	list-style: lower-alpha !important;
+}
+
+.privacy-policy .list-roman{
+	list-style: lower-roman !important;
+}
+
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
 [data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,
 [data-js="qty-control"] input[type='number'] {
