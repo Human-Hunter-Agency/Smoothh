@@ -37,7 +37,7 @@ body {
 }
 
 .paypal-buttons{
-	@apply !max-w-[230px] !block !ml-auto !rounded-[15px] !overflow-hidden
+	@apply !max-w-[300px] !block !ml-auto !rounded-[15px] !overflow-hidden
 }
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
