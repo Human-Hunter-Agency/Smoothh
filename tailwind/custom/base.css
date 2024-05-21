@@ -36,6 +36,10 @@ body {
 	@apply mt-2 text-red-500
 }
 
+.paypal-button{
+	@apply max-w-[230px] block ml-auto !rounded-[15px]
+}
+
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
 [data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,
 [data-js="qty-control"] input[type='number'] {
