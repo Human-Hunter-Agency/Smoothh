@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
         <span class="flex flex-col">
             {{{ data.variation.price_html }}}
         </span>    
-        <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php esc_html_e('net','smoothh') ?></span>
+        <span class="net-label text-primary font-normal text-xl md:text-2xl ml-2"><?php echo get_woocommerce_currency_symbol() . ' ' . esc_html_e('net','smoothh') ?></span>
     </div>
 	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
 </script>
