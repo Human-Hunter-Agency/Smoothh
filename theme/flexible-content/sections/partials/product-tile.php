@@ -34,7 +34,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                         <?php endif ?>
                         <div class="flex flex-col items-end mr-2">
                             <span>
-                                <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?>
+                                <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?>
                             </span>
                             <?php if($product->is_on_sale()): ?>
                                 <span class="!text-lg !leading-4 h-5 text-black opacity-50 line-through font-normal">
@@ -43,7 +43,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                             <?php endif ?>
                         </div>
                         <span><?php esc_html_e('net','smoothh') ?></span>
-                        <span class="ml-1 text-base"><?php get_product_tax_string($product) ?></span>
+                        <span class="ml-2 text-base"><?php get_product_tax_string($product) ?></span>
                     </div>
                 <?php //endif; ?>
             </div>
