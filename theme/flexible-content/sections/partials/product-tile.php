@@ -25,25 +25,25 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
                 <?php // if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
-                    <div class="flex text-lg md:text-xl  shrink-0">
+                    <div class="flex text-lg md:text-xl flex-wrap shrink-0">
                         <?php
                             $has_variable_price = get_field('variable_price', $product->get_id());
                             if (isset($has_variable_price) && $has_variable_price):
                             ?> 
                             <span class="text-foreground font-normal text-base leading-loose mr-1"><?php esc_html_e('From','smoothh') ?></span>
                         <?php endif ?>
-                        <div class="flex flex-col items-end mr-2">
+                        <div class="flex flex-col items-end mr-2 whitespace-nowrap">
                             <span>
                                 <?php echo number_format( wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?>
                             </span>
-                            <?php if($product->is_on_sale()): ?>
+                            <?php if(has_sale($product)): ?>
                                 <span class="!text-lg !leading-4 h-5 text-black opacity-50 line-through font-normal">
                                     <?php echo get_product_regular_price_formatted($product) ?>                                           
                                 </span>
                             <?php endif ?>
                         </div>
                         <span><?php esc_html_e('net','smoothh') ?></span>
-                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5"><?php echo get_product_tax_formatted($product) ?></span>
+                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"><?php echo get_product_tax_formatted($product) ?></span>
                     </div>
                 <?php //endif; ?>
             </div>

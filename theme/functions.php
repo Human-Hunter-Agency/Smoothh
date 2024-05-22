@@ -861,33 +861,41 @@ function get_product_tax_formatted($product){
 	}
 }
 
+
+function find_default_variation($product){
+	$default_variaton = false;
+	$default_attributes = $product->get_default_attributes();
+	// Loop through available variations
+	foreach($product->get_available_variations() as $variation){
+		$found = true; // Initializing
+		// Loop through variation attributes
+		foreach( $variation['attributes'] as $key => $value ){
+			$taxonomy = str_replace( 'attribute_', '', $key );
+			// Searching for a matching variation as default
+			if( isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value ){
+				$found = false;
+				break;
+			}
+		}
+		// When it's found we set it and we stop the main loop
+		if( $found ) {
+			$default_variaton = $variation;
+			break;
+		} // If not we continue
+		else {
+			continue;
+		}
+	}
+
+	return $default_variaton;
+}
+
 function get_product_regular_price_formatted($product){
 	if( $product->is_type('variable') ){
 
-        $default_attributes = $product->get_default_attributes();
-        // Loop through available variations
-        foreach($product->get_available_variations() as $variation){
-            $found = true; // Initializing
-            // Loop through variation attributes
-            foreach( $variation['attributes'] as $key => $value ){
-                $taxonomy = str_replace( 'attribute_', '', $key );
-                // Searching for a matching variation as default
-                if( isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value ){
-                    $found = false;
-                    break;
-                }
-            }
-            // When it's found we set it and we stop the main loop
-            if( $found ) {
-                $default_variaton = $variation;
-                break;
-            } // If not we continue
-            else {
-                continue;
-            }
-        }
+        $default_variaton = find_default_variation($product);
         // Get the regular variation price or if not set the variable product min prices
-        $regular_price = isset($default_variaton) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
+        $regular_price = (isset($default_variaton) && $default_variaton !=false) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
     }
     // 2. Other products types
     else {
@@ -897,4 +905,15 @@ function get_product_regular_price_formatted($product){
 	$price_formatted = number_format( $regular_price, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol();
     
 	return $price_formatted;
+}
+
+function has_sale($product){
+	if ($product->is_type('variable')) {
+		$default_variaton = find_default_variation($product);
+		if (isset($default_variaton) && $default_variaton !=false) {
+			return $default_variaton['display_regular_price'] != $default_variaton['display_price'];
+		}
+	}else{
+		return $product->is_on_sale();
+	}
 }
