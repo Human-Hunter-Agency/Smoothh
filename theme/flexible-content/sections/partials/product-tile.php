@@ -25,7 +25,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
                 <?php // if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
-                    <div class="flex text-lg md:text-xl shrink-0">
+                    <div class="flex text-lg md:text-xl items-end shrink-0">
                         <?php
                             $has_variable_price = get_field('variable_price', $product->get_id());
                             if (isset($has_variable_price) && $has_variable_price):
@@ -38,12 +38,12 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                             </span>
                             <?php if($product->is_on_sale()): ?>
                                 <span class="!text-lg !leading-4 h-5 text-black opacity-50 line-through font-normal">
-                                    <?php echo number_format( $product->get_regular_price(), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?>                                           
+                                    <?php echo $product->get_regular_price() ?>                                           
                                 </span>
                             <?php endif ?>
                         </div>
                         <span><?php esc_html_e('net','smoothh') ?></span>
-                        <span class="ml-2 text-base"><?php get_product_tax_string($product) ?></span>
+                        <span class="ml-2 text-sm md:text-base mb-1 md:mb-0.5"><?php get_product_tax_string($product) ?></span>
                     </div>
                 <?php //endif; ?>
             </div>
