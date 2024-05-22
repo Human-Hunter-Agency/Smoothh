@@ -34,7 +34,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                         <?php endif ?>
                         <div class="flex flex-col items-end mr-2">
                             <span>
-                                <?php wc_price($product); ?>
+                                <?php $product->get_price_html(); ?>
                             </span>
 
                             <!-- <span>
