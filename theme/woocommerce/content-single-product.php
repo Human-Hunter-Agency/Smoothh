@@ -116,8 +116,14 @@ $show_select_cat_products = !empty($common_values);
 										</a>
 										<span class="text-sm lg:text-base text-[#B2B2B2]"><?php esc_html_e('Quantity: ', 'smoothh'); ?><?php echo $quantity ?></span>
 									</div>
-									<div class="text-base lg:text-xl text-primary shrink-0">
-										<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php esc_html_e('net', 'smoothh'); ?>
+									<div class="flex flex-col">
+										<span class="text-base lg:text-xl text-primary shrink-0">
+											<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh'); ?>
+										</span>
+										<span class="text-sm lg:text-base text-foreground">
+											<?php echo get_product_tax_formatted($product) ?>
+										</span>
+
 									</div>
 								</li>
 							<?php endforeach; ?>
