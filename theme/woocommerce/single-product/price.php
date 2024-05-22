@@ -29,6 +29,6 @@ $has_variable_price = get_field('variable_price');
             <span class="text-foreground font-normal text-xl md:text-2xl mr-2"><?php esc_html_e('From','smoothh') ?></span>
         <?php endif ?>
         <span class="flex <?php if($product->is_type('variable')){echo 'items-center';}else{ echo 'flex-col';} ?>"><?php echo $product->get_price_html(); ?> </span>
-        <span class="net-label text-primary font-normal <?php if($product->is_type('variable')){echo 'text-base';}else{ echo 'text-xl md:text-2xl';} ?>"><?php esc_html_e('net','smoothh') ?></span>
+        <span class="net-label text-primary font-normal <?php if($product->is_type('variable')){echo 'text-base';}else{ echo 'text-xl md:text-2xl';} ?>"><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net','smoothh') ?></span>
     </p>
 <?php endif; ?>
