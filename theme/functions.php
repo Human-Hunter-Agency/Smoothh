@@ -862,33 +862,17 @@ function get_product_tax_formatted($product){
 }
 
 
-function find_default_variation($product){
+function find_cheapest_variation($product){
 	$temp_price = PHP_FLOAT_MAX;
 	$default_variaton = false;
-	$default_attributes = $product->get_default_attributes();
 	// Loop through available variations
 	foreach($product->get_available_variations() as $variation){
-		$found = true; // Initializing
-		// Loop through variation attributes
-		foreach( $variation['attributes'] as $key => $value ){
-			$taxonomy = str_replace( 'attribute_', '', $key );
-			// Searching for a matching variation as default
-			if( isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value ){
-				$found = false;
-				break;
-			}
-		}
-		// When it's found we set it and we stop the main loop
-		if( $found ) {
+
+		if (isset($variation['display_price']) && $variation['display_price'] < $temp_price) {
+			$temp_price = $variation['display_price'];
 			$default_variaton = $variation;
-			break;
-		} // If not we continue
-		else {
-			if (isset($variation['display_price']) && $variation['display_price'] < $temp_price) {
-				$temp_price = $variation['display_price'];
-				$default_variaton = $variation;
-			}
 		}
+		
 	}
 
 	return $default_variaton;
@@ -897,7 +881,7 @@ function find_default_variation($product){
 function get_product_regular_price_formatted($product){
 	if( $product->is_type('variable') ){
 
-        $default_variaton = find_default_variation($product);
+        $default_variaton = find_cheapest_variation($product);
         // Get the regular variation price or if not set the variable product min prices
         $regular_price = (isset($default_variaton) && $default_variaton !=false) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
     }
@@ -913,7 +897,7 @@ function get_product_regular_price_formatted($product){
 
 function has_sale($product){
 	if ($product->is_type('variable')) {
-		$default_variaton = find_default_variation($product);
+		$default_variaton = find_cheapest_variation($product);
 		if (isset($default_variaton) && $default_variaton !=false) {
 			return $default_variaton['display_regular_price'] != $default_variaton['display_price'];
 		}
