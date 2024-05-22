@@ -32,6 +32,6 @@ $has_variable_price = get_field('variable_price');
             <span class="flex <?php if($product->is_type('variable')){echo 'items-center';}else{ echo 'flex-col';} ?>"><?php echo $product->get_price_html(); ?> </span>
             <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net','smoothh') ?></span>
         </p>
-        <span class="mb-2 text-foreground text-base md:text-sm text-right"><?php echo get_product_tax_formatted($product) ?></span>
+        <span class="text-foreground text-lg md:text-base text-right"><?php echo get_product_tax_formatted($product) ?></span>
     </div>
 <?php endif; ?>

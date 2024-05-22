@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
         </span>    
         <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net','smoothh') ?></span>
     </div>
-    <span class="mb-2 text-foreground text-base md:text-sm text-right"><?php echo get_product_tax_formatted(data.variation) ?></span>
+    <span class="mb-2 text-foreground text-lg md:text-base text-right">{{{ data.variation.tax_text }}}</span>
 	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
 </script>
 <script type="text/template" id="tmpl-unavailable-variation-template">

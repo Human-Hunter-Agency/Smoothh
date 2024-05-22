@@ -857,10 +857,15 @@ function get_product_tax_formatted($product){
 		$tax_amount = $price_incl_tax - $price_excl_tax;
 		$tax_formatted = number_format( $tax_amount, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
 		
-		return '( +' . $tax_formatted . get_woocommerce_currency_symbol() . ' ' . __('TAX','smoothh') . ')';
+		return '( +' . $tax_formatted . ' ' . get_woocommerce_currency_symbol() . ' ' . __('TAX','smoothh') . ')';
 	}
 }
 
+function smoothh_woocommerce_available_variation( $variation_data, $product, $variation ) {
+    $variation_data['tax_text'] = get_product_tax_formatted($product);
+    return $variation_data;
+}
+add_filter( 'woocommerce_available_variation', 'smoothh_woocommerce_available_variation', 10, 3 );
 
 function find_cheapest_variation($product){
 	$temp_price = PHP_FLOAT_MAX;
