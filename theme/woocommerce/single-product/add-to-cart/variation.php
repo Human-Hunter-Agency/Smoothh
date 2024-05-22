@@ -15,13 +15,13 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <script type="text/template" id="tmpl-variation-template">
 	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
-	<div class="woocommerce-variation-price mb-2 flex items-end justify-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary [&_bdi]:text-4xl [&_del_bdi]:!text-xl [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-black [&_del]:h-8 [&_del]:!decoration-black [&_del_bdi]:mr-1.5">
+	<div class="woocommerce-variation-price flex items-end justify-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary [&_bdi]:text-4xl [&_del_bdi]:!text-xl [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-black [&_del]:h-8 [&_del]:!decoration-black [&_del_bdi]:mr-1.5">
         <span class="flex flex-col">
             {{{ data.variation.price_html }}}
         </span>    
-        <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol()?> <?php get_woocommerce_currency_symbol() . ' ' . esc_html_e('net','smoothh') ?></span>
+        <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net','smoothh') ?></span>
     </div>
-    <span class="text-foreground text-xl md:text-2xl"><?php echo get_product_tax_formatted($product) ?></span>
+    <span class="mb-2 text-foreground text-base md:text-sm text-right"><?php echo get_product_tax_formatted(data.variation) ?></span>
 	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
 </script>
 <script type="text/template" id="tmpl-unavailable-variation-template">
