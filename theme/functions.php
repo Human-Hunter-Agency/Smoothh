@@ -880,6 +880,7 @@ function get_product_regular_price_formatted($product){
             // When it's found we set it and we stop the main loop
             if( $found ) {
                 $default_variaton = $variation;
+				print_r($default_variaton);
                 break;
             } // If not we continue
             else {
