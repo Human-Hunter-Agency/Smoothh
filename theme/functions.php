@@ -863,6 +863,7 @@ function get_product_tax_formatted($product){
 
 
 function find_default_variation($product){
+	$temp_price = PHP_FLOAT_MAX;
 	$default_variaton = false;
 	$default_attributes = $product->get_default_attributes();
 	// Loop through available variations
@@ -883,6 +884,10 @@ function find_default_variation($product){
 			break;
 		} // If not we continue
 		else {
+			if (isset($variation['display_price']) && $variation['display_price'] < $temp_price) {
+				$temp_price = $variation['display_price'];
+				$default_variaton = $variation;
+			}
 			continue;
 		}
 	}
