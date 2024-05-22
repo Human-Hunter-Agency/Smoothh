@@ -884,6 +884,7 @@ function find_default_variation($product){
 			break;
 		} // If not we continue
 		else {
+			echo $variation['display_price'] . ' ' . gettype($variation['display_price']);
 			if (isset($variation['display_price']) && $variation['display_price'] < $temp_price) {
 				$temp_price = $variation['display_price'];
 				$default_variaton = $variation;
