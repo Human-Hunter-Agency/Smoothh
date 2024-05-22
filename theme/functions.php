@@ -849,7 +849,7 @@ function gdpr_register_smoothh_consents()
 	  );
 }
 
-function get_product_tax_string($product){
+function get_product_tax_formatted($product){
 	if ($product) {
 		$price_incl_tax = wc_get_price_including_tax($product);
 		$price_excl_tax = wc_get_price_excluding_tax($product);
@@ -857,6 +857,44 @@ function get_product_tax_string($product){
 		$tax_amount = $price_incl_tax - $price_excl_tax;
 		$tax_formatted = number_format( $tax_amount, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
 		
-		echo '( +' . $tax_amount . get_woocommerce_currency_symbol() . ' ' . __('TAX','smoothh') . ')';
+		return '( +' . $tax_formatted . get_woocommerce_currency_symbol() . ' ' . __('TAX','smoothh') . ')';
 	}
+}
+
+function get_product_regular_price_formatted($product){
+	if( $product->is_type('variable') ){
+
+        $default_attributes = $product->get_default_attributes();
+        // Loop through available variations
+        foreach($product->get_available_variations() as $variation){
+            $found = true; // Initializing
+            // Loop through variation attributes
+            foreach( $variation['attributes'] as $key => $value ){
+                $taxonomy = str_replace( 'attribute_', '', $key );
+                // Searching for a matching variation as default
+                if( isset($default_attributes[$taxonomy]) && $default_attributes[$taxonomy] != $value ){
+                    $found = false;
+                    break;
+                }
+            }
+            // When it's found we set it and we stop the main loop
+            if( $found ) {
+                $default_variaton = $variation;
+                break;
+            } // If not we continue
+            else {
+                continue;
+            }
+        }
+        // Get the regular variation price or if not set the variable product min prices
+        $regular_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_regular_price( 'min', true );
+    }
+    // 2. Other products types
+    else {
+        $regular_price = $product->get_regular_price();
+    }
+
+	$price_formatted = number_format( $regular_price, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol();
+    
+	return $price_formatted;
 }
