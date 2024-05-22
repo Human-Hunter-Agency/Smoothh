@@ -22,13 +22,16 @@
                         'category' => array($cat->slug),
                     ));
 
-                    $all_prices = array();
+                    $min_price_product = null;
 
                     foreach ($products as $product) {
-                        $all_prices[] = wc_get_price_excluding_tax($product);
+                        $price_excluding_tax = wc_get_price_excluding_tax($product);
+
+                        if ($min_price_product === null || $price_excluding_tax < wc_get_price_excluding_tax($min_price_product)) {
+                            $min_price_product = $product;
+                        }
                     }
-                    
-                    $min_price = min($all_prices);
+
             ?>
                 <li>
                     <a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="group h-full flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
@@ -46,11 +49,14 @@
                                     <?php echo $cat->name ?> 
                                 </h4>
                                 <?php // if (is_user_logged_in() || is_category_guest_available($cat)) : ?>
-                                    <span class="text-lg md:text-xl shrink-0">
-                                        <?php
-                                            echo number_format( $min_price, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
-                                        ?> <?php esc_html_e('net','smoothh') ?>
-                                    </span>
+                                    <div class="flex flex-wrap">
+                                        <span class="text-lg md:text-xl shrink-0 whitespace-nowrap">
+                                            <?php
+                                                echo number_format( wc_get_price_excluding_tax($min_price_product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ;
+                                            ?> <?php esc_html_e('net','smoothh') ?>
+                                        </span>
+                                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"><?php echo get_product_tax_formatted($product) ?></span>
+                                    </div>
                                 <?php // endif; ?>
                             </div>
                             <p class="text-sm md:text-base prose-strong:font-semibold">
