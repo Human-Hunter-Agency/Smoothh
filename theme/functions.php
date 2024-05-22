@@ -862,7 +862,7 @@ function get_product_tax_formatted($product){
 }
 
 function smoothh_woocommerce_available_variation( $variation_data, $product, $variation ) {
-    $variation_data['tax_text'] = get_product_tax_formatted($product);
+    $variation_data['tax_text'] = get_product_tax_formatted($variation);
     return $variation_data;
 }
 add_filter( 'woocommerce_available_variation', 'smoothh_woocommerce_available_variation', 10, 3 );
