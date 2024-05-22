@@ -43,6 +43,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                             <?php endif ?>
                         </div>
                         <span><?php esc_html_e('net','smoothh') ?></span>
+                        <span class="ml-1 text-base"><?php get_product_tax_string($product) ?></span>
                     </div>
                 <?php //endif; ?>
             </div>

@@ -848,3 +848,15 @@ function gdpr_register_smoothh_consents()
 		true
 	  );
 }
+
+function get_product_tax_string($product){
+	if ($product) {
+		$price_incl_tax = wc_get_price_including_tax($product);
+		$price_excl_tax = wc_get_price_excluding_tax($product);
+		
+		$tax_amount = $price_incl_tax - $price_excl_tax;
+		$tax_formatted = number_format( $tax_amount, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
+		
+		echo '( +' . wc_price($tax_amount) . ' ' . __('TAX','smoothh') . ')';
+	}
+}
