@@ -887,7 +887,7 @@ function get_product_regular_price_formatted($product){
             }
         }
         // Get the regular variation price or if not set the variable product min prices
-        $regular_price = $product->get_variation_regular_price( 'min', true );
+        $regular_price = isset($default_variaton) ? $default_variaton['display_price']: $product->get_variation_regular_price( 'min', true );
     }
     // 2. Other products types
     else {
