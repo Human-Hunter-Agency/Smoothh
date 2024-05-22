@@ -24,7 +24,7 @@ $has_variable_price = get_field('variable_price');
 
 ?>
 <?php if(!$product->is_type('variable')): // if (is_user_logged_in() || is_prod_guest_available($product)) : ?>
-    <p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?> mb-2 flex items-end shrink-0 [&_.woocommerce-Price-currencySymbol]:!text-xl md:[&_.woocommerce-Price-currencySymbol]:!text-2xl [&_.woocommerce-Price-currencySymbol]:!font-normal text-primary <?php if($product->is_type('variable')){echo '[&_bdi]:text-2xl [&_del_bdi]:!text-lg';}else{ echo '[&_bdi]:text-4xl [&_del_bdi]:!text-xl';} ?> [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-black [&_del]:h-8 [&_del]:!decoration-black [&_del_bdi]:mr-1.5">
+    <p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?> mb-2 flex items-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary <?php if($product->is_type('variable')){echo '[&_bdi]:text-2xl [&_del_bdi]:!text-lg';}else{ echo '[&_bdi]:text-4xl [&_del_bdi]:!text-xl';} ?> [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-black [&_del]:h-8 [&_del]:!decoration-black [&_del_bdi]:mr-1.5">
         <?php if (isset($has_variable_price) && $has_variable_price):?> 
             <span class="text-foreground font-normal text-xl md:text-2xl mr-2"><?php esc_html_e('From','smoothh') ?></span>
         <?php endif ?>
