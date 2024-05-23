@@ -51,7 +51,7 @@ if (!wp_doing_ajax()) {
 
     <?php wc_get_template('checkout/terms.php'); ?>
 
-    <p class="mb-5"><em><?php esc_html__('before checkout button info','smoothh') ?></em></p>
+    <p class="mb-5"><em><?php esc_html_e('before checkout button info','smoothh') ?></em></p>
 
     <?php do_action('woocommerce_review_order_before_submit'); ?>
 
