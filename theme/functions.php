@@ -469,7 +469,7 @@ function smoothh_terms_and_conditions_to_registration()
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline">
 				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" id="terms" required value="yes" />
 				<span>
-					<?php printf(__( 'I have read and agree to the website <a href="%s" target="_blank">terms and conditions</a>', 'smoothh' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
+					<?php printf(__( 'I have read and agree to the website <a href="%s" target="_blank">terms and conditions</a>', 'smoothh' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required !visible">*</span>
 			</label>
 		</p>
 	<?php
@@ -491,7 +491,7 @@ function smoothh_filter_woocommerce_form_field_checkbox( $field, $key, $args, $v
 add_filter( 'woocommerce_form_field_checkbox', 'smoothh_filter_woocommerce_form_field_checkbox', 10, 4 );
 
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
-add_action('woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 20);
+add_action('woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 1);
 add_action('woocommerce_register_post', 'smoothh_after_register_actions', 10, 3);
 add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
 add_action('user_register', 'smoothh_save_user_default_type', 10, 1 );
