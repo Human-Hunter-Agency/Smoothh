@@ -29,7 +29,7 @@
 			return $carry;
 		}, false);
 	}
-	if($hero_img_url == false && get_post_thumbnail_id( $post->ID ) && get_post_type() == 'page' ){
+	if($hero_img_url == false && $post && get_post_thumbnail_id( $post->ID ) && get_post_type() == 'page' ){
 		$hero_img_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
 	}
 ?>
