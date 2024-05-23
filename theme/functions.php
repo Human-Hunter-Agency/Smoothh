@@ -870,14 +870,12 @@ add_filter( 'woocommerce_available_variation', 'smoothh_woocommerce_available_va
 function find_cheapest_variation($product){
 	$temp_price = PHP_FLOAT_MAX;
 	$default_variaton = false;
-	// Loop through available variations
-	foreach($product->get_available_variations() as $variation){
 
+	foreach($product->get_available_variations() as $variation){
 		if (isset($variation['display_price']) && $variation['display_price'] < $temp_price) {
 			$temp_price = $variation['display_price'];
 			$default_variaton = $variation;
-		}
-		
+		}	
 	}
 
 	return $default_variaton;
@@ -887,10 +885,8 @@ function get_product_regular_price_formatted($product){
 	if( $product->is_type('variable') ){
 
         $default_variaton = find_cheapest_variation($product);
-        // Get the regular variation price or if not set the variable product min prices
         $regular_price = (isset($default_variaton) && $default_variaton !=false) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
     }
-    // 2. Other products types
     else {
         $regular_price = $product->get_regular_price();
     }
@@ -909,4 +905,11 @@ function has_sale($product){
 	}else{
 		return $product->is_on_sale();
 	}
+}
+
+
+add_filter('woocommerce_cart_product_price', 'smoothh_woocommerce_cart_product_price_filter', 10, 2);
+function smoothh_woocommerce_cart_product_price_filter($wc_price, $product){
+	$tax_element = '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product) . '</span>';
+	return $wc_price . $tax_element;
 }
