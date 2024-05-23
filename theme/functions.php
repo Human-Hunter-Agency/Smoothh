@@ -454,11 +454,6 @@ function smoothh_after_register_actions($username, $email, $validation_errors)
 		$validation_errors->add('terms_error', __('Terms and condition are not checked!', 'smoothh'));
 	}
 	
-	smoothh_save_terms_consent();
-}
-
-
-function smoothh_save_terms_consent(){
 	if (isset($_POST['terms']) && $_POST['terms'] === 'yes') { 
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['email']);
 		$dataSubject->giveConsent('terms');
@@ -661,7 +656,10 @@ function smoothh_checkout_fields_update_order_meta( $order_id ) {
         $order->save_meta_data();
     }
 
-	smoothh_save_terms_consent();
+	if (isset($_POST['terms']) && $_POST['terms'] === 'yes') { 
+		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
+		$dataSubject->giveConsent('terms');
+	}
 }
 
 add_action( 'woocommerce_checkout_update_order_meta', 'smoothh_checkout_fields_update_order_meta' );
