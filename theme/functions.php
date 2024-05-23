@@ -918,3 +918,10 @@ function smoothh_woocommerce_cart_product_subtotal_filter( $product_subtotal, $p
 	$tax_element = is_checkout() ?'' : '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product,$quantity) . '</span>';
 	return $product_subtotal . $tax_element;
 }
+
+add_filter( 'woocommerce_get_terms_and_conditions_checkbox_text', 'custom_terms_and_conditions_checkbox_text' );
+function custom_terms_and_conditions_checkbox_text( $text ){
+    $text = get_option( 'woocommerce_checkout_terms_and_conditions_checkbox_text', sprintf( __( 'I have read and agree to the website %s', 'woocommerce' ), '[terms]' ) );
+
+    return $text;
+}
