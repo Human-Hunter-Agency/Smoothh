@@ -264,8 +264,7 @@ footer#page-footer .footer-bottom-menu {
 	@apply !mt-5
 }
 
-.place-order a.woocommerce-privacy-policy-link,
-.place-order a.woocommerce-terms-and-conditions-link{
+.place-order .checkbox a{
 	@apply !no-underline hover:!underline font-semibold
 }
 
