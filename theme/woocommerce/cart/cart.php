@@ -141,12 +141,11 @@ do_action('woocommerce_before_cart'); ?>
         </ul>
             <div class="flex flex-col gap-2.5 md:gap-0 md:flex-row justify-end text-xl mb-5">
                 <div class="grow border-t border-[#F2F2F2]"></div>
-                <div class="flex items-center md:items-start justify-between md:justify-end md:w-[calc(30%_+_20px)] lg:w-[calc(30%_+_40px)]">
-                    <span class="lg:w-[calc(50%_+_20px)] lg:min-w-28 text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]"><?php esc_html_e( 'Total', 'woocommerce' ); ?>:</span>
-                    <div class="flex flex-col gap-1 lg:w-[calc(50%_+_20px)] pl-2.5 <?php if(WC()->cart->has_discount()) : ?> md:mr-2.5 lg:mr-5 <?php endif; ?> text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+                <div class="flex justify-between md:justify-end md:w-[calc(30%_+_20px)] lg:w-[calc(30%_+_40px)]">
+                    <span class="lg:w-[calc(50%_+_20px)] lg:min-w-28 text-right pt-0.5 md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]"><?php esc_html_e( 'Total', 'woocommerce' ); ?>:</span>
+                    <div class="flex flex-col lg:w-[calc(50%_+_20px)] pl-2.5 <?php if(WC()->cart->has_discount()) : ?> md:mr-2.5 lg:mr-5 <?php endif; ?> text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
                         <?php wc_cart_totals_subtotal_html(); ?>
-                        <span class="text-base text-right text-foreground">( +
-                            <?php 
+                        <span class="text-base text-right text-foreground">( +<?php 
                                 $tax_formatted = number_format( WC()->cart->get_subtotal_tax(), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
                                 echo  $tax_formatted . ' ' . get_woocommerce_currency_symbol() . ' ' . __('TAX','smoothh'); 
                             ?>)</span>
