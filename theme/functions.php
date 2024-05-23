@@ -656,7 +656,8 @@ function smoothh_checkout_fields_update_order_meta( $order_id ) {
         $order->save_meta_data();
     }
 
-	if (isset($_POST['terms']) && $_POST['terms'] === 'yes') { 
+	print_r($_POST:)
+	if (isset($_POST['terms']) && $_POST['terms'] === 'on') { 
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
 		$dataSubject->giveConsent('terms');
 	}
