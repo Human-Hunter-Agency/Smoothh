@@ -849,12 +849,12 @@ function gdpr_register_smoothh_consents()
 	  );
 }
 
-function get_product_tax_formatted($product){
+function get_product_tax_formatted($product,$quantity = 1){
 	if ($product) {
 		$price_incl_tax = wc_get_price_including_tax($product);
 		$price_excl_tax = wc_get_price_excluding_tax($product);
 		
-		$tax_amount = $price_incl_tax - $price_excl_tax;
+		$tax_amount = ($price_incl_tax - $price_excl_tax) * $quantity;
 		$tax_formatted = number_format( $tax_amount, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
 		
 		return '( +' . $tax_formatted . ' ' . get_woocommerce_currency_symbol() . ' ' . __('TAX','smoothh') . ')';
@@ -912,4 +912,10 @@ add_filter('woocommerce_cart_product_price', 'smoothh_woocommerce_cart_product_p
 function smoothh_woocommerce_cart_product_price_filter($wc_price, $product){
 	$tax_element = '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product) . '</span>';
 	return $wc_price . $tax_element;
+}
+
+add_filter( 'woocommerce_cart_product_subtotal', 'smoothh_woocommerce_cart_product_subtotal_filter', 10, 4 );
+function smoothh_woocommerce_cart_product_subtotal_filter( $product_subtotal, $product, $quantity, $that ){
+	$tax_element = '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product,$quantity) . '</span>';
+	return $product_subtotal . $tax_element;
 }
