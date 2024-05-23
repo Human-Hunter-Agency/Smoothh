@@ -51,9 +51,9 @@ if (!wp_doing_ajax()) {
 
     <?php wc_get_template('checkout/terms.php'); ?>
 
-    <p class="mb-5"><em><?php esc_html_e('before checkout button info','smoothh') ?></em></p>
-
     <?php do_action('woocommerce_review_order_before_submit'); ?>
+
+    <p class="mb-5 text-[14px]"><em><?php esc_html_e('before checkout button info','smoothh') ?></em></p>
 
     <?php echo apply_filters('woocommerce_order_button_html', '<button type="submit" class=" button alt' . esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : '') . ' icon-arrow-right !border-none !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !text-white whitespace-nowrap !min-h-[55px] !px-5 xl:!px-10 !rounded-[15px] font-bold !flex items-center justify-center gap-5" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr($order_button_text) . '" data-value="' . esc_attr($order_button_text) . '">' . esc_html($order_button_text) . '</button>'); // @codingStandardsIgnoreLine 
     ?>
