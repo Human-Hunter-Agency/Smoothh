@@ -470,7 +470,7 @@ function smoothh_terms_and_conditions_to_registration()
 				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" id="terms" required value="yes" />
 				<span>
 					<?php esc_html_e('I&rsquo;ve read and accept the', 'smoothh'); ?>
-					<?php printf(__( 'I have read and agree to the website %s', 'woocommerce' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
+					<?php sprintf(__( 'I have read and agree to the website %s', 'woocommerce' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
 			</label>
 		</p>
 	<?php
