@@ -916,6 +916,6 @@ function smoothh_woocommerce_cart_product_price_filter($wc_price, $product){
 
 add_filter( 'woocommerce_cart_product_subtotal', 'smoothh_woocommerce_cart_product_subtotal_filter', 10, 4 );
 function smoothh_woocommerce_cart_product_subtotal_filter( $product_subtotal, $product, $quantity, $that ){
-	$tax_element = '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product,$quantity) . '</span>';
+	$tax_element = is_checkout() ?'' : '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product,$quantity) . '</span>';
 	return $product_subtotal . $tax_element;
 }
