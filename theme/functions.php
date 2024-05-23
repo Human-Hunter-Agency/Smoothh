@@ -450,13 +450,13 @@ function smoothh_after_register_actions($username, $email, $validation_errors)
 {
 	smoothh_validate_extra_fields($validation_errors);
 
-	if (!isset($_POST['gdpr_terms_consent'])){
-		$validation_errors->add('gdpr_terms_consent_error', __('Terms and condition are not checked!', 'smoothh'));
+	if (!isset($_POST['terms'])){
+		$validation_errors->add('terms_error', __('Terms and condition are not checked!', 'smoothh'));
 	}
 
-	if (isset($_POST['gdpr_terms_consent']) && $_POST['gdpr_terms_consent'] === 'yes') { 
+	if (isset($_POST['terms']) && $_POST['terms'] === 'yes') { 
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['email']);
-		$dataSubject->giveConsent('gdpr_terms_consent');
+		$dataSubject->giveConsent('terms');
 	}
 }
 
@@ -467,10 +467,10 @@ function smoothh_terms_and_conditions_to_registration()
 	?>
 		<p class="form-row terms wc-terms-and-conditions">
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline">
-				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="gdpr_terms_consent" id="gdpr_terms_consent" required value="yes" />
+				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" id="terms" required value="yes" />
 				<span>
 					<?php esc_html_e('I&rsquo;ve read and accept the', 'smoothh'); ?>
-					<?php printf(__('<a href="%s" target="_blank" >terms and conditions</a>', 'smoothh'), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
+					<?php sprintf(__( 'I have read and agree to the website %s', 'woocommerce' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
 			</label>
 		</p>
 	<?php
@@ -829,7 +829,7 @@ add_action('init', 'gdpr_register_smoothh_consents');
 function gdpr_register_smoothh_consents()
 {
     gdpr('consent')->register(
-      'gdpr_terms_consent', 
+      'terms', 
       sprintf( __( '<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh' ), get_permalink(wc_terms_and_conditions_page_id()) ),
       __('This consent is visible by default on woocommerce checkout page. If someone wishes to withdraw it, they should simply request to delete all their data','gdpr-framework'),
       true
