@@ -463,18 +463,17 @@ function smoothh_after_register_actions($username, $email, $validation_errors)
 function smoothh_terms_and_conditions_to_registration()
 {
 
-	if (wc_get_page_id('terms') > 0) {
+	// if (wc_get_page_id('terms') > 0) {
 	?>
 		<p class="form-row terms wc-terms-and-conditions">
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline">
 				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" id="terms" required value="yes" />
 				<span>
-					<?php esc_html_e('I&rsquo;ve read and accept the', 'smoothh'); ?>
 					<?php sprintf(__( 'I have read and agree to the website %s', 'woocommerce' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
 			</label>
 		</p>
 	<?php
-	}
+	// }
 }
 
 function smoothh_save_user_default_type($user_id){
