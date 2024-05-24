@@ -41,7 +41,7 @@ if (!defined('ABSPATH')) {
       ); 
       ?> 
       <div class="tooltip">
-        <span class="rounded-full text-foreground bg-[#EFEFEF] text-xs size-4 pt-px font-semibold">i</span>
+        <em class="rounded-full text-foreground bg-[#EFEFEF] text-xs size-4 pt-px font-semibold">i</em>
         <span class="tooltip-text">
           <?php wc_registration_privacy_policy_text() ?>
         </span>
