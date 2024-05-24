@@ -104,6 +104,10 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply inline
 }
 
+.newsletter-input .wpcf7-list-item{
+	@apply !ml-1
+}
+
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
 [data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,
 [data-js="qty-control"] input[type='number'] {
