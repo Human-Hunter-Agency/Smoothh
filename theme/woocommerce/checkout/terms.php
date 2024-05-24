@@ -38,16 +38,4 @@ if ( apply_filters( 'woocommerce_checkout_show_terms', true ) && function_exists
     <?php
 
 	do_action( 'woocommerce_checkout_after_terms_and_conditions' );
-	wc_registration_privacy_policy_text()
-	?>
-
-	<p class="form-row validate-required">
-		<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
-		<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" name="consent_digital_commerce" id="consent_digital_commerce" required />
-			<span class="woocommerce-consent_digital_commerce"><?= __('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh' ) ?></span>&nbsp;<abbr class="required" title="<?php esc_attr_e( 'required', 'woocommerce' ); ?>">*</abbr>
-		</label>
-	</p>
-	<p class="text-sm mt-0"><?= __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh') ?></p>
-
-	<?php
 }
