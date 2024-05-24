@@ -11,10 +11,10 @@
                     <div>
                         <p class="[&_a]:!text-primary mb-2">
                             <strong>
-                                <?= $item['title']; ?>
+                                <?= __($item['title'],'smoothh'); ?>
                             </strong>
                         </p>
-                        <p><?= $item['description']; ?></p>
+                        <p><?= __($item['description'],'smoothh'); ?></p>
                     </div>
                     <div class="shrink-0">
                         <?php if ('privacy-policy' !== $item['slug']): ?>
