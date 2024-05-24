@@ -80,6 +80,9 @@ label.checkbox, .wpcf7-list-item-label {
 .tooltip .tooltip-text p {
 	@apply text-[10px]
 }
+.tooltip .tooltip-text a {
+	@apply font text-primary font-medium
+}
 .tooltip .tooltip-text::after {
 	content: " ";
 	position: absolute;
