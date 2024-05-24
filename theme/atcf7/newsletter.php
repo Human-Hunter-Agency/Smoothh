@@ -20,10 +20,13 @@ if (!defined('ABSPATH')) {
       <div class="tooltip">
         <div class="tooltip-icon">i</div>
         <span class="tooltip-text">
-          <?php
-          $policyPageUrl = get_permalink(wc_privacy_policy_page_id());  
-          echo sprintf(__('Expressing consent is voluntary. I have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal. I have the right to access my data and rectify it, delete it, limit processing, and the right to transfer data on the terms contained in the %sprivacy policy%s of the website. Personal data on the website are processed in accordance with the %sprivacy policy%s. We encourage you to read the policy before agreeing.', 'gdpr-framework'),
-		      "<a href='{$policyPageUrl}' target='_blank'>","</a>","<a href='{$policyPageUrl}' target='_blank'>","</a>") ?>
+          <p>
+            <?php
+              $policyPageUrl = get_permalink(wc_privacy_policy_page_id());  
+              echo sprintf(__('Expressing consent is voluntary. I have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal. I have the right to access my data and rectify it, delete it, limit processing, and the right to transfer data on the terms contained in the %sprivacy policy%s of the website. Personal data on the website are processed in accordance with the %sprivacy policy%s. We encourage you to read the policy before agreeing.', 'smoothh'),
+              "<a href='{$policyPageUrl}' target='_blank'>","</a>","<a href='{$policyPageUrl}' target='_blank'>","</a>") 
+            ?>
+          </p>
         </span>
       </div>
       [/acceptance]
