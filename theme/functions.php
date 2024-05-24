@@ -660,7 +660,7 @@ function smoothh_custom_input_and_info() {
 		'required' => true,
 		'custom_attributes' => array('required' => 'required')
 	));
-	echo '<p class="text-sm mt-0">' . __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh') . '</p>';
+	echo '<p class="text-xs mt-0">' . __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh') . '</p>';
 }
 
 function smoothh_checkout_extra_validation($data,$errors){
