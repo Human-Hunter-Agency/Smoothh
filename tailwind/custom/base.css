@@ -104,7 +104,7 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply inline
 }
 
-.newsletter-input .wpcf7-list-item{
+.newsletter-form .wpcf7-list-item{
 	@apply !ml-1
 }
 

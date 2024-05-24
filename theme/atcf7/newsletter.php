@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
  * Template Name: newsletter
  * */
 ?>
-<div>
+<div class="newsletter-form">
   <div class="newsletter-input">
   [email* your-email id:your-email placeholder "Adres e-mail"]
       <div class="submit-container">
