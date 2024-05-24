@@ -56,7 +56,7 @@ body {
 	@apply mt-0
 }
 
-.form-basic .wpcf7-list-item input[type=checkbox]{
+form .form-basic .wpcf7-list-item input[type=checkbox]{
 	@apply !size-auto
 }
 

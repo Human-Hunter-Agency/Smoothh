@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
   <div class="w-full mb-5">
     [textarea your-message x3 placeholder "Twoja wiadomość"]
   </div>
-  <div class="max-w-screen-md">
+  <div class="max-w-[520px]">
     <div class="mb-5">
       [acceptance gdpr_woo_consent] <?php
       $policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
