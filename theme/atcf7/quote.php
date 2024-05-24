@@ -46,7 +46,6 @@ if (!defined('ABSPATH')) {
       </div>
       [/acceptance]
     </div>
-    <?php wc_registration_privacy_policy_text() ?>
   </div>
 
   <div class="btn-color relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 mb-9 ">

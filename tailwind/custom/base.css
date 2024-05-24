@@ -92,7 +92,7 @@ label.checkbox, .wpcf7-list-item-label {
 }
 
 .has-tooltip{
-	@apply flex items-center
+	@apply flex items-center relative
 }
 .has-tooltip > p {
 	@apply inline
