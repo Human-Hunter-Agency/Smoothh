@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
     [textarea your-message x3 placeholder "Twoja wiadomość"]
   </div>
   <div class="mb-5 text-center">
-    [acceptance gdpr_woo_consent] <?php sprintf(esc_html_x('Read more about the %sPrivacy Policy%s', '(Admin)', 'gdpr-framework'), "<a href='{$helpUrl}' target='_blank'>", "</a>"); ?> [/acceptance]
+    [acceptance gdpr_woo_consent] <?php sprintf(esc_html_x('Read more about the %sPrivacy Policy%s', '(Admin)', 'gdpr-framework'), "<a href='" . get_permalink(wc_privacy_policy_page_id()) . "' target='_blank'>", "</a>"); ?> [/acceptance]
   </div>
   <?php wc_registration_privacy_policy_text() ?>
   <div class="btn-color relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 mb-9 ">
