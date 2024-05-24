@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
           [submit "Zapisz mnie"]
       </div>
   </div>
-  <div class="max-w-[505px] has-tooltip mt-3">
+  <div class="has-tooltip mt-3">
       [acceptance consent_marketing] <?=
       __('I consent to the processing of my personal data (name, e-mail address) by the Service Provider (here please provide the name and surname / name and address of the Service Provider) for marketing purposes.', 'smoothh' )
       ?> 
