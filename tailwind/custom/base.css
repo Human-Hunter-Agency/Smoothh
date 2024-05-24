@@ -72,10 +72,10 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply inline-block ml-3
 }
 .tooltip:hover .tooltip-text{
-	@apply opacity-100 pointer-events-auto
+	@apply opacity-100 pointer-events-auto translate-y-0
 }
 .tooltip .tooltip-text{
-	@apply p-2 absolute bottom-[calc(100%_+_10px)] right-0 bg-[#EFEFEF] rounded-xl text-foreground shadow-md opacity-0 pointer-events-none transition duration-200
+	@apply p-2 z-20 translate-y-7 absolute bottom-[calc(100%_+_10px)] right-0 bg-[#EFEFEF] rounded-xl text-foreground shadow-md opacity-0 pointer-events-none transition duration-300
 }
 .tooltip .tooltip-text::after {
 	content: " ";
@@ -88,11 +88,11 @@ label.checkbox, .wpcf7-list-item-label {
 	border-color: #EFEFEF transparent transparent transparent;
   }
 .tooltip .tooltip-icon{
-	@apply inline-block rounded-full text-foreground bg-[#EFEFEF] text-xs size-4 pt-px font-semibold
+	@apply inline-block text-center rounded-full text-foreground bg-[#EFEFEF] text-xs size-4 pt-px font-semibold
 }
 
 .has-tooltip > p {
-	@apply inline-block
+	@apply inline
 }
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
