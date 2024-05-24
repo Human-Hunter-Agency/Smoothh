@@ -31,7 +31,7 @@ if (!defined('ABSPATH')) {
   </div>
 
   <div class="max-w-[520px] mb-5 text-center [&_a]:!text-white hover:[&_a]:!text-white [&_input]:!accent-secondary">
-    <div class="mb-5 relative [&>p]:inline-block">
+    <div class="mb-5 relative">
       [acceptance gdpr_woo_consent] <?php
       $policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
       echo sprintf(
