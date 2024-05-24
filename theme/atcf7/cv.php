@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
     [textarea* your-message x3 placeholder "Wiadomość..."]
   </div>
 
-  <div class="max-w-[520px] mb-5 text-center [&_a]:!text-white hover:[&_a]:!text-white [&_input]:!accent-secondary [&_>_div_>_p]:inline-block">
+  <div class="max-w-[520px] mb-5 text-center [&_a]:!text-white hover:[&_a]:!text-white [&_input]:!accent-secondary">
     <div class="mb-5 relative">
       [acceptance gdpr_woo_consent] <?php
       $policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
