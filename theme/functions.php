@@ -649,18 +649,6 @@ function smoothh_override_checkout_fields($fields)
 
 add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
 
-
-add_action( 'woocommerce_review_order_before_submit', 'smoothh_custom_checkout_checkbox' );
-function smoothh_custom_checkout_checkbox() {
-    woocommerce_form_field( 'consent_digital_commerce', array(
-        'type'      => 'checkbox',
-        'label'     => __('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh' ),
-		'description'=> __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh'),
-		'required' => true,
-		'custom_attributes' => array('required' => 'required')
-    ));
-}
-
 function smoothh_checkout_extra_validation($data,$errors){
 	if (!isset($_POST['consent_digital_commerce'])) {
 		$errors->add('consent_digital_commerce_error', __('Digital content purchase is not checked!', 'smoothh'));
