@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
     [textarea* your-message x3 placeholder "Wiadomość..."]
   </div>
 
-  <div class="max-w-[520px] mb-5 text-center [&_a]:!text-white hover:[&_a]:!text-white [&_input]:!accent-secondary">
+  <div class="max-w-[520px] mb-5 text-center [&_a]:!text-white hover:[&_a]:!text-white [&_input]:!accent-secondary [&_>_div_>_p]:inline-block">
     <div class="mb-5 relative">
       [acceptance gdpr_woo_consent] <?php
       $policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
@@ -41,7 +41,7 @@ if (!defined('ABSPATH')) {
       ); 
       ?> 
       <div class="tooltip">
-        <em class="rounded-full text-foreground bg-[#EFEFEF] text-xs size-4 pt-px font-semibold">i</em>
+        <span class="rounded-full text-foreground bg-[#EFEFEF] text-xs size-4 pt-px font-semibold">i</span>
         <span class="tooltip-text">
           <?php wc_registration_privacy_policy_text() ?>
         </span>
