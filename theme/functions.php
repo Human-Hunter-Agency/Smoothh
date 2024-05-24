@@ -658,7 +658,6 @@ function smoothh_custom_input_and_info() {
 		'type'      => 'checkbox',
 		'label'     => __('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh' ),
 		'required' => true,
-		'custom_attributes' => array('required' => 'required')
 	));
 	echo '<p class="text-xs mt-0">' . __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh') . '</p>';
 }
@@ -683,7 +682,7 @@ function smoothh_checkout_fields_update_order_meta( $order_id ) {
 		$dataSubject->giveConsent('terms');
 	}
 
-	if (isset($_POST['consent_digital_commerce']) && $_POST['consent_digital_commerce'] === 'on') { 
+	if (isset($_POST['consent_digital_commerce']) && $_POST['consent_digital_commerce'] === '1') { 
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
 		$dataSubject->giveConsent('consent_digital_commerce');
 	}
