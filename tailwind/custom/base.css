@@ -68,6 +68,23 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply !text-xs !inline-block
 }
 
+.tooltip:hover .tooltip-text{
+	@apply opacity-100 pointer-events-auto
+}
+.tooltip .tooltip-text{
+	@apply p-2 absolute bottom-[calc(100%_+_10px)] right-0 bg-gray-400 rounded-xl text-foreground shadow-md opacity-0 pointer-events-none transition duration-200
+}
+.tooltip .tooltip-text::after {
+	content: " ";
+	position: absolute;
+	top: 100%; /* At the bottom of the tooltip */
+	right: 10px;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: rgb(156 163 175) transparent transparent transparent;
+  }
+
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
 [data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,
 [data-js="qty-control"] input[type='number'] {

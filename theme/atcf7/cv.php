@@ -30,9 +30,26 @@ if (!defined('ABSPATH')) {
     [textarea* your-message x3 placeholder "Wiadomość..."]
   </div>
 
-  <div class="mb-5 text-center [&_a]:!text-white hover:[&_a]:!text-white [&_input]:!accent-secondary">
-    [acceptance candidate_acceptance] Przeczytałem/am i akceptuję <a href="<?php echo get_permalink(wc_terms_and_conditions_page_id()) ?>">regulamin</a> oraz <a href="<?php echo get_permalink(wc_privacy_policy_page_id()) ?>">politykę prywatności</a> [/acceptance]
+  <div class="max-w-[520px] mb-5 text-center [&_a]:!text-white hover:[&_a]:!text-white [&_input]:!accent-secondary">
+    <div class="mb-5 relative">
+      [acceptance gdpr_woo_consent] <?php
+      $policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
+      echo sprintf(
+        __('I accept the %sPrivacy Policy%s', 'gdpr-framework'),
+        "<a href='{$policyPageUrl}' target='_blank'>",
+        "</a>"
+      ); 
+      ?> 
+      <div class="tooltip">
+        <em class="size-3 rounded-full text-white bg-gray-600">i</em>
+        <span class="tooltip-text">
+          <?php wc_registration_privacy_policy_text() ?>
+        </span>
+      </div>
+      [/acceptance]
+    </div>
   </div>
+
 
   <div class="btn-white relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 [&_svg_path]:hover:fill-secondary [&_svg_circle]:hover:stroke-secondary">
     [submit "Wyślij wiadomość"]
