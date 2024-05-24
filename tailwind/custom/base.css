@@ -87,6 +87,13 @@ label.checkbox, .wpcf7-list-item-label {
 	border-style: solid;
 	border-color: #EFEFEF transparent transparent transparent;
   }
+.tooltip .tooltip-icon{
+	@apply inline-block rounded-full text-foreground bg-[#EFEFEF] text-xs size-4 pt-px font-semibold
+}
+
+.has-tooltip > p {
+	@apply inline-block
+}
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
 [data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,
