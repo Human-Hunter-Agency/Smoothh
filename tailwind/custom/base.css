@@ -57,7 +57,7 @@ body {
 }
 
 label.checkbox {
-	@apply !text-xs !leading-none 
+	@apply !text-xs !leading-none !inline-block
 }
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
