@@ -49,7 +49,7 @@ body {
 }
 
 .woocommerce-privacy-policy-text{
-	@apply text-[14px] mb-5
+	@apply text-sm mb-5
 }
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,

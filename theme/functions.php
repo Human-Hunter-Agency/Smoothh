@@ -649,6 +649,26 @@ function smoothh_override_checkout_fields($fields)
 
 add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
 
+
+add_action( 'woocommerce_review_order_before_submit', 'smoothh_custom_checkout_checkbox' );
+function smoothh_custom_checkout_checkbox() {
+    woocommerce_form_field( 'consent_digital_commerce', array(
+        'type'      => 'checkbox',
+        'label'     => __('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh' ),
+		'description'=> __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh'),
+		'required' => true,
+		'custom_attributes' => array('required' => 'required')
+    ));
+}
+
+function smoothh_checkout_extra_validation($data,$errors){
+	if (!isset($_POST['consent_digital_commerce'])) {
+		$errors->add('consent_digital_commerce_error', __('Digital content purchase is not checked!', 'smoothh'));
+	}
+}
+
+add_action('woocommerce_after_checkout_validation', 'smoothh_checkout_extra_validation',10,2);
+
 function smoothh_checkout_fields_update_order_meta( $order_id ) {
 	if (  isset( $_POST['billing_company_nip'] ) && !empty( $_POST['billing_company_nip'] ) ) {
         $order = wc_get_order( $order_id );
@@ -659,6 +679,11 @@ function smoothh_checkout_fields_update_order_meta( $order_id ) {
 	if (isset($_POST['terms']) && $_POST['terms'] === 'on') { 
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
 		$dataSubject->giveConsent('terms');
+	}
+
+	if (isset($_POST['consent_digital_commerce']) && $_POST['consent_digital_commerce'] === 'on') { 
+		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
+		$dataSubject->giveConsent('consent_digital_commerce');
 	}
 }
 
@@ -838,6 +863,14 @@ function gdpr_register_smoothh_consents()
       __('This consent is visible by default on woocommerce checkout page. If someone wishes to withdraw it, they should simply request to delete all their data','gdpr-framework'),
       true
     );
+
+	gdpr('consent')->register(
+		'consent_digital_commerce', 
+		__('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh' ),
+		__('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh'),
+		true
+	  );
+
 
 	gdpr('consent')->register(
 		'contact_acceptance', 
