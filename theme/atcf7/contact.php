@@ -20,8 +20,9 @@ if (!defined('ABSPATH')) {
     [textarea your-message x3 placeholder "Twoja wiadomość"]
   </div>
   <div class="mb-5 text-center">
-    [acceptance contact_acceptance] Przeczytałem/am i akceptuję <a href="<?php echo get_permalink(wc_terms_and_conditions_page_id()) ?>">regulamin</a> oraz <a href="<?php echo get_permalink(wc_privacy_policy_page_id()) ?>">politykę prywatności</a> [/acceptance]
+    [acceptance gdpr_woo_consent] <?php sprintf(esc_html_x('Read more about the %sPrivacy Policy%s', '(Admin)', 'gdpr-framework'), "<a href='{$helpUrl}' target='_blank'>", "</a>"); ?> [/acceptance]
   </div>
+  <?php wc_registration_privacy_policy_text() ?>
   <div class="btn-color relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 mb-9 ">
     [submit "Wyślij wiadomość"]
     <svg class="absolute right-5 top-[18px] -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
