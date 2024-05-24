@@ -49,7 +49,7 @@ body {
 }
 
 .woocommerce-form-register .required{
-	@apply !visible
+	visibility: visible !important;
 }
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
