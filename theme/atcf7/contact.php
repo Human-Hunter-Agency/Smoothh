@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
   <div class="mb-5 text-center">
     [acceptance gdpr_woo_consent] <?php
     $helpUrl = get_permalink(wc_privacy_policy_page_id()); 
-    sprintf(esc_html_x('Read more about the %sPrivacy Policy%s', '(Admin)', 'gdpr-framework'), "<a href='{$helpUrl}' target='_blank'>", "</a>"); 
+    echo sprintf(esc_html_x('Read more about the %sPrivacy Policy%s', '(Admin)', 'gdpr-framework'), "<a href='{$helpUrl}' target='_blank'>", "</a>"); 
     ?> [/acceptance]
   </div>
   <?php wc_registration_privacy_policy_text() ?>
