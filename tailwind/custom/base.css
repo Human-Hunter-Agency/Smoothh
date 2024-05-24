@@ -56,8 +56,16 @@ body {
 	@apply mt-0
 }
 
-label.checkbox {
-	@apply !text-xs !leading-none !inline-block
+.form-basic .wpcf7-list-item input[type=checkbox]{
+	@apply !size-auto
+}
+
+.wpcf7-not-valid-tip{
+	@apply !text-xs
+}
+
+label.checkbox, .wpcf7-list-item-label {
+	@apply !text-xs !inline-block
 }
 
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
