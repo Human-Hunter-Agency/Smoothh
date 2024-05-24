@@ -81,7 +81,7 @@ label.checkbox, .wpcf7-list-item-label {
 	content: " ";
 	position: absolute;
 	top: 100%; /* At the bottom of the tooltip */
-	right: 8px;
+	right: 9px;
 	margin-left: -5px;
 	border-width: 5px;
 	border-style: solid;
