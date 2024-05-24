@@ -75,13 +75,13 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply opacity-100 pointer-events-auto translate-y-0
 }
 .tooltip .tooltip-text{
-	@apply p-2 z-20 translate-y-4 absolute bottom-[calc(100%_+_10px)] right-0 bg-[#EFEFEF] rounded-xl text-foreground shadow-md opacity-0 pointer-events-none transition duration-300
+	@apply p-2 z-20 translate-y-2 absolute bottom-[calc(100%_+_10px)] right-0 bg-[#EFEFEF] rounded-xl text-foreground shadow-md opacity-0 pointer-events-none transition duration-300
 }
 .tooltip .tooltip-text::after {
 	content: " ";
 	position: absolute;
 	top: 100%; /* At the bottom of the tooltip */
-	right: 9px;
+	right: 15px;
 	margin-left: -5px;
 	border-width: 5px;
 	border-style: solid;
@@ -91,6 +91,9 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply inline-block text-center rounded-full text-foreground bg-[#EFEFEF] text-xs size-4 pt-px font-semibold
 }
 
+.has-tooltip{
+	@apply flex items-center
+}
 .has-tooltip > p {
 	@apply inline
 }
