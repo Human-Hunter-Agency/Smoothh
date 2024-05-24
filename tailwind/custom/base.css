@@ -48,6 +48,10 @@ body {
 	list-style: lower-roman !important;
 }
 
+.woocommerce-form-register .required{
+	@apply !visible
+}
+
 [data-js="qty-control"] input[type='number']::-webkit-outer-spin-button,
 [data-js="qty-control"] input[type='number']::-webkit-inner-spin-button,
 [data-js="qty-control"] input[type='number'] {

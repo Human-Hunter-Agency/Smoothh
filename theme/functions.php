@@ -469,7 +469,7 @@ function smoothh_terms_and_conditions_to_registration()
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline">
 				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" id="terms" required value="yes" />
 				<span>
-					<?php printf(__( 'I have read and agree to the website <a href="%s" target="_blank">terms and conditions</a>', 'smoothh' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required !visible ">*</span>
+					<?php printf(__( 'I have read and agree to the website <a href="%s" target="_blank">terms and conditions</a>', 'smoothh' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required">*</span>
 			</label>
 		</p>
 	<?php
