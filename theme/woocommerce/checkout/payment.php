@@ -53,20 +53,6 @@ if (!wp_doing_ajax()) {
 
     <?php do_action('woocommerce_review_order_before_submit'); ?>
 
-    <?php wc_registration_privacy_policy_text() ?>
-
-    <p class="mb-5 text-[14px]"><?php esc_html_e('before checkout button info','smoothh') ?></p>
-
-    <div>
-      <?php echo woocommerce_form_field( 'consent_digital_commerce', array(
-          'type'      => 'checkbox',
-          'label'     => __('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh' ),
-        'required' => true,
-        'custom_attributes' => array('required' => 'required')
-      )); ?>
-      <p><?= __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh') ?></p>
-    </div>
-
     <?php echo apply_filters('woocommerce_order_button_html', '<button type="submit" class=" button alt' . esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : '') . ' icon-arrow-right !border-none !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !text-white whitespace-nowrap !min-h-[55px] !px-5 xl:!px-10 !rounded-[15px] font-bold !flex items-center justify-center gap-5" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr($order_button_text) . '" data-value="' . esc_attr($order_button_text) . '">' . esc_html($order_button_text) . '</button>'); // @codingStandardsIgnoreLine 
     ?>
 
