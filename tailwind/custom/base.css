@@ -81,7 +81,7 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply text-[10px]
 }
 .tooltip .tooltip-text a {
-	@apply font text-primary font-medium;
+	@apply text-primary font-medium
 }
 .tooltip .tooltip-text::after {
 	content: " ";
