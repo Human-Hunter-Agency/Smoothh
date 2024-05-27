@@ -970,10 +970,9 @@ function smoothh_img_responsive($img,$classes){
 	$ID = $img['ID'];
 	$alt = isset($img['alt']) ? $img['alt'] : ''; 
 
-	// $srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID) . '" ';
-	// $sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'large') . '" ';
+	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID) . '" ';
+	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'large') . '" ';
 	$alt_string = $alt == '' ? '' : ('alt="' . $alt . '" ');
 
-	$img_element = '<img class="' . $classes . '" src="' . $url . '" ' . $alt_string . '/>';
-	return wp_image_add_srcset_and_sizes( $img_element, wp_get_attachment_metadata($ID), $ID );
+	return '<img class="' . $classes . '" src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . '/>';
 }
