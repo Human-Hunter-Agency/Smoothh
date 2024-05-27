@@ -12,9 +12,9 @@
 ?>
 
 <div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center">
-    <?php print_r($hero_background)?>
+    <?php print_r(wp_get_attachment_image_srcset($hero_background['ID']))?>
     <?php if (isset($hero_bg_url)) : ?>
-        <img src="<?php echo $hero_bg_url; ?>" class="absolute inset-0 -z-20 object-cover !h-full w-full" >
+        <img src="<?php echo $hero_bg_url; ?>" alt="<?= $hero_background['alt'] ?>" class="absolute inset-0 -z-20 object-cover !h-full w-full" >
     <?php endif; ?>
 
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/80"></div>
