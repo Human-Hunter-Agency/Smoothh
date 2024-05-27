@@ -961,3 +961,18 @@ function smoothh_woocommerce_cart_product_subtotal_filter( $product_subtotal, $p
 	$tax_element = is_checkout() ?'' : '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product,$quantity) . '</span>';
 	return $product_subtotal . $tax_element;
 }
+
+function smoothh_img_responsive($img,$classes){
+	if (!isset($img) || !isset($img['url']) || !isset($img['ID'])) {
+		return '';
+	}
+	$url = $img['url']; 
+	$ID = $img['ID'];
+	$alt = isset($img['alt']) ? $img['alt'] : ''; 
+
+	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID) . '" ';
+	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID) . '" ';
+	$alt_string = 'alt="' . $alt . '" ';
+
+	return '<img class="' . $classes . '" src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . '/>';
+}
