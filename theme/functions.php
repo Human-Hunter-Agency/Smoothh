@@ -866,12 +866,13 @@ function gdpr_register_smoothh_consents()
 		true
     );
 
-	// gdpr('consent')->register(
-	// 	'gdpr_woo_consent', 
-	// 	sprintf( __( '<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh' ), get_permalink(wc_terms_and_conditions_page_id()) ),
-	// 	wc_terms_and_conditions_checkbox_text(),
-	// 	true
-    // );
+	$policyPageUrl = get_permalink(wc_privacy_policy_page_id());
+	gdpr('consent')->register(
+		'gdpr_woo_consent', 
+		sprintf( __( '<a href="%s" target="_blank">Policy privacy </a> consent', 'smoothh' ), $policyPageUrl ),
+		wc_privacy_policy_text( 'checkout' ),
+		true
+    );
 	
 	gdpr('consent')->register(
 		'consent_digital_commerce', 
@@ -879,8 +880,7 @@ function gdpr_register_smoothh_consents()
 		__('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh'),
 		true
 	);
-	
-	$policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
+	 
 	gdpr('consent')->register(
 		'consent_marketing', 
 		__('I consent to the processing of my personal data (name, e-mail address) by the Service Provider (here please provide the name and surname / name and address of the Service Provider) for marketing purposes.', 'smoothh' ),
