@@ -862,9 +862,16 @@ function gdpr_register_smoothh_consents()
 	gdpr('consent')->register(
 		'terms', 
 		sprintf( __( '<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh' ), get_permalink(wc_terms_and_conditions_page_id()) ),
-		wc_terms_and_conditions_checkbox_text(),
+		wc_get_terms_and_conditions_checkbox_text(),
 		true
     );
+
+	// gdpr('consent')->register(
+	// 	'gdpr_woo_consent', 
+	// 	sprintf( __( '<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh' ), get_permalink(wc_terms_and_conditions_page_id()) ),
+	// 	wc_terms_and_conditions_checkbox_text(),
+	// 	true
+    // );
 	
 	gdpr('consent')->register(
 		'consent_digital_commerce', 
