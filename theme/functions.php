@@ -862,7 +862,7 @@ function gdpr_register_smoothh_consents()
 	gdpr('consent')->register(
 		'terms', 
 		sprintf( __( '<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh' ), get_permalink(wc_terms_and_conditions_page_id()) ),
-		wc_get_terms_and_conditions_checkbox_text(),
+		wc_replace_policy_page_link_placeholders(wc_get_terms_and_conditions_checkbox_text()),
 		true
     );
 
