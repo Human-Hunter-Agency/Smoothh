@@ -4,6 +4,9 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
 
 module.exports = {
+	experimental: {
+		optimizeUniversalDefaults: true
+	},
 	presets: [
 		// Manage Tailwind Typography's configuration in a separate file.
 		require('./tailwind-typography.config.js'),
