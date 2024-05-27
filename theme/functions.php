@@ -971,7 +971,7 @@ function smoothh_img_responsive($img,$classes){
 	$alt = isset($img['alt']) ? $img['alt'] : ''; 
 
 	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID) . '" ';
-	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID) . '" ';
+	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'large') . '" ';
 	$alt_string = 'alt="' . $alt . '" ';
 
 	return '<img class="' . $classes . '" src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . '/>';
