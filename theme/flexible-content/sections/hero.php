@@ -12,7 +12,7 @@
 ?>
 
 <div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center">
-
+    <?php print_r($hero_background)?>
     <?php if (isset($hero_bg_url)) : ?>
         <img src="<?php echo $hero_bg_url; ?>" class="absolute inset-0 -z-20 object-cover !h-full w-full" >
     <?php endif; ?>
