@@ -21,8 +21,8 @@ body {
 	@apply invalid:!border-red-500 focus:invalid:!outline-red-500
 }
 
-.woocommerce-checkout #payment ul.payment_methods li label{
-	@apply inline-flex
+.woocommerce-checkout #payment ul.payment_methods li label img{
+	@apply inline-block
 }
 .woocommerce form .form-row.woocommerce-invalid label{
 	@apply !text-red-500
