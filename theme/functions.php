@@ -870,7 +870,7 @@ function gdpr_register_smoothh_consents()
 	gdpr('consent')->register(
 		'gdpr_woo_consent', 
 		sprintf( __( '<a href="%s" target="_blank">Policy privacy </a> consent', 'smoothh' ), $policyPageUrl ),
-		wc_replace_policy_page_link_placeholders( wc_get_privacy_policy_text( 'checkout' ) ),
+		wc_replace_policy_page_link_placeholders( wc_get_privacy_policy_text( 'registration' ) ),
 		true
     );
 	
