@@ -12,9 +12,6 @@
 ?>
 
 <div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center">
-    <pre>
-        <?php print_r($hero_background) ?> 
-    </pre>    
     <?php if (isset($hero_bg_url)) : 
         echo smoothh_img_responsive($hero_background,'absolute inset-0 -z-20 object-cover !h-full w-full');
     endif; ?>
