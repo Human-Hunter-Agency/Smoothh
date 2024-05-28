@@ -36,7 +36,9 @@
                 <li>
                     <a href="<?php echo get_term_link( $cat->term_id, 'product_cat' ); ?>" class="group h-full flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
                         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
-                            <?php echo wp_get_attachment_image($thumbnail_id,'medium',false,array('loading' => 'lazy','alt' => $cat->name)); ?>
+                            <?php
+                                $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+                                echo wp_get_attachment_image($thumbnail_id,'medium',false,array('loading' => 'lazy','alt' => $cat->name)); ?>
                             <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                         </div>
                         <div class="w-full flex-1 p-3 md:p-6">
