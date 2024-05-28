@@ -962,7 +962,7 @@ function smoothh_woocommerce_cart_product_subtotal_filter( $product_subtotal, $p
 	return $product_subtotal . $tax_element;
 }
 
-function smoothh_img_responsive($img,$classes,$size,$lazy = false){
+function smoothh_img_responsive($img,$classes,$dimensions,$lazy = false){
 	if (!isset($img) || !isset($img['url']) || !isset($img['ID'])) {
 		return '';
 	}
@@ -970,18 +970,34 @@ function smoothh_img_responsive($img,$classes,$size,$lazy = false){
 	$ID = $img['ID'];
 	$alt = isset($img['alt']) ? $img['alt'] : ''; 
 
-	$size_string = '';
-	if (isset($size) && count($size) == 2) {
-		$size_string = 'width="' . $size[0] . '" height="' . $size[1] .'" ';
+	$default_size = 'full';
+	$dimensions_string = '';
+	if (isset($dimensions) && count($dimensions) == 2) {
+		$dimensions_string = 'width="' . $dimensions[0] . '" height="' . $dimensions[1] .'" ';
+
+		$image_sizes = array(
+			'thumbnail' => 150,
+			'medium' => 300,
+			'medium_large' => 768,
+			'large' => 1024,
+		);
+	
+		foreach ($image_sizes as $size => $width) {
+			if ($width > $dimensions[0]) {
+				break;
+			}
+			$default_size = $size;
+		}
 	}
-	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID) . '" ';
-	// $sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'full',wp_get_attachment_metadata( $ID )) . '" '; // This returns only one size, temporarly switched to static solubion below
-	$sizes_string = 'sizes="(max-width: 768px) 300px, (max-width: 1024px) 768px, (max-width: 1920px) 1024px, 100vw" ';
+
+	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID,$default_size) . '" ';
+	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,$default_size,wp_get_attachment_metadata( $ID )) . '" '; // This returns only one size, temporarly switched to static solubion below
+	// $sizes_string = 'sizes="(max-width: 768px) 300px, (max-width: 1024px) 768px, (max-width: 1920px) 1024px, 100vw" ';
 	$alt_string = $alt == '' ? '' : ('alt="' . $alt . '" ');
 	$loading_string = '';
 	if ($lazy) {
 		$loading_string = 'loading="lazy" ';
 	}
 
-	return '<img class="' . $classes . '" '. $size_string . 'src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . $loading_string . '/>';
+	return '<img class="' . $classes . '" '. $dimensions_string . 'src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . $loading_string . '/>';
 }
