@@ -21,7 +21,7 @@
                         <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-[calc(33%-70px)] px-3 md:px-4">
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($tile['icon'] && $tile['icon']['url'] ) : ?>
-                                    <img src="<?php echo $tile['icon']['url']; ?>" class="object-contain size-20 md:size-28 xl:size-[160px] mb-8 md:mb-14" >
+                                    <?php echo smoothh_img_responsive($tile['icon'],'object-contain size-20 md:size-28 xl:size-[160px] mb-8 md:mb-14',array(200,200),'lazy'); ?>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <div class="prose prose-sm md:prose-lg xl:prose-xl [&_*]:!text-white"><?php echo $tile['description']; ?></div>

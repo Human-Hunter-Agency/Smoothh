@@ -21,7 +21,7 @@
                     <div class="flex flex-col md:flex-row md:items-center gap-1.5 md:gap-5">
                         <?php if ($item['icon'] && $item['icon']['url'] ) : ?>
                             <div class="shrink-0">
-                                <img src="<?php echo $item['icon']['url']; ?>" class="object-contain size-16 md:size-24" >
+                                <?php echo smoothh_img_responsive($item['icon'],'object-contain size-16 md:size-24',array(100,100),'lazy'); ?>
                             </div>
                         <?php endif; ?>
                         <?php if ($item['description']) : ?>
