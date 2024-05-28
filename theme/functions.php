@@ -962,7 +962,7 @@ function smoothh_woocommerce_cart_product_subtotal_filter( $product_subtotal, $p
 	return $product_subtotal . $tax_element;
 }
 
-function smoothh_img_responsive($img,$classes,$dimensions,$lazy = false){
+function smoothh_img_responsive($img,$classes,$dimensions,$loading = ''){
 	if (!isset($img) || !isset($img['url']) || !isset($img['ID'])) {
 		return '';
 	}
@@ -974,20 +974,7 @@ function smoothh_img_responsive($img,$classes,$dimensions,$lazy = false){
 	$dimensions_string = '';
 	if (isset($dimensions) && count($dimensions) == 2) {
 		$dimensions_string = 'width="' . $dimensions[0] . '" height="' . $dimensions[1] .'" ';
-
-		$image_sizes = array(
-			'thumbnail' => 150,
-			'medium' => 300,
-			'medium_large' => 768,
-			'large' => 1024,
-		);
-	
-		foreach ($image_sizes as $size => $width) {
-			if ($width > $dimensions[0]) {
-				break;
-			}
-			$default_size = $size;
-		}
+		$default_size = get_best_fit_image_size($dimensions[0]);
 	}
 
 	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID,$default_size) . '" ';
@@ -995,9 +982,29 @@ function smoothh_img_responsive($img,$classes,$dimensions,$lazy = false){
 	// $sizes_string = 'sizes="(max-width: 768px) 300px, (max-width: 1024px) 768px, (max-width: 1920px) 1024px, 100vw" ';
 	$alt_string = $alt == '' ? '' : ('alt="' . $alt . '" ');
 	$loading_string = '';
-	if ($lazy) {
-		$loading_string = 'loading="lazy" ';
+	if ($loading != '') {
+		$loading_string = 'loading="' . $loading . '" ';
 	}
 
 	return '<img class="' . $classes . '" '. $dimensions_string . 'src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . $loading_string . '/>';
+}
+
+function get_best_fit_image_size($custom_width){
+	$image_sizes = array(
+        'thumbnail' => 150,
+        'medium' => 300,
+        'medium_large' => 768,
+        'large' => 1024,
+    );
+
+    $best_fit_size = 'full';
+
+    foreach ($image_sizes as $size => $width) {
+        if ($width > $custom_width) {
+            break;
+        }
+        $best_fit_size = $size;
+    }
+
+    return $best_fit_size;
 }

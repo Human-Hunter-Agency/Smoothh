@@ -26,7 +26,7 @@
                         <div class="swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <?php if ($tile['image'] && $tile['image']['url'] ) : ?>
                                 <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
-                                    <?php echo smoothh_img_responsive($tile['image'],'object-cover w-full !h-[190px] md:!h-[220px]',array(360,220),true); ?>
+                                    <?php echo smoothh_img_responsive($tile['image'],'object-cover w-full !h-[190px] md:!h-[220px]',array(360,220),'lazy'); ?>
                                     <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                                 </div>
                             <?php endif; ?>
