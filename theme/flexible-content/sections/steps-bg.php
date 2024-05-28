@@ -25,7 +25,7 @@
                         <div class="swiper-slide !h-auto xl:flex-1 border border-white rounded-2xl">
                             <div class="flex flex-col items-center text-center p-3 md:p-6 pb-5 md:pb-10">
                                 <?php if ($step['icon'] && $step['icon']['url'] ) : ?>
-                                    <img src="<?php echo $step['icon']['url']; ?>" class="object-contain size-16 md:size-24 xl:size-[130px] mb-8 md:mb-[50px]" >
+                                    <?php echo smoothh_img_responsive($step['icon'],'object-contain size-16 md:size-24 xl:size-[130px] mb-8 md:mb-[50px]',array(130,130),'lazy'); ?>
                                 <?php endif; ?>
                                 <div class="min-h-[90px] lg:min-h-[110px]">
                                     <?php if ($step['title']) : ?>

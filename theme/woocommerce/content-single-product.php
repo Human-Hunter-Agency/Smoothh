@@ -202,7 +202,7 @@ $show_select_cat_products = !empty($common_values);
 					<div class="swiper-wrapper items-center">
 						<?php foreach ($client_logos as $logo) : ?>
 							<div class="swiper-slide mr-5 md:px-5 opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
-								<img class="object-contain max-h-28" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" alt="<?php echo $logo['title']; ?>" />
+                            	<?php echo smoothh_img_responsive($logo,'object-contain max-h-28',array(300,112),'lazy'); ?>
 							</div>
 						<?php endforeach; ?>
 					</div>

@@ -42,7 +42,7 @@
                                     <?php elseif ($grid == 5) : ?> p-4 md:p-6 mb-9
                                     <?php else : ?> p-4 md:p-6 mb-5  
                                     <?php endif; ?>">
-                                    <img src="<?php echo $tile['icon']['url']; ?>" class="mx-auto object-contain size-16 md:size-24 xl:size-[125px]" >
+                                    <?php echo smoothh_img_responsive($tile['icon'],'mx-auto object-contain size-16 md:size-24 xl:size-[125px]',array(125,125),'lazy'); ?>
                                 </div>
                             <?php endif; ?>
                             <?php if ($tile['title']) : ?>

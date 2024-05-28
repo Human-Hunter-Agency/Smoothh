@@ -17,7 +17,7 @@
                 <?php foreach($tiles_list as $tile) : ?>
                     <div class="flex flex-col items-center text-center">
                         <?php if ($tile['icon'] && $tile['icon']['url'] ) : ?>
-                            <img src="<?php echo $tile['icon']['url']; ?>" class="object-contain size-24 xl:size-[125px] mb-5" >
+                            <?php echo smoothh_img_responsive($tile['icon'],'object-contain size-24 xl:size-[125px] mb-5',array(125,125),'lazy'); ?>
                         <?php endif; ?>
                         <div class="mb-5 md:mb-7">
                             <?php if ($tile['tagline']) : ?>
