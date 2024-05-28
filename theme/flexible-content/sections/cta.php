@@ -13,7 +13,7 @@
 <div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
 
     <?php if (isset($bg_url)) : 
-        echo smoothh_img_responsive($background,'absolute inset-0 -z-20 object-cover !h-full w-full');
+        echo smoothh_img_responsive($background,'absolute inset-0 -z-20 object-cover !h-full w-full',null);
     endif;?>
 
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>

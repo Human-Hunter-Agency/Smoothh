@@ -962,7 +962,7 @@ function smoothh_woocommerce_cart_product_subtotal_filter( $product_subtotal, $p
 	return $product_subtotal . $tax_element;
 }
 
-function smoothh_img_responsive($img,$classes){
+function smoothh_img_responsive($img,$classes,$size,$lazy = false){
 	if (!isset($img) || !isset($img['url']) || !isset($img['ID'])) {
 		return '';
 	}
@@ -970,10 +970,18 @@ function smoothh_img_responsive($img,$classes){
 	$ID = $img['ID'];
 	$alt = isset($img['alt']) ? $img['alt'] : ''; 
 
+	$size_string = '';
+	if (isset($size) && count($size) == 2) {
+		$size_string = 'width="' . $size[0] . '" height="' . $size[1] .'" ';
+	}
 	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID) . '" ';
-	// $sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'large') . '" '; // This returns only one size, temporarly switched to static solubion below
-	$sizes_string = 'sizes="(max-width: 768px) 300px, (max-width: 1024px) 768px, (max-width: 1920px) 1024px, 1920px" ';
+	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'full') . '" '; // This returns only one size, temporarly switched to static solubion below
+	// $sizes_string = 'sizes="(max-width: 768px) 300px, (max-width: 1024px) 768px, (max-width: 1920px) 1024px, 1920px" ';
 	$alt_string = $alt == '' ? '' : ('alt="' . $alt . '" ');
+	$loading_string = '';
+	if ($lazy) {
+		$loading_string = 'loading="lazy" ';
+	}
 
-	return '<img class="' . $classes . '" src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . '/>';
+	return '<img class="' . $classes . '" '. $size_string . 'src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . $loading_string . '/>';
 }
