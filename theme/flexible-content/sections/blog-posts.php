@@ -30,7 +30,14 @@
 				foreach ($posts as $post) : ?>
 				<li class="post-tile">
 					<a href="<?php echo get_permalink($post->ID); ?>">
-						<?php echo wp_get_attachment_image(get_post_thumbnail_id($post),'medium',false,array('loading' => 'lazy','alt' => $post->post_title)); ?>
+						<?php
+							$thumbnail_id = get_post_thumbnail_id($post);
+							if (!$thumbnail_id) {
+								echo '<img src="" />';
+							}else{
+								echo wp_get_attachment_image($thumbnail_id,'medium',false,array('loading' => 'lazy','alt' => $post->post_title)); 
+							}
+						?>
 						<h3><?php echo $post->post_title; ?></h3>
 						<p><?php echo get_the_excerpt($post->ID); ?></p>
 						<span href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?></span>
