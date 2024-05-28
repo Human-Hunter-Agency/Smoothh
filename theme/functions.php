@@ -969,12 +969,13 @@ function smoothh_img_responsive($img,$classes,$size,$lazy = false){
 	$url = $img['url']; 
 	$ID = $img['ID'];
 	$alt = isset($img['alt']) ? $img['alt'] : ''; 
+	$has_size = isset($size) && count($size) == 2;
 
 	$size_string = '';
-	if (isset($size) && count($size) == 2) {
+	if ($has_size) {
 		$size_string = 'width="' . $size[0] . '" height="' . $size[1] .'" ';
 	}
-	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID) . '" ';
+	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID,$has_size ? $size : 'full') . '" ';
 	// $sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'full',wp_get_attachment_metadata( $ID )) . '" '; // This returns only one size, temporarly switched to static solubion below
 	$sizes_string = 'sizes="(max-width: 768px) 300px, (max-width: 1024px) 768px, (max-width: 1920px) 1024px, 100vw" ';
 	$alt_string = $alt == '' ? '' : ('alt="' . $alt . '" ');
