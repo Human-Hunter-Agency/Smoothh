@@ -23,7 +23,7 @@
                     <?php foreach($posts as $post) : ?>
                         <a href="<?php echo get_permalink($post->ID) ?>" class="group swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
                             <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden [&_img]:object-cover [&_img]:w-full [&_img]:!h-[190px] [&_img]:md:!h-[220px]">
-                                <?php echo wp_get_attachment_image($post->ID,'medium',false); ?>
+                                <?php echo wp_get_attachment_image(get_post_thumbnail_id($post),'medium',false,array('loading' => 'lazy')); ?>
                                 <span class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></span>
                             </div>
                             <div class="text-center p-3 md:p-6 !pt-0">
