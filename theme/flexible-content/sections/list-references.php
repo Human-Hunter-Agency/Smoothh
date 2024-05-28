@@ -13,7 +13,7 @@
                 <?php if( $item['logo'] ): ?> 
 
                     <div class="shrink-0 flex items-center justify-center border-0 border-b-2 md:border-b-0 md:border-r-2 border-[#B8B8B8] md:w-[200px] lg:w-[250px] xl:w-[400px] p-5 lg:p-10 xl:px-[70px]">
-                        <?php echo smoothh_img_responsive($item['logo'],'object-contain w-full max-h-20 md:max-h-44',array(200,200),'lazy'); ?>
+                        <?php echo smoothh_img_responsive($item['logo'],'object-contain w-full max-h-20 md:max-h-44',null,'lazy'); ?>
                     </div>
 
                 <?php endif; ?>
