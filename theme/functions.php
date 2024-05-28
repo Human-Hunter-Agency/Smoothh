@@ -975,8 +975,8 @@ function smoothh_img_responsive($img,$classes,$size,$lazy = false){
 		$size_string = 'width="' . $size[0] . '" height="' . $size[1] .'" ';
 	}
 	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID) . '" ';
-	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'full',wp_get_attachment_metadata( $ID )) . '" '; // This returns only one size, temporarly switched to static solubion below
-	// $sizes_string = 'sizes="(max-width: 768px) 300px, (max-width: 1024px) 768px, (max-width: 1920px) 1024px, 1920px" ';
+	// $sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,'full',wp_get_attachment_metadata( $ID )) . '" '; // This returns only one size, temporarly switched to static solubion below
+	$sizes_string = 'sizes="(max-width: 768px) 300px, (max-width: 1024px) 768px, (max-width: 1920px) 1024px, 100vw" ';
 	$alt_string = $alt == '' ? '' : ('alt="' . $alt . '" ');
 	$loading_string = '';
 	if ($lazy) {
