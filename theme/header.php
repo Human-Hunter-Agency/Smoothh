@@ -43,7 +43,7 @@ if ($hero_img_url == false && $post && get_post_thumbnail_id($post->ID) && get_p
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 	<?php if ($hero_img_url) : ?>
 		<meta property="og:image" content="<?php echo $hero_img_url ?>" />
 		<meta name="twitter:image" content="<?php echo $hero_img_url ?>" />
