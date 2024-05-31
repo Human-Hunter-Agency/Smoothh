@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 'woocommerce' ), wp_strip_all_tags( $args['product_name'] ) ) : esc_html__( 'Quantity', 'woocommerce' );
 
 ?>
-<div class="quantity">
+<div class="quantity !my-0">
 	<?php
 	/**
 	 * Hook to output something before the quantity input field.
@@ -54,13 +54,13 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
                 <?php endif; ?>
                 />
             <div class="flex flex-col">   
-                <button data-js="up" type="button" class="group appearance-none h-6 w-5 bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xs text-center cursor-pointer">
-                    <svg class="stroke-foreground group-hover:stroke-primary transition duration-200" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button data-js="up" type="button" class="group appearance-none h-6 w-5 p-1 cursor-pointer">
+                    <svg class="w-full stroke-foreground group-hover:stroke-primary transition duration-200" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 11L11 1L21 11"/>
                     </svg>
                 </button>
-                <button data-js="down" type="button" class="group appearance-none h-6 w-5 bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xs text-center cursor-pointer">
-                    <svg class="rotate-180 stroke-foreground group-hover:stroke-primary transition duration-200" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button data-js="down" type="button" class="group appearance-none h-6 w-5 p-1 cursor-pointer">
+                    <svg class="rotate-180 w-full stroke-foreground group-hover:stroke-primary transition duration-200" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 11L11 1L21 11"/>
                     </svg>
                 </button>
