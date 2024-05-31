@@ -46,18 +46,6 @@
                                 <h4 class="text-lg md:text-xl text-primary font-semibold">
                                     <?php echo $cat->name ?>
                                 </h4>
-                                <?php // if (is_user_logged_in() || is_category_guest_available($cat)) : 
-                                ?>
-                                <div class="flex flex-wrap">
-                                    <span class="text-lg md:text-xl shrink-0 whitespace-nowrap">
-                                        <?php
-                                        echo number_format(wc_get_price_excluding_tax($min_price_product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol();
-                                        ?> <?php esc_html_e('net', 'smoothh') ?>
-                                    </span>
-                                    <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"><?php echo '( ' . wc_price(wc_get_price_including_tax($min_price_product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
-                                </div>
-                                <?php // endif; 
-                                ?>
                             </div>
                             <p class="text-sm md:text-base prose-strong:font-semibold">
                                 <?php echo $cat->description ?>
