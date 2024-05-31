@@ -126,7 +126,9 @@ do_action('woocommerce_before_cart'); ?>
 
                                         // echo number_format($cart_item['line_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
 
-                                        print_r($cart_item);
+                                        // print_r($cart_item);
+
+                                        echo 'nowe brutto: ' . $cart_item['line_total'] + $cart_item['line_tax']
                                         ?></pre>
 
                                 <span><?php echo wc_get_price_excluding_tax($_product) * $cart_item['quantity'] . ' ' . get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?></span>
