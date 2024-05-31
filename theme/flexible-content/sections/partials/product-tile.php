@@ -41,7 +41,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                         </span>
                         <?php if (has_sale($product)) : ?>
                             <span class="!text-lg !leading-4 h-5 text-black opacity-50 line-through font-normal">
-                                <?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?>
+                                <?php echo get_product_regular_price_formatted($product); ?>
                             </span>
                         <?php endif ?>
                     </div>
