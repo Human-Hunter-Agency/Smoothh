@@ -122,10 +122,12 @@ do_action('woocommerce_before_cart'); ?>
                         <div class="product-subtotal flex justify-between md:justify-end grow-0 md:w-[15%] text-right" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                             <span class="md:hidden text-base"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
                             <div class="flex flex-col items-end">
-                                <?php
+                                <pre><?php
 
-                                echo number_format($cart_item['line_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
-                                ?>
+                                        // echo number_format($cart_item['line_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
+
+                                        print_r($cart_item);
+                                        ?></pre>
 
                                 <span><?php echo wc_get_price_excluding_tax($_product) * $cart_item['quantity'] . ' ' . get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?></span>
                                 <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo '( ' . wc_get_price_including_tax($_product) * $cart_item['quantity'] . ' ' . get_woocommerce_currency_symbol(); ?> <?php echo  esc_html_e('gross', 'smoothh') . ' )'; ?></span>
