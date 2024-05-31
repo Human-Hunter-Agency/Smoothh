@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
 <script type="text/template" id="tmpl-variation-template">
 	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
 	<div class="woocommerce-variation-price flex items-end justify-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary [&_bdi]:text-4xl [&_del_bdi]:!text-xl [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-foreground [&_del]:h-8 [&_del]:!decoration-foreground [&_del_bdi]:mr-1.5">
-        <span class="flex flex-col items-end">
+        <span class="[&_.price]:flex [&_.price]:flex-col [&_.price]:items-end">
             {{{ data.variation.price_html }}}
         </span>    
         <span class="net-label text-primary font-normal text-xl md:text-2xl whitespace-nowrap"><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net','smoothh') ?>{{{ data.variation.hourly_text }}}</span>
