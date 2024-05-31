@@ -30,6 +30,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                 <div class="flex text-lg md:text-xl flex-wrap shrink-0">
                     <?php
                     $has_variable_price = get_field('variable_price', $product->get_id());
+                    $is_hourly = get_field('product_hourly');
                     if (isset($has_variable_price) && $has_variable_price) :
                     ?>
                         <span class="text-foreground font-normal text-base leading-loose mr-1"><?php esc_html_e('From', 'smoothh') ?></span>
@@ -44,7 +45,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                             </span>
                         <?php endif ?>
                     </div>
-                    <span><?php esc_html_e('net', 'smoothh') ?></span>
+                    <span><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {echo '/h';} ?></span>
                     <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
                 </div>
                 <?php //endif; 
