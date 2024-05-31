@@ -35,6 +35,6 @@ $is_hourly = get_field('product_hourly');
             <span class="flex flex-col items-end [&_del]:opacity-50"><?php echo $product->get_price_html(); ?> </span>
             <span class="net-label text-primary font-normal text-xl md:text-2xl whitespace-nowrap"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {echo '/h';} ?></span>
         </p>
-        <span class="text-foreground text-lg md:text-base text-right"><?php echo get_product_tax_formatted($product); ?></span>
+        <span class="text-foreground text-lg md:text-base text-right"><?php echo get_product_regular_price_formatted($product); ?></span>
     </div>
 <?php endif; ?>
