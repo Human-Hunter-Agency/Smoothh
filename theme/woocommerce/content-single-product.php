@@ -59,6 +59,7 @@ $show_select_cat_products = !empty($common_values);
 		<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
 			<div class="md:sticky top-[115px]">
 				<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
+					<h3 class="text-primary text-lg md:text-xl font-bold mb-5"></h3>
 					<div class="flex flex-col gap-5 lg:gap-[35px] justify-between items-end">
 						<?php if ($show_select_cat_products == true) :
 							$products_args = array(
@@ -69,6 +70,7 @@ $show_select_cat_products = !empty($common_values);
 
 						?>
 							<div class="relative w-full">
+								<span class="block text-base md:text-lg mb-3"> <?= __('Variant', 'smoothh') ?></span>
 								<select id="product-select-from-cat">
 									<option selected="selected"><?php echo get_the_title($product->get_id()) ?></option>
 									<?php foreach ($products as $cat_product) : ?>

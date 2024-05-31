@@ -33,10 +33,10 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 		<p class="stock out-of-stock"><?php echo esc_html(apply_filters('woocommerce_out_of_stock_message', __('This product is currently out of stock and unavailable.', 'woocommerce'))); ?></p>
 	<?php else : ?>
 		<div class="flex flex-col gap-5 lg:gap-[35px] justify-between items-end">
-			<div class="grow w-full">
+			<div class="w-full">
 				<?php foreach ($attributes as $attribute_name => $options) : ?>
 					<div class="variations !mb-0">
-						<label class="block text-lg md:text-xl font-bold mb-5" for="<?php echo esc_attr(sanitize_title($attribute_name)); ?>">
+						<label class="block text-base md:text-lg mb-3" for="<?php echo esc_attr(sanitize_title($attribute_name)); ?>">
 							<?php echo wc_attribute_label($attribute_name); // WPCS: XSS ok.
 							?>
 						</label>
