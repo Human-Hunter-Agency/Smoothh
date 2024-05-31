@@ -10,7 +10,7 @@
 
 ?>
 
-<div class="relative w-full flex flex-col items-center justify-center py-8 md:py-10">
+<div class="relative w-full flex flex-col items-center justify-center py-8 md:py-10 mb-10 md:mb-20">
 
     <?php if (isset($bg_url)) : ?>
         <?php echo smoothh_img_responsive($background,'absolute inset-0 -z-20 object-cover h-full w-full',null,'lazy'); ?>
