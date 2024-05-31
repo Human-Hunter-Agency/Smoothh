@@ -918,7 +918,7 @@ function get_product_tax_formatted($product, $quantity = 1)
 		$tax_amount = ($price_incl_tax) * $quantity;
 		$tax_formatted = number_format($tax_amount, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
 
-		return '( ' . $tax_formatted . ' ' . get_woocommerce_currency_symbol() . ' ' . __('TAX', 'smoothh') . ')';
+		return '( ' . $tax_formatted . ' ' . get_woocommerce_currency_symbol() . ' ' . __('gross', 'smoothh') . ')';
 	}
 }
 
