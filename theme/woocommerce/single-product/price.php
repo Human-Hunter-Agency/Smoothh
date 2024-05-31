@@ -43,6 +43,6 @@ $has_variable_price = get_field('variable_price');
             <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?></span>
         </p>
         <span class="text-foreground text-lg md:text-base text-right"><?php echo get_product_tax_formatted($product) ?></span>
-        <span class="test text-foreground text-lg md:text-base text-right"><?php echo $product->get_price_including_tax() ?></span>
+        <span class="test text-foreground text-lg md:text-base text-right"><?php echo wc_price(wc_get_price_including_tax($product));  ?></span>
     </div>
 <?php endif; ?>
