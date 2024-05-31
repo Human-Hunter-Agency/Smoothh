@@ -924,6 +924,7 @@ function get_product_tax_formatted($product, $quantity = 1)
 function smoothh_woocommerce_available_variation($variation_data, $product, $variation)
 {
 	$variation_data['tax_text'] = get_product_tax_formatted($variation);
+	$variation_data['hourly_text'] = get_field('product_hourly', $product->get_id()) ? '/h':'';
 	return $variation_data;
 }
 add_filter('woocommerce_available_variation', 'smoothh_woocommerce_available_variation', 10, 3);
