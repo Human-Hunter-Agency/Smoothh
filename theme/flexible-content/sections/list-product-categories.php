@@ -54,7 +54,7 @@
                                         echo number_format(wc_get_price_excluding_tax($min_price_product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol();
                                         ?> <?php esc_html_e('net', 'smoothh') ?>
                                     </span>
-                                    <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"><?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
+                                    <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"><?php echo '( ' . wc_price(wc_get_price_including_tax($min_price_product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
                                 </div>
                                 <?php // endif; 
                                 ?>
