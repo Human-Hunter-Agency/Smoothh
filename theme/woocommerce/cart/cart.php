@@ -91,7 +91,7 @@ do_action('woocommerce_before_cart'); ?>
                                     <span class="[&_ins]:no-underline [&_del_bdi]:text-foreground [&_del_bdi]:opacity-50 [&_del_bdi]:text-lg md:[&_del]:-mb-2 [&_del]:mr-2 md:[&_del]:mr-0 flex md:flex-col items-end"><?php echo $_product->get_price_html(); ?></span>
                                     <span class="ml-2"><?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {echo '/h';} ?></span>
                                 </div>
-                                <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo '( ' . wc_price(wc_get_price_including_tax($_product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
+                                <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($_product); ?></span>
                             </div>
                         </div>
 
