@@ -41,7 +41,7 @@ $is_hourly = get_field('product_hourly');
                 } else {
                     echo 'flex-col';
                 } ?>"><?php echo $product->get_price_html(); ?> </span>
-            <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?> <?php if ($is_hourly) {echo '/h';} ?></span>
+            <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {echo '/h';} ?></span>
         </p>
         <span class="text-foreground text-lg md:text-base text-right"><?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
     </div>
