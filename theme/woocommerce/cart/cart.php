@@ -87,9 +87,7 @@ do_action('woocommerce_before_cart'); ?>
                         <div class="product-price flex justify-between md:justify-end grow-0 md:w-[15%] text-right" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
                             <span class="md:hidden text-base"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
                             <div class="flex flex-col items-end">
-                                <span class="[&_ins]:no-underline"><?php echo $_product->get_price_html(); ?> <?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {
-                                                                                                                                                        echo '/h';
-                                                                                                                                                    } ?></span>
+                                <span class="[&_ins]:no-underline [&_ins]:text-foreground [&_ins]:opacity-50 [&_ins]:text-lg"><?php echo $_product->get_price_html(); ?> <?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {echo '/h';} ?></span>
                                 <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo '( ' . wc_price(wc_get_price_including_tax($_product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
                             </div>
                         </div>
