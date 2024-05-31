@@ -31,7 +31,7 @@ AOS.init({
 	debounceDelay: 50,
 	throttleDelay: 99,
 
-	offset: 120,
+	offset: 0,
 	delay: 0,
 	duration: 400,
 	easing: 'ease',
