@@ -45,7 +45,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                         <?php endif ?>
                     </div>
                     <span><?php esc_html_e('net', 'smoothh') ?></span>
-                    <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"><?php echo get_product_tax_formatted($product) ?></span>
+                    <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
                 </div>
                 <?php //endif; 
                 ?>
