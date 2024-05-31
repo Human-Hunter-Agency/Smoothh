@@ -128,7 +128,7 @@ do_action('woocommerce_before_cart'); ?>
 
                                 <span><?php echo WC()->cart->get_product_subtotal($_product, $cart_item['quantity']); ?> <?php esc_html_e('net', 'smoothh') ?></span>
 
-                                <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo wc_get_price_including_tax($_product, $cart_item['quantity']); ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
+                                <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo  wc_get_price_including_tax($_product) * $cart_item['quantity']; ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
                             </div>
                         </div>
                         <?php if (WC()->cart->has_discount()) : ?>
