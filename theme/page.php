@@ -29,7 +29,7 @@ get_header();
 
 			if ($sections) :
 				foreach ($sections as $section) : ?>
-					<div data-aos="fade-up" data-aos-offset="1" data-aos-delay="50">
+					<div data-aos="fade" data-aos-delay="50">
 						<?php
 						$section_visible = $section['isSectionVisible'];
 						if (isset($section_visible) && $section_visible == true) {
