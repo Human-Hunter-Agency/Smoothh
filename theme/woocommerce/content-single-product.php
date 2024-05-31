@@ -82,7 +82,7 @@ $show_select_cat_products = !empty($common_values);
 								</svg>
 							</div>
 						<?php endif ?>
-						<div class="<?php if ($product->is_type('variable')) : ?> w-full <?php endif ?> ml-auto flex flex-col md:flex-row gap-2 <?php if ($show_select_cat_products == true || $product->is_type('variable')) : ?>  md:!gap-2 md:!flex-col <?php else : ?> md:gap-4 <?php endif ?> items-end justify-end ">
+						<div class="w-full ml-auto flex flex-col gap-2 items-end justify-end ">
 							<?php
 							/**
 							 * Hook: woocommerce_single_product_summary.
