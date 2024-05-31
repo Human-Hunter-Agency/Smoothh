@@ -87,7 +87,7 @@ do_action('woocommerce_before_cart'); ?>
                         <div class="product-price flex justify-between md:justify-end grow-0 md:w-[15%] text-right" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
                             <span class="md:hidden text-base"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
                             <div class="flex flex-col items-end">
-                                <?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?>
+                                <?php echo '( ' . wc_price(wc_get_price_including_tax($_product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?>
                             </div>
                         </div>
 

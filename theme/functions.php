@@ -975,7 +975,7 @@ function has_sale($product)
 add_filter('woocommerce_cart_product_price', 'smoothh_woocommerce_cart_product_price_filter', 10, 2);
 function smoothh_woocommerce_cart_product_price_filter($wc_price, $product)
 {
-	$tax_element = '<span class="text-base text-right text-foreground font-normal">' . wc_price(wc_get_price_including_tax($product)) . '</span>';
+	$tax_element = '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product) . '</span>';
 	return $wc_price . $tax_element;
 }
 
