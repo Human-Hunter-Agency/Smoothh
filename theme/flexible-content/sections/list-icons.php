@@ -6,16 +6,16 @@
 
 ?>
 
-<?php if ($header) : ?>
-    <div class="container py-10 md:py-[50px]">
-        <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-primary">
-            <?php echo esc_html($header); ?>
-        </h2>
-    </div>
-<?php endif; ?>
-<?php if ($list) : ?>
-    <div class="relative py-10 md:py-[70px] bg-gradient-to-b from-secondary to-primary">
-        <div class="container">
+<div class="relative py-10 md:py-[70px] bg-gradient-to-b from-secondary to-primary">
+    <div class="container">
+        <?php if ($header) : ?>
+            <div class="container mb-10 md:mb-[50px]">
+                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-white">
+                    <?php echo esc_html($header); ?>
+                </h2>
+            </div>
+        <?php endif; ?>
+        <?php if ($list) : ?>
             <div class=" max-w-[920px] mx-auto flex flex-col gap-5 md:gap-10">
                 <?php foreach($list as $item) : ?>
                     <div class="flex flex-col md:flex-row md:items-center gap-1.5 md:gap-5">
@@ -30,6 +30,6 @@
                     </div>
                 <?php endforeach; ?>
             </div>
+            <?php endif; ?>
         </div>
     </div>
-<?php endif; ?>
