@@ -37,7 +37,7 @@ if ($product->is_in_stock() && $has_variable_price == false) : ?>
 		<?php
 		do_action('woocommerce_before_add_to_cart_quantity');
 
-
+		$is_hourly = get_field('product_hourly', $product->get_id());
 		if(isset($is_hourly) && $is_hourly){
 			woocommerce_quantity_input(
 				array(
