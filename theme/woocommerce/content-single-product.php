@@ -52,14 +52,14 @@ $show_select_cat_products = !empty($common_values);
 
 	<div class="container flex flex-col md:flex-row md:justify-between gap-5 md:gap-6 lg:gap-10">
 		<div class="w-full">
-			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-8 md:mb-[50px]">
+			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-9 md:mb-[55px]">
 				<?php the_content() ?>
 			</div>
 		</div>
 		<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
 			<div class="md:sticky top-[115px]">
 				<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
-					<div class="flex flex-col gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end">
+					<div class="flex flex-col gap-5 lg:gap-[35px] justify-between items-end">
 						<?php if ($show_select_cat_products == true) :
 							$products_args = array(
 								'exclude' => array($product->get_id()),
