@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 ?>
-<div class="woocommerce-variation-add-to-cart variations_button flex <?php if($product->is_type('variable')){echo ' [&_.quantity]:!my-3 [&_.quantity]:!mr-3 flex flex-col items-end';}else{ echo '[&_.quantity]:!hidden';} ?>">
+<div class="woocommerce-variation-add-to-cart variations_button flex <?php if($product->is_type('variable')){echo ' [&_.quantity]:!my-3 [&_.quantity]:!mr-3 items-end';}else{ echo '[&_.quantity]:!hidden';} ?>">
 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
 	<?php

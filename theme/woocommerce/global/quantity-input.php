@@ -33,13 +33,13 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
 	 */
 	do_action( 'woocommerce_before_quantity_input_field' );
 	?>
-    <div data-js="qty-control" class="flex bg-[#EFEFEF]  rounded-md overflow-hidden">
+    <div data-js="qty-control" class="flex border border-primary rounded-md overflow-hidden">
         <label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
         <input
         type="<?php echo esc_attr( $type ); ?>"
             <?php echo $readonly ? 'readonly="readonly"' : ''; ?>
             id="<?php echo esc_attr( $input_id ); ?>"
-            class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?> text-xl appearance-none !w-10 h-12"
+            class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?> text-xl appearance-none !w-10 h-12 rounded-l-md bg-transparent"
             name="<?php echo esc_attr( $input_name ); ?>"
             value="<?php echo esc_attr( $input_value ); ?>"
             aria-label="<?php esc_attr_e( 'Product quantity', 'woocommerce' ); ?>"
@@ -54,8 +54,16 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
                 <?php endif; ?>
                 />
             <div class="flex flex-col">   
-                <button data-js="up" type="button" class=" appearance-none h-6 w-5 bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xs text-center cursor-pointer">+</button>
-                <button data-js="down" type="button" class=" appearance-none h-6 w-5 bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xs text-center cursor-pointer">-</button>
+                <button data-js="up" type="button" class="group appearance-none h-6 w-5 bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xs text-center cursor-pointer">
+                    <svg class="stroke-foreground group-hover:stroke-primary transition duration-200" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 11L11 1L21 11"/>
+                    </svg>
+                </button>
+                <button data-js="down" type="button" class="group appearance-none h-6 w-5 bg-primary hover:bg-[#6617B7] transition duration-200 text-white text-xs text-center cursor-pointer">
+                    <svg class="rotate-180 stroke-foreground group-hover:stroke-primary transition duration-200" width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 11L11 1L21 11"/>
+                    </svg>
+                </button>
             </div>
     </div>
 	<?php
