@@ -28,19 +28,11 @@ $is_hourly = get_field('product_hourly');
 <?php if (!$product->is_type('variable')) : // if (is_user_logged_in() || is_prod_guest_available($product)) : 
 ?>
     <div class="<?php echo esc_attr(apply_filters('woocommerce_product_price_class', 'price')); ?> flex flex-col gap-1">
-        <p class=" flex items-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary <?php if ($product->is_type('variable')) {
-            echo '[&_bdi]:text-2xl [&_del_bdi]:!text-lg';
-        } else {
-            echo '[&_bdi]:text-4xl [&_del_bdi]:!text-xl';
-        } ?> [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-black [&_del]:h-8 [&_del]:!decoration-black [&_del_bdi]:mr-1.5">
+        <p class=" flex items-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary [&_bdi]:text-4xl [&_del_bdi]:!text-xl [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-black [&_del]:h-8 [&_del]:!decoration-black [&_del_bdi]:mr-1.5">
             <?php if (isset($has_variable_price) && $has_variable_price) : ?>
                 <span class="text-foreground font-normal text-xl md:text-2xl mr-2"><?php esc_html_e('From', 'smoothh') ?></span>
             <?php endif ?>
-            <span class="flex <?php if ($product->is_type('variable')) {
-                    echo 'items-center';
-                } else {
-                    echo 'flex-col';
-                } ?>"><?php echo $product->get_price_html(); ?> </span>
+            <span class="flex flex-col items-end"><?php echo $product->get_price_html(); ?> </span>
             <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {echo '/h';} ?></span>
         </p>
         <span class="text-foreground text-lg md:text-base text-right"><?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
