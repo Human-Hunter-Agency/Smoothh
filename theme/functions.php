@@ -976,8 +976,7 @@ add_filter('woocommerce_cart_product_price', 'smoothh_woocommerce_cart_product_p
 function smoothh_woocommerce_cart_product_price_filter($wc_price, $product)
 {
 	$tax_element = '<span class="text-base text-right text-foreground font-normal">( ' . wc_price(wc_get_price_including_tax($product));
-	echo esc_html_e('gross', 'smoothh');
-	echo  ' )</span>';
+	esc_html_e('gross', 'smoothh') . ' )</span>';
 	return $wc_price . $tax_element;
 }
 
