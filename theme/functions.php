@@ -152,6 +152,7 @@ add_action('widgets_init', 'smoothh_widgets_init');
 function smoothh_scripts()
 {
 	wp_enqueue_style('smoothh-style', get_stylesheet_uri(), array(), SMOOTHH_VERSION);
+	wp_enqueue_style('aos', get_template_directory_uri() . '/theme/js/script.css', array(), SMOOTHH_VERSION);
 	wp_enqueue_script('smoothh-script', get_template_directory_uri() . '/js/script.min.js', array('wp-i18n'), SMOOTHH_VERSION, true);
 	wp_set_script_translations('smoothh-script', 'smoothh');
 
@@ -924,7 +925,7 @@ function get_product_tax_formatted($product, $quantity = 1)
 function smoothh_woocommerce_available_variation($variation_data, $product, $variation)
 {
 	$variation_data['tax_text'] = get_product_tax_formatted($variation);
-	$variation_data['hourly_text'] = get_field('product_hourly', $product->get_id()) ? '/h':'';
+	$variation_data['hourly_text'] = get_field('product_hourly', $product->get_id()) ? '/h' : '';
 	return $variation_data;
 }
 add_filter('woocommerce_available_variation', 'smoothh_woocommerce_available_variation', 10, 3);
