@@ -42,6 +42,6 @@ $has_variable_price = get_field('variable_price');
                                 } ?>"><?php echo $product->get_price_html(); ?> </span>
             <span class="net-label text-primary font-normal text-xl md:text-2xl"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?></span>
         </p>
-        <span class="text-foreground text-lg md:text-base text-right"><?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . '( '; ?></span>
+        <span class="text-foreground text-lg md:text-base text-right"><?php echo '( ' . wc_price(wc_get_price_including_tax($product)) ?> <?php echo esc_html_e('gross', 'smoothh') . ' )'; ?></span>
     </div>
 <?php endif; ?>
