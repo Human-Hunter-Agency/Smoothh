@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smoothh functions and definitions
  *
@@ -152,7 +153,7 @@ function smoothh_scripts()
 {
 	wp_enqueue_style('smoothh-style', get_stylesheet_uri(), array(), SMOOTHH_VERSION);
 	wp_enqueue_script('smoothh-script', get_template_directory_uri() . '/js/script.min.js', array('wp-i18n'), SMOOTHH_VERSION, true);
-	wp_set_script_translations( 'smoothh-script', 'smoothh' );
+	wp_set_script_translations('smoothh-script', 'smoothh');
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -360,32 +361,33 @@ function woocommerce_smoothh_account_extra_fields()
 			'type'        => 'text',
 			'placeholder' => __('First name', 'woocommerce') . '*',
 			'required'    => true,
-			'custom_attributes' => array( 'required' => 'required' ),
-			'autocomplete'=> 'given-name'
+			'custom_attributes' => array('required' => 'required'),
+			'autocomplete' => 'given-name'
 		),
 		'last_name' => array(
 			'type'        => 'text',
 			'placeholder' => __('Last name', 'woocommerce') . '*',
 			'required'    => true,
-			'custom_attributes' => array( 'required' => 'required' ),
-			'autocomplete'=> 'family-name'
+			'custom_attributes' => array('required' => 'required'),
+			'autocomplete' => 'family-name'
 		),
 		'billing_company' => array(
 			'type'        => 'text',
 			'class'		  => array('hidden'),
 			'placeholder' => __('Company Name', 'smoothh') . '*',
 			'required' => true,
-			'custom_attributes' => array( 'required' => 'required' ),
+			'custom_attributes' => array('required' => 'required'),
 		),
 		'billing_company_nip' => array(
 			'type'        => 'text',
 			'class'		  => array('hidden'),
 			'placeholder' => __('NIP Number', 'smoothh') . '*',
 			'required' => true,
-			'custom_attributes' => array( 
+			'custom_attributes' => array(
 				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
-				'title'    => __('NIP number requires 10 digits', 'smoothh')),
+				'title'    => __('NIP number requires 10 digits', 'smoothh')
+			),
 		),
 	));
 }
@@ -406,7 +408,7 @@ function smoothh_save_extra_fields($customer_id)
 	// Custom account_type client/candidate
 	if (isset($_POST['account_type'])) {
 		update_user_meta($customer_id, 'account_type', sanitize_text_field($_POST['account_type']));
-		
+
 		if ($_POST['account_type'] == 'client') {
 			// WooCommerce billing_company
 			if (isset($_POST['billing_company'])) {
@@ -427,7 +429,7 @@ function smoothh_validate_extra_fields($errors)
 		$errors->add('last_name_error', __('Last name is required.', 'woocommerce'));
 	}
 
-	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'candidate') ) ) {
+	if (!isset($_POST['account_type']) || empty($_POST['account_type']) || (!($_POST['account_type'] == 'client') && !($_POST['account_type'] == 'candidate'))) {
 		$errors->add('account_type_error', __('Account type is required.', 'smoothh'));
 	}
 	if (isset($_POST['account_type']) && $_POST['account_type'] == 'client' && empty($_POST['billing_company'])) {
@@ -450,11 +452,11 @@ function smoothh_after_register_actions($username, $email, $validation_errors)
 {
 	smoothh_validate_extra_fields($validation_errors);
 
-	if (!isset($_POST['terms'])){
+	if (!isset($_POST['terms'])) {
 		$validation_errors->add('terms_error', __('Terms and condition are not checked!', 'smoothh'));
 	}
-	
-	if (isset($_POST['terms']) && $_POST['terms'] === 'yes') { 
+
+	if (isset($_POST['terms']) && $_POST['terms'] === 'yes') {
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['email']);
 		$dataSubject->giveConsent('terms');
 	}
@@ -469,32 +471,34 @@ function smoothh_terms_and_conditions_to_registration()
 			<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline">
 				<input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="terms" id="terms" required value="yes" />
 				<span>
-					<?php printf(__( 'I have read and agree to the website <a href="%s" target="_blank">terms and conditions</a>', 'smoothh' ), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required !visible ">*</span>
+					<?php printf(__('I have read and agree to the website <a href="%s" target="_blank">terms and conditions</a>', 'smoothh'), esc_url(wc_get_page_permalink('terms'))); ?></span> <span class="required !visible ">*</span>
 			</label>
 		</p>
 	<?php
 	}
 }
 
-function smoothh_save_user_default_type($user_id){
+function smoothh_save_user_default_type($user_id)
+{
 	$default_type = 'candidate';
 	update_user_meta($user_id, 'account_type', $default_type);
 }
 
 
-function smoothh_filter_woocommerce_form_field_checkbox( $field, $key, $args, $value ) {
-    if ( $key == 'gdpr_woo_consent' || $key == 'consent_digital_commerce' ) {
-		$field = str_replace('<input ','<input required="required" ',$field);
+function smoothh_filter_woocommerce_form_field_checkbox($field, $key, $args, $value)
+{
+	if ($key == 'gdpr_woo_consent' || $key == 'consent_digital_commerce') {
+		$field = str_replace('<input ', '<input required="required" ', $field);
 	}
-    return $field;
+	return $field;
 }
-add_filter( 'woocommerce_form_field_checkbox', 'smoothh_filter_woocommerce_form_field_checkbox', 10, 4 );
+add_filter('woocommerce_form_field_checkbox', 'smoothh_filter_woocommerce_form_field_checkbox', 10, 4);
 
 add_action('woocommerce_register_form_start', 'smoothh_my_account_page_woocommerce', 15);
 add_action('woocommerce_register_form', 'smoothh_terms_and_conditions_to_registration', 1);
 add_action('woocommerce_register_post', 'smoothh_after_register_actions', 10, 3);
 add_action('woocommerce_created_customer', 'smoothh_save_extra_fields');
-add_action('user_register', 'smoothh_save_user_default_type', 10, 1 );
+add_action('user_register', 'smoothh_save_user_default_type', 10, 1);
 
 add_filter('woocommerce_billing_fields', 'smoothh_billing_address_add_nip');
 function smoothh_billing_address_add_nip($fields)
@@ -508,13 +512,14 @@ function smoothh_billing_address_add_nip($fields)
 			$fields['billing_company_nip']   = array(
 				'type'		   => 'text',
 				'label'  => __('NIP Number', 'smoothh'),
-				'priority'=> 35,
+				'priority' => 35,
 				'required' => true,
 				'class' => array('form-row-last'),
-				'custom_attributes' => array( 
+				'custom_attributes' => array(
 					'required' => 'required',
 					'pattern'  => '^([0-9]){10}$',
-					'title'    => __('NIP number requires 10 digits', 'smoothh')),
+					'title'    => __('NIP number requires 10 digits', 'smoothh')
+				),
 			);
 		}
 	}
@@ -536,20 +541,21 @@ function smoothh_shipping_address_add_nip($fields)
 		$fields['shipping_company_nip'] = array(
 			'type'		   => 'text',
 			'label'  => __('NIP Number', 'smoothh'),
-			'priority'=> 35,
+			'priority' => 35,
 			'required' => true,
 			'class' => array('form-row-last'),
-			'custom_attributes' => array( 
+			'custom_attributes' => array(
 				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
-				'title'    => __('NIP number requires 10 digits', 'smoothh')),
+				'title'    => __('NIP number requires 10 digits', 'smoothh')
+			),
 		);
 	}
 
 	$fields['shipping_phone'] = array(
 		'type'        => 'tel',
 		'label' => __('Phone Number', 'woocommerce'),
-		'autocomplete'=> 'tel'
+		'autocomplete' => 'tel'
 	);
 
 	return $fields;
@@ -562,8 +568,8 @@ function smoothh_show_extra_account_details($user)
 	$account_type = get_user_meta($user->ID, 'account_type', true);
 
 	?>
-		<h3><?php esc_html_e('Extra account details', 'smoothh'); ?></h3>
-		<table class="form-table">
+	<h3><?php esc_html_e('Extra account details', 'smoothh'); ?></h3>
+	<table class="form-table">
 		<?php
 		if (!empty($company_nip)) :
 		?>
@@ -584,11 +590,11 @@ function smoothh_show_extra_account_details($user)
 				<td>
 					<p><?php echo esc_html($account_type); ?></p>
 				</td>
-			</tr>		
+			</tr>
 		<?php endif; ?>
-	
-		</table>
-	<?php
+
+	</table>
+<?php
 }
 
 add_action('show_user_profile', 'smoothh_show_extra_account_details', 15);
@@ -603,30 +609,32 @@ function smoothh_override_checkout_fields($fields)
 		$fields['shipping']['shipping_company_nip'] = array(
 			'type'		   => 'text',
 			'label'  => __('NIP Number', 'smoothh'),
-			'priority'=> 35,
+			'priority' => 35,
 			'required' => true,
 			'class' => array('form-row-last'),
 			'custom_attributes' => array(
 				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
-				'title'    => __('NIP number requires 10 digits', 'smoothh')),
+				'title'    => __('NIP number requires 10 digits', 'smoothh')
+			),
 		);
-	
+
 		$fields['billing']['billing_company_nip'] = array(
 			'type'		   => 'text',
 			'label'  => __('NIP Number', 'smoothh'),
-			'priority'=> 35,
+			'priority' => 35,
 			'required' => true,
 			'class' => array('form-row-last'),
-			'custom_attributes' => array( 
+			'custom_attributes' => array(
 				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
-				'title'    => __('NIP number requires 10 digits', 'smoothh')),
+				'title'    => __('NIP number requires 10 digits', 'smoothh')
+			),
 		);
 
 		$fields['shipping']['shipping_company']['class'] = array('form-row-first');
 		$fields['billing']['billing_company']['class'] = array('form-row-first');
-	}else{
+	} else {
 		unset($fields['shipping']['shipping_company']);
 		unset($fields['billing']['billing_company']);
 	}
@@ -634,7 +642,7 @@ function smoothh_override_checkout_fields($fields)
 
 	$fields['shipping']['shipping_email']['class'] = array('form-row-first');
 	$fields['billing']['billing_email']['class'] = array('form-row-first');
-	
+
 	$fields['shipping']['shipping_phone']['class'] = array('form-row-last');
 	$fields['billing']['billing_phone']['class'] = array('form-row-last');
 	$fields['shipping']['shipping_phone']['priority'] = 120;
@@ -650,69 +658,73 @@ function smoothh_override_checkout_fields($fields)
 add_filter('woocommerce_checkout_fields', 'smoothh_override_checkout_fields');
 
 
-add_action( 'woocommerce_review_order_before_submit', 'smoothh_custom_input_and_info', 30);
-function smoothh_custom_input_and_info() {
+add_action('woocommerce_review_order_before_submit', 'smoothh_custom_input_and_info', 30);
+function smoothh_custom_input_and_info()
+{
 	echo wc_registration_privacy_policy_text();
 
-	echo woocommerce_form_field( 'consent_digital_commerce', array(
+	echo woocommerce_form_field('consent_digital_commerce', array(
 		'type'      => 'checkbox',
-		'label'     => __('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh' ),
+		'label'     => __('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh'),
 		'required' => true,
 	));
-	echo '<p class="text-xs mt-0">' . __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh') . '</p>';
+	echo '<p class="text-xs mt-0">' . __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).', 'smoothh') . '</p>';
 }
 
-function smoothh_checkout_extra_validation($data,$errors){
+function smoothh_checkout_extra_validation($data, $errors)
+{
 	if (!isset($_POST['consent_digital_commerce'])) {
 		$errors->add('consent_digital_commerce_error', __('Digital content purchase is not checked!', 'smoothh'));
 	}
 }
 
-add_action('woocommerce_after_checkout_validation', 'smoothh_checkout_extra_validation',10,2);
+add_action('woocommerce_after_checkout_validation', 'smoothh_checkout_extra_validation', 10, 2);
 
-function smoothh_checkout_fields_update_order_meta( $order_id ) {
-	if (  isset( $_POST['billing_company_nip'] ) && !empty( $_POST['billing_company_nip'] ) ) {
-        $order = wc_get_order( $order_id );
-        $order->update_meta_data( 'billing_company_nip', sanitize_text_field( $_POST['billing_company_nip'] ) );
-        $order->save_meta_data();
-    }
+function smoothh_checkout_fields_update_order_meta($order_id)
+{
+	if (isset($_POST['billing_company_nip']) && !empty($_POST['billing_company_nip'])) {
+		$order = wc_get_order($order_id);
+		$order->update_meta_data('billing_company_nip', sanitize_text_field($_POST['billing_company_nip']));
+		$order->save_meta_data();
+	}
 
-	if (isset($_POST['terms']) && $_POST['terms'] === 'on') { 
+	if (isset($_POST['terms']) && $_POST['terms'] === 'on') {
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
 		$dataSubject->giveConsent('terms');
 	}
 
-	if (isset($_POST['consent_digital_commerce']) && $_POST['consent_digital_commerce'] === '1') { 
+	if (isset($_POST['consent_digital_commerce']) && $_POST['consent_digital_commerce'] === '1') {
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
 		$dataSubject->giveConsent('consent_digital_commerce');
 	}
 }
 
-add_action( 'woocommerce_checkout_update_order_meta', 'smoothh_checkout_fields_update_order_meta' );
+add_action('woocommerce_checkout_update_order_meta', 'smoothh_checkout_fields_update_order_meta');
 
 // Display the custom-field in admin orders view
 function my_custom_checkout_field_display_admin_order_meta_billing($order)
-{     
-	echo '<p><strong>'.__('NIP Number', 'smoothh'). ' *: </strong><span>' . $order->get_meta('billing_company_nip') . '</span></p>'; 
+{
+	echo '<p><strong>' . __('NIP Number', 'smoothh') . ' *: </strong><span>' . $order->get_meta('billing_company_nip') . '</span></p>';
 }
-add_action( 'woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta_billing', 10, 1 );
+add_action('woocommerce_admin_order_data_after_billing_address', 'my_custom_checkout_field_display_admin_order_meta_billing', 10, 1);
 
-function smoothh_override_default_locale_fields( $fields ) {
+function smoothh_override_default_locale_fields($fields)
+{
 	$user_id = get_current_user_id();
 	if ($user_id && ($account_type = get_user_meta($user_id, 'account_type', true)) && $account_type == 'client') {
 		$fields['company_nip']['priority'] = 35;
-	}else{
+	} else {
 		unset($fields['company']);
 	}
 
-    $fields['postcode']['class'] = array('form-row-first');
-    $fields['city']['class'] = array('form-row-last');
-    $fields['country']['priority'] = 75;
-    unset($fields['address_2']);
+	$fields['postcode']['class'] = array('form-row-first');
+	$fields['city']['class'] = array('form-row-last');
+	$fields['country']['priority'] = 75;
+	unset($fields['address_2']);
 
-    return $fields;
+	return $fields;
 }
-add_filter( 'woocommerce_default_address_fields', 'smoothh_override_default_locale_fields' );
+add_filter('woocommerce_default_address_fields', 'smoothh_override_default_locale_fields');
 
 
 function login_page_redirects()
@@ -757,9 +769,9 @@ function after_login_redirect($redirect_to)
 
 	if (is_user_logged_in() && $redirect_param !== false) {
 		return $redirect_param;
-	}elseif(empty($_GET)){
+	} elseif (empty($_GET)) {
 		return $panel_page_link;
-	}else {
+	} else {
 		return $redirect_to;
 	}
 }
@@ -774,27 +786,31 @@ remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment
 
 
 // Add consents page
-function register_new_item_endpoint() {
-	add_rewrite_endpoint( 'consents', EP_ROOT | EP_PAGES );
+function register_new_item_endpoint()
+{
+	add_rewrite_endpoint('consents', EP_ROOT | EP_PAGES);
 }
-add_action( 'init', 'register_new_item_endpoint');
+add_action('init', 'register_new_item_endpoint');
 
-function new_item_query_vars( $vars ) {
+function new_item_query_vars($vars)
+{
 	$vars[] = 'consents';
 	return $vars;
 }
-add_filter( 'query_vars', 'new_item_query_vars' );
+add_filter('query_vars', 'new_item_query_vars');
 
-function add_new_item_tab( $items ) {
+function add_new_item_tab($items)
+{
 	$items['consents'] = __('Consents', 'smoothh');
 	return $items;
 }
-add_filter( 'woocommerce_account_menu_items', 'add_new_item_tab' );
+add_filter('woocommerce_account_menu_items', 'add_new_item_tab');
 
-function add_new_item_content() {
+function add_new_item_content()
+{
 	echo do_shortcode('[gdpr_privacy_tools]');
 }
-add_action( 'woocommerce_account_consents_endpoint', 'add_new_item_content' );
+add_action('woocommerce_account_consents_endpoint', 'add_new_item_content');
 
 
 
@@ -838,172 +854,182 @@ function custom_shortcode_atts_wpcf7_filter($out, $pairs, $atts)
 	return $out;
 }
 
-add_filter( 'woocommerce_get_script_data', 'pwd_strength_meter_settings', 20, 2 );
+add_filter('woocommerce_get_script_data', 'pwd_strength_meter_settings', 20, 2);
 
-function pwd_strength_meter_settings( $params, $handle  ) {
+function pwd_strength_meter_settings($params, $handle)
+{
 
-if( $handle === 'wc-password-strength-meter' ) {
+	if ($handle === 'wc-password-strength-meter') {
 
-    $params = array_merge( $params, array(
+		$params = array_merge($params, array(
 
-        'min_password_strength' => 2,
-    ) );
-
-
-}
-return $params;
-
+			'min_password_strength' => 2,
+		));
+	}
+	return $params;
 }
 
-add_action('init', 'gdpr_register_smoothh_consents'); 
+add_action('init', 'gdpr_register_smoothh_consents');
 function gdpr_register_smoothh_consents()
 {
-	
+
 	gdpr('consent')->register(
-		'terms', 
-		sprintf( __( '<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh' ), get_permalink(wc_terms_and_conditions_page_id()) ),
+		'terms',
+		sprintf(__('<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh'), get_permalink(wc_terms_and_conditions_page_id())),
 		wc_replace_policy_page_link_placeholders(wc_get_terms_and_conditions_checkbox_text()),
 		true
-    );
+	);
 
 	$policyPageUrl = get_permalink(wc_privacy_policy_page_id());
 	gdpr('consent')->register(
-		'gdpr_woo_consent', 
-		sprintf( __( '<a href="%s" target="_blank">Policy privacy </a> consent', 'smoothh' ), $policyPageUrl ),
-		wc_replace_policy_page_link_placeholders( wc_get_privacy_policy_text( 'registration' ) ),
-		true
-    );
-	
-	gdpr('consent')->register(
-		'consent_digital_commerce', 
-		__('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh' ),
-		__('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).','smoothh'),
-		true
-	);
-	 
-	gdpr('consent')->register(
-		'consent_marketing', 
-		__('I consent to the processing of my personal data (name, e-mail address) by the Service Provider (here please provide the name and surname / name and address of the Service Provider) for marketing purposes.', 'smoothh' ),
-		sprintf(__('Expressing consent is voluntary. I have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal. I have the right to access my data and rectify it, delete it, limit processing, and the right to transfer data on the terms contained in the %sprivacy policy%s of the website. Personal data on the website are processed in accordance with the %sprivacy policy%s. We encourage you to read the policy before agreeing.', 'smoothh'),
-		"<a href='{$policyPageUrl}' target='_blank'>","</a>","<a href='{$policyPageUrl}' target='_blank'>","</a>"),
+		'gdpr_woo_consent',
+		sprintf(__('<a href="%s" target="_blank">Policy privacy </a> consent', 'smoothh'), $policyPageUrl),
+		wc_replace_policy_page_link_placeholders(wc_get_privacy_policy_text('registration')),
 		true
 	);
 
+	gdpr('consent')->register(
+		'consent_digital_commerce',
+		__('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh'),
+		__('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).', 'smoothh'),
+		true
+	);
+
+	gdpr('consent')->register(
+		'consent_marketing',
+		__('I consent to the processing of my personal data (name, e-mail address) by the Service Provider (here please provide the name and surname / name and address of the Service Provider) for marketing purposes.', 'smoothh'),
+		sprintf(
+			__('Expressing consent is voluntary. I have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal. I have the right to access my data and rectify it, delete it, limit processing, and the right to transfer data on the terms contained in the %sprivacy policy%s of the website. Personal data on the website are processed in accordance with the %sprivacy policy%s. We encourage you to read the policy before agreeing.', 'smoothh'),
+			"<a href='{$policyPageUrl}' target='_blank'>",
+			"</a>",
+			"<a href='{$policyPageUrl}' target='_blank'>",
+			"</a>"
+		),
+		true
+	);
 }
 
-function get_product_tax_formatted($product,$quantity = 1){
+function get_product_tax_formatted($product, $quantity = 1)
+{
 	if ($product) {
 		$price_incl_tax = wc_get_price_including_tax($product);
 		$price_excl_tax = wc_get_price_excluding_tax($product);
-		
+
 		$tax_amount = ($price_incl_tax - $price_excl_tax) * $quantity;
-		$tax_formatted = number_format( $tax_amount, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
-		
-		return '( +' . $tax_formatted . ' ' . get_woocommerce_currency_symbol() . ' ' . __('TAX','smoothh') . ')';
+		$tax_formatted = number_format($tax_amount, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
+
+		return '( +' . $tax_formatted . ' ' . get_woocommerce_currency_symbol() . ' ' . __('TAX', 'smoothh') . ')';
 	}
 }
 
-function smoothh_woocommerce_available_variation( $variation_data, $product, $variation ) {
-    $variation_data['tax_text'] = get_product_tax_formatted($variation);
-    return $variation_data;
+function smoothh_woocommerce_available_variation($variation_data, $product, $variation)
+{
+	$variation_data['tax_text'] = get_product_tax_formatted($variation);
+	return $variation_data;
 }
-add_filter( 'woocommerce_available_variation', 'smoothh_woocommerce_available_variation', 10, 3 );
+add_filter('woocommerce_available_variation', 'smoothh_woocommerce_available_variation', 10, 3);
 
-function find_cheapest_variation($product){
+function find_cheapest_variation($product)
+{
 	$temp_price = PHP_FLOAT_MAX;
 	$default_variaton = false;
 
-	foreach($product->get_available_variations() as $variation){
+	foreach ($product->get_available_variations() as $variation) {
 		if (isset($variation['display_price']) && $variation['display_price'] < $temp_price) {
 			$temp_price = $variation['display_price'];
 			$default_variaton = $variation;
-		}	
+		}
 	}
 
 	return $default_variaton;
 }
 
-function get_product_regular_price_formatted($product){
-	if( $product->is_type('variable') ){
+function get_product_regular_price_formatted($product)
+{
+	if ($product->is_type('variable')) {
 
-        $default_variaton = find_cheapest_variation($product);
-        $regular_price = (isset($default_variaton) && $default_variaton !=false) ? $default_variaton['display_regular_price']: $product->get_variation_regular_price( 'min', true );
-    }
-    else {
-        $regular_price = $product->get_regular_price();
-    }
+		$default_variaton = find_cheapest_variation($product);
+		$regular_price = (isset($default_variaton) && $default_variaton != false) ? $default_variaton['display_regular_price'] : $product->get_variation_regular_price('min', true);
+	} else {
+		$regular_price = $product->get_regular_price();
+	}
 
-	$price_formatted = number_format( $regular_price, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol();
-    
+	$price_formatted = number_format($regular_price, wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol();
+
 	return $price_formatted;
 }
 
-function has_sale($product){
+function has_sale($product)
+{
 	if ($product->is_type('variable')) {
 		$default_variaton = find_cheapest_variation($product);
-		if (isset($default_variaton) && $default_variaton !=false) {
+		if (isset($default_variaton) && $default_variaton != false) {
 			return $default_variaton['display_regular_price'] != $default_variaton['display_price'];
 		}
-	}else{
+	} else {
 		return $product->is_on_sale();
 	}
 }
 
 
 add_filter('woocommerce_cart_product_price', 'smoothh_woocommerce_cart_product_price_filter', 10, 2);
-function smoothh_woocommerce_cart_product_price_filter($wc_price, $product){
-	$tax_element = '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product) . '</span>';
+function smoothh_woocommerce_cart_product_price_filter($wc_price, $product)
+{
+	$tax_element = '<span class="text-base text-right text-foreground font-normal">' . wc_price(wc_get_price_including_tax($product)) . '</span>';
 	return $wc_price . $tax_element;
 }
 
-add_filter( 'woocommerce_cart_product_subtotal', 'smoothh_woocommerce_cart_product_subtotal_filter', 10, 4 );
-function smoothh_woocommerce_cart_product_subtotal_filter( $product_subtotal, $product, $quantity, $that ){
-	$tax_element = is_checkout() ?'' : '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product,$quantity) . '</span>';
+add_filter('woocommerce_cart_product_subtotal', 'smoothh_woocommerce_cart_product_subtotal_filter', 10, 4);
+function smoothh_woocommerce_cart_product_subtotal_filter($product_subtotal, $product, $quantity, $that)
+{
+	$tax_element = is_checkout() ? '' : '<span class="text-base text-right text-foreground font-normal">' . get_product_tax_formatted($product, $quantity) . '</span>';
 	return $product_subtotal . $tax_element;
 }
 
-function smoothh_img_responsive($img,$classes,$dimensions,$loading = ''){
+function smoothh_img_responsive($img, $classes, $dimensions, $loading = '')
+{
 	if (!isset($img) || !isset($img['url']) || !isset($img['ID'])) {
 		return '';
 	}
-	$url = $img['url']; 
+	$url = $img['url'];
 	$ID = $img['ID'];
-	$alt = isset($img['alt']) ? $img['alt'] : ''; 
+	$alt = isset($img['alt']) ? $img['alt'] : '';
 
 	$default_size = 'full';
 	$dimensions_string = '';
 	if (isset($dimensions) && count($dimensions) == 2) {
-		$dimensions_string = 'width="' . $dimensions[0] . '" height="' . $dimensions[1] .'" ';
+		$dimensions_string = 'width="' . $dimensions[0] . '" height="' . $dimensions[1] . '" ';
 		$default_size = get_best_fit_image_size($dimensions[0]);
 	}
 
-	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID,$default_size) . '" ';
-	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID,$default_size,wp_get_attachment_metadata( $ID )) . '" ';
+	$srcset_string = 'srcset="' . wp_get_attachment_image_srcset($ID, $default_size) . '" ';
+	$sizes_string = 'sizes="' . wp_get_attachment_image_sizes($ID, $default_size, wp_get_attachment_metadata($ID)) . '" ';
 	$alt_string = $alt == '' ? '' : ('alt="' . $alt . '" ');
 	$loading_string = '';
 	if ($loading != '') {
 		$loading_string = 'loading="' . $loading . '" ';
 	}
 
-	return '<img class="' . $classes . '" '. $dimensions_string . 'src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . $loading_string . '/>';
+	return '<img class="' . $classes . '" ' . $dimensions_string . 'src="' . $url . '" ' . $srcset_string . $sizes_string . $alt_string . $loading_string . '/>';
 }
 
-function get_best_fit_image_size($custom_width){
+function get_best_fit_image_size($custom_width)
+{
 	$image_sizes = array(
-        'thumbnail' => 150,
-        'medium' => 300,
-        'medium_large' => 768,
-        'large' => 1024,
-    );
+		'thumbnail' => 150,
+		'medium' => 300,
+		'medium_large' => 768,
+		'large' => 1024,
+	);
 
-    $best_fit_size = 'full';
+	$best_fit_size = 'full';
 
-    foreach ($image_sizes as $size => $width) {
-        if ($width > $custom_width) {
-            break;
-        }
-        $best_fit_size = $size;
-    }
+	foreach ($image_sizes as $size => $width) {
+		if ($width > $custom_width) {
+			break;
+		}
+		$best_fit_size = $size;
+	}
 
-    return $best_fit_size;
+	return $best_fit_size;
 }
