@@ -31,7 +31,7 @@ if ($product->is_in_stock() && $has_variable_price == false) : ?>
 
 	<?php do_action('woocommerce_before_add_to_cart_form'); ?>
 
-	<form class="cart !mb-0" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
+	<form class="cart !mb-0 flex items-center" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
 		<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
 		<?php
