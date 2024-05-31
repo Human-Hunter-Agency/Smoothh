@@ -55,88 +55,52 @@ $show_select_cat_products = !empty($common_values);
 			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-8 md:mb-[50px]">
 				<?php the_content() ?>
 			</div>
-			<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end p-5 border-2 border-[#EFEFEF] rounded-2xl">
-				<?php if($show_select_cat_products == true):
-					$products_args = array(
-						'exclude' => array($product->get_id()),
-						'product_category_id' => $selected_categories
-					);
-					$products = wc_get_products($products_args);
-
-					?>
-					<div class="relative w-full">
-						<select id="product-select-from-cat">
-							<option selected="selected"><?php echo get_the_title($product->get_id()) ?></option>
-							<?php foreach ($products as $cat_product) : ?>
-								<option value="<?php echo get_permalink($cat_product->get_id()) ?>">
-									<?php echo get_the_title($cat_product->get_id()) ?>
-								</option>
-							<?php endforeach; ?>
-						</select>
-						<svg class="absolute z-10 right-5 top-[23px] transition duration-300 pointer-events-none" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.9595 0.75L7 9.1368L1.04047 0.75H12.9595Z" fill="#8117EE" stroke="#8117EE"></path>
-						</svg>
-					</div>
-				<?php endif ?>
-				<div class="<?php if($product->is_type('variable')): ?> w-full <?php endif ?> ml-auto flex flex-col md:flex-row gap-2 <?php if($show_select_cat_products == true || $product->is_type('variable')): ?>  md:!gap-2 md:!flex-col <?php else: ?> md:gap-4 <?php endif ?> items-end justify-end ">
-					<?php
-					/**
-					 * Hook: woocommerce_single_product_summary.
-					 *
-					 * @hooked woocommerce_template_single_title - 5 -removed
-					 * @hooked woocommerce_template_single_rating - 10 -removed
-					 * @hooked woocommerce_template_single_price - 10
-					 * @hooked woocommerce_template_single_excerpt - 20 -removed
-					 * @hooked woocommerce_template_single_add_to_cart - 30
-					 * @hooked woocommerce_template_single_meta - 40 -removed
-					 * @hooked woocommerce_template_single_sharing - 50
-					 * @hooked WC_Structured_Data::generate_product_data() - 60
-					 */
-					do_action('woocommerce_single_product_summary');
-					?>
-				</div>
-			</div>
 		</div>
 		<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
 			<div class="md:sticky top-[115px]">
-				<?php
-				if ($cart && !$cart->is_empty()) : ?>
-					<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
-						<span class="block font-semibold text-xl md:text-3xl mb-7"><?php esc_html_e('Your cart', 'smoothh'); ?></span>
-						<ul class="flex flex-col gap-8 mb-8">
-							<?php foreach ($cart->get_cart() as $cart_item_key => $cart_item) :
-								$product = $cart_item['data'];
-								$quantity = $cart_item['quantity'];
-								$link = $product->get_permalink($cart_item);
-							?>
-								<li class="flex flex-col gap-2.5 justify-between">
-									<div>
-										<a href="<?php echo $link ?>" class="block text-base md:text-2xl lg:mb-3 transition duration hover:text-primary">
-											<?php echo $product->get_title(); ?>
-										</a>
-										<span class="text-sm lg:text-base text-[#B2B2B2]"><?php esc_html_e('Quantity: ', 'smoothh'); ?><?php echo $quantity ?></span>
-									</div>
-									<div class="flex flex-col">
-										<span class="text-base lg:text-xl text-primary shrink-0">
-											<?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh'); ?>
-										</span>
-										<span class="text-sm lg:text-base text-foreground">
-											<?php echo get_product_tax_formatted($product) ?>
-										</span>
+				<div class="p-[18px] pb-6 border border-[#888888] rounded-[15px] mb-5 md:mb-10">
+					<div class="flex flex-col lg:flex-row gap-5 lg:gap-[35px] mb-9 md:mb-[55px] justify-between items-end p-5 border-2 border-[#EFEFEF] rounded-2xl">
+						<?php if ($show_select_cat_products == true) :
+							$products_args = array(
+								'exclude' => array($product->get_id()),
+								'product_category_id' => $selected_categories
+							);
+							$products = wc_get_products($products_args);
 
-									</div>
-								</li>
-							<?php endforeach; ?>
-						</ul>
-						<a href="<?php echo wc_get_cart_url() ?>" class="w-full border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 text-white h-[55px] px-5 xl:px-12 xl:pr-8 !rounded-[15px] font-bold flex items-center justify-center gap-5">
-							<?php esc_html_e('Go to order', 'smoothh'); ?>
-							<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
-								<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
-							</svg>
-						</a>
+						?>
+							<div class="relative w-full">
+								<select id="product-select-from-cat">
+									<option selected="selected"><?php echo get_the_title($product->get_id()) ?></option>
+									<?php foreach ($products as $cat_product) : ?>
+										<option value="<?php echo get_permalink($cat_product->get_id()) ?>">
+											<?php echo get_the_title($cat_product->get_id()) ?>
+										</option>
+									<?php endforeach; ?>
+								</select>
+								<svg class="absolute z-10 right-5 top-[23px] transition duration-300 pointer-events-none" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12.9595 0.75L7 9.1368L1.04047 0.75H12.9595Z" fill="#8117EE" stroke="#8117EE"></path>
+								</svg>
+							</div>
+						<?php endif ?>
+						<div class="<?php if ($product->is_type('variable')) : ?> w-full <?php endif ?> ml-auto flex flex-col md:flex-row gap-2 <?php if ($show_select_cat_products == true || $product->is_type('variable')) : ?>  md:!gap-2 md:!flex-col <?php else : ?> md:gap-4 <?php endif ?> items-end justify-end ">
+							<?php
+							/**
+							 * Hook: woocommerce_single_product_summary.
+							 *
+							 * @hooked woocommerce_template_single_title - 5 -removed
+							 * @hooked woocommerce_template_single_rating - 10 -removed
+							 * @hooked woocommerce_template_single_price - 10
+							 * @hooked woocommerce_template_single_excerpt - 20 -removed
+							 * @hooked woocommerce_template_single_add_to_cart - 30
+							 * @hooked woocommerce_template_single_meta - 40 -removed
+							 * @hooked woocommerce_template_single_sharing - 50
+							 * @hooked WC_Structured_Data::generate_product_data() - 60
+							 */
+							do_action('woocommerce_single_product_summary');
+							?>
+						</div>
 					</div>
-				<?php endif ?>
+				</div>
 
 				<div class="px-[18px]">
 					<h5 class="mb-4 md:mb-6 text-2xl md:text-3xl font-semibold text-primary"><?php esc_html_e('Product categories', 'smoothh'); ?></h5>
@@ -202,7 +166,7 @@ $show_select_cat_products = !empty($common_values);
 					<div class="swiper-wrapper items-center">
 						<?php foreach ($client_logos as $logo) : ?>
 							<div class="swiper-slide mr-5 md:px-5 opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
-                            	<?php echo smoothh_img_responsive($logo,'object-contain max-h-28',array(300,112),'lazy'); ?>
+								<?php echo smoothh_img_responsive($logo, 'object-contain max-h-28', array(300, 112), 'lazy'); ?>
 							</div>
 						<?php endforeach; ?>
 					</div>
@@ -237,36 +201,36 @@ $show_select_cat_products = !empty($common_values);
 
 	</section>
 	<section>
-	<?php if ($cta_bg || $cta_header || $cta_btn) :
+		<?php if ($cta_bg || $cta_header || $cta_btn) :
 
-		if ($cta_bg['url']) {
-			$bg_url = $cta_bg['url'];
-		}
-	?>
-		<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
-			<?php if (isset($bg_url)) : ?>
-				<?php echo smoothh_img_responsive($cta_bg,'absolute inset-0 -z-20 object-cover !h-full w-full',null,'lazy'); ?>
-			<?php endif; ?>
+			if ($cta_bg['url']) {
+				$bg_url = $cta_bg['url'];
+			}
+		?>
+			<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
+				<?php if (isset($bg_url)) : ?>
+					<?php echo smoothh_img_responsive($cta_bg, 'absolute inset-0 -z-20 object-cover !h-full w-full', null, 'lazy'); ?>
+				<?php endif; ?>
 
-			<div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
+				<div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
 
-			<div class="relative z-0 flex flex-col items-center justify-center container">
-				<?php if (isset($cta_header)) : ?>
-					<h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9"><?php echo esc_html($cta_header); ?></h1>
-					<?php endif; ?>
+				<div class="relative z-0 flex flex-col items-center justify-center container">
+					<?php if (isset($cta_header)) : ?>
+						<h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9"><?php echo esc_html($cta_header); ?></h1>
+						<?php endif; ?>
 
-					<?php if (isset($cta_btn)) :
-						$btn_url = $cta_btn['url'];
-						$btn_title = $cta_btn['title'];
-						$btn_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
-					?>
-						<a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-[14px] text-[13px] font-bold py-2 px-7 md:px-[70px] border-2 border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
-					<?php endif; ?>
+						<?php if (isset($cta_btn)) :
+							$btn_url = $cta_btn['url'];
+							$btn_title = $cta_btn['title'];
+							$btn_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
+						?>
+							<a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-[14px] text-[13px] font-bold py-2 px-7 md:px-[70px] border-2 border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
+						<?php endif; ?>
+				</div>
+
 			</div>
-
-		</div>
-	<?php endif; ?>
-</section>
+		<?php endif; ?>
+	</section>
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>
