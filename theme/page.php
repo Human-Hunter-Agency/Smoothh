@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -14,34 +15,38 @@
 get_header();
 ?>
 
-	<section id="primary">
-		<main id="main">
+<section id="primary">
+	<main id="main">
 
-			<?php
+		<?php
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-				get_template_part( 'template-parts/content/content', 'page' );
-				
-				$sections = get_field( 'sections' );
-				
-				if ( $sections ) :
-					foreach ( $sections as $section ) :
+		/* Start the Loop */
+		while (have_posts()) :
+			the_post();
+			get_template_part('template-parts/content/content', 'page');
+
+			$sections = get_field('sections');
+
+			if ($sections) :
+				foreach ($sections as $section) : ?>
+					<div class="aos test" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50">
+						<?php
 						$section_visible = $section['isSectionVisible'];
 						if (isset($section_visible) && $section_visible == true) {
-							$template = str_replace( '_', '-', $section['acf_fc_layout'] );
-							get_template_part( 'flexible-content/sections/' . $template, '', $section );
-						}
-					endforeach;
-				endif;
-				
+							$template = str_replace('_', '-', $section['acf_fc_layout']);
+							get_template_part('flexible-content/sections/' . $template, '', $section);
+						} ?>
+					</div>
+		<?php
+				endforeach;
+			endif;
 
-			endwhile; // End of the loop.
-			?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+		endwhile; // End of the loop.
+		?>
+
+	</main><!-- #main -->
+</section><!-- #primary -->
 
 <?php
 get_footer();
