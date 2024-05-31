@@ -145,10 +145,10 @@ do_action('woocommerce_before_cart'); ?>
             <div class="flex justify-between md:justify-end md:w-[calc(30%_+_20px)] lg:w-[calc(30%_+_40px)]">
                 <span class="lg:w-[calc(50%_+_20px)] lg:min-w-28 text-right pt-0.5 md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]"><?php esc_html_e('Total', 'woocommerce'); ?>:</span>
                 <div class="flex flex-col lg:w-[calc(50%_+_20px)] pl-2.5 <?php if (WC()->cart->has_discount()) : ?> md:mr-2.5 lg:mr-5 <?php endif; ?> text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
-                    <span><?php number_format(WC()->cart->get_totals()['cart_contents_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) ?> <?php esc_html_e('net', 'smoothh') ?></span>
+                    <span><?php echo wc_price(WC()->cart->get_totals()['cart_contents_total']) ?> <?php esc_html_e('net', 'smoothh') ?></span>
                     <span class="text-base text-right text-foreground font-normal">( <?php
-                                                                                        $tax_formatted = number_format(WC()->cart->get_totals()['total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator());
-                                                                                        echo  $tax_formatted . ' ' . get_woocommerce_currency_symbol() . ' ' . __('gross', 'smoothh');
+                                                                                        $tax_formatted = wc_price(WC()->cart->get_totals()['total']);
+                                                                                        echo  $tax_formatted . ' ' . __('gross', 'smoothh');
                                                                                         ?>)</span>
                 </div>
             </div>
