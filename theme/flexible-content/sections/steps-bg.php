@@ -12,11 +12,13 @@ $steps_list = $args['steps_list'];
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
-            <h2 class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-8"><?php echo $header; ?></h1>
-            <?php endif; ?>
-            <?php if ($description) : ?>
-                <div class="prose-smoothh prose md:prose-xl text-center mb-10"><?php echo $description; ?></div>
-            <?php endif; ?>
+            <div class="mb-12 prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-8">
+                <?php echo $header; ?>
+            </div>
+        <?php endif; ?>
+        <?php if ($description) : ?>
+            <div class="prose-smoothh prose md:prose-xl text-center mb-10"><?php echo $description; ?></div>
+        <?php endif; ?>
     </div>
     <div class="w-full overflow-hidden">
         <?php if ($steps_list) : ?>
