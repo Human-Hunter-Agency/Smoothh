@@ -1036,9 +1036,9 @@ function get_best_fit_image_size($custom_width)
 
 add_action('wpcf7_before_send_mail', 'smoothh_wpcf7_mail_before_send');
 
-function smoothh_wpcf7_mail_before_send($contact_form){
-	$form_id = $contact_form->posted_data['_wpcf7'];
-	if ($form_id == 'a486d87') {
+function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
+	// $form_id = $contact_form->posted_data['_wpcf7'];
+	// if ($form_id == 'a486d87') {
 		$mail = $contact_form->prop( 'mail' );
 		// $submission = WPCF7_Submission::get_instance();
 		// $posted_data = $submission->get_posted_data();
@@ -1056,5 +1056,5 @@ function smoothh_wpcf7_mail_before_send($contact_form){
 		// 		$components['attachments'][] = $download->get_file();
 		// 	}
 		// }
-	}
+	// }
 }
