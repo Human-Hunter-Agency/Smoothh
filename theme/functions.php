@@ -1040,10 +1040,10 @@ function smoothh_wpcf7_mail_before_send($contact_form){
 	$form_id = $contact_form->posted_data['_wpcf7'];
 	if ($form_id == 'a486d87') {
 		$mail = $contact_form->prop( 'mail' );
-		$submission = WPCF7_Submission::get_instance();
-		$posted_data = $submission->get_posted_data();
-		$prod_id = $posted_data['prod-id'];
-		$extracontent = "<p>This is more text for the message body.</p>" . $prod_id ;
+		// $submission = WPCF7_Submission::get_instance();
+		// $posted_data = $submission->get_posted_data();
+		// $prod_id = $posted_data['prod-id'];
+		$extracontent = "<p>This is more text for the message body.</p>";
 		$mail['body'] .= '<br>';
 		$mail['body'] .= $extracontent;
 		$contact_form->set_properties( array( 'mail' => $mail ) );
