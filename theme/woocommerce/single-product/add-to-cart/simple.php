@@ -128,7 +128,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 					</svg>
 				</button>
 			</div>
-			<div class="overflow-auto">
+			<div>
 				<?php 
 					$shortcode = '[contact-form-7 id="a486d87" prod-id="' . $product->get_id() . '" prod-name="'. $product->get_title() . '" title="Pobierz e-book"]';
 					echo do_shortcode($shortcode); ?>
