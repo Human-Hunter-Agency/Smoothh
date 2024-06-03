@@ -1033,3 +1033,23 @@ function get_best_fit_image_size($custom_width)
 
 	return $best_fit_size;
 }
+
+add_filter('wpcf7_mail_sent', 'smoothh_contact_form_autoresponders');
+
+function smoothh_contact_form_autoresponders($contact_form){
+	if ($contact_form->id == 'a486d87') {
+		$submission = WPCF7_Submission::get_instance();
+        $posted_data = $submission->get_posted_data();  
+
+		$prod_id = $posted_data['prod-id'];
+		$product = wc_get_product( $prod_id );
+		
+		if ($product->is_downloadable()) {
+			$downloads = $product->get_downloads();
+			foreach( $downloads as $download ) {
+				$components['attachments'][] = $download->get_file();
+			}
+		}
+	}
+	return $components;
+}
