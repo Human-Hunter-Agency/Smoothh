@@ -1059,6 +1059,7 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		// $mail['body'] .= '<br>';
 		// $mail['body'] .= $extracontent;
 
+		$submission->add_extra_attachments( array('https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png'), 'mail_2' );
 		// $mail['attachments'] = 'https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png';
 
 		$contact_form->set_properties( array( 'mail_2' => $mail ) );
