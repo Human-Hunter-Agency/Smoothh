@@ -1046,13 +1046,19 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		$prod_id = $posted_data['prod-id'];
 		$product = wc_get_product( $prod_id );
 
-		// if ($product->is_downloadable()) {
-		// 	$downloads = $product->get_downloads();
-		// 	foreach( $downloads as $download ) {
-		// 		$mail['attachments'][] = $download->get_file();
-		// 	}
-		// }
-		$mail['attachments'] = 'https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png';
+		$extracontent = '';
+
+		if ($product->is_downloadable()) {
+			$downloads = $product->get_downloads();
+			foreach( $downloads as $download ) {
+				$extracontent .= $download->get_file();
+			}
+		}
+
+		$mail['body'] .= '<br>';
+		$mail['body'] .= $extracontent;
+
+		// $mail['attachments'] = 'https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png';
 
 		$contact_form->set_properties( array( 'mail_2' => $mail ) );
 		
