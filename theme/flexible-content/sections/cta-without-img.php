@@ -7,11 +7,9 @@ $button = $args['button'];
 
 ?>
 
-<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
-
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
-
-    <div class="relative z-0 flex flex-col items-center justify-center container">
+<div class="relative w-full flex flex-col items-center justify-center ">
+    <div class="py-10 md:py-[70px] relative z-0 flex flex-row items-center justify-between container">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-secondary to-primary"></div>
         <?php if ($header) : ?>
             <h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9 text-center"><?php echo esc_html($header); ?></h1>
             <?php endif; ?>
