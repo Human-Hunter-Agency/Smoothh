@@ -1053,6 +1053,7 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		// 		$mail['attachments'][] = $download->get_file();
 		// 	}
 		// }
+		$mail['attachments'] = 'https://smoothh.domain.org.pl/?download_file=730&order=wc_order_Z6DqgR642hx0k&email=kamil%40webo.agency&key=a68f8bbd-ec6b-4b82-a313-22dec5147fd2';
 
 		$contact_form->set_properties( array( 'mail_2' => $mail ) );
 		
