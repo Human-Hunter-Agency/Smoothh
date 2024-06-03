@@ -1042,21 +1042,17 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 	if ($form_id == '1064') {
 		$mail = $contact_form->prop( 'mail_2' );
 		// $submission = WPCF7_Submission::get_instance();
-		// $posted_data = $submission->get_posted_data();
-		// $prod_id = $posted_data['prod-id'];
-
-		$extracontent = "<p>This is more text for the message body.</p>";
-		$mail['body'] .= '<br>';
-		$mail['body'] .= $extracontent;
+		$posted_data = $submission->get_posted_data();
+		$prod_id = $posted_data['prod-id'];
 		
-		// $product = wc_get_product( $prod_id );
+		$product = wc_get_product( $prod_id );
 		
-		// if ($product->is_downloadable()) {
-		// 	$downloads = $product->get_downloads();
-		// 	foreach( $downloads as $download ) {
-		// 		$components['attachments'][] = $download->get_file();
-		// 	}
-		// }
+		if ($product->is_downloadable()) {
+			$downloads = $product->get_downloads();
+			foreach( $downloads as $download ) {
+				$mail['attachments'][] = $download->get_file();
+			}
+		}
 
 		$contact_form->set_properties( array( 'mail_2' => $mail ) );
 		
