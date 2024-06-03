@@ -12,7 +12,7 @@ $client_logos = get_field('client_logos', 'option');
 
     <?php if ($header) : ?>
         <div class="container">
-            <div class="relative z-0">
+            <div class="relative z-0 max-w-[900px]">
                 <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 <?php if ($description) : ?> md:mb-14 <?php endif; ?>">
                     <?php echo $header; ?>
                 </div>
