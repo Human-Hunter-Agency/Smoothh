@@ -53,15 +53,30 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     <?php endif; ?>
 
     <div class="md:w-1/2 xl:w-1/3 relative shrink-0">
-      <?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
-      <?php do_action('woocommerce_checkout_before_order_review'); ?>
-      <div id="order_review" class="woocommerce-checkout-review-order md:sticky md:top-[115px] p-5 xl:p-8 border border-[#888] rounded-[15px]">
-        <h3 id="order_review_heading" class="!mt-0 mb-9 text-2xl text-primary"><?php esc_html_e('Your order', 'woocommerce'); ?></h3>
-        <?php do_action('woocommerce_checkout_order_review'); ?>
+      <div class="md:sticky md:top-[115px]">
+        <?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
+        <?php do_action('woocommerce_checkout_before_order_review'); ?>
+        <div id="order_review" class="woocommerce-checkout-review-order p-5 xl:p-8 border border-[#888] rounded-[15px] mb-8 md:mb-14">
+          <h3 id="order_review_heading" class="!mt-0 mb-9 text-2xl text-primary"><?php esc_html_e('Your order', 'woocommerce'); ?></h3>
+          <?php do_action('woocommerce_checkout_order_review'); ?>
+        </div>
+        <?php do_action('woocommerce_checkout_after_order_review'); ?>
+        <?php 
+          $additional_content = get_field('content');
+          $display_number_form = get_field('display_number_form');
+          if(isset($additional_content) && $additional_content): 
+          ?>
+          <div class="prose prose-smoothh prose-headings:text-lg prose-headings:lg:text-xl prose-headings:text-primary prose-headings:font-semibold prose-headings:mb-2.5 prose-p:tesx-sm prose-p:lg:text-base prose-p:font-semibold prose-p:text-foreground">
+            <?php echo $additional_content ?>
+          </div>
+        <?php endif;
+          if ($display_number_form):
+        ?>
+          <button><?php esc_html_e('Leave your number','smoothh')?></button>
+        <?php endif;?>
       </div>
-      <?php do_action('woocommerce_checkout_after_order_review'); ?>
     </div>
-    </div>
+  </div>
 
 </form>
 
