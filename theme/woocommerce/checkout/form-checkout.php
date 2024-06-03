@@ -66,13 +66,17 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
           $display_number_form = get_field('display_number_form');
           if(isset($additional_content) && $additional_content): 
           ?>
-          <div class="link-phone px-2.5 md:px-5 xl:px-10 prose prose-smoothh prose-headings:text-lg prose-headings:lg:text-xl prose-headings:text-primary prose-headings:font-semibold prose-headings:mb-2.5 prose-p:tesx-sm prose-p:lg:text-base prose-p:font-semibold prose-p:text-foreground">
+          <div class="link-phone px-8 xl:px-11 prose prose-smoothh prose-headings:text-lg prose-headings:lg:text-xl prose-headings:text-primary prose-headings:font-bold prose-headings:mb-2.5 prose-p:text-sm prose-p:lg:text-base prose-p:font-bold prose-p:text-foreground">
             <?php echo $additional_content ?>
           </div>
         <?php endif;
           if ($display_number_form):
         ?>
-          <button><?php esc_html_e('Leave your number','smoothh')?></button>
+          <div class="px-8 xl:px-11">
+            <div class="group bg-gradient-to-b p-px from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !rounded-[15px]">
+              <button type="button" class="ml-auto !min-h-[55px] !px-5 xl:!px-10 text-foreground font-bold bg-white group-hover:bg-secondary transition duration-200 !rounded-[14px]"><?php esc_html_e('Leave your number','smoothh')?></button>
+            </div>
+          </div>
         <?php endif;?>
       </div>
     </div>
