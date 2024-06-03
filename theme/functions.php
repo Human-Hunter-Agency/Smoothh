@@ -1053,7 +1053,7 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		// 		$mail['attachments'][] = $download->get_file();
 		// 	}
 		// }
-		$mail['attachments'] = 'https://smoothh.domain.org.pl/wp-content/uploads/woocommerce_uploads/2024/04/Wskazowki-kariery-dla-Kadry-Zarzadzajacej-ymyzwh.pdf';
+		$mail['attachments'] = 'https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png';
 
 		$contact_form->set_properties( array( 'mail_2' => $mail ) );
 		
