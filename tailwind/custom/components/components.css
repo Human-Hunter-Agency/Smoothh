@@ -124,7 +124,7 @@ footer#page-footer .footer-bottom-menu {
 
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
-	@apply !hidden xl:!flex after:hidden transition duration-300 items-center justify-center !top-auto !bottom-[-100px] left-[50%];
+	@apply !hidden xl:!flex after:hidden transition duration-300 items-center justify-center;
 }
 
 .grid-colored {
