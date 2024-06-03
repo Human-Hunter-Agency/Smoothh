@@ -10,7 +10,7 @@ $tiles_list = $args['tiles_list'];
 
 ?>
 
-<div class="relative py-10 md:py-[60px] mb:pb-[60px]">
+<div class="relative py-10 md:py-[90px] mb:pb-[60px]">
     <div class="z-[-1] xl:w-[85%] 2xl:w-[88%] lg:h-[920px] absolute top-8 right-0 bg-gradient-to-r from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php if ($decoration) : ?>
         <div class="absolute right-7 top-7 -z-10 opacity-5 max-w-[90px] lg:max-w-[180px]">
