@@ -1046,10 +1046,6 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		$prod_id = $posted_data['prod-id'];
 		$product = wc_get_product( $prod_id );
 
-		$extracontent = implode('   ',$mail);
-		$mail['body'] .= '<br>';
-		$mail['body'] .= $extracontent;
-
 		// if ($product->is_downloadable()) {
 		// 	$downloads = $product->get_downloads();
 		// 	foreach( $downloads as $download ) {
