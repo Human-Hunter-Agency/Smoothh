@@ -381,14 +381,18 @@ i.theChampLogin {
 }
 
 .link-phone a{
-	@apply transition duration-200 flex gap-1.5 !text-lg xl:!text-xl !font-normal !text-foreground !no-underline
+	@apply transition duration-200 mt-1 flex items-center gap-1.5 !text-lg xl:!text-xl !font-normal !text-foreground !no-underline
 }
 .link-phone a:hover{
 	@apply !text-primary
 }
 
 .link-phone a:before{
-	content: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30.1963 24.5034L23.333 25.8334C18.6963 23.5067 15.833 20.8334 14.1663 16.6667L15.4497 9.78337L13.0247 3.33337H6.773C4.893 3.33337 3.413 4.88671 3.69466 6.74504C4.39466 11.3834 6.46133 19.795 12.4997 25.8334C18.8413 32.175 27.9763 34.9267 33.003 36.0217C34.9447 36.4434 36.6663 34.93 36.6663 32.9417V26.9684L30.1963 24.5034Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-	display: inline-block;
+	content: '';
+	background-image: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30.1963 24.5034L23.333 25.8334C18.6963 23.5067 15.833 20.8334 14.1663 16.6667L15.4497 9.78337L13.0247 3.33337H6.773C4.893 3.33337 3.413 4.88671 3.69466 6.74504C4.39466 11.3834 6.46133 19.795 12.4997 25.8334C18.8413 32.175 27.9763 34.9267 33.003 36.0217C34.9447 36.4434 36.6663 34.93 36.6663 32.9417V26.9684L30.1963 24.5034Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+	background-size: contain;
+	width: 35px;
+	height: 35px;
+	display: block;
 	flex-shrink: 0;
 }
