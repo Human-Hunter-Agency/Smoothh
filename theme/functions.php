@@ -1039,15 +1039,15 @@ add_action('wpcf7_before_send_mail', 'smoothh_wpcf7_mail_before_send', 10, 3);
 function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 	// $form_id = $contact_form->posted_data['_wpcf7'];
 	$form_id = $contact_form->id();
-	// if ($form_id == 'a486d87') {
+	if ($form_id == '1064') {
 		$mail = $contact_form->prop( 'mail' );
 		// $submission = WPCF7_Submission::get_instance();
 		// $posted_data = $submission->get_posted_data();
 		// $prod_id = $posted_data['prod-id'];
-		$extracontent = "<p>This is more text for the message body.</p>" . $form_id;
-		$mail['body'] .= '<br>';
-		$mail['body'] .= $extracontent;
-		$contact_form->set_properties( array( 'mail' => $mail ) );
+
+		$extracontent = "<p>This is more text for the message body.</p>";
+		$mail['mail_2']['body'] .= '<br>';
+		$mail['mail_2']['body'] .= $extracontent;
 		
 		// $product = wc_get_product( $prod_id );
 		
@@ -1057,5 +1057,8 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		// 		$components['attachments'][] = $download->get_file();
 		// 	}
 		// }
-	// }
+
+		$contact_form->set_properties( array( 'mail' => $mail ) );
+		
+	}
 }
