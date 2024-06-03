@@ -34,9 +34,9 @@ $logo = $args['logo'];
         </div>
 
         <div class="meet-sgp">
-            <?php if ($content2) : ?>
+            <?php if ($title2) : ?>
                 <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-8">
-                    <?php echo $content2; ?>
+                    <?php echo $title2; ?>
                 </div>
             <?php endif; ?>
 
