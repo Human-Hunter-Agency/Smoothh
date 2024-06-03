@@ -12,7 +12,7 @@ $steps_list = $args['steps_list'];
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
-            <h2 class="text-3xl md:text-5xl text-bold font-bold mb-9 text-center"><?php echo esc_html($header); ?></h1>
+            <h2 class="text-3xl md:text-5xl text-bold font-bold mb-9 text-center"><?php echo $header; ?></h1>
             <?php endif; ?>
             <?php if ($description) : ?>
                 <div class="prose-smoothh prose md:prose-xl text-white text-center mb-10"><?php echo $description; ?></div>
@@ -26,7 +26,7 @@ $steps_list = $args['steps_list'];
                         <div class="swiper-slide !h-auto xl:flex-1">
                             <div class="flex flex-col items-center text-center p-3 md:p-6 pb-5 md:pb-10">
                                 <?php if ($step['icon'] && $step['icon']['url']) : ?>
-                                    <?php echo smoothh_img_responsive($step['icon'], 'object-contain size-16 md:size-24 xl:size-[130px] mb-8 md:mb-[50px]', array(130, 130), 'lazy'); ?>
+                                    <?php echo smoothh_img_responsive($step['icon'], 'h-16 object-contain size-16 md:size-24 xl:size-[130px] mb-8 md:mb-[50px]', array(130, 130), 'lazy'); ?>
                                 <?php endif; ?>
                                 <div class="min-h-[90px] lg:min-h-[110px] font-semibold">
                                     <?php if ($step['title']) : ?>
