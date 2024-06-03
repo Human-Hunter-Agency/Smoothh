@@ -66,15 +66,37 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
           $display_number_form = get_field('display_number_form');
           if(isset($additional_content) && $additional_content): 
           ?>
-          <div class="link-phone px-8 xl:px-11 prose prose-smoothh prose-headings:text-lg prose-headings:lg:text-xl prose-headings:text-primary prose-headings:font-bold prose-headings:mb-2.5 prose-p:text-sm prose-p:lg:text-base prose-p:font-bold prose-p:text-foreground">
+          <div class="link-phone px-8 xl:px-11 prose prose-smoothh prose-headings:text-lg prose-headings:lg:text-xl prose-headings:text-primary prose-headings:font-bold prose-headings:mb-2.5 prose-p:text-sm prose-p:lg:text-base prose-p:font-bold prose-p:text-foreground mb-5">
             <?php echo $additional_content ?>
           </div>
         <?php endif;
           if ($display_number_form):
         ?>
-          <div class="px-8 xl:px-11">
+          <div class="px-8 xl:px-11 w-fit">
             <div class="group bg-gradient-to-b p-px from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !rounded-[15px]">
-              <button type="button" class="ml-auto !min-h-[55px] !px-5 xl:!px-10 text-foreground font-bold bg-white group-hover:bg-secondary transition duration-200 !rounded-[14px]"><?php esc_html_e('Leave your number','smoothh')?></button>
+              <button data-js-popup-toggle="leave-number-form" type="button" class="!min-h-[55px] !px-5 xl:!px-10 text-foreground font-bold bg-white group-hover:bg-secondary group-hover:text-white transition duration-200 !rounded-[14px]"><?php esc_html_e('Leave your number','smoothh')?></button>
+            </div>
+          </div>
+          <div data-js-popup-container="leave-number-form" class="popup-container popup-hidden">
+            <div class="popup-inner">
+              <div class="flex justify-end p-1">
+                <button data-js-popup-toggle="leave-number-form" class="p-1 md:p-2 group">				
+                  <svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    viewBox="0 0 460.775 460.775" xml:space="preserve">
+                  <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                    c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+                    c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+                    c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+                    l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+                    c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+                  </svg>
+                </button>
+              </div>
+              <div>
+                <?php 
+                  $shortcode = '[contact-form-7 id="fd3ecea" title="Zostaw numer"]';
+                  echo do_shortcode($shortcode); ?>
+              </div>
             </div>
           </div>
         <?php endif;?>
