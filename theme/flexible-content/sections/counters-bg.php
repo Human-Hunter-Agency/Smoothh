@@ -7,7 +7,7 @@ $tiles_list = $args['tiles_list'];
 
 ?>
 
-<div class="relative w-full py-10 pb-5 md:pt-[70px] mt-10 md:mb-20">
+<div class="relative w-full py-10 pb-5 md:pt-[70px] mt-10 mb-20">
     <div class="z-[-1] w-full h-full absolute left-0 bg-gradient-to-r from-[rgba(129,23,238,0.1)] to-[rgba(129,23,238,0)]"></div>
     <div class="pt-14 relative z-0 container">
         <?php if ($header) : ?>
