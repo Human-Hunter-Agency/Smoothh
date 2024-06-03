@@ -11,7 +11,7 @@ $decoration = $args['decoration'];
 <div class="relative py-10 md:py-20">
     <div class="container">
         <div class="relative flex gap-10">
-            <div class="z-0">
+            <div class="z-0 w-1/2">
                 <?php if ($header) : ?>
                     <h2 class="text-left font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
                         <?php echo esc_html($header); ?>
@@ -25,8 +25,8 @@ $decoration = $args['decoration'];
             </div>
         </div>
         <?php if ($decoration) : ?>
-            <div class="absolute right-7 top-7 max-w-[220px] lg:max-w-[360px]">
-                <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/Abstract_Fluid_Gradient_Background.png'); ?>
+            <div class="w-1/2 absolute right-7 top-7 max-w-[220px] lg:max-w-[360px]">
+                <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/abstract_gradient.svg'); ?>
             </div>
         <?php endif; ?>
     </div>
