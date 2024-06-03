@@ -1034,10 +1034,11 @@ function get_best_fit_image_size($custom_width)
 	return $best_fit_size;
 }
 
-add_filter('wpcf7_mail_sent', 'smoothh_contact_form_autoresponders');
+add_filter('wpcf7_mail_components', 'smoothh_wpcf7_mail_components');
 
-function smoothh_contact_form_autoresponders($contact_form){
-	if ($contact_form->id == 'a486d87') {
+function smoothh_wpcf7_mail_components($components){
+	$wpcf7 = WPCF7_ContactForm::get_current();
+	if ($wpcf7->id == 'a486d87') {
 		$submission = WPCF7_Submission::get_instance();
         $posted_data = $submission->get_posted_data();  
 
