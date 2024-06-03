@@ -8,7 +8,7 @@ $image_3x3 = $args['image_3x3'];
 ?>
 
 <div class="relative py-10 md:py-20">
-    <div class="bg-container w-[90%] h-full bg-gradient-to-l from-[rgba(129,23,238,0)] to-[rgba(129,23,238,0.102)]"></div>
+    <div class="bg-container w-[85%] h-[1200px] absolute top-0 right-0 bg-gradient-to-l from-[rgba(129,23,238,0)] to-[rgba(129,23,238,0.102)]"></div>
     <div class="container">
         <div class="flex flex-col lg:flex-row gap-24">
             <div class="z-0 w-1/2">
