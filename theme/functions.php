@@ -1047,12 +1047,12 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		
 		$product = wc_get_product( $prod_id );
 		
-		if ($product->is_downloadable()) {
-			$downloads = $product->get_downloads();
-			foreach( $downloads as $download ) {
-				$mail['attachments'][] = $download->get_file();
-			}
-		}
+		// if ($product->is_downloadable()) {
+		// 	$downloads = $product->get_downloads();
+		// 	foreach( $downloads as $download ) {
+		// 		$mail['attachments'][] = $download->get_file();
+		// 	}
+		// }
 
 		$contact_form->set_properties( array( 'mail_2' => $mail ) );
 		
