@@ -50,7 +50,7 @@ if ($hero_img_url == false && $post && get_post_thumbnail_id($post->ID) && get_p
 	<?php wp_head(); ?>
 	<script>
 		const translations = {
-			'Include CV': '<?php echo __('Include CV*', 'smoothh')?>',
+			'Include CV': '<?php echo __('Include CV', 'smoothh')?>',
 			'Read more': '<?php echo __('Read more', 'smoothh')?>'
 		}
 	</script>
