@@ -36,8 +36,8 @@ if ($hero_img_url == false && $post && get_post_thumbnail_id($post->ID) && get_p
 }
 ?>
 <html <?php language_attributes(); ?> <?php if ($has_faq) {
-																				echo 'itemscope itemtype="https://schema.org/FAQPage"';
-																			} ?>>
+	echo 'itemscope itemtype="https://schema.org/FAQPage"';
+} ?>>
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -48,6 +48,12 @@ if ($hero_img_url == false && $post && get_post_thumbnail_id($post->ID) && get_p
 		<meta name="twitter:image" content="<?php echo $hero_img_url ?>" />
 	<?php endif; ?>
 	<?php wp_head(); ?>
+	<script>
+		const translations = {
+			'Include CV': <?php echo __('Include CV*', 'smoothh')?>,
+			'Read more': <?php echo __('Read more', 'smoothh')?>
+		}
+	</script>
 </head>
 
 <body <?php body_class(); ?>>

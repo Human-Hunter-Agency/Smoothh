@@ -18,8 +18,6 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const { __, _x, _n, sprintf } = wp.i18n;
-
 AOS.init();
 AOS.init({
 	disable: false,
@@ -290,7 +288,7 @@ function initCvFileLabelText() {
 			textEl.innerText = file.name;
 			labelBtn.classList.add('hidden');
 		} else {
-			textEl.innerText = __('Include CV*', 'smoothh');
+			textEl.innerText = translations['Include CV'] ?? 'Include CV*';
 			labelBtn.classList.remove('hidden');
 		}
 	});
@@ -416,7 +414,7 @@ function insertPosts(container, posts) {
 				<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
 				<h3>${post.title.rendered}</h3>
 				${post.excerpt.rendered}
-				<span>${__('Read more', 'smoothh')}</span>
+				<span>${ translations['Read more'] ?? 'Read more'}</span>
 			</a>
 		</li>`;
 	});
