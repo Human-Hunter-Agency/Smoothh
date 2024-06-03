@@ -40,7 +40,7 @@ $tiles_list = $args['tiles_list'];
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
                                 <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
                                     <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-[190px] md:!h-[220px]', array(360, 220), 'lazy'); ?>
-                                    <div class="absolute inset-0 bg-gradient-to-b from-[#1F97D4] to-[#8117EE] mix-blend-multiply opacity-90"></div>
+                                    <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 </div>
                             <?php endif; ?>
                             <div class="text-center p-3 md:p-6 !pt-0">
