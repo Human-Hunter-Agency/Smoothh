@@ -56,7 +56,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
             </p>
         </div>
         <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary group-hover:bg-secondary transition duration-200">
-            <?php esc_html_e('Show product', 'smoothh') ?>
+            <?php $product->is_downloadable() ? esc_html_e('Download e-book','smoothh') : esc_html_e('Show product', 'smoothh'); ?>
         </span>
     </a>
 

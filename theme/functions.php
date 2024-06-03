@@ -1034,23 +1034,27 @@ function get_best_fit_image_size($custom_width)
 	return $best_fit_size;
 }
 
-add_filter('wpcf7_mail_components', 'smoothh_wpcf7_mail_components');
+add_filter('wpcf7_before_send_mail', 'smoothh_wpcf7_mail_before_send');
 
-function smoothh_wpcf7_mail_components($components){
-	$wpcf7 = WPCF7_ContactForm::get_current();
-	if ($wpcf7->id == 'a486d87') {
+function smoothh_wpcf7_mail_before_send($contact_form){
+	$form_id = $contact_form->posted_data['_wpcf7'];
+	if ($form_id == 'a486d87') {
+		$mail = $contact_form->prop( 'mail' );
 		$submission = WPCF7_Submission::get_instance();
-        $posted_data = $submission->get_posted_data();  
-
+		$posted_data = $submission->get_posted_data();
 		$prod_id = $posted_data['prod-id'];
-		$product = wc_get_product( $prod_id );
+		$extracontent = "<p>This is more text for the message body.</p>" . $prod_id ;
+		$mail['body'] .= '<br>';
+		$mail['body'] .= $extracontent;
+		$contact_form->set_properties( array( 'mail' => $mail ) );
 		
-		if ($product->is_downloadable()) {
-			$downloads = $product->get_downloads();
-			foreach( $downloads as $download ) {
-				$components['attachments'][] = $download->get_file();
-			}
-		}
+		// $product = wc_get_product( $prod_id );
+		
+		// if ($product->is_downloadable()) {
+		// 	$downloads = $product->get_downloads();
+		// 	foreach( $downloads as $download ) {
+		// 		$components['attachments'][] = $download->get_file();
+		// 	}
+		// }
 	}
-	return $components;
 }
