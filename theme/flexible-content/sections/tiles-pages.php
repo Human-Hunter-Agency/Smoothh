@@ -10,8 +10,8 @@ $tiles_list = $args['tiles_list'];
 
 ?>
 
-<div class="relative py-10 md:py-[90px] mb:pb-[60px]">
-    <div class="z-[-1] xl:w-[85%] 2xl:w-[88%] lg:h-[920px] absolute top-8 right-0 bg-gradient-to-r from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0)] rounded-[45px]"></div>
+<div class="relative py-10 md:pt-[90px] md:pb-0 mb-20">
+    <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-8 right-0 bg-gradient-to-r from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php if ($decoration) : ?>
         <div class="absolute right-7 top-7 -z-10 opacity-5 max-w-[90px] lg:max-w-[180px]">
             <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/decor.svg'); ?>
@@ -19,7 +19,7 @@ $tiles_list = $args['tiles_list'];
     <?php endif; ?>
 
     <div class="container">
-        <div class="mx-auto relative z-0 max-w-[900px] mb-12">
+        <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-24">
             <?php if ($header) : ?>
                 <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
                     <?php echo $header; ?>
@@ -31,7 +31,7 @@ $tiles_list = $args['tiles_list'];
         </div>
     </div>
 
-    <div class="relative z-0 w-full overflow-hidden !pb-32">
+    <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-32">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper">
@@ -61,7 +61,7 @@ $tiles_list = $args['tiles_list'];
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="swiper-nav w-32  h-20 hidden lg:flex gap-5 !absolute !top-auto !bottom-[-100px] left-[50%] -translate-x-1/2">
+                <div class="swiper-nav w-28  h-20 hidden lg:flex gap-5 !absolute !top-auto !bottom-[-100px] left-[50%] -translate-x-1/2">
                     <div class="swiper-button-prev rotate-180 scale-150">
                         <svg xmlns="http://www.w3.org/2000/svg" width="39" height="40" viewBox="0 0 39 40" fill="none">
                             <path d="M19.6177 38.1958C9.57757 38.1958 1.43846 30.0567 1.43846 20.0166C1.43846 9.97651 9.57757 1.8374 19.6177 1.8374C29.6578 1.8374 37.7969 9.97651 37.7969 20.0166C37.7969 30.0567 29.6578 38.1958 19.6177 38.1958Z" stroke="#8117EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
