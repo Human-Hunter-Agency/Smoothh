@@ -193,7 +193,7 @@ function initDefaultSwipers() {
 				},
 				1280: {
 					slidesPerView: 3,
-					spaceBetween: 90,
+					spaceBetween: 60,
 				},
 			},
 		});
@@ -414,7 +414,7 @@ function insertPosts(container, posts) {
 				<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
 				<h3>${post.title.rendered}</h3>
 				${post.excerpt.rendered}
-				<span>${ translations['Read more'] ?? 'Read more'}</span>
+				<span>${translations['Read more'] ?? 'Read more'}</span>
 			</a>
 		</li>`;
 	});
