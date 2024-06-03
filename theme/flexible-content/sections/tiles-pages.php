@@ -10,7 +10,7 @@ $tiles_list = $args['tiles_list'];
 
 ?>
 
-<div class="relative py-10 md:pt-[90px] md:pb-0 mb-20">
+<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0 mb-20">
     <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-8 right-0 bg-gradient-to-r from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php if ($decoration) : ?>
         <div class="absolute right-7 top-7 -z-10 opacity-5 max-w-[90px] lg:max-w-[180px]">
@@ -36,7 +36,7 @@ $tiles_list = $args['tiles_list'];
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper">
                     <?php foreach ($tiles_list as $tile) : ?>
-                        <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] bg-white drop-shadow-2xl rounded-2xl">
+                        <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] bg-white drop-shadow-lg lg:drop-shadow-2xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
                                 <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
                                     <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-[190px] md:!h-[220px]', array(360, 220), 'lazy'); ?>
