@@ -22,7 +22,7 @@ $tiles_list = $args['tiles_list'];
         <div class="mx-auto relative z-0 max-w-[650px]">
             <?php if ($header) : ?>
                 <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
-                    <?php echo esc_html($header); ?>
+                    <?php echo $header; ?>
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
@@ -34,13 +34,13 @@ $tiles_list = $args['tiles_list'];
     <div class="relative z-0 w-full overflow-hidden !pb-5">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
-                <div class="swiper-wrapper xl:!gap-y-20 xl:!gap-x-[90px] xl:!flex-wrap xl:justify-center xl:!transform-none">
+                <div class="swiper-wrapper">
                     <?php foreach ($tiles_list as $tile) : ?>
                         <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] drop-shadow-xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
                                 <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
                                     <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-[190px] md:!h-[220px]', array(360, 220), 'lazy'); ?>
-                                    <div class="absolute inset-0 bg-gradient-to-b from-[#1F97D4] to-[#8117EE]"></div>
+                                    <div class="absolute inset-0 bg-gradient-to-b from-[#1F97D4] to-[#8117EE] mix-blend-multiply"></div>
                                 </div>
                             <?php endif; ?>
                             <div class="text-center p-3 md:p-6 !pt-0">
