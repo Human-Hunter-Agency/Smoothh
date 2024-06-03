@@ -1,6 +1,6 @@
 <?php
 
-/** Template to display 'Sekcja z dekoracją 3x3' - decor_3x3 */
+/** Template to display 'Sekcja z dekoracją 3x3' - grid_decor_3x3 */
 
 $content = $args['content'];
 $image_3x3 = $args['image_3x3'];
