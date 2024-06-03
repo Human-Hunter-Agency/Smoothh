@@ -1050,15 +1050,15 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		if ($product->is_downloadable()) {
 			$downloads = $product->get_downloads();
 			foreach( $downloads as $download ) {
-				$files[] = $download->get_file() . '<br>';
+				$files[] = $download->get_file();
 			}
 			// $submission->add_extra_attachments( $files, 'mail_2' );
 		}
 
+		$mail['body'] .= '<br>';
 		$mail['body'] .= __('Download links: ','smoothh');
 		$mail['body'] .= '<br>';
-
-		$mail['body'] .= $files;
+		$mail['body'] .= implode('<br>',$files);
 
 		// $submission->add_extra_attachments( array('https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png'), 'mail_2' );
 
