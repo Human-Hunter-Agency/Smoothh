@@ -23,12 +23,12 @@ $decoration = $args['decoration'];
                 <?php endif; ?>
             </div>
         </div>
-        <?php if ($decoration) : ?>
-            <div class="w-1/2 relative">
+        <div class="w-1/2 relative">
+            <?php if ($decoration) : ?>
                 <div class="decor-gradient absolute right-0 top-7">
                     <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/abstract_gradient.svg'); ?>
                 </div>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
     </div>
 </div>
