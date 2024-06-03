@@ -1034,7 +1034,7 @@ function get_best_fit_image_size($custom_width)
 	return $best_fit_size;
 }
 
-add_action('wpcf7_before_send_mail', 'smoothh_wpcf7_mail_before_send');
+// add_action('wpcf7_before_send_mail', 'smoothh_wpcf7_mail_before_send');
 
 function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 	// $form_id = $contact_form->posted_data['_wpcf7'];
