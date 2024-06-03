@@ -8,7 +8,7 @@ $button = $args['button'];
 ?>
 
 <div class="container mx-auto">
-    <div class="px-24 py-8 md:py-14 relative flex flex-row items-center justify-between  drop-shadow-2xl rounded-3xl bg-gradient-to-b from-secondary to-primary">
+    <div class="px-8 md:px-24 py-8 md:py-14 relative flex flex-col lg:flex-row items-center justify-between  drop-shadow-2xl rounded-3xl bg-gradient-to-b from-secondary to-primary">
         <?php if ($header) : ?>
             <h3 class="text-3xl md:text-5xl text-bold text-white font-bold text-center"><?php echo esc_html($header); ?></h1>
             <?php endif; ?>
