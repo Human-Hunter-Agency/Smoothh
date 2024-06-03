@@ -12,7 +12,7 @@ $logo = $args['logo'];
 <div class="relative py-10 md:py-20 mt-20">
     <div class="z-[-1] xl:w-[85%] 2xl:w-[88%] lg:h-[1200px] absolute top-8 right-0 bg-gradient-to-l from-[rgba(129,23,238,0)] to-[rgba(129,23,238,0.102)]"></div>
     <div class="container">
-        <div class="mb-44 flex flex-col lg:flex-row gap-24">
+        <div class=" mb-20 lg:mb-44 flex flex-col lg:flex-row gap-10 lg:gap-24">
             <div class="z-0 w-full lg:w-1/2">
                 <?php if ($image_3x3) : ?>
                     <div class="-mt-28">
@@ -41,7 +41,7 @@ $logo = $args['logo'];
             <?php endif; ?>
 
             <?php if ($description) : ?>
-                <div class="py-12 px-28 bg-white rounded-[45px] drop-shadow-2xl">
+                <div class="lg:py-12 p-8 lg:px-28 bg-white rounded-[45px] drop-shadow-2xl">
                     <div class="mb-20 prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-8">
                         <?php echo $description; ?>
                     </div>
