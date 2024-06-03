@@ -1037,7 +1037,6 @@ function get_best_fit_image_size($custom_width)
 add_action('wpcf7_before_send_mail', 'smoothh_wpcf7_mail_before_send', 10, 3);
 
 function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
-	// $form_id = $contact_form->posted_data['_wpcf7'];
 	$form_id = $contact_form->id();
 	if ($form_id == '1064') {
 		$mail = $contact_form->prop( 'mail_2' );
@@ -1046,21 +1045,20 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		$prod_id = $posted_data['prod-id'];
 		$product = wc_get_product( $prod_id );
 
-		// $extracontent = '';
+		$files = array();
 
 		if ($product->is_downloadable()) {
 			$downloads = $product->get_downloads();
 			foreach( $downloads as $download ) {
-				$submission->add_extra_attachments( $download->get_file(), 'mail_2' );
-				// $extracontent .= $download->get_file();
+				$files[] = $download->get_file();
 			}
+			$submission->add_extra_attachments( $files, 'mail_2' );
 		}
 
 		// $mail['body'] .= '<br>';
 		// $mail['body'] .= $extracontent;
 
-		$submission->add_extra_attachments( array('https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png'), 'mail_2' );
-		// $mail['attachments'] = 'https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png';
+		// $submission->add_extra_attachments( array('https://smoothh.domain.org.pl/wp-content/uploads/2024/05/untitled-1-e1716199816125.png'), 'mail_2' );
 
 		$contact_form->set_properties( array( 'mail_2' => $mail ) );
 		
