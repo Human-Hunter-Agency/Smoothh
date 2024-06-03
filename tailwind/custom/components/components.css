@@ -124,7 +124,7 @@ footer#page-footer .footer-bottom-menu {
 
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
-	@apply !hidden xl:!flex after:hidden bg-primary hover:bg-secondary p-3 transition duration-300 rounded-[5px] items-center justify-center md:size-11;
+	@apply !hidden xl:!flex after:hidden transition duration-300 items-center justify-center !top-auto !bottom-[-100px] left-[50%];
 }
 
 .grid-colored {
@@ -182,7 +182,7 @@ footer#page-footer .footer-bottom-menu {
 	@apply !h-auto;
 }
 
-.post-tile a{
+.post-tile a {
 	@apply relative !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl;
 }
 
@@ -211,8 +211,8 @@ footer#page-footer .footer-bottom-menu {
 	@apply translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary transition duration-200;
 }
 
-.post-tile a:hover span{
-	@apply bg-secondary
+.post-tile a:hover span {
+	@apply bg-secondary;
 }
 
 .variations select,
@@ -221,7 +221,7 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .variations select:focus ~ svg,
-#product-select-from-cat:focus ~ svg{
+#product-select-from-cat:focus ~ svg {
 	@apply rotate-180;
 }
 
@@ -239,13 +239,16 @@ footer#page-footer .footer-bottom-menu {
 .smoothh-inputs-basic .form-row {
 	@apply !m-0 !p-0 w-full lg:w-[calc(50%_-_10px)] xl:w-[calc(33.33%_-_32px)];
 }
-.form-row .optional{
-	@apply hidden
+.form-row .optional {
+	@apply hidden;
 }
-.woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last{
-	width: 49% !important
+.woocommerce form .form-row-first,
+.woocommerce form .form-row-last,
+.woocommerce-page form .form-row-first,
+.woocommerce-page form .form-row-last {
+	width: 49% !important;
 }
-.woocommerce form .form-row [placeholder]:focus::-webkit-input-placeholder{
+.woocommerce form .form-row [placeholder]:focus::-webkit-input-placeholder {
 	opacity: 1 !important;
 }
 .smoothh-inputs-basic .input-text {
@@ -260,12 +263,12 @@ footer#page-footer .footer-bottom-menu {
 	@apply !text-primary !font-medium;
 }
 
-.woocommerce-MyAccount-content .woocommerce-info .button{
-	@apply !mt-5
+.woocommerce-MyAccount-content .woocommerce-info .button {
+	@apply !mt-5;
 }
 
-.place-order .checkbox a{
-	@apply !no-underline hover:!underline font-semibold
+.place-order .checkbox a {
+	@apply !no-underline hover:!underline font-semibold;
 }
 
 .woocommerce-address-fields .input-text,
@@ -286,24 +289,26 @@ footer#page-footer .footer-bottom-menu {
 	@apply !top-3 !right-4;
 }
 
-.select2-container--default.select2-container--open .select2-selection__arrow b{
+.select2-container--default.select2-container--open
+	.select2-selection__arrow
+	b {
 	border-width: 0 8px 12px 8px !important;
-	@apply !border-b-primary	
+	@apply !border-b-primary;
 }
-.select2-selection__arrow b{
+.select2-selection__arrow b {
 	border-width: 12px 8px 0 8px !important;
-	@apply !border-t-primary
+	@apply !border-t-primary;
 }
 
-.select2-dropdown--below{
-	@apply !border-2 !border-secondary shadow-lg !rounded-b-[15px] overflow-hidden
+.select2-dropdown--below {
+	@apply !border-2 !border-secondary shadow-lg !rounded-b-[15px] overflow-hidden;
 }
 .select2-search--dropdown,
-.select2-results__option{
-	@apply !px-3
+.select2-results__option {
+	@apply !px-3;
 }
-.select2-search__field{
-	@apply rounded-md
+.select2-search__field {
+	@apply rounded-md;
 }
 
 i.theChampLogin {
@@ -317,78 +322,87 @@ i.theChampLogin {
 	@apply font-normal !border-none;
 }
 
-.icon-arrow-right:after{
+.icon-arrow-right:after {
 	content: url('data:image/svg+xml,<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 9.5C18 14.1944 14.1944 18 9.5 18C4.80558 18 1 14.1944 1 9.5C1 4.80558 4.80558 1 9.5 1C14.1944 1 18 4.80558 18 9.5Z" stroke="white"/><path d="M12.486 10.16L7 13.41V11.46L9.951 9.69197L7 7.84597V5.99997L12.486 9.31497V10.16Z" fill="white"/></svg>');
 	display: inline-block;
 	flex-shrink: 0;
 }
 
 .wc-empty-cart-message,
-.woocommerce-notices-wrapper{
-	@apply px-5
+.woocommerce-notices-wrapper {
+	@apply px-5;
 }
 
-.woocommerce-error, .woocommerce-info, .woocommerce-message{
-	@apply mt-5 rounded-[15px] max-w-screen-sm mx-auto !border !bg-transparent text-black
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+	@apply mt-5 rounded-[15px] max-w-screen-sm mx-auto !border !bg-transparent text-black;
 }
 
 .woocommerce-error .button,
 .woocommerce-info .button,
-.woocommerce-message .button{
-	@apply whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center !justify-center !gap-5
+.woocommerce-message .button {
+	@apply whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center !justify-center !gap-5;
 }
 
 .woocommerce-error .button:after,
 .woocommerce-info .button:after,
-.woocommerce-message .button:after{
+.woocommerce-message .button:after {
 	content: url('data:image/svg+xml,<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 9.5C18 14.1944 14.1944 18 9.5 18C4.80558 18 1 14.1944 1 9.5C1 4.80558 4.80558 1 9.5 1C14.1944 1 18 4.80558 18 9.5Z" stroke="black"/><path d="M12.486 10.16L7 13.41V11.46L9.951 9.69197L7 7.84597V5.99997L12.486 9.31497V10.16Z" fill="black"/></svg>');
 	display: inline-block;
 	flex-shrink: 0;
 }
 
-.woocommerce-error{@apply !border-red-500 !bg-red-500/[0.02]}
-.woocommerce-info{@apply !border-secondary !bg-secondary/[0.02]}
-.woocommerce-message{@apply !border-green-500 !bg-green-500/[0.02]}
-.woocommerce-message::before {@apply !text-green-500}
+.woocommerce-error {
+	@apply !border-red-500 !bg-red-500/[0.02];
+}
+.woocommerce-info {
+	@apply !border-secondary !bg-secondary/[0.02];
+}
+.woocommerce-message {
+	@apply !border-green-500 !bg-green-500/[0.02];
+}
+.woocommerce-message::before {
+	@apply !text-green-500;
+}
 
-.woocommerce-checkout .woocommerce-error{
+.woocommerce-checkout .woocommerce-error {
 	padding: 1em 2em 1em 3.5em !important;
 }
-.woocommerce-checkout .woocommerce-error li{
+.woocommerce-checkout .woocommerce-error li {
 	@apply !mt-0;
 }
 
-
-.popup-container{
+.popup-container {
 	max-height: 100dvh;
 	max-height: 100vh;
-	@apply fixed z-50 inset-0 bg-black/15 overflow-auto flex items-center justify-center px-5 py-2 md:py-5 md:px-10 xl:px-20 transition duration-300
+	@apply fixed z-50 inset-0 bg-black/15 overflow-auto flex items-center justify-center px-5 py-2 md:py-5 md:px-10 xl:px-20 transition duration-300;
 }
-.popup-hidden{
-	@apply opacity-0 pointer-events-none
+.popup-hidden {
+	@apply opacity-0 pointer-events-none;
 }
 
-.popup-inner{
-	@apply flex flex-col transition duration-300 max-h-full max-w-screen-lg px-5 py-2 md:py-5 md:p-10 bg-white shadow-2xl rounded-[15px] relative
+.popup-inner {
+	@apply flex flex-col transition duration-300 max-h-full max-w-screen-lg px-5 py-2 md:py-5 md:p-10 bg-white shadow-2xl rounded-[15px] relative;
 }
 
 .popup-hidden .popup-inner {
-	@apply translate-y-5
+	@apply translate-y-5;
 }
 
-.woocommerce-password-strength{
-	@apply mt-2.5 rounded-[15px]
+.woocommerce-password-strength {
+	@apply mt-2.5 rounded-[15px];
 }
 
-.link-phone a{
-	@apply transition duration-200 mt-1 flex items-center gap-1.5 !text-lg xl:!text-xl !font-normal !text-foreground !no-underline
+.link-phone a {
+	@apply transition duration-200 mt-1 flex items-center gap-1.5 !text-lg xl:!text-xl !font-normal !text-foreground !no-underline;
 }
-.link-phone a:hover{
-	@apply !text-primary
+.link-phone a:hover {
+	@apply !text-primary;
 }
 
-.link-phone a:before{
-	content: '';
+.link-phone a:before {
+	content: "";
 	background-image: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M30.1963 24.5034L23.333 25.8334C18.6963 23.5067 15.833 20.8334 14.1663 16.6667L15.4497 9.78337L13.0247 3.33337H6.773C4.893 3.33337 3.413 4.88671 3.69466 6.74504C4.39466 11.3834 6.46133 19.795 12.4997 25.8334C18.8413 32.175 27.9763 34.9267 33.003 36.0217C34.9447 36.4434 36.6663 34.93 36.6663 32.9417V26.9684L30.1963 24.5034Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 	background-size: contain;
 	width: 35px;
