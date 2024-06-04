@@ -642,8 +642,8 @@ function setupListingElements(data) {
 
 function initSearchStart(offers) {
 	const searchbarForm = document.querySelector('[data-js-jobs="searchbar"]');
-	searchbarForm.addEventListener('submit', function(event){
-		event.preventDetault();
+	searchbarForm.addEventListener('submit', (event) => {
+		event.preventDefault();
 		createFilteredOffers(offers);
 	});
 
