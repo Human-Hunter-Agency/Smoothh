@@ -665,13 +665,13 @@ function createFilteredOffers(offers){
 		}
 	}
 
-	let filteredOffers = offers.filter((offer)=>{
+	let filteredOffers = offers.filter((offer)=>
 		offer.category.includes(selectedCategory) &&
 		(	selectedFilters.includes(offer.type) ||
 			selectedFilters.length === 0 ||
 			(	offer.topOffer && 
 				selectedFilters.includes(translations['#TOPoffer'] ?? '#TOPoffer')) )
-	})
+	)
 
 	if (searchInput.length > 2) {
 		const fuseOptions = {
