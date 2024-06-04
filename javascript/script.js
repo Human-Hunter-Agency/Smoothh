@@ -686,7 +686,7 @@ function createFilteredOffers(offers) {
 					)))
 	);
 
-	if (searchInput.length > 2) {
+	if (searchInput.length >= 2) {
 		const fuseOptions = {
 			keys: ['name', 'location', 'type', 'category', 'details'],
 		};
