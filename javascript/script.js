@@ -660,7 +660,7 @@ function createFilteredOffers(offers){
 	const filterInputs = document.querySelectorAll('[data-js-jobs="filters"] input:checked')
 	let selectedFilters = [];
 	for (var i=0; i<filterInputs.length; i++) {
-		if (filters[i].checked) {
+		if (filterInputs[i].checked) {
 			selectedFilters.push(filters[i].value);
 		}
 	}
