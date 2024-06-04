@@ -51,7 +51,11 @@ if ($hero_img_url == false && $post && get_post_thumbnail_id($post->ID) && get_p
 	<script>
 		const translations = {
 			'Include CV': '<?php echo __('Include CV', 'smoothh')?>',
-			'Read more': '<?php echo __('Read more', 'smoothh')?>'
+			'Read more': '<?php echo __('Read more', 'smoothh')?>',
+			'All': '<?php echo __('All', 'smoothh')?>',
+			'Search': '<?php echo __('Search', 'smoothh')?>',
+			'#TOPoffer': '<?php echo __('#TOPoffer', 'smoothh')?>',
+			'New': '<?php echo __('New', 'smoothh')?>',
 		}
 	</script>
 </head>

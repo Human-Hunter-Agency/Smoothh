@@ -603,3 +603,115 @@ function registerClientFieldsToggle() {
 		}
 	}
 }
+
+async function initJobListing(){
+	const container = document.querySelector('[data-js-jobs="container"]') 
+	const loader = document.querySelector('[data-js-jobs="loader"]') 
+	if (!container) return
+
+	const endpointUrl = container.dataset.jsEndpoint
+	const jobsDataRaw = await fetchJobs(endpointUrl)
+	loader.classList.add('hidden')
+	
+	setupListingElements(jobsDataRaw)
+	if (jobsDataRaw.length > 0) {
+		const {categories, filters, offers} = formatJobsData(jobsDataRaw)
+	}else{
+
+	}
+
+}
+
+function setupListingElements(data){
+	const searchbarEl = document.querySelector('[data-js-jobs="searchbar"]')
+	const listEmptyEl = document.querySelector('[data-js-jobs="empty"]')
+
+	if (data.length > 0) {
+		const {categories, filters, offers} = formatJobsData(data)
+
+		createCategoriesEl(categories)
+		createFiltersEl(filters)
+		createOffersItems(offers)
+		searchbarEl.classList.remove('!hidden')
+	}else{
+		listEmptyEl.classList.remove('hidden')
+	}
+}
+
+function createCategoriesEl(categories){
+	const categoriesEl = document.querySelector('[data-js-jobs="categories"]')
+	let inputsHtml = ''
+	for (const value of categories) {
+		inputsHtml += `<label><input type="radio" name="category" value="${value}">${value}</label>`
+	}
+	categoriesEl.innerHTML = inputsHtml 
+	categoriesEl.classList.remove('!hidden')
+}
+function createFiltersEl(filters){
+	const filtersEl = document.querySelector('[data-js-jobs="filters"]')
+	let inputsHtml = ''
+	for (const value of filters) {
+		inputsHtml += `<label><input type="checkbox" value="${value}">${value}</label>`
+	}
+	filtersEl.innerHTML = inputsHtml 
+	filtersEl.classList.remove('!hidden')
+}
+function createOffersItems(offers){
+	const listEl = document.querySelector('[data-js-jobs="list"]')
+	let itemsHtml = ''
+	for (const offer of offers) {
+		itemsHtml += `
+		<li class="job-offer-tile">
+			<div>
+				<div class="tile-top">
+					<span class="offer-date">${offer.date}</span>
+				</div>
+				<h3 class="offer-title">${offer.name}</h3>
+			</div>
+			<span class="offer-location">${offer.location}</span>
+		</li>
+		`
+	}
+	listEl.innerHTML = itemsHtml 
+}
+
+async function fetchJobs(url){
+	try {
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error('Failed to fetch data');
+		}
+		const data = await response.json();
+		return data
+	} catch (error) {
+		console.error('Error fetching posts:', error.message);
+		return [];
+	}
+}
+
+function formatJobsData(rawJobsData){
+	const categories = rawJobsData.map(offer => offer.options.branches)
+	categories.push(translations['All'] ?? 'All')
+	const filters = rawJobsData.map(offer => offer.options.job_type)
+	filters.push(translations['#TOPoffer'] ?? '#TOPoffer')
+	const offers = rawJobsData.map(offer => {
+		return {
+			name: offer.advert.name,
+			details: offer.advert.values,
+			location: formatLocation(offer.options.job_location),
+			date: new Date(offer.valid_start).toLocaleDateString(),
+			topOffer: offer.awarded,
+		}
+	})
+
+	return {categories, filters, offers}
+
+	function formatLocation(location) {
+		const locationParsed = JSON.parse(location)
+		const regions = Object.keys(locationParsed)
+			.filter(key => key.startsWith('region') && locationParsed[key])
+			.map(key => locationParsed[key]);
+	
+		return regions.join('/');
+	}
+}
