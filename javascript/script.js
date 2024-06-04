@@ -18,7 +18,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Fuse from 'fuse.js';
-import CustomSelect from 'jquery.custom-select.js';
+import 'jquery-custom-select';
 
 AOS.init();
 AOS.init({
