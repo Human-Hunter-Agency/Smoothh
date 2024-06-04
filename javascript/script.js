@@ -661,7 +661,7 @@ function createFilteredOffers(offers){
 	let selectedFilters = [];
 	for (var i=0; i<filterInputs.length; i++) {
 		if (filterInputs[i].checked) {
-			selectedFilters.push(filters[i].value);
+			selectedFilters.push(filterInputs[i].value);
 		}
 	}
 
