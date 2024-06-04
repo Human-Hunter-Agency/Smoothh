@@ -712,6 +712,6 @@ function formatJobsData(rawJobsData){
 
 	function formatLocation(location) {
 		if (!location) return ''
-		return locationParsed['region1'] + ' / ' + locationParsed['locality']
+		return location['region1'] + ' / ' + location['locality']
 	}
 }
