@@ -645,7 +645,6 @@ function initSearchStart(offers) {
 	searchbarForm.addEventListener('submit', (event) => {
 		event.preventDetault();
 		createFilteredOffers(offers);
-		return false;
 	});
 
 	const filterInputs = document.querySelectorAll(
