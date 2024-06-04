@@ -702,7 +702,7 @@ function formatJobsData(rawJobsData){
 			url: offer.url,
 			name: offer.advert.name,
 			details: offer.advert.values,
-			location: formatLocation(offer.options.job_location),
+			location: formatLocation(offer.advert.values.find(field => field.id == 'geolocation')),
 			date: new Date(offer.valid_start).toLocaleDateString(),
 			topOffer: offer.awarded,
 		}
@@ -711,7 +711,8 @@ function formatJobsData(rawJobsData){
 	return {categories, filters, offers}
 
 	function formatLocation(location) {
+		if (!location) return ''
 		const locationParsed = JSON.parse(location)
-		return locationParsed['region1'] + '/' + locationParsed['locality']
+		return locationParsed['region1'] + ' / ' + locationParsed['locality']
 	}
 }
