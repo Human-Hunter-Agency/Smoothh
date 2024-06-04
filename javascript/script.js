@@ -761,7 +761,7 @@ function formatJobsData(rawJobsData){
 		return {
 			url: offer.url,
 			name: offer.advert.name,
-			details: offer.advert.find(field => field.field_id == 'description'),
+			details: offer.advert.values.find(field => field.field_id == 'description'),
 			location: formatLocation(offer.advert.values.find(field => field.field_id == 'geolocation')),
 			date: new Date(offer.valid_start).toLocaleDateString(),
 			topOffer: offer.awarded,
