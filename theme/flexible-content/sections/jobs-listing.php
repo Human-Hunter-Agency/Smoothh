@@ -11,7 +11,7 @@ $endpoint_url = $args['endpoint'];
     <div class="container">
         <?php if ($header) : ?>
             <div class="container mb-10 md:mb-[50px]">
-                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-white">
+                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-foreground">
                     <?php echo esc_html($header); ?>
                 </h2>
             </div>
@@ -20,15 +20,13 @@ $endpoint_url = $args['endpoint'];
             if ($endpoint_url):
          ?>
         <div data-js-jobs="container" data-js-endpoint="<?php echo $endpoint_url; ?>">
-            <div data-js-jobs="categories" class="!hidden">
+            <div data-js-jobs="categories" class="!hidden p-2 rounded-2xl bg-[#F2F2F2] flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-3">
             </div>
-            <div data-js-jobs="searchbar" class="!hidden">
-                <div>
-                    <input type="text">
-                    <button><?php echo __('Search', 'smoothh')?></button>
-                </div>    
+            <div data-js-jobs="searchbar" class="!hidden p-2 bg-[#F2F2F2] mx-auto max-w-screen-lg rounded-2xl mb-7">
+                <input type="text">
+                <button><?php echo __('Search', 'smoothh')?></button>
             </div>
-            <ul data-js-jobs="filters" class="!hidden flex flex-wrap gap-x-5 gap-y-2.5">
+            <ul data-js-jobs="filters" class="!hidden flex justify-center flex-wrap gap-x-5 gap-y-2.5 mb-10">
             </ul>
             <ul data-js-jobs="list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             </ul>

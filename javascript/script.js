@@ -643,7 +643,7 @@ function createCategoriesEl(categories){
 	const categoriesEl = document.querySelector('[data-js-jobs="categories"]')
 	let inputsHtml = ''
 	for (const value of categories) {
-		inputsHtml += `<label><input type="radio" name="category" value="${value}">${value}</label>`
+		inputsHtml += `<label><input type="radio" name="category" value="${value}"><span>${value}</span></label>`
 	}
 	categoriesEl.innerHTML = inputsHtml 
 	categoriesEl.classList.remove('!hidden')
@@ -691,9 +691,9 @@ async function fetchJobs(url){
 }
 
 function formatJobsData(rawJobsData){
-	const categories = rawJobsData.map(offer => offer.options.branches)
+	const categories = [...new Set(rawJobsData.map(offer => offer.options.branches))]
 	categories.push(translations['All'] ?? 'All')
-	const filters = rawJobsData.map(offer => offer.options.job_type)
+	const filters = [... new Set(rawJobsData.map(offer => offer.options.job_type))]
 	filters.push(translations['#TOPoffer'] ?? '#TOPoffer')
 	const offers = rawJobsData.map(offer => {
 		return {
@@ -709,10 +709,6 @@ function formatJobsData(rawJobsData){
 
 	function formatLocation(location) {
 		const locationParsed = JSON.parse(location)
-		const regions = Object.keys(locationParsed)
-			.filter(key => key.startsWith('region') && locationParsed[key])
-			.map(key => locationParsed[key]);
-	
-		return regions.join('/');
+		return locationParsed['region1'] + '/' + locationParsed['locality']
 	}
 }
