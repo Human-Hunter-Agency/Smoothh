@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 ?>
 
 <div class="form-basic">
-  <div class="mb-[18px] flex flex-row gap-[18px] lg:[&_p]:grow">
+  <div class="mb-[18px] flex flex-col gap-[18px] lg:[&_p]:grow">
     [text* your-name placeholder "Imię*"]
 
     [text* your-lastname placeholder "Nazwisko*"]
