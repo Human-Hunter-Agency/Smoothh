@@ -425,7 +425,7 @@ i.theChampLogin {
 }
 
 [data-js-jobs="filters"] label{
-    @apply flex items-center px-3 py-1 rounded-xl text-white text-base bg-primary
+    @apply cursor-pointer flex items-center px-3 py-1 rounded-xl text-white text-base bg-primary
 }
 [data-js-jobs="filters"] input{
     @apply mr-3 size-[18px] accent-secondary
