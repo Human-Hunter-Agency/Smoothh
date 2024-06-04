@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initProdSelectRedirect();
 	initInputsValidation();
 	registerClientFieldsToggle();
+	initJobListing()
 });
 
 function initMenuCollapse() {

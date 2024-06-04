@@ -7,7 +7,7 @@ $endpoint_url = $args['endpoint'];
 
 ?>
 
-<div class="relative py-10 md:py-[70px] bg-gradient-to-b from-secondary to-primary">
+<div class="relative py-10 md:py-[70px]">
     <div class="container">
         <?php if ($header) : ?>
             <div class="container mb-10 md:mb-[50px]">
