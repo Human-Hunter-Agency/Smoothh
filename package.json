@@ -57,6 +57,7 @@
 	"prettier": "@wordpress/prettier-config",
 	"dependencies": {
 		"aos": "3.0.0-beta.6",
+		"jquery-custom-select": "^1.6.4",
 		"swiper": "^11.0.7"
 	}
 }

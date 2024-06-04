@@ -8,6 +8,9 @@ dependencies:
   aos:
     specifier: 3.0.0-beta.6
     version: 3.0.0-beta.6
+  jquery-custom-select:
+    specifier: ^1.6.4
+    version: 1.6.4(jquery@3.7.1)
   swiper:
     specifier: ^11.0.7
     version: 11.1.0
@@ -1719,6 +1722,18 @@ packages:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
     dev: true
+
+  /jquery-custom-select@1.6.4(jquery@3.7.1):
+    resolution: {integrity: sha512-1oBPrzxOcMLedxo5XWa3zgX69nYms7YGSP2UVoeZNwzWE5TOe+kS98pz9Bk3pgYykow718g/+Azsn7bu6JjTUA==}
+    peerDependencies:
+      jquery: '>=1.11.3'
+    dependencies:
+      jquery: 3.7.1
+    dev: false
+
+  /jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
+    dev: false
 
   /js-yaml@4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
