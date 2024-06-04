@@ -411,10 +411,13 @@ i.theChampLogin {
 	flex-shrink: 0;
 }
 
-[data-js-jobs="categories"] label span{
-    @apply w-full px-5 py-2 font-semibold rounded-[10px] text-base bg-white text-primary hover:bg-primary/10 transition duration-300 whitespace-nowrap
+[data-js-jobs="categories"] label{
+	@apply block cursor-pointer
 }
 [data-js-jobs="categories"] label span{
+    @apply block w-full px-5 py-2 font-semibold rounded-[10px] text-base bg-white text-primary hover:bg-primary/10 transition duration-300 whitespace-nowrap
+}
+[data-js-jobs="categories"] label input:checked ~ span{
     @apply !bg-primary !text-white
 }
 [data-js-jobs="categories"] label input{
@@ -422,5 +425,5 @@ i.theChampLogin {
 }
 
 [data-js-jobs="filters"] label{
-    @apply px-2 px-1 rounded-2xl text-base bg-primary
+    @apply px-2 py-1 rounded-2xl text-white text-base bg-primary
 }
