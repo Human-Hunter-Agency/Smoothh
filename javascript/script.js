@@ -18,6 +18,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Fuse from 'fuse.js';
+import CustomSelect from 'jquery.custom-select.js';
 
 AOS.init();
 AOS.init({
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initInputsValidation();
 	registerClientFieldsToggle();
 	initJobListing();
-	jQuery('select').customSelect({
+	jQuery('select').CustomSelect({
 		block: 'my-select',
 	});
 });
@@ -674,13 +675,16 @@ function createFilteredOffers(offers) {
 		}
 	}
 
-	let filteredOffers = offers.filter((offer)=>
-		offer.category.includes(selectedCategory) &&
-		(	selectedFilters.includes(offer.type) ||
-			selectedFilters.length === 0 ||
-			(	offer.topOffer && 
-				selectedFilters.includes(translations['#TOPoffer'] ?? '#TOPoffer')) )
-	)
+	let filteredOffers = offers.filter(
+		(offer) =>
+			offer.category.includes(selectedCategory) &&
+			(selectedFilters.includes(offer.type) ||
+				selectedFilters.length === 0 ||
+				(offer.topOffer &&
+					selectedFilters.includes(
+						translations['#TOPoffer'] ?? '#TOPoffer'
+					)))
+	);
 
 	if (searchInput.length > 2) {
 		const fuseOptions = {
