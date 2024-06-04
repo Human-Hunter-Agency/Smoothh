@@ -663,13 +663,15 @@ function createOffersItems(offers){
 	for (const offer of offers) {
 		itemsHtml += `
 		<li class="job-offer-tile">
-			<div>
-				<div class="tile-top">
-					<span class="offer-date">${offer.date}</span>
+			<a href="${offer.url}" target="_blank">
+				<div>
+					<div class="tile-top">
+						<span class="offer-date">${offer.date}</span>
+					</div>
+					<h3 class="offer-title">${offer.name}</h3>
 				</div>
-				<h3 class="offer-title">${offer.name}</h3>
-			</div>
-			<span class="offer-location">${offer.location}</span>
+				<span class="offer-location">${offer.location}</span>
+			</a>
 		</li>
 		`
 	}
@@ -697,6 +699,7 @@ function formatJobsData(rawJobsData){
 	filters.push(translations['#TOPoffer'] ?? '#TOPoffer')
 	const offers = rawJobsData.map(offer => {
 		return {
+			url: offer.url,
 			name: offer.advert.name,
 			details: offer.advert.values,
 			location: formatLocation(offer.options.job_location),

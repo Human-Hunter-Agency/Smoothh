@@ -430,3 +430,19 @@ i.theChampLogin {
 [data-js-jobs="filters"] input{
     @apply mr-3 size-[18px] accent-secondary
 }
+
+.job-offer-tile a{
+	@apply border-2 border-[#b3b3b3] rounded-2xl p-5 pb-10 flex flex-col justify-between transition duration-200
+}
+
+.job-offer-tile a{
+	@apply border-primary
+}
+
+.job-offer-tile .offer-title{
+	@apply text-lg md:text-xl font-semibold text-primary mb-9 max-w-80
+}
+
+.job-offer-tile .tile-top{
+	@apply h-10 mb-3
+}
