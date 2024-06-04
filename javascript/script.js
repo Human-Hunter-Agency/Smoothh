@@ -712,6 +712,7 @@ function formatJobsData(rawJobsData){
 
 	function formatLocation(location) {
 		if (!location) return ''
-		return location['region1'] + ' / ' + location['locality']
+		const locationParsed = JSON.parse(location.value)
+		return locationParsed['region1'] + ' / ' + locationParsed['locality']
 	}
 }
