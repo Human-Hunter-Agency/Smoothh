@@ -432,10 +432,10 @@ i.theChampLogin {
 }
 
 .job-offer-tile a{
-	@apply border-2 border-[#b3b3b3] rounded-2xl p-5 pb-10 flex flex-col justify-between transition duration-200
+	@apply h-full border-2 border-[#b3b3b3] rounded-2xl p-5 pb-10 flex flex-col justify-between transition duration-200
 }
 
-.job-offer-tile a{
+.job-offer-tile a:hover{
 	@apply border-primary
 }
 
