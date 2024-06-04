@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initInputsValidation();
 	registerClientFieldsToggle();
 	initJobListing();
-	jQuery('select').CustomSelect({
+	jQuery('select').customSelect({
 		block: 'my-select',
 	});
 });
@@ -691,7 +691,7 @@ function createFilteredOffers(offers) {
 			keys: ['name', 'location', 'type', 'category', 'details'],
 		};
 		const fuse = new Fuse(filteredOffers, fuseOptions);
-		filteredOffers = fuse.search(searchInput).map(obj => obj.item);
+		filteredOffers = fuse.search(searchInput).map((obj) => obj.item);
 	}
 
 	createOffersItems(filteredOffers);
