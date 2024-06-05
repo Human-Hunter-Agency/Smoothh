@@ -19,7 +19,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Fuse from 'fuse.js';
 import SlimSelect from 'slim-select';
-import CountUp from './js/countUp.min.js';
+import CountUp from 'countUp';
 
 window.onload = function () {
 	var countUp = new CountUp('target', 2000);
