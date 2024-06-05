@@ -847,7 +847,11 @@ function formatJobsData(rawJobsData) {
 }
 
 function initCounter() {
-	let countUp = new CountUp('target1', 18000, {
+	let target1 = +document.querySelector('#target1').innerHTML;
+
+	// for (let i = 0; i < 3; i++) {}
+
+	let countUp = new CountUp('target1', target1, {
 		separator: ' ',
 		enableScrollSpy: true,
 		scrollSpyOnce: true,
