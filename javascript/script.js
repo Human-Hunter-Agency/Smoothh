@@ -18,7 +18,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Fuse from 'fuse.js';
-import CustomSelect from 'jquery-custom-select';
+import NiceSelect from "nice-select2";
 
 AOS.init();
 AOS.init({
@@ -56,10 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initInputsValidation();
 	registerClientFieldsToggle();
 	initJobListing();
-	new CustomSelect('.dropdown-custom')
-	// $('select').customSelect({
-	// 	block: 'my-select',
-	// });
+
+	new NiceSelect(document.querySelector(".dropdown-custom"))
 });
 
 function initMenuCollapse() {
