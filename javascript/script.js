@@ -21,14 +21,6 @@ import Fuse from 'fuse.js';
 import SlimSelect from 'slim-select';
 import { CountUp } from 'countup.js';
 
-window.onload = function () {
-	var countUp = new CountUp('target1', 18000, {
-		separator: ' ',
-		enableScrollSpy: true,
-	});
-	countUp.start();
-};
-
 AOS.init();
 AOS.init({
 	disable: false,
@@ -66,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initInputsValidation();
 	registerClientFieldsToggle();
 	initJobListing();
+	initCounter();
 });
 
 function initMenuCollapse() {
@@ -851,4 +844,13 @@ function formatJobsData(rawJobsData) {
 		const locationParsed = JSON.parse(location.value);
 		return locationParsed['region1'] + ' / ' + locationParsed['locality'];
 	}
+}
+
+function initCounter() {
+	let countUp = new CountUp('target1', 18000, {
+		separator: ' ',
+		enableScrollSpy: true,
+		scrollSpyOnce: true,
+	});
+	countUp.start();
 }
