@@ -215,13 +215,15 @@ footer#page-footer .footer-bottom-menu {
 	@apply bg-secondary;
 }
 
-.variations select,
-#product-select-from-cat {
-	@apply relative z-0 h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
+.dropdown-custom {
+	@apply relative z-0 h-[55px] focus:border-primary whitespace-nowrap overflow-ellipsis rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 
-.variations select:focus ~ svg,
-#product-select-from-cat:focus ~ svg {
+.dropdown-custom.ss-arrow{
+	@apply !invisible
+}
+
+.dropdown-custom.ss-open-below ~ svg {
 	@apply rotate-180;
 }
 
