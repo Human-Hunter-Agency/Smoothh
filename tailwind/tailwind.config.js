@@ -1,11 +1,11 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 // Set the Preflight flag based on the build target.
 const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
 
 module.exports = {
 	experimental: {
-		optimizeUniversalDefaults: true
+		optimizeUniversalDefaults: true,
 	},
 	presets: [
 		// Manage Tailwind Typography's configuration in a separate file.
@@ -24,19 +24,20 @@ module.exports = {
 				lg: '2rem',
 				xl: '4rem',
 				'2xl': '6rem',
-				'3xl': '10rem'
+				'3xl': '10rem',
 			},
 		},
 		extend: {
 			fontFamily: {
-				'sans': ["Raleway", ...defaultTheme.fontFamily.sans],
+				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
 			},
 			fontSize: {
 				xl: '1.375rem',
-				'5xl': ['2.625rem','2.625rem']
+				'5xl': ['2.625rem', '2.625rem'],
 			},
-			screens:{
-				'3xl': '1920px'
+			screens: {
+				xl: '1440px',
+				'3xl': '1920px',
 			},
 			backgroundSize: {
 				'size-200': '200% 200%',
@@ -45,7 +46,6 @@ module.exports = {
 				'pos-0': '0% 0%',
 				'pos-100': '100% 100%',
 			},
-
 		},
 	},
 	corePlugins: {
