@@ -57,10 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	registerClientFieldsToggle();
 	initJobListing();
 
+	const customSelect = document.querySelector(".dropdown-custom")
 	new SlimSelect({
-		select: ".dropdown-custom",
+		select: customSelect,
 		settings:{
 			showSearch:false
+		},
+		events: {
+			afterChange: () => {
+				let changeEvent = new Event('change',{ 'bubbles': true });
+				customSelect.dispatchEvent(changeEvent)
+			}
 		}
 	})
 });
