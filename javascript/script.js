@@ -847,29 +847,16 @@ function formatJobsData(rawJobsData) {
 }
 
 function initCounter() {
-	// let target1 = +document.querySelector('[data-counter-target1]').dataset
-	// 	.counterTarget;
-	// let target2 = +document.querySelector('[data-counter-target2]').dataset
-	// 	.counterTarget;
-
 	for (let i = 1; i <= 4; i++) {
 		new CountUp(
 			`target${i}`,
 			+document.querySelector(`[data-counter-target${i}]`).innerHTML,
 			{
 				separator: ' ',
-				duration: 3,
+				duration: 2.5,
 				enableScrollSpy: true,
 				scrollSpyOnce: true,
 			}
 		).start();
 	}
-
-	// let countUp = new CountUp('target1', target1, {
-	// 	separator: ' ',
-	// 	enableScrollSpy: true,
-	// 	scrollSpyOnce: true,
-	// });
-
-	// countUp.start();
 }
