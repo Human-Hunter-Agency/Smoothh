@@ -69,7 +69,7 @@ $show_select_cat_products = !empty($common_values);
 							$products = wc_get_products($products_args);
 
 						?>
-						<div>
+						<div class="w-full">
 							<span class="block text-base md:text-lg mb-3 !font-medium"> <?= __('Variant', 'smoothh') ?></span>
 							<div class="relative w-full">
 								<select id="product-select-from-cat" class="dropdown-custom">
