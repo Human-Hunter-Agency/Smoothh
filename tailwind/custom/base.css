@@ -12,8 +12,6 @@
  * editor.
 */
 
-@import "~nice-select2/dist/css/nice-select2.css";
-
 
 body {
 	@apply bg-background text-foreground font-sans;
