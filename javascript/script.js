@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initInputsValidation();
 	registerClientFieldsToggle();
 	initJobListing();
-	console.log(CustomSelect)
+	new CustomSelect('#product-select-from-cat')
 	// $('select').customSelect({
 	// 	block: 'my-select',
 	// });
