@@ -614,7 +614,7 @@ async function initJobListing() {
 	const container = document.querySelector('[data-js-jobs="container"]');
 	if (!container) return;
 	const loader = document.querySelector('[data-js-jobs="loader"]');
-	const itemsPerPage = 6;
+	const itemsPerPage = 2;
 
 	const endpointUrl = container.dataset.jsEndpoint;
 	const jobsDataRaw = await fetchJobs(endpointUrl);
