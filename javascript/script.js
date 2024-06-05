@@ -852,7 +852,7 @@ function initCounter() {
 	// let target2 = +document.querySelector('[data-counter-target2]').dataset
 	// 	.counterTarget;
 
-	for (let i = 0; i < 3; i++) {
+	for (let i = 1; i < 4; i++) {
 		new CountUp(
 			`target${i}`,
 			+document.querySelector(`[data-counter-target${i}]`).innerHTML,
