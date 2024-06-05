@@ -847,6 +847,8 @@ function formatJobsData(rawJobsData) {
 }
 
 function initCounter() {
+	let countersQty = document.querySelectorAll('data-counter-qty').length;
+	console.log(countersQty);
 	for (let i = 1; i <= 4; i++) {
 		new CountUp(
 			`target${i}`,
