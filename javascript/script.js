@@ -18,7 +18,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Fuse from 'fuse.js';
-import {NiceSelect} from "nice-select2";
+import SlimSelect from 'slim-select'
 
 AOS.init();
 AOS.init({
@@ -57,7 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	registerClientFieldsToggle();
 	initJobListing();
 
-	new NiceSelect(document.querySelector(".dropdown-custom"))
+	new SlimSelect({
+		select: ".dropdown-custom",
+		settings:{
+			showSearch:false
+		}
+	})
 });
 
 function initMenuCollapse() {
