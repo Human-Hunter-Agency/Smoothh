@@ -216,13 +216,13 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .dropdown-custom.ss-main {
-	@apply relative z-0 h-[55px] focus:border-primary focus:!shadow-none rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
+	@apply relative z-0 h-[55px] md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 .dropdown-custom.ss-main .ss-values{
 	@apply w-full
 }
 .dropdown-custom.ss-main .ss-single{
-	@apply !block w-full max-w-80 whitespace-nowrap overflow-ellipsis overflow-hidden
+	@apply !block w-full whitespace-nowrap overflow-ellipsis overflow-hidden
 }
 .dropdown-custom.ss-main .ss-arrow{
 	@apply !invisible
