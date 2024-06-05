@@ -18,7 +18,7 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Fuse from 'fuse.js';
-import NiceSelect from "nice-select2";
+import {NiceSelect} from "nice-select2";
 
 AOS.init();
 AOS.init({
