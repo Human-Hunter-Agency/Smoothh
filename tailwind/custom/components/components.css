@@ -456,5 +456,9 @@ i.theChampLogin {
 }
 
 .job-offer-tile .tile-top{
-	@apply h-10 mb-3
+	@apply h-10 mb-3 flex justify-between items-center
+}
+
+.job-offer-tile .tile-top .offer-new{
+	@apply text-white bg-primary px-5 py-2.5 font-semibold
 }

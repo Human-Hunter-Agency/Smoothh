@@ -727,7 +727,7 @@ function createOffersItems(offers) {
 	let itemsHtml = '';
 	for (let i = 0; i < offers.length; i++) {
 		const offer = offers[i];
-		let isHidden = i <= 2;
+		let isHidden = i < 2;
 		itemsHtml += `
 		<li class="job-offer-tile" data-js-job-hidden="${isHidden}">
 			<a href="${offer.url}" target="_blank">
