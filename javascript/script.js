@@ -612,35 +612,36 @@ function registerClientFieldsToggle() {
 
 async function initJobListing() {
 	const container = document.querySelector('[data-js-jobs="container"]');
-	const loader = document.querySelector('[data-js-jobs="loader"]');
 	if (!container) return;
+	const loader = document.querySelector('[data-js-jobs="loader"]');
+	const itemsPerPage = 6
 
 	const endpointUrl = container.dataset.jsEndpoint;
 	const jobsDataRaw = await fetchJobs(endpointUrl);
 	loader.classList.add('hidden');
 
 	setupListingElements(jobsDataRaw);
-}
-
-function setupListingElements(data) {
-	const itemsPerPage = 6
-	const searchbarEl = document.querySelector('[data-js-jobs="searchbar"]');
-	const listEmptyEl = document.querySelector('[data-js-jobs="empty"]');
-
-	if (data.length > 0) {
-		const { categories, filters, offers } = formatJobsData(data);
-
-		createCategoriesEl(categories);
-		createFiltersEl(filters);
-		createOffersItems(offers);
-		createFilteredOffers(offers);
-		initSearchEvents(offers);
-
-		searchbarEl.classList.remove('!hidden');
-	} else {
-		listEmptyEl.classList.remove('hidden');
+	
+	function setupListingElements(data) {
+		const searchbarEl = document.querySelector('[data-js-jobs="searchbar"]');
+		const listEmptyEl = document.querySelector('[data-js-jobs="empty"]');
+	
+		if (data.length > 0) {
+			const { categories, filters, offers } = formatJobsData(data);
+	
+			createCategoriesEl(categories);
+			createFiltersEl(filters);
+			createOffersItems(offers);
+			createFilteredOffers(offers);
+			initSearchEvents(offers);
+	
+			searchbarEl.classList.remove('!hidden');
+		} else {
+			listEmptyEl.classList.remove('hidden');
+		}
+	
 	}
-
+	
 	function initSearchEvents(offers) {
 		const searchbarForm = document.querySelector('[data-js-jobs="searchbar"]');
 		searchbarForm.addEventListener('submit', (event) => {
