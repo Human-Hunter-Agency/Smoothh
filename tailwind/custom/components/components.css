@@ -222,7 +222,7 @@ footer#page-footer .footer-bottom-menu {
 	@apply w-full
 }
 .dropdown-custom.ss-main .ss-single{
-	@apply !block w-full whitespace-nowrap overflow-ellipsis overflow-hidden
+	@apply !block w-full max-w-80 whitespace-nowrap overflow-ellipsis overflow-hidden
 }
 .dropdown-custom.ss-main .ss-arrow{
 	@apply !invisible
