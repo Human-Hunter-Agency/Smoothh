@@ -850,7 +850,7 @@ function initCounter() {
 	// for (let i = 0; i < 3; i++) {}
 	let target1 = +document.querySelector('[data-counter-target]').dataset
 		.counterTarget;
-	let countUp = new CountUp('target1', 18000, {
+	let countUp = new CountUp('target1', target1, {
 		separator: ' ',
 		enableScrollSpy: true,
 		scrollSpyOnce: true,
