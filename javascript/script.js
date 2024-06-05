@@ -40,7 +40,7 @@ AOS.init({
 	mirror: false,
 	anchorPlacement: 'top-bottom',
 });
-
+let target1 = +document.querySelector('#target1').innerHTML;
 document.addEventListener('DOMContentLoaded', () => {
 	initMenuCollapse();
 	initHeroMarqueeSwiper();
@@ -847,8 +847,6 @@ function formatJobsData(rawJobsData) {
 }
 
 function initCounter() {
-	let target1 = +document.querySelector('#target1').innerHTML;
-
 	// for (let i = 0; i < 3; i++) {}
 
 	let countUp = new CountUp('target1', target1, {
