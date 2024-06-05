@@ -23,7 +23,7 @@ $decoration = $args['decoration'];
         </div>
     </div>
     <?php if ($decoration) : ?>
-        <div class="hidden xl:block absolute right-0 top-7">
+        <div class="hidden lg:block absolute right-0 top-7">
             <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/abstract_gradient.svg'); ?>
         </div>
     <?php endif; ?>
