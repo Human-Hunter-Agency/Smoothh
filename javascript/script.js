@@ -720,14 +720,21 @@ function createFiltersEl(filters) {
 function createOffersItems(offers) {
 	const listEmptyEl = document.querySelector('[data-js-jobs="empty"]');
 	const listEl = document.querySelector('[data-js-jobs="list"]');
+	const now = new Date();
+    const sevenDaysAgo = new Date(now);
+    sevenDaysAgo.setDate(now.getDate() - 7);
+
 	let itemsHtml = '';
-	for (const offer of offers) {
+	for (let i = 0; i < offers.length; i++) {
+		const offer = offers[i];
+		let isHidden = i <= 2;
 		itemsHtml += `
-		<li class="job-offer-tile">
+		<li class="job-offer-tile" data-js-job-hidden="${isHidden}">
 			<a href="${offer.url}" target="_blank">
 				<div>
 					<div class="tile-top">
-						<span class="offer-date">${offer.date}</span>
+						<span class="offer-date">${offer.date.toLocaleDateString()}</span>
+						${offer.date > sevenDaysAgo ? `<span class="offer-new">${translations['New'] ?? 'New'}</span>` : ''}
 					</div>
 					<h3 class="offer-title">${offer.name}</h3>
 				</div>
@@ -780,7 +787,7 @@ function formatJobsData(rawJobsData) {
 					(field) => field.field_id == 'geolocation'
 				)
 			),
-			date: new Date(offer.valid_start).toLocaleDateString(),
+			date: new Date(offer.valid_start),
 			topOffer: offer.awarded,
 			category: [offer.options.branches, translations['All'] ?? 'All'],
 			type: offer.options.job_type,
