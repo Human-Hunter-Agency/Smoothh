@@ -853,7 +853,7 @@ function initCounter() {
 			+document.querySelector(`[data-counter-target${i}]`).innerHTML,
 			{
 				separator: ' ',
-				duration: 2.5,
+				duration: 2,
 				enableScrollSpy: true,
 				scrollSpyOnce: true,
 			}
