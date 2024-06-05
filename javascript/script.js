@@ -848,8 +848,8 @@ function formatJobsData(rawJobsData) {
 
 function initCounter() {
 	// for (let i = 0; i < 3; i++) {}
-	let target1 = +document.querySelector('[data-counter-target]');
-	let countUp = new CountUp('target1', target1, {
+	let target1 = +document.querySelector('[data-counter-target]').innerHTML;
+	let countUp = new CountUp('target1', 18000, {
 		separator: ' ',
 		enableScrollSpy: true,
 		scrollSpyOnce: true,
