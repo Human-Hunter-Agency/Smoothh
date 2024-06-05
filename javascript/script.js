@@ -856,7 +856,7 @@ function initCounter() {
 		new CountUp(
 			'target' + i,
 			+document.querySelector(`[data-counter-target${i}]`).dataset
-				.counterTarget,
+				.counterTarget + i,
 			{
 				separator: ' ',
 				enableScrollSpy: true,
