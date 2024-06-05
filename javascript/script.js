@@ -854,7 +854,7 @@ function initCounter() {
 
 	for (let i = 0; i < 3; i++) {
 		new CountUp(
-			'target' + i,
+			`target${i}`,
 			+document.querySelector(`[data-counter-target${i}]`).innerHTML,
 			{
 				separator: ' ',
