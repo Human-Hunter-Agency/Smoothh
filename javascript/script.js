@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initInputsValidation();
 	registerClientFieldsToggle();
 	initJobListing();
-	jQuery('select').customSelect({
+	$('select').customSelect({
 		block: 'my-select',
 	});
 });
