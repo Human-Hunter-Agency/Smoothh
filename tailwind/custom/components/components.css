@@ -431,6 +431,18 @@ i.theChampLogin {
     @apply mr-3 size-[18px] accent-secondary
 }
 
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.job-offer-tile{
+	animation: appear 0.3s normal forwards ease-in-out;
+}
 .job-offer-tile a{
 	@apply h-full border-2 border-[#b3b3b3] rounded-2xl p-5 pb-10 flex flex-col justify-between transition duration-200
 }
