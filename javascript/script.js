@@ -659,7 +659,7 @@ async function initJobListing() {
 		});
 	
 		const loadMoreBtn = document.querySelector('[data-js-jobs="load-more"]');
-		loadMoreBtn.addEventListener('click',()=>showMoreJobs(itemsPerPage))
+		loadMoreBtn.addEventListener('click',()=>showMoreJobs())
 	}
 	
 	function createFilteredOffers(offers) {
@@ -698,7 +698,7 @@ async function initJobListing() {
 			filteredOffers = fuse.search(searchInput).map((obj) => obj.item);
 		}
 	
-		createOffersItems(filteredOffers,itemsPerPage);
+		createOffersItems(filteredOffers);
 	}
 	
 	function createCategoriesEl(categories) {
@@ -721,7 +721,7 @@ async function initJobListing() {
 		filtersEl.innerHTML = inputsHtml;
 		filtersEl.classList.remove('!hidden');
 	}
-	function createOffersItems(offers,itemsPerPage) {
+	function createOffersItems(offers) {
 		const loadMoreBtn = document.querySelector('[data-js-jobs="load-more"]');
 		const listEmptyEl = document.querySelector('[data-js-jobs="empty"]');
 		const listEl = document.querySelector('[data-js-jobs="list"]');
@@ -762,16 +762,16 @@ async function initJobListing() {
 		}
 	}
 	
-	function showMoreJobs(increment){
+	function showMoreJobs(){
 		const loadMoreBtn = document.querySelector('[data-js-jobs="load-more"]');
 		const hiddenTiles = document.querySelectorAll('[data-js-job-hidden="true"]')
 	
-		for (let i = 0; i < Math.min(increment,hiddenTiles.length); i++) {
+		for (let i = 0; i < Math.min(itemsPerPage,hiddenTiles.length); i++) {
 			const tile = hiddenTiles[i];
 			tile.dataset.jsJobHidden = false
 		}
 	
-		if ( hiddenTiles.length - increment < 0) {
+		if ( hiddenTiles.length - itemsPerPage < 0) {
 			loadMoreBtn.classList.add('!hidden')
 		}
 	}
