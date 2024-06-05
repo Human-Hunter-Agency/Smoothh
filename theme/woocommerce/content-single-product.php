@@ -72,7 +72,7 @@ $show_select_cat_products = !empty($common_values);
 						<div>
 							<span class="block text-base md:text-lg mb-3 !font-medium"> <?= __('Variant', 'smoothh') ?></span>
 							<div class="relative w-full">
-								<select id="product-select-from-cat">
+								<select id="product-select-from-cat" class="dropdown-custom">
 									<option selected="selected"><?php echo get_the_title($product->get_id()) ?></option>
 									<?php foreach ($products as $cat_product) : ?>
 										<option value="<?php echo get_permalink($cat_product->get_id()) ?>">
