@@ -18,7 +18,14 @@ import { Autoplay, Navigation } from 'swiper/modules';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Fuse from 'fuse.js';
-import SlimSelect from 'slim-select'
+import SlimSelect from 'slim-select';
+
+import { CountUp } from './js/countUp.min.js';
+
+window.onload = function () {
+	var countUp = new CountUp('target', 2000);
+	countUp.start();
+};
 
 AOS.init();
 AOS.init({

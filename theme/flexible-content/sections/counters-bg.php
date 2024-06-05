@@ -24,6 +24,7 @@ $tiles_list = $args['tiles_list'];
                         <div class="mb-5 md:mb-7 self-start">
                             <?php if ($tile['title']) : ?>
                                 <h3 class="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]"><?php echo $tile['title']; ?></h3>
+                                <span id="target" class="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]"><?php echo $tile['counter_target']; ?></span>
                             <?php endif; ?>
                         </div>
                         <?php if ($tile['description']) : ?>
