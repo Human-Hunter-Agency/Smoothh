@@ -24,11 +24,7 @@ import { CountUp } from 'countup.js';
 import { options } from 'prettier-plugin-tailwindcss';
 
 window.onload = function () {
-	var countUp = new CountUp('target1', 18000, [
-		{ separator: ' ' },
-		{ enableScrollSpy: true },
-		{ scrollSpyOnce: true },
-	]);
+	var countUp = new CountUp('target1', 18000);
 	countUp.start();
 };
 
