@@ -21,9 +21,14 @@ import Fuse from 'fuse.js';
 import SlimSelect from 'slim-select';
 // import CountUp from 'countUp.js';
 import { CountUp } from 'countup.js';
+import { options } from 'prettier-plugin-tailwindcss';
 
 window.onload = function () {
-	var countUp = new CountUp('target1', 18000);
+	var countUp = new CountUp('target1', 18000, [
+		{ separator: ' ' },
+		{ enableScrollSpy: true },
+		{ scrollSpyOnce: true },
+	]);
 	countUp.start();
 };
 
