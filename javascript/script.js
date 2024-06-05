@@ -52,24 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	initRelatedPosts();
 	initCart();
 	initPopups();
+	initProdSelectStyles();
 	initProdSelectRedirect();
 	initInputsValidation();
 	registerClientFieldsToggle();
 	initJobListing();
-
-	const customSelect = document.querySelector(".dropdown-custom")
-	new SlimSelect({
-		select: customSelect,
-		settings:{
-			showSearch:false
-		},
-		events: {
-			afterChange: () => {
-				let changeEvent = new Event('change',{ 'bubbles': true });
-				customSelect.dispatchEvent(changeEvent)
-			}
-		}
-	})
 });
 
 function initMenuCollapse() {
@@ -524,6 +511,23 @@ function initPopups() {
 			popupContainer.classList.toggle('popup-hidden');
 		});
 	});
+}
+
+function initProdSelectStyles() {
+	const customProdSelect = document.querySelector('.dropdown-custom');
+	const options = {
+		select: customProdSelect,
+		settings: {
+			showSearch: false,
+		},
+		events: {
+			afterChange: () => {
+				let changeEvent = new Event('change', { bubbles: true });
+				customProdSelect.dispatchEvent(changeEvent);
+			},
+		},
+	};
+	new SlimSelect(options);
 }
 
 function initProdSelectRedirect() {
