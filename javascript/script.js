@@ -22,7 +22,10 @@ import SlimSelect from 'slim-select';
 import { CountUp } from 'countup.js';
 
 window.onload = function () {
-	var countUp = new CountUp('target1', 18000, { separator: ' ' });
+	var countUp = new CountUp('target1', 18000, {
+		separator: ' ',
+		enableScrollSpy: true,
+	});
 	countUp.start();
 };
 
