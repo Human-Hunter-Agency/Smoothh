@@ -15,7 +15,7 @@ $social_links = get_field('social_links', 'option');
 ?>
 
 <footer id="page-footer">
-	<div class="container py-10 pt-[140px] md:py-[60px] flex flex-wrap ">
+	<div class="container py-10 md:py-[60px] pt-[140px] flex flex-wrap ">
 		<div class="w-full mb-6 sm:pr-5 sm:w-2/5 lg:w-3/12">
 			<h3><?php esc_html_e('Company and contact details', 'smoothh'); ?></h3>
 			<div class="prose-base [&_p]:!leading-8 [&_a]:text-foreground hover:[&_a]:text-primary [&_a]:transition [&_a]:duration-200">
