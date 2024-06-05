@@ -753,12 +753,12 @@ function createOffersItems(offers, itemsPerPage) {
 
 	if (offers.length == 0) {
 		listEmptyEl.classList.remove('hidden');
+		loadMoreBtn.classList.add('!hidden');
+	} else {
+		listEmptyEl.classList.add('hidden');
 		if (offers.length > itemsPerPage) {
 			loadMoreBtn.classList.remove('!hidden');
 		}
-	} else {
-		listEmptyEl.classList.add('hidden');
-		loadMoreBtn.classList.add('!hidden');
 	}
 }
 
