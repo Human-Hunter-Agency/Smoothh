@@ -36,7 +36,7 @@ module.exports = {
 				'5xl': ['2.625rem', '2.625rem'],
 			},
 			screens: {
-				xl: '1440px',
+				xl: '1380px',
 				'3xl': '1920px',
 			},
 			backgroundSize: {
