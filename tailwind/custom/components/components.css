@@ -433,7 +433,7 @@ i.theChampLogin {
 
 @keyframes appear {
     from {
-        opacity: 0;
+        opacity: 0.25;
     }
     to {
         opacity: 1;
@@ -460,5 +460,9 @@ i.theChampLogin {
 }
 
 .job-offer-tile .tile-top .offer-new{
-	@apply text-white bg-primary px-5 py-2.5 font-semibold
+	@apply text-white bg-primary px-5 py-2 font-semibold
+}
+
+[data-js-job-hidden="true"].job-offer-tile{
+	@apply !hidden
 }
