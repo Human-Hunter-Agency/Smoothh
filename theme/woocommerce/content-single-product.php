@@ -55,9 +55,6 @@ $show_select_cat_products = !empty($common_values);
 			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-9 md:mb-[55px]">
 				<?php the_content() ?>
 			</div>
-			<div class="mb-9 md:mb-[55px]">
-				<?php comments_template() ?>
-			</div>
 		</div>
 		<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
 			<div class="md:sticky top-[115px]">
@@ -143,6 +140,8 @@ $show_select_cat_products = !empty($common_values);
 	 */
 	do_action('woocommerce_after_single_product_summary');
 	?>
+
+	<?php comments_template() ?>
 
 	<?php
 	$above_footer_fields = get_field('product_sections_settings', 'option');
