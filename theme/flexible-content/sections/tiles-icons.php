@@ -50,7 +50,7 @@ $button = $args['button'];
                                 <h3 class="text-base md:text-[20px] mb-6 min-h-14 px-5 font-semibold"><?php echo esc_html($tile['title']); ?></h3>
                             <?php endif; ?>
                             <?php if ($tile['description']) : ?>
-                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['title']) : ?> prose-base md:prose-xl <?php else : ?> prose-sm md:prose-base <?php endif; ?>"><?php echo $tile['description']; ?></div>
+                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['title']) : ?> prose-base md:prose-xl leading-[26px]<?php else : ?> prose-sm md:prose-base <?php endif; ?>"><?php echo $tile['description']; ?></div>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
