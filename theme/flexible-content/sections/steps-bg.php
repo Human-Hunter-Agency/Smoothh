@@ -12,7 +12,7 @@ $steps_list = $args['steps_list'];
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
-            <div class="mb-6 prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-8">
+            <div class="mb-6 prose-smoothh prose md:prose-xl prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:!leading-[26px] prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-8">
                 <?php echo $header; ?>
             </div>
         <?php endif; ?>
@@ -30,12 +30,12 @@ $steps_list = $args['steps_list'];
                                 <?php if ($step['icon'] && $step['icon']['url']) : ?>
                                     <?php echo smoothh_img_responsive($step['icon'], 'object-contain h-16 mb-8 md:mb-[50px]', array(130, 130), 'lazy'); ?>
                                 <?php endif; ?>
-                                <div class="min-h-[90px] lg:min-h-[110px] font-semibold">
+                                <div class="min-h-[90px] lg:min-h-[110px] font-bold">
                                     <?php if ($step['title']) : ?>
-                                        <h3 class="text-lg md:text-xl"><?php echo $step['title']; ?></h3>
+                                        <h3 class="text-lg md:text-[20px]"><?php echo $step['title']; ?></h3>
                                     <?php endif; ?>
                                     <?php if ($step['subtitle']) : ?>
-                                        <h4 class="text-lg md:text-xl"><?php echo $step['subtitle']; ?></h4>
+                                        <h4 class="text-lg md:text-[20px]"><?php echo $step['subtitle']; ?></h4>
                                     <?php endif; ?>
                                 </div>
                                 <?php if ($step['description']) : ?>
