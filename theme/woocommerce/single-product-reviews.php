@@ -34,7 +34,7 @@ if ( ! comments_open() ) {
 </div>
 <div>
     <?php if ( have_comments() ) : ?>
-        <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
+        <div class="swiper !container !overflow-visible mb-10" data-js="swiper-tiles-default">
             <ol class="commentlist swiper-wrapper">
                 <?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
             </ol>
@@ -62,7 +62,7 @@ if ( ! comments_open() ) {
     <?php endif; ?>
 
 </div>
-<div id="reviews" class="woocommerce-Reviews">
+<div id="reviews" class="woocommerce-Reviews container mb-10 md:mb-14">
 
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
 		<div id="review_form_wrapper">
