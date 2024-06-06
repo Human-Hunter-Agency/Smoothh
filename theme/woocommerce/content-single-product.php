@@ -134,6 +134,7 @@ $show_select_cat_products = !empty($common_values);
 	/**
 	 * Hook: woocommerce_after_single_product_summary.
 	 *
+	 * @hooked comments_template - 10
 	 * @hooked woocommerce_output_product_data_tabs - 10 - removed
 	 * @hooked woocommerce_upsell_display - 15
 	 * @hooked woocommerce_output_related_products - 20
@@ -141,7 +142,6 @@ $show_select_cat_products = !empty($common_values);
 	do_action('woocommerce_after_single_product_summary');
 	?>
 
-	<?php comments_template() ?>
 
 	<?php
 	$above_footer_fields = get_field('product_sections_settings', 'option');
