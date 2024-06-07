@@ -79,7 +79,7 @@ if ($has_variable_price) :
 	</button>
 
 	<div data-js-popup-container="quote-form" class="popup-container popup-hidden">
-		<div class="popup-inner bg-white z-[100]">
+		<div class="popup-inner">
 			<div class="flex justify-end p-1">
 				<button data-js-popup-toggle="quote-form" class="p-1 md:p-2 group">
 					<svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
