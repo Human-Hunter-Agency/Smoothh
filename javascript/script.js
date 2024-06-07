@@ -570,7 +570,7 @@ function initCalculatorFields() {
 		const options = {
 			select: fieldEl,
 			settings: {
-				showSearch: fieldEl.id == 'tmcp_select_2_tcform166631ee3edac2' && true,
+				showSearch: fieldEl.id == 'tmcp_select_2_tcform1666328a7037cc' && true,
 			},
 			events: {
 				afterChange: () => {

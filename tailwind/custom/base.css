@@ -122,10 +122,13 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply flex-col
 }
 
-.calculator .tc-field-label-wrap .tc-price-wrap{
+.calculator .tc-field-label-wrap .tc-price-wrap,
+.calculator .tmcp-field-wrap-inner .tc-price-wrap{
 	@apply hidden
 }
-
+.calculator > .price{
+	@apply hidden
+}
 .calculator .tc-init{
 	@apply hidden
 }
