@@ -1064,3 +1064,9 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		
 	}
 }
+
+function validate_comment_form(){
+    ob_start();
+    comment_form();
+    echo str_replace('novalidate','data-toggle="validator" ',ob_get_clean());
+}
