@@ -6,7 +6,7 @@ $header = $args['header'];
 $description = $args['description'];
 $image_3x3 = $args['image_3x3'];
 $title2 = $args['title2'];
-$description = $args['description'];
+$description2 = $args['description2'];
 $logo = $args['logo'];
 ?>
 
@@ -41,15 +41,15 @@ $logo = $args['logo'];
 
         <div>
             <?php if ($title2) : ?>
-                <div class="mb-12 prose-smoothh prose md:prose-xl prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] prose-img:mt-0 prose-img:mx-auto prose-img:px-5">
+                <div class="mb-12 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $title2; ?>
                 </div>
             <?php endif; ?>
 
             <?php if ($description) : ?>
                 <div class="lg:py-12 p-8 lg:px-28 bg-white rounded-[45px] drop-shadow-2xl">
-                    <div class="mb-20 prose-smoothh prose md:prose-xl prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] prose-img:mt-0 prose-img:mx-auto prose-img:px-5">
-                        <?php echo $description; ?>
+                    <div class="mb-20 text-[16px] font-normal leading-[26px]">
+                        <?php echo $description2; ?>
                     </div>
                     <?php if ($logo) : ?>
                         <div class="w-full flex items-center justify-center">
