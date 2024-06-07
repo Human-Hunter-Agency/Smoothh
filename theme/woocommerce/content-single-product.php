@@ -33,6 +33,30 @@ if (post_password_required()) {
 	return;
 }
 
+if(the_ID()==1186):
+?>
+
+<div>
+<?php
+	/**
+	 * Hook: woocommerce_single_product_summary.
+	 *
+	 * @hooked woocommerce_template_single_title - 5 -removed
+	 * @hooked woocommerce_template_single_rating - 10 -removed
+	 * @hooked woocommerce_template_single_price - 10
+	 * @hooked woocommerce_template_single_excerpt - 20 -removed
+	 * @hooked woocommerce_template_single_add_to_cart - 30
+	 * @hooked woocommerce_template_single_meta - 40 -removed
+	 * @hooked woocommerce_template_single_sharing - 50
+	 * @hooked WC_Structured_Data::generate_product_data() - 60
+	 */
+	do_action('woocommerce_single_product_summary');
+	?>
+</div>
+
+<?php 
+
+else:
 $selected_categories = array(26);
 $prod_categories = $product->get_category_ids();
 $common_values = array_intersect($prod_categories, $selected_categories);
@@ -239,4 +263,7 @@ $show_select_cat_products = !empty($common_values);
 	</section>
 </div>
 
-<?php do_action('woocommerce_after_single_product'); ?>
+<?php 
+	do_action('woocommerce_after_single_product'); 
+	endif;
+?>
