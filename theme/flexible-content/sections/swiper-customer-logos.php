@@ -18,7 +18,7 @@ $client_logos = get_field('client_logos', 'option');
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
-                <div class="mb-12 text-[16px] font-normal leading-[26px]">
+                <div class="mb-12 mx-auto max-w-[800px] text-[16px] font-normal leading-[26px]">
                     <?php echo $description; ?>
                 </div>
             <?php endif; ?>
