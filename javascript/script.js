@@ -201,7 +201,6 @@ function initDefaultSwipers() {
 				},
 				1380: {
 					slidesPerView: 3,
-					spaceBetween: 60,
 				},
 			},
 		});
