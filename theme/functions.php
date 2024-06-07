@@ -1064,3 +1064,18 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		
 	}
 }
+
+add_filter( 'comment_form_fields', 'mo_comment_fields_custom_order' );
+function mo_comment_fields_custom_order( $fields ) {
+    $comment_field = $fields['comment'];
+    $cookies_field = $fields['cookies'];
+    unset( $fields['comment'] );
+    unset( $fields['cookies'] );
+    // the order of fields is the order below, change it as needed:
+    $fields['comment'] = $comment_field;
+    $fields['cookies'] = $cookies_field;
+    // done ordering, now return the fields:
+	print_r($fields);
+	
+    return $fields;
+}
