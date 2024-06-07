@@ -12,7 +12,7 @@ $decoration = $args['decoration'];
         <div class="flex flex-col lg:flex-row gap-10">
             <div class="z-0 w-full lg:w-1/2">
                 <?php if ($content) : ?>
-                    <div class="mb-10 text-2xl md:text-5xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px] [&_p]:text-[16px] [&_p]:leading-[26px]">
+                    <div class="[&_]:mb-10 text-2xl md:text-5xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px] [&_p]:text-[16px] [&_p]:font-normal [&_p]:leading-[26px]">
                         <?php echo $content; ?>
                     </div>
                 <?php endif; ?>
