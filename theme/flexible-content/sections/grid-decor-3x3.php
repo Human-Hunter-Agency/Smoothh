@@ -2,7 +2,8 @@
 
 /** Template to display 'Sekcja z dekoracją 3x3' - grid_decor_3x3 */
 
-$content = $args['content'];
+$header = $args['header'];
+$description = $args['description'];
 $image_3x3 = $args['image_3x3'];
 $title2 = $args['title2'];
 $description = $args['description'];
@@ -25,9 +26,14 @@ $logo = $args['logo'];
                 <?php endif; ?>
             </div>
             <div class="w-full lg:w-1/2 lg:pt-64">
-                <?php if ($content) : ?>
-                    <div class="prose-smoothh prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] prose-img:mt-0 prose-img:mx-auto prose-img:px-5">
-                        <?php echo $content; ?>
+                <?php if ($header) : ?>
+                    <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+                        <?php echo $header; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ($description) : ?>
+                    <div class="text-[16px] font-normal leading-[26px]">
+                        <?php echo $description; ?>
                     </div>
                 <?php endif; ?>
             </div>
