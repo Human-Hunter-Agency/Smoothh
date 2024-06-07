@@ -564,13 +564,30 @@ function initProdSelectStyles() {
 }
 
 function initCalculatorFields() {
-	const selectFields = document.querySelectorAll('.tmcp-select')
+	const simpleSelectFields = document.querySelectorAll('.tmcp-select')
 
-	selectFields.forEach((fieldEl)=>{
+	simpleSelectFields.forEach((fieldEl)=>{
 		const options = {
 			select: fieldEl,
 			settings: {
-				showSearch: fieldEl.id == 'tmcp_select_2_tcform1666328a7037cc' && true,
+				showSearch: false,
+			},
+			events: {
+				afterChange: () => {
+					let changeEvent = new Event('change', { bubbles: true });
+					fieldEl.dispatchEvent(changeEvent);
+				},
+			},
+		};
+		new SlimSelect(options);
+	})
+
+	const searchSelectFields = document.querySelectorAll('[data-uniqid="6662fc70c3d429.14367225"] select')
+	searchSelectFields.forEach((fieldEl)=>{
+		const options = {
+			select: fieldEl,
+			settings: {
+				showSearch: true,
 			},
 			events: {
 				afterChange: () => {
