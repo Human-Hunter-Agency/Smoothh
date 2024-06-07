@@ -134,10 +134,10 @@ if ( ! comments_open() ) {
 
 				$comment_form['comment_field'] .= '<p class="comment-form-comment"><textarea required id="comment" name="comment" cols="45" rows="8" placeholder="'. esc_html__( 'Your review', 'woocommerce' ) .'" class="px-5 py-2 rounded-2xl border border-primary hover:border-secondary focus:border-secondary transition duration-200  min-h-40 max-h-96" required></textarea></p>';
                 $policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
-                $comment_form['comment_field'] .= '<p class="form-row terms wc-terms-and-conditions"><label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline"><input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="gdpr_woo_consent" id="gdpr_woo_consent" required value="yes" /><span>; '. sprintf(
+                $comment_form['comment_field'] .= '<p class="form-row terms wc-terms-and-conditions"><label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline"><input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="gdpr_woo_consent" id="gdpr_woo_consent" required value="yes" /><span> '. sprintf(
                     __('I accept the %sPrivacy Policy%s', 'gdpr-framework'),
                     "<a href='{$policyPageUrl}' target='_blank'>",
-                    "</a>") .'</span> <span class="required !visible ">*</span></label></p>';
+                    "</a>") .'</span> <span class="required !visible ">*</span></label>'. wc_registration_privacy_policy_text().'</p>';
 				comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>
 			</div>
