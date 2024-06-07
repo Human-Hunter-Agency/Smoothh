@@ -13,7 +13,7 @@ $client_logos = get_field('client_logos', 'option');
     <?php if ($header) : ?>
         <div class="container">
             <div class="relative mx-auto max-w-[1140px] z-0">
-                <div class="text-center prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-9 <?php if ($description) : ?> md:mb-14 <?php endif; ?>">
+                <div class="text-center prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-9 <?php if ($description) : ?> md:mb-14 <?php endif; ?>">
                     <?php echo $header; ?>
                 </div>
                 <?php if ($description) : ?>

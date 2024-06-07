@@ -12,7 +12,7 @@ $steps_list = $args['steps_list'];
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
-            <div class="mb-6 prose-smoothh prose md:prose-xl prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] prose-img:mt-0 prose-img:mx-auto prose-img:px-5">
+            <div class="mb-6 prose-smoothh prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] prose-img:mt-0 prose-img:mx-auto prose-img:px-5">
                 <?php echo $header; ?>
             </div>
         <?php endif; ?>
