@@ -228,7 +228,7 @@ function initWideSwipers() {
 					spaceBetween: 25,
 				},
 				1280: {
-					slidesPerView: 2.2,
+					slidesPerView: 2.5,
 					spaceBetween: 60,
 				},
 			},
