@@ -25,7 +25,7 @@ $steps_list = $args['steps_list'];
     <div class="w-full overflow-hidden">
         <?php if ($steps_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-mobile">
-                <div class="swiper-wrapper xl:!gap-9 xl:!transform-none">
+                <div class="swiper-wrapper _xl:!gap-9 _xl:!transform-none">
                     <?php foreach ($steps_list as $step) : ?>
                         <div class="swiper-slide !h-auto xl:flex-1">
                             <div class="flex flex-col items-center text-center p-3 md:p-6 pb-5 md:pb-10">
