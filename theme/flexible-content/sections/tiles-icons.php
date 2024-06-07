@@ -16,12 +16,12 @@ $button = $args['button'];
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <div class="text-center prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] p:text-[16px] prose-p:leading-[26px] mb-9 md:mb-14">
+                <div class="text-center prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-9 md:mb-14">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
-                <div class="prose-smoothh prose md:prose-xl text-center h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] p:text-[16px] prose-p:leading-[26px] mb-10"><?php echo $description; ?></div>
+                <div class="prose-smoothh prose md:prose-xl text-center h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-10"><?php echo $description; ?></div>
             <?php endif; ?>
         </div>
     </div>
