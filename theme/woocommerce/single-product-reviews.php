@@ -80,7 +80,8 @@ if ( ! comments_open() ) {
 					'label_submit'        => esc_html__( 'Submit', 'woocommerce' ),
 					'logged_in_as'        => '',
 					'comment_field'       => '',
-                    'class_submit'        => '!bg-gradient-to-b !px-5 !rounded-[15px] [&.disabled]:!bg-[#C9C9C9] [&.disabled]:!bg-none [&.disabled]:!opacity-100 alt bg-pos-0 bg-size-200 border-none button disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 duration-200 focus:bg-pos-100 font-bold from-primary gap-5 h-[55px] hover:bg-pos-100 single_add_to_cart_button text-white to-secondary transition-all via-secondary whitespace-nowrap xl:!pr-8 xl:!px-12'
+                    'submit_field'        => '<p class="form-submit text-right">%1$s %2$s</p>'
+                    'class_submit'        => '!bg-gradient-to-b !px-5 !rounded-[15px] [&.disabled]:!bg-[#C9C9C9] [&.disabled]:!bg-none [&.disabled]:!opacity-100 alt bg-pos-0 bg-size-200 border-none button disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 duration-200 focus:bg-pos-100 font-bold from-primary gap-5 h-[55px] hover:bg-pos-100 text-white to-secondary transition-all via-secondary whitespace-nowrap xl:!px-8'
 				);
 
 				$name_email_required = (bool) get_option( 'require_name_email', 1 );
