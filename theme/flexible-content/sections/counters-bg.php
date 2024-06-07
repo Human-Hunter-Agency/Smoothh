@@ -27,7 +27,7 @@ $tiles_list = $args['tiles_list'];
                             <?php if ($tile['title']) : ?>
                                 <h3 class="text-2xl lg:text-3xl xl:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]">
                                     <?php echo $tile['title']; ?>
-                                    <span id="target<?php echo $tileID ?>" data-counter-target<?php echo $tileID ?>="<?php echo $tile['counter_target']; ?>" data-counter-qty class="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]"><?php echo $tile['counter_target']; ?></span>
+                                    <span id="target<?php echo $tileID ?>" data-counter-target<?php echo $tileID ?>="<?php echo $tile['counter_target']; ?>" data-counter-qty class="text-2xl lg:text-3xl xl:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]"><?php echo $tile['counter_target']; ?></span>
                                     <?php echo $tile['counter_unit']; ?>
                                 </h3>
                             <?php endif; ?>
