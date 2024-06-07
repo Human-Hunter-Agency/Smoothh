@@ -18,7 +18,7 @@ $tiles_list = $args['tiles_list'];
         <?php if ($tiles_list) :
             $tileID = 0;
         ?>
-            <div class="py-10 lg:py-20 px-8 lg:px-20 xl::px-36 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:gap-x-[110px] lg:gap-y-[90px] bg-white rounded-[45px] drop-shadow-2xl">
+            <div class="py-10 lg:py-20 px-8 lg:px-20 xl:px-36 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:gap-x-[110px] lg:gap-y-[90px] bg-white rounded-[45px] drop-shadow-2xl">
                 <?php foreach ($tiles_list as $tile) :
                     $tileID++;
                 ?>
