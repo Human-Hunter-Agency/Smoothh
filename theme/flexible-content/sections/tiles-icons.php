@@ -16,12 +16,14 @@ $button = $args['button'];
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <div class="text-center prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-9 md:mb-14">
+                <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
-                <div class="prose-smoothh prose md:prose-xl text-center h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-10"><?php echo $description; ?></div>
+                <div class="text-[16px] font-normal leading-[26px]">
+                    <?php echo $description; ?>
+                </div>
             <?php endif; ?>
         </div>
     </div>
@@ -47,10 +49,10 @@ $button = $args['button'];
                                 </div>
                             <?php endif; ?>
                             <?php if ($tile['title']) : ?>
-                                <h3 class="text-base md:text-[20px] mb-6 min-h-14 px-5 font-semibold"><?php echo esc_html($tile['title']); ?></h3>
+                                <h3 class="text-base md:text-[20px] mb-6 min-h-14 px-5 font-bold"><?php echo esc_html($tile['title']); ?></h3>
                             <?php endif; ?>
                             <?php if ($tile['description']) : ?>
-                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['title']) : ?> prose-base md:prose-xl leading-[26px]<?php else : ?> prose-sm md:prose-base <?php endif; ?>"><?php echo $tile['description']; ?></div>
+                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['title']) : ?> prose-base md:prose-xl leading-[24px]<?php else : ?> prose-sm md:prose-base <?php endif; ?>"><?php echo $tile['description']; ?></div>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
