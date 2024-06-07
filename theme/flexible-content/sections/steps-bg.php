@@ -27,7 +27,7 @@ $steps_list = $args['steps_list'];
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-mobile">
                 <div class="swiper-wrapper _xl:!gap-9 _xl:!transform-none">
                     <?php foreach ($steps_list as $step) : ?>
-                        <div class="swiper-slide !h-auto xl:flex-1">
+                        <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)]">
                             <div class="flex flex-col items-center text-center p-3 md:p-6 pb-5 md:pb-10">
                                 <?php if ($step['icon'] && $step['icon']['url']) : ?>
                                     <?php echo smoothh_img_responsive($step['icon'], 'object-contain h-16 mb-8 md:mb-[50px]', array(130, 130), 'lazy'); ?>
