@@ -46,7 +46,7 @@ $logo = $args['logo'];
                 </div>
             <?php endif; ?>
 
-            <?php if ($description) : ?>
+            <?php if ($description2) : ?>
                 <div class="lg:py-12 p-8 lg:px-28 bg-white rounded-[45px] drop-shadow-2xl">
                     <div class="mb-20 text-[16px] font-normal leading-[26px]">
                         <?php echo $description2; ?>
