@@ -10,18 +10,20 @@ $client_logos = get_field('client_logos', 'option');
 
 <div class="relative py-10 md:py-[60px] mb:pb-[60px]">
 
-    <?php if ($header) : ?>
-        <div class="container">
-            <div class="relative mx-auto max-w-[1140px] z-0">
-                <div class="text-center prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-9 <?php if ($description) : ?> md:mb-14 <?php endif; ?>">
+    <div class="container">
+        <div class="relative mx-auto max-w-[1140px] z-0">
+            <?php if ($header) : ?>
+                <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
                 </div>
-                <?php if ($description) : ?>
-                    <div class="prose-smoothh prose md:prose-xl text-center prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-10 md:mb-14"><?php echo $description; ?></div>
-                <?php endif; ?>
-            </div>
+            <?php endif; ?>
+            <?php if ($description) : ?>
+                <div class="text-[16px] font-normal leading-[26px]">
+                    <?php echo $description; ?>
+                </div>
+            <?php endif; ?>
         </div>
-    <?php endif; ?>
+    </div>
 
     <div class="relative z-0 w-full overflow-hidden !pb-5">
         <?php if ($client_logos) : ?>
