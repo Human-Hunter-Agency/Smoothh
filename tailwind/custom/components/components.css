@@ -215,7 +215,7 @@ footer#page-footer .footer-bottom-menu {
 	@apply bg-secondary;
 }
 
-.tmcp-field-wrap .tmcp-select{
+.tmcp-field-wrap .ss-main{
 	@apply !flex !px-4
 }
 .tmcp-field-wrap .ss-arrow{
