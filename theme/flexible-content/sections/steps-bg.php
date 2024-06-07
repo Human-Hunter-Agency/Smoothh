@@ -41,7 +41,7 @@ $steps_list = $args['steps_list'];
                                     <?php endif; ?>
                                 </div>
                                 <?php if ($step['description']) : ?>
-                                    <p class="text-sm md:text-base leading-[26px]"><?php echo $step['description']; ?></p>
+                                    <p class="text-sm md:text-base !leading-[26px]"><?php echo $step['description']; ?></p>
                                 <?php endif; ?>
                             </div>
                         </div>
