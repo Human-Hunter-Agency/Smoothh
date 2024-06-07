@@ -18,14 +18,14 @@ $tiles_list = $args['tiles_list'];
         <?php if ($tiles_list) :
             $tileID = 0;
         ?>
-            <div class="py-10 lg:py-20 px-8 lg:px-24 xl::px-36 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:gap-x-[110px] lg:gap-y-[90px] bg-white rounded-[45px] drop-shadow-2xl">
+            <div class="py-10 lg:py-20 px-8 lg:px-20 xl::px-36 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:gap-x-[110px] lg:gap-y-[90px] bg-white rounded-[45px] drop-shadow-2xl">
                 <?php foreach ($tiles_list as $tile) :
                     $tileID++;
                 ?>
                     <div class="relative flex flex-col items-center text-left <?php if ($tileID == 1 || $tileID == 2) : ?> lg:before:content-[''] lg:before:w-1/2 before:bg-secondary lg:before:h-[2px] before:absolute lg:before:bottom-[-45px] before:left-0 <?php endif; ?>">
                         <div class="mb-5 md:mb-7 self-start">
                             <?php if ($tile['title']) : ?>
-                                <h3 class="text-2xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]">
+                                <h3 class="text-2xl md:text-3xl lg:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]">
                                     <?php echo $tile['title']; ?>
                                     <span id="target<?php echo $tileID ?>" data-counter-target<?php echo $tileID ?>="<?php echo $tile['counter_target']; ?>" data-counter-qty class="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]"><?php echo $tile['counter_target']; ?></span>
                                     <?php echo $tile['counter_unit']; ?>
