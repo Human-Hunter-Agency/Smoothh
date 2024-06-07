@@ -11,7 +11,7 @@ $tiles_list = $args['tiles_list'];
     <div class="z-[-1] w-full h-full absolute left-0 bg-gradient-to-r from-[rgba(129,23,238,0.1)] to-[rgba(129,23,238,0)]"></div>
     <div class="pt-14 relative z-0 container">
         <?php if ($header) : ?>
-            <div class="prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] p:text-[16px] prose-p:leading-[26px] mb-9 md:mb-14 text-center"><?php echo $header; ?></div>
+            <div class="prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-9 md:mb-14 text-center"><?php echo $header; ?></div>
         <?php endif; ?>
         <?php if ($tiles_list) :
             $tileID = 0;
