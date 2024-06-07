@@ -80,7 +80,7 @@ if ( ! comments_open() ) {
 					'label_submit'        => esc_html__( 'Submit', 'woocommerce' ),
 					'logged_in_as'        => '',
 					'comment_field'       => '',
-                    'submit_field'        => '<p class="form-submit text-right">%1$s %2$s</p>',
+                    'submit_field'        => '<p class="form-submit text-center">%1$s %2$s</p>',
                     'class_submit'        => '!bg-gradient-to-b !px-5 !rounded-[15px] [&.disabled]:!bg-[#C9C9C9] [&.disabled]:!bg-none [&.disabled]:!opacity-100 alt bg-pos-0 bg-size-200 border-none button disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 duration-200 focus:bg-pos-100 font-bold from-primary gap-5 h-[55px] hover:bg-pos-100 text-white to-secondary transition-all via-secondary whitespace-nowrap xl:!px-8'
 				);
 
@@ -134,7 +134,7 @@ if ( ! comments_open() ) {
 
 				$comment_form['comment_field'] .= '<p class="comment-form-comment"><textarea required id="comment" name="comment" cols="45" rows="8" placeholder="'. esc_html__( 'Your review', 'woocommerce' ) .'" class="px-5 py-2 rounded-2xl border border-primary hover:border-secondary focus:border-secondary transition duration-200  min-h-40 max-h-96" required></textarea></p>';
                 $policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
-                $comment_form['comment_field'] .= '<p class="form-row terms wc-terms-and-conditions"><label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline"><input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="gdpr_woo_consent" id="gdpr_woo_consent" required value="yes" /><span> '. sprintf(
+                $comment_form['comment_field'] .= '<p class="form-row max-w-screen-md"><label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox flex items-start justify-center gap-x-2 [&_a]:text-primary [&_a]:font-semibold [&_a:hover]:underline"><input type="checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox mt-1 accent-secondary " name="gdpr_woo_consent" id="gdpr_woo_consent" required value="yes" /><span> '. sprintf(
                     __('I accept the %sPrivacy Policy%s', 'gdpr-framework'),
                     "<a href='{$policyPageUrl}' target='_blank'>",
                     "</a>") .'</span> <span class="required !visible ">*</span></label><span class="block mt-1 text-xs">'. wc_get_privacy_policy_text('registration').'</span></p>';
