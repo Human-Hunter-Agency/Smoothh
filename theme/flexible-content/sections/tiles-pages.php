@@ -26,7 +26,7 @@ $tiles_list = $args['tiles_list'];
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
-                <div class="text-[16px] font-normal leading-[26px]">
+                <div class="mx-auto max-w-[650px] text-[16px] font-normal leading-[26px]">
                     <?php echo $description; ?>
                 </div>
             <?php endif; ?>
