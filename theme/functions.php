@@ -1071,6 +1071,7 @@ add_action( 'comment_post', 'smoothh_review_set_gdpr', 10, 3 );
 function smoothh_review_set_gdpr($comment_id,$comment_approved,$commentdata){
 	$author_email = comment_author_email($comment_id);
 	print_r($commentdata);
+	die
 	// $dataSubject = gdpr('gdpr_woo_consent')->getByEmail($author_email);
 	// $dataSubject->giveConsent('gdpr_woo_consent');
 
