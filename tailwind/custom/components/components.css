@@ -215,6 +215,15 @@ footer#page-footer .footer-bottom-menu {
 	@apply bg-secondary;
 }
 
+.tmcp-field-wrap .tmcp-select{
+	@apply !flex !px-4
+}
+.tmcp-field-wrap .ss-arrow{
+	@apply !shrink-0
+}
+.ss-search{
+	@apply sticky top-0 bg-white
+}
 .tmcp-field-wrap .tmcp-textfield,
 .tmcp-field-wrap .ss-main, 
 .dropdown-custom.ss-main {
@@ -228,7 +237,6 @@ footer#page-footer .footer-bottom-menu {
 .dropdown-custom.ss-main .ss-single{
 	@apply !block w-full whitespace-nowrap overflow-ellipsis overflow-hidden
 }
-.tmcp-field-wrap .ss-main,
 .dropdown-custom.ss-main .ss-arrow{
 	@apply !invisible
 }
@@ -238,7 +246,7 @@ footer#page-footer .footer-bottom-menu {
 }
 .tmcp-field.ss-content,
 .dropdown-custom.ss-content{
-	@apply !rounded-2xl border-primary
+	@apply !rounded-2xl border-primary overflow-auto
 }
 
 .show-password-input {
