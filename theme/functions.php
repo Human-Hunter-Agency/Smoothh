@@ -1064,10 +1064,3 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 		
 	}
 }
-
-add_filter( 'woocommerce_product_review_list_args', 'wp_kama_woocommerce_product_review_list_args_filter' );
-function wp_kama_woocommerce_product_review_list_args_filter( $array ){
-
-	print_r($array);
-	return $array;
-}
