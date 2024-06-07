@@ -216,27 +216,27 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .tmcp-field-wrap .tmcp-textfield,
-.tmcp-field-wrap.ss-main, 
+.tmcp-field-wrap .ss-main, 
 .dropdown-custom.ss-main {
 	@apply relative z-0 h-[55px] min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
-.tmcp-field-wrap.ss-main .ss-values,
+.tmcp-field-wrap .ss-main .ss-values,
 .dropdown-custom.ss-main .ss-values{
 	@apply w-full
 }
-.tmcp-field-wrap.ss-main .ss-single,
+.tmcp-field-wrap .ss-main .ss-single,
 .dropdown-custom.ss-main .ss-single{
 	@apply !block w-full whitespace-nowrap overflow-ellipsis overflow-hidden
 }
-.tmcp-field-wrap.ss-main
+.tmcp-field-wrap .ss-main,
 .dropdown-custom.ss-main .ss-arrow{
 	@apply !invisible
 }
-.tmcp-field-wrap.ss-main.ss-open-below ~ svg,
+.tmcp-field-wrap .ss-main.ss-open-below ~ svg,
 .dropdown-custom.ss-main.ss-open-below ~ svg {
 	@apply rotate-180;
 }
-.tmcp-field-wrap.ss-content,
+.tmcp-field.ss-content,
 .dropdown-custom.ss-content{
 	@apply !rounded-2xl border-primary
 }
