@@ -36,7 +36,7 @@ if (post_password_required()) {
 if($product->get_id()==1186):
 ?>
 
-<div>
+<div class="calculator">
 <?php
 	/**
 	 * Hook: woocommerce_single_product_summary.

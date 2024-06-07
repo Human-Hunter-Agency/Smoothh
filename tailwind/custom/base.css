@@ -117,3 +117,15 @@ label.checkbox, .wpcf7-list-item-label {
 	margin: 0;
 	-moz-appearance: textfield !important;
 }
+
+.calculator form{
+	@apply flex-col
+}
+
+.calculator .tc-field-label-wrap .tc-price-wrap{
+	@apply hidden
+}
+
+.calculator .tc-init{
+	@apply hidden
+}
