@@ -33,7 +33,7 @@ if (post_password_required()) {
 	return;
 }
 
-if(the_ID()==1186):
+if($product->get_id()==1186):
 ?>
 
 <div>
