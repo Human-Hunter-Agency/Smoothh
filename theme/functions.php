@@ -1067,3 +1067,11 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 	}
 }
 
+add_action( 'comment_post', 'smoothh_review_set_gdpr', 10, 3 );
+function smoothh_review_set_gdpr($comment_id,$comment_approved,$commentdata){
+	$author_email = comment_author_email($comment_id);
+	print_r($commentdata);
+	// $dataSubject = gdpr('gdpr_woo_consent')->getByEmail($author_email);
+	// $dataSubject->giveConsent('gdpr_woo_consent');
+
+}
