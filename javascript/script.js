@@ -565,8 +565,8 @@ function initProdSelectStyles() {
 
 function initCalculatorFields() {
 	const simpleSelectFields = document.querySelectorAll(
-		'[data-uniqid="6662fcfdc3d441.95856961"]',
-		'[data-uniqid="6662fdb4c3d466.61257484"]'
+		`[data-uniqid="6662fcfdc3d441.95856961"] select,
+		[data-uniqid="6662fdb4c3d466.61257484"] select`
 	);
 
 	simpleSelectFields.forEach((fieldEl) => {
