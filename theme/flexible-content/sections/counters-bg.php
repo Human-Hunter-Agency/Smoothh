@@ -22,7 +22,7 @@ $tiles_list = $args['tiles_list'];
                 <?php foreach ($tiles_list as $tile) :
                     $tileID++;
                 ?>
-                    <div class="relative flex flex-col items-center text-left <?php if ($tileID == 1 || $tileID == 2) : ?> xl:before:content-[''] xl:before:w-1/2 before:bg-secondary xl:before:h-[2px] before:absolute xl:before:bottom-[-20px] 2xl:before:bottom-[-70px] before:left-0 <?php endif; ?>">
+                    <div class="relative flex flex-col items-center text-left <?php if ($tileID == 1 || $tileID == 2) : ?> xl:before:content-[''] xl:before:w-1/2 before:bg-secondary xl:before:h-[2px] before:absolute lg:before:bottom-[-45px] before:left-0 <?php endif; ?>">
                         <div class="mb-5 md:mb-7 self-start">
                             <?php if ($tile['title']) : ?>
                                 <h3 class="text-2xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)]">
