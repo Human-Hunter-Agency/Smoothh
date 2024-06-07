@@ -24,10 +24,10 @@ $steps_list = $args['steps_list'];
     </div>
     <div class="w-full overflow-hidden">
         <?php if ($steps_list) : ?>
-            <div class="swiper !container !overflow-visible" data-js="swiper-tiles-mobile">
+            <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper">
                     <?php foreach ($steps_list as $step) : ?>
-                        <div class="swiper-slide !h-auto xl:!basis-[calc(33%_-_56px)]">
+                        <div class="swiper-slide !h-auto xl:flex-1">
                             <div class="flex flex-col items-center text-center p-3 md:p-6 pb-5 md:pb-10">
                                 <?php if ($step['icon'] && $step['icon']['url']) : ?>
                                     <?php echo smoothh_img_responsive($step['icon'], 'object-contain h-16 mb-8 md:mb-[50px]', array(130, 130), 'lazy'); ?>
