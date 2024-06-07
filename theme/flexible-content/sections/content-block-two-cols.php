@@ -2,7 +2,8 @@
 
 /** Template to display 'Blok z treścią + dekoracja (dwie kolumny)' - content_block_two_cols */
 
-$content = $args['content'];
+$header = $args['header'];
+$description = $args['description'];
 $decoration = $args['decoration'];
 
 ?>
@@ -11,9 +12,14 @@ $decoration = $args['decoration'];
     <div class="container">
         <div class="flex flex-col lg:flex-row gap-10">
             <div class="z-0 w-full lg:w-1/2">
-                <?php if ($content) : ?>
-                    <div class="mb-10 text-2xl md:text-5xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px] [&_p]:text-[16px] [&_p]:leading-[26px]">
-                        <?php echo $content; ?>
+                <?php if ($header) : ?>
+                    <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+                        <?php echo $header; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ($description) : ?>
+                    <div class="text-[16px] font-normal leading-[26px]">
+                        <?php echo $description; ?>
                     </div>
                 <?php endif; ?>
             </div>
