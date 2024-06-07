@@ -49,7 +49,7 @@ $button = $args['button'];
                                 </div>
                             <?php endif; ?>
                             <?php if ($tile['title']) : ?>
-                                <h3 class="text-base md:text-[20px] mb-6 min-h-14 px-5 font-bold"><?php echo esc_html($tile['title']); ?></h3>
+                                <h3 class="text-base md:text-[20px] mb-6 lg:min-h-14 px-5 font-bold"><?php echo esc_html($tile['title']); ?></h3>
                             <?php endif; ?>
                             <?php if ($tile['description']) : ?>
                                 <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['title']) : ?> prose-base md:prose-xl leading-[24px]<?php else : ?> prose-sm md:prose-base <?php endif; ?>"><?php echo $tile['description']; ?></div>
