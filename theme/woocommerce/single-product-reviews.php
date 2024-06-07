@@ -85,9 +85,8 @@ if ( ! comments_open() ) {
 				);
 
 				$name_email_required = (bool) get_option( 'require_name_email', 1 );
-                $policyPageUrl = get_permalink(wc_privacy_policy_page_id()); 
 				$fields              = array(
-					'author' => array(
+                    'author' => array(
 						'label'    => __( 'Name', 'woocommerce' ),
 						'type'     => 'text',
 						'value'    => $commenter['comment_author'],
@@ -99,11 +98,6 @@ if ( ! comments_open() ) {
 						'value'    => $commenter['comment_author_email'],
 						'required' => $name_email_required,
 					),
-                    'gdpr_woo_consent' => array(
-                        'type'      => 'checkbox',
-                        'label'     => sprintf(__('I accept the %sPrivacy Policy%s', 'gdpr-framework'),"<a href='{$policyPageUrl}' target='_blank'>","</a>"),
-                        'required' => true,
-                    )
 				);
 
 				$comment_form['fields'] = array();
@@ -120,7 +114,7 @@ if ( ! comments_open() ) {
 
 					$comment_form['fields'][ $key ] = $field_html;
 				}
-
+                
 				$account_page_url = wc_get_page_permalink( 'myaccount' );
 				if ( $account_page_url ) {
 					/* translators: %s opening and closing link tags respectively */

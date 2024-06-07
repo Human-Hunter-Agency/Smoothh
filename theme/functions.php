@@ -121,6 +121,8 @@ if (!function_exists('smoothh_setup')) :
 
 		// Remove support for block templates.
 		remove_theme_support('block-templates');
+
+		remove_theme_support('html5', 'comment-form');
 	}
 endif;
 add_action('after_setup_theme', 'smoothh_setup');
@@ -1065,8 +1067,3 @@ function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
 	}
 }
 
-function validate_comment_form(){
-    ob_start();
-    comment_form();
-    echo str_replace('novalidate','data-toggle="validator" ',ob_get_clean());
-}
