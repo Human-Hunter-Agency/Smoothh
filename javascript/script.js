@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	registerClientFieldsToggle();
 	initJobListing();
 	initCounter();
+	initPageMarginWhenAdminIsLogged();
 });
 
 function initMenuCollapse() {
@@ -933,5 +934,11 @@ function initCounter() {
 				scrollSpyOnce: true,
 			}
 		).start();
+	}
+}
+
+function initPageMarginWhenAdminIsLogged(); {
+	if (document.querySelector('#wpadminbar')) {
+		document.querySelector('#masthead').classList.replace('top-0', 'top-8');
 	}
 }
