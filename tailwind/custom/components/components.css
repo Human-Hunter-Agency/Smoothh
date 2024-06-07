@@ -478,3 +478,12 @@ i.theChampLogin {
 [data-js-job-hidden="true"].job-offer-tile{
 	@apply !hidden
 }
+
+.woocommerce .star-rating span,
+.woocommerce .star-rating::before{
+	@apply text-primary
+}
+
+.comment_container .description{
+	@apply italic
+}
