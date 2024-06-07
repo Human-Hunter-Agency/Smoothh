@@ -937,7 +937,7 @@ function initCounter() {
 	}
 }
 
-function initPageMarginWhenAdminIsLogged(); {
+function initPageMarginWhenAdminIsLogged() {
 	if (document.querySelector('#wpadminbar')) {
 		document.querySelector('#masthead').classList.replace('top-0', 'top-8');
 	}
