@@ -15,7 +15,7 @@
             </div>
         <?php endif; ?>
             <?php 
-            echo do_shortcode('[product_page id="31"]');
+            echo do_shortcode('[product_page id="1186"]');
             // $product_id=1186;
             // do_action("woocommerce_tm_epo",$product_id); 
             // [add_to_cart id="1186" sku=""] ?>
