@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initCart();
 	initPopups();
 	initProdSelectStyles();
+	initCalculatorFields();
 	initProdSelectRedirect();
 	initInputsValidation();
 	registerClientFieldsToggle();
@@ -560,6 +561,45 @@ function initProdSelectStyles() {
 		},
 	};
 	new SlimSelect(options);
+}
+
+function initCalculatorFields() {
+	const simpleSelectFields = document.querySelectorAll('.tmcp-select');
+
+	simpleSelectFields.forEach((fieldEl) => {
+		const options = {
+			select: fieldEl,
+			settings: {
+				showSearch: false,
+			},
+			events: {
+				afterChange: () => {
+					let changeEvent = new Event('change', { bubbles: true });
+					fieldEl.dispatchEvent(changeEvent);
+				},
+			},
+		};
+		new SlimSelect(options);
+	});
+
+	const searchSelectFields = document.querySelectorAll(
+		'[data-uniqid="6662fc70c3d429.14367225"] select'
+	);
+	searchSelectFields.forEach((fieldEl) => {
+		const options = {
+			select: fieldEl,
+			settings: {
+				showSearch: true,
+			},
+			events: {
+				afterChange: () => {
+					let changeEvent = new Event('change', { bubbles: true });
+					fieldEl.dispatchEvent(changeEvent);
+				},
+			},
+		};
+		new SlimSelect(options);
+	});
 }
 
 function initProdSelectRedirect() {
