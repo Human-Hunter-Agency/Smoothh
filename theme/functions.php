@@ -1075,3 +1075,8 @@ function smoothh_review_set_gdpr($comment_id,$comment_approved,$commentdata){
 		$dataSubject->giveConsent('gdpr_woo_consent');
 	}
 }
+
+function tm_epo_js_loader(){
+	do_action( 'woocommerce_tm_epo_enqueue_scripts');
+}
+add_action( 'wp_enqueue_scripts', 'tm_epo_js_loader' );

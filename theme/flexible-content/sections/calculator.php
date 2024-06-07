@@ -17,6 +17,7 @@
             <?php 
                 $product_id=1186;
                 do_action("woocommerce_tm_epo",$product_id); 
+                // [add_to_cart id="1186" sku=""]
             ?>
         </div>
     </div>
