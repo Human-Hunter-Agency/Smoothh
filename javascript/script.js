@@ -196,12 +196,8 @@ function initDefaultSwipers() {
 					spaceBetween: 25,
 				},
 				1000: {
-					slidesPerView: 2.5,
-					spaceBetween: 35,
-				},
-				1380: {
 					slidesPerView: 3,
-					spaceBetween: 60,
+					spaceBetween: 35,
 				},
 			},
 		});
@@ -564,9 +560,9 @@ function initProdSelectStyles() {
 }
 
 function initCalculatorFields() {
-	const simpleSelectFields = document.querySelectorAll('.tmcp-select')
+	const simpleSelectFields = document.querySelectorAll('.tmcp-select');
 
-	simpleSelectFields.forEach((fieldEl)=>{
+	simpleSelectFields.forEach((fieldEl) => {
 		const options = {
 			select: fieldEl,
 			settings: {
@@ -580,10 +576,12 @@ function initCalculatorFields() {
 			},
 		};
 		new SlimSelect(options);
-	})
+	});
 
-	const searchSelectFields = document.querySelectorAll('[data-uniqid="6662fc70c3d429.14367225"] select')
-	searchSelectFields.forEach((fieldEl)=>{
+	const searchSelectFields = document.querySelectorAll(
+		'[data-uniqid="6662fc70c3d429.14367225"] select'
+	);
+	searchSelectFields.forEach((fieldEl) => {
 		const options = {
 			select: fieldEl,
 			settings: {
@@ -597,7 +595,7 @@ function initCalculatorFields() {
 			},
 		};
 		new SlimSelect(options);
-	})
+	});
 }
 
 function initProdSelectRedirect() {
