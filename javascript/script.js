@@ -198,7 +198,7 @@ function initDefaultSwipers() {
 					slidesPerView: 2.5,
 					spaceBetween: 35,
 				},
-				1280: {
+				1380: {
 					slidesPerView: 3,
 					spaceBetween: 60,
 				},
