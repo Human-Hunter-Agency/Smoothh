@@ -12,12 +12,12 @@ $steps_list = $args['steps_list'];
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
-            <div class="mb-6 prose-smoothh prose md:prose-xl prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:!leading-[26px] prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-8">
+            <div class="mb-6 prose-smoothh prose md:prose-xl prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] prose-img:mt-0 prose-img:mx-auto prose-img:px-5">
                 <?php echo $header; ?>
             </div>
         <?php endif; ?>
         <?php if ($description) : ?>
-            <div class="prose-smoothh prose md:prose-xl text-center mb-10"><?php echo $description; ?></div>
+            <div class="prose-smoothh prose md:prose-xl prose-p:text-[16px] prose-p:leading-[26px] text-center mb-10"><?php echo $description; ?></div>
         <?php endif; ?>
     </div>
     <div class="w-full overflow-hidden">
@@ -39,7 +39,7 @@ $steps_list = $args['steps_list'];
                                     <?php endif; ?>
                                 </div>
                                 <?php if ($step['description']) : ?>
-                                    <p class="text-sm md:text-base"><?php echo $step['description']; ?></p>
+                                    <p class="text-sm md:text-base leading-[26px]"><?php echo $step['description']; ?></p>
                                 <?php endif; ?>
                             </div>
                         </div>

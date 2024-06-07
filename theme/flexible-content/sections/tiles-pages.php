@@ -21,12 +21,12 @@ $tiles_list = $args['tiles_list'];
     <div class="container">
         <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-24">
             <?php if ($header) : ?>
-                <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+                <div class="text-center prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-9 md:mb-14">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
-                <div class="prose-smoothh prose md:prose-xl text-center mb-10"><?php echo $description; ?></div>
+                <div class="prose-smoothh prose md:prose-xl text-center prose-h2:text-2xl md:prose-h2:text-5xl lg:prose-h2:text-[46px] lg:prose-h2:font-extrabold lg:prose-h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-10"><?php echo $description; ?></div>
             <?php endif; ?>
         </div>
     </div>
@@ -45,7 +45,7 @@ $tiles_list = $args['tiles_list'];
                             <?php endif; ?>
                             <div class="text-center p-3 md:p-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-xl mb-9 font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
+                                    <h3 class="text-base md:text-[20px] mb-9 font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
