@@ -21,12 +21,14 @@ $tiles_list = $args['tiles_list'];
     <div class="container">
         <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-24">
             <?php if ($header) : ?>
-                <div class="text-center prose md:prose-xl h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-9 md:mb-14">
+                <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
-                <div class="prose-smoothh prose md:prose-xl text-center h2:text-2xl md:h2:text-5xl lg:h2:text-[46px] lg:h2:font-extrabold lg:h2:leading-[55px] prose-p:text-[16px] prose-p:leading-[26px] mb-10"><?php echo $description; ?></div>
+                <div class="text-[16px] font-normal leading-[26px]">
+                    <?php echo $description; ?>
+                </div>
             <?php endif; ?>
         </div>
     </div>
