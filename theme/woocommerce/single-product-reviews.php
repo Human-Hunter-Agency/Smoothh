@@ -34,7 +34,7 @@ if ( ! comments_open() ) {
 </div>
 <div>
     <?php if ( have_comments() ) : ?>
-        <div class="swiper !container !overflow-visible mb-10" data-js="swiper-tiles-default">
+        <div class="swiper !container !overflow-visible mb-10" data-js="swiper-tiles-wide">
             <ol class="commentlist swiper-wrapper">
                 <?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
             </ol>
@@ -130,7 +130,7 @@ if ( ! comments_open() ) {
 					</select></div>';
 				}
 
-				$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" class="p-1 rounded-2xl border border-primary hover:border-secondary focus:border-secondary transition duration-200  min-h-40 max-h-96" required></textarea></p>';
+				$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" class="px-5 py-2 rounded-2xl border border-primary hover:border-secondary focus:border-secondary transition duration-200  min-h-40 max-h-96" required></textarea></p>';
 
 				comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>

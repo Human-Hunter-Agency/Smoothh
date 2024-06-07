@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMobileNarrowSwipers();
 	initLogosSwipers();
 	initDefaultSwipers();
+	initWideSwipers();
 	initDropdowns();
 	initCvFileLabelText();
 	initRelatedPosts();
@@ -199,6 +200,35 @@ function initDefaultSwipers() {
 				},
 				1280: {
 					slidesPerView: 3,
+					spaceBetween: 60,
+				},
+			},
+		});
+	});
+}
+
+function initWideSwipers() {
+	const swiperContainers = document.querySelectorAll(
+		'[data-js="swiper-tiles-wide"]'
+	);
+	swiperContainers.forEach((el) => {
+		new Swiper(el, {
+			spaceBetween: 20,
+			slidesPerView: 1.2,
+			modules: [Navigation],
+			watchSlidesProgress: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+
+			breakpoints: {
+				768: {
+					slidesPerView: 1.5,
+					spaceBetween: 25,
+				},
+				1280: {
+					slidesPerView: 2.2,
 					spaceBetween: 60,
 				},
 			},
