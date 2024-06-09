@@ -41,7 +41,7 @@ $button = $args['button'];
                             <?php if ($tile['icon'] && $tile['icon']['url']) : ?>
                                 <div class="w-full
                                     <?php if ($grid == 3) : ?> px-4 py-8  md:py-12 md:px-6 lg:py-[77px] mb-8 md:mb-14 border-2 border-[#EFEFEF] rounded-2xl [&_img]:h-32
-                                    <?php elseif ($grid == 5) : ?> p-4 md:p-6 mb-9 border-2 border-[#EFEFEF] rounded-2xl [&_img]:h-32
+                                    <?php elseif ($grid == 5) : ?> p-4 md:p-6 mb-9 border-2 border-[#EFEFEF] rounded-2xl [&_img]:h-24
                                     <?php else : ?> p-4 md:p-6 mb-5  
                                     <?php endif; ?>">
                                     <?php echo smoothh_img_responsive($tile['icon'], 'mx-auto object-contain h-16', array(125, 125), 'lazy'); ?>
