@@ -40,7 +40,7 @@ $button = $args['button'];
                         <div class="swiper-slide xl:flex-1 !flex items-center flex-col text-center">
                             <?php if ($tile['icon'] && $tile['icon']['url']) : ?>
                                 <div class="w-full
-                                    <?php if ($grid == 3) : ?> px-4 py-8  md:py-12 md:px-6 lg:py-[77px] md:mb-14 border-2 border-[#EFEFEF] rounded-2xl
+                                    <?php if ($grid == 3) : ?> px-4 py-8  md:py-12 md:px-6 lg:py-[77px] mb-8 md:mb-14 border-2 border-[#EFEFEF] rounded-2xl
                                     <?php elseif ($grid == 5) : ?> p-4 md:p-6 mb-9
                                     <?php else : ?> p-4 md:p-6 mb-5  
                                     <?php endif; ?>">
