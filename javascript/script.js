@@ -144,7 +144,7 @@ function initMobileNarrowSwipers() {
 	swiperContainers.forEach((el) => {
 		new Swiper(el, {
 			spaceBetween: 20,
-			slidesPerView: 2.5,
+			slidesPerView: 1.2,
 			enabled: true,
 			breakpoints: {
 				560: {
