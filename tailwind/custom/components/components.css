@@ -237,7 +237,7 @@ footer#page-footer .footer-bottom-menu {
 .dropdown-custom.ss-main .ss-single{
 	@apply !block w-full whitespace-nowrap overflow-ellipsis overflow-hidden
 }
-.tmcp-field-wrap .ss-main .ss-arrow
+.tmcp-field-wrap .ss-arrow,
 .dropdown-custom.ss-main .ss-arrow{
 	@apply !invisible
 }
@@ -246,12 +246,12 @@ footer#page-footer .footer-bottom-menu {
 	@apply !rounded-xl !shadow-none focus:border-secondary border-primary
 }
 
-.tmcp-select .ss-values:after{
+.tmcp-select:after{
 	content: url('data:image/svg+xml,<svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.9595 0.75L7 9.1368L1.04047 0.75H12.9595Z" fill="%238117EE" stroke="%238117EE"></path></svg>');
 	@apply absolute z-10 right-5 top-[23px] transition duration-300 pointer-events-none
 }
 
-[aria-expanded="true"].tmcp-select .ss-values:after{
+[aria-expanded="true"].tmcp-select:after{
 	@apply rotate-180
 }
 
