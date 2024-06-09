@@ -58,7 +58,7 @@ if ( ! comments_open() ) {
 </div>
 <div>
     <?php else : ?>
-        <p class="text-base md:text-lg"><?php esc_html_e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
+        <p class="container text-base md:text-lg"><?php esc_html_e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
     <?php endif; ?>
 
 </div>
