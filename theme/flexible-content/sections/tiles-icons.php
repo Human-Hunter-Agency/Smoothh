@@ -32,15 +32,15 @@ $button = $args['button'];
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper xl:!transform-none 
-                    <?php if ($grid == 3) : ?> xl:px-[100px] xl:box-border xl:flex-wrap xl:!gap-x-[49px] xl:!gap-y-20 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(28%_-_33px)] [&_.swiper-slide_div]:border-2 [&_.swiper-slide_div]:border-[#EFEFEF] [&_.swiper-slide_div]:rounded-2xl
+                    <?php if ($grid == 3) : ?> xl:px-[100px] xl:box-border xl:flex-wrap xl:!gap-x-[49px] xl:!gap-y-20 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(28%_-_33px)] 
                     <?php elseif ($grid == 5) : ?> xl:flex-wrap xl:!gap-y-[60px] xl:!gap-x-10 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(20%_-_48px)]  
                     <?php endif; ?>">
 
                     <?php foreach ($tiles_list as $tile) : ?>
                         <div class="swiper-slide xl:flex-1 !flex items-center flex-col text-center">
                             <?php if ($tile['icon'] && $tile['icon']['url']) : ?>
-                                <div class="w-full 
-                                    <?php if ($grid == 3) : ?> px-4 py-8  md:py-12 md:px-6 lg:py-[77px] md:mb-14  
+                                <div class="w-full
+                                    <?php if ($grid == 3) : ?> px-4 py-8  md:py-12 md:px-6 lg:py-[77px] md:mb-14 border-2 border-[#EFEFEF] rounded-2xl
                                     <?php elseif ($grid == 5) : ?> p-4 md:p-6 mb-9
                                     <?php else : ?> p-4 md:p-6 mb-5  
                                     <?php endif; ?>">
