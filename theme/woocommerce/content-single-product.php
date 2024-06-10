@@ -76,7 +76,7 @@ $has_variable_price = get_field('variable_price');
 		</div>
 	</div>
 
-	<div class="container relative z-20 flex flex-col md:flex-row md:justify-between gap-5 md:gap-6 lg:gap-10">
+	<div class="container flex flex-col md:flex-row md:justify-between gap-5 md:gap-6 lg:gap-10">
 		<div class="w-full">
 			<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-9 md:mb-[55px]">
 				<?php the_content() ?>
