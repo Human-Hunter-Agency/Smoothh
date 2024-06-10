@@ -464,15 +464,18 @@ i.theChampLogin {
 }
 
 .tm-extra-product-options-checkbox{
-	@apply !flex-row flex-wrap items-center justify-center gap-x-5 gap-y-2.5
+	@apply !flex-row flex-wrap !items-center !justify-center gap-x-5 gap-y-2.5
+}
+.tm-extra-product-options-checkbox li{
+	@apply !basis-auto !w-auto
 }
 .tm-extra-product-options-checkbox label,
 [data-js-jobs="filters"] label{
-    @apply cursor-pointer flex items-center px-3 py-1 rounded-xl text-white text-base bg-primary
+    @apply cursor-pointer flex items-center !px-3 !py-1 rounded-xl text-white text-base bg-primary
 }
 .tm-extra-product-options-checkbox input,
 [data-js-jobs="filters"] input{
-    @apply mr-3 size-[18px] accent-secondary
+    @apply mr-3 !size-[18px] accent-secondary
 }
 .tm-extra-product-options-checkbox .tc-label-text{
 	@apply !font-normal
