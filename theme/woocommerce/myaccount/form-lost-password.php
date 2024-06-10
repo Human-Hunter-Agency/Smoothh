@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_lost_password_form');
 ?>
 
-<div class="my-20">
+<div class="my-20 max-w-[800px]">
   <form method="post" class="woocommerce-ResetPassword lost_reset_password !px-5 md:!px-8 !pt-9 !pb-6 !my-0 border !border-[#888] !rounded-[15px]">
 
     <p class="mb-10 text-lg font-medium !max-w-[720px]"><?php echo apply_filters('woocommerce_lost_password_message', esc_html__('Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine 
@@ -29,8 +29,8 @@ do_action('woocommerce_before_lost_password_form');
 
     <div class="smoothh-inputs-basic flex-col">
       <p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-        <label class="mb-5" for="user_login"><?php esc_html_e('Username or email', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
-        <input class="input-text !max-w-[480px]" type="text" name="user_login" id="user_login" autocomplete="username" aria-required="true" />
+        <label class="mb-5 !w-full" for="user_login"><?php esc_html_e('Username or email', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+        <input class="input-text !max-w-[480px] !h-[55px]" type="text" name="user_login" id="user_login" autocomplete="username" aria-required="true" />
       </p>
 
       <div class="clear"></div>
