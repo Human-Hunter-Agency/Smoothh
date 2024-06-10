@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initJobListing();
 	initCounter();
 	initPageMarginWhenAdminIsLogged();
+	initCalculator();
 });
 
 function initMenuCollapse() {
@@ -979,4 +980,26 @@ function initPageMarginWhenAdminIsLogged() {
 	if (document.querySelector('#wpadminbar')) {
 		document.querySelector('#masthead').classList.replace('top-0', 'top-8');
 	}
+}
+
+function initCalculator(){
+	const container = document.querySelector('[data-js-calc-container]')
+	if (!container) return
+	
+	const calcBtn = document.querySelector('data-js-calc-btn]')
+	const sumEl = document.querySelector('[data-uniqid="666582c02fa7e2.99896643"] .tc-result')
+	const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
+
+	const tablePrice = document.querySelector('[data-js-calc-price]');
+	const tableSubtotal = document.querySelector('[data-js-calc-subtotal]');
+	const tableTotal = document.querySelector('[data-js-calc-total]');
+	const tableFee = document.querySelector('[data-js-calc-fee]');
+
+	calcBtn.addEventListener('click',()=>{
+		container.classList.remove('hidden')
+		tablePrice.innerHTML = sumEl.innerHTML
+		tableSubtotal.innerHTML = sumEl.innerHTML
+		tableTotal.innerHTML = sumEl.innerHTML
+		tableFee.innerHTML = feeEl.innerHTML
+	})
 }
