@@ -15,6 +15,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
         'orderby' => 'date',
         'order' => 'DESC',
         'exclude' => get_post_type(get_the_ID()) == 'product' ? get_the_ID() : '',
+        'visibility' => 'visible',
     );
     $products = wc_get_products($products_args);
 }

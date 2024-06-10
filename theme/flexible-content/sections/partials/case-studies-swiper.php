@@ -10,6 +10,7 @@
             'orderby' => 'date',
             'order' => 'DESC',
             'exclude' => get_post_type(get_the_ID()) == 'case-study' ? get_the_ID() : '',
+            'visibility' => 'visible',
         );
         $posts = get_posts($posts_args);
     }

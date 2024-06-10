@@ -88,7 +88,8 @@ $show_select_cat_products = !empty($common_values);
 						<?php if ($show_select_cat_products == true) :
 							$products_args = array(
 								'exclude' => array($product->get_id()),
-								'product_category_id' => $selected_categories
+								'product_category_id' => $selected_categories,
+								'visibility' => 'visible',
 							);
 							$products = wc_get_products($products_args);
 
