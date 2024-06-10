@@ -514,3 +514,7 @@ i.theChampLogin {
 .comment_container .description{
 	@apply italic mt-5
 }
+
+[data-uniqid="666320bcdd37f3.59792863"]{
+	@apply !hidden
+}

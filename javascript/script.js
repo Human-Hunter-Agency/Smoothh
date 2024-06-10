@@ -986,7 +986,7 @@ function initCalculator(){
 	const container = document.querySelector('[data-js-calc-container]')
 	if (!container) return
 	
-	const calcBtn = document.querySelector('data-js-calc-btn]')
+	const calcBtn = document.querySelector('[data-js-calc-btn]')
 	const sumEl = document.querySelector('[data-uniqid="666582c02fa7e2.99896643"] .tc-result')
 	const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
 
