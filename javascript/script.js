@@ -983,9 +983,10 @@ function initPageMarginWhenAdminIsLogged() {
 }
 
 function initCalculator(){
+	const form = document.querySelector('.calculator form')
+	if (!form) return
+
 	const container = document.querySelector('[data-js-calc-container]')
-	if (!container) return
-	
 	const calcBtn = document.querySelector('[data-js-calc-btn]')
 	const sumEl = document.querySelector('[data-uniqid="666582c02fa7e2.99896643"] .tc-result')
 	const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
@@ -996,10 +997,14 @@ function initCalculator(){
 	const tableFee = document.querySelector('[data-js-calc-fee]');
 
 	calcBtn.addEventListener('click',()=>{
-		container.classList.remove('hidden')
-		tablePrice.innerHTML = sumEl.innerHTML
-		tableSubtotal.innerHTML = sumEl.innerHTML
-		tableTotal.innerHTML = sumEl.innerHTML
-		tableFee.innerHTML = feeEl.innerHTML
+		if (form.checkValidity()){
+			tablePrice.innerHTML = sumEl.innerHTML
+			tableSubtotal.innerHTML = sumEl.innerHTML
+			tableTotal.innerHTML = sumEl.innerHTML
+			tableFee.innerHTML = feeEl.innerHTML
+			container.classList.remove('hidden')
+		}else{
+			container.classList.add('hidden')
+		}
 	})
 }

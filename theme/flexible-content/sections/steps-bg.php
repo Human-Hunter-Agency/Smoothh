@@ -8,7 +8,7 @@ $steps_list = $args['steps_list'];
 
 ?>
 
-<div class="w-full py-10 md:py-[70px] mb:pb-20 mt-10 md:mt-20">
+<div class="w-full py-10 md:py-[70px] mb:pb-20">
 
     <div class="relative z-0 container mb-10 lg:mb-20">
         <?php if ($header) : ?>
