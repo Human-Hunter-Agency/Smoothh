@@ -554,8 +554,8 @@ i.theChampLogin {
 }
 
 .animateIn {
-	transform: translateY(0px);
+	@apply translate-y-0;
 }
 .animateOut {
-	transform: translateY(-100%);
+	@apply -translate-y-full;
 }
