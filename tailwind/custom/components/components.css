@@ -522,3 +522,7 @@ i.theChampLogin {
 [data-uniqid="6662fc70c3d414.09442511"] .tcwidth-100 .tc-row{
 	@apply flex flex-col md:flex-row
 }
+
+[data-uniqid="6662fc70c3d414.09442511"] .tc-cell{
+	@apply !max-w-full
+}
