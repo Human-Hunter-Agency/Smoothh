@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initCounter();
 	initPageMarginWhenAdminIsLogged();
 	initCalculator();
+	initFloatingNavBar();
 });
 
 function initMenuCollapse() {
@@ -982,13 +983,15 @@ function initPageMarginWhenAdminIsLogged() {
 	}
 }
 
-function initCalculator(){
-	const form = document.querySelector('.calculator form')
-	if (!form) return
+function initCalculator() {
+	const form = document.querySelector('.calculator form');
+	if (!form) return;
 
-	const container = document.querySelector('[data-js-calc-container]')
-	const calcBtn = document.querySelector('[data-js-calc-btn]')
-	const sumEl = document.querySelector('[data-uniqid="666582c02fa7e2.99896643"] .tc-result')
+	const container = document.querySelector('[data-js-calc-container]');
+	const calcBtn = document.querySelector('[data-js-calc-btn]');
+	const sumEl = document.querySelector(
+		'[data-uniqid="666582c02fa7e2.99896643"] .tc-result'
+	);
 	// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
 
 	const tablePrice = document.querySelector('[data-js-calc-price]');
@@ -996,26 +999,95 @@ function initCalculator(){
 	const tableTotal = document.querySelector('[data-js-calc-total]');
 	// const tableFee = document.querySelector('[data-js-calc-fee]');
 
-	form.addEventListener('change',()=>{
-		container.classList.add('hidden')
-	})
+	form.addEventListener('change', () => {
+		container.classList.add('hidden');
+	});
 
-	calcBtn.addEventListener('click',()=>{
-		jQuery(form).tc_validate().form()
-		if (form.checkValidity()){
-			tablePrice.innerHTML = tableSubtotal.innerHTML = tableTotal.innerHTML = stringToPrice(sumEl.innerHTML)
+	calcBtn.addEventListener('click', () => {
+		jQuery(form).tc_validate().form();
+		if (form.checkValidity()) {
+			tablePrice.innerHTML =
+				tableSubtotal.innerHTML =
+				tableTotal.innerHTML =
+					stringToPrice(sumEl.innerHTML);
 			// tableFee.innerHTML = feeEl.innerHTML
-			container.classList.remove('hidden')
-		}else{
-			container.classList.add('hidden')
+			container.classList.remove('hidden');
+		} else {
+			container.classList.add('hidden');
 		}
-	})
+	});
 }
 
-function stringToPrice(val){
+function stringToPrice(val) {
 	if (val && typeof val == 'string') {
-		return parseFloat(val.replace(',','.')).toFixed(2).replace('.',',')
-	}else{
-		return val.toFixed(2)
+		return parseFloat(val.replace(',', '.')).toFixed(2).replace('.', ',');
+	} else {
+		return val.toFixed(2);
+	}
+}
+
+function initFloatingNavBar() {
+	// floating navbar
+	// const siteHeaderMobile = document.querySelector('#Mobile');
+	// let siteHeaderHeightMobile = siteHeaderMobile.offsetHeight;
+	const siteHeader = document.querySelector('#masthead');
+	const siteContent = document.querySelector('#main');
+	let siteHeaderHeight = siteHeader.offsetHeight;
+	let screenWidth = window.innerWidth;
+
+	if (screenWidth > 640) {
+		//  desktop
+		siteHeader.classList.add('header-position-fixed');
+		// function updateHeaderPadding() {
+		// 	siteHeaderHeight = siteHeader.offsetHeight;
+		// 	siteContent.style.transition = '0.3s ease-in-out';
+		// }
+
+		// setInterval(updateHeaderPadding, 500);
+
+		let refOffset = 0;
+
+		const headerAppearsOnScrollUp = () => {
+			const newOffset = window.scrollY || window.pageYOffset;
+
+			if (newOffset > siteHeaderHeight) {
+				if (newOffset > refOffset) {
+					siteHeader.classList.remove('animateIn');
+					siteHeader.classList.add('animateOut');
+				} else {
+					siteHeader.classList.remove('animateOut');
+					siteHeader.classList.add('animateIn');
+				}
+				refOffset = newOffset;
+			}
+		};
+
+		window.addEventListener('scroll', headerAppearsOnScrollUp, false);
+	} else {
+		//  mobile
+		// siteHeaderMobile.classList.add('header-position-fixed');
+		// siteContent.style.paddingTop = siteHeaderHeightMobile + 'px';
+		// function updateHeaderMobilePadding() {
+		//   siteHeaderMobileHeight = siteHeaderMobile.offsetHeight;
+		//   siteContent.style.transition = 'padding-top 0.3s ease-in-out';
+		//   siteContent.style.paddingTop = siteHeaderMobileHeight + 'px';
+		// };
+		// setInterval(updateHeaderMobilePadding, 500);
+		// let refOffsetMobile = 0;
+		// const headerMobileAppearsOnScrollUp = () => {
+		//   const newOffsetMobile = window.scrollY || window.pageYOffset;
+		//   if(newOffsetMobile > siteHeaderMobileHeight) {
+		//       if(newOffsetMobile > refOffsetMobile) {
+		//         siteHeaderMobile.classList.remove('animateIn');
+		//         siteHeaderMobile.classList.add('animateOut');
+		//       }
+		//       else {
+		//         siteHeaderMobile.classList.remove('animateOut');
+		//         siteHeaderMobile.classList.add('animateIn');
+		//       };
+		//       refOffsetMobile = newOffsetMobile;
+		//   };
+		// };
+		// window.addEventListener('scroll', headerMobileAppearsOnScrollUp, false);
 	}
 }
