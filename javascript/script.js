@@ -1033,61 +1033,33 @@ function initFloatingNavBar() {
 	const siteHeader = document.querySelector('#masthead');
 	const siteContent = document.querySelector('#main');
 	let siteHeaderHeight = siteHeader.offsetHeight;
-	let screenWidth = window.innerWidth;
+	// let screenWidth = window.innerWidth;
 
-	if (screenWidth > 640) {
-		//  desktop
-		siteHeader.classList.add('header-position-fixed');
-		// function updateHeaderPadding() {
-		// 	siteHeaderHeight = siteHeader.offsetHeight;
-		// 	siteContent.style.transition = '0.3s ease-in-out';
-		// }
+	//  desktop
+	siteHeader.classList.add('header-position-fixed');
+	// function updateHeaderPadding() {
+	// 	siteHeaderHeight = siteHeader.offsetHeight;
+	// 	siteContent.style.transition = '0.3s ease-in-out';
+	// }
 
-		// setInterval(updateHeaderPadding, 500);
+	// setInterval(updateHeaderPadding, 500);
 
-		let refOffset = 0;
+	let refOffset = 0;
 
-		const headerAppearsOnScrollUp = () => {
-			const newOffset = window.scrollY || window.pageYOffset;
+	const headerAppearsOnScrollUp = () => {
+		const newOffset = window.scrollY || window.pageYOffset;
 
-			if (newOffset > siteHeaderHeight) {
-				if (newOffset > refOffset) {
-					siteHeader.classList.remove('animateIn');
-					siteHeader.classList.add('animateOut');
-				} else {
-					siteHeader.classList.remove('animateOut');
-					siteHeader.classList.add('animateIn');
-				}
-				refOffset = newOffset;
+		if (newOffset > siteHeaderHeight) {
+			if (newOffset > refOffset) {
+				siteHeader.classList.remove('animateIn');
+				siteHeader.classList.add('animateOut');
+			} else {
+				siteHeader.classList.remove('animateOut');
+				siteHeader.classList.add('animateIn');
 			}
-		};
+			refOffset = newOffset;
+		}
+	};
 
-		window.addEventListener('scroll', headerAppearsOnScrollUp, false);
-	} else {
-		//  mobile
-		// siteHeaderMobile.classList.add('header-position-fixed');
-		// siteContent.style.paddingTop = siteHeaderHeightMobile + 'px';
-		// function updateHeaderMobilePadding() {
-		//   siteHeaderMobileHeight = siteHeaderMobile.offsetHeight;
-		//   siteContent.style.transition = 'padding-top 0.3s ease-in-out';
-		//   siteContent.style.paddingTop = siteHeaderMobileHeight + 'px';
-		// };
-		// setInterval(updateHeaderMobilePadding, 500);
-		// let refOffsetMobile = 0;
-		// const headerMobileAppearsOnScrollUp = () => {
-		//   const newOffsetMobile = window.scrollY || window.pageYOffset;
-		//   if(newOffsetMobile > siteHeaderMobileHeight) {
-		//       if(newOffsetMobile > refOffsetMobile) {
-		//         siteHeaderMobile.classList.remove('animateIn');
-		//         siteHeaderMobile.classList.add('animateOut');
-		//       }
-		//       else {
-		//         siteHeaderMobile.classList.remove('animateOut');
-		//         siteHeaderMobile.classList.add('animateIn');
-		//       };
-		//       refOffsetMobile = newOffsetMobile;
-		//   };
-		// };
-		// window.addEventListener('scroll', headerMobileAppearsOnScrollUp, false);
-	}
+	window.addEventListener('scroll', headerAppearsOnScrollUp, false);
 }
