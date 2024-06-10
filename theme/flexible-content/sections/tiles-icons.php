@@ -5,7 +5,6 @@
 $header = $args['header'];
 $description = $args['description'];
 $tiles_list = $args['tiles_list'];
-$grid = $args['grid'];
 $text_below = $args['text_below'];
 $button = $args['button'];
 
@@ -30,20 +29,12 @@ $button = $args['button'];
 
     <div class="relative z-0 w-full overflow-hidden !pb-5">
         <?php if ($tiles_list) : ?>
-            <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
-                <div class="swiper-wrapper xl:!transform-none 
-                    <?php if ($grid == 3) : ?> xl:px-[100px] xl:box-border xl:flex-wrap xl:!gap-x-[49px] xl:!gap-y-20 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(28%_-_33px)] 
-                    <?php elseif ($grid == 5) : ?> xl:flex-wrap xl:!gap-y-[60px] xl:!gap-x-10 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(15%_-_48px)]  
-                    <?php endif; ?>">
-
+            <div class="swiper !container !overflow-visible" data-js="swiper-tiles-icons">
+                <div class="swiper-wrapper">
                     <?php foreach ($tiles_list as $tile) : ?>
-                        <div class="swiper-slide xl:flex-1 !flex items-center flex-col text-center">
+                        <div class="swiper-slide !flex items-center flex-col text-center">
                             <?php if ($tile['icon'] && $tile['icon']['url']) : ?>
-                                <div class="w-full
-                                    <?php if ($grid == 3) : ?> px-4 py-8  md:py-12 md:px-6 lg:py-[77px] mb-7 md:mb-14 border-2 border-[#EFEFEF] rounded-2xl [&_img]:h-32
-                                    <?php elseif ($grid == 5) : ?> p-4 md:p-6 mb-7 border-2 border-[#EFEFEF] rounded-2xl [&_img]:h-24
-                                    <?php else : ?> p-4 md:p-6 mb-5  
-                                    <?php endif; ?>">
+                                <div class="w-full p-4 md:p-6 mb-5">
                                     <?php echo smoothh_img_responsive($tile['icon'], 'mx-auto object-contain h-16', array(125, 125), 'lazy'); ?>
                                 </div>
                             <?php endif; ?>

@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initLogosSwipers();
 	initDefaultSwipers();
 	initWideSwipers();
+	initIconsSwipers();
 	initDropdowns();
 	initCvFileLabelText();
 	initRelatedPosts();
@@ -202,6 +203,43 @@ function initDefaultSwipers() {
 				},
 				1380: {
 					slidesPerView: 3,
+					spaceBetween: 40,
+				},
+			},
+		});
+	});
+}
+
+function initIconsSwipers() {
+	const swiperContainers = document.querySelectorAll(
+		'[data-js="swiper-tiles-icons"]'
+	);
+	swiperContainers.forEach((el) => {
+		new Swiper(el, {
+			spaceBetween: 20,
+			slidesPerView: 1.2,
+			modules: [Navigation],
+			watchSlidesProgress: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+
+			breakpoints: {
+				560: {
+					slidesPerView: 1.5,
+					spaceBetween: 20,
+				},
+				768: {
+					slidesPerView: 2.2,
+					spaceBetween: 25,
+				},
+				1180: {
+					slidesPerView: 2.5,
+					spaceBetween: 35,
+				},
+				1380: {
+					slidesPerView: 4,
 					spaceBetween: 40,
 				},
 			},
