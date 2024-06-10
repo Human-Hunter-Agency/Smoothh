@@ -84,7 +84,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 					<p class="text-xl"><span data-js-calc-subtotal></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
 				</div>
 			</div>
-			<div class="flex justify-between md:flex-col mb-14 gap-5 items-end">
+			<div class="flex justify-between md:flex-end mb-14 gap-5">
 				<span class="font-semibold text-primary text-xl"><?php echo esc_html_e('Total', 'woocommerce'); ?>:</span>
 				<p class="font-semibold text-primary text-xl"><span data-js-calc-total></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php echo esc_html_e('net', 'smoothh'); ?></span></p>
 			</div>
