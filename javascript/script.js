@@ -996,6 +996,10 @@ function initCalculator(){
 	const tableTotal = document.querySelector('[data-js-calc-total]');
 	// const tableFee = document.querySelector('[data-js-calc-fee]');
 
+	form.addEventListener('change',()=>{
+		container.classList.add('hidden')
+	})
+
 	calcBtn.addEventListener('click',()=>{
 		jQuery(form).tc_validate().form()
 		if (form.checkValidity()){
