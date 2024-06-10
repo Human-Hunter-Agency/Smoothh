@@ -29,7 +29,7 @@ do_action('woocommerce_before_lost_password_form');
 
     <div class="smoothh-inputs-basic flex-col">
       <p class="woocommerce-form-row">
-        <label class="mb-5 !w-full" for="user_login"><?php esc_html_e('Username or email', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
+        <label class="!mb-5 !w-full" for="user_login"><?php esc_html_e('Username or email', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label>
         <input class="input-text !max-w-[480px] !h-[55px]" type="text" name="user_login" id="user_login" autocomplete="username" aria-required="true" />
       </p>
 
