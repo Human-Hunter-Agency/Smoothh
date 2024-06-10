@@ -1027,23 +1027,9 @@ function stringToPrice(val) {
 }
 
 function initFloatingNavBar() {
-	// floating navbar
-	// const siteHeaderMobile = document.querySelector('#Mobile');
-	// let siteHeaderHeightMobile = siteHeaderMobile.offsetHeight;
 	const siteHeader = document.querySelector('#masthead');
 	const siteContent = document.querySelector('#main');
 	let siteHeaderHeight = siteHeader.offsetHeight;
-	// let screenWidth = window.innerWidth;
-
-	//  desktop
-	siteHeader.classList.add('header-position-fixed');
-	// function updateHeaderPadding() {
-	// 	siteHeaderHeight = siteHeader.offsetHeight;
-	// 	siteContent.style.transition = '0.3s ease-in-out';
-	// }
-
-	// setInterval(updateHeaderPadding, 500);
-
 	let refOffset = 0;
 
 	const headerAppearsOnScrollUp = () => {
