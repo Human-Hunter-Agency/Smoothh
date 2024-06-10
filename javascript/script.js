@@ -997,6 +997,7 @@ function initCalculator(){
 	const tableFee = document.querySelector('[data-js-calc-fee]');
 
 	calcBtn.addEventListener('click',()=>{
+		jQuery(form).tc_validate().form()
 		if (form.checkValidity()){
 			tablePrice.innerHTML = sumEl.innerHTML
 			tableSubtotal.innerHTML = sumEl.innerHTML
