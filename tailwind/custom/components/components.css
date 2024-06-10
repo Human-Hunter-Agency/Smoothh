@@ -526,3 +526,7 @@ i.theChampLogin {
 [data-uniqid="6662fc70c3d414.09442511"] .tc-cell{
 	@apply !max-w-full
 }
+
+[data-uniqid="6662fc70c3d414.09442511"] .tc-field-label-wrap{
+	@apply !block
+}
