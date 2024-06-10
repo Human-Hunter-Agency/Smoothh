@@ -463,7 +463,7 @@ i.theChampLogin {
     @apply hidden
 }
 
-.tm-extra-product-options-checkbox{
+.tm-extra-product-options ul.tmcp-ul-wrap.tm-element-ul-checkbox.tm-extra-product-options-checkbox{
 	@apply !flex-row flex-wrap !items-center !justify-center gap-x-5 gap-y-2.5
 }
 .tm-extra-product-options-checkbox li{
@@ -531,7 +531,7 @@ i.theChampLogin {
 }
 
 [data-uniqid="6662fc70c3d414.09442511"] .tcwidth-100 .tc-row{
-	@apply flex flex-col md:flex-row
+	@apply flex flex-col md:flex-row !mb-5
 }
 
 [data-uniqid="6662fc70c3d414.09442511"] .tc-cell{
