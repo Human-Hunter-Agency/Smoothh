@@ -290,7 +290,8 @@ footer#page-footer .footer-bottom-menu {
 .woocommerce form .form-row [placeholder]:focus::-webkit-input-placeholder {
 	opacity: 1 !important;
 }
-.smoothh-inputs-basic .input-text {
+.smoothh-inputs-basic .input-text,
+.smoothh-inputs-basic input#user_login {
 	@apply placeholder:text-foreground !h-[55px] rounded-[15px] border border-primary px-5 hover:border-secondary accent-primary w-full !outline-1 !-outline-offset-2 !outline-transparent ![outline-style:solid] focus:!outline-1 focus:border-secondary focus:!outline-secondary transition-all duration-200;
 }
 
