@@ -999,13 +999,19 @@ function initCalculator(){
 	calcBtn.addEventListener('click',()=>{
 		jQuery(form).tc_validate().form()
 		if (form.checkValidity()){
-			tablePrice.innerHTML = sumEl.innerHTML
-			tableSubtotal.innerHTML = sumEl.innerHTML
-			tableTotal.innerHTML = sumEl.innerHTML
+			tablePrice.innerHTML = tableSubtotal.innerHTML = tableTotal.innerHTML = stringToPrice(sumEl.innerHTML)
 			// tableFee.innerHTML = feeEl.innerHTML
 			container.classList.remove('hidden')
 		}else{
 			container.classList.add('hidden')
 		}
 	})
+}
+
+function stringToPrice(val){
+	if (val && typeof val == 'string') {
+		return parseFloat(val.replace(',','.')).toFixed(2).replace('.',',')
+	}else{
+		return val.toFixed(2)
+	}
 }

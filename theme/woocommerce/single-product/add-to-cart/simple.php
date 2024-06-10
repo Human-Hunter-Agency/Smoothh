@@ -71,11 +71,11 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 					<span class="text-xl"><?php echo $product->get_title() ?></span>
 				</div>
 				<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
-					<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Price', 'woocommerce'); ?></span>
+					<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Price', 'woocommerce'); ?>:</span>
 					<p class="text-xl"><span data-js-calc-price></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
 				</div>
 				<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
-					<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Subtotal', 'woocommerce'); ?></span>
+					<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
 					<p class="text-xl"><span data-js-calc-subtotal></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
 				</div>
 			</div>
@@ -87,7 +87,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 				<span class="font-semibold text-primary text-xl"><?php esc_html_e('Entry fee', 'smoothh') ?>:</span>
 				<p class="font-semibold text-primary text-xl"><span data-js-calc-fee></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php echo esc_html_e('net', 'smoothh'); ?></span></p>
 			</div> -->
-			<p class="font-semibold max-w-screen-sm block mb-10 text-center mx-auto text-xl"><?php echo wp_kses(__('Entry fee text', 'smoothh'),array( 'br' => array() )); ?></p>
+			<!-- <p class="font-semibold max-w-screen-sm block mb-10 text-center mx-auto text-xl"><?php echo wp_kses(__('Entry fee text', 'smoothh'),array( 'br' => array() )); ?></p> -->
 
 			<div class="flex justify-center">
 				<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class=" single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> whitespace-nowrap button border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html_e('Complete the quote', 'smoothh'); ?>
