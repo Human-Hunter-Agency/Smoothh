@@ -546,6 +546,7 @@ i.theChampLogin {
 	@apply !block
 }
 
+.tm-cart-edit-options,
 .calculator.tc-init .quantity,
 .calculator .tc-epo-totals{
 	@apply !hidden

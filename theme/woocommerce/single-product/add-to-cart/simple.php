@@ -40,7 +40,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 		$is_hourly = get_field('product_hourly', $product->get_id());
 		?>
 
-		<div class="<?php if((isset($is_hourly) && $is_hourly) || $product->get_id()==1186){echo '';}else{echo 'hidden';}?>">
+		<div class="<?php if((isset($is_hourly) && $is_hourly)){echo '';}else{echo 'hidden';}?>">
 			<?php
 				woocommerce_quantity_input(
 					array(
