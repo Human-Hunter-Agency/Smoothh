@@ -63,7 +63,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 
 		<div data-js-calc-container class="hidden p-5 lg:px-8 rounded-2xl border-2 border-[#EFEFEF] w-full">
 			<h4 class="text-2xl md:text-3xl font-semibold text-primary mb-4"><?php echo esc_html_e('Your calculation:', 'smoothh'); ?></h4>
-			<div class="flex border-b border-b-secondary mb-2 gap-5 pb-3">
+			<div class="flex flex-col md:flex-row border-b border-b-secondary mb-2 gap-5 pb-3">
 				<div class="grow flex flex-col gap-3">
 					<span class="font-semibold text-xl hidden md:block">
 						<?php echo esc_html_e('Service:', 'smoothh'); ?>
@@ -71,15 +71,15 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 					<span class="text-xl"><?php echo $product->get_title() ?></span>
 				</div>
 				<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
-					<span class="font-semibold text-base md:text-xl"><?php echo esc_html_e('Price', 'woocommerce'); ?></span>
+					<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Price', 'woocommerce'); ?></span>
 					<p class="text-xl"><span data-js-calc-price></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
 				</div>
 				<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
-					<span class="font-semibold text-base md:text-xl"><?php echo esc_html_e('Subtotal', 'woocommerce'); ?></span>
+					<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Subtotal', 'woocommerce'); ?></span>
 					<p class="text-xl"><span data-js-calc-subtotal></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
 				</div>
 			</div>
-			<div class="flex justift-between md:flex-col mb-14 gap-5 items-end">
+			<div class="flex justify-between md:flex-col mb-14 gap-5 items-end">
 				<span class="font-semibold text-primary text-xl"><?php echo esc_html_e('Total', 'woocommerce'); ?>:</span>
 				<p class="font-semibold text-primary text-xl"><span data-js-calc-total></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php echo esc_html_e('net', 'smoothh'); ?></span></p>
 			</div>
