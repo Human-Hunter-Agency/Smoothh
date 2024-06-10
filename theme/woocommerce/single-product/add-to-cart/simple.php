@@ -63,30 +63,30 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 
 		<div data-js-calc-container class="hidden p-5 lg:px-8 rounded-2xl border-2 border-[#EFEFEF] w-full">
 			<h4 class="text-2xl md:text-3xl font-semibold text-primary mb-4"><?php echo esc_html_e('Your calculation:', 'smoothh'); ?></h4>
-			<div class="flex border-b border-b-secondary mb-2 gap-5">
+			<div class="flex border-b border-b-secondary mb-2 gap-5 pb-3">
 				<div class="grow flex flex-col gap-3">
-					<span class="font-semibold text-xl">
+					<span class="font-semibold text-xl hidden md:block">
 						<?php echo esc_html_e('Service:', 'smoothh'); ?>
 					</span>
 					<span class="text-xl"><?php echo $product->get_title() ?></span>
 				</div>
-				<div class="grow-0 flex flex-col gap-3 items-end">
-					<span class="font-semibold text-xl"><?php echo esc_html_e('Price', 'woocommerce'); ?></span>
+				<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
+					<span class="font-semibold text-base md:text-xl"><?php echo esc_html_e('Price', 'woocommerce'); ?></span>
 					<p class="text-xl"><span data-js-calc-price></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
 				</div>
-				<div class="grow-0 flex flex-col gap-3 items-end">
-					<span class="font-semibold text-xl"><?php echo esc_html_e('Subtotal', 'woocommerce'); ?></span>
+				<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
+					<span class="font-semibold text-base md:text-xl"><?php echo esc_html_e('Subtotal', 'woocommerce'); ?></span>
 					<p class="text-xl"><span data-js-calc-subtotal></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
 				</div>
 			</div>
-			<div class="flex mb-14 gap-5 justify-end">
+			<div class="flex justift-between md:flex-col mb-14 gap-5 items-end">
 				<span class="font-semibold text-primary text-xl"><?php echo esc_html_e('Total', 'woocommerce'); ?>:</span>
 				<p class="font-semibold text-primary text-xl"><span data-js-calc-total></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php echo esc_html_e('net', 'smoothh'); ?></span></p>
 			</div>
-			<div class="flex mb-14 gap-5 justify-end">
+			<!-- <div class="flex mb-14 gap-5 justify-end">
 				<span class="font-semibold text-primary text-xl"><?php esc_html_e('Entry fee', 'smoothh') ?>:</span>
 				<p class="font-semibold text-primary text-xl"><span data-js-calc-fee></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php echo esc_html_e('net', 'smoothh'); ?></span></p>
-			</div>
+			</div> -->
 			<p class="font-semibold max-w-screen-sm block mb-10 text-center mx-auto text-xl"><?php echo wp_kses(__('Entry fee text', 'smoothh'),array( 'br' => array() )); ?></p>
 
 			<div class="flex justify-center">
