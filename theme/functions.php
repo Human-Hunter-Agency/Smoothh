@@ -1095,5 +1095,19 @@ function get_price_with_tax_string( $price_net ){
 
 add_action('wc_epo_template_after_final_total','smoothh_test_after_total',1);
 function smoothh_test_after_total($args){
-	echo $args . 'test';
+
+	// Regular expression to match content between <bdi> and <span class="woocommerce-Price-currencySymbol">
+	$pattern = '/<bdi>(.*?)&nbsp;<span class="woocommerce-Price-currencySymbol">/';
+
+	// Array to store matches
+	$matches = array();
+
+	// Perform the regex match to find the first match
+	if (preg_match($pattern, $args, $matches)) {
+		// The content between <bdi> and <span> is in the second element of $matches
+		$content = $matches[1];
+		echo 'Extracted content: ' . $content;
+	} else {
+		echo $args;
+	}
 }
