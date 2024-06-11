@@ -21,7 +21,7 @@ if ( ! isset( $formatted_price ) ) {
 if ( ! isset( $formatted_sale_price ) ) {
 	$formatted_sale_price = '';
 }
-
+$arr = get_defined_vars();
 ?>
 <script class="tm-hidden" type="text/template" id="tmpl-tc-cart-options-popup">
 	<div class='header'>
@@ -45,7 +45,7 @@ if ( ! isset( $formatted_sale_price ) ) {
 </script>
 <script class="tm-hidden" type="text/template" id="tmpl-tc-final-totals">
 	<dl class="tm-extra-product-options-totals tm-custom-price-totals test">
-		<span>{{{data.product_total_price}}}</span>
+		<span><?php print_r($arr); ?></span>
 		<# if (data.show_unit_price==true){ #><?php do_action( 'wc_epo_template_before_unit_price' ); ?>
 		<dt class="tm-unit-price">{{{ data.unit_price }}}</dt>
 		<dd class="tm-unit-price">

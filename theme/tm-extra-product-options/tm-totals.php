@@ -84,7 +84,6 @@ if ( isset( $classtotalform, $epo_internal_counter, $product_id, $form_prefix, $
 		data-tax-display-mode="<?php echo esc_attr( $tax_display_mode ); ?>"
 		data-prices-include-tax="<?php echo esc_attr( $prices_include_tax ); ?>"
 		data-variations="<?php echo esc_attr( $variations ); ?>" <?php do_action( 'wc_epo_template_tm_totals', $args ); ?> ></div>
-        </div>
-    <pre><?php print_r($args) ?></pre>
+</div>
 	<?php
 endif;
