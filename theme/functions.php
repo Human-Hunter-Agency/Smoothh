@@ -1095,5 +1095,5 @@ function get_price_with_tax_string( $price_net ){
 
 add_action('wc_epo_template_after_final_total','smoothh_test_after_total',1);
 function smoothh_test_after_total($args){
-	echo $args;
+	echo $args . 'test';
 }
