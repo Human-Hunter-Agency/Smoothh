@@ -50,7 +50,7 @@ if ( isset( $classtotalform, $epo_internal_counter, $product_id, $form_prefix, $
 	$prices_include_tax        = (string) $prices_include_tax;
 	$args                      = (array) $args;
 	?>
-<div class="test tc-totals-form tm-product-id-<?php echo esc_attr( $product_id ); ?> <?php echo esc_attr( $classtotalform ); ?>" data-epo-id="<?php echo esc_attr( $epo_internal_counter ); ?>" data-product-id="<?php echo esc_attr( $product_id ); ?>">
+<div class="tc-totals-form tm-product-id-<?php echo esc_attr( $product_id ); ?> <?php echo esc_attr( $classtotalform ); ?>" data-epo-id="<?php echo esc_attr( $epo_internal_counter ); ?>" data-product-id="<?php echo esc_attr( $product_id ); ?>">
 	<input type="hidden" value="<?php echo esc_attr( $price ); ?>" name="cpf_product_price<?php echo esc_attr( $form_prefix ); ?>" class="cpf-product-price">
 	<input type="hidden" value="" name="dynamic_product_price<?php echo esc_attr( $form_prefix ); ?>" class="cpf-dynamic-product-price">
 	<input type="hidden" value="" name="override_product_price<?php echo esc_attr( $form_prefix ); ?>" class="cpf-override-product-price">

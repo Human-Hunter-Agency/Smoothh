@@ -77,16 +77,25 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 				</div>
 				<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
 					<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Price', 'woocommerce'); ?>:</span>
-					<p class="text-xl"><span data-js-calc-price></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
+					<div class="flex flex-col items-end">
+						<p class="text-xl"><span data-js-calc-price></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
+						<p class="text-sm md:text-base mt-1.5 md:mt-0.5">(<span data-js-calc-price-taxed></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('gross', 'smoothh') ?></span></p>
+					</div>
 				</div>
 				<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
 					<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
-					<p class="text-xl"><span data-js-calc-subtotal></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
-				</div>
+					<div class="flex flex-col items-end">
+						<p class="text-xl"><span data-js-calc-subtotal></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net', 'smoothh') ?></span></p>
+						<p class="text-sm md:text-base mt-1.5 md:mt-0.5">(<span data-js-calc-subtotal-taxed></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('gross', 'smoothh') ?></span></p>
+					</div>
+					</div>
 			</div>
-			<div class="flex justify-between md:flex-end mb-14 gap-5">
+			<div class="flex justify-between md:justify-end mb-14 gap-5">
 				<span class="font-semibold text-primary text-xl"><?php echo esc_html_e('Total', 'woocommerce'); ?>:</span>
-				<p class="font-semibold text-primary text-xl"><span data-js-calc-total></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php echo esc_html_e('net', 'smoothh'); ?></span></p>
+				<div class="flex flex-col items-end">
+					<p class="font-semibold text-primary text-xl"><span data-js-calc-total></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php echo esc_html_e('net', 'smoothh'); ?></span></p>
+					<p class="text-sm md:text-base mt-1.5 md:mt-0.5">(<span data-js-calc-total-taxed></span> <span><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('gross', 'smoothh') ?></span></p>
+				</div>
 			</div>
 			<!-- <div class="flex mb-14 gap-5 justify-end">
 				<span class="font-semibold text-primary text-xl"><?php esc_html_e('Entry fee', 'smoothh') ?>:</span>

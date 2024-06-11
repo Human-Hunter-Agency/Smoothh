@@ -992,11 +992,15 @@ function initCalculator() {
 	const sumEl = document.querySelector(
 		'[data-uniqid="666582c02fa7e2.99896643"] .tc-result'
 	);
+	const taxEl = document.querySelector('.tm-vat-options-totals .price')
 	// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
 
 	const tablePrice = document.querySelector('[data-js-calc-price]');
+	const tablePriceTaxed = document.querySelector('[data-js-calc-price-taxed]');
 	const tableSubtotal = document.querySelector('[data-js-calc-subtotal]');
+	const tableSubtotalTaxed = document.querySelector('[data-js-calc-subtotal-taxed]');
 	const tableTotal = document.querySelector('[data-js-calc-total]');
+	const tableTotalTaxed = document.querySelector('[data-js-calc-total-taxed]');
 	// const tableFee = document.querySelector('[data-js-calc-fee]');
 
 	form.addEventListener('change', () => {
@@ -1007,9 +1011,14 @@ function initCalculator() {
 		jQuery(form).tc_validate().form();
 		if (form.checkValidity()) {
 			tablePrice.innerHTML =
-				tableSubtotal.innerHTML =
-				tableTotal.innerHTML =
-					stringToPrice(sumEl.innerHTML);
+			tableSubtotal.innerHTML =
+			tableTotal.innerHTML = stringToPriceFormat(sumEl.innerText);
+
+			const priceTaxed = parseFloat(sumEl.innerText.replace(',', '.')) + parseFloat(taxEl.innerText.replace(',', '.'))
+			tablePriceTaxed.innerHTML =
+			tableSubtotalTaxed.innerHTML =
+			tableTotalTaxed.innerHTML = stringToPriceFormat(priceTaxed);
+
 			// tableFee.innerHTML = feeEl.innerHTML
 			container.classList.remove('hidden');
 		} else {
@@ -1018,12 +1027,12 @@ function initCalculator() {
 	});
 }
 
-function stringToPrice(val) {
-	if (val && typeof val == 'string') {
-		return parseFloat(val.replace(',', '.')).toFixed(2).replace('.', ',');
-	} else {
-		return val.toFixed(2);
+function stringToPriceFormat(val) {
+	if (typeof val == 'string') {
+		val = parseFloat(val.replace(',', '.'))
 	}
+
+	return val.toFixed(2).replace('.', ',');
 }
 
 function initFloatingNavBar() {
