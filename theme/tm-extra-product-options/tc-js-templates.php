@@ -45,9 +45,7 @@ if ( ! isset( $formatted_sale_price ) ) {
 </script>
 <script class="tm-hidden" type="text/template" id="tmpl-tc-final-totals">
 	<dl class="tm-extra-product-options-totals tm-custom-price-totals test">
-		<pre>{{{JSON.stringify(data, null, 6).replace(/\n( *)/g, function (match, p1) {
-         return '<br>' + '&nbsp;'.repeat(p1.length);
-     });}}}</pre>
+		<pre>{{{JSON.stringify(data)}}}</pre>
 		<# if (data.show_unit_price==true){ #><?php do_action( 'wc_epo_template_before_unit_price' ); ?>
 		<dt class="tm-unit-price">{{{ data.unit_price }}}</dt>
 		<dd class="tm-unit-price">
