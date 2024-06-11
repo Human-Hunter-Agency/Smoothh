@@ -1092,3 +1092,8 @@ function get_price_with_tax_string( $price_net ){
 
     return $price_incl_tax_string;
 }
+
+add_action('wc_epo_template_after_final_total','smoothh_test_after_total');
+function smoothh_test_after_total(){
+	echo 'test';
+}
