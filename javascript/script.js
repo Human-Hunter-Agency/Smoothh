@@ -992,7 +992,6 @@ function initCalculator() {
 	const sumEl = document.querySelector(
 		'[data-uniqid="666582c02fa7e2.99896643"] .tc-result'
 	);
-	const taxEl = document.querySelector('.tm-vat-options-totals .price')
 	// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
 
 	const tablePrice = document.querySelector('[data-js-calc-price]');
@@ -1014,7 +1013,9 @@ function initCalculator() {
 			tableSubtotal.innerHTML =
 			tableTotal.innerHTML = stringToPriceFormat(sumEl.innerText);
 
+			const taxEl = document.querySelector('.tm-vat-options-totals .price')
 			const priceTaxed = parseFloat(sumEl.innerText.replace(',', '.')) + parseFloat(taxEl.innerText.replace(',', '.'))
+			
 			tablePriceTaxed.innerHTML =
 			tableSubtotalTaxed.innerHTML =
 			tableTotalTaxed.innerHTML = stringToPriceFormat(priceTaxed);
