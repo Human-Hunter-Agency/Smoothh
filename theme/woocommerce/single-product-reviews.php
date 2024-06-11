@@ -25,6 +25,7 @@ if ( ! comments_open() ) {
 
 ?>
 
+<?php if ( have_comments() ) : ?>
 <div id="comments container">
     <h2 class="woocommerce-Reviews-title text-center font-bold text-2xl md:text-3xl lg:text-5xl my-9 md:my-14">
         <?php
@@ -33,7 +34,6 @@ if ( ! comments_open() ) {
     </h2>
 </div>
 <div class="overflow-hidden">
-    <?php if ( have_comments() ) : ?>
         <div class="swiper !container !overflow-visible mb-10" data-js="swiper-tiles-wide">
             <ol class="commentlist swiper-wrapper">
                 <?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
@@ -56,12 +56,8 @@ if ( ! comments_open() ) {
         // endif;
         ?>
 </div>
-<div>
-    <?php else : ?>
-        <p class="container text-base md:text-lg"><?php esc_html_e( 'There are no reviews yet.', 'woocommerce' ); ?></p>
-    <?php endif; ?>
+<?php endif; ?>
 
-</div>
 <div id="reviews" class="woocommerce-Reviews container mb-10 md:mb-14">
 
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
