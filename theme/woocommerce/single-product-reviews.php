@@ -58,7 +58,7 @@ if ( ! comments_open() ) {
 </div>
 <?php endif; ?>
 
-<div id="reviews" class="woocommerce-Reviews container mb-10 md:mb-14">
+<div id="reviews" class="woocommerce-Reviews container mb-10 md:mb-14 <?php if ( !have_comments() ) : ?> mt-10 <?php endif; ?>">
 
 	<?php if ( get_option( 'woocommerce_review_rating_verification_required' ) === 'no' || wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) : ?>
 		<div id="review_form_wrapper">
@@ -138,7 +138,7 @@ if ( ! comments_open() ) {
 				?>
 			</div>
 		</div>
-	<?php else : ?>
+	<?php elseif(have_comments()) : ?>
 		<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'woocommerce' ); ?></p>
 	<?php endif; ?>
 
