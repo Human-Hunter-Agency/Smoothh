@@ -21,13 +21,17 @@ if ( ! isset( $formatted_price ) ) {
 if ( ! isset( $formatted_sale_price ) ) {
 	$formatted_sale_price = '';
 }
+function get_price_with_tax_string( $price_net ){
+	$product_id = 1186;
+	$product = wc_get_product( $product_id );
+	$tax_rates = WC_Tax::get_rates( $product->get_tax_class() );
+	$taxes = WC_Tax::calc_tax( $price_net, $tax_rates, false );
+	$tax_amount = array_sum( $taxes );
+	$price_incl_tax = $price_net + $tax_amount;
+	$price_incl_tax_string = wc_price( $price_incl_tax );
 
-$product_id = 1186;
-$product = wc_get_product( $product_id );
-$tax_rates = WC_Tax::get_rates( $product->get_tax_class() );
-$taxes = WC_Tax::calc_tax( $price_excl_tax, $tax_rates, false );
-$tax_amount = array_sum( $taxes );
-
+    return $price_incl_tax_string;
+}
 ?>
 <script class="tm-hidden" type="text/template" id="tmpl-tc-cart-options-popup">
 	<div class='header'>
@@ -51,7 +55,7 @@ $tax_amount = array_sum( $taxes );
 </script>
 <script class="tm-hidden" type="text/template" id="tmpl-tc-final-totals">
 	<dl class="tm-extra-product-options-totals tm-custom-price-totals test">
-		<span><?php echo wc_price( data.product_total_price + $tax_amount ) ?></span>
+		<span><?php echo get_price_with_tax_string( data.product_total_price ); ?></span>
 		<# if (data.show_unit_price==true){ #><?php do_action( 'wc_epo_template_before_unit_price' ); ?>
 		<dt class="tm-unit-price">{{{ data.unit_price }}}</dt>
 		<dd class="tm-unit-price">
