@@ -82,7 +82,7 @@ if ( isset( $classtotalform, $epo_internal_counter, $product_id, $form_prefix, $
 		data-modded-taxes-of-one="<?php echo esc_attr( $modded_taxes_of_one ); ?>"
 		data-tax-string="<?php echo esc_attr( $tax_string ); ?>"
 		data-tax-display-mode="<?php echo esc_attr( $tax_display_mode ); ?>"
-		data-prices-include-tax="<?php echo esc_attr( $prices_include_tax ); ?>"
+		data-prices-include-tax="1"
 		data-variations="<?php echo esc_attr( $variations ); ?>" <?php do_action( 'wc_epo_template_tm_totals', $args ); ?> ></div>
 </div>
 	<?php
