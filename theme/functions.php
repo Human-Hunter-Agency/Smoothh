@@ -39,7 +39,7 @@ if (!defined('SMOOTHH_TYPOGRAPHY_CLASSES')) {
 	 */
 	define(
 		'SMOOTHH_TYPOGRAPHY_CLASSES',
-		'prose prose-neutral max-w-none prose-a:text-primary prose-figure:mt-1 prose-a:break-words md:prose-a:break-normal'
+		'prose prose-neutral max-w-none prose-a:text-primary prose-img:w-full prose-figure:w-full md:prose-figure:w-auto md:prose-figure:mt-1 prose-a:break-words md:prose-a:break-normal'
 	);
 }
 
