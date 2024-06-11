@@ -10,7 +10,7 @@
 
 ?>
 
-<header id="masthead" class="sticky z-20 top-0 w-full bg-white">
+<header id="masthead" class="sticky z-20 top-0 w-full bg-white transition duration-300">
 	<div class="container py-5 flex justify-between items-center">
 		<div>
 			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block max-w-[140px] md:max-w-[220px] 2xl:max-w-[266px]">
