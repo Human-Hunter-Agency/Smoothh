@@ -1080,3 +1080,15 @@ function tm_epo_js_loader(){
 	do_action( 'woocommerce_tm_epo_enqueue_scripts');
 }
 add_action( 'wp_enqueue_scripts', 'tm_epo_js_loader' );
+
+function get_price_with_tax_string( $price_net ){
+	$product_id = 1186;
+	$product = wc_get_product( $product_id );
+	$tax_rates = WC_Tax::get_rates( $product->get_tax_class() );
+	$taxes = WC_Tax::calc_tax( $price_net, $tax_rates, false );
+	$tax_amount = array_sum( $taxes );
+	$price_incl_tax = $price_net + $tax_amount;
+	$price_incl_tax_string = wc_price( $price_incl_tax );
+
+    return $price_incl_tax_string;
+}
