@@ -44,7 +44,7 @@ if ( ! isset( $formatted_sale_price ) ) {
 </script>
 <script class="tm-hidden" type="text/template" id="tmpl-tc-final-totals">
 	<dl class="tm-extra-product-options-totals tm-custom-price-totals test">
-		<pre>{{{ data }}}</pre>
+		<pre>{{{ JSON.stringify(data) }}}</pre>
 		<# if (data.show_unit_price==true){ #><?php do_action( 'wc_epo_template_before_unit_price' ); ?>
 		<dt class="tm-unit-price">{{{ data.unit_price }}}</dt>
 		<dd class="tm-unit-price">
