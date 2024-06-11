@@ -43,9 +43,9 @@ $arr = get_defined_vars();
 	<span class="tc-lightbox-button-close tcfa tcfa-times"></span>
 	{{{ data.img }}}
 </script>
+<span class="test-args"><?php print_r($arr); ?></span>
 <script class="tm-hidden" type="text/template" id="tmpl-tc-final-totals">
 	<dl class="tm-extra-product-options-totals tm-custom-price-totals test">
-		<span><?php print_r($arr); ?></span>
 		<# if (data.show_unit_price==true){ #><?php do_action( 'wc_epo_template_before_unit_price' ); ?>
 		<dt class="tm-unit-price">{{{ data.unit_price }}}</dt>
 		<dd class="tm-unit-price">
