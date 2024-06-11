@@ -1097,7 +1097,7 @@ add_action('wc_epo_template_after_final_total','smoothh_test_after_total',1);
 function smoothh_test_after_total($args){
 
 	// Regular expression to match content between <bdi> and <span class="woocommerce-Price-currencySymbol">
-	$pattern = '/<bdi>(.*?)&nbsp;<span class="woocommerce-Price-currencySymbol">/';
+	$pattern = '/<bdi>(.*?)<span class="woocommerce-Price-currencySymbol">/';
 
 	// Array to store matches
 	$matches = array();
