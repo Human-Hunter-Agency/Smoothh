@@ -6,7 +6,7 @@
 
 ?>
 
-<div class="w-full py-10 md:py-[70px] mb:pb-20 text-white bg-gradient-to-b from-secondary to-primary mt-10 md:mt-20 mb-20">
+<div class="w-full py-10 md:py-[70px] mb:pb-20 text-white bg-gradient-to-b from-secondary to-primary mb-20">
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
