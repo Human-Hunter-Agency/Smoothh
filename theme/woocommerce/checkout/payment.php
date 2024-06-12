@@ -26,7 +26,7 @@ if (!wp_doing_ajax()) {
   <h3 class="!mt-0 mb-9 text-2xl text-primary"><?php esc_html_e('Payment methods', 'woocommerce'); ?></h3>
 
   <?php if (WC()->cart->needs_payment()) : ?>
-    <ul class="wc_payment_methods payment_methods methods">
+    <ul class="wc_payment_methods payment_methods methods not-prose">
       <?php
       if (!empty($available_gateways)) {
         foreach ($available_gateways as $gateway) {
