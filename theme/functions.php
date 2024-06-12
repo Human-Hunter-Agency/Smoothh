@@ -619,12 +619,13 @@ function smoothh_override_checkout_fields($fields)
 				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
 				'title'    => __('NIP number requires 10 digits', 'smoothh')
-			),
-		);
-
+				),
+				);
+				
 		$fields['billing']['billing_company_nip'] = array(
 			'type'		   => 'text',
 			'label'  => __('NIP Number', 'smoothh'),
+			'placeholder' => __('_ _ _ _ _ _ _ _ _ _', 'smoothh'),
 			'priority' => 35,
 			'required' => true,
 			'class' => array('form-row-last'),
@@ -637,11 +638,18 @@ function smoothh_override_checkout_fields($fields)
 
 		$fields['shipping']['shipping_company']['class'] = array('form-row-first');
 		$fields['billing']['billing_company']['class'] = array('form-row-first');
+		$fields['billing']['billing_company']['placeholder'] = __('Company name', 'smoothh');
 	} else {
 		unset($fields['shipping']['shipping_company']);
 		unset($fields['billing']['billing_company']);
 	}
 
+	$fields['billing']['billing_first_name']['placeholder'] = __('Enter your first name', 'smoothh');
+	$fields['billing']['billing_last_name']['placeholder'] = __('Enter your last name', 'smoothh');
+	$fields['billing']['billing_postcode']['placeholder'] = __('_ _ - _ _ _', 'smoothh');
+	$fields['billing']['billing_city']['placeholder'] = __('City', 'smoothh');
+	$fields['billing']['billing_email']['placeholder'] = __('Enter your email', 'smoothh');
+	$fields['billing']['billing_phone']['placeholder'] = __('Enter your phone number', 'smoothh');
 
 	$fields['shipping']['shipping_email']['class'] = array('form-row-first');
 	$fields['billing']['billing_email']['class'] = array('form-row-first');
