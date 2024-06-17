@@ -20,11 +20,11 @@ $tiles_list = $args['tiles_list'];
                         <?php endif; ?>
 
                         <?php if ($tile['title']) : ?>
-                            <h3 class="max-w-[250px] text-center text-white text-base md:text-[20px] mb-9 font-semibold"><?php echo $tile['title']; ?></h3>
+                            <h3 class="max-w-[280px] text-center text-white text-base md:text-[20px] mb-9 font-semibold"><?php echo $tile['title']; ?></h3>
                         <?php endif; ?>
 
                         <?php if ($tile['description']) : ?>
-                            <p class="max-w-[250px] text-center text-sm md:text-base opacity-0 group-hover:!opacity-100 transition duration-200"><?php echo $tile['description']; ?></p>
+                            <div class="max-w-[280px] text-center text-sm md:text-base hidden group-hover:!block transition duration-200"><?php echo $tile['description']; ?></div>
                         <?php endif; ?>
 
                         <?php if ($tile['button']) :
