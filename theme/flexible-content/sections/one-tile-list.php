@@ -1,6 +1,6 @@
 <?php
 
-/** Template to display 'Sekcja z przesuniętą listą' - one_tile_list */
+/** Template to display 'Sekcja z przesuniętą kafelką listy' - one_tile_list */
 
 $header = $args['header'];
 $tiles_list = $args['tiles_list'];
@@ -23,7 +23,10 @@ $tiles_list = $args['tiles_list'];
                 <?php foreach ($tiles_list as $tile) :
                 ?>
                     <?php if ($tile['text']) : ?>
-                        <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
+                        <div class="flex gap-2 items-start">
+                            <div class="w-4 h-4 bg-primary rounded-full"></div>
+                            <p class="text-sm md:text-base"><?php echo $tile['text']; ?></p>
+                        </div>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </div>
