@@ -31,7 +31,7 @@ $list = $args['list'];
 
                                     <div class="flex items-center justify-center size-[72px] rounded-full bg-gradient-to-b from-secondary to-primary z-[1] text-white text-[32px] font-semibold"><?php echo $i; ?></div>
 
-                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-full '; ?> h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[36px] right-0 z-[-1]"></div>
+                                    <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[36px] right-[35px] z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
@@ -43,7 +43,7 @@ $list = $args['list'];
                                         <p><?php echo $i; ?></p>
                                     </div>
 
-                                    <div class="w-1/2 h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
+                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
