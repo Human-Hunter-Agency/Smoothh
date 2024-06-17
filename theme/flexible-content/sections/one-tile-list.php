@@ -10,7 +10,7 @@ $tiles_list = $args['tiles_list'];
 <div class="relative w-full py-10 pb-5 md:pt-[70px] mt-10 mb-20">
     <div class="z-[-1] w-[100%] lg:w-[75%] h-[70%] absolute top-8 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
 
-    <div class="pt-14 relative z-0 container flex basis">
+    <div class="pt-14 relative z-0 container flex flex-col lg:flex-row basis">
         <?php if ($header) : ?>
             <div class="basis-[55%] mb-10 xl:mb-20 mx-auto text-2xl md:text-4xl font-bold lg:font-extrabold lg:leading-[45px]">
                 <div class="max-w-[550px]">
