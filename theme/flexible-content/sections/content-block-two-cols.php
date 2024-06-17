@@ -30,7 +30,7 @@ $decoration_img = $args['decoration_img'];
     </div>
     <?php if ($decoration_img) : ?>
         <div class="hidden lg:block absolute right-0 top-7">
-            <?php echo smoothh_img_responsive($decoration_img, '', array(646,738), 'lazy') ?>
+            <?php echo smoothh_img_responsive($decoration_img, '', array(768,768), 'lazy') ?>
         </div>
     <?php endif; ?>
 </div>
