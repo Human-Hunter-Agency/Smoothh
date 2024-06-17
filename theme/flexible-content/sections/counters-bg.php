@@ -17,7 +17,7 @@ $blueBg = $args['blueBg'];
 
     <div class="pt-14 relative z-0 container">
         <?php if ($header) : ?>
-            <div class="mb-10 mx-auto max-w-[900px] text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+            <div class="mb-10 xl:mb-20 mx-auto max-w-[900px] text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                 <?php echo $header; ?>
             </div>
         <?php endif; ?>
