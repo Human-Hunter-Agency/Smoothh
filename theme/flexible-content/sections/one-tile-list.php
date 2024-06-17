@@ -24,8 +24,8 @@ $tiles_list = $args['tiles_list'];
                 <?php foreach ($tiles_list as $tile) :
                 ?>
                     <?php if ($tile['text']) : ?>
-                        <div class="flex gap-2 items-baseline">
-                            <div class="w-[10px] h-[10px] bg-primary rounded-full"></div>
+                        <div class="mb-8 flex gap-2 items-baseline">
+                            <div class="min-w-[10px] min-h-[10px] bg-primary rounded-full"></div>
                             <p class="text-sm md:text-base"><?php echo $tile['text']; ?></p>
                         </div>
                     <?php endif; ?>
