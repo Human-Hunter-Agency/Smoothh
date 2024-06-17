@@ -11,7 +11,7 @@ $tiles_list = $args['tiles_list'];
         <?php if ($tiles_list) : ?>
             <div class="tiles-wrapper flex flex-col lg:flex-row gap-10">
                 <?php foreach ($tiles_list as $tile) : ?>
-                    <div class="tile group relative h-[340px] !flex items-center justify-center flex-col xl:!basis-1/2 drop-shadow-lg lg:shadow-2xl rounded-2xl">
+                    <div class="tile group relative h-[340px] !flex items-center justify-center flex-col lg:!basis-1/2 drop-shadow-lg lg:shadow-2xl rounded-2xl">
                         <?php if ($tile['image'] && $tile['image']['url']) : ?>
                             <div class="w-full h-full rounded-[14px] overflow-hidden absolute top-0 left-0 z-[-1] group-hover:opacity-0 transition duration-300">
                                 <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-full', array(360, 220), 'lazy'); ?>
