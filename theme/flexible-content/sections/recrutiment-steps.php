@@ -38,7 +38,7 @@ $list = $args['list'];
 
                                 <?php else : ?>
 
-                                    <div class="flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary bg-white z-[1] text-[32px] font-semibold">
+                                    <div class="flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary bg-white z-[1] text-[32px] text-primary font-semibold">
                                         <p><?php echo $i; ?></p>
                                     </div>
                                     <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[2px] border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[36px] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
