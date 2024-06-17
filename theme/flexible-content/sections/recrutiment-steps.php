@@ -11,7 +11,7 @@ $list = $args['list'];
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
-            <div class="prose-h3:text-3xl prose-h3:md:text-5xl prose-h3:font-bold mb-20 md:mb-24"><?php echo $header; ?></div>
+            <div class="mb-10 xl:mb-20 mx-auto max-w-[900px] text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]"><?php echo $header; ?></div>
         <?php endif; ?>
     </div>
     <div class="w-full overflow-hidden ">
