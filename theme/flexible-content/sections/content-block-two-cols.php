@@ -9,8 +9,8 @@ $isDecorationOverflow = $args['isDecorationOverflow'];
 
 ?>
 
-<div class="relative py-10 md:py-20 overflow-hidden">
-    <div class="container overflow-visible">
+<div class="relative py-10 md:py-20 <?php if (!$isDecorationOverflow) : ?> overflow-hidden <?php endif; ?>">
+    <div class="container <?php if (!$isDecorationOverflow) : ?> overflow-visible <?php endif; ?>">
         <div class="flex flex-col lg:flex-row gap-10">
             <div class="z-0 w-full lg:w-1/2">
                 <?php if ($header) : ?>
@@ -26,7 +26,7 @@ $isDecorationOverflow = $args['isDecorationOverflow'];
             </div>
             <div class="w-0 lg:w-1/2 relative">
                 <?php if ($decoration_img && !$isDecorationOverflow) : ?>
-                    <div class="hidden lg:block -translate-y-40">
+                    <div class="hidden lg:block -translate-y-24">
                         <?php echo smoothh_img_responsive($decoration_img, '', array(768, 768), 'lazy') ?>
                     </div>
                 <?php endif; ?>
