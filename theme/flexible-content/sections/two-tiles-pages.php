@@ -9,7 +9,7 @@ $tiles_list = $args['tiles_list'];
 <div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0 mb-20">
     <div class="container">
         <?php if ($tiles_list) : ?>
-            <div class="tiles-wrapper flex gap-10">
+            <div class="tiles-wrapper flex flex-col lg:flex-row gap-10">
                 <?php foreach ($tiles_list as $tile) : ?>
                     <div class="tile group relative h-[340px] !flex items-center justify-center flex-col xl:!basis-1/2 drop-shadow-lg lg:shadow-2xl rounded-2xl">
                         <?php if ($tile['image'] && $tile['image']['url']) : ?>
