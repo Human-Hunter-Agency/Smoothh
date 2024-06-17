@@ -18,7 +18,7 @@ $marquee_text = $args['marquee_text'];
         echo smoothh_img_responsive($hero_background, 'absolute inset-0 -z-20 object-cover !h-full w-full', array(1800, 600), 'eager');
     endif; ?>
 
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b to-primary/60 from-secondary/80"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-secondary to-primary"></div>
 
     <div class="relative z-0 flex flex-col items-center justify-center container">
         <?php if ($display_logo && is_front_page()) : ?>
