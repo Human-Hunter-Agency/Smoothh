@@ -231,7 +231,7 @@ footer#page-footer .footer-bottom-menu {
 	@apply relative z-0 h-[55px] min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 .tmcp-field-wrap .tmcp-textarea{
-	@apply relative z-0 h-[55px] min-h-[55px] max-h-40 py-4 min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary !px-5 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
+	@apply relative z-0 h-[55px] min-h-[55px] max-h-40 py-3.5 min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary !px-5 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 
 .tmcp-field-wrap .ss-main .ss-values,
