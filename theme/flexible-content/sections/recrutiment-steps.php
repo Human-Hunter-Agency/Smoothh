@@ -39,11 +39,11 @@ $list = $args['list'];
 
                                 <?php else : ?>
 
-                                    <div class=" m-8 flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary z-[1] text-[32px] text-primary font-semibold">
+                                    <div class="m-8 flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary z-[1] text-[32px] text-primary font-semibold">
                                         <p><?php echo $i; ?></p>
                                     </div>
 
-                                    <div class="w-full h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[36px] right-[35px] z-[-1]"></div>
+                                    <div class="w-1/2 h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
