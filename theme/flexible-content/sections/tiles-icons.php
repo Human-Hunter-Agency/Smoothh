@@ -30,7 +30,10 @@ $button = $args['button'];
     <div class="relative z-0 w-full overflow-hidden !pb-5">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-icons">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper xl:!transform-none 
+                    <?php if ($grid) : ?> xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-20 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_33px)] 
+                    <?php endif; ?>">
+
                     <?php foreach ($tiles_list as $tile) : ?>
                         <div class="swiper-slide !flex items-center flex-col text-center">
                             <?php if ($tile['icon'] && $tile['icon']['url']) : ?>
