@@ -12,7 +12,7 @@ $tiles_list = $args['tiles_list'];
 
     <div class="pt-14 relative z-0 container flex basis">
         <?php if ($header) : ?>
-            <div class="basis-[55%] mb-10 xl:mb-20 mx-auto text-2xl md:text-4xl font-bold lg:font-extrabold lg:leading-[55px]">
+            <div class="basis-[55%] mb-10 xl:mb-20 mx-auto text-2xl md:text-4xl font-bold lg:font-extrabold lg:leading-[45px]">
                 <div class="max-w-[550px]">
                     <?php echo $header; ?>
                 </div>
