@@ -26,14 +26,16 @@ get_header();
 			get_template_part('template-parts/content/content', 'page');
 
 			$sections = get_field('sections');
+			$no_fade_sections = ['hero'];
 
 			if ($sections) :
-				foreach ($sections as $section) : ?>
-					<div data-aos="fade" data-aos-delay="50">
+				foreach ($sections as $section) : 
+					$template = str_replace('_', '-', $section['acf_fc_layout']);
+					?>
+					<div <?php if (!in_array($template,$no_fade_sections)) { echo 'data-aos="fade" data-aos-delay="50"'; }?> >
 						<?php
 						$section_visible = $section['isSectionVisible'];
 						if (isset($section_visible) && $section_visible == true) {
-							$template = str_replace('_', '-', $section['acf_fc_layout']);
 							get_template_part('flexible-content/sections/' . $template, '', $section);
 						} ?>
 					</div>
