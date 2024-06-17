@@ -10,6 +10,8 @@ $isDecorationOverflow = $args['isDecorationOverflow'];
 ?>
 
 <div class="relative py-10 md:py-20 <?php if (!$isDecorationOverflow) : ?> overflow-hidden <?php endif; ?>">
+    <div class="z-[-1] lg:w-[85%] 2xl:w-[88%] lg:h-[1200px] absolute top-8 right-0 rounded-[45px] bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]"></div>
+
     <div class="container <?php if (!$isDecorationOverflow) : ?> overflow-visible <?php endif; ?>">
         <div class="flex flex-col lg:flex-row gap-10">
             <div class="z-0 w-full lg:w-1/2">
