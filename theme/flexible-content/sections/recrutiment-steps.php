@@ -28,14 +28,17 @@ $list = $args['list'];
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
 
+                                    <div class="flex items-center justify-center size-[72px] rounded-full border-2 border-primary bg-primary z-[1] text-white font-semibold"><?php echo $i; ?></div>
+                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[2px] border-t-[1px] border-solid border-t-[#8117EE50] absolute top-[10%] lg:top-[12%] xl:top-[15%] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
+
                                     <?php if ($item['description']) : ?>
-                                        <div class="prose prose-sm md:prose-base p-2.5 rounded-2xl border-2 border-primary prose-strong:text-primary"><?php echo $item['description']; ?></div>
+                                        <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
                                     <?php endif; ?>
 
                                 <?php else : ?>
 
-                                    <div class="flex items-center justify-center size-[72px] rounded-2xl border-2 border-primary bg-white z-[1] font-semibold"><?php echo $i; ?></div>
-                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[2px] border-t-[1px] border-solid border-t-[#8117EE50] absolute top-[10%] lg:top-[12%] xl:top-[15%] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
+                                    <div class="flex items-center justify-center size-[72px] rounded-full border-2 border-primary bg-white z-[1] font-semibold"><?php echo $i; ?></div>
+                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[2px] border-t-[3px] border-solid border-t-[#8117EE50] absolute top-[10%] lg:top-[12%] xl:top-[15%] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
