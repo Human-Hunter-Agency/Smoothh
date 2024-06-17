@@ -4,7 +4,7 @@
 
 $header = $args['header'];
 $description = $args['description'];
-$decoration = $args['decoration'];
+$decoration_img = $args['decoration_img'];
 
 ?>
 
@@ -28,9 +28,9 @@ $decoration = $args['decoration'];
             </div>
         </div>
     </div>
-    <?php if ($decoration) : ?>
+    <?php if ($decoration_img) : ?>
         <div class="hidden lg:block absolute right-0 top-7">
-            <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/abstract_gradient.svg'); ?>
+            <?php echo smoothh_img_responsive($decoration_img, '', array(646,738), 'lazy') ?>
         </div>
     <?php endif; ?>
 </div>

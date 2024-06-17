@@ -17,7 +17,7 @@ $logo = $args['logo'];
             <div class="z-0 w-full lg:w-1/2">
                 <?php if ($image_3x3) : ?>
                     <div class="-mt-28">
-                        <?php echo smoothh_img_responsive($image_3x3, '', array(600,600), 'lazy') ?>
+                        <?php echo smoothh_img_responsive($image_3x3, '', array(700,700), 'lazy') ?>
                     </div>
                 <?php else : ?>
                     <div class="lg:-m-10">
