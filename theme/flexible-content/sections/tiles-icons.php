@@ -7,6 +7,7 @@ $description = $args['description'];
 $tiles_list = $args['tiles_list'];
 $text_below = $args['text_below'];
 $button = $args['button'];
+$grid = $args['grid'];
 
 ?>
 
