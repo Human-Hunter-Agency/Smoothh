@@ -984,48 +984,66 @@ function initPageMarginWhenAdminIsLogged() {
 }
 
 function initCalculator() {
-	const form = document.querySelector('.calculator form');
-	if (!form) return;
+	const tabButtons = document.querySelectorAll('[data-js-calc-tab-btn]');
+	const calcTabs = document.querySelectorAll('[data-js-calc-content]')
 
-	const container = document.querySelector('[data-js-calc-container]');
-	const calcBtn = document.querySelector('[data-js-calc-btn]');
-	const sumEl = document.querySelector(
-		'[data-uniqid="666582c02fa7e2.99896643"] .tc-result'
-	);
-	// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
+	tabButtons.forEach(tabBtn => {
+		tabBtn.addEventListener('click',() => {
+			tabButtons.forEach(btn => {
+				btn.classList.remove('active');
+			})
+			calcTabs.forEach((calc) => {
+				calc.classList.add('hidden');
+			});
+			tabBtn.classList.add('active');
+			document.querySelector(`[data-js-calc-content="${tabBtn.dataset.jsCalcTabBtn}"]`).classList.remove('hidden');
+		});
+	})
 
-	const tablePrice = document.querySelector('[data-js-calc-price]');
-	const tablePriceTaxed = document.querySelector('[data-js-calc-price-taxed]');
-	const tableSubtotal = document.querySelector('[data-js-calc-subtotal]');
-	const tableSubtotalTaxed = document.querySelector('[data-js-calc-subtotal-taxed]');
-	const tableTotal = document.querySelector('[data-js-calc-total]');
-	const tableTotalTaxed = document.querySelector('[data-js-calc-total-taxed]');
-	// const tableFee = document.querySelector('[data-js-calc-fee]');
-
-	form.addEventListener('change', () => {
-		container.classList.add('hidden');
-	});
-
-	calcBtn.addEventListener('click', () => {
-		jQuery(form).tc_validate().form();
-		if (form.checkValidity()) {
-			tablePrice.innerHTML =
-			tableSubtotal.innerHTML =
-			tableTotal.innerHTML = stringToPriceFormat(sumEl.innerText);
-
-			const taxEl = document.querySelector('.tm-vat-options-totals .price')
-			const priceTaxed = parseFloat(sumEl.innerText.replace(',', '.')) + parseFloat(taxEl.innerText.replace(',', '.'))
-			
-			tablePriceTaxed.innerHTML =
-			tableSubtotalTaxed.innerHTML =
-			tableTotalTaxed.innerHTML = stringToPriceFormat(priceTaxed);
-
-			// tableFee.innerHTML = feeEl.innerHTML
-			container.classList.remove('hidden');
-		} else {
+	calcTabs.forEach(calcEl => {
+		const form = calcEl.querySelector('.calculator-details form');
+		if (!form) return;
+	
+		const container = calcEl.querySelector('[data-js-calc-container]');
+		const calcBtn = calcEl.querySelector('[data-js-calc-btn]');
+		const sumEl = calcEl.querySelector(
+			'[data-uniqid="666582c02fa7e2.99896643"] .tc-result'
+		);
+		// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
+	
+		const tablePrice = calcEl.querySelector('[data-js-calc-price]');
+		const tablePriceTaxed = calcEl.querySelector('[data-js-calc-price-taxed]');
+		const tableSubtotal = calcEl.querySelector('[data-js-calc-subtotal]');
+		const tableSubtotalTaxed = calcEl.querySelector('[data-js-calc-subtotal-taxed]');
+		const tableTotal = calcEl.querySelector('[data-js-calc-total]');
+		const tableTotalTaxed = calcEl.querySelector('[data-js-calc-total-taxed]');
+		// const tableFee = document.querySelector('[data-js-calc-fee]');
+	
+		form.addEventListener('change', () => {
 			container.classList.add('hidden');
-		}
-	});
+		});
+	
+		calcBtn.addEventListener('click', () => {
+			jQuery(form).tc_validate().form();
+			if (form.checkValidity()) {
+				tablePrice.innerHTML =
+				tableSubtotal.innerHTML =
+				tableTotal.innerHTML = stringToPriceFormat(sumEl.innerText);
+	
+				const taxEl = calcEl.querySelector('.tm-vat-options-totals .price')
+				const priceTaxed = parseFloat(sumEl.innerText.replace(',', '.')) + parseFloat(taxEl.innerText.replace(',', '.'))
+				
+				tablePriceTaxed.innerHTML =
+				tableSubtotalTaxed.innerHTML =
+				tableTotalTaxed.innerHTML = stringToPriceFormat(priceTaxed);
+	
+				// tableFee.innerHTML = feeEl.innerHTML
+				container.classList.remove('hidden');
+			} else {
+				container.classList.add('hidden');
+			}
+		});
+	})
 }
 
 function stringToPriceFormat(val) {
