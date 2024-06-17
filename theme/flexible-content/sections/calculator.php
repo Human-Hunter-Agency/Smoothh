@@ -6,7 +6,7 @@
 ?>
 
 <div class="relative py-10 md:py-[70px]">
-    <div class="container calculator-wrapper">
+    <div class="container calculator">
         <?php if ($header) : ?>
             <div class="mb-10 md:mb-[50px]">
                 <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-foreground">
