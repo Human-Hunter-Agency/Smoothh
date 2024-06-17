@@ -126,9 +126,6 @@ label.checkbox, .wpcf7-list-item-label {
 .calculator .tmcp-field-wrap-inner .tc-price-wrap{
 	@apply hidden
 }
-.calculator > .price{
-	@apply hidden
-}
-.calculator .tc-init{
+.calculator-details > .price{
 	@apply hidden
 }
