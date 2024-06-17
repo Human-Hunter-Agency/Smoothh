@@ -19,8 +19,6 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 	$element_id  = (string) $element_id;
 	$fieldtype   = (string) $fieldtype;
 	$name        = (string) $name;
-
-    print_r(get_defined_vars());
 	?>
 <li class="tmcp-field-wrap"><div class="tmcp-field-wrap-inner">
 	<label class="tc-col tm-epo-field-label<?php echo esc_attr( $class_label ); ?>" for="<?php echo esc_attr( $element_id ); ?>">
@@ -34,7 +32,7 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 			'data-price'          => '',
 			'data-rules'          => '',
 			'data-original-rules' => '',
-            'data-placeholder'    => $name,
+            'data-placeholder'    => $label,
 		],
 	];
 
