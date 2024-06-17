@@ -17,16 +17,17 @@ $tiles_list = $args['tiles_list'];
                                 <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-full', array(360, 220), 'lazy'); ?>
                                 <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
 
-                                <div class="text-center p-3 md:p-6 !pt-0">
-                                    <?php if ($tile['title']) : ?>
-                                        <h3 class="text-white text-base md:text-[20px] mb-9 font-semibold"><?php echo $tile['title']; ?></h3>
-                                    <?php endif; ?>
-                                    <?php if ($tile['description']) : ?>
-                                        <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
-                                    <?php endif; ?>
-                                </div>
+
                             </div>
                         <?php endif; ?>
+                        <div class="text-center p-3 md:p-6 !pt-0">
+                            <?php if ($tile['title']) : ?>
+                                <h3 class="text-white text-base md:text-[20px] mb-9 font-semibold"><?php echo $tile['title']; ?></h3>
+                            <?php endif; ?>
+                            <?php if ($tile['description']) : ?>
+                                <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
+                            <?php endif; ?>
+                        </div>
 
                         <?php if ($tile['button']) :
                             $btn_url = $tile['button']['url'];
