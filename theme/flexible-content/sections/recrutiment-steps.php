@@ -7,7 +7,8 @@ $list = $args['list'];
 
 ?>
 
-<div class="w-fullemt-10 md:mt-20 mb-20">
+<div class="relative w-full mt-10 md:mt-20 mb-20">
+    <div class="z-[-1] lg:w-[85%] 2xl:w-[88%] lg:h-[1200px] absolute top-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]"></div>
 
     <div class="relative z-0 container">
         <?php if ($header) : ?>
@@ -24,12 +25,12 @@ $list = $args['list'];
                     foreach ($list as $item) :
                         $i++
                     ?>
-                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto last:!px-0">
+                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto last:!px-0 translate-x-1">
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
 
                                     <div class="flex items-center justify-center size-[72px] rounded-full border-2 border-primary bg-primary z-[1] text-white text-[32px] font-semibold"><?php echo $i; ?></div>
-                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[2px] border-t-[1px] border-solid border-t-[#8117EE50] absolute top-[10%] lg:top-[12%] xl:top-[15%] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
+                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[36px] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
@@ -37,11 +38,10 @@ $list = $args['list'];
 
                                 <?php else : ?>
 
-                                    <div class="flex items-center justify-center size-[72px] rounded-full border-2 border-primary bg-white z-[1] text-[32px] font-semibold">
-                                        <p><?php echo $i; ?>
-                                        <p>
+                                    <div class="flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary bg-white z-[1] text-[32px] font-semibold">
+                                        <p><?php echo $i; ?></p>
                                     </div>
-                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[3px] border-t-[3px] border border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[15%] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
+                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> <?php echo $i == 6 ? 'w-full xl:w-1/2 ' : ''; ?> h-[2px] border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[36px] <?php echo $i == 5 ? '!w-full xl:!w-1/2 right-0 xl:right-auto xl:left-0' : 'right-0'; ?> z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
