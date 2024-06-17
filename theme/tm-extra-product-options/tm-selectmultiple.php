@@ -20,7 +20,6 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 	$fieldtype   = (string) $fieldtype;
 	$name        = (string) $name;
 	?>
-    <pre><?php print_r(get_defined_vars()); ?></pre>
 <li class="tmcp-field-wrap"><div class="tmcp-field-wrap-inner">
 	<label class="tc-col tm-epo-field-label<?php echo esc_attr( $class_label ); ?>" for="<?php echo esc_attr( $element_id ); ?>">
 	<?php
@@ -33,9 +32,12 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 			'data-price'          => '',
 			'data-rules'          => '',
 			'data-original-rules' => '',
-            'data-placeholder'    => $label,
 		],
 	];
+
+    if ( isset( $tm_element_settings['label'] ) && ! empty( $tm_element_settings['label'] ) ) {
+		$select_array['atts']['data-placeholder'] = $tm_element_settings['label'];
+	}
 
 	if ( isset( $required ) && ! empty( $required ) ) {
 		$select_array['required'] = true;

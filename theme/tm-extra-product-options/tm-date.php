@@ -116,8 +116,8 @@ if ( isset( $picker_html, $class_label, $element_id, $get_default_value, $input_
 	if ( THEMECOMPLETE_EPO()->associated_per_product_pricing === 0 ) {
 		$input_args['tags']['data-no-price'] = true;
 	}
-    if ( isset( $label ) && ! empty( $label ) ) {
-		$input_args['tags']['data-mask-placeholder'] = $label;
+    if ( isset( $tm_element_settings['label'] ) && ! empty( $tm_element_settings['label'] ) ) {
+		$input_args['tags']['data-mask-placeholder'] = $tm_element_settings['label'];
 	}
 
 	$input_args = apply_filters(
