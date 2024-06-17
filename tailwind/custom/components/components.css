@@ -225,10 +225,15 @@ footer#page-footer .footer-bottom-menu {
 	@apply sticky top-0 bg-white;
 }
 .tmcp-field-wrap .tmcp-textfield,
+.tmcp-field-wrap .tmcp-date,
 .tmcp-field-wrap .ss-main,
 .dropdown-custom.ss-main {
 	@apply relative z-0 h-[55px] min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
+.tmcp-field-wrap .tmcp-textarea{
+	@apply relative z-0 h-[55px] min-h-[55px] max-h-40 py-4 min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary !px-5 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
+}
+
 .tmcp-field-wrap .ss-main .ss-values,
 .dropdown-custom.ss-main .ss-values {
 	@apply w-full overflow-hidden;
@@ -540,7 +545,7 @@ i.theChampLogin {
 
 [data-uniqid="6662fc70c3d414.09442511"] .tcwidth-100 .tc-row,
 [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row{
-	@apply flex flex-col md:flex-row;
+	@apply flex flex-col md:flex-row justify-center;
 }
 
 [data-uniqid="6662fc70c3d414.09442511"] .tc-cell,
@@ -551,6 +556,11 @@ i.theChampLogin {
 [data-uniqid="6662fc70c3d414.09442511"] .tc-field-label-wrap,
 [data-uniqid="666febd02fce86.50944214"] .tc-field-label-wrap{
 	@apply !block;
+}
+
+[data-uniqid="667030837bd441.00184058"],
+[data-uniqid="667028857bd280.91689368"]{
+	@apply md:basis-3/5 md:w-3/5
 }
 
 .tm-cart-edit-options,
