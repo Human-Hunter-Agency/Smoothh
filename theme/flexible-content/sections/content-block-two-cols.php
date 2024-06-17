@@ -5,6 +5,7 @@
 $header = $args['header'];
 $description = $args['description'];
 $decoration_img = $args['decoration_img'];
+$isDecorationOverflow = $args['isDecorationOverflow'];
 
 ?>
 
@@ -24,13 +25,17 @@ $decoration_img = $args['decoration_img'];
                 <?php endif; ?>
             </div>
             <div class="w-0 lg:w-1/2 relative">
-
+                <?php if ($decoration_img && !$isDecorationOverflow) : ?>
+                    <div class="hidden lg:block absolute right-0 top-7">
+                        <?php echo smoothh_img_responsive($decoration_img, '', array(768, 768), 'lazy') ?>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
-    <?php if ($decoration_img) : ?>
+    <?php if ($decoration_img && $isDecorationOverflow) : ?>
         <div class="hidden lg:block absolute right-0 top-7">
-            <?php echo smoothh_img_responsive($decoration_img, '', array(768,768), 'lazy') ?>
+            <?php echo smoothh_img_responsive($decoration_img, '', array(768, 768), 'lazy') ?>
         </div>
     <?php endif; ?>
 </div>
