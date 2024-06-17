@@ -10,14 +10,14 @@ $blueBg = $args['blueBg'];
 
 <div class="relative w-full py-10 pb-5 md:pt-[70px] mt-10 mb-20">
     <?php if ($blueBg) : ?>
-        <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-8 right-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
+        <div class="z-[-1] w-[100%] lg:w-[95%] h-full absolute top-8 right-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php else : ?>
         <div class="z-[-1] w-full h-full absolute left-0 bg-gradient-to-r from-[rgba(129,23,238,0.1)] to-[rgba(129,23,238,0)]"></div>
     <?php endif; ?>
 
     <div class="pt-14 relative z-0 container">
         <?php if ($header) : ?>
-            <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+            <div class="mb-10 mx-auto max-w-[900px] text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                 <?php echo $header; ?>
             </div>
         <?php endif; ?>
