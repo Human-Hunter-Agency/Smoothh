@@ -25,7 +25,7 @@ $list = $args['list'];
                     foreach ($list as $item) :
                         $i++
                     ?>
-                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto last:!px-0 translate-x-1">
+                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto last:!px-0 !translate-x-1">
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
 
