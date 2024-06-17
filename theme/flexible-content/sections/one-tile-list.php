@@ -12,7 +12,7 @@ $tiles_list = $args['tiles_list'];
 
     <div class="pt-14 relative z-0 container flex basis">
         <?php if ($header) : ?>
-            <div class="basis-2/3 mb-10 xl:mb-20 mx-auto text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+            <div class="basis-[60%] mb-10 xl:mb-20 mx-auto text-2xl md:text-4xl lg:text-[40px] font-bold lg:font-extrabold lg:leading-[55px]">
                 <div class="max-w-[550px]">
                     <?php echo $header; ?>
                 </div>
@@ -20,7 +20,7 @@ $tiles_list = $args['tiles_list'];
         <?php endif; ?>
 
         <?php if ($tiles_list) : ?>
-            <div class="basis-1/3 py-10 lg:py-16 px-8 lg:px-20 xl:px-16 bg-white rounded-[45px] drop-shadow-2xl">
+            <div class="basis-[40%] py-10 lg:py-10 px-8 lg:px-20 xl:px-10 bg-white rounded-[45px] drop-shadow-2xl">
                 <?php foreach ($tiles_list as $tile) :
                 ?>
                     <?php if ($tile['text']) : ?>
