@@ -20,11 +20,11 @@ $tiles_list = $args['tiles_list'];
         <?php endif; ?>
 
         <?php if ($tiles_list) : ?>
-            <div class="basis-[40%] py-10 lg:py-10 px-8 lg:px-20 xl:px-10 bg-white rounded-[45px] drop-shadow-2xl">
+            <div class="basis-[40%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl">
                 <?php foreach ($tiles_list as $tile) :
                 ?>
                     <?php if ($tile['text']) : ?>
-                        <div class="flex gap-2 items-start">
+                        <div class="flex gap-2 items-baseline">
                             <div class="w-[10px] h-[10px] bg-primary rounded-full"></div>
                             <p class="text-sm md:text-base"><?php echo $tile['text']; ?></p>
                         </div>
