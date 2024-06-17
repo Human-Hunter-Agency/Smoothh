@@ -2,7 +2,6 @@
 
 /** Template to display 'Sekcja z dwoma kafelkami stron' - two_tiles_pages */
 
-$titles_primary = $args['titles_primary'];
 $tiles_list = $args['tiles_list'];
 
 ?>
@@ -25,7 +24,7 @@ $tiles_list = $args['tiles_list'];
 
                                     <div class="text-center p-3 md:p-6 !pt-0">
                                         <?php if ($tile['title']) : ?>
-                                            <h3 class="text-base md:text-[20px] mb-9 font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
+                                            <h3 class="text-base md:text-[20px] mb-9 font-semibold"><?php echo $tile['title']; ?></h3>
                                         <?php endif; ?>
                                         <?php if ($tile['description']) : ?>
                                             <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
