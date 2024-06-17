@@ -32,7 +32,7 @@ $tiles_list = $args['tiles_list'];
                             $btn_title = $tile['button']['title'];
                             $btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
                         ?>
-                            <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200"><?php echo esc_html($btn_title); ?></a>
+                            <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class=" button whitespace-nowrap button border-none !bg-gradient-to-b to-primary via-secondary from-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  !text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 !mt-10 !mb-14 transition duration-200 hidden group-hover:!block"><?php echo esc_html($btn_title); ?></a>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
