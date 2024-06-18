@@ -37,6 +37,7 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 
     if ( isset( $tm_element_settings['label'] ) && ! empty( $tm_element_settings['label'] ) ) {
 		$select_array['atts']['data-placeholder'] = $tm_element_settings['label'];
+		$tm_element_settings['placeholder'] = $tm_element_settings['label'];
 	}
 
 	if ( isset( $required ) && ! empty( $required ) ) {
@@ -117,9 +118,9 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 	THEMECOMPLETE_EPO_HTML()->create_dropdown( $select_array, $select_options, '/n', false, true );
 	?>
 	</label>
-	<pre>
-		<?php print_r(get_defined_vars()) ?>
-	</pre>
+	<!-- <pre>
+		<?php //print_r(get_defined_vars()) ?>
+	</pre> -->
 	<?php require THEMECOMPLETE_EPO_TEMPLATE_PATH . '_price.php'; ?>
 	<?php require THEMECOMPLETE_EPO_TEMPLATE_PATH . '_quantity.php'; ?>
 	<?php do_action( 'tm_after_element', isset( $tm_element_settings ) ? $tm_element_settings : [] ); ?>
