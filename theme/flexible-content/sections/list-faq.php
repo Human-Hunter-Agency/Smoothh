@@ -11,7 +11,7 @@ $list = $args['list'];
     <div class="container !max-w-[1410px]">
         <?php if ($header) : ?>
             <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
-                <?php echo esc_html($header); ?>
+                <?php echo $header; ?>
             </div>
         <?php
         endif;
