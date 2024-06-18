@@ -28,6 +28,7 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 		'id'       => $element_id,
 		'name'     => $name,
 		'multiple' => 'multiple',
+		'placeholder'=> 'test',
 		'atts'     => [
 			'data-price'          => '',
 			'data-rules'          => '',
