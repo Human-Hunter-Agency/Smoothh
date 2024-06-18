@@ -265,7 +265,7 @@ footer#page-footer .footer-bottom-menu {
 
 @media only screen and (min-width: 768px) {
 	[data-uniqid="667026ee7bd1f5.04499964"]{
-		width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * var(--tcgapcolumn)))
+		width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * var(--tcgapcolumn))) !important
 	}
 }
 
