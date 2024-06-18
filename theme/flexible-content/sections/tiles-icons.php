@@ -20,7 +20,7 @@ $gridStyle = $args['gridStyle'];
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
-                <div class="m-8 text-[16px] font-normal leading-[26px]">
+                <div class="m-8 mx-auto max-w-[900px] text-[16px] font-normal leading-[26px]">
                     <?php echo $description; ?>
                 </div>
             <?php endif; ?>
