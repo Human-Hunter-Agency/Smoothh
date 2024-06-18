@@ -620,6 +620,7 @@ function initCalculatorFields() {
 			select: fieldEl,
 			settings: {
 				showSearch: false,
+				placeholderText: fieldEl.dataset.placeholder ? fieldEl.dataset.placeholder : ''
 			},
 			events: {
 				afterChange: () => {
