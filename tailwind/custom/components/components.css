@@ -230,37 +230,41 @@ footer#page-footer .footer-bottom-menu {
 .dropdown-custom.ss-main {
 	@apply placeholder:text-foreground relative z-0 h-[55px] min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
-.tmcp-field-wrap .tmcp-textarea{
+.tmcp-field-wrap .tmcp-textarea {
 	@apply placeholder:text-foreground relative z-0 h-[55px] min-h-[55px] max-h-40 py-3.5 min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary !px-5 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 
-.tm-extra-product-options .tm-extra-product-options-date .ui-tm-datepicker-trigger::before{
-	@apply text-primary
+.tm-extra-product-options
+	.tm-extra-product-options-date
+	.ui-tm-datepicker-trigger::before {
+	@apply text-primary;
 }
 
-.tm-ui-skin-epo .tm-ui-dp-main-cell.ui-tm-datepicker-current-day .ui-state-default{
-	@apply !text-primary
+.tm-ui-skin-epo
+	.tm-ui-dp-main-cell.ui-tm-datepicker-current-day
+	.ui-state-default {
+	@apply !text-primary;
 }
 
 .tmcp-field-wrap .ss-main .ss-values,
 .dropdown-custom.ss-main .ss-values {
 	@apply w-full overflow-hidden;
 }
-.tmcp-field-wrap .ss-placeholder{
-	@apply !text-foreground
+.tmcp-field-wrap .ss-placeholder {
+	@apply !text-foreground;
 }
-.tmcp-field-wrap .tmcp-selectmultiple.ss-main .ss-values{
+.tmcp-field-wrap .tmcp-selectmultiple.ss-main .ss-values {
 	scrollbar-width: thin;
-	@apply !overflow-auto !flex-nowrap items-center
+	@apply !overflow-auto !flex-nowrap items-center;
 }
-.tmcp-selectmultiple{
-	@apply !py-0
+.tmcp-selectmultiple {
+	@apply !py-0;
 }
-.tmcp-selectmultiple .ss-values .ss-value{
-	@apply !bg-primary !rounded-[10px] h-[30px]
+.tmcp-selectmultiple .ss-values .ss-value {
+	@apply !bg-primary !rounded-[10px] h-[30px];
 }
-.tmcp-selectmultiple .ss-values .ss-value-text{
-	@apply !text-base whitespace-nowrap
+.tmcp-selectmultiple .ss-values .ss-value-text {
+	@apply !text-base whitespace-nowrap;
 }
 .tmcp-field-wrap .ss-main .ss-single,
 .dropdown-custom.ss-main .ss-single {
@@ -272,8 +276,14 @@ footer#page-footer .footer-bottom-menu {
 }
 
 @media only screen and (min-width: 768px) {
-	[data-uniqid="667026ee7bd1f5.04499964"]{
-		width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * var(--tcgapcolumn))) !important
+	[data-uniqid="667026ee7bd1f5.04499964"] {
+		width: calc(
+			(100% / var(--flex-items)) -
+				(
+					((var(--flex-items) - 1) / var(--flex-items)) *
+						var(--tcgapcolumn)
+				)
+		) !important;
 	}
 }
 
@@ -575,23 +585,23 @@ i.theChampLogin {
 }
 
 [data-uniqid="6662fc70c3d414.09442511"] .tcwidth-100 .tc-row,
-[data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row{
+[data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row {
 	@apply flex flex-col md:flex-row justify-center;
 }
 
 [data-uniqid="6662fc70c3d414.09442511"] .tc-cell,
-[data-uniqid="666febd02fce86.50944214"] .tc-cell{
+[data-uniqid="666febd02fce86.50944214"] .tc-cell {
 	@apply !max-w-full;
 }
 
 [data-uniqid="6662fc70c3d414.09442511"] .tc-field-label-wrap,
-[data-uniqid="666febd02fce86.50944214"] .tc-field-label-wrap{
+[data-uniqid="666febd02fce86.50944214"] .tc-field-label-wrap {
 	@apply !block;
 }
 
 [data-uniqid="667030837bd441.00184058"],
-[data-uniqid="667028857bd280.91689368"]{
-	@apply md:basis-3/5 md:w-3/5
+[data-uniqid="667028857bd280.91689368"] {
+	@apply md:basis-3/5 md:w-3/5;
 }
 
 .tm-cart-edit-options,
@@ -605,4 +615,17 @@ i.theChampLogin {
 }
 .animateOut {
 	@apply -translate-y-full;
+}
+
+/* primary nav menu */
+#primary-menu > li {
+	@apply group;
+}
+
+#primary-menu > li.menu-item-has-children {
+	@apply group;
+}
+
+#primary-menu > li.menu-item-has-children > ul {
+	@apply group-hover:bg-red-600;
 }
