@@ -42,7 +42,7 @@ $list = $args['list'];
                                 <?php else : ?>
 
                                     <div class="m-8 bg-white flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary z-[1] text-[32px] text-primary font-semibold">
-                                        <p class="<?php $i == 3 ? 'mt-[-6px]' : 'mt-[-4px]'; ?>"><?php echo $i; ?></p>
+                                        <p class="<?php ($i == 3) ? 'mt-[-6px]' : 'mt-[-4px]'; ?>"><?php echo $i; ?></p>
                                     </div>
 
                                     <?php if ($i == 1) : ?>
