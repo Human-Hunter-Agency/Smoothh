@@ -8,6 +8,7 @@ $tiles_list = $args['tiles_list'];
 $text_below = $args['text_below'];
 $button = $args['button'];
 $grid = $args['grid'];
+$grid3cols = $args['grid3cols'];
 
 ?>
 
@@ -33,7 +34,13 @@ $grid = $args['grid'];
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-icons">
                 <div class="swiper-wrapper  
                     <?php if ($grid) : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
-                    <?php endif; ?>">
+                    <?php endif; ?>
+
+                    <?php if ($grid3cols) : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(32%_-_50px)] 
+                    <?php endif; ?>
+                    ">
+
+
 
                     <?php foreach ($tiles_list as $tile) : ?>
                         <div class="swiper-slide !flex items-center flex-col text-center">
@@ -46,7 +53,7 @@ $grid = $args['grid'];
                                 <h3 class="text-base md:text-[20px] mb-6 lg:min-h-10 px-5 font-bold"><?php echo esc_html($tile['title']); ?></h3>
                             <?php endif; ?>
                             <?php if ($tile['description']) : ?>
-                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['title']) : ?> prose-base md:prose-xl leading-[24px]<?php else : ?> prose-sm md:prose-base <?php endif; ?>"><?php echo $tile['description']; ?></div>
+                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['description']) : ?> prose-base md:prose-lg <?php else : ?> prose-sm md:prose-base <?php endif; ?>"><?php echo $tile['description']; ?></div>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
