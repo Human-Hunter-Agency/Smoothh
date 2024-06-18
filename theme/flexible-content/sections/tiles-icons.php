@@ -9,7 +9,7 @@ $text_below = $args['text_below'];
 $button = $args['button'];
 $grid = $args['grid'];
 $grid3cols = $args['grid3cols'];
-$gridtest = $args['gridtest'];
+$gridStyle = $args['gridStyle'];
 
 ?>
 
@@ -34,10 +34,13 @@ $gridtest = $args['gridtest'];
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-icons">
                 <div class="swiper-wrapper  
-                    <?php if ($gridtest == 'Automatyczne') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
+                    <?php if ($gridStyle == '4 kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
                     <?php endif; ?>
 
-                    <?php if ($gridtest == '3 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(32%_-_50px)] 
+                    <?php if ($gridStyle == '3 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(32%_-_50px)] 
+                    <?php endif; ?>
+
+                    <?php if ($gridStyle == 'Swiper') : ?>  
                     <?php endif; ?>
                     ">
 
