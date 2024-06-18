@@ -234,6 +234,10 @@ footer#page-footer .footer-bottom-menu {
 	@apply placeholder:text-foreground relative z-0 h-[55px] min-h-[55px] max-h-40 py-3.5 min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary !px-5 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 
+.tm-extra-product-options .tm-extra-product-options-date .ui-tm-datepicker-trigger::before{
+	@apply text-primary
+}
+
 .tmcp-field-wrap .ss-main .ss-values,
 .dropdown-custom.ss-main .ss-values {
 	@apply w-full overflow-hidden;

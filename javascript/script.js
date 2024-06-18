@@ -1049,6 +1049,30 @@ function initCalculator() {
 			}
 		});
 	})
+
+	const fileBtn = document.querySelector('[data-js-file-upload-btn]');
+	const fileInput = document.querySelector('[data-uniqid="667028857bd280.91689368"] input');
+	const fileRemoveBtn = document.querySelector('[data-js-file-remove]');
+	const fileNameEl = document.querySelector('[data-js-file-name]');
+
+	fileBtn.addEventListener('click',()=>{
+		fileInput.click()
+	})
+	fileRemoveBtn.addEventListener('click',()=>{
+		fileInput.value = ''
+		fileInput.dispatchEvent(new Event('change'))
+	})
+	fileInput.addEventListener('change',(e)=>{
+		const file = e.target.files[0];
+		if (file) {
+			fileNameEl.innerText = file.name;
+			fileNameEl.classList.remove('!hidden');
+			fileBtn.classList.add('!hidden');
+		} else {
+			fileNameEl.classList.add('!hidden');
+			fileBtn.classList.remove('!hidden');
+		}
+	})
 }
 
 function stringToPriceFormat(val) {
