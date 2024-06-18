@@ -241,15 +241,15 @@ footer#page-footer .footer-bottom-menu {
 .tmcp-field-wrap .ss-placeholder{
 	@apply !text-foreground
 }
-.tmcp-selectmultiple{
-	@apply py-3
-}
 .tmcp-selectmultiple .ss-values{
-	scrollbar-width: 2px;
-	@apply overflow-auto 
+	scrollbar-width: thin;
+	@apply !overflow-auto !flex-nowrap items-center
+}
+.tmcp-selectmultiple{
+	@apply py-0
 }
 .tmcp-selectmultiple .ss-values .ss-value{
-	@apply !bg-primary !rounded-[10px]
+	@apply !bg-primary !rounded-[10px] h-[30px]
 }
 .tmcp-selectmultiple .ss-values .ss-value-text{
 	@apply !text-base whitespace-nowrap
