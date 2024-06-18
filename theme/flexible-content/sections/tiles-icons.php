@@ -9,6 +9,7 @@ $text_below = $args['text_below'];
 $button = $args['button'];
 $grid = $args['grid'];
 $grid3cols = $args['grid3cols'];
+$gridtest = $args['gridtest'];
 
 ?>
 
@@ -39,6 +40,7 @@ $grid3cols = $args['grid3cols'];
                     <?php if ($grid3cols) : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(32%_-_50px)] 
                     <?php endif; ?>
                     ">
+                    <?php echo $gridtest; ?>
 
 
 
