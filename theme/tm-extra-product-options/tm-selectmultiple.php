@@ -118,7 +118,7 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 	?>
 	</label>
 	<pre>
-		<?php print_r($select_array) ?>
+		<?php print_r(get_defined_vars()) ?>
 	</pre>
 	<?php require THEMECOMPLETE_EPO_TEMPLATE_PATH . '_price.php'; ?>
 	<?php require THEMECOMPLETE_EPO_TEMPLATE_PATH . '_quantity.php'; ?>
