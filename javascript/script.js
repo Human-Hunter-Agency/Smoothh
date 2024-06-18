@@ -1066,10 +1066,10 @@ function initCalculator() {
 		const file = e.target.files[0];
 		if (file) {
 			fileNameEl.innerText = file.name;
-			fileNameEl.classList.remove('!hidden');
+			fileRemoveBtn.classList.remove('!hidden');
 			fileBtn.classList.add('!hidden');
 		} else {
-			fileNameEl.classList.add('!hidden');
+			fileRemoveBtn.classList.add('!hidden');
 			fileBtn.classList.remove('!hidden');
 		}
 	})

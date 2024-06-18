@@ -26,15 +26,15 @@ if ( isset( $element_id, $class_label, $style, $name, $fieldtype, $rules, $origi
 	$saved_value    = (string) $saved_value;
 	?>
 <li class="tmcp-field-wrap"><div class="tmcp-field-wrap-inner">
-	<label class="tc-col tm-epo-field-label<?php echo esc_attr( $style ); ?><?php echo esc_attr( $class_label ); ?>" for="<?php echo esc_attr( $element_id ); ?>">
-		<div>
-            <span data-js-file-upload-btn class="text-primary text-sm"><?php __('Include file','smoothh') ?></span>
-            <div data-js-file-remove class="!hidden group flex items-center">
-                <span data-js-file-name class="text-foreground"></span>
-                <span class="p-1 text-foreground group-hover:text-primary transition duration-200">x</span>
-            </div>
+    <div class="ml-5 -mt-3">
+        <span data-js-file-upload-btn class="text-primary text-sm py-1 cursor-pointer"><?php echo __('Include file','smoothh') ?></span>
+        <div data-js-file-remove class="!hidden group flex items-center py-1 cursor-pointer">
+            <span data-js-file-name class="text-foreground"></span>
+            <span class="p-1 text-foreground group-hover:text-primary transition duration-200">x</span>
         </div>
-        <span class="cpf-upload-wrap hidden">
+    </div>
+	<label class="tc-col tm-epo-field-label<?php echo esc_attr( $style ); ?><?php echo esc_attr( $class_label ); ?>" for="<?php echo esc_attr( $element_id ); ?>">
+        <span class="cpf-upload-wrap [&_input]:!hidden">
 		<?php
 		if ( ! empty( $upload_text ) ) {
 			echo '<span class="cpf-upload-text">' . esc_html( $upload_text ) . '</span>';
