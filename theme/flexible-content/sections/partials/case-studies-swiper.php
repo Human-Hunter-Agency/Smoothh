@@ -30,7 +30,7 @@ if (isset($args['posts']) && !empty($args['posts'])) {
                         </div>
                         <div class="text-center p-3 md:p-6 !pt-0">
                             <?php if ($post->post_title) : ?>
-                                <h3 class="bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold"><?php echo $post->post_title; ?></h3>
+                                <div class="bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold"><?php echo $post->post_title; ?></div>
                             <?php endif; ?>
                             <p class="text-sm md:text-base italic font-medium"><?php echo get_the_excerpt($post->ID); ?></p>
                         </div>
