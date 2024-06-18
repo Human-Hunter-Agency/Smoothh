@@ -43,10 +43,13 @@ $list = $args['list'];
                                         <p><?php echo $i; ?></p>
                                     </div>
 
-
-                                    <div class="<?php echo $i == 1 ? 'w-[52%]' : 'w-[99.2%] '; ?> h-[2px] border-primary border-t-[1px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-40px] z-[-1]"></div>
-
-                                    <div class="<?php echo $i == 4 ? 'w-1/2 ' : ''; ?> h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
+                                    <?php if ($i == 1) : ?>
+                                        <div class="1 w-[52%] bg-white h-[2px] border-primary border-t-[1px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-40px] z-[-1]"></div>
+                                    <?php elseif ($i == 4) :  ?>
+                                        <div class="4 w-1/2 h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
+                                    <?php else : ?>
+                                        <div class="elsew-full h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
+                                    <?php endif; ?>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
