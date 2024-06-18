@@ -238,6 +238,10 @@ footer#page-footer .footer-bottom-menu {
 	@apply text-primary
 }
 
+.tm-ui-skin-epo .tm-ui-dp-main-cell.ui-tm-datepicker-current-day .ui-state-default{
+	@apply !text-primary
+}
+
 .tmcp-field-wrap .ss-main .ss-values,
 .dropdown-custom.ss-main .ss-values {
 	@apply w-full overflow-hidden;

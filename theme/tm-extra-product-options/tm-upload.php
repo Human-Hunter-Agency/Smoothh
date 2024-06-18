@@ -27,10 +27,10 @@ if ( isset( $element_id, $class_label, $style, $name, $fieldtype, $rules, $origi
 	?>
 <li class="tmcp-field-wrap"><div class="tmcp-field-wrap-inner">
     <div class="ml-5 -mt-3">
-        <span data-js-file-upload-btn class="text-primary text-sm py-1 cursor-pointer"><?php echo __('Include file','smoothh') ?></span>
+        <span data-js-file-upload-btn class="text-primary text-sm py-1 hover:underline cursor-pointer"><?php echo __('Include file','smoothh') ?></span>
         <div data-js-file-remove class="!hidden group flex items-center py-1 cursor-pointer">
-            <span data-js-file-name class="text-foreground"></span>
-            <span class="p-1 text-foreground group-hover:text-primary transition duration-200">x</span>
+            <span data-js-file-name class="text-foreground text-sm"></span>
+            <span class="ml-2 p-1 text-foreground group-hover:text-primary font-bold transition duration-200">x</span>
         </div>
     </div>
 	<label class="tc-col tm-epo-field-label<?php echo esc_attr( $style ); ?><?php echo esc_attr( $class_label ); ?>" for="<?php echo esc_attr( $element_id ); ?>">
