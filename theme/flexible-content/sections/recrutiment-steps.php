@@ -43,7 +43,7 @@ $list = $args['list'];
                                         <p><?php echo $i; ?></p>
                                     </div>
 
-                                    <div class="<?php echo $i == 1 ? 'w-[170px] translate-x-[5px]' : 'w-[99.2%] '; ?> h-[2px] _border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-35px] z-[-1]"></div>
+                                    <div class="<?php echo $i == 1 ? '!w-[170px] translate-x-[5px]' : 'w-[99.2%] '; ?> h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-35px] z-[-1]"></div>
 
                                     <div class="<?php echo $i == 4 ? 'w-1/2 ' : ''; ?> h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
 
