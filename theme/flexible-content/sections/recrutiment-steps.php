@@ -39,14 +39,14 @@ $list = $args['list'];
 
                                 <?php else : ?>
 
-                                    <div class="m-8 flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary z-[1] text-[32px] text-primary font-semibold">
+                                    <div class="m-8 bg-white flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary z-[1] text-[32px] text-primary font-semibold">
                                         <p><?php echo $i; ?></p>
                                     </div>
 
                                     <?php if ($i == 1) : ?>
-                                        <div class="1 w-[52%] bg-white h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-40px] z-[-1]"></div>
+                                        <div class="1 w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-40px] z-[-1]"></div>
                                     <?php else : ?>
-                                        <div class="else w-full h-[2px] bg-white border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
+                                        <div class="else w-full h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
                                     <?php endif; ?>
 
                                     <?php if ($item['description']) : ?>
