@@ -38,6 +38,10 @@
 	@apply transition duration-200 hover:text-primary;
 }
 
+#primary-menu li {
+	@apply group;
+}
+
 [aria-expanded="true"].menu-btn ~ #site-navigation {
 	@apply !shadow-lg;
 }
@@ -615,16 +619,4 @@ i.theChampLogin {
 }
 .animateOut {
 	@apply -translate-y-full;
-}
-
-#primary-menu > li {
-	@apply group;
-}
-
-#primary-menu > li.menu-item-has-children {
-	@apply group;
-}
-
-#primary-menu > li.menu-item-has-children > ul {
-	@apply group-hover:bg-red-600;
 }
