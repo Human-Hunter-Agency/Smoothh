@@ -31,7 +31,7 @@ $list = $args['list'];
 
                                     <div class="m-8 flex items-center justify-center size-[72px] rounded-full bg-gradient-to-b from-secondary to-primary z-[1] text-white text-[32px] font-semibold"><?php echo $i; ?></div>
 
-                                    <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] left-[34px] z-[-1]"></div>
+                                    <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] left-[-36px] z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
@@ -44,11 +44,9 @@ $list = $args['list'];
                                     </div>
 
                                     <?php if ($i == 1) : ?>
-                                        <div class="1 w-[52%] bg-white h-[2px] border-primary border-t-[1px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-40px] z-[-1]"></div>
-                                    <?php elseif ($i == 4) :  ?>
-                                        <div class="4 w-1/2 h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
+                                        <div class="1 w-[52%] bg-white h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-40px] z-[-1]"></div>
                                     <?php else : ?>
-                                        <div class="else w-full h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
+                                        <div class="else w-full h-[2px] bg-white border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
                                     <?php endif; ?>
 
                                     <?php if ($item['description']) : ?>
