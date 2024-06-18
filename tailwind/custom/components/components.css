@@ -617,15 +617,14 @@ i.theChampLogin {
 	@apply -translate-y-full;
 }
 
-/* primary nav menu */
-#primary-menu li {
+#primary-menu > li {
 	@apply group;
 }
 
-#primary-menu li.menu-item-has-children {
+#primary-menu > li.menu-item-has-children {
 	@apply group;
 }
 
-#primary-menu li.menu-item-has-children ul {
+#primary-menu > li.menu-item-has-children > ul {
 	@apply group-hover:bg-red-600;
 }
