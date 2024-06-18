@@ -25,13 +25,13 @@ $list = $args['list'];
                     foreach ($list as $item) :
                         $i++
                     ?>
-                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto last:!px-0 !translate-x-1">
+                        <div class="swiper-slide !h-auto xl:flex-1 xl:!basis-1/5 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto last:!px-0">
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
 
                                     <div class="m-8 flex items-center justify-center size-[72px] rounded-full bg-gradient-to-b from-secondary to-primary z-[1] text-white text-[32px] font-semibold"><?php echo $i; ?></div>
 
-                                    <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[36px] right-[35px] z-[-1]"></div>
+                                    <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] left-[34px] z-[-1]"></div>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
@@ -43,7 +43,7 @@ $list = $args['list'];
                                         <p><?php echo $i; ?></p>
                                     </div>
 
-                                    <div class="<?php echo $i == 1 ? 'w-1/2 ' : 'w-[99.2%] '; ?> h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-35px] z-[-1]"></div>
+                                    <div class="<?php echo $i == 1 ? 'w-[170px] translate-x-[5px]' : 'w-[99.2%] '; ?> h-[2px] _border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[-35px] z-[-1]"></div>
 
                                     <div class="<?php echo $i == 4 ? 'w-1/2 ' : ''; ?> h-[2px] border border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
 
