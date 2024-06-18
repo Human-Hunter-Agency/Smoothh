@@ -248,9 +248,6 @@ footer#page-footer .footer-bottom-menu {
 .tmcp-selectmultiple{
 	@apply !py-0
 }
-.tmcp-selectmultiple .ss-values{
-	@apply h-[42px] mt-2.5 rounded-sm
-}
 .tmcp-selectmultiple .ss-values .ss-value{
 	@apply !bg-primary !rounded-[10px] h-[30px]
 }
