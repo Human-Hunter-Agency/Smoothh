@@ -28,7 +28,6 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 		'id'       => $element_id,
 		'name'     => $name,
 		'multiple' => 'multiple',
-		'placeholder'=> 'test',
 		'atts'     => [
 			'data-price'          => '',
 			'data-rules'          => '',
@@ -38,7 +37,6 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 
     if ( isset( $tm_element_settings['label'] ) && ! empty( $tm_element_settings['label'] ) ) {
 		$select_array['atts']['data-placeholder'] = $tm_element_settings['label'];
-		$tm_element_settings['placeholder'] = $tm_element_settings['label'];
 	}
 
 	if ( isset( $required ) && ! empty( $required ) ) {
