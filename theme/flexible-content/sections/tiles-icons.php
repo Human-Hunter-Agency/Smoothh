@@ -7,10 +7,7 @@ $description = $args['description'];
 $tiles_list = $args['tiles_list'];
 $text_below = $args['text_below'];
 $button = $args['button'];
-$grid = $args['grid'];
-$grid3cols = $args['grid3cols'];
 $gridStyle = $args['gridStyle'];
-
 ?>
 
 <div class="relative py-10 md:py-[60px] mb:pb-[60px]">
