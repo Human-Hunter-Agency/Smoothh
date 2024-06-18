@@ -1010,10 +1010,12 @@ function initCalculator() {
 	calcTabs.forEach(calcEl => {
 		const form = calcEl.querySelector('.calculator-details form');
 		if (!form) return;
+
+		const isCalcAdvanced = calcEl.dataset.jsCalcContent == 2
 	
 		const container = calcEl.querySelector('[data-js-calc-container]');
 		const calcBtn = calcEl.querySelector('[data-js-calc-btn]');
-		const sumEl = calcEl.querySelector(calcEl.dataset.jsCalcContent == 1 ? '[data-uniqid="666582c02fa7e2.99896643"] .tc-result' : '[data-uniqid="666febd02fcfa6.35759104"] .tc-result');
+		const sumEl = calcEl.querySelector(!isCalcAdvanced ? '[data-uniqid="666582c02fa7e2.99896643"] .tc-result' : '[data-uniqid="666febd02fcfa6.35759104"] .tc-result');
 		// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
 	
 		const tablePrice = calcEl.querySelector('[data-js-calc-price]');
@@ -1023,7 +1025,7 @@ function initCalculator() {
 		const tableTotal = calcEl.querySelector('[data-js-calc-total]');
 		const tableTotalTaxed = calcEl.querySelector('[data-js-calc-total-taxed]');
 		// const tableFee = document.querySelector('[data-js-calc-fee]');
-	
+
 		form.addEventListener('change', () => {
 			container.classList.add('hidden');
 		});
@@ -1041,6 +1043,20 @@ function initCalculator() {
 				tablePriceTaxed.innerHTML =
 				tableSubtotalTaxed.innerHTML =
 				tableTotalTaxed.innerHTML = stringToPriceFormat(priceTaxed);
+
+				if (isCalcAdvanced) {
+					const MIN_NEGOTIATE_PRICE = 50000
+					const MIN_NEGOTIATE_VACANCY = 3
+					const negotiateBtn = calcEl.querySelector('[data-js-popup-toggle="negociate-form"]')
+					const priceNegotiable = parseFloat($0.innerText.replace(',', '.')) > MIN_NEGOTIATE_PRICE
+					const vacancySurpassing = calcEl.querySelector('[data-uniqid="66702e257bd420.53200121"] select').value.split('_')[0] > MIN_NEGOTIATE_VACANCY
+
+					if (priceNegotiable || vacancySurpassing) {
+						negotiateBtn.classList.remove('!hidden')
+					}else{
+						negotiateBtn.classList.add('!hidden')	
+					}
+				}
 	
 				// tableFee.innerHTML = feeEl.innerHTML
 				container.classList.remove('hidden');

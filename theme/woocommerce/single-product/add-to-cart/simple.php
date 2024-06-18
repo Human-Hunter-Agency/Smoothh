@@ -103,13 +103,23 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 			</div> -->
 			<!-- <p class="font-semibold max-w-screen-sm block mb-10 text-center mx-auto text-xl"><?php echo wp_kses(__('Entry fee text', 'smoothh'),array( 'br' => array() )); ?></p> -->
 
-			<div class="flex justify-center">
+			<div class="flex justify-center flex-wrap gap-5">
 				<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class=" single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> whitespace-nowrap button border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html_e('Complete the quote', 'smoothh'); ?>
 					<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
 						<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
 					</svg>
 				</button>
+
+				<?php if($product->get_id()==1253):?>
+				<button data-js-popup-toggle="negotiate-form" type="button" value="<?php echo esc_attr($product->get_id()); ?>" class="!hidden whitespace-nowrap button border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold flex items-center justify-center gap-5">
+					<?php echo esc_html_e('Negotiate price', 'smoothh'); ?>
+					<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
+						<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
+					</svg>
+				</button>
+				<?php endif; ?>
 			</div>
 		</div>
 
@@ -128,7 +138,35 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 	</form>
 
 	<?php do_action('woocommerce_after_add_to_cart_form'); ?>
-
+	<?php // if (is_user_logged_in() || is_prod_guest_available($product)) : 
+		 if($product->get_id()==1253):
+	?>
+	<div data-js-popup-container="negotiate-form" class="popup-container popup-hidden">
+		<div class="popup-inner">
+			<div class="flex justify-end p-1">
+				<button data-js-popup-toggle="negotiate-form" class="p-1 md:p-2 group">
+					<svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
+						<path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+						c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+						c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+						c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+						l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+						c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z" />
+					</svg>
+				</button>
+			</div>
+			<div class="overflow-auto">
+				<h3 class="mb-2 text-2xl md:text-3xl font-semibold"><?php esc_html_e('Negotiate price', 'smoothh'); ?></h3>
+				<p class="mb-8 text-base"><?php echo $product->get_title() ?></p>
+				<?php
+				$shortcode = '[contact-form-7 id="3dc6e27" prod-id="' . $product->get_id() . '" prod-name="' . $product->get_title() . '" title="Wycena"]';
+				echo do_shortcode($shortcode); ?>
+			</div>
+		</div>
+	</div>
+	<?php 
+	endif; 
+	?>
 <?php
 endif;
 if ($has_variable_price) :
