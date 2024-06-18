@@ -616,3 +616,7 @@ i.theChampLogin {
 .animateOut {
 	@apply -translate-y-full;
 }
+
+.sub-menu {
+	@apply !pl-5;
+}
