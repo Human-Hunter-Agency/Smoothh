@@ -228,10 +228,10 @@ footer#page-footer .footer-bottom-menu {
 .tmcp-field-wrap .tmcp-date,
 .tmcp-field-wrap .ss-main,
 .dropdown-custom.ss-main {
-	@apply relative z-0 h-[55px] min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
+	@apply placeholder:text-foreground relative z-0 h-[55px] min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary pl-5 pr-10 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 .tmcp-field-wrap .tmcp-textarea{
-	@apply relative z-0 h-[55px] min-h-[55px] max-h-40 py-3.5 min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary !px-5 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
+	@apply placeholder:text-foreground relative z-0 h-[55px] min-h-[55px] max-h-40 py-3.5 min-w-full md:max-w-64 lg:max-w-80 focus:border-primary focus:!shadow-none rounded-[15px] border border-primary !px-5 transition duration-200 hover:border-secondary accent-primary w-full !m-0 appearance-none;
 }
 
 .tmcp-field-wrap .ss-main .ss-values,
@@ -248,6 +248,9 @@ footer#page-footer .footer-bottom-menu {
 .tmcp-selectmultiple{
 	@apply !py-0
 }
+.tmcp-selectmultiple .ss-values{
+	@apply h-[42px] mt-2.5 rounded-sm
+}
 .tmcp-selectmultiple .ss-values .ss-value{
 	@apply !bg-primary !rounded-[10px] h-[30px]
 }
@@ -261,6 +264,12 @@ footer#page-footer .footer-bottom-menu {
 .tmcp-field-wrap .ss-arrow,
 .dropdown-custom.ss-main .ss-arrow {
 	@apply !invisible;
+}
+
+@media only screen and (min-width: 768px) {
+	[data-uniqid="667026ee7bd1f5.04499964"]{
+		width: calc((100% / var(--flex-items)) - (((var(--flex-items) - 1) / var(--flex-items)) * var(--tcgapcolumn)))
+	}
 }
 
 .ss-search input {
