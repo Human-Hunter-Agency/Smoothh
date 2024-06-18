@@ -10,9 +10,9 @@ $list = $args['list'];
 <div class="relative pb-5 pt-10 md:pt-[60px]">
     <div class="container !max-w-[1410px]">
         <?php if ($header) : ?>
-            <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+            <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
                 <?php echo esc_html($header); ?>
-            </h2>
+            </div>
         <?php
         endif;
 
@@ -26,8 +26,11 @@ $list = $args['list'];
         ?>
             <?php if ($question && $answer) : ?>
                 <div class="border-2 border-primary rounded-2xl mb-2.5" data-js="dropdown" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <div class="group flex justify-between items-center py-5 px-6 cursor-pointer" 
-                    aria-expanded="<?php if (++$i === $numItems) { echo 'true';} else { echo 'false';} ?>" data-js="dropdown-toggle">
+                    <div class="group flex justify-between items-center py-5 px-6 cursor-pointer" aria-expanded="<?php if (++$i === $numItems) {
+                                                                                                                        echo 'true';
+                                                                                                                    } else {
+                                                                                                                        echo 'false';
+                                                                                                                    } ?>" data-js="dropdown-toggle">
                         <h3 class="text-base md:text-[20px] md:leading-5 group-hover:text-primary transition duration-200 font-semibold" itemprop="name"><?php echo esc_html($question); ?></h3>
                         <div class="p-1 relative">
                             <svg class="group-aria-expanded:rotate-180 transition duration-300" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
