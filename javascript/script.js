@@ -1048,7 +1048,7 @@ function initCalculator() {
 					const MIN_NEGOTIATE_PRICE = 50000
 					const MIN_NEGOTIATE_VACANCY = 3
 					const negotiateBtn = calcEl.querySelector('[data-js-popup-toggle="negociate-form"]')
-					const priceNegotiable = parseFloat($0.innerText.replace(',', '.')) > MIN_NEGOTIATE_PRICE
+					const priceNegotiable = parseFloat(sumEl.innerText.replace(',', '.')) > MIN_NEGOTIATE_PRICE
 					const vacancySurpassing = calcEl.querySelector('[data-uniqid="66702e257bd420.53200121"] select').value.split('_')[0] > MIN_NEGOTIATE_VACANCY
 
 					if (priceNegotiable || vacancySurpassing) {
