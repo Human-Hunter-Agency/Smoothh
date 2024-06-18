@@ -48,7 +48,7 @@ $list = $args['list'];
                                     <?php elseif ($i == 4) :  ?>
                                         <div class="4 w-1/2 h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
                                     <?php else : ?>
-                                        <div class="elsew-full h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
+                                        <div class="else w-full h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[10%] lg:top-[12%] xl:top-[68px] right-[35px] z-[-1]"></div>
                                     <?php endif; ?>
 
                                     <?php if ($item['description']) : ?>
