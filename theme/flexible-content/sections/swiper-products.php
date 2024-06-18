@@ -3,6 +3,7 @@
 /** Template to display 'Swiper z produktami' - swiper_products */
 
 $header = $args['header'];
+$description = $args['description'];
 
 if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = $args['products_list'];
@@ -26,12 +27,18 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     <?php if ($header) : ?>
         <div class="container">
             <div class="relative z-0">
-                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
-                    <?php echo esc_html($header); ?>
-                </h2>
+                <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+                    <?php echo $header; ?>
+                </div>
             </div>
         </div>
     <?php endif; ?>
 
-    <?php get_template_part( 'flexible-content/sections/partials/products-swiper-wrapper', '', array('products' => $products) ); ?>
+    <?php if ($description) : ?>
+        <div class="mx-auto max-w-[650px] text-[16px] font-normal leading-[26px]">
+            <?php echo $description; ?>
+        </div>
+    <?php endif; ?>
+
+    <?php get_template_part('flexible-content/sections/partials/products-swiper-wrapper', '', array('products' => $products)); ?>
 </section>
