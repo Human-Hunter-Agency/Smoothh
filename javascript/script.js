@@ -1053,6 +1053,10 @@ function initCalculator() {
 
 					if (priceNegotiable || vacancySurpassing) {
 						negotiateBtn.classList.remove('!hidden')
+						const textArea = document.querySelector('textarea[name="calc-data"]')
+						if (textArea) {
+							copyFormToTextarea(form,textArea)
+						}
 					}else{
 						negotiateBtn.classList.add('!hidden')	
 					}
@@ -1066,11 +1070,12 @@ function initCalculator() {
 		});
 	})
 
+	
 	const fileBtn = document.querySelector('[data-js-file-upload-btn]');
 	const fileInput = document.querySelector('[data-uniqid="667028857bd280.91689368"] input');
 	const fileRemoveBtn = document.querySelector('[data-js-file-remove]');
 	const fileNameEl = document.querySelector('[data-js-file-name]');
-
+	
 	fileBtn.addEventListener('click',()=>{
 		fileInput.click()
 	})
@@ -1089,6 +1094,22 @@ function initCalculator() {
 			fileBtn.classList.remove('!hidden');
 		}
 	})
+}
+function copyFormToTextarea(form,textarea){
+	const formData = new FormData(form);
+	let textData = ''
+
+    formData.forEach((value, key) => {
+        const element = document.querySelector(`[name='${key}']`);
+        if (!element) return;
+        
+        const name = element.dataset.placeholder || element.placeholder;
+
+        if (key.startsWith('tmcp')) {
+			textData += `${name}: ${value} \r\n`;
+        }
+    });
+	textarea.value = textData
 }
 
 function stringToPriceFormat(val) {
