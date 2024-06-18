@@ -23,22 +23,22 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
 ?>
 
 <section class="relative py-10 mb:py-[60px] md:pt-[70px]">
-
-    <?php if ($header) : ?>
-        <div class="container">
+    <div class="container">
+        <?php if ($header) : ?>
             <div class="relative z-0">
                 <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
                     <?php echo $header; ?>
                 </div>
             </div>
-        </div>
-    <?php endif; ?>
 
-    <?php if ($description) : ?>
-        <div class="mx-auto max-w-[650px] text-[16px] font-normal leading-[26px]">
-            <?php echo $description; ?>
-        </div>
-    <?php endif; ?>
+        <?php endif; ?>
+
+        <?php if ($description) : ?>
+            <div class="mx-auto max-w-[900px] mb-12 text-[16px] font-normal leading-[26px]">
+                <?php echo $description; ?>
+            </div>
+        <?php endif; ?>
+    </div>
 
     <?php get_template_part('flexible-content/sections/partials/products-swiper-wrapper', '', array('products' => $products)); ?>
 </section>
