@@ -32,7 +32,6 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 			'data-price'          => '',
 			'data-rules'          => '',
 			'data-original-rules' => '',
-			'data-placeholder'    => 'test',
 		],
 	];
 
@@ -118,6 +117,9 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 	THEMECOMPLETE_EPO_HTML()->create_dropdown( $select_array, $select_options, '/n', false, true );
 	?>
 	</label>
+	<pre>
+		<?php print_r($select_array) ?>
+	</pre>
 	<?php require THEMECOMPLETE_EPO_TEMPLATE_PATH . '_price.php'; ?>
 	<?php require THEMECOMPLETE_EPO_TEMPLATE_PATH . '_quantity.php'; ?>
 	<?php do_action( 'tm_after_element', isset( $tm_element_settings ) ? $tm_element_settings : [] ); ?>
