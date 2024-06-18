@@ -38,10 +38,6 @@
 	@apply transition duration-200 hover:text-primary;
 }
 
-#primary-menu li {
-	@apply group;
-}
-
 [aria-expanded="true"].menu-btn ~ #site-navigation {
 	@apply !shadow-lg;
 }
