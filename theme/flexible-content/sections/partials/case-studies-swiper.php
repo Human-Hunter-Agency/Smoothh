@@ -23,18 +23,18 @@ if (isset($args['posts']) && !empty($args['posts'])) {
         <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
             <div class="swiper-wrapper">
                 <?php foreach ($posts as $post) : ?>
-                    <a href="<?php echo get_permalink($post->ID) ?>" class="group swiper-slide !h-auto !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
+                    <a href="<?php echo get_permalink($post->ID) ?>" class="group swiper-slide !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 drop-shadow-lg lg:drop-shadow-2xl">
                         <div class="w-full relative rounded-t-[14px] overflow-hidden [&_img]:object-cover [&_img]:w-full [&_img]:!h-[190px] [&_img]:md:!h-[220px]">
                             <?php echo wp_get_attachment_image(get_post_thumbnail_id($post), 'medium', false, array('loading' => 'lazy')); ?>
                             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                         </div>
                         <div class="text-center p-3 md:p-6 !pt-0">
                             <?php if ($post->post_title) : ?>
-                                <h3 class="bg-secondary rounded-[14px] p-2 translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold"><?php echo $post->post_title; ?></h3>
+                                <h3 class="bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold"><?php echo $post->post_title; ?></h3>
                             <?php endif; ?>
                             <p class="text-sm md:text-base italic font-medium"><?php echo get_the_excerpt($post->ID); ?></p>
                         </div>
-                        <span class="rounded-[14px] text-[13px] font-bold py-2 px-7 text-secondary  group-hover:text-primary transition duration-200"><?php esc_html_e('Read more', 'smoothh') ?> ></span>
+                        <span class="ml-0 mr-auto rounded-[14px] text-[16px] font-bold py-2 px-7 text-secondary  group-hover:text-primary transition duration-200"><?php esc_html_e('Read more', 'smoothh') ?> ></span>
                     </a>
                 <?php endforeach; ?>
             </div>
