@@ -32,12 +32,12 @@ if ( isset( $class_label, $element_id, $fieldtype, $name, $options ) ) :
 			'data-price'          => '',
 			'data-rules'          => '',
 			'data-original-rules' => '',
+			'data-placeholder'    => 'test',
 		],
 	];
 
     if ( isset( $tm_element_settings['label'] ) && ! empty( $tm_element_settings['label'] ) ) {
 		$select_array['atts']['data-placeholder'] = $tm_element_settings['label'];
-		echo $select_array['atts']['data-placeholder'];
 	}
 
 	if ( isset( $required ) && ! empty( $required ) ) {
