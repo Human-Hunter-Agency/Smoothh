@@ -22,7 +22,7 @@ $tiles_list = $args['tiles_list'];
                 <?php endif; ?>
 
                 <?php if ($description) : ?>
-                    <div class="mt-10 text-[16px] font-normal leading-[26px]">
+                    <div class="mt-10 text-[16px] font-normal leading-[26px] [&_.circled]:bg-primary  [&_.circled]:inline-flex [&_.circled]:items-center [&_.circled]:justify-center [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
                         <?php echo $description; ?>
                     </div>
                 <?php endif; ?>
