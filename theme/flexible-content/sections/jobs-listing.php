@@ -29,7 +29,7 @@ $endpoint_url = $args['endpoint'];
                 </form>
                 <ul data-js-jobs="filters" class="!hidden flex justify-center flex-wrap gap-x-5 gap-y-2.5 mb-10 md:mb-14">
                 </ul>
-                <ul data-js-jobs="list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <ul data-js-jobs="list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 </ul>
                 <div data-js-jobs="loader" class="w-full px-10 py-20">
                     <span class="mx-auto block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
