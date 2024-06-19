@@ -1047,11 +1047,18 @@ function initCalculator() {
 				if (isCalcAdvanced) {
 					const MIN_NEGOTIATE_PRICE = 25000
 					const MIN_NEGOTIATE_VACANCY = 3
+					const orderBtn = calcEl.querySelector('.single_add_to_cart_button')
+					const positionSelect = calcEl.querySelector('[data-uniqid="666febd02fcf49.12361043"] select')
 					const negotiateBtn = calcEl.querySelector('[data-js-popup-toggle="negotiate-form"]')
+
+					const isPositionOther = positionSelect.value.startsWith('Inne')
 					const priceNegotiable = parseFloat(sumEl.innerText.replace(',', '.')) > MIN_NEGOTIATE_PRICE
 					const vacancySurpassing = calcEl.querySelector('[data-uniqid="66702e257bd420.53200121"] select').value.split('_')[0] > MIN_NEGOTIATE_VACANCY
 
-					if (priceNegotiable || vacancySurpassing) {
+					orderBtn.disabled = isPositionOther
+						
+					
+					if (priceNegotiable || vacancySurpassing || positionOther) {
 						negotiateBtn.classList.remove('!hidden')
 						const textArea = document.querySelector('textarea[name="calc-data"]')
 						const negotiateForm = document.querySelector('[data-js-popup-container="negotiate-form"] form')
