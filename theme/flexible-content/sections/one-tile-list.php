@@ -43,7 +43,7 @@ $tiles_list = $args['tiles_list'];
             </div>
 
         <?php elseif ($descriptionTile && $isDescriptionTile) :  ?>
-            <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base [&_.circled]:bg-primary  [&_.circled]:inline-flex [&_.circled]:items-center [&_.circled]:justify-center [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
+            <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base [&_.circled]:bg-primary  [&_.circled]:inline-flex [&_.circled]:items-center [&_.circled]:justify-center [&_.circled]:font-bold [&_.circled]:text-[30px] [&_.circled]:sieze-20 [&_.circled]:rounded-xl [&_.circled]:my-4 [&_.circled]:whitespace-nowrap">
                 <?php echo $descriptionTile; ?>
             </div>
         <?php endif; ?>
