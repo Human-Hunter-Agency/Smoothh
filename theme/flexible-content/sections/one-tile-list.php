@@ -4,6 +4,7 @@
 
 $header = $args['header'];
 $description = $args['description'];
+$descriptionTile = $args['descriptionTile'];
 $tiles_list = $args['tiles_list'];
 
 ?>
