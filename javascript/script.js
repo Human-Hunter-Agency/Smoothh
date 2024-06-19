@@ -991,6 +991,10 @@ function initPageMarginWhenAdminIsLogged() {
 }
 
 function initCalculator() {
+	if (!document.querySelector('.calculator')) {
+		return
+	}
+	
 	const tabButtons = document.querySelectorAll('[data-js-calc-tab-btn]');
 	const calcTabs = document.querySelectorAll('[data-js-calc-content]')
 
