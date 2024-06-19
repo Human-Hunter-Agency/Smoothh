@@ -29,8 +29,7 @@ $tiles_list = $args['tiles_list'];
             </div>
         </div>
 
-        <?php print_r($tiles_list); ?>
-        <?php if (count($tiles_list) > 0) : ?>
+        <?php if ($tiles_list && !$isDescriptionTile) : ?>
             <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl">
                 <?php foreach ($tiles_list as $tile) :
                 ?>
@@ -43,7 +42,7 @@ $tiles_list = $args['tiles_list'];
                 <?php endforeach; ?>
             </div>
 
-        <?php elseif ($descriptionTile) :  ?>
+        <?php elseif ($descriptionTile && $isDescriptionTile) :  ?>
             <div class="descTile basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base">
                 <?php echo $descriptionTile; ?>
             </div>
