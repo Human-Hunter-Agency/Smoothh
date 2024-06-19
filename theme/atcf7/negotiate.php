@@ -22,6 +22,7 @@ if (!defined('ABSPATH')) {
   </div>
   <div class="hidden">
   [textarea calc-data]
+  [file appended-file]
   </div>
   <div class="max-w-[540px]">
     <div class="mb-5 has-tooltip">

@@ -1054,6 +1054,7 @@ function initCalculator() {
 					if (priceNegotiable || vacancySurpassing) {
 						negotiateBtn.classList.remove('!hidden')
 						const textArea = document.querySelector('textarea[name="calc-data"]')
+						document.querySelector('[data-js-popup-container="negotiate-form"] .wpcf7-response-output').innerText = ''
 						if (textArea) {
 							copyFormToTextarea(form,textArea)
 						}
@@ -1104,12 +1105,16 @@ function copyFormToTextarea(form,textarea){
         if (!element) return;
         
 		
-        if (key.startsWith('tmcp')) {
+        if (key.startsWith('tmcp') && !key.includes('hidden')) {
 			const name = element.dataset.placeholder || element.placeholder;
-			if (typeof value == 'object') {
-				value = value.name
+			let valueFormatted = ''
+			if (typeof value == 'object' && key.includes('upload')) {
+				const formFileInput = document.querySelector('[data-js-popup-container="negotiate-form"] [name="appended-file"]')
+				valueFormatted = value.name
+				formFileInput.files = value
+			}else{
+				valueFormatted = value == '' ? '-' : value.split('_')[0]
 			}
-			const valueFormatted = value == '' ? '-' : value.split('_')[0]
 			
 			textData += `${name}: ${valueFormatted} \r\n`;
         }
