@@ -617,6 +617,10 @@ i.theChampLogin {
 	@apply !hidden;
 }
 
+.calculator-details .tm-extra-product-options-fields {
+	@apply bg-[#F2F2F2] px-10 pt-12 rounded-2xl .animateIn;
+}
+
 .animateIn {
 	@apply translate-y-0;
 }

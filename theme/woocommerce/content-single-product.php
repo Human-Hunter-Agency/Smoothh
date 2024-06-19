@@ -36,7 +36,7 @@ if (post_password_required()) {
 if ($product->get_id() == 1186 || $product->get_id() == 1253) :
 ?>
 
-	<div class="calculator-details bg-[#F2F2F2] px-10 pt-12 rounded-xl">
+	<div class="calculator-details">
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.
