@@ -877,11 +877,13 @@ function createOffersItems(offers, itemsPerPage) {
 		itemsHtml += `
 		<li class="job-offer-tile" data-js-job-hidden="${isHidden}">
 			<a href="${offer.url}" target="_blank">
-			${offer.date > sevenDaysAgo ? `<span class="offer-new">${translations['New'] ?? 'New'}</span>` : ''}
-				<div>
-					<h3 class="offer-title">${offer.name}</h3>
+				<div class="offer-wrapper">
+				${offer.date > sevenDaysAgo ? `<span class="offer-new">${translations['New'] ?? 'New'}</span>` : ''}
+					<div>
+						<h3 class="offer-title">${offer.name}</h3>
+					</div>
+					<span class="offer-location">${offer.location}</span>
 				</div>
-				<span class="offer-location">${offer.location}</span>
 				<span class="offer-date">${offer.date.toLocaleDateString()}</span>
 			</a>
 		</li>
