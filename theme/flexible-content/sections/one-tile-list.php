@@ -5,6 +5,7 @@
 $header = $args['header'];
 $description = $args['description'];
 $descriptionTile = $args['descriptionTile'];
+$isDescriptionTile = $args['isDescriptionTile'];
 $tiles_list = $args['tiles_list'];
 
 ?>
@@ -29,7 +30,7 @@ $tiles_list = $args['tiles_list'];
         </div>
 
         <?php print_r($tiles_list); ?>
-        <?php if ($tiles_list) : ?>
+        <?php if (count($tiles_list) > 0) : ?>
             <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl">
                 <?php foreach ($tiles_list as $tile) :
                 ?>
