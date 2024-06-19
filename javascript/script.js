@@ -1103,10 +1103,15 @@ function copyFormToTextarea(form,textarea){
         const element = document.querySelector(`[name='${key}']`);
         if (!element) return;
         
-        const name = element.dataset.placeholder || element.placeholder;
-
+		
         if (key.startsWith('tmcp')) {
-			textData += `${name}: ${value} \r\n`;
+			const name = element.dataset.placeholder || element.placeholder;
+			if (typeof value == 'object') {
+				value = value.name
+			}
+			const valueFormatted = value == '' ? '-' : value.split('_')[0]
+			
+			textData += `${name}: ${valueFormatted} \r\n`;
         }
     });
 	textarea.value = textData
