@@ -28,7 +28,6 @@ $list = $args['list'];
                         <div class="swiper-slide !h-auto _xl:flex-1 xl:!basis-1/4 px-3 md:px-5 !mr-0 pr-4 xl-pr-auto last:!px-0">
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
-
                                     <div class="m-8 flex items-center justify-center size-[72px] rounded-full bg-gradient-to-b from-secondary to-primary z-[1] text-white text-[32px] font-semibold">
                                         <p class="mt-[-4px]"><?php echo $i; ?></p>
                                     </div>
@@ -38,7 +37,6 @@ $list = $args['list'];
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
                                     <?php endif; ?>
-
                                 <?php else : ?>
 
                                     <div class="m-8 bg-white flex items-center justify-center size-[72px] rounded-full border-[2px] border-primary z-[1] text-[32px] text-primary font-semibold">
@@ -46,6 +44,8 @@ $list = $args['list'];
                                     </div>
 
                                     <?php if ($i == 1) : ?>
+                                        <div class="1 w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-[-40px] z-[-1]"></div>
+                                    <?php elseif ($i == 5) : ?>
                                         <div class="1 w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-[-40px] z-[-1]"></div>
                                     <?php else : ?>
                                         <div class="else w-full h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-[35px] z-[-1]"></div>
