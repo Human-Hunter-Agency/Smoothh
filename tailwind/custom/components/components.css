@@ -545,11 +545,11 @@ i.theChampLogin {
 	animation: appear 0.3s normal forwards ease-in-out;
 }
 .job-offer-tile a {
-	@apply h-full !bg-white rounded-2xl border-2 border-[#e2e2e2] hover:shadow-xl hover:border-white flex flex-col justify-between transition duration-200;
+	@apply h-full !bg-white rounded-2xl border-2 border-[#e3e3e3] hover:shadow-xl hover:border-white flex flex-col justify-between transition duration-200;
 }
 
 .job-offer-tile a .offer-wrapper {
-	@apply p-5 pb-10 pt-0  flex flex-col justify-between transition duration-200;
+	@apply p-5 pb-10 pt-0 flex flex-col justify-between transition duration-200;
 }
 
 .job-offer-tile .offer-title {
@@ -568,12 +568,8 @@ i.theChampLogin {
 	@apply font-bold;
 }
 
-.offer-date-wrapper {
-	@apply border-t-[#e2e2e2];
-}
-
 .offer-date {
-	@apply block p-5 pb-10 relative after:content-[''] after:w-full after:h-[2px] after:bg-[#e2e2e2] after:absolute after:top-0 after:left-0;
+	@apply block px-5 py-4 text-[#e3e3e3] relative after:content-[''] after:w-full after:h-[2px] after:bg-[#e3e3e3] after:absolute after:top-0 after:left-0;
 }
 
 .woocommerce .star-rating span,
