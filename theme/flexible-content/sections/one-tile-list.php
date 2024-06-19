@@ -22,7 +22,7 @@ $tiles_list = $args['tiles_list'];
                 <?php endif; ?>
 
                 <?php if ($description) : ?>
-                    <div class="mt-10 text-[16px] font-normal leading-[26px] [&_.circled]:bg-primary  [&_.circled]:inline-flex [&_.circled]:items-center [&_.circled]:justify-center [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
+                    <div class="mt-10 text-[16px] font-normal leading-[26px]">
                         <?php echo $description; ?>
                     </div>
                 <?php endif; ?>
@@ -43,7 +43,7 @@ $tiles_list = $args['tiles_list'];
             </div>
 
         <?php elseif ($descriptionTile && $isDescriptionTile) :  ?>
-            <div class="descTile basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base">
+            <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base [&_.circled]:bg-primary  [&_.circled]:inline-flex [&_.circled]:items-center [&_.circled]:justify-center [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
                 <?php echo $descriptionTile; ?>
             </div>
         <?php endif; ?>
