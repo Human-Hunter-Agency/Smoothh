@@ -1045,7 +1045,7 @@ function initCalculator() {
 				tableTotalTaxed.innerHTML = stringToPriceFormat(priceTaxed);
 
 				if (isCalcAdvanced) {
-					const MIN_NEGOTIATE_PRICE = 50000
+					const MIN_NEGOTIATE_PRICE = 25000
 					const MIN_NEGOTIATE_VACANCY = 3
 					const negotiateBtn = calcEl.querySelector('[data-js-popup-toggle="negotiate-form"]')
 					const priceNegotiable = parseFloat(sumEl.innerText.replace(',', '.')) > MIN_NEGOTIATE_PRICE
