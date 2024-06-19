@@ -1054,8 +1054,10 @@ function initCalculator() {
 					if (priceNegotiable || vacancySurpassing) {
 						negotiateBtn.classList.remove('!hidden')
 						const textArea = document.querySelector('textarea[name="calc-data"]')
-						document.querySelector('[data-js-popup-container="negotiate-form"] .wpcf7-response-output').innerText = ''
-						document.querySelector('[data-js-popup-container="negotiate-form"] form').classList.remove('sent')
+						const negotiateForm = document.querySelector('[data-js-popup-container="negotiate-form"] form')
+						if (wpcf7) {
+							wpcf7.reset(negotiateForm)
+						}
 						if (textArea) {
 							copyFormToTextarea(form,textArea)
 						}
@@ -1087,9 +1089,6 @@ function initCalculator() {
 	})
 	fileInput.addEventListener('change',(e)=>{
 		const file = e.target.files[0];
-		const negotiateFormFileInput = document.querySelector('[data-js-popup-container="negotiate-form"] [name="appended-file"]')
-		negotiateFormFileInput.files = e.target.files
-
 		if (file) {
 			fileNameEl.innerText = file.name;
 			fileRemoveBtn.classList.remove('!hidden');
@@ -1112,8 +1111,12 @@ function copyFormToTextarea(form,textarea){
         if (key.startsWith('tmcp') && !key.includes('hidden')) {
 			const name = element.dataset.placeholder || element.placeholder;
 			let valueFormatted = ''
-			if (typeof value == 'object') {
+			if (typeof value == 'object' && key.includes('upload')) {
 				valueFormatted = value.name
+				const calcFileInput = document.querySelector('[data-uniqid="667028857bd280.91689368"] input')
+				const negotiateFormFileInput = document.querySelector('[data-js-popup-container="negotiate-form"] [name="appended-file"]')
+				negotiateFormFileInput.files = calcFileInput.files
+		
 			}else{
 				valueFormatted = value == '' ? '-' : value.split('_')[0]
 			}
