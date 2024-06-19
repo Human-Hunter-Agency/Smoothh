@@ -11,7 +11,7 @@ $tiles_list = $args['tiles_list'];
 ?>
 
 <div class="relative w-full py-10 pb-5 md:pt-[70px] mt-10 mb-20">
-    <div class="z-[-1] w-[100%] lg:w-[75%] h-[70%] absolute top-8 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
+    <div class="z-[-1] w-[100%] lg:w-[75%] h-[70%] absolute top-0 left-0 bg-gradient-to-r from-[rgba(129,23,238,0)] to-[rgba(129,23,238,0.102)] rounded-[45px]"></div>
 
     <div class="pt-14 relative z-0 container flex flex-col lg:flex-row basis">
 

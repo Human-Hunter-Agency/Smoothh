@@ -11,13 +11,13 @@ $logo = $args['logo'];
 ?>
 
 <div class="relative py-10 md:py-20 mt-20">
-    <div class="z-[-1] lg:w-[85%] 2xl:w-[88%] lg:h-[1200px] absolute top-8 right-0 rounded-[45px] bg-gradient-to-l from-[rgba(129,23,238,0)] to-[rgba(129,23,238,0.102)]"></div>
+    <div class="z-[-1] lg:w-[85%] 2xl:w-[88%] lg:h-[1200px] absolute top-0 right-0 rounded-[45px] bg-gradient-to-l from-[rgba(129,23,238,0)] to-[rgba(129,23,238,0.102)]"></div>
     <div class="container">
         <div class=" mb-20 lg:mb-44 flex flex-col lg:flex-row gap-10 lg:gap-24">
             <div class="z-0 w-full lg:w-1/2">
                 <?php if ($image_3x3) : ?>
                     <div class="-mt-28">
-                        <?php echo smoothh_img_responsive($image_3x3, '', array(768,768), 'lazy') ?>
+                        <?php echo smoothh_img_responsive($image_3x3, '', array(768, 768), 'lazy') ?>
                     </div>
                 <?php else : ?>
                     <div class="lg:-m-10">
