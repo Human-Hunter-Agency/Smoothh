@@ -620,7 +620,9 @@ function initCalculatorFields() {
 			select: fieldEl,
 			settings: {
 				showSearch: false,
-				placeholderText: fieldEl.dataset.placeholder ? fieldEl.dataset.placeholder : ''
+				placeholderText: fieldEl.dataset.placeholder
+					? fieldEl.dataset.placeholder
+					: '',
 			},
 			events: {
 				afterChange: () => {
@@ -875,14 +877,12 @@ function createOffersItems(offers, itemsPerPage) {
 		itemsHtml += `
 		<li class="job-offer-tile" data-js-job-hidden="${isHidden}">
 			<a href="${offer.url}" target="_blank">
+			${offer.date > sevenDaysAgo ? `<span class="offer-new">${translations['New'] ?? 'New'}</span>` : ''}
 				<div>
-					<div class="tile-top">
-						<span class="offer-date">${offer.date.toLocaleDateString()}</span>
-						${offer.date > sevenDaysAgo ? `<span class="offer-new">${translations['New'] ?? 'New'}</span>` : ''}
-					</div>
 					<h3 class="offer-title">${offer.name}</h3>
 				</div>
 				<span class="offer-location">${offer.location}</span>
+				<span class="offer-date">${offer.date.toLocaleDateString()}</span>
 			</a>
 		</li>
 		`;
@@ -992,113 +992,151 @@ function initPageMarginWhenAdminIsLogged() {
 
 function initCalculator() {
 	if (!document.querySelector('.calculator')) {
-		return
+		return;
 	}
-	
-	const tabButtons = document.querySelectorAll('[data-js-calc-tab-btn]');
-	const calcTabs = document.querySelectorAll('[data-js-calc-content]')
 
-	tabButtons.forEach(tabBtn => {
-		tabBtn.addEventListener('click',() => {
-			tabButtons.forEach(btn => {
+	const tabButtons = document.querySelectorAll('[data-js-calc-tab-btn]');
+	const calcTabs = document.querySelectorAll('[data-js-calc-content]');
+
+	tabButtons.forEach((tabBtn) => {
+		tabBtn.addEventListener('click', () => {
+			tabButtons.forEach((btn) => {
 				btn.classList.remove('active');
-			})
+			});
 			calcTabs.forEach((calc) => {
 				calc.classList.add('hidden');
 			});
 			tabBtn.classList.add('active');
-			document.querySelector(`[data-js-calc-content="${tabBtn.dataset.jsCalcTabBtn}"]`).classList.remove('hidden');
+			document
+				.querySelector(
+					`[data-js-calc-content="${tabBtn.dataset.jsCalcTabBtn}"]`
+				)
+				.classList.remove('hidden');
 		});
-	})
+	});
 
-	calcTabs.forEach(calcEl => {
+	calcTabs.forEach((calcEl) => {
 		const form = calcEl.querySelector('.calculator-details form');
 		if (!form) return;
 
-		const isCalcAdvanced = calcEl.dataset.jsCalcContent == 2
-	
+		const isCalcAdvanced = calcEl.dataset.jsCalcContent == 2;
+
 		const container = calcEl.querySelector('[data-js-calc-container]');
 		const calcBtn = calcEl.querySelector('[data-js-calc-btn]');
-		const sumEl = calcEl.querySelector(!isCalcAdvanced ? '[data-uniqid="666582c02fa7e2.99896643"] .tc-result' : '[data-uniqid="666febd02fcfa6.35759104"] .tc-result');
+		const sumEl = calcEl.querySelector(
+			!isCalcAdvanced
+				? '[data-uniqid="666582c02fa7e2.99896643"] .tc-result'
+				: '[data-uniqid="666febd02fcfa6.35759104"] .tc-result'
+		);
 		// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
-	
+
 		const tablePrice = calcEl.querySelector('[data-js-calc-price]');
-		const tablePriceTaxed = calcEl.querySelector('[data-js-calc-price-taxed]');
+		const tablePriceTaxed = calcEl.querySelector(
+			'[data-js-calc-price-taxed]'
+		);
 		const tableSubtotal = calcEl.querySelector('[data-js-calc-subtotal]');
-		const tableSubtotalTaxed = calcEl.querySelector('[data-js-calc-subtotal-taxed]');
+		const tableSubtotalTaxed = calcEl.querySelector(
+			'[data-js-calc-subtotal-taxed]'
+		);
 		const tableTotal = calcEl.querySelector('[data-js-calc-total]');
-		const tableTotalTaxed = calcEl.querySelector('[data-js-calc-total-taxed]');
+		const tableTotalTaxed = calcEl.querySelector(
+			'[data-js-calc-total-taxed]'
+		);
 		// const tableFee = document.querySelector('[data-js-calc-fee]');
 
 		form.addEventListener('change', () => {
 			container.classList.add('hidden');
 		});
-	
+
 		calcBtn.addEventListener('click', () => {
 			jQuery(form).tc_validate().form();
 			if (form.checkValidity()) {
 				tablePrice.innerHTML =
-				tableSubtotal.innerHTML =
-				tableTotal.innerHTML = stringToPriceFormat(sumEl.innerText);
-	
-				const taxEl = calcEl.querySelector('.tm-vat-options-totals .price')
-				const priceTaxed = parseFloat(sumEl.innerText.replace(',', '.')) + parseFloat(taxEl.innerText.replace(',', '.'))
-				
+					tableSubtotal.innerHTML =
+					tableTotal.innerHTML =
+						stringToPriceFormat(sumEl.innerText);
+
+				const taxEl = calcEl.querySelector(
+					'.tm-vat-options-totals .price'
+				);
+				const priceTaxed =
+					parseFloat(sumEl.innerText.replace(',', '.')) +
+					parseFloat(taxEl.innerText.replace(',', '.'));
+
 				tablePriceTaxed.innerHTML =
-				tableSubtotalTaxed.innerHTML =
-				tableTotalTaxed.innerHTML = stringToPriceFormat(priceTaxed);
+					tableSubtotalTaxed.innerHTML =
+					tableTotalTaxed.innerHTML =
+						stringToPriceFormat(priceTaxed);
 
 				if (isCalcAdvanced) {
-					const MIN_NEGOTIATE_PRICE = 25000
-					const MIN_NEGOTIATE_VACANCY = 3
-					const orderBtn = calcEl.querySelector('.single_add_to_cart_button')
-					const positionSelect = calcEl.querySelector('[data-uniqid="666febd02fcf49.12361043"] select')
-					const negotiateBtn = calcEl.querySelector('[data-js-popup-toggle="negotiate-form"]')
+					const MIN_NEGOTIATE_PRICE = 25000;
+					const MIN_NEGOTIATE_VACANCY = 3;
+					const orderBtn = calcEl.querySelector(
+						'.single_add_to_cart_button'
+					);
+					const positionSelect = calcEl.querySelector(
+						'[data-uniqid="666febd02fcf49.12361043"] select'
+					);
+					const negotiateBtn = calcEl.querySelector(
+						'[data-js-popup-toggle="negotiate-form"]'
+					);
 
-					const isPositionOther = positionSelect.value.startsWith('Inne')
-					const priceNegotiable = parseFloat(sumEl.innerText.replace(',', '.')) > MIN_NEGOTIATE_PRICE
-					const vacancySurpassing = calcEl.querySelector('[data-uniqid="66702e257bd420.53200121"] select').value.split('_')[0] > MIN_NEGOTIATE_VACANCY
+					const isPositionOther =
+						positionSelect.value.startsWith('Inne');
+					const priceNegotiable =
+						parseFloat(sumEl.innerText.replace(',', '.')) >
+						MIN_NEGOTIATE_PRICE;
+					const vacancySurpassing =
+						calcEl
+							.querySelector(
+								'[data-uniqid="66702e257bd420.53200121"] select'
+							)
+							.value.split('_')[0] > MIN_NEGOTIATE_VACANCY;
 
-					orderBtn.disabled = isPositionOther
-						
-					
+					orderBtn.disabled = isPositionOther;
+
 					if (priceNegotiable || vacancySurpassing || positionOther) {
-						negotiateBtn.classList.remove('!hidden')
-						const textArea = document.querySelector('textarea[name="calc-data"]')
-						const negotiateForm = document.querySelector('[data-js-popup-container="negotiate-form"] form')
+						negotiateBtn.classList.remove('!hidden');
+						const textArea = document.querySelector(
+							'textarea[name="calc-data"]'
+						);
+						const negotiateForm = document.querySelector(
+							'[data-js-popup-container="negotiate-form"] form'
+						);
 						if (wpcf7) {
-							wpcf7.reset(negotiateForm)
+							wpcf7.reset(negotiateForm);
 						}
 						if (textArea) {
-							copyFormToTextarea(form,textArea)
+							copyFormToTextarea(form, textArea);
 						}
-					}else{
-						negotiateBtn.classList.add('!hidden')	
+					} else {
+						negotiateBtn.classList.add('!hidden');
 					}
 				}
-	
+
 				// tableFee.innerHTML = feeEl.innerHTML
 				container.classList.remove('hidden');
 			} else {
 				container.classList.add('hidden');
 			}
 		});
-	})
+	});
 
-	
 	const fileBtn = document.querySelector('[data-js-file-upload-btn]');
-	const fileInput = document.querySelector('[data-uniqid="667028857bd280.91689368"] input');
+	const fileInput = document.querySelector(
+		'[data-uniqid="667028857bd280.91689368"] input'
+	);
 	const fileRemoveBtn = document.querySelector('[data-js-file-remove]');
 	const fileNameEl = document.querySelector('[data-js-file-name]');
-	
-	fileBtn.addEventListener('click',()=>{
-		fileInput.click()
-	})
-	fileRemoveBtn.addEventListener('click',()=>{
-		fileInput.value = ''
-		fileInput.dispatchEvent(new Event('change',{bubbles: true}))
-	})
-	fileInput.addEventListener('change',(e)=>{
+
+	fileBtn.addEventListener('click', () => {
+		fileInput.click();
+	});
+	fileRemoveBtn.addEventListener('click', () => {
+		fileInput.value = '';
+		fileInput.dispatchEvent(new Event('change', { bubbles: true }));
+	});
+	fileInput.addEventListener('change', (e) => {
 		const file = e.target.files[0];
 		if (file) {
 			fileNameEl.innerText = file.name;
@@ -1108,39 +1146,41 @@ function initCalculator() {
 			fileRemoveBtn.classList.add('!hidden');
 			fileBtn.classList.remove('!hidden');
 		}
-	})
+	});
 }
-function copyFormToTextarea(form,textarea){
+function copyFormToTextarea(form, textarea) {
 	const formData = new FormData(form);
-	let textData = ''
+	let textData = '';
 
-    formData.forEach((value, key) => {
-        const element = document.querySelector(`[name='${key}']`);
-        if (!element) return;
-        
-		
-        if (key.startsWith('tmcp') && !key.includes('hidden')) {
+	formData.forEach((value, key) => {
+		const element = document.querySelector(`[name='${key}']`);
+		if (!element) return;
+
+		if (key.startsWith('tmcp') && !key.includes('hidden')) {
 			const name = element.dataset.placeholder || element.placeholder;
-			let valueFormatted = ''
+			let valueFormatted = '';
 			if (typeof value == 'object' && key.includes('upload')) {
-				valueFormatted = value.name
-				const calcFileInput = document.querySelector('[data-uniqid="667028857bd280.91689368"] input')
-				const negotiateFormFileInput = document.querySelector('[data-js-popup-container="negotiate-form"] [name="appended-file"]')
-				negotiateFormFileInput.files = calcFileInput.files
-		
-			}else{
-				valueFormatted = value == '' ? '-' : value.split('_')[0]
+				valueFormatted = value.name;
+				const calcFileInput = document.querySelector(
+					'[data-uniqid="667028857bd280.91689368"] input'
+				);
+				const negotiateFormFileInput = document.querySelector(
+					'[data-js-popup-container="negotiate-form"] [name="appended-file"]'
+				);
+				negotiateFormFileInput.files = calcFileInput.files;
+			} else {
+				valueFormatted = value == '' ? '-' : value.split('_')[0];
 			}
-			
+
 			textData += `${name}: ${valueFormatted} \r\n`;
-        }
-    });
-	textarea.value = textData
+		}
+	});
+	textarea.value = textData;
 }
 
 function stringToPriceFormat(val) {
 	if (typeof val == 'string') {
-		val = parseFloat(val.replace(',', '.'))
+		val = parseFloat(val.replace(',', '.'));
 	}
 
 	return val.toFixed(2).replace('.', ',');
