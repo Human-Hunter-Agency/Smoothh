@@ -8,9 +8,9 @@ $list = $args['list'];
 
 <?php if ($list) : ?>
     <div class="container mb-10 md:mb-20">
-        <div class="flex flex-col gap-5 md:gap-10 lg:gap-[72px]">
+        <div class="flex flex-col gap-5 md:gap-10 lg:gap-10">
             <?php foreach ($list as $item) : ?>
-                <div class="flex flex-col md:flex-row border-2 border-[#B8B8B8] rounded-[16px] hover:shadow-xl hover:border-white transition duration-200">
+                <div class="flex flex-col md:flex-row border-2 border-[#B8B8B8] rounded-[16px] hover:shadow-2xl hover:border-white transition duration-200">
                     <?php if ($item['logo']) : ?>
 
                         <div class="shrink-0 flex items-center justify-center border-0 border-b-2 md:border-b-0 border-[#B8B8B8] md:w-[200px] lg:w-[250px] xl:w-[400px] p-5 lg:p-10 xl:px-[70px]">
