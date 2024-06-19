@@ -1085,7 +1085,7 @@ function initCalculator() {
 	})
 	fileRemoveBtn.addEventListener('click',()=>{
 		fileInput.value = ''
-		fileInput.dispatchEvent(new Event('change'))
+		fileInput.dispatchEvent(new Event('change',{bubbles: true}))
 	})
 	fileInput.addEventListener('change',(e)=>{
 		const file = e.target.files[0];
