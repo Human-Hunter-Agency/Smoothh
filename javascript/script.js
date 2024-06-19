@@ -884,7 +884,9 @@ function createOffersItems(offers, itemsPerPage) {
 					</div>
 					<span class="offer-location">${offer.location}</span>
 				</div>
-				<span class="offer-date">${offer.date.toLocaleDateString()}</span>
+				<div class="offer-date-wrapper">
+					<span class="offer-date">${offer.date.toLocaleDateString()}</span>
+				</div>
 			</a>
 		</li>
 		`;
