@@ -545,7 +545,7 @@ i.theChampLogin {
 	animation: appear 0.3s normal forwards ease-in-out;
 }
 .job-offer-tile a {
-	@apply h-full rounded-2xl p-5 pb-10 drop-shadow-xl flex flex-col justify-between transition duration-200;
+	@apply h-full rounded-2xl p-5 pb-10 shadow-xl flex flex-col justify-between transition duration-200;
 }
 
 .job-offer-tile a:hover {
