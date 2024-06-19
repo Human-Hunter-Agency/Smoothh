@@ -10,7 +10,7 @@ $list = $args['list'];
 <div class="relative pb-5 pt-10 md:pt-[60px]">
     <div class="container !max-w-[1410px]">
         <?php if ($header) : ?>
-            <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+            <div class="mx-auto max-w-[900px] text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
                 <?php echo $header; ?>
             </div>
         <?php
