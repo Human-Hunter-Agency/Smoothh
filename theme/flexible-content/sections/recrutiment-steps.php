@@ -43,9 +43,7 @@ $list = $args['list'];
                                         <p class="<?php echo ($i == 3) ? 'mt-[-7px]' : 'mt-[-4px]'; ?>"><?php echo $i; ?></p>
                                     </div>
 
-                                    <?php if ($i == 1) : ?>
-                                        <div class="1 w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-[-40px] z-[-1]"></div>
-                                    <?php elseif ($i == 5) : ?>
+                                    <?php if ($i == 1 || $i == 5) : ?>
                                         <div class="1 w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-[-40px] z-[-1]"></div>
                                     <?php else : ?>
                                         <div class="hidden else w-full h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-[35px] z-[-1]"></div>
