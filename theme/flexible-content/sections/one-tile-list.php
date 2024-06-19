@@ -28,7 +28,7 @@ $tiles_list = $args['tiles_list'];
             </div>
         </div>
 
-
+        <?php print_r($tiles_list); ?>
         <?php if ($tiles_list) : ?>
             <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl">
                 <?php foreach ($tiles_list as $tile) :
