@@ -1055,6 +1055,7 @@ function initCalculator() {
 						negotiateBtn.classList.remove('!hidden')
 						const textArea = document.querySelector('textarea[name="calc-data"]')
 						document.querySelector('[data-js-popup-container="negotiate-form"] .wpcf7-response-output').innerText = ''
+						document.querySelector('[data-js-popup-container="negotiate-form"] form').classList.remove('sent')
 						if (textArea) {
 							copyFormToTextarea(form,textArea)
 						}
