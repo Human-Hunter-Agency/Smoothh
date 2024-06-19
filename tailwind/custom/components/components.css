@@ -545,7 +545,7 @@ i.theChampLogin {
 	animation: appear 0.3s normal forwards ease-in-out;
 }
 .job-offer-tile a {
-	@apply h-full bg-white rounded-2xl p-5 pb-10 border-2 border-[#B8B8B8] hover:shadow-xl hover:border-white flex flex-col justify-between transition duration-200;
+	@apply h-full !bg-white rounded-2xl p-5 pb-10 pt-0 border-2 border-[#B8B8B8] hover:shadow-xl hover:border-white flex flex-col justify-between transition duration-200;
 }
 
 .job-offer-tile .offer-title {
@@ -553,7 +553,7 @@ i.theChampLogin {
 }
 
 .job-offer-tile .offer-new {
-	@apply w-fit text-white bg-secondary px-7 py-1 rounded-full font-semibold;
+	@apply w-fit text-white bg-secondary px-7 py-1 rounded-full font-semibold -translate-y-1/2;
 }
 
 [data-js-job-hidden="true"].job-offer-tile {
