@@ -569,7 +569,7 @@ i.theChampLogin {
 }
 
 .offer-date {
-	@apply block px-5 py-4 text-[#e3e3e3] relative after:content-[''] after:w-full after:h-[2px] after:bg-[#e3e3e3] after:absolute after:top-0 after:left-0;
+	@apply block px-5 py-4 text-[#c3c3c3] relative after:content-[''] after:w-full after:h-[2px] after:bg-[#e3e3e3] after:absolute after:top-0 after:left-0;
 }
 
 .woocommerce .star-rating span,
