@@ -1086,6 +1086,9 @@ function initCalculator() {
 	})
 	fileInput.addEventListener('change',(e)=>{
 		const file = e.target.files[0];
+		const negotiateFormFileInput = document.querySelector('[data-js-popup-container="negotiate-form"] [name="appended-file"]')
+		negotiateFormFileInput.files = e.target.files
+
 		if (file) {
 			fileNameEl.innerText = file.name;
 			fileRemoveBtn.classList.remove('!hidden');
@@ -1108,10 +1111,8 @@ function copyFormToTextarea(form,textarea){
         if (key.startsWith('tmcp') && !key.includes('hidden')) {
 			const name = element.dataset.placeholder || element.placeholder;
 			let valueFormatted = ''
-			if (typeof value == 'object' && key.includes('upload')) {
-				const formFileInput = document.querySelector('[data-js-popup-container="negotiate-form"] [name="appended-file"]')
+			if (typeof value == 'object') {
 				valueFormatted = value.name
-				formFileInput.files = value
 			}else{
 				valueFormatted = value == '' ? '-' : value.split('_')[0]
 			}
