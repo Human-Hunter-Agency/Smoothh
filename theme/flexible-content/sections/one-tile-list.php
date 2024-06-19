@@ -21,7 +21,7 @@ $tiles_list = $args['tiles_list'];
                 <?php endif; ?>
 
                 <?php if ($description) : ?>
-                    <div class="text-[16px] font-normal leading-[26px]">
+                    <div class="mt-10 text-[16px] font-normal leading-[26px]">
                         <?php echo $description; ?>
                     </div>
                 <?php endif; ?>
@@ -42,9 +42,9 @@ $tiles_list = $args['tiles_list'];
                 <?php endforeach; ?>
             </div>
 
-        <?php elseif ($description) :  ?>
+        <?php elseif ($descriptionTile) :  ?>
             <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl">
-                <p class="text-sm md:text-base"><?php echo $description; ?></p>
+                <p class="text-sm md:text-base"><?php echo $descriptionTile; ?></p>
             </div>
         <?php endif; ?>
     </div>
