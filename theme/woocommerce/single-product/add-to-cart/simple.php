@@ -159,7 +159,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 				<h3 class="mb-2 text-2xl md:text-3xl font-semibold"><?php esc_html_e('Negotiate price', 'smoothh'); ?></h3>
 				<p class="mb-8 text-base"><?php echo $product->get_title() ?></p>
 				<?php
-				$shortcode = '[contact-form-7 id="3dc6e27" prod-id="' . $product->get_id() . '" prod-name="' . $product->get_title() . '" title="Wycena"]';
+				$shortcode = '[contact-form-7 id="16df6c7" title="Negocjacja"]';
 				echo do_shortcode($shortcode); ?>
 			</div>
 		</div>
