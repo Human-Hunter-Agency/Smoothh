@@ -15,7 +15,7 @@ $blueBg = $args['blueBg'];
         <div class="z-[-1] w-full h-full absolute left-0 bg-gradient-to-r from-[rgba(129,23,238,0.1)] to-[rgba(129,23,238,0)]"></div>
     <?php endif; ?>
 
-    <div class="pt-14 relative z-0 container">
+    <div class="relative z-0 container">
         <?php if ($header) : ?>
             <div class="mb-10 xl:mb-20 mx-auto max-w-[900px] text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                 <?php echo $header; ?>
