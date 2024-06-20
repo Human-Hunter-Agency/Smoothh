@@ -1132,9 +1132,7 @@ function initCalculator() {
 
 				// tableFee.innerHTML = feeEl.innerHTML
 				container.classList.remove('hidden');
-				document
-					.querySelector('[data-calc-bg]')
-					.classList.replace('h-full', '!h-[75%]');
+				document.querySelector('[data-calc-bg]').style.height = '75%';
 			} else {
 				container.classList.add('hidden');
 			}
