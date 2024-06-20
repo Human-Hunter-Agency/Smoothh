@@ -45,14 +45,14 @@ $tiles_list = $args['tiles_list'];
                     <?php foreach ($tiles_list as $tile) : ?>
                         <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] bg-white drop-shadow-lg lg:drop-shadow-2xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
-                                <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
+                                <div class="w-full relative mb-5 <?php if (!$isSwiper) :  ?> !mb-0  <?php endif; ?> rounded-t-[14px] overflow-hidden">
                                     <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-[190px] md:!h-[220px]', array(360, 220), 'lazy'); ?>
                                     <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 </div>
                             <?php endif; ?>
                             <div class="text-center px-3 md:px-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-[20px] mb-9 <?php if (!$isSwiper) :  ?> !mb-0 mt-[10px] <?php endif; ?> font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
+                                    <h3 class="text-base md:text-[20px] mb-9 <?php if (!$isSwiper) :  ?> !mb-0 py-4  <?php endif; ?> font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
