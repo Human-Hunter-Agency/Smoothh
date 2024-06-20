@@ -155,16 +155,16 @@ function initMobileNarrowSwipers() {
 					spaceBetween: 20,
 					enabled: true,
 				},
-				768: {
-					slidesPerView: 3.5,
-					spaceBetween: 20,
-					enabled: true,
-				},
-				1000: {
-					slidesPerView: 4.5,
-					spaceBetween: 20,
-					enabled: true,
-				},
+				// 768: {
+				// 	slidesPerView: 3.5,
+				// 	spaceBetween: 20,
+				// 	enabled: true,
+				// },
+				// 1000: {
+				// 	slidesPerView: 4.5,
+				// 	spaceBetween: 20,
+				// 	enabled: true,
+				// },
 				1380: {
 					slidesPerView: 'auto',
 					spaceBetween: 0,
