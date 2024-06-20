@@ -45,6 +45,7 @@ $list = $args['list'];
 
                                     <?php if ($i == 1) : ?>
                                         <div class="1 w-1/2 xl:w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-0 xl:right-[-40px] z-[-1]"></div>
+                                    <?php endif; ?>
 
                                     <?php if ($i == 5 || $i == 9 && $i !== 4 && $i !== 8) : ?>
                                         <div class="5i9 w-[100%] xl:w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-0 xl:right-[-40px] z-[-1]"></div>
