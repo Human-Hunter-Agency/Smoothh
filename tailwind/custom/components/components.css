@@ -631,11 +631,3 @@ i.theChampLogin {
 .sub-menu {
 	@apply !pl-5;
 }
-
-.sub-menu {
-	@apply w-full absolute top-[100px] left-0 py-10 bg-white;
-}
-
-.menu-item a:hover + .sub-menu {
-	@apply !block;
-}
