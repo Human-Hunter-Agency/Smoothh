@@ -632,6 +632,6 @@ i.theChampLogin {
 	@apply !pl-5;
 }
 
-.menu-item:hover .submenu {
+.menu-item:hover .sub-menu {
 	background-color: red;
 }
