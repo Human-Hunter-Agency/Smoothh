@@ -632,6 +632,10 @@ i.theChampLogin {
 	@apply !pl-5;
 }
 
+.sub-menu {
+	@apply hidden absolute top-[140px];
+}
+
 .menu-item a:hover + .sub-menu {
-	background-color: red;
+	@apply !block!;
 }
