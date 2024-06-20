@@ -165,7 +165,7 @@ function initMobileNarrowSwipers() {
 					spaceBetween: 20,
 					enabled: true,
 				},
-				1280: {
+				1380: {
 					slidesPerView: 'auto',
 					spaceBetween: 0,
 					enabled: false,
@@ -821,7 +821,9 @@ function createFilteredOffers(offers, itemsPerPage) {
 	let filteredOffers = offers.filter(
 		(offer) =>
 			offer.category.includes(selectedCategory) &&
-			(selectedFilters.some(filter => [offer.type].flat(2).includes(filter)) ||
+			(selectedFilters.some((filter) =>
+				[offer.type].flat(2).includes(filter)
+			) ||
 				selectedFilters.length === 0 ||
 				(offer.topOffer &&
 					selectedFilters.includes(
@@ -936,11 +938,22 @@ async function fetchJobs(url) {
 
 function formatJobsData(rawJobsData) {
 	const categories = [
-		...new Set(rawJobsData.map((offer) => offer.options.branches).flat().filter(item => item !== undefined)),
+		...new Set(
+			rawJobsData
+				.map((offer) => offer.options.branches)
+				.flat()
+				.filter((item) => item !== undefined)
+		),
 	];
 	categories.push(translations['All'] ?? 'All');
 	const filters = [
-		...new Set(rawJobsData.map((offer) => offer.options.job_type).flat().filter(item => item !== undefined)),];
+		...new Set(
+			rawJobsData
+				.map((offer) => offer.options.job_type)
+				.flat()
+				.filter((item) => item !== undefined)
+		),
+	];
 	filters.push(translations['#TOPoffer'] ?? '#TOPoffer');
 	const offers = rawJobsData.map((offer) => {
 		return {
