@@ -40,7 +40,7 @@ $isSwiper = $args['isSwiper'];
                             <?php endif; ?>
                             <div class="text-center px-3 md:px-6 !pt-0">
                                 <?php if ($tile['name']) : ?>
-                                    <h3 class="text-base md:text-[20px] mb-9 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-semibold"><?php echo $tile['name']; ?></h3>
+                                    <h3 class="bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold"><?php echo $tile['name']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
