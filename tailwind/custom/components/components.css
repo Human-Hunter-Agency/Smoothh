@@ -633,7 +633,7 @@ i.theChampLogin {
 }
 
 .sub-menu {
-	@apply hidden absolute top-[140px];
+	@apply hidden absolute top-[100px] left-0 py-10 bg-white;
 }
 
 .menu-item a:hover + .sub-menu {
