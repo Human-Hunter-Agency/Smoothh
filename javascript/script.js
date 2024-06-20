@@ -1134,7 +1134,7 @@ function initCalculator() {
 				container.classList.remove('hidden');
 				document
 					.querySelector('[data-calc-bg]')
-					.classList.add('!h-[75%]');
+					.classList.replace('h-full', '!h-[75%]');
 			} else {
 				container.classList.add('hidden');
 			}
