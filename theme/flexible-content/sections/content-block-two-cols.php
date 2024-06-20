@@ -21,7 +21,7 @@ $isDecorationOverflow = $args['isDecorationOverflow'];
                     </div>
                 <?php endif; ?>
                 <?php if ($description) : ?>
-                    <div class="text-[16px] font-normal leading-[26px]">
+                    <div class="max-w-[480px] text-[16px] font-normal leading-[26px]">
                         <?php echo $description; ?>
                     </div>
                 <?php endif; ?>
