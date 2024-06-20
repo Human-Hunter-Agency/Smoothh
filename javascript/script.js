@@ -821,7 +821,7 @@ function createFilteredOffers(offers, itemsPerPage) {
 	let filteredOffers = offers.filter(
 		(offer) =>
 			offer.category.includes(selectedCategory) &&
-			(selectedFilters.includes(offer.type) ||
+			(selectedFilters.some(filter => [offer.type].flat(2).includes(filter)) ||
 				selectedFilters.length === 0 ||
 				(offer.topOffer &&
 					selectedFilters.includes(
