@@ -637,5 +637,5 @@ i.theChampLogin {
 }
 
 .menu-item a:hover + .sub-menu {
-	@apply !block!;
+	@apply !block;
 }
