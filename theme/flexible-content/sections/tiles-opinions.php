@@ -39,8 +39,8 @@ $isSwiper = $args['isSwiper'];
                                 </div>
                             <?php endif; ?>
                             <div class="text-center px-3 md:px-6 !pt-0">
-                                <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-[20px] mb-9 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
+                                <?php if ($tile['header']) : ?>
+                                    <h3 class="text-base md:text-[20px] mb-9 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['header']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
