@@ -29,7 +29,7 @@ $list = $args['list'];
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
                                     <div class="m-8 flex items-center justify-center size-[72px] rounded-full bg-gradient-to-b from-secondary to-primary z-[1] text-white text-[32px] font-semibold">
-                                        <p class="mt-[-4px]"><?php echo $i; ?></p>
+                                        <p class="mt-[-4px]"></p>
                                     </div>
 
                                     <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[67px] left-[-36px] z-[-1]"></div>

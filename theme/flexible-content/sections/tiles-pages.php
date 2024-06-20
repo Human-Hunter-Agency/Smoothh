@@ -6,6 +6,7 @@ $header = $args['header'];
 $description = $args['description'];
 $decoration = $args['decoration'];
 $IsBackgroundColor = $args['IsBackgroundColor'];
+$isSwiper = $args['isSwiper'];
 $titles_primary = $args['titles_primary'];
 $tiles_list = $args['tiles_list'];
 
@@ -40,7 +41,7 @@ $tiles_list = $args['tiles_list'];
     <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-32">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap <?php endif; ?>">
                     <?php foreach ($tiles_list as $tile) : ?>
                         <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] bg-white drop-shadow-lg lg:drop-shadow-2xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
