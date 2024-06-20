@@ -10,7 +10,7 @@ $blueBg = $args['blueBg'];
 
 <div class="relative w-full py-10 pb-5 md:pt-[70px] mt-10 mb-20">
     <?php if ($blueBg) : ?>
-        <div class="z-[-1] w-[100%] lg:w-[95%] h-full absolute top-8 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
+        <div class="z-[-1] w-[100%] lg:w-[95%] h-full absolute top-0 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php else : ?>
         <div class="z-[-1] w-full h-full absolute left-0 bg-gradient-to-r from-[rgba(129,23,238,0.1)] to-[rgba(129,23,238,0)]"></div>
     <?php endif; ?>

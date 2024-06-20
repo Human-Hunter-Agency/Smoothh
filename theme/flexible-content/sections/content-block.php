@@ -13,9 +13,9 @@ $has_bg = $args['has_bg'];
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
-                    <?php echo esc_html($header); ?>
-                </h2>
+                <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+                    <?php echo $header; ?>
+                </div>
             <?php endif; ?>
             <?php if ($content) : ?>
                 <div class="prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-8 prose-ul:list-inside prose-li:marker:content-['●'] prose-li:marker:text-foreground prose-li:my-1 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?> [&_.circled]:size-12 md:[&_.circled]:size-[70px] [&_.circled]:text-white [&_.circled]:rounded-full [&_.circled]:bg-primary  [&_.circled]:inline-flex [&_.circled]:items-center [&_.circled]:justify-center [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
