@@ -43,8 +43,11 @@ $list = $args['list'];
                                         <p class="<?php echo ($i == 3) ? 'mt-[-7px]' : 'mt-[-4px]'; ?>"><?php echo $i; ?></p>
                                     </div>
 
-                                    <?php if ($i == 1 || $i == 5 || $i == 9 && $i !== 4 && $i !== 8) : ?>
-                                        <div class="1 w-[100%] xl:w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-0 xl:right-[-40px] z-[-1]"></div>
+                                    <?php if ($i == 1) : ?>
+                                        <div class="1 w-1/2 xl:w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-0 xl:right-[-40px] z-[-1]"></div>
+
+                                    <?php if ($i == 5 || $i == 9 && $i !== 4 && $i !== 8) : ?>
+                                        <div class="5i9 w-[100%] xl:w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-0 xl:right-[-40px] z-[-1]"></div>
                                     <?php elseif ($i !== 4 && $i !== 8) : ?>
                                         <div class="else w-full h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-[35px] z-[-1]"></div>
                                     <?php endif; ?>
