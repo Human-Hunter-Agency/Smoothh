@@ -5,7 +5,6 @@
 
 $header = $args['header'];
 $description = $args['description'];
-$titles_primary = $args['titles_primary'];
 $opinion_list = $args['opinion_list'];
 $isSwiper = $args['isSwiper'];
 
