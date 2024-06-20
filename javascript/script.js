@@ -932,12 +932,11 @@ async function fetchJobs(url) {
 
 function formatJobsData(rawJobsData) {
 	const categories = [
-		...new Set(rawJobsData.map((offer) => offer.options.branches)),
+		...new Set(rawJobsData.map((offer) => offer.options.branches).flat().filter(item => item !== undefined)),
 	];
 	categories.push(translations['All'] ?? 'All');
 	const filters = [
-		...new Set(rawJobsData.map((offer) => offer.options.job_type)),
-	];
+		...new Set(rawJobsData.map((offer) => offer.options.job_type).flat().filter(item => item !== undefined)),];
 	filters.push(translations['#TOPoffer'] ?? '#TOPoffer');
 	const offers = rawJobsData.map((offer) => {
 		return {
