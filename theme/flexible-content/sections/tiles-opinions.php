@@ -30,7 +30,7 @@ $isSwiper = $args['isSwiper'];
         <?php if ($opinion_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap xl:justify-center xl:gap-y-12 <?php endif; ?>">
-                    <?php foreach ($opinion_list as $tile) : print_r($tile); ?>
+                    <?php foreach ($opinion_list as $tile) : ?>
                         <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] bg-white drop-shadow-lg lg:drop-shadow-2xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
                                 <div class="w-full relative mb-5 <?php if (!$isSwiper) :  ?> !mb-0  <?php endif; ?> rounded-t-[14px] overflow-hidden">
@@ -39,8 +39,8 @@ $isSwiper = $args['isSwiper'];
                                 </div>
                             <?php endif; ?>
                             <div class="text-center px-3 md:px-6 !pt-0">
-                                <?php if ($tile['header']) : ?>
-                                    <h3 class="text-base md:text-[20px] mb-9 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-semibold"><?php echo $tile['header']; ?></h3>
+                                <?php if ($tile['name']) : ?>
+                                    <h3 class="text-base md:text-[20px] mb-9 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-semibold"><?php echo $tile['name']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
