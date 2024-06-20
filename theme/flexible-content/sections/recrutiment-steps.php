@@ -50,7 +50,7 @@ $list = $args['list'];
                                     <?php endif; ?>
 
                                     <?php if ($i == 4 || $i == 8) : ?>
-                                        <div class="4i8 w-[100%] xl:w-[52%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-0 xl:right-[202px] z-[-1]"></div>
+                                        <div class="4i8 w-[120%] xl:w-[65%] h-[2px] border-primary border-t-[2px] border-t-primary absolute top-[67px] right-0 xl:right-[190px] z-[-1]"></div>
                                     <?php endif; ?>
 
                                     <?php if ($item['description']) : ?>
