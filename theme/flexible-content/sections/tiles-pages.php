@@ -31,7 +31,7 @@ $tiles_list = $args['tiles_list'];
                 </div>
             <?php endif; ?>
             <?php if ($description) : ?>
-                <div class="mx-auto max-w-[650px] text-[16px] font-normal leading-[26px]">
+                <div class="mx-auto max-w-[900px] text-[16px] font-normal leading-[26px]">
                     <?php echo $description; ?>
                 </div>
             <?php endif; ?>
@@ -41,7 +41,7 @@ $tiles_list = $args['tiles_list'];
     <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-32">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
-                <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap <?php endif; ?>">
+                <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap xl:justify-center xl:gap-y-12 <?php endif; ?>">
                     <?php foreach ($tiles_list as $tile) : ?>
                         <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] bg-white drop-shadow-lg lg:drop-shadow-2xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
@@ -68,7 +68,7 @@ $tiles_list = $args['tiles_list'];
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="swiper-nav w-28  h-20 hidden lg:flex gap-5 !absolute !top-auto !bottom-[-100px] left-[50%] -translate-x-1/2">
+                <div class="swiper-nav w-28  h-20 hidden lg:flex gap-5 !absolute !top-auto !bottom-[-100px] left-[50%] -translate-x-1/2 <?php if (!$isSwiper) :  ?> xl:hidden <?php endif; ?>">
                     <div class="swiper-button-prev rotate-180 scale-150">
                         <svg xmlns="http://www.w3.org/2000/svg" width="39" height="40" viewBox="0 0 39 40" fill="none">
                             <path d="M19.6177 38.1958C9.57757 38.1958 1.43846 30.0567 1.43846 20.0166C1.43846 9.97651 9.57757 1.8374 19.6177 1.8374C29.6578 1.8374 37.7969 9.97651 37.7969 20.0166C37.7969 30.0567 29.6578 38.1958 19.6177 38.1958Z" stroke="#8117EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
