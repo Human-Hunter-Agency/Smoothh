@@ -4,7 +4,6 @@
 
 
 $header = $args['header'];
-$description = $args['description'];
 $opinion_list = $args['opinion_list'];
 $isSwiper = $args['isSwiper'];
 
@@ -16,11 +15,6 @@ $isSwiper = $args['isSwiper'];
             <?php if ($header) : ?>
                 <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
-                </div>
-            <?php endif; ?>
-            <?php if ($description) : ?>
-                <div class="mx-auto max-w-[900px] text-[16px] font-normal leading-[26px]">
-                    <?php echo $description; ?>
                 </div>
             <?php endif; ?>
         </div>
