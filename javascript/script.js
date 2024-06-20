@@ -1037,6 +1037,7 @@ function initCalculator() {
 
 		const isCalcAdvanced = calcEl.dataset.jsCalcContent == 2;
 
+		const calcBackground = calcEl.querySelector('[data-calc-bg]');
 		const container = calcEl.querySelector('[data-js-calc-container]');
 		const calcBtn = calcEl.querySelector('[data-js-calc-btn]');
 		const sumEl = calcEl.querySelector(
@@ -1132,6 +1133,7 @@ function initCalculator() {
 
 				// tableFee.innerHTML = feeEl.innerHTML
 				container.classList.remove('hidden');
+				calcBackground.classList.add('!h-[75%]');
 			} else {
 				container.classList.add('hidden');
 			}
