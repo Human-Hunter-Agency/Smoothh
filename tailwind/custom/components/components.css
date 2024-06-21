@@ -618,7 +618,7 @@ i.theChampLogin {
 }
 
 .calculator-details .tm-extra-product-options-fields {
-	@apply bg-[#F2F2F2] px-10 py-12 rounded-2xl;
+	@apply bg-white px-10 py-12 rounded-2xl;
 }
 
 .animateIn {
