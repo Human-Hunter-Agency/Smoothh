@@ -15,7 +15,7 @@ $gridStyle = $args['gridStyle'];
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <div class="mx-auto max-w-[900px] mb-10 lg:mb-[70px] text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+                <div class="mx-auto max-w-[900px] mb-10 lg:mb-7 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
@@ -29,7 +29,7 @@ $gridStyle = $args['gridStyle'];
 
     <div class="relative z-0 w-full overflow-hidden">
         <?php if ($tiles_list) : ?>
-            <div class="swiper !container !overflow-visible" data-js="swiper-tiles-icons">
+            <div class="swiper lg:mt-[70px] !container !overflow-visible" data-js="swiper-tiles-icons">
                 <div class="swiper-wrapper  
                     <?php if ($gridStyle == '4 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
                     <?php endif; ?>
