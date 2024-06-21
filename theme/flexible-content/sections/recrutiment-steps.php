@@ -7,7 +7,7 @@ $list = $args['list'];
 
 ?>
 
-<div class="relative w-full mt-10 md:mt-20 mb-20 py-14 xl:py-24 xl:pb-32">
+<div class="relative w-full mt-10 md:mt-20 mb-20 py-14 xl:pt-24 xl:pb-32">
     <div class="z-[-1] w-full lg:w-[85%] 2xl:w-[88%] h-full absolute top-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]"></div>
 
     <div class="relative z-0 container">
