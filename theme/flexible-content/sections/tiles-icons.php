@@ -10,7 +10,7 @@ $button = $args['button'];
 $gridStyle = $args['gridStyle'];
 ?>
 
-<div class="relative py-10 md:py-[60px] mb:pb-[60px]">
+<div class="relative py-20 md:py-[60px] mb:pb-[60px]">
 
     <div class="container">
         <div class="relative z-0">
