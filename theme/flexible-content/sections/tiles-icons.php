@@ -29,7 +29,7 @@ $gridStyle = $args['gridStyle'];
 
     <div class="relative z-0 w-full overflow-hidden">
         <?php if ($tiles_list) : ?>
-            <div class="swiper lg:mt-[70px] !container !overflow-visible" data-js="swiper-tiles-icons">
+            <div class="swiper lg:mt-8 !container !overflow-visible" data-js="swiper-tiles-icons">
                 <div class="swiper-wrapper  
                     <?php if ($gridStyle == '4 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
                     <?php endif; ?>
@@ -44,7 +44,7 @@ $gridStyle = $args['gridStyle'];
                     <?php foreach ($tiles_list as $tile) : ?>
                         <div class="swiper-slide !flex items-center flex-col text-center">
                             <?php if ($tile['icon'] && $tile['icon']['url']) : ?>
-                                <div class="w-full p-4 md:p-6 mb-5">
+                                <div class="w-full p-4 md:p-6 mb-2">
                                     <?php echo smoothh_img_responsive($tile['icon'], 'mx-auto object-contain h-16', array(125, 125), 'lazy'); ?>
                                 </div>
                             <?php endif; ?>
