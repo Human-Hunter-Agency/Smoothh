@@ -31,7 +31,7 @@ $gridStyle = $args['gridStyle'];
         <?php if ($tiles_list) : ?>
             <div class="swiper lg:mt-8 !container !overflow-visible" data-js="swiper-tiles-icons">
                 <div class="swiper-wrapper  
-                    <?php if ($gridStyle == '4 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
+                    <?php if ($gridStyle == '4 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-9 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
                     <?php endif; ?>
 
                     <?php if ($gridStyle == '3 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(32%_-_50px)] 
