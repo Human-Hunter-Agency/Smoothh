@@ -34,7 +34,7 @@ if (isset($args['posts']) && !empty($args['posts'])) {
                             <?php endif; ?>
                             <p class="text-sm md:text-base italic font-normal"><?php echo get_the_excerpt($post->ID); ?></p>
                         </div>
-                        <span class="ml-0 mr-auto rounded-[14px] text-[16px] font-bold py-2 px-7 text-secondary  group-hover:text-primary transition duration-200"><?php esc_html_e('Read more', 'smoothh') ?> ></span>
+                        <span class="ml-0 mr-auto rounded-[14px] text-[16px] font-bold py-2 px-7 text-secondary  group-hover:text-primary transition duration-200"><?php esc_html_e('Read more', 'smoothh') ?><span class="ml-2">></span></span>
                     </a>
                 <?php endforeach; ?>
             </div>
