@@ -27,7 +27,7 @@ $gridStyle = $args['gridStyle'];
         </div>
     </div>
 
-    <div class="relative z-0 w-full overflow-hidden !pb-5">
+    <div class="relative z-0 w-full overflow-hidden">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-icons">
                 <div class="swiper-wrapper  
