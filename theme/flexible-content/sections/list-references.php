@@ -21,11 +21,11 @@ $list = $args['list'];
                     <div class="flex flex-col justify-between min-h-64 p-7 md:px-10">
                         <div>
                             <?php if ($item['name']) : ?>
-                                <h4 class="mb-5 text-xl font-semibold text-primary"><?php echo esc_attr($item['name']); ?></h4>
+                                <h4 class="mb-5 text-[20px] font-semibold text-primary"><?php echo esc_attr($item['name']); ?></h4>
                             <?php endif; ?>
 
                             <?php if ($item['review']) : ?>
-                                <p class="text-base md:text-lg md:leading-8 italic mb-5"><?php echo esc_attr($item['review']); ?></p>
+                                <p class="text-base md:leading-[26px] italic mb-5"><?php echo esc_attr($item['review']); ?></p>
                             <?php endif; ?>
                         </div>
 
@@ -33,11 +33,11 @@ $list = $args['list'];
 
                             <div>
                                 <?php if ($item['author']) : ?>
-                                    <p class="text-base md:text-xl font-bold mb-2"><?php echo esc_attr($item['author']); ?></p>
+                                    <p class="text-base font-bold mb-2"><?php echo esc_attr($item['author']); ?></p>
                                 <?php endif; ?>
 
                                 <?php if ($item['author_position']) : ?>
-                                    <p class="text-base md:text-xl"><?php echo esc_attr($item['author_position']); ?></p>
+                                    <p class="text-base"><?php echo esc_attr($item['author_position']); ?></p>
                                 <?php endif; ?>
 
                             </div>
