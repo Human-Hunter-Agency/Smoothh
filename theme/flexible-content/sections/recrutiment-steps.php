@@ -58,7 +58,7 @@ $list = $args['list'];
                                     <?php endif; ?>
 
                                     <?php if ($item['description']) : ?>
-                                        <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
+                                        <div class="text-[16px] leading-6"><?php echo $item['description']; ?></div>
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </div>
