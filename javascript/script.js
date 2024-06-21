@@ -1175,6 +1175,10 @@ function initCalculator() {
 	const selectSecondaryAdvanced = document.querySelector('[data-uniqid="666febd02fcf49.12361043"] select')
 
 	initDynamicOptions(selectMainAdvanced,selectSecondaryAdvanced)
+
+	const salaryInput = document.querySelector('[data-uniqid="667029037bd2c3.23900713"] input')
+	initDynamicSalaryValidation(salaryInput,selectSecondaryAdvanced)
+
 }
 
 function initDynamicOptions(selectMain,selectSecondary){
@@ -1203,6 +1207,25 @@ function initDynamicOptions(selectMain,selectSecondary){
 		}
 	})
 }
+
+function initDynamicSalaryValidation(input,minValSelect){
+	minValSelect.addEventListener('change',()=>{
+		let minValue = parseFloat(minValSelect.slim.getData().find(item => item.selected).data.price)
+		console.log(minValue)
+		if (isNaN(minValue)) {
+			jQuery(input).tc_rules("remove","min")
+		}else{
+			jQuery(input).tc_rules('add',{
+				min: minValue,
+				messages: {
+					min: 'Proponowane wynagrodzenie jest poniżej wartości oczekiwanych przez kandydatów na tym stanowisku pracy'
+				  }
+			})
+		}
+	})
+}
+
+
 
 function copyFormToTextarea(form, textarea) {
 	const formData = new FormData(form);
