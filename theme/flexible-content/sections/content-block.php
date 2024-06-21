@@ -13,7 +13,7 @@ $has_bg = $args['has_bg'];
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+                <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
