@@ -33,7 +33,7 @@ $list = $args['list'];
                                     </div>
                                 <?php endif; ?>
 
-                                <?php if ($i == $listLength && $i !== 10) : ?>
+                                <?php if ($i == $listLength) : ?>
                                     <div class="m-8 flex items-center justify-center size-[72px] rounded-full bg-gradient-to-b from-secondary to-primary z-[1] text-white text-[32px] font-semibold">
                                         <p class="mt-[-4px]"><?php echo $i == '4' ?  $i : '' ?></p>
                                     </div>
