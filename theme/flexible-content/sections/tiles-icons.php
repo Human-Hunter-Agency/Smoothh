@@ -64,7 +64,7 @@ $gridStyle = $args['gridStyle'];
     <?php if ($text_below || $button) : ?>
         <div class="container text-center mt-10 flex flex-col items-center">
             <?php if ($text_below) : ?>
-                <div class="prose-smooth prose-base mb-10"><?php echo $text_below; ?></div>
+                <div class="prose-smooth prose-base"><?php echo $text_below; ?></div>
             <?php endif; ?>
 
             <?php if ($button) :
