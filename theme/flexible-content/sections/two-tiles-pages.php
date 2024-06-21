@@ -24,7 +24,7 @@ $tiles_list = $args['tiles_list'];
                         <?php endif; ?>
 
                         <?php if ($tile['description']) : ?>
-                            <div class="max-w-[330px] text-center text-sm md:text-base hidden group-hover:!block transition duration-300"><?php echo $tile['description']; ?></div>
+                            <div class="max-w-[330px] text-[#585858] text-center text-sm md:text-base hidden group-hover:!block transition duration-300"><?php echo $tile['description']; ?></div>
                         <?php endif; ?>
 
                         <?php if ($tile['button']) :
