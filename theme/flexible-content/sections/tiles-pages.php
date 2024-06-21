@@ -12,7 +12,7 @@ $tiles_list = $args['tiles_list'];
 
 ?>
 
-<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0 mb-10">
+<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0">
     <?php if ($IsBackgroundColor) : ?>
         <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-0 right-0 bg-gradient-to-r from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php endif; ?>
@@ -38,7 +38,7 @@ $tiles_list = $args['tiles_list'];
         </div>
     </div>
 
-    <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-32">
+    <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-24">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap xl:justify-center xl:gap-y-12 <?php endif; ?>">
