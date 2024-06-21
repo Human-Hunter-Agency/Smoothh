@@ -40,13 +40,6 @@ $isSwiper = $args['isSwiper'];
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
                                 <?php endif; ?>
                             </div>
-                            <?php if ($tile['button']) :
-                                $btn_url = $tile['button']['url'];
-                                $btn_title = $tile['button']['title'];
-                                $btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
-                            ?>
-                                <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200"><?php echo esc_html($btn_title); ?></a>
-                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
