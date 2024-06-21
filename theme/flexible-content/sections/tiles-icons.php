@@ -49,7 +49,7 @@ $gridStyle = $args['gridStyle'];
                                 </div>
                             <?php endif; ?>
                             <?php if ($tile['title']) : ?>
-                                <h3 class="text-base mb-6 lg:min-h-10 px-5 font-semibold"><?php echo esc_html($tile['title']); ?></h3>
+                                <h3 class="text-base mb-6 lg:min-h-10 px-5 font-bold"><?php echo esc_html($tile['title']); ?></h3>
                             <?php endif; ?>
                             <?php if ($tile['description']) : ?>
                                 <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['description']) : ?> prose-base md:prose-lg <?php else : ?> !leading-6 <?php endif; ?> "><?php echo $tile['description']; ?></div>
@@ -64,7 +64,7 @@ $gridStyle = $args['gridStyle'];
     <?php if ($text_below || $button) : ?>
         <div class="container text-center mt-10 flex flex-col items-center">
             <?php if ($text_below) : ?>
-                <div class="prose-smooth prose-base md:prose-xl mb-10"><?php echo $text_below; ?></div>
+                <div class="prose-smooth prose-base mb-10"><?php echo $text_below; ?></div>
             <?php endif; ?>
 
             <?php if ($button) :
