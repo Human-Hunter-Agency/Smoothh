@@ -42,7 +42,7 @@ $list = $args['list'];
                         </div>
                     </div>
                     <div class="overflow-hidden h-0 transition-all duration-300" data-js="dropdown-container">
-                        <div class="py-5 px-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <div class="pb-5 px-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                             <p class="text-sm md:text-base" itemprop="text">
                                 <?php echo esc_html($answer); ?>
                             </p>
