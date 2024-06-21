@@ -635,3 +635,7 @@ i.theChampLogin {
 i[data-tm-tooltip-html]{
 	@apply !hidden
 }
+
+.tm-extra-product-options .cpf-type-select ul.tmcp-ul-wrap.fullwidth-ul .tm-epo-field-label{
+	grid-template-columns: 1fr !important;
+}
