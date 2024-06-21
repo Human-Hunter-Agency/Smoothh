@@ -43,7 +43,7 @@ $tiles_list = $args['tiles_list'];
                 ?>
                     <?php if ($tile['text']) : ?>
                         <div class="mb-8 flex gap-2 items-baseline">
-                            <div class="min-w-[10px] min-h-[10px] bg-gradient-to-r from-[rgba(129,23,238,1)] to-[rgba(31,151,212,1)] rounded-full"></div>
+                            <div class="min-w-[10px] min-h-[10px] bg-gradient-to-r from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)] rounded-full"></div>
                             <p class="text-sm md:text-base"><?php echo $tile['text']; ?></p>
                         </div>
                     <?php endif; ?>
