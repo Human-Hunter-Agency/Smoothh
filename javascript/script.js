@@ -1164,7 +1164,32 @@ function initCalculator() {
 			fileBtn.classList.remove('!hidden');
 		}
 	});
+
+	const selectMainAdvanced = document.querySelector('[data-uniqid="666febd02fcf31.57374088"] select')
+	const selectSecondaryAdvanced = document.querySelector('[data-uniqid="666febd02fcf49.12361043"] select')
+
+	initDynamicOptions(selectMainAdvanced,selectSecondaryAdvanced)
+
+	const selectMainBasic = document.querySelector('[data-uniqid="6662fcfdc3d441.95856961"] select')
+	const selectSecondaryBasic = document.querySelector('[data-uniqid="6662fc70c3d429.14367225"] select')
+
+	initDynamicOptions(selectMainBasic,selectSecondaryBasic)
+	
 }
+function initDynamicOptions(selectMain,selectSecondary){
+	const selectSecondarySlim = selectSecondary.slim
+	
+	const slimData = selectSecondarySlim.getData()
+	selectMain.addEventListener('change',() => {
+
+		let value = selectMain.value.split('_')[0]
+		
+		const filteredSlimData = slimData.filter(item=> item.data.tmTooltipHtml == value || item.value === '' || value === '')
+		selectSecondarySlim.setData(filteredSlimData)
+
+	})
+}
+
 function copyFormToTextarea(form, textarea) {
 	const formData = new FormData(form);
 	let textData = '';
