@@ -1232,7 +1232,6 @@ function initDynamicOptions(selectMain, selectSecondary) {
 function initDynamicSalaryValidation(input,minValSelect){
 	minValSelect.addEventListener('change',()=>{
 		let minValue = parseFloat(minValSelect.slim.getData().find(item => item.selected).data.price)
-		console.log(minValue)
 		if (isNaN(minValue)) {
 			jQuery(input).tc_rules("remove","min")
 		}else{
