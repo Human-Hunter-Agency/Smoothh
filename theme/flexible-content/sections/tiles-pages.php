@@ -12,7 +12,7 @@ $tiles_list = $args['tiles_list'];
 
 ?>
 
-<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0 mb-20">
+<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0 mb-10">
     <?php if ($IsBackgroundColor) : ?>
         <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-0 right-0 bg-gradient-to-r from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php endif; ?>
