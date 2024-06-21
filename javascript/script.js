@@ -1165,28 +1165,39 @@ function initCalculator() {
 		}
 	});
 
+	
+	const selectMainBasic = document.querySelector('[data-uniqid="6662fcfdc3d441.95856961"] select')
+	const selectSecondaryBasic = document.querySelector('[data-uniqid="6662fc70c3d429.14367225"] select')
+	
+	// initDynamicOptions(selectMainBasic,selectSecondaryBasic)
+	
 	const selectMainAdvanced = document.querySelector('[data-uniqid="666febd02fcf31.57374088"] select')
 	const selectSecondaryAdvanced = document.querySelector('[data-uniqid="666febd02fcf49.12361043"] select')
 
-	initDynamicOptions(selectMainAdvanced,selectSecondaryAdvanced)
-
-	const selectMainBasic = document.querySelector('[data-uniqid="6662fcfdc3d441.95856961"] select')
-	const selectSecondaryBasic = document.querySelector('[data-uniqid="6662fc70c3d429.14367225"] select')
-
-	initDynamicOptions(selectMainBasic,selectSecondaryBasic)
-	
+	// initDynamicOptions(selectMainAdvanced,selectSecondaryAdvanced)
 }
 function initDynamicOptions(selectMain,selectSecondary){
+	const selectMainSlim = selectMain.slim
 	const selectSecondarySlim = selectSecondary.slim
 	
 	const slimData = selectSecondarySlim.getData()
 	selectMain.addEventListener('change',() => {
-
+		if (selectSecondarySlim.getSelected) {
+			selectSecondarySlim.setSelected() 
+		}
 		let value = selectMain.value.split('_')[0]
 		
 		const filteredSlimData = slimData.filter(item=> item.data.tmTooltipHtml == value || item.value === '' || value === '')
 		selectSecondarySlim.setData(filteredSlimData)
 
+	})
+
+	selectSecondary.addEventListener('change',()=>{
+		secondaryCatValue = selectSecondarySlim.getData().find(item => item.selected).data.tmTooltipHtml
+		catValue = selectMainSlim.getData().find(item => item.value.startsWith(`${secondaryCatValue}_`)).value
+		if (catValue != selectMain.value) {
+			selectMainSlim.setSelected(catValue)
+		}
 	})
 }
 
