@@ -12,7 +12,7 @@ $tiles_list = $args['tiles_list'];
 
 ?>
 
-<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0 mb-20">
+<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0">
     <?php if ($IsBackgroundColor) : ?>
         <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-0 right-0 bg-gradient-to-r from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php endif; ?>
@@ -24,9 +24,9 @@ $tiles_list = $args['tiles_list'];
     <?php endif; ?>
 
     <div class="container">
-        <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-24">
+        <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-20">
             <?php if ($header) : ?>
-                <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+                <div class="mb-6 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
@@ -38,12 +38,12 @@ $tiles_list = $args['tiles_list'];
         </div>
     </div>
 
-    <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-32">
+    <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-24">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap xl:justify-center xl:gap-y-12 <?php endif; ?>">
                     <?php foreach ($tiles_list as $tile) : ?>
-                        <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] bg-white drop-shadow-lg lg:drop-shadow-2xl rounded-2xl">
+                        <div class="swiper-slide !h-auto !flex items-center flex-col xl:!basis-[calc(33%_-_56px)] bg-white drop-shadow-lg lg:shadow-2xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
                                 <div class="w-full relative mb-5 <?php if (!$isSwiper) :  ?> !mb-0  <?php endif; ?> rounded-t-[14px] overflow-hidden">
                                     <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-[190px] md:!h-[220px]', array(360, 220), 'lazy'); ?>
@@ -52,7 +52,7 @@ $tiles_list = $args['tiles_list'];
                             <?php endif; ?>
                             <div class="text-center px-3 md:px-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-[20px] mb-9 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-semibold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
+                                    <h3 class="text-base md:text-[20px] mb-6 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-bold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>

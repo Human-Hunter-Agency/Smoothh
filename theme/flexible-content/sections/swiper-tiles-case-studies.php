@@ -7,12 +7,12 @@ $posts = $args['tiles_list'];
 
 ?>
 
-<div class="relative py-10 md:py-[60px] mb:pb-[60px]">
+<div class="relative py-10 md:py-0 md:pt-[60px] md:!pb-[0px]">
 
     <?php if ($header) : ?>
         <div class="container">
             <div class="relative z-0">
-                <div class="mx-auto max-w-[900px] text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+                <div class="mx-auto max-w-[900px] text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-[70px]">
                     <?php echo $header; ?>
                 </div>
             </div>

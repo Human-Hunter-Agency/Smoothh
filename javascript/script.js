@@ -238,11 +238,11 @@ function initIconsSwipers() {
 				},
 				1180: {
 					slidesPerView: 2.5,
-					spaceBetween: 35,
+					spaceBetween: 20,
 				},
 				1380: {
 					slidesPerView: 4,
-					spaceBetween: 40,
+					spaceBetween: 20,
 				},
 			},
 		});
@@ -1165,47 +1165,68 @@ function initCalculator() {
 		}
 	});
 
-	
-	const selectMainBasic = document.querySelector('[data-uniqid="6662fcfdc3d441.95856961"] select')
-	const selectSecondaryBasic = document.querySelector('[data-uniqid="6662fc70c3d429.14367225"] select')
-	
-	initDynamicOptions(selectMainBasic,selectSecondaryBasic)
-	
-	const selectMainAdvanced = document.querySelector('[data-uniqid="666febd02fcf31.57374088"] select')
-	const selectSecondaryAdvanced = document.querySelector('[data-uniqid="666febd02fcf49.12361043"] select')
+	const selectMainBasic = document.querySelector(
+		'[data-uniqid="6662fcfdc3d441.95856961"] select'
+	);
+	const selectSecondaryBasic = document.querySelector(
+		'[data-uniqid="6662fc70c3d429.14367225"] select'
+	);
 
-	initDynamicOptions(selectMainAdvanced,selectSecondaryAdvanced)
+	initDynamicOptions(selectMainBasic, selectSecondaryBasic);
+
+	const selectMainAdvanced = document.querySelector(
+		'[data-uniqid="666febd02fcf31.57374088"] select'
+	);
+	const selectSecondaryAdvanced = document.querySelector(
+		'[data-uniqid="666febd02fcf49.12361043"] select'
+	);
+
+	initDynamicOptions(selectMainAdvanced, selectSecondaryAdvanced);
 
 	const salaryInput = document.querySelector('[data-uniqid="667029037bd2c3.23900713"] input')
 	initDynamicSalaryValidation(salaryInput,selectSecondaryAdvanced)
 
 }
 
-function initDynamicOptions(selectMain,selectSecondary){
-	const selectMainSlim = selectMain.slim
-	const selectSecondarySlim = selectSecondary.slim
-	
-	const slimData = selectSecondarySlim.getData()
-	selectMain.addEventListener('change',() => {
-		let value = selectMain.value.split('_')[0]
-		
-		const filteredSlimData = slimData.filter(item=> item.data.tmTooltipHtml == value || item.value === '' || value === '')
+function initDynamicOptions(selectMain, selectSecondary) {
+	const selectMainSlim = selectMain.slim;
+	const selectSecondarySlim = selectSecondary.slim;
 
-		const currentSelectedValue = selectSecondarySlim.getSelected()
-		const newSelectedValue = filteredSlimData.some(item => currentSelectedValue.includes(item.value) && value != '') ? currentSelectedValue : '';
+	const slimData = selectSecondarySlim.getData();
+	selectMain.addEventListener('change', () => {
+		let value = selectMain.value.split('_')[0];
+
+		const filteredSlimData = slimData.filter(
+			(item) =>
+				item.data.tmTooltipHtml == value ||
+				item.value === '' ||
+				value === ''
+		);
+
+		const currentSelectedValue = selectSecondarySlim.getSelected();
+		const newSelectedValue = filteredSlimData.some(
+			(item) => currentSelectedValue.includes(item.value) && value != ''
+		)
+			? currentSelectedValue
+			: '';
 
 		selectSecondarySlim.setData(filteredSlimData);
 		selectSecondarySlim.setSelected(newSelectedValue);
+	});
 
-	})
-
-	selectSecondary.addEventListener('change',()=>{
-		secondaryCatValue = selectSecondarySlim.getData().find(item => item.selected).data.tmTooltipHtml
-		catValue = selectMainSlim.getData().find(item => item.value.startsWith(`${secondaryCatValue}_`))?.value ?? ''
+	selectSecondary.addEventListener('change', () => {
+		secondaryCatValue = selectSecondarySlim
+			.getData()
+			.find((item) => item.selected).data.tmTooltipHtml;
+		catValue =
+			selectMainSlim
+				.getData()
+				.find((item) => item.value.startsWith(`${secondaryCatValue}_`))
+				?.value ?? '';
 		if (catValue != selectMain.value && catValue != '') {
-			selectMainSlim.setSelected(catValue)
+			selectMainSlim.setSelected(catValue);
 		}
-	})
+	});
 }
 
 function initDynamicSalaryValidation(input,minValSelect){

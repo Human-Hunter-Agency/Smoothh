@@ -7,7 +7,7 @@ $list = $args['list'];
 
 ?>
 
-<div class="relative w-full mt-10 md:mt-20 mb-20 py-14 xl:py-24">
+<div class="relative w-full mt-10 md:mt-20 mb-20 py-14 xl:pt-16 xl:pb-32">
     <div class="z-[-1] w-full lg:w-[85%] 2xl:w-[88%] h-full absolute top-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]"></div>
 
     <div class="relative z-0 container">
@@ -29,7 +29,7 @@ $list = $args['list'];
                             <div class="flex flex-col items-center text-center ">
                                 <?php if ($i == $listLength) : ?>
                                     <div class="m-8 flex items-center justify-center size-[72px] rounded-full bg-gradient-to-b from-secondary to-primary z-[1] text-white text-[32px] font-semibold">
-                                        <p class="mt-[-4px]"></p>
+                                        <p class="mt-[-4px]"><?php echo $i == '4' ?  $i : '' ?></p>
                                     </div>
 
                                     <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[67px] left-[-36px] z-[-1]"></div>
@@ -58,7 +58,7 @@ $list = $args['list'];
                                     <?php endif; ?>
 
                                     <?php if ($item['description']) : ?>
-                                        <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
+                                        <div class="text-[16px] leading-6"><?php echo $item['description']; ?></div>
                                     <?php endif; ?>
                                 <?php endif; ?>
                             </div>

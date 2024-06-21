@@ -10,12 +10,12 @@ $button = $args['button'];
 $gridStyle = $args['gridStyle'];
 ?>
 
-<div class="relative py-10 md:py-[60px] mb:pb-[60px]">
+<div class="relative py-10 md:py-[80px] mb:pb-[60px]">
 
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <div class="mx-auto max-w-[900px] mb-10 lg:mb-24 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+                <div class="mx-auto max-w-[900px] mb-10 lg:mb-[70px] text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
@@ -27,10 +27,11 @@ $gridStyle = $args['gridStyle'];
         </div>
     </div>
 
-    <div class="relative z-0 w-full overflow-hidden !pb-5">
+    <div class="relative z-0 w-full overflow-hidden">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-icons">
                 <div class="swiper-wrapper  
+                <?php echo $gridStyle; ?>
                     <?php if ($gridStyle == '4 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
                     <?php endif; ?>
 
@@ -52,7 +53,7 @@ $gridStyle = $args['gridStyle'];
                                 <h3 class="text-base md:text-[20px] mb-6 lg:min-h-10 px-5 font-bold"><?php echo esc_html($tile['title']); ?></h3>
                             <?php endif; ?>
                             <?php if ($tile['description']) : ?>
-                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['description']) : ?> prose-base md:prose-lg <?php else : ?> prose-sm md:prose-base <?php endif; ?>"><?php echo $tile['description']; ?></div>
+                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['description']) : ?> prose-base md:prose-lg <?php else : ?> !leading-6 <?php endif; ?> "><?php echo $tile['description']; ?></div>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
