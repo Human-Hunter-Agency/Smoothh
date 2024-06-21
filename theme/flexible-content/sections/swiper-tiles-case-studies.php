@@ -7,7 +7,7 @@ $posts = $args['tiles_list'];
 
 ?>
 
-<div class="relative py-10 md:py-[60px] mb:pb-[0px]">
+<div class="relative py-10 md:py-[60px] mb:!pb-[0px]">
 
     <?php if ($header) : ?>
         <div class="container">
