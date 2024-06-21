@@ -18,7 +18,7 @@ if (isset($args['posts']) && !empty($args['posts'])) {
 
 ?>
 
-<div class="relative z-0 w-full overflow-hidden !pb-5">
+<div class="relative z-0 w-full overflow-hidden !pb-20">
     <?php if ($posts) : ?>
         <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
             <div class="swiper-wrapper">
@@ -32,7 +32,7 @@ if (isset($args['posts']) && !empty($args['posts'])) {
                             <?php if ($post->post_title) : ?>
                                 <h3 class="bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold"><?php echo $post->post_title; ?></h3>
                             <?php endif; ?>
-                            <p class="text-sm md:text-base italic font-medium"><?php echo get_the_excerpt($post->ID); ?></p>
+                            <p class="text-sm md:text-base italic font-normal"><?php echo get_the_excerpt($post->ID); ?></p>
                         </div>
                         <span class="ml-0 mr-auto rounded-[14px] text-[16px] font-bold py-2 px-7 text-secondary  group-hover:text-primary transition duration-200"><?php esc_html_e('Read more', 'smoothh') ?> ></span>
                     </a>
