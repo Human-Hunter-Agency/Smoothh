@@ -18,7 +18,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
     <a href="<?php echo get_permalink($product->get_id()) ?>" class="!flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl group  <?php if ($is_swiper_slide) : ?> swiper-slide !h-auto opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 <?php else : ?> h-full<?php endif ?>">
         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
             <?php echo $product->get_image() ?>
-            <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
         </div>
         <div class="w-full flex-1 p-3 md:p-6">
             <div class="flex flex-col gap-2 justify-between mb-5">
@@ -45,7 +45,9 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                             </span>
                         <?php endif ?>
                     </div>
-                    <span><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {echo '/h';} ?></span>
+                    <span><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
+                                                                    echo '/h';
+                                                                } ?></span>
                     <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
                 </div>
                 <?php //endif; 
@@ -56,7 +58,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
             </p>
         </div>
         <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary group-hover:bg-secondary transition duration-200">
-            <?php $product->is_downloadable() ? esc_html_e('Download e-book','smoothh') : esc_html_e('Show product', 'smoothh'); ?>
+            <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Show product', 'smoothh'); ?>
         </span>
     </a>
 
