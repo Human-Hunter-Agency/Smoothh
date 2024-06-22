@@ -11,7 +11,7 @@
 $title = get_field('title');
 $author = get_field('author');
 $cta = get_field('cta');
-$logoDescription = get_field('header_clients_logos');
+$logoHeader = get_field('header_clients_logos');
 $logoDescription = get_field('description_clients_logos');
 ?>
 
