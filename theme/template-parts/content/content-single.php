@@ -83,7 +83,7 @@ $cta = get_field('cta');
 						#wp_list_categories(array('title_li' => '')) 
 					?>
 						<li class="mb-4 md:mb-6">
-							<a href="<?php echo get_permalink($blog_page_id) . '?tab=' . $cat->slug ?>" class="font-semibold text-base md:text-xl transition duration-200 hover:text-primary"><?php echo $cat->name ?></a>
+							<a href="<?php echo get_permalink($blog_page_id) . '?tab=' . $cat->slug ?>" class="font-bold text-base md:text-[20px] transition duration-200 hover:text-primary"><?php echo $cat->name ?></a>
 						</li>
 					<?php endforeach ?>
 				</ul>
