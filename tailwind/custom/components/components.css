@@ -207,7 +207,7 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .post-tile h3 {
-	@apply w-full mx-6 bg-secondary rounded-[14px] p-2 -translate-y-full text-center text-base md:text-[20px] text-white font-semibold grow;
+	@apply w-full bg-secondary rounded-[14px] p-2 -translate-y-full text-center text-base md:text-[20px] text-white font-semibold grow;
 }
 
 .post-tile p {
