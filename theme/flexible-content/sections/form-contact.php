@@ -28,7 +28,7 @@ $bgColor = $args['bgColor'];
             </div>
         </div>
 
-        <div class="basis-[45%] py-10 lg:py-[60px] px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base [&_.circled]:bg-primary lg:-translate-y-[60px]">
+        <div class="basis-[45%] py-10 lg:py-[60px] px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base lg:-translate-y-[60px]">
             <?php echo do_shortcode('[contact-form-7 id="f3dc97a" title="Kontakt"]'); ?>
         </div>
     </div>
