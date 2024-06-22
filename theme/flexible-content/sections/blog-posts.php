@@ -46,7 +46,7 @@
 									<h3><?php echo $post->post_title; ?></h3>
 								</div>
 								<p><?php echo get_the_excerpt($post->ID); ?></p>
-								<span href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
+								<span href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('See more', 'smoothh'); ?><span class="!-ml-4">></span></span>
 							</a>
 						</li>
 
