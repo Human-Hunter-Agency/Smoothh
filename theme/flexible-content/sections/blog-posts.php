@@ -60,7 +60,7 @@
 			</div>
 			<button data-js="<?php echo 'tab-loadmore-' . $category->term_id; ?>" class="<?php if (($count <= $visible_posts) || ($i > 1)) {
 																																											echo '!hidden';
-																																										} ?> flex mx-auto mt-14 gap-4 items-center rounded-2xl text-base font-bold py-[15px] px-5 md:px-8 text-white bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 disabled:pointer-events-none ">
+																																										} ?> flex mx-auto mt-14 gap-4 items-center text-base font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 disabled:pointer-events-none ">
 				<?php esc_html_e('More posts', 'smoothh'); ?>
 				<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
