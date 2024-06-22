@@ -23,6 +23,9 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
             </h4>
         </div>
         <div class="w-full flex-1 p-3 md:p-6">
+            <p class="text-sm md:text-base prose-strong:font-semibold">
+                <?php echo $product->get_short_description() ?>
+            </p>
             <div class="flex flex-col gap-2 justify-between mb-5">
 
                 <?php // if (is_user_logged_in() || is_prod_guest_available($product)) : 
@@ -35,7 +38,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                     ?>
                         <span class="text-foreground font-normal text-base leading-loose mr-1"><?php esc_html_e('From', 'smoothh') ?></span>
                     <?php endif ?>
-                    <div class="flex flex-col items-end mr-2 whitespace-nowrap">
+                    <div class="flex flex-col items-end mr-2 whitespace-nowrap font-bold">
                         <span>
                             <?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?>
                         </span>
@@ -48,14 +51,12 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                     <span><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
                                                                     echo '/h';
                                                                 } ?></span>
-                    <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
+
                 </div>
+                <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
                 <?php //endif; 
                 ?>
             </div>
-            <p class="text-sm md:text-base prose-strong:font-semibold">
-                <?php echo $product->get_short_description() ?>
-            </p>
         </div>
         <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
             <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Show product', 'smoothh'); ?>
