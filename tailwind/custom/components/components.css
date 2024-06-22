@@ -199,11 +199,11 @@ footer#page-footer .footer-bottom-menu {
 
 .post-tile a::before {
 	content: "";
-	@apply absolute z-10 inset-x-0 top-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90 !h-[190px] md:!h-[220px] rounded-t-[14px];
+	@apply absolute z-[1] inset-x-0 top-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90 !h-[190px] md:!h-[220px] rounded-t-[14px];
 }
 
 .post-tile h3 {
-	@apply bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold grow;
+	@apply bg-secondary rounded-[14px] p-2 -translate-y-full text-base md:text-[20px] text-white mb-4 font-semibold grow;
 }
 
 .post-tile p {
@@ -211,11 +211,11 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .post-tile span {
-	@apply translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary transition duration-200;
+	@apply text-[16px] font-bold text-secondary transition duration-200;
 }
 
 .post-tile a:hover span {
-	@apply bg-secondary;
+	@apply bg-primary;
 }
 
 .tmcp-field-wrap .ss-main {
