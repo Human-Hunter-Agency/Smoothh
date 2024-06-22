@@ -27,7 +27,7 @@
 		<div class="w-full relative min-h-32 <?php if ($i !== 0) {
 																						echo 'hidden';
 																					} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
-			<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-x-[50px] xl:gap-y-[50px]">
+			<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14">
 				<?php if ($i === 0) :
 					++$i;
 					$posts = get_posts($args);
