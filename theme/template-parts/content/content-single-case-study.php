@@ -25,8 +25,8 @@ $logoHeader = get_field('header_clients_logos');
 		<meta itemprop="author" content="<?php echo esc_html($author); ?>">
 	<?php endif; ?>
 	<meta itemprop="datePublished" content="<?php the_time('c'); ?>">
-	<?php if (get_post_thumbnail_id( $post->ID )) : ?>
-		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?>">
+	<?php if (get_post_thumbnail_id($post->ID)) : ?>
+		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0] ?>">
 	<?php endif; ?>
 
 	<div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
@@ -76,9 +76,9 @@ $logoHeader = get_field('header_clients_logos');
 
 			?>
 		</div><!-- .entry-content -->
-		<aside class="md:basis-1/4 lg:shrink-0 relative">
+		<aside class="md:basis-[30%] lg:shrink-0 relative">
 			<div class="aside-container p-5 border-[1px] border-[#888888] rounded-[15px] md:sticky top-[115px]">
-				<h5 class="mb-5 md:mb-9 text-2xl md:text-3xl font-semibold"><?php esc_html_e('The most important information', 'smoothh'); ?></h5>
+				<h5 class="mb-5 md:mb-9 text-2xl md:text-[20px] font-semibold"><?php esc_html_e('The most important information', 'smoothh'); ?></h5>
 				<div class="case-study-info-box">
 					<p><span class="font-bold"><?php esc_html_e('Client: ', 'smoothh'); ?></span><?php echo $client; ?></p>
 					<p class="mb-4"><span class="font-bold"><?php esc_html_e('Date: ', 'smoothh'); ?></span><?php echo $formatted_time; ?></p>
@@ -108,7 +108,7 @@ $logoHeader = get_field('header_clients_logos');
 </section>
 
 <section id="clients-logos">
-	<?php get_template_part('flexible-content/sections/swiper-customer-logos', '', array('header' => $logoHeader,'description'=> false));?>
+	<?php get_template_part('flexible-content/sections/swiper-customer-logos', '', array('header' => $logoHeader, 'description' => false)); ?>
 </section>
 
 <section class="cta">
@@ -122,7 +122,7 @@ $logoHeader = get_field('header_clients_logos');
 	?>
 		<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
 			<?php if (isset($bg_url)) : ?>
-				<?php echo smoothh_img_responsive($background,'absolute inset-0 -z-20 object-cover h-full w-full',null,'lazy'); ?>
+				<?php echo smoothh_img_responsive($background, 'absolute inset-0 -z-20 object-cover h-full w-full', null, 'lazy'); ?>
 			<?php endif; ?>
 
 			<div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
