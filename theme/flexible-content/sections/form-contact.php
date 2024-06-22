@@ -3,7 +3,6 @@
 /** Template to display 'Formularz kontakt' - form_contact */
 
 $header = $args['header'];
-$description = $args['description'];
 $bgColor = $args['bgColor'];
 
 ?>
