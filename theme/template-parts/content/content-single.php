@@ -11,6 +11,8 @@
 $title = get_field('title');
 $author = get_field('author');
 $cta = get_field('cta');
+$logoDescription = get_field('header_clients_logos');
+$logoDescription = get_field('description_clients_logos');
 ?>
 
 <article id="post-<?php the_ID(); ?>" data-js-post-id="<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/BlogPosting">
@@ -94,6 +96,10 @@ $cta = get_field('cta');
 </article><!-- #post-${ID} -->
 
 <?php get_template_part('flexible-content/sections/blog-posts') ?>
+
+<section id="clients-logos">
+	<?php get_template_part('flexible-content/sections/swiper-customer-logos', '', array('header' => $logoHeader, 'description' => $logoDescription)); ?>
+</section>
 
 <?php if ($cta) :
 	$background = $cta['background'];
