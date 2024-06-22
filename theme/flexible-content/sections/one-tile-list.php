@@ -40,12 +40,13 @@ $tiles_list = $args['tiles_list'];
 
         <?php if ($tiles_list && !$isDescriptionTile) : ?>
             <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl">
+                <p class="mb-4 lg:mb-6 text-primary text-[18px] lg:text-[24px]"><?php echo $HeaderTile; ?></p>
                 <?php foreach ($tiles_list as $tile) :
                 ?>
                     <?php if ($tile['text']) : ?>
                         <div class="mb-8 flex gap-2 items-baseline">
                             <div class="min-w-[10px] min-h-[10px] bg-gradient-to-b from-[rgba(31,151,212,1)] to-[rgba(129,23,238,1)] rounded-full"></div>
-                            <div class="text-primary text-[18px] lg:text-[24px]"><?php echo $HeaderTile; ?></div>
+
                             <p class="text-sm md:text-base"><?php echo $tile['text']; ?></p>
                         </div>
                     <?php endif; ?>
