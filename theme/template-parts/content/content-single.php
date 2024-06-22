@@ -45,7 +45,7 @@ $cta = get_field('cta');
 				<span class="italic">
 					<?php
 					if ($author) {
-						echo $author . ' / ';
+						echo __('Author: ', 'smoothh') . $author . ' / ';
 					}
 					$post_time = get_post_time();
 					$formatted_time = date('d.m.Y', $post_time);
