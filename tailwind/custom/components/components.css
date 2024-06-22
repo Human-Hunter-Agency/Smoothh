@@ -199,15 +199,15 @@ footer#page-footer .footer-bottom-menu {
 
 .post-tile a::before {
 	content: "";
-	@apply absolute z-10 inset-x-0 top-0 bg-gradient-to-b from-primary/20 to-secondary/20 !h-[190px] md:!h-[220px] rounded-t-[14px];
+	@apply absolute z-10 inset-x-0 top-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90 !h-[190px] md:!h-[220px] rounded-t-[14px];
 }
 
 .post-tile h3 {
-	@apply text-center text-base md:text-xl text-primary mb-9 font-semibold px-3 md:px-6 grow;
+	@apply bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold grow;
 }
 
 .post-tile p {
-	@apply text-center text-sm md:text-base italic font-medium px-3 md:px-6 pb-3 md:pb-6 grow;
+	@apply text-center text-sm md:text-base italic font-normalal px-3 md:px-6 pb-3 md:pb-6 grow;
 }
 
 .post-tile span {
