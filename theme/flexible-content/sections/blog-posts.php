@@ -1,5 +1,5 @@
 <section id="posts-related" class="container mt-10 mb-20 md:my-20">
-	<h2 class="mx-auto max-w-[920px] mb-10 lg:mb-7 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px] text-center">Zobacz pozostałe materiały eksperckie z <span class="text-primary">naszego bloga</span></h2>
+	<h2 class="mx-auto max-w-[920px] mb-10 lg:mb-7 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px] text-center">Zobacz materiały eksperckie z <span class="text-primary">naszego bloga</span></h2>
 	<ul class="p-2 rounded-2xl flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-5 md:mb-10">
 		<?php
 		$categories = get_categories();
