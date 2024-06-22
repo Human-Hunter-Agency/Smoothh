@@ -207,7 +207,7 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .post-tile p {
-	@apply text-center text-sm md:text-base italic font-normalal px-3 md:px-6 pb-3 md:pb-6 grow;
+	@apply text-center text-sm md:text-base font-normal px-3 md:px-6 pb-3 md:pb-6 grow;
 }
 
 .post-tile span {
