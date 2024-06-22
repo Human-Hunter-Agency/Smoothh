@@ -202,8 +202,12 @@ footer#page-footer .footer-bottom-menu {
 	@apply absolute z-[1] inset-x-0 top-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90 !h-[190px] md:!h-[220px] rounded-t-[14px];
 }
 
+.post-tile .title-wrapper {
+	@apply w-full px-6;
+}
+
 .post-tile h3 {
-	@apply w-full mx-6 bg-secondary z-[1] rounded-[14px] p-2 -translate-y-full text-base md:text-[20px] text-white font-semibold grow;
+	@apply w-full mx-6 bg-secondary z-[1] rounded-[14px] p-2 -translate-y-full text-center text-base md:text-[20px] text-white font-semibold grow;
 }
 
 .post-tile p {
