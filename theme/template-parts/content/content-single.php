@@ -73,7 +73,7 @@ $cta = get_field('cta');
 		</div><!-- .entry-content -->
 		<aside class="md:basis-[30%] lg:shrink-0 ">
 			<div class="py-8 px-6 rounded-2xl border-[1px] border-primary md:sticky top-[115px]">
-				<h5 class="mb-5 md:mb-9 text-2xl md:text-[20px] font-semibold text-primary"><?php esc_html_e('Post categories', 'smoothh'); ?></h5>
+				<h5 class="mb-5 md:mb-8 text-2xl md:text-[22px] font-semibold text-primary"><?php esc_html_e('Post categories', 'smoothh'); ?></h5>
 				<ul class="list-none">
 					<?php
 					$blog_page_id = 20;
