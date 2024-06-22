@@ -26,11 +26,11 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
             <p class="text-sm md:text-base prose-strong:font-semibold">
                 <?php echo $product->get_short_description() ?>
             </p>
-            <div class="flex flex-col gap-2 justify-between mb-5">
+            <div class="flex flex-col justify-between mb-5">
 
                 <?php // if (is_user_logged_in() || is_prod_guest_available($product)) : 
                 ?>
-                <div class="flex text-lg md:text-xl flex-wrap shrink-0">
+                <div class="flex text-lg md:text-xl flex-wrap shrink-0 font-bold">
                     <?php
                     $has_variable_price = get_field('variable_price', $product->get_id());
                     $is_hourly = get_field('product_hourly');
@@ -38,7 +38,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
                     ?>
                         <span class="text-foreground font-normal text-base leading-loose mr-1"><?php esc_html_e('From', 'smoothh') ?></span>
                     <?php endif ?>
-                    <div class="flex flex-col items-end mr-2 whitespace-nowrap font-bold">
+                    <div class="flex flex-col items-end mr-2 whitespace-nowrap">
                         <span>
                             <?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?>
                         </span>
