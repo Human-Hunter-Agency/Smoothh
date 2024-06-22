@@ -23,7 +23,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
             </h4>
         </div>
         <div class="w-full flex-1 p-3 md:p-6">
-            <div class="mb-4 text-sm md:text-base prose-strong:font-semibold">
+            <div class="mb-8 text-sm md:text-base prose-strong:font-semibold">
                 <?php echo $product->get_short_description() ?>
             </div>
             <div class="flex flex-col justify-between mb-5">
