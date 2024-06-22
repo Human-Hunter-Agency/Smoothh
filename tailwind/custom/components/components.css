@@ -199,7 +199,7 @@ footer#page-footer .footer-bottom-menu {
 
 .post-tile a::before {
 	content: "";
-	@apply absolute z-[1] inset-x-0 top-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90 !h-[190px] md:!h-[220px] rounded-t-[14px];
+	@apply absolute z-[1] inset-x-0 top-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90 !h-[190px] md:!h-[220px] rounded-t-[14px] shadow-2xl;
 }
 
 .post-tile .title-wrapper {
