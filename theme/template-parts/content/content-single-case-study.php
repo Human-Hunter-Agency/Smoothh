@@ -78,7 +78,7 @@ $logoHeader = get_field('header_clients_logos');
 		</div><!-- .entry-content -->
 		<aside class="md:basis-[30%] lg:shrink-0 relative">
 			<div class="aside-container p-5 border-[1px] border-[#888888] rounded-[15px] md:sticky top-[115px]">
-				<h5 class="mb-5 md:mb-9 text-2xl md:text-[20px] font-semibold"><?php esc_html_e('The most important information', 'smoothh'); ?></h5>
+				<h5 class="mb-5 md:mb-9 text-2xl md:text-[20px] font-semibold text-primary"><?php esc_html_e('The most important information', 'smoothh'); ?></h5>
 				<div class="case-study-info-box">
 					<p><span class="font-bold"><?php esc_html_e('Client: ', 'smoothh'); ?></span><?php echo $client; ?></p>
 					<p class="mb-4"><span class="font-bold"><?php esc_html_e('Date: ', 'smoothh'); ?></span><?php echo $formatted_time; ?></p>
