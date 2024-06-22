@@ -23,7 +23,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
 ?>
 
 <section class="relative py-10 mb:py-[60px] md:pt-[70px]">
-    <div class="z-[-1] w-[100%] lg:w-[97%] h-full absolute top-0 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
+    <div class="z-[-1] w-[100%] lg:w-[88%] h-full absolute top-0 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <div class="container">
         <?php if ($header) : ?>
             <div class="relative z-0">
