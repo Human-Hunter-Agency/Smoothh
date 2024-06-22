@@ -25,12 +25,6 @@ $bgColor = $args['bgColor'];
                 <?php if ($header) : ?>
                     <?php echo $header; ?>
                 <?php endif; ?>
-
-                <?php if ($description) : ?>
-                    <div class="mt-10 text-[16px] font-normal leading-[26px]">
-                        <?php echo $description; ?>
-                    </div>
-                <?php endif; ?>
             </div>
         </div>
 
