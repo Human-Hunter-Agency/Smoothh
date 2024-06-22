@@ -106,19 +106,17 @@ $cta = get_field('cta');
 	<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
 		<div class="container mx-auto relative">
 			<div class="mx-auto w-full translate-y-1/2 px-4 md:px-8 lg:px-24 py-8 md:py-14 flex flex-col md:flex-row gap-2 items-center justify-between drop-shadow-2xl rounded-3xl bg-gradient-to-b from-secondary to-primary">
-				<div class="relative z-0 flex flex-col items-center justify-center container">
-					<?php if (isset($header)) : ?>
-						<h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-left"><?php echo esc_html($header); ?></h3>
-					<?php endif; ?>
+				<?php if (isset($header)) : ?>
+					<h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-left"><?php echo esc_html($header); ?></h3>
+				<?php endif; ?>
 
-					<?php if (isset($button) && $button) :
-						$btn_url = $button['url'];
-						$btn_title = $button['title'];
-						$btn_target = $button['target'] ? $button['target'] : '_self';
-					?>
-						<a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-3xl text-lg md:text-xl font-semibold md:font-bold py-2 px-5 md:px-12 border-[1px] border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
-					<?php endif; ?>
-				</div>
+				<?php if (isset($button) && $button) :
+					$btn_url = $button['url'];
+					$btn_title = $button['title'];
+					$btn_target = $button['target'] ? $button['target'] : '_self';
+				?>
+					<a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-3xl text-lg md:text-xl font-semibold md:font-bold py-2 px-5 md:px-12 border-[1px] border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>
