@@ -203,7 +203,7 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .post-tile h3 {
-	@apply h-full mx-6 bg-secondary z-[1] rounded-[14px] p-2 -translate-y-full text-base md:text-[20px] text-white font-semibold grow;
+	@apply w-full mx-6 bg-secondary z-[1] rounded-[14px] p-2 -translate-y-full text-base md:text-[20px] text-white font-semibold grow;
 }
 
 .post-tile p {
