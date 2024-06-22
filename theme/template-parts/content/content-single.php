@@ -20,11 +20,11 @@ $cta = get_field('cta');
 		<meta itemprop="author" content="<?php echo esc_html($author); ?>">
 	<?php endif; ?>
 	<meta itemprop="datePublished" content="<?php the_time('c'); ?>">
-	<?php if (get_post_thumbnail_id( $post->ID )) : ?>
-		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0] ?>">
+	<?php if (get_post_thumbnail_id($post->ID)) : ?>
+		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0] ?>">
 	<?php endif; ?>
 
-	<div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
+	<div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
 
 		<?php smoothh_post_thumbnail(); ?>
 
@@ -49,7 +49,7 @@ $cta = get_field('cta');
 					}
 					$post_time = get_post_time();
 					$formatted_time = date('d.m.Y', $post_time);
-					echo __('Date published: ','smoothh') . $formatted_time
+					echo __('Date published: ', 'smoothh') . $formatted_time
 					?>
 				</span>
 			</div>
@@ -106,7 +106,7 @@ $cta = get_field('cta');
 	<div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
 
 		<?php if (isset($bg_url)) : ?>
-			<?php echo smoothh_img_responsive($background,'absolute inset-0 -z-20 object-cover h-full w-full',null,'lazy'); ?>
+			<?php echo smoothh_img_responsive($background, 'absolute inset-0 -z-20 object-cover h-full w-full', null, 'lazy'); ?>
 
 		<?php endif; ?>
 
