@@ -39,7 +39,7 @@ $tiles_list = $args['tiles_list'];
         </div>
 
         <?php if ($tiles_list && !$isDescriptionTile) : ?>
-            <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl lg:translate-y-[60px]">
+            <div class="basis-[45%] py-10 lg:py-10 px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl lg:-translate-y-[60px]">
                 <p class="mb-4 lg:mb-6 text-primary text-[18px] lg:text-[24px]"><?php echo $HeaderTile; ?></p>
                 <?php foreach ($tiles_list as $tile) :
                 ?>
