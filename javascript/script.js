@@ -1184,7 +1184,8 @@ function initCalculator() {
 	initDynamicOptions(selectMainAdvanced, selectSecondaryAdvanced);
 
 	const salaryInput = document.querySelector('[data-uniqid="667029037bd2c3.23900713"] input')
-	initDynamicSalaryValidation(salaryInput,selectSecondaryAdvanced)
+	const salaryDataSelect = document.querySelector('[data-uniqid="66793187083b70.87204096"] select')
+	initDynamicSalaryValidation(salaryInput,selectSecondaryAdvanced,salaryDataSelect)
 
 }
 
@@ -1229,18 +1230,19 @@ function initDynamicOptions(selectMain, selectSecondary) {
 	});
 }
 
-function initDynamicSalaryValidation(input,minValSelect){
+function initDynamicSalaryValidation(input,minValSelect,dataSelect){
 	minValSelect.addEventListener('change',()=>{
-		let minValue = parseFloat(minValSelect.slim.getData().find(item => item.selected).data.price)
-		if (isNaN(minValue)) {
-			jQuery(input).tc_rules("remove","min")
-		}else{
+		let minValueOption = dataSelect.querySelector(`[value="${minValSelect.slim.getSelected()[0]}"]`)
+		if (minValueOption && minValueOption.dataset.tmTooltipHtml) {
+			let minValue = parseFloat(minValueOption.dataset.tmTooltipHtml)
 			jQuery(input).tc_rules('add',{
 				min: minValue,
 				messages: {
 					min: 'Proponowane wynagrodzenie jest poniżej wartości oczekiwanych przez kandydatów na tym stanowisku pracy'
-				  }
+				}
 			})
+		}else{
+			jQuery(input).tc_rules("remove","min")
 		}
 	})
 }
