@@ -24,7 +24,9 @@ do_action('woocommerce_before_lost_password_form');
 <div class="relative w-full py-10 pb-5 md:pt-[70px] mt-10 mb-20">
   <div class="z-[-1] w-[100%] h-[80%] absolute top-0 left-0 bg-gradient-to-r from-[rgba(129,23,238,0)] to-[rgba(129,23,238,0.102)] rounded-r-[45px]"></div>
 
-  <form method="post" class="woocommerce-ResetPassword lost_reset_password max-w-[800px] !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary border-[1px] shadow-2xl bg-white !rounded-[15px]">
+  <form method="post" class="woocommerce-ResetPassword lost_reset_password mx-auto max-w-[800px] !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary border-[1px] shadow-2xl bg-white !rounded-[15px] text-center">
+
+    <h4 class="mb-8 text-[20px] font-medium"><?php esc_html_e('Reset password', 'woocommerce'); ?></h4>
 
     <p class="mb-10 text-lg font-medium !max-w-[720px]"><?php echo apply_filters('woocommerce_lost_password_message', esc_html__('Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine 
                                                                                                                                                                                                                                                                                         ?>
