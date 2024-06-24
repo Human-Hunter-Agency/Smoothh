@@ -681,12 +681,12 @@ function smoothh_custom_input_and_info()
 	));
 	echo '<p class="text-xs mt-0">' . __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).', 'smoothh') . '</p>';
 
-	$catgrories_with_consultations = [28,26];
+	$categories_with_consultations = [28,26];
 
 	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-		$product = $cart_item['data'];
+		$product = wc_get_product($cart_item['product_id']);
 		$prod_categories = $product->get_category_ids();
-		$intersection = array_intersect($prod_categories,$catgrories_with_consultations);
+		$intersection = array_intersect($prod_categories,$categories_with_consultations);
 		if (count($intersection) > 0) {
 			echo woocommerce_form_field('consent_consultation', array(
 				'type'      => 'checkbox',
