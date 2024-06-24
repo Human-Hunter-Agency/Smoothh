@@ -14,7 +14,7 @@ $tiles_list = $args['tiles_list'];
 
 <div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0">
     <?php if ($IsBackgroundColor) : ?>
-        <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0.05)] rounded-[45px]"></div>
+        <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0.03)] rounded-[45px]"></div>
     <?php endif; ?>
 
     <?php if ($decoration) : ?>
