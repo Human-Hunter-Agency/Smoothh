@@ -36,7 +36,7 @@ $isDecorationOverflow = $args['isDecorationOverflow'];
         </div>
     </div>
     <?php if ($decoration_img && $isDecorationOverflow) : ?>
-        <div class="hidden lg:block absolute right-0 -top-10 scale-[0.85]">
+        <div class="hidden lg:block absolute right-0 -top-10 w-[45%]">
             <?php echo smoothh_img_responsive($decoration_img, '', array(768, 768), 'lazy') ?>
         </div>
     <?php endif; ?>
