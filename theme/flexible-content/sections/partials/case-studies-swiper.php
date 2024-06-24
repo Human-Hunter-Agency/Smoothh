@@ -21,7 +21,7 @@ if (isset($args['posts']) && !empty($args['posts'])) {
 <div class="relative z-0 w-full overflow-hidden !pb-20">
     <?php if ($posts) : ?>
         <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper xl:!transform-none xl:!flex-wrap">
                 <?php foreach ($posts as $post) : ?>
                     <a href="<?php echo get_permalink($post->ID) ?>" class="group swiper-slide !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 _drop-shadow-lg shadow-xl lg:shadow-2xl">
                         <div class="w-full relative rounded-t-[14px] overflow-hidden [&_img]:object-cover [&_img]:w-full [&_img]:!h-[190px] [&_img]:md:!h-[220px]">
