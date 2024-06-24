@@ -76,8 +76,8 @@ $social_links = get_field('social_links', 'option');
 							<li class="shrink-0">
 								<a class="block p-2 rounded-full bg-white hover:bg-primary/10 transition duration-200" href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank">
 									<span class="hidden">Linkedin</span>
-									<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
-										<circle cx="18.9404" cy="18.9648" r="18.9404" fill="white" />
+									<svg class="group" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+										<circle class="group-hover:fill-primary/10" cx="18.9404" cy="18.9648" r="18.9404" fill="white" />
 										<path d="M24.0457 26.0287V20.3706C24.0457 19.0185 24.0255 17.2822 22.171 17.2822C20.2902 17.2822 20.0085 18.7558 20.0085 20.2698V26.0287H16.4009V14.3893H19.8539V15.9839H19.901C20.3843 15.0693 21.56 14.107 23.3198 14.107C26.9744 14.107 27.6527 16.5155 27.6527 19.6509V26.0287H24.0457ZM14.123 26.0287H10.5098V14.3893H14.1236L14.123 26.0287ZM10.2275 10.7028C10.2275 9.54504 11.1679 8.60352 12.3234 8.60352C13.4789 8.60352 14.4193 9.54504 14.4193 10.7028C14.4193 11.8599 13.4789 12.8014 12.3234 12.8014C11.1679 12.8014 10.2275 11.8599 10.2275 10.7028Z" fill="#8117EE" />
 									</svg>
 								</a>
