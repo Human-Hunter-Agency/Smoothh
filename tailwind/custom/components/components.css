@@ -43,7 +43,7 @@
 }
 
 footer#page-footer {
-	@apply bg-[#FAFAFA];
+	@apply bg-[#F2F2F2];
 }
 
 footer#page-footer h3 {
