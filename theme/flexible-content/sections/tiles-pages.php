@@ -38,7 +38,7 @@ $tiles_list = $args['tiles_list'];
         </div>
     </div>
 
-    <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-24">
+    <div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-40">
         <?php if ($tiles_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap xl:justify-center xl:gap-y-12 <?php endif; ?>">
