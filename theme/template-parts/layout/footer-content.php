@@ -70,7 +70,7 @@ $social_links = get_field('social_links', 'option');
 				$socials_count = count(array_filter(array_values($social_links)));
 				if ($socials_count > 0) :
 				?>
-					<h3 class="!mb-[5px]"><?php esc_html_e('Follow us:', 'smoothh'); ?></h3>
+					<h3 class="!mb-[29px]"><?php esc_html_e('Follow us:', 'smoothh'); ?></h3>
 					<ul class="flex gap-3">
 						<?php if ($social_links['linkedin']) : ?>
 							<li class="shrink-0">
