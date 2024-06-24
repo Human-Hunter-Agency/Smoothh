@@ -12,10 +12,10 @@ $blueBg = $args['blueBg'];
     <?php if ($blueBg) : ?>
         <div class="z-[-1] w-[100%] lg:w-[97%] h-full absolute top-0 left-0 bg-gradient-to-r from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <?php else : ?>
-        <div class="z-[-1] w-full lg:w-[97%] h-full rounded-r-2xl absolute left-0 bg-gradient-to-r to-[rgba(129,23,238,0.1)] from-[rgba(129,23,238,0)]"></div>
+        <div class="z-[-1] w-full lg:w-[97%] h-full rounded-r-[45px] absolute left-0 bg-gradient-to-r to-[rgba(129,23,238,0.1)] from-[rgba(129,23,238,0)]"></div>
     <?php endif; ?>
 
-    <div class="relative z-0 container">
+    <div class="pt-12 relative z-0 container">
         <?php if ($header) : ?>
             <div class="mb-10 xl:mb-20 mx-auto max-w-[900px] text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                 <?php echo $header; ?>
