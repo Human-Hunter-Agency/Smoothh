@@ -680,12 +680,46 @@ function smoothh_custom_input_and_info()
 		'required' => true,
 	));
 	echo '<p class="text-xs mt-0">' . __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).', 'smoothh') . '</p>';
+
+	$catgrories_with_consultations = [28,26];
+
+	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+		$product = $cart_item['data'];
+		$prod_categories = $product->get_category_ids();
+		$intersection = array_intersect($prod_categories,$catgrories_with_consultations);
+		if (count($intersection) > 0) {
+			echo woocommerce_form_field('consent_consultation', array(
+				'type'      => 'checkbox',
+				'label'     => __('I consent to the processing of my personal data by the service provider for the purpose of arranging a consultation.', 'smoothh'),
+				'required' => true,
+			));
+			break;
+		}
+	}
+
 }
 
 function smoothh_checkout_extra_validation($data, $errors)
 {
 	if (!isset($_POST['consent_digital_commerce'])) {
 		$errors->add('consent_digital_commerce_error', __('Digital content purchase is not checked!', 'smoothh'));
+	}
+
+	$includes_consultation = false;
+	$catgrories_with_consultations = [28,26];
+
+	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+		$product = $cart_item['data'];
+		$prod_categories = $product->get_category_ids();
+		$intersection = array_intersect($prod_categories,$catgrories_with_consultations);
+		if (count($intersection) > 0) {
+			$includes_consultation = true;
+			break;
+		}
+	}
+
+	if ($includes_consultation && !isset($_POST['consent_consultation'])) {
+		$errors->add('consent_consultation_error', __('Consultation consent is not checked!', 'smoothh'));
 	}
 }
 
@@ -707,6 +741,11 @@ function smoothh_checkout_fields_update_order_meta($order_id)
 	if (isset($_POST['consent_digital_commerce']) && $_POST['consent_digital_commerce'] === '1') {
 		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
 		$dataSubject->giveConsent('consent_digital_commerce');
+	}
+
+	if (isset($_POST['consent_consultation']) && $_POST['consent_consultation'] === '1') {
+		$dataSubject = gdpr('data-subject')->getByEmail($_POST['billing_email']);
+		$dataSubject->giveConsent('consent_consultation');
 	}
 }
 
@@ -903,6 +942,13 @@ function gdpr_register_smoothh_consents()
 		'consent_digital_commerce',
 		__('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh'),
 		__('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).', 'smoothh'),
+		true
+	);
+
+	gdpr('consent')->register(
+		'consent_consultation',
+		__('I consent to the processing of my personal data by the service provider for the purpose of arranging a consultation.', 'smoothh'),
+		null,
 		true
 	);
 
