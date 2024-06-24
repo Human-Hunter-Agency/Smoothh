@@ -74,10 +74,10 @@ $social_links = get_field('social_links', 'option');
 					<ul class="flex gap-3">
 						<?php if ($social_links['linkedin']) : ?>
 							<li class="shrink-0">
-								<a class="block p-2 rounded-full bg-white hover:bg-primary/10 transition duration-200" href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank">
+								<a class="block rounded-full transition duration-200" href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank">
 									<span class="hidden">Linkedin</span>
 									<svg class="group" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
-										<circle class="group-hover:fill-primary/10" cx="18.9404" cy="18.9648" r="18.9404" fill="white" />
+										<circle class="group-hover:fill-primary/10 transition duration-200" cx="18.9404" cy="18.9648" r="18.9404" fill="white" />
 										<path d="M24.0457 26.0287V20.3706C24.0457 19.0185 24.0255 17.2822 22.171 17.2822C20.2902 17.2822 20.0085 18.7558 20.0085 20.2698V26.0287H16.4009V14.3893H19.8539V15.9839H19.901C20.3843 15.0693 21.56 14.107 23.3198 14.107C26.9744 14.107 27.6527 16.5155 27.6527 19.6509V26.0287H24.0457ZM14.123 26.0287H10.5098V14.3893H14.1236L14.123 26.0287ZM10.2275 10.7028C10.2275 9.54504 11.1679 8.60352 12.3234 8.60352C13.4789 8.60352 14.4193 9.54504 14.4193 10.7028C14.4193 11.8599 13.4789 12.8014 12.3234 12.8014C11.1679 12.8014 10.2275 11.8599 10.2275 10.7028Z" fill="#8117EE" />
 									</svg>
 								</a>
@@ -88,17 +88,18 @@ $social_links = get_field('social_links', 'option');
 								<a class="block p-2 rounded-full bg-white hover:bg-primary/10 transition duration-200" href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank">
 									<span class="hidden">Facebook</span>
 									<svg width="18" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M5.88278 17.6537H2.02018V9.42536H0.0898438V6.2545H2.02018V4.35238C2.02018 1.76746 3.10998 0.228516 6.20644 0.228516H8.78409V3.39937H7.17354C5.9678 3.39937 5.88762 3.84198 5.88762 4.66907L5.88278 6.2545H8.80244L8.46043 9.42536H5.88278V17.6537Z" fill="#6739E7" />
+										<path d="M5.88278 17.6537H2.02018V9.42536H0.0898438V6.2545H2.02018V4.35238C2.02018 1.76746 3.10998 0.228516 6.20644 0.228516H8.78409V3.39937H7.17354C5.9678 3.39937 5.88762 3.84198 5.88762 4.66907L5.88278 6.2545H8.80244L8.46043 9.42536H5.88278V17.6537Z" fill="#8117EE" />
 									</svg>
 								</a>
 							</li>
 						<?php endif; ?>
 						<?php if ($social_links['twitter']) : ?>
 							<li class="shrink-0">
-								<a class="block p-2 rounded-full bg-white hover:bg-primary/10 transition duration-200" href="<?php echo esc_attr($social_links['twitter']) ?>" target="_blank">
+								<a class="block transition duration-200" href="<?php echo esc_attr($social_links['twitter']) ?>" target="_blank">
 									<span class="hidden">Twitter</span>
-									<svg width="18" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M21.6748 2.5356C20.8855 2.88569 20.0356 3.12241 19.1453 3.22955C20.0546 2.68386 20.7529 1.82172 21.0813 0.793873C20.2301 1.29845 19.288 1.66474 18.2841 1.86159C17.4809 1.00567 16.3368 0.471191 15.0701 0.471191C12.6379 0.471191 10.6653 2.44216 10.6653 4.87411C10.6653 5.22046 10.7057 5.5556 10.7802 5.87828C7.12053 5.69514 3.87628 3.94095 1.70419 1.27727C1.32408 1.92762 1.10813 2.68386 1.10813 3.49119C1.10813 5.01863 1.88604 6.36666 3.0668 7.1553C2.34445 7.13288 1.66504 6.93478 1.07277 6.60463C1.07277 6.62331 1.07277 6.642 1.07277 6.66069C1.07277 8.79362 2.58945 10.5727 4.60494 10.9776C4.23493 11.0786 3.84724 11.1321 3.44439 11.1321C3.16151 11.1321 2.88495 11.1047 2.61596 11.0524C3.17667 12.8016 4.80321 14.0749 6.73031 14.111C5.22247 15.2909 3.32316 15.9948 1.25967 15.9948C0.904811 15.9948 0.553741 15.9748 0.208984 15.9337C2.15755 17.1833 4.47234 17.9122 6.96015 17.9122C15.06 17.9122 19.4901 11.2031 19.4901 5.38492C19.4901 5.19305 19.485 5.00492 19.4775 4.81555C20.3375 4.19511 21.0851 3.41893 21.6748 2.53685V2.5356Z" fill="#6739E7" />
+									<svg class="group" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
+										<circle class="group-hover:fill-primary/10 transition duration-200" cx="18.9561" cy="18.9648" r="18.9404" fill="white" />
+										<path d="M24.4463 10.3357H27.374L20.9776 17.647L28.5029 27.5941H22.6109L17.9966 21.5604L12.7156 27.5941H9.78628L16.6282 19.7736L9.40918 10.3365H15.4508L19.6219 15.8514L24.4463 10.3357ZM23.4192 25.8422H25.0414L14.5693 11.9961H12.8286L23.4192 25.8422Z" fill="#8117EE" />
 									</svg>
 								</a>
 							</li>
