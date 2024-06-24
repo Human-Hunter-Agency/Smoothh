@@ -71,7 +71,7 @@ footer#page-footer .footer-bottom-menu {
 }
 
 .newsletter-input .submit-container {
-	@apply h-[55px] relative shrink-0;
+	@apply h-[48px] relative shrink-0;
 }
 
 .newsletter-input .submit-container p {
