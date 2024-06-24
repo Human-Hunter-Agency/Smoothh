@@ -18,7 +18,7 @@ $social_links = get_field('social_links', 'option');
 	<div class="container pb-10 md:pb-[60px] pt-[140px] flex flex-wrap">
 		<div class="w-full mb-6 sm:pr-5 sm:w-2/5 lg:w-3/12">
 			<h3><?php esc_html_e('Company and contact details', 'smoothh'); ?></h3>
-			<div class="prose-base [&_p]:!leading-8 [&_a]:text-foreground hover:[&_a]:text-primary [&_a]:transition [&_a]:duration-200">
+			<div class="prose-base [&_p]:text-[16px] [&_p]:!leading-[26px] [&_a]:text-foreground hover:[&_a]:text-primary [&_a]:transition [&_a]:duration-200">
 				<?php echo $brand_location ?>
 				<?php echo $brand_contact ?>
 			</div>

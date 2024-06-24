@@ -47,7 +47,7 @@ footer#page-footer {
 }
 
 footer#page-footer h3 {
-	@apply text-primary font-bold mb-4;
+	@apply text-primary font-bold mb-8;
 }
 
 footer#page-footer .footer-menu a {
