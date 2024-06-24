@@ -21,9 +21,9 @@ if (isset($args['posts']) && !empty($args['posts'])) {
 <div class="relative z-0 w-full overflow-hidden !pb-20">
     <?php if ($posts) : ?>
         <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
-            <div class="swiper-wrapper xl:!transform-none xl:!flex-wrap">
+            <div class="swiper-wrapper xl:!transform-none xl:!flex-wrap xl:gap-12">
                 <?php foreach ($posts as $post) : ?>
-                    <a href="<?php echo get_permalink($post->ID) ?>" class="group swiper-slide !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 _drop-shadow-lg shadow-xl lg:shadow-2xl xl:!basis-[calc(33%_-_56px)]">
+                    <a href="<?php echo get_permalink($post->ID) ?>" class="group swiper-slide !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 _drop-shadow-lg shadow-xl lg:shadow-2xl xl:!basis-[calc(33%_-_40px)] xl:!mr-0">
                         <div class="w-full relative rounded-t-[14px] overflow-hidden [&_img]:object-cover [&_img]:w-full [&_img]:!h-[190px] [&_img]:md:!h-[220px]">
                             <?php echo wp_get_attachment_image(get_post_thumbnail_id($post), 'medium', false, array('loading' => 'lazy')); ?>
                             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
