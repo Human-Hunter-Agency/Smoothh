@@ -490,7 +490,7 @@ function smoothh_save_user_default_type($user_id)
 
 function smoothh_filter_woocommerce_form_field_checkbox($field, $key, $args, $value)
 {
-	if ($key == 'gdpr_woo_consent' || $key == 'consent_digital_commerce') {
+	if ($key == 'gdpr_woo_consent' || $key == 'consent_digital_commerce' || $key == 'consent_consultation') {
 		$field = str_replace('<input ', '<input required="required" ', $field);
 	}
 	return $field;
@@ -709,7 +709,7 @@ function smoothh_checkout_extra_validation($data, $errors)
 	$catgrories_with_consultations = [28,26];
 
 	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-		$product = $cart_item['data'];
+		$product = wc_get_product($cart_item['product_id']);
 		$prod_categories = $product->get_category_ids();
 		$intersection = array_intersect($prod_categories,$catgrories_with_consultations);
 		if (count($intersection) > 0) {
