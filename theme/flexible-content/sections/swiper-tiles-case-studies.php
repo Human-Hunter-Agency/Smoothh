@@ -12,7 +12,7 @@ $posts = $args['tiles_list'];
     <?php if ($header) : ?>
         <div class="container">
             <div class="relative z-0">
-                <div class="mx-auto max-w-[900px] text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
+                <div class="mx-auto max-w-[960px] text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
                     <?php echo $header; ?>
                 </div>
             </div>
