@@ -136,6 +136,7 @@ $social_links = get_field('social_links', 'option');
 
 	<div class="">
 		<div class="container relative flex flex-col md:flex-row md:items-center justify-between gap-5 py-5 md:py-10 text-[#A7A7A7] text-[14px] before:content-[''] before:w-full before:h-[1px] before:bg-[#A7A7A7] before:absolute before:top-0 before:left-0 before:container _border _border-t-[1px] _border-t-[#A7A7A7]">
+			<div class="relative border border-t-[1px] border-t-red-600"></div>
 			<?php
 			$smoothh_blog_info = get_bloginfo('name');
 			if (!empty($smoothh_blog_info)) :
