@@ -25,7 +25,7 @@ $logo = $args['logo'];
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="w-full lg:w-1/2 lg:pt-64">
+            <div class="w-full lg:w-1/2 lg:pt-52">
                 <?php if ($header) : ?>
                     <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                         <?php echo $header; ?>
