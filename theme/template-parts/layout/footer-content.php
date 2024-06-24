@@ -85,10 +85,11 @@ $social_links = get_field('social_links', 'option');
 						<?php endif; ?>
 						<?php if ($social_links['facebook']) : ?>
 							<li class="shrink-0">
-								<a class="block p-2 rounded-full bg-white hover:bg-primary/10 transition duration-200" href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank">
+								<a class="block transition duration-200" href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank">
 									<span class="hidden">Facebook</span>
-									<svg width="18" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M5.88278 17.6537H2.02018V9.42536H0.0898438V6.2545H2.02018V4.35238C2.02018 1.76746 3.10998 0.228516 6.20644 0.228516H8.78409V3.39937H7.17354C5.9678 3.39937 5.88762 3.84198 5.88762 4.66907L5.88278 6.2545H8.80244L8.46043 9.42536H5.88278V17.6537Z" fill="#8117EE" />
+									<svg class="group" xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+										<circle class="group-hover:fill-primary/10 transition duration-200" cx="19.4482" cy="18.9648" r="18.9404" fill="white" />
+										<path d="M20.8838 27.6774H17.0212V19.449H15.0908V16.2782H17.0212V14.3761C17.0212 11.7911 18.111 10.2522 21.2074 10.2522H23.7851V13.4231H22.1745C20.9688 13.4231 20.8886 13.8657 20.8886 14.6928L20.8838 16.2782H23.8034L23.4614 19.449H20.8838V27.6774Z" fill="#8117EE" />
 									</svg>
 								</a>
 							</li>
