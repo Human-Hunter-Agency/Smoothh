@@ -23,9 +23,9 @@ $phone = $args['phone'];
     <div class="pt-14 relative z-0 container flex flex-col lg:flex-row basis">
 
         <div class="basis-[55%] mb-10 xl:mb-20 mx-auto ">
-            <div class="max-w-[580px] text-2xl md:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+            <div class="max-w-[580px] ">
                 <?php if ($header) : ?>
-                    <div class="mb-[44px]">
+                    <div class="mb-[44px] text-2xl md:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                         <?php echo $header; ?>
                     </div>
                 <?php endif; ?>
