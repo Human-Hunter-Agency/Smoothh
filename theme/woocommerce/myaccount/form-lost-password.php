@@ -41,7 +41,7 @@ do_action('woocommerce_before_lost_password_form');
 
       <?php do_action('woocommerce_lostpassword_form'); ?>
 
-      <p class="woocommerce-form-row form-row !mx-auto">
+      <p class="woocommerce-form-row form-row">
         <input type="hidden" name="wc_reset_password" value="true" />
         <button class="button h-[55px] w-max !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-[50px]" type="submit" class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" value="<?php esc_attr_e('Reset password', 'woocommerce'); ?>">
           <?php esc_html_e('Reset password', 'woocommerce'); ?>
