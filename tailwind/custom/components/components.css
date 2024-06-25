@@ -682,7 +682,7 @@ i[data-tm-tooltip-html] {
 }
 
 .sub-menu{
-	@apply md:mt-0 md:invisible md:absolute md:w-max md:top-20 md:left-0 md:opacity-0 md:!p-5 h-0 md:!h-auto overflow-hidden transition-all duration-300 md:rounded-xl space-y-4
+	@apply md:mt-0 md:invisible md:absolute md:w-max md:top-10 lg:top-[70px] md:left-0 md:opacity-0 md:!p-5 h-0 md:!h-auto overflow-hidden transition-all duration-300 md:rounded-xl space-y-4
 }
 .sub-menu li:first-child{
 	@apply mt-4 md:mt-0
