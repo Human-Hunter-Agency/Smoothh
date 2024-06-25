@@ -56,7 +56,7 @@
 				</svg>
 			</button>
 		</div>
-		<div id="site-navigation" class="absolute md:static inset-x-0 top-full h-0 md:h-auto overflow-hidden bg-white shadow-none transition-all duration-500" data-js="nav-container">
+		<div id="site-navigation" class="absolute md:static inset-x-0 top-full h-0 md:h-auto overflow-auto md:overflow-visible bg-white shadow-none transition-all duration-500" data-js="nav-container">
 			<nav class="container md:!px-0 pb-5 md:pb-0 md:!max-w-full flex flex-col md:flex-row md:items-center gap-4 font-semibold" aria-label="<?php esc_attr_e('Main Navigation', 'smoothh'); ?>">
 				<?php
 				wp_nav_menu(
