@@ -216,7 +216,7 @@ function initDefaultSwipers() {
 					spaceBetween: 35,
 				},
 				1380: {
-					slidesPerView: 'auto',
+					slidesPerView: 3.2,
 					spaceBetween: 40,
 				},
 			},
