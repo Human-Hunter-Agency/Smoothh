@@ -31,7 +31,7 @@
 }
 
 #primary-menu {
-	@apply flex flex-col md:flex-row md:items-center gap-4 md:gap-5 flex-wrap md:justify-end;
+	@apply flex flex-col md:flex-row md:items-center gap-4 md:gap-6 flex-wrap md:justify-end;
 }
 
 #primary-menu a {
@@ -671,16 +671,16 @@ i[data-tm-tooltip-html] {
 	@apply rotate-180 md:rotate-0
 }
 
-.menu-item-has-children:hover .sub-menu{
-	@apply bg-white rounded-xl md:shadow-xl md:-translate-y-5
+.menu-item-has-children .menu-link-wrapper ~ .sub-menu{
+	@apply bg-white md:shadow-xl md:-translate-y-5 pointer-events-none
 }
-.menu-item-has-children:hover svg{
+.menu-item-has-children .menu-link-wrapper:hover svg{
 	@apply md:!rotate-180
 }
-.menu-item-has-children:hover .sub-menu{
-	@apply opacity-100 md:translate-y-0
+.menu-item-has-children .menu-link-wrapper:hover ~ .sub-menu{
+	@apply opacity-100 md:translate-y-0 pointer-events-auto
 }
 
 .sub-menu{
-	@apply md:absolute md:w-max md:top-full md:left-0 md:opacity-0 !p-5 h-0 md:!h-auto overflow-hidden transition-all duration-300 space-y-4
+	@apply md:absolute md:w-max md:top-full md:left-0 md:opacity-0 md:!p-5 h-0 md:!h-auto overflow-hidden transition-all duration-300 space-y-4
 }
