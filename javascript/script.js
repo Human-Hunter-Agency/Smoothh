@@ -1320,7 +1320,7 @@ function initMenu(){
 			menuItem.classList.toggle('expanded')
 			const subMenu = item.parentElement.parentElement.querySelector('.sub-menu')
 			if(menuItem.classList.contains('expanded')){
-				subMenu.style.height = subMenu.scrollHeight 
+				subMenu.style.height = subMenu.scrollHeight + 'px'
 			}else{
 				subMenu.style.height = 0
 			}
