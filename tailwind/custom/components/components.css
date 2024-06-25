@@ -687,3 +687,10 @@ i[data-tm-tooltip-html] {
 .sub-menu li:first-child{
 	@apply mt-4 lg:mt-0
 }
+
+.woocommerce-cart-form .variation-DepositAmount,
+.woocommerce-cart-form .variation-FuturePayments,
+.woocommerce-checkout-review-order-table .variation-DepositAmount,
+.woocommerce-checkout-review-order-table .variation-FuturePayments{
+	@apply !hidden
+}
