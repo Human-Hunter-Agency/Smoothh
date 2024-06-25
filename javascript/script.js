@@ -62,10 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	registerClientFieldsToggle();
 	initJobListing();
 	initCounter();
-	initPageMarginWhenAdminIsLogged();
 	initCalculator();
 	initFloatingNavBar();
-	initMenu();
+	initMenuSubmenus();
 });
 
 function initMenuCollapse() {
@@ -1001,12 +1000,6 @@ function initCounter() {
 	}
 }
 
-function initPageMarginWhenAdminIsLogged() {
-	if (document.querySelector('#wpadminbar')) {
-		document.querySelector('#masthead').classList.replace('top-0', 'top-8');
-	}
-}
-
 function initCalculator() {
 	if (!document.querySelector('.calculator')) {
 		return;
@@ -1312,7 +1305,7 @@ function initFloatingNavBar() {
 	window.addEventListener('scroll', headerAppearsOnScrollUp, false);
 }
 
-function initMenu(){
+function initMenuSubmenus(){
 	dropdownIcons = document.querySelectorAll('.menu-item-has-children span')
 	dropdownIcons.forEach(item => {
 		item.addEventListener('click',()=>{
