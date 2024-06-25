@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initPageMarginWhenAdminIsLogged();
 	initCalculator();
 	initFloatingNavBar();
+	initMenu();
 });
 
 function initMenuCollapse() {
