@@ -79,21 +79,21 @@ function initMenuCollapse() {
 
 		menuExpanded = !menuExpanded;
 		if (menuExpanded) {
-			toggleBtn.setAttribute('aria-expanded',true)
-			menuContainer.style.height = `calc(100dvh - ${menuContainer.offsetTop}px)`
-			document.body.classList.add('overflow-hidden')
-		}else{
-			toggleBtn.setAttribute('aria-expanded',false)
-			menuContainer.style.height = 0
-			document.body.classList.remove('overflow-hidden')			
+			toggleBtn.setAttribute('aria-expanded', true);
+			menuContainer.style.height = `calc(100dvh - ${menuContainer.offsetTop}px)`;
+			document.body.classList.add('overflow-hidden');
+		} else {
+			toggleBtn.setAttribute('aria-expanded', false);
+			menuContainer.style.height = 0;
+			document.body.classList.remove('overflow-hidden');
 		}
 	});
 
 	window.addEventListener('resize', () => {
 		if (window.innerWidth >= 1180) {
-			toggleBtn.setAttribute('aria-expanded',false)
+			toggleBtn.setAttribute('aria-expanded', false);
 			menuContainer.style.removeProperty('height');
-			document.body.classList.remove('overflow-hidden')			
+			document.body.classList.remove('overflow-hidden');
 		}
 	});
 }
@@ -216,7 +216,7 @@ function initDefaultSwipers() {
 					spaceBetween: 35,
 				},
 				1380: {
-					slidesPerView: 3,
+					slidesPerView: 'auto',
 					spaceBetween: 40,
 				},
 			},
@@ -1189,10 +1189,17 @@ function initCalculator() {
 
 	initDynamicOptions(selectMainAdvanced, selectSecondaryAdvanced);
 
-	const salaryInput = document.querySelector('[data-uniqid="667029037bd2c3.23900713"] input')
-	const salaryDataSelect = document.querySelector('[data-uniqid="66793187083b70.87204096"] select')
-	initDynamicSalaryValidation(salaryInput,selectSecondaryAdvanced,salaryDataSelect)
-
+	const salaryInput = document.querySelector(
+		'[data-uniqid="667029037bd2c3.23900713"] input'
+	);
+	const salaryDataSelect = document.querySelector(
+		'[data-uniqid="66793187083b70.87204096"] select'
+	);
+	initDynamicSalaryValidation(
+		salaryInput,
+		selectSecondaryAdvanced,
+		salaryDataSelect
+	);
 }
 
 function initDynamicOptions(selectMain, selectSecondary) {
@@ -1236,24 +1243,24 @@ function initDynamicOptions(selectMain, selectSecondary) {
 	});
 }
 
-function initDynamicSalaryValidation(input,minValSelect,dataSelect){
-	minValSelect.addEventListener('change',()=>{
-		let minValueOption = dataSelect.querySelector(`[value="${minValSelect.slim.getSelected()[0]}"]`)
+function initDynamicSalaryValidation(input, minValSelect, dataSelect) {
+	minValSelect.addEventListener('change', () => {
+		let minValueOption = dataSelect.querySelector(
+			`[value="${minValSelect.slim.getSelected()[0]}"]`
+		);
 		if (minValueOption && minValueOption.dataset.tmTooltipHtml) {
-			let minValue = parseFloat(minValueOption.dataset.tmTooltipHtml)
-			jQuery(input).tc_rules('add',{
+			let minValue = parseFloat(minValueOption.dataset.tmTooltipHtml);
+			jQuery(input).tc_rules('add', {
 				min: minValue,
 				messages: {
-					min: 'Proponowane wynagrodzenie jest poniżej wartości oczekiwanych przez kandydatów na tym stanowisku pracy'
-				}
-			})
-		}else{
-			jQuery(input).tc_rules("remove","min")
+					min: 'Proponowane wynagrodzenie jest poniżej wartości oczekiwanych przez kandydatów na tym stanowisku pracy',
+				},
+			});
+		} else {
+			jQuery(input).tc_rules('remove', 'min');
 		}
-	})
+	});
 }
-
-
 
 function copyFormToTextarea(form, textarea) {
 	const formData = new FormData(form);
@@ -1317,18 +1324,19 @@ function initFloatingNavBar() {
 	window.addEventListener('scroll', headerAppearsOnScrollUp, false);
 }
 
-function initMenuSubmenus(){
-	dropdownIcons = document.querySelectorAll('.menu-item-has-children span')
-	dropdownIcons.forEach(item => {
-		item.addEventListener('click',()=>{
-			const menuItem = item.parentElement.parentElement
-			menuItem.classList.toggle('expanded')
-			const subMenu = item.parentElement.parentElement.querySelector('.sub-menu')
-			if(menuItem.classList.contains('expanded')){
-				subMenu.style.height = subMenu.scrollHeight + 'px'
-			}else{
-				subMenu.style.height = 0
+function initMenuSubmenus() {
+	dropdownIcons = document.querySelectorAll('.menu-item-has-children span');
+	dropdownIcons.forEach((item) => {
+		item.addEventListener('click', () => {
+			const menuItem = item.parentElement.parentElement;
+			menuItem.classList.toggle('expanded');
+			const subMenu =
+				item.parentElement.parentElement.querySelector('.sub-menu');
+			if (menuItem.classList.contains('expanded')) {
+				subMenu.style.height = subMenu.scrollHeight + 'px';
+			} else {
+				subMenu.style.height = 0;
 			}
-		})
-	})
+		});
+	});
 }
