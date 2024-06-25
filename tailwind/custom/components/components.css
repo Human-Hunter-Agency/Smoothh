@@ -668,5 +668,5 @@ i[data-tm-tooltip-html] {
 	@apply rotate-180
 }
 .sub-menu{
-	@apply h-0 transition-all
+	@apply h-0 overflow-hidden transition-all
 }
