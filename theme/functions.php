@@ -1140,11 +1140,11 @@ add_filter( 'awcdp_product_deposit_amount', 'awcdp_product_deposit_amount', 10, 
 
 
 function awcdp_product_deposit_amount($amount, $product_id) {
-	$DEPOSIT_AMOUNT_MIN = 1000;
+	$DEPOSIT_AMOUNT_MIN = 990;
     $product = wc_get_product($product_id);
     $price = $product->get_price();
 	$deposit_temp = $price * 0.1; 
-    If($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
+    if(true ){
         return 10;
     } else {
         return $DEPOSIT_AMOUNT_MIN;
@@ -1153,11 +1153,11 @@ function awcdp_product_deposit_amount($amount, $product_id) {
 
 add_filter( 'awcdp_product_deposit_type', 'awcdp_product_deposit_type', 10, 2 );
 function awcdp_product_deposit_type($type,$product_id) { 
-	$DEPOSIT_AMOUNT_MIN = 1000;
+	$DEPOSIT_AMOUNT_MIN = 990;
     $product = wc_get_product($product_id);
     $price = $product->get_price();
 	$deposit_temp = $price * 0.1; 
-    If($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
+    if(true ){
         return 'percent';
     } else {
         return 'fixed';
