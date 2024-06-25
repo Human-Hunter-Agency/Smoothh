@@ -31,7 +31,7 @@ $gridStyle = $args['gridStyle'];
         <?php if ($tiles_list) : ?>
             <div class="swiper lg:mt-8 !container !overflow-visible" data-js="swiper-tiles-icons">
                 <div class="swiper-wrapper  
-                    <?php if ($gridStyle == '4 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-9 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
+                    <?php if ($gridStyle == '4 Kolumny') : ?> xl:!transform-none xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-9 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
                     <?php endif; ?>
 
                     <?php if ($gridStyle == '3 Kolumny') : ?> xl:!transform-none xl:px-[20px] xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-0 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(32%_-_50px)] 
@@ -49,7 +49,7 @@ $gridStyle = $args['gridStyle'];
                                 </div>
                             <?php endif; ?>
                             <?php if ($tile['title']) : ?>
-                                <h3 class="text-[20px] mb-6 lg:min-h-10 px-5 font-bold"><?php echo esc_html($tile['title']); ?></h3>
+                                <h3 class="text-[20px] mb-6 lg:min-h-10 px-5 lg:px-0 font-bold"><?php echo esc_html($tile['title']); ?></h3>
                             <?php endif; ?>
                             <?php if ($tile['description']) : ?>
                                 <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['description']) : ?> prose-base md:prose-lg <?php else : ?> !leading-6 <?php endif; ?> "><?php echo $tile['description']; ?></div>
