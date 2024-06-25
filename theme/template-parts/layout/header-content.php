@@ -63,7 +63,10 @@
 					array(
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>'
+						'items_wrap'     => '<span><svg width="11" height="7" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.774525 0.500055L5.50054 5.75635L10.2266 0.500055" stroke="#8117EE" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span><ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>'
 					)
 				);
 				?>
