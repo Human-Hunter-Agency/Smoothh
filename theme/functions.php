@@ -1141,27 +1141,23 @@ add_filter( 'awcdp_product_deposit_amount', 'awcdp_product_deposit_amount', 10, 
 
 function awcdp_product_deposit_amount($amount, $product_id) {
 	$DEPOSIT_AMOUNT_MIN = 990;
-    $product = wc_get_product($product_id);
-    $price = $product->get_price();
-	$deposit_temp = $price * 0.1; 
-	echo $price;
-    if($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
-        return 10;
-    } else {
+    if($amount < $DEPOSIT_AMOUNT_MIN ){
         return $DEPOSIT_AMOUNT_MIN;
+    } else {
+        return $amount;
     }
 }
 
-add_filter( 'awcdp_product_deposit_type', 'awcdp_product_deposit_type', 10, 2 );
-function awcdp_product_deposit_type($type,$product_id) { 
-	$DEPOSIT_AMOUNT_MIN = 990;
-    $product = wc_get_product($product_id);
-    $price = $product->get_price();
-	$deposit_temp = $price * 0.1; 
-	echo $price;
-    if($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
-        return 'percent';
-    } else {
-        return 'fixed';
-    }    
-}
+// add_filter( 'awcdp_product_deposit_type', 'awcdp_product_deposit_type', 10, 2 );
+// function awcdp_product_deposit_type($type,$product_id) { 
+// 	$DEPOSIT_AMOUNT_MIN = 990;
+//     $product = wc_get_product($product_id);
+//     $price = $product->get_price();
+// 	$deposit_temp = $price * 0.1; 
+// 	echo $price;
+//     if($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
+//         return 'percent';
+//     } else {
+//         return 'fixed';
+//     }    
+// }
