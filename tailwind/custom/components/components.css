@@ -658,4 +658,15 @@ i[data-tm-tooltip-html] {
 .menu-item:not(.menu-item-has-children) span{
 	display: none;
 }
-
+.menu-item-has-children span{
+	@apply cursor-pointer
+}
+.menu-item-has-children span svg{
+	@apply transition duration-200
+}
+.menu-item-has-children.expanded span svg{
+	@apply rotate-180
+}
+.sub-menu{
+	@apply h-0 transition-all
+}

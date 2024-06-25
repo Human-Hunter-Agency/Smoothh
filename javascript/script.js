@@ -1310,3 +1310,19 @@ function initFloatingNavBar() {
 
 	window.addEventListener('scroll', headerAppearsOnScrollUp, false);
 }
+
+function initMenu(){
+	dropdownIcons = document.querySelector('.menu-item-has-children span')
+	dropdownIcons.forEach(item => {
+		item.addEventListener('click',()=>{
+			const menuItem = item.parentElement.parentElement
+			menuItem.classList.toggle('expanded')
+			const subMenu = item.parentElement.parentElement.querySelector('.sub-menu')
+			if(menuItem.classList.contains('expanded')){
+				subMenu.style.height = subMenu.scrollHeight 
+			}else{
+				subMenu.style.height = 0
+			}
+		})
+	})
+}
