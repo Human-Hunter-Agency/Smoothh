@@ -668,16 +668,19 @@ i[data-tm-tooltip-html] {
 	@apply transition duration-200
 }
 .menu-item-has-children.expanded span svg{
-	@apply rotate-180
+	@apply rotate-180 md:rotate-0
 }
 
 .menu-item-has-children:hover .sub-menu{
 	@apply md:absolute md:top-full md:left-0 md:opacity-0 !p-2 bg-white rounded-xl shadow-xl -translate-y-5
+}
+.menu-item-has-children:hover svg{
+	@apply md:!rotate-180
 }
 .menu-item-has-children:hover .sub-menu{
 	@apply opacity-100 translate-y-0
 }
 
 .sub-menu{
-	@apply h-0 overflow-hidden transition-all duration-300 space-y-4
+	@apply h-0 md:!h-auto overflow-hidden transition-all duration-300 space-y-4
 }
