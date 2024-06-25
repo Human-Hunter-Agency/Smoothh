@@ -672,7 +672,7 @@ i[data-tm-tooltip-html] {
 }
 
 .menu-item-has-children .sub-menu{
-	@apply bg-white md:shadow-xl lg:-translate-y-5 lg:delay-100
+	@apply bg-white lg:shadow-xl lg:-translate-y-5 lg:delay-100
 }
 .menu-item-has-children:hover svg{
 	@apply lg:!rotate-180
