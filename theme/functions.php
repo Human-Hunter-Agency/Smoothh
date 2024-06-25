@@ -1144,7 +1144,7 @@ function awcdp_product_deposit_amount($amount, $product_id) {
     $product = wc_get_product($product_id);
     $price = $product->get_price();
 	$deposit_temp = $price * 0.1; 
-	echo $deposit_temp;
+	echo $price;
     if($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
         return 10;
     } else {
@@ -1158,7 +1158,7 @@ function awcdp_product_deposit_type($type,$product_id) {
     $product = wc_get_product($product_id);
     $price = $product->get_price();
 	$deposit_temp = $price * 0.1; 
-	echo $deposit_temp;
+	echo $price;
     if($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
         return 'percent';
     } else {
