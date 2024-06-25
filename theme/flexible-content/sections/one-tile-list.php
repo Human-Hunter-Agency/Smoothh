@@ -25,7 +25,7 @@ $tiles_list = $args['tiles_list'];
     <div class="pt-14 relative z-0 container flex flex-col lg:flex-row basis">
 
         <div class="basis-[55%] mb-10 xl:mb-20 mx-auto text-2xl md:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
-            <div class="max-w-[580px]">
+            <div class="max-w-[630px]">
                 <?php if ($header) : ?>
                     <?php echo $header; ?>
                 <?php endif; ?>
