@@ -678,9 +678,9 @@ i[data-tm-tooltip-html] {
 	@apply md:!rotate-180
 }
 .menu-item-has-children .menu-link-wrapper:hover ~ .sub-menu{
-	@apply opacity-100 md:translate-y-0 pointer-events-auto
+	@apply opacity-100 md:translate-y-0 z-10 pointer-events-auto
 }
 
 .sub-menu{
-	@apply md:absolute md:w-max md:top-full md:left-0 md:opacity-0 md:!p-5 h-0 md:!h-auto overflow-hidden transition-all duration-300 space-y-4
+	@apply mt-4 md:mt-0 md:absolute md:w-max md:top-20 md:left-0 md:opacity-0 md:!p-5 h-0 md:!h-auto overflow-hidden transition-all duration-300 md:rounded-xl space-y-4
 }
