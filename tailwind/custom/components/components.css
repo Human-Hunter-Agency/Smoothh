@@ -698,3 +698,7 @@ i[data-tm-tooltip-html] {
 .woocommerce-checkout-review-order-table .variation-FuturePayments {
 	@apply !hidden;
 }
+
+.single-case-study .entry-content figure {
+	@apply rounded-[15px];
+}
