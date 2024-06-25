@@ -10,7 +10,8 @@
     $args = array(
         'taxonomy'     => 'product_cat',
         'title_li'     => '',
-        'hide_empty'   => 1
+        'hide_empty'   => 1,
+        'exclude'      => array(29)
     );
     $all_categories = get_categories($args);
 
