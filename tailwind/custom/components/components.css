@@ -699,6 +699,6 @@ i[data-tm-tooltip-html] {
 	@apply !hidden;
 }
 
-.single-case-study .entry-content figure {
-	@apply rounded-[15px];
-}
+/* .single-case-study .entry-content figure {
+	@apply rounded-[15px] overflow-hidden;
+} */

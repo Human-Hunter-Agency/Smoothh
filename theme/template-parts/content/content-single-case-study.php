@@ -41,7 +41,7 @@ $logoHeader = get_field('header_clients_logos');
 	</div>
 
 
-	<div class="container flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-[60px]">
+	<div class="container flex flex-col md:flex-row gap-5 md:gap-10 lg:gap-[60px] [&_div_.wp-block-image]:rounded-[15px] [&_div_.wp-block-image]:overflow-hidden">
 		<div <?php smoothh_content_class('entry-content'); ?>>
 			<div class="mb-5 md:mb-6">
 				<?php if ($title) : ?>
