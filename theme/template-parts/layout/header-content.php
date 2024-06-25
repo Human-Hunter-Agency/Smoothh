@@ -13,7 +13,7 @@
 <header id="masthead" class="sticky z-20 <?php if (current_user_can( 'administrator' )) {echo 'top-8';} else { echo 'top-0';} ?> w-full bg-white transition duration-300">
 	<div class="container py-5 flex justify-between items-center">
 		<div>
-			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block max-w-[140px] md:max-w-[220px] 2xl:max-w-[266px]">
+			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block max-w-[140px] md:max-w-[190px] 2xl:max-w-[220px]">
 				<?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/logo.svg'); ?>
 			</a>
 		</div>
@@ -64,7 +64,7 @@
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
 						'before'		 => '<div class="menu-link-wrapper flex justify-between md:w-fit">',
-						'after'			 => '<span class="grow md:grow-0 px-2 md:pl-1.5 md:pr-0 flex items-center justify-end"><svg width="14" height="10" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.774525 0.500055L5.50054 5.75635L10.2266 0.500055" stroke="#8117EE" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>',
+						'after'			 => '<span class="grow md:grow-0 px-2 md:pl-1.5 md:pr-0 flex md:hidden items-center justify-end"><svg width="14" height="10" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.774525 0.500055L5.50054 5.75635L10.2266 0.500055" stroke="#8117EE" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>',
 						'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>'
 					)
 				);
