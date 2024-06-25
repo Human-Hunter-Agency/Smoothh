@@ -1136,7 +1136,7 @@ function tm_epo_js_loader(){
 add_action( 'wp_enqueue_scripts', 'tm_epo_js_loader' );
 
 
-add_filter( 'awcdp_product_deposit_amount', 'awcdp_product_deposit_amount', 10, 2 );
+// add_filter( 'awcdp_product_deposit_amount', 'awcdp_product_deposit_amount', 10, 2 );
 
 
 // function awcdp_product_deposit_amount($amount, $product_id) {
