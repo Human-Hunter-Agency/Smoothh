@@ -672,7 +672,7 @@ i[data-tm-tooltip-html] {
 }
 
 .menu-item-has-children .sub-menu{
-	@apply bg-white md:shadow-xl md:-translate-y-5
+	@apply bg-white md:shadow-xl md:-translate-y-5 delay-200
 }
 .menu-item-has-children:hover svg{
 	@apply md:!rotate-180
@@ -684,9 +684,6 @@ i[data-tm-tooltip-html] {
 .sub-menu{
 	@apply md:mt-0 md:invisible md:absolute md:w-max md:top-20 md:left-0 md:opacity-0 md:!p-5 h-0 md:!h-auto overflow-hidden transition-all duration-300 md:rounded-xl space-y-4
 }
-/* .sub-menu:hover{
-	@apply  !pointer-events-auto !opacity-100 !translate-y-0
-} */
-.sub-menu li:first{
+.sub-menu li:first-child{
 	@apply mt-4
 }
