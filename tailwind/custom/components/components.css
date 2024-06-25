@@ -31,7 +31,7 @@
 }
 
 #primary-menu {
-	@apply flex flex-col md:flex-row md:items-center gap-4 md:gap-6 flex-wrap md:justify-end;
+	@apply flex flex-col md:flex-row md:items-center gap-4 md:gap-5 flex-wrap md:justify-end;
 }
 
 #primary-menu a {
