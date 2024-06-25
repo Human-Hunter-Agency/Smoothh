@@ -654,3 +654,11 @@ i[data-tm-tooltip-html] {
 	.tm-epo-field-label {
 	grid-template-columns: 1fr !important;
 }
+
+.menu-item:not(.menu-item-has-children) span{
+	display: none;
+}
+
+.menu-item-has-children span{
+	@apply
+}
