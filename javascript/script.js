@@ -75,13 +75,25 @@ function initMenuCollapse() {
 		toggleBtn.getAttribute('aria-expanded') === 'true' || false;
 
 	toggleBtn.addEventListener('click', function () {
-		toggleDropdown(!menuExpanded, toggleBtn, menuContainer);
+		// toggleDropdown(!menuExpanded, toggleBtn, menuContainer);
+
 		menuExpanded = !menuExpanded;
+		if (menuExpanded) {
+			toggleBtn.setAttribute('aria-expanded',true)
+			menuContainer.style.height = window.innerHeight - menuContainer.offsetTop
+			document.body.classList.add('overflow-hidden')
+		}else{
+			toggleBtn.setAttribute('aria-expanded',false)
+			menuContainer.style.height = 0
+			document.body.classList.remove('overflow-hidden')			
+		}
 	});
 
 	window.addEventListener('resize', () => {
 		if (window.innerWidth >= 768) {
-			toggleDropdown(false, toggleBtn, menuContainer);
+			toggleBtn.setAttribute('aria-expanded',false)
+			menuContainer.style.removeProperty('height');
+			document.body.classList.remove('overflow-hidden')			
 		}
 	});
 }
