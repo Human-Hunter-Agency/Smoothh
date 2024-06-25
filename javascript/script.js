@@ -1313,7 +1313,7 @@ function initFloatingNavBar() {
 }
 
 function initMenu(){
-	dropdownIcons = document.querySelector('.menu-item-has-children span')
+	dropdownIcons = document.querySelectorAll('.menu-item-has-children span')
 	dropdownIcons.forEach(item => {
 		item.addEventListener('click',()=>{
 			const menuItem = item.parentElement.parentElement
