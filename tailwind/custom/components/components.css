@@ -665,25 +665,25 @@ i[data-tm-tooltip-html] {
 	@apply cursor-pointer
 }
 .menu-item-has-children span svg{
-	@apply transition duration-200 md:delay-100
+	@apply transition duration-200 lg:delay-100
 }
 .menu-item-has-children.expanded span svg{
-	@apply rotate-180 md:rotate-0
+	@apply rotate-180 lg:rotate-0
 }
 
 .menu-item-has-children .sub-menu{
-	@apply bg-white md:shadow-xl md:-translate-y-5 md:delay-100
+	@apply bg-white md:shadow-xl lg:-translate-y-5 lg:delay-100
 }
 .menu-item-has-children:hover svg{
-	@apply md:!rotate-180
+	@apply lg:!rotate-180
 }
 .menu-item-has-children:hover .sub-menu{
-	@apply opacity-100 md:translate-y-0 z-10 md:visible
+	@apply opacity-100 lg:translate-y-0 z-10 lg:visible
 }
 
 .sub-menu{
-	@apply md:mt-0 md:invisible md:absolute md:w-max md:top-10 lg:top-[70px] md:left-0 md:opacity-0 md:!p-5 h-0 md:!h-auto overflow-hidden transition-all duration-300 md:rounded-xl space-y-4
+	@apply lg:mt-0 lg:invisible lg:absolute lg:w-max lg:top-[70px] lg:left-0 lg:opacity-0 lg:!p-5 h-0 lg:!h-auto overflow-hidden transition-all duration-300 lg:rounded-xl space-y-4
 }
 .sub-menu li:first-child{
-	@apply mt-4 md:mt-0
+	@apply mt-4 lg:mt-0
 }

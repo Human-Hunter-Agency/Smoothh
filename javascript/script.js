@@ -90,7 +90,7 @@ function initMenuCollapse() {
 	});
 
 	window.addEventListener('resize', () => {
-		if (window.innerWidth >= 768) {
+		if (window.innerWidth >= 1180) {
 			toggleBtn.setAttribute('aria-expanded',false)
 			menuContainer.style.removeProperty('height');
 			document.body.classList.remove('overflow-hidden')			
