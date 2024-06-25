@@ -659,6 +659,3 @@ i[data-tm-tooltip-html] {
 	display: none;
 }
 
-.menu-item-has-children span{
-	@apply
-}
