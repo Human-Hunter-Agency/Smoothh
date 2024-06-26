@@ -20,7 +20,7 @@ $posts = get_posts(array(
                 <?php echo $header; ?>
             </div>
             <?php endif; ?>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14" data-js-case-studies='container'>
                 <?php foreach ($posts as $post) : ?>
                     <li class="post-tile">
                         <a href="<?php echo get_permalink($post->ID); ?>">
@@ -43,10 +43,10 @@ $posts = get_posts(array(
                     endforeach;
                 ?>
             </ul>
-            <div class="w-full px-10 py-20 hidden" data-js="loader-case-studies">
+            <div class="w-full px-10 py-20 hidden" data-js-case-studies="loader">
 				<span class="mx-auto block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
 			</div>
-			<button data-js="load-case-studies" class=" flex mx-auto mt-14 gap-4 items-center text-base font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
+			<button data-js-case-studies="load-more" class=" flex mx-auto mt-14 gap-4 items-center text-base font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
 				<?php esc_html_e('More posts', 'smoothh'); ?>
 			</button>
         </div>

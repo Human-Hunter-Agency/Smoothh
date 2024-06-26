@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initDropdowns();
 	initCvFileLabelText();
 	initRelatedPosts();
+	initCaseStudiesList();
 	initCart();
 	initPopups();
 	initProdSelectStyles();
@@ -385,6 +386,25 @@ function initCvFileLabelText() {
 	});
 }
 
+function initCaseStudiesList(){
+	const container = document.querySelector('[data-js-case-studies="container"]')
+	if (!container) return
+
+	const loadMoreBtn = document.querySelector('[data-js-case-studies="load-more"]');
+	const loaderEl = document.querySelector('[data-js-case-studies="loader"]');
+	const postCount = contentEl.querySelectorAll('.post-tile').length;
+
+	const listElParams = {
+		contentUlEl: container,
+		loaderEl: loaderEl,
+		loadMoreBtn: loadMoreBtn,
+		postCount: postCount,
+		page: postCount > 0 ? 1 : 0,
+	}
+
+	loadMoreBtn.addEventListener('click', () => loadMore(listElParams,'case-study',3));
+}
+
 function initRelatedPosts() {
 	const container = document.getElementById('posts-related');
 	if (!container) return;
@@ -453,7 +473,7 @@ function switchTabBySlug(slug, buttons, container) {
 	}
 }
 
-async function loadMore(tab) {
+async function loadMore(tab,slug,perPage) {
 	const currentPostEl = document.querySelector('[data-js-post-id]');
 	let currentPostId = '';
 	if (currentPostEl) {
@@ -461,7 +481,7 @@ async function loadMore(tab) {
 	}
 	tab.loaderEl.classList.remove('hidden');
 	tab.loadMoreBtn.setAttribute('disabled', true);
-	const postsData = await loadPosts(tab.id, ++tab.page, currentPostId);
+	const postsData = await loadPosts(tab.id, ++tab.page, currentPostId,slug,perPage);
 	if (postsData.posts) {
 		let postsList = postsData.posts;
 		insertPosts(tab.contentUlEl, postsList);
@@ -477,9 +497,8 @@ async function loadMore(tab) {
 	tab.loadMoreBtn.removeAttribute('disabled');
 }
 
-async function loadPosts(catId, page, exclude = '') {
-	const perPage = 6;
-	const baseUrl = 'https://smoothh.domain.org.pl/wp-json/wp/v2/posts';
+async function loadPosts(catId, page, exclude = '',slug='posts', perPage = 6) {
+	const baseUrl = `https://smoothh.domain.org.pl/wp-json/wp/v2/${slug}`;
 	const params = `/?_fields=excerpt,title,link,featured_media,fimg_url&categories=${catId}&exclude=${exclude}&per_page=${perPage}&page=${page}`;
 	const url = baseUrl + params;
 
