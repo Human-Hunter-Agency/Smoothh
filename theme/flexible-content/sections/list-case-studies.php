@@ -11,7 +11,7 @@ $posts = get_posts(array(
 
 ?>
 
-<div class="relative py-10 md:py-0 md:pt-[60px] md:!pb-[0px]">
+<div class="relative py-10 md:py-0 md:pt-[60px] ">
 
     <div class="container">
         <div class="relative z-0">
