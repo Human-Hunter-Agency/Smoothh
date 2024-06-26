@@ -44,15 +44,13 @@ $header = $args['header'];
             ?>
                 <li>
                     <a href="<?php echo get_term_link($cat->term_id, 'product_cat'); ?>" class="group h-full flex items-center flex-col border-2 bg-white shadow-2xl">
-                        <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
+                        <div class="relative flex items-center justify-center overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                             <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
+                            <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold">
+                                <?php echo $cat->name ?>
+                            </h4>
                         </div>
                         <div class="w-full flex-1 p-3 md:p-6">
-                            <div class="flex flex-col gap-2 justify-between mb-5">
-                                <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold">
-                                    <?php echo $cat->name ?>
-                                </h4>
-                            </div>
                             <p class="text-sm md:text-base prose-strong:font-semibold">
                                 <?php echo $cat->description ?>
                             </p>
