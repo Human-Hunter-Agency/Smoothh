@@ -106,11 +106,11 @@ if ($product && $styles_basic) : ?>
                 <span><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
                                                                 echo '/h';
                                                             } ?></span>
-                <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
+                <span class="text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
             </div>
+            <span class="w-[220px] ml-5 rounded-[14px] text-[16px] font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
+                <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Choose', 'smoothh'); ?>
+            </span>
         </div>
-        <span class="w-fit rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-secondary group-hover:bg-secondary transition duration-200">
-            <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Choose', 'smoothh'); ?>
-        </span>
     </a>
 <?php endif ?>
