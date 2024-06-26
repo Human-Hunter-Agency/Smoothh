@@ -108,7 +108,7 @@ if ($product && $styles_basic) : ?>
                                                                                 } ?></span>
             </div>
             <span class="block mb-10 text-sm text-center md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
-            <span class="block w-[220px] rounded-[14px] text-[16px] font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
+            <span class="block w-[220px] rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
                 <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Choose', 'smoothh'); ?>
             </span>
         </div>
