@@ -71,7 +71,7 @@ if ($product && $styles_basic) : ?>
 
 <?php elseif ($product && !$styles_basic) : ?>
 
-    <a href="<?php echo get_permalink($product->get_id()) ?>" class="!flex flex-col border-2 border-[#EFEFEF] rounded-2xl group  <?php if ($is_swiper_slide) : ?> swiper-slide !h-auto opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 <?php else : ?> h-full<?php endif ?>">
+    <a href="<?php echo get_permalink($product->get_id()) ?>" class="!flex flex-col shadow-xl rounded-2xl group  <?php if ($is_swiper_slide) : ?> swiper-slide !h-auto opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 <?php else : ?> h-full<?php endif ?>">
         <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
             <?php echo $product->get_image() ?>
             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
@@ -103,10 +103,10 @@ if ($product && $styles_basic) : ?>
                         </span>
                     <?php endif ?>
                 </div>
-                <span><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
-                                                                echo '/h';
-                                                            } ?></span>
-                <span class="text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap font-bold"> <?php echo get_product_tax_formatted($product);; ?></span>
+                <span class="font-bold"><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
+                                                                                    echo '/h';
+                                                                                } ?></span>
+                <span class="text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
             </div>
             <span class="w-[220px] rounded-[14px] text-[16px] font-bold py- px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
                 <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Choose', 'smoothh'); ?>
