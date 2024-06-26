@@ -91,7 +91,7 @@ footer#page-footer .menu-item {
 }
 
 .wpcf7-response-output {
-	@apply rounded-2xl text-sm !mx-0 !mt-3 !py-3 !bg-white text-primary;
+	@apply rounded-2xl text-sm !mx-0 !mt-3 !py-3 !bg-white text-primary border-primary;
 }
 
 .form-basic {
@@ -712,7 +712,8 @@ i[data-tm-tooltip-html] {
 }
 
 
-.form-contact-wrapper .wpcf7-acceptance-as-validation .wpcf7-response-output{
+.form-contact-wrapper .wpcf7-acceptance-as-validation.sent .wpcf7-response-output,
+.form-cv-wrapper .wpcf7-acceptance-as-validation.sent .wpcf7-response-output{
 	@apply hidden
 }
 

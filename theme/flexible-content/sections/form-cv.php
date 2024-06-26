@@ -16,7 +16,7 @@ $hide_message_field = $args['hide_message_field'];
         <?php if ($description) : ?>
             <div class="prose-smoothh prose md:prose-xl text-white text-center mb-10 prose-h2:!text-white prose-h2:font-bold prose-h2:text-3xl prose-h2:md:text-5xl prose-h2:mb-9"><?php echo $description; ?></div>
         <?php endif; ?>
-        <div class="!max-w-[1410px] mx-auto [&_.wpcf7-response-output]:!border-none <?php if ($hide_message_field) {
+        <div class="!max-w-[1410px] mx-auto <?php if ($hide_message_field) {
                                                 echo '[&_.message-container]:hidden';
                                             } ?>">
             <div class="form-cv-wrapper relative">
