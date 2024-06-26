@@ -6,7 +6,7 @@ $header = $args['header'];
 ?>
 
 <div class="relative">
-    <div data-calc-bg="" class="z-[-1] w-[100%] lg:w-[85%] h-[calc(100%_-_270px)] lg:h-full absolute top-80 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
+    <div data-calc-bg="" class="z-[-1] w-[100%] lg:w-[85%] h-[calc(100%_-_270px)] absolute top-80 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
 
     <div class="container mb-10">
         <?php if ($header) : ?>
