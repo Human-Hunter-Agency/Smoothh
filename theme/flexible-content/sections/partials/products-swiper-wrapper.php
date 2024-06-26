@@ -7,13 +7,18 @@ if (isset($args['products']) && !empty($args['products'])) {
     $products = $args['products'];
 }
 
+$styles_basic = false;
+if (isset($args['styles_basic']) && !empty($args['styles_basic'])) {
+    $is_swiper_slide = $args['styles_basic'];
+}
+
 ?>
 <?php if ($products) : ?>
     <div class="relative z-0 w-full overflow-hidden !pb-20 lg:!pb-32">
         <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
             <div class="swiper-wrapper">
                 <?php foreach ($products as $product) : ?>
-                    <?php get_template_part('flexible-content/sections/partials/product-tile', '', array('product' => $product, 'swiper' => true)); ?>
+                    <?php get_template_part('flexible-content/sections/partials/product-tile', '', array('product' => $product, 'swiper' => true,'styles_basic' => $styles_basic)); ?>
                 <?php endforeach; ?>
             </div>
             <div class="swiper-nav w-24  h-20 hidden lg:flex !absolute !top-auto !bottom-[-130px] left-[50%] -translate-x-1/2">

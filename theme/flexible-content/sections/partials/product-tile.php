@@ -11,9 +11,16 @@ $is_swiper_slide = false;
 if (isset($args['swiper']) && !empty($args['swiper'])) {
     $is_swiper_slide = $args['swiper'];
 }
+
+$styles_basic = false;
+if (isset($args['styles_basic']) && !empty($args['styles_basic'])) {
+    $is_swiper_slide = $args['styles_basic'];
+}
 ?>
 
-<?php if ($product) : ?>
+<?php
+echo $styles_basic;
+if ($product) : ?>
 
     <a href="<?php echo get_permalink($product->get_id()) ?>" class="bg-white shadow-2xl !flex items-center flex-col rounded-2xl group  <?php if ($is_swiper_slide) : ?> swiper-slide !h-auto opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 <?php else : ?> h-full<?php endif ?>">
         <div class="relative flex items-center justify-center overflow-hidden rounded-t-[14px] w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">

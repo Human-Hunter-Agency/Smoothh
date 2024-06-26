@@ -41,5 +41,5 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
         <?php endif; ?>
     </div>
 
-    <?php get_template_part('flexible-content/sections/partials/products-swiper-wrapper', '', array('products' => $products)); ?>
+    <?php get_template_part('flexible-content/sections/partials/products-swiper-wrapper', '', array('products' => $products,'styles_basic' => true)); ?>
 </section>
