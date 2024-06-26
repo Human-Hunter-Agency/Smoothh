@@ -113,10 +113,6 @@ $logoHeader = get_field('header_clients_logos');
 
 <section class="cta">
 	<?php if ($cta) :
-		$background = $cta['background'];
-		if ($background['url']) {
-			$bg_url = $background['url'];
-		}
 		$header = $cta['header'];
 		$button = $cta['button'];
 	?>
