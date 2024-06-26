@@ -76,13 +76,13 @@ if ($product && $styles_basic) : ?>
             <?php echo $product->get_image() ?>
             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
         </div>
-        <div class="relative w-full flex-1 p-6">
+        <div class="relative w-full min-h-[450px] flex-1 p-6">
             <div class="flex flex-col gap-2 justify-between mb-5">
                 <h4 class="text-lg md:text-xl text-primary font-bold">
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
             </div>
-            <p class="mb-10 text-sm md:text-base prose-strong:font-semibold">
+            <p class="mb-10 h-[180px] text-sm md:text-base prose-strong:font-semibold">
                 <?php echo $product->get_short_description() ?>
             </p>
             <div class="flex text-lg md:text-xl flex-wrap shrink-0">
@@ -108,7 +108,7 @@ if ($product && $styles_basic) : ?>
                                                                                 } ?></span>
             </div>
             <span class="block mb-10 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
-            <span class="block w-[220px] rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200 absolute bottom-6">
+            <span class="block w-[220px] rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200 absolute -bottom-6">
                 <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Choose', 'smoothh'); ?>
             </span>
         </div>
