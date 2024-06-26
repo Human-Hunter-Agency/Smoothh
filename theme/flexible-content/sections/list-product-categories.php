@@ -2,10 +2,17 @@
 
 /** Template to display 'Lista kategorii produktów' - list_product_categories */
 
+$header = $args['header'];
 ?>
 
 
 <div class="container mb-10">
+    <?php if ($header) : ?>
+        <div class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-9">
+            <?php echo $header; ?>
+        </div>
+    <?php endif; ?>
+
     <?php
     $args = array(
         'taxonomy'     => 'product_cat',
