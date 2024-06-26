@@ -14,7 +14,7 @@ if (isset($args['swiper']) && !empty($args['swiper'])) {
 
 $styles_basic = false;
 if (isset($args['styles_basic']) && !empty($args['styles_basic'])) {
-    $is_swiper_slide = $args['styles_basic'];
+    $styles_basic = $args['styles_basic'];
 }
 ?>
 
