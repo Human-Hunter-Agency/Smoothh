@@ -91,7 +91,7 @@ footer#page-footer .menu-item {
 }
 
 .wpcf7-response-output {
-	@apply rounded-2xl text-sm !mx-0 !mt-3;
+	@apply rounded-2xl text-sm !mx-0 !mt-3 !py-3 !bg-white text-primary;
 }
 
 .form-basic {
@@ -716,6 +716,14 @@ i[data-tm-tooltip-html] {
 	@apply hidden
 }
 
-.form-contact-wrapper:has(.wpcf7-acceptance-as-validation.sent) .form-confirmation{
+.form-contact-wrapper:has(.wpcf7-acceptance-as-validation.sent) .form-confirmation,
+.form-cv-wrapper:has(.wpcf7-acceptance-as-validation.sent) .form-confirmation{
 	@apply opacity-100 pointer-events-auto
+}
+
+.form-cv-wrapper:has(.wpcf7-acceptance-as-validation.sent) .wpcf7{
+	@apply opacity-0 pointer-events-none
+}
+.form-cv-wrapper .wpcf7{
+	@apply transition duration-300
 }
