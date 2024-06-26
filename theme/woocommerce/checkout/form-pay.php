@@ -21,7 +21,7 @@ $totals = $order->get_order_item_totals(); // phpcs:ignore WordPress.WP.GlobalVa
 ?>
 <form id="order_review" method="post">
 
-	<table class="shop_table">
+	<table class="shop_table !border-[#888] !rounded-[15px]">
 		<thead>
 			<tr>
 				<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
@@ -76,7 +76,7 @@ $totals = $order->get_order_item_totals(); // phpcs:ignore WordPress.WP.GlobalVa
 	do_action( 'woocommerce_pay_order_before_payment' ); 
 	?>
 
-	<div id="payment" class="not-prose !bg-white p-5 xl:p-8 border border-[#888] rounded-[15px]">
+	<div id="payment" class="not-prose !bg-white p-5 xl:p-8 border border-[#888] !rounded-[15px] mb-20">
 		<?php if ( $order->needs_payment() ) : ?>
 			<ul class="wc_payment_methods payment_methods methods !p-0 ">
 				<?php
