@@ -75,7 +75,7 @@ do_action('woocommerce_before_main_content');
 
         <div class="pt-10 mb-10 md:mb-20">
             <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] text-foreground">
-                <?php esc_html_e('Choose your product', 'smoothh'); ?>
+                <?php esc_html_e('Choose product for', 'smoothh'); ?> <span class="text-primary"><?php esc_html_e('yourself', 'smoothh'); ?></span>
             </h2>
         </div>
 
