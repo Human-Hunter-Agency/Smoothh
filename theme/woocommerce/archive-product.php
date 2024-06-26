@@ -32,7 +32,7 @@ do_action('woocommerce_before_main_content');
 ?>
 <header class="woocommerce-products-header">
 
-    <div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
+    <div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
 
         <?php smoothh_post_thumbnail(); ?>
 
