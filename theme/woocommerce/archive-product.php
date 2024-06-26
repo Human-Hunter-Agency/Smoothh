@@ -71,8 +71,6 @@ do_action('woocommerce_before_main_content');
         /**
          * Hook: woocommerce_before_shop_loop.
          *
-         * _@hooked woocommerce_output_all_notices - 10
-         * _@hooked woocommerce_result_count - 20
          * @hooked woocommerce_catalog_ordering - 30
          */
         do_action('woocommerce_before_shop_loop');
