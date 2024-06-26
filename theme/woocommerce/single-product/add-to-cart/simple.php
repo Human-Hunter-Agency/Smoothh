@@ -162,9 +162,27 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 				<div class="overflow-auto">
 					<h3 class="mb-2 text-2xl md:text-3xl font-semibold"><?php esc_html_e('Negotiate price', 'smoothh'); ?></h3>
 					<p class="mb-8 text-base"><?php echo $product->get_title() ?></p>
-					<?php
-					$shortcode = '[contact-form-7 id="16df6c7" title="Negocjacja"]';
-					echo do_shortcode($shortcode); ?>
+					<div class="form-negotiate-wrapper form-with-confirm-wrapper">
+						<?php
+						$shortcode = '[contact-form-7 id="16df6c7" title="Negocjacja"]';
+						echo do_shortcode($shortcode); ?>
+						<div class="form-confirmation pointer-events-none opacity-0 absolute inset-0 bg-white flex flex-col items-center justify-center transition duration-300">
+							<svg class="max-w-full mb-4" width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="62.5" cy="62.5" r="60.5" stroke="url(#paint1_linear_560_1182)" stroke-width="4"></circle>
+								<path d="M38.5713 62.5L54.2856 77.8571L85.7141 47.1428" stroke="url(#paint1_linear_560_1182)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+								<defs>
+								<linearGradient id="paint1_linear_560_1182" x1="2.357" y1="1.8214" x2="94.357" y2="90.8214" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#8117EE"></stop><stop offset="1" stop-color="#1F97D4"></stop>
+								</linearGradient>
+								</defs>
+							</svg>
+							<h4 class="text-center text-lg md:text-[20px] max-w-96 font-bold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
+							<p class="text-center text-base max-w-96 mb-10 md:mb-16"><?php esc_html_e( 'Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh' ); ?></p>
+							<button data-js-form-reset="form-negotiate-wrapper" class="w-full max-w-[520px] border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 !rounded-[15px] font-semibold !flex items-center justify-center">
+								<?php esc_html_e( 'Go back to form', 'smoothh' ); ?>
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

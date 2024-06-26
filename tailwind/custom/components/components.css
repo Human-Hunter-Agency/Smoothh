@@ -711,14 +711,13 @@ i[data-tm-tooltip-html] {
 	@apply !hidden;
 }
 
-
-.form-contact-wrapper .wpcf7-acceptance-as-validation.sent .wpcf7-response-output,
-.form-cv-wrapper .wpcf7-acceptance-as-validation.sent .wpcf7-response-output{
+.form-with-confirm-wrapper{
+	@apply relative
+}
+.form-with-confirm-wrapper .wpcf7-acceptance-as-validation.sent .wpcf7-response-output{
 	@apply hidden
 }
-
-.form-contact-wrapper:has(.wpcf7-acceptance-as-validation.sent) .form-confirmation,
-.form-cv-wrapper:has(.wpcf7-acceptance-as-validation.sent) .form-confirmation{
+.form-with-confirm-wrapper:has(.wpcf7-acceptance-as-validation.sent) .form-confirmation{
 	@apply opacity-100 pointer-events-auto
 }
 

@@ -62,7 +62,7 @@ $address = $args['address'];
             </div>
         </div>
 
-        <div class="form-contact-wrapper relative basis-[45%] py-10 lg:py-[60px] px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base lg:-translate-y-[60px]">
+        <div class="form-contact-wrapper form-with-confirm-wrapper relative basis-[45%] py-10 lg:py-[60px] px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base lg:-translate-y-[60px]">
             <?php echo do_shortcode('[contact-form-7 id="f3dc97a" title="Kontakt"]'); ?>
 
             <div class="form-confirmation pointer-events-none opacity-0 absolute inset-0 bg-white rounded-[45px] flex flex-col items-center justify-center px-5 md:px-10 py-14 transition duration-300">
