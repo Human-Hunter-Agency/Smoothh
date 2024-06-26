@@ -82,10 +82,10 @@ if ($product && $styles_basic) : ?>
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
             </div>
-            <p class="text-sm md:text-base prose-strong:font-semibold">
+            <p class="mb-10 text-sm md:text-base prose-strong:font-semibold">
                 <?php echo $product->get_short_description() ?>
             </p>
-            <div class="flex text-lg md:text-xl flex-wrap shrink-0">
+            <div class="mb-10 flex text-lg md:text-xl flex-wrap shrink-0">
                 <?php
                 $has_variable_price = get_field('variable_price', $product->get_id());
                 $is_hourly = get_field('product_hourly');
@@ -93,7 +93,7 @@ if ($product && $styles_basic) : ?>
                 ?>
                     <span class="text-foreground font-normal text-base leading-loose mr-1"><?php esc_html_e('From', 'smoothh') ?></span>
                 <?php endif ?>
-                <div class="flex flex-col items-end mr-2 whitespace-nowrap">
+                <div class="flex flex-col items-end mr-2 whitespace-nowrap font-bold">
                     <span>
                         <?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?>
                     </span>
@@ -106,9 +106,9 @@ if ($product && $styles_basic) : ?>
                 <span><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
                                                                 echo '/h';
                                                             } ?></span>
-                <span class="text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
+                <span class="text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap font-bold"> <?php echo get_product_tax_formatted($product);; ?></span>
             </div>
-            <span class="w-[220px] ml-5 rounded-[14px] text-[16px] font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
+            <span class="w-[220px] rounded-[14px] text-[16px] font-bold py- px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
                 <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Choose', 'smoothh'); ?>
             </span>
         </div>
