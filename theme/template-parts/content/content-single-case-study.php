@@ -111,7 +111,7 @@ $logoHeader = get_field('header_clients_logos');
 	<?php get_template_part('flexible-content/sections/swiper-customer-logos', '', array('header' => $logoHeader, 'description' => false)); ?>
 </section>
 
-<section class="cta">
+<section class="cta container mx-auto relative">
 	<?php if ($cta) :
 		$header = $cta['header'];
 		$button = $cta['button'];
