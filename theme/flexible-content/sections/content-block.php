@@ -9,11 +9,12 @@ $has_bg = $args['has_bg'];
 
 ?>
 
-<div class="relative py-10 md:py-20 <?php if ($has_bg) : ?> md:pt-[60px] bg-gradient-to-b from-secondary to-primary text-white <?php endif; ?>">
+<div class="relative py-10 md:py-20 mb-10 md:mb-20 <?php if ($has_bg) : ?> md:pt-[60px] bg-gradient-to-b from-secondary to-primary text-white <?php endif; ?>">
+    <div class="z-[-1] w-full h-full absolute top-0 right-0 bg-white rounded-[45px]  !rounded-none bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]  "></div>
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <div class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-9">
+                <div class="mx-auto max-w-[1100px] text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-9">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>

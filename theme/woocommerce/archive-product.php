@@ -32,7 +32,7 @@ do_action('woocommerce_before_main_content');
 ?>
 <header class="woocommerce-products-header">
 
-    <div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
+    <div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
 
         <?php smoothh_post_thumbnail(); ?>
 
@@ -47,7 +47,7 @@ do_action('woocommerce_before_main_content');
 </header>
 
 <div class="container">
-    <div class="mb-7 md:mb-[50px] text-center prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7">
+    <div class="hidden mb-7 md:mb-[50px] text-center prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7">
         <?php
         /**
          * Hook: woocommerce_archive_description.
@@ -57,6 +57,12 @@ do_action('woocommerce_before_main_content');
          */
         do_action('woocommerce_archive_description');
         ?>
+    </div>
+
+    <div class="mx-auto pt-10 mb-10 md:mb-20">
+        <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] text-foreground">
+            <?php esc_html_e('Choose product for', 'smoothh'); ?> <span class="text-primary"><?php esc_html_e('yourself', 'smoothh'); ?></span>
+        </h2>
     </div>
 
     <?php
@@ -72,6 +78,7 @@ do_action('woocommerce_before_main_content');
         do_action('woocommerce_before_shop_loop');
 
     ?>
+
         <ul class="w-full mb-10 md:mb-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-[90px]">
             <?php
             //woocommerce_product_loop_start();

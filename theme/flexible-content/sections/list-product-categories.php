@@ -6,7 +6,7 @@ $header = $args['header'];
 ?>
 
 <div class="relative">
-    <div data-calc-bg="" class="z-[-1] w-[100%] lg:w-[85%] absolute top-0 lg:top-80 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
+    <div data-calc-bg="" class="z-[-1] w-[100%] lg:w-[85%] h-[calc(100%_-_270px)] absolute top-80 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
 
     <div class="container mb-10">
         <?php if ($header) : ?>
@@ -45,8 +45,8 @@ $header = $args['header'];
 
                 ?>
                     <li>
-                        <a href="<?php echo get_term_link($cat->term_id, 'product_cat'); ?>" class="group h-full flex items-center flex-col bg-white shadow-2xl">
-                            <div class="relative flex items-center justify-center overflow-hidden rounded-t-[14px] w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
+                        <a href="<?php echo get_term_link($cat->term_id, 'product_cat'); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
+                            <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                                 <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold">
                                     <?php echo $cat->name ?>

@@ -60,7 +60,7 @@ if ($product) : ?>
                                                                 } ?></span>
 
                 </div>
-                <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
+                <span class="text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
                 <?php //endif; 
                 ?>
             </div>
