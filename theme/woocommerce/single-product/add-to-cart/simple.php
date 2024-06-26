@@ -176,8 +176,8 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 								</linearGradient>
 								</defs>
 							</svg>
-							<h4 class="text-center text-lg md:text-[20px] max-w-96 font-bold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
-							<p class="text-center text-base max-w-96 mb-10 md:mb-16"><?php esc_html_e( 'Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh' ); ?></p>
+							<h4 class="text-center text-lg md:text-[20px] max-w-[460px] font-bold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
+							<p class="text-center text-base max-w-[460px] mb-10 md:mb-16"><?php esc_html_e( 'Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh' ); ?></p>
 							<button data-js-form-reset="form-negotiate-wrapper" class="w-full max-w-[520px] border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 !rounded-[15px] font-semibold !flex items-center justify-center">
 								<?php esc_html_e( 'Go back to form', 'smoothh' ); ?>
 							</button>
