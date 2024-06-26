@@ -449,6 +449,14 @@ i.theChampLogin {
 	@apply whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center !justify-center !gap-5;
 }
 
+.button.pay{
+	@apply whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center !justify-center !gap-5;
+}
+
+.awcdp_balance_pay p{
+	@apply flex items-center gap-5 justify-end
+}
+
 .woocommerce-error .button:after,
 .woocommerce-info .button:after,
 .woocommerce-message .button:after {
