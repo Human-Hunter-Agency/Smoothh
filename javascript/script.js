@@ -503,9 +503,11 @@ function insertPosts(container, posts) {
 		combinedHTML += `<li class="post-tile">
 			<a href="${post.link}">
 				<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
-				<h3>${post.title.rendered}</h3>
+				<div class="title-wrapper">
+					<h3>${post.title.rendered}</h3>
+				</div>
 				${post.excerpt.rendered}
-				<span>${translations['Read more'] ?? 'Read more'}</span>
+				<span>${translations['Read more'] ?? 'Read more'}<span class="!-ml-4">&gt;</span></span>
 			</a>
 		</li>`;
 	});
