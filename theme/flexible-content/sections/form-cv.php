@@ -26,7 +26,7 @@ $hide_message_field = $args['hide_message_field'];
                         <circle cx="62.5" cy="62.5" r="60.5" stroke="#ffffff" stroke-width="4"></circle>
                         <path d="M38.5713 62.5L54.2856 77.8571L85.7141 47.1428" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
-                    <h4 class="text-center text-lg md:text-[20px] max-w-96 font-bold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
+                    <h4 class="text-center text-2xl md:leading-10 md:!text-[40px] max-w-96 font-bold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
                     <p class="text-center text-base max-w-96 mb-10 md:mb-16"><?php esc_html_e( 'Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh' ); ?></p>
                     <button data-js-form-reset="form-cv-wrapper" class="w-full max-w-[520px] border-none !bg-white hover:!bg-secondary hover:!text-white transition-all duration-200 !text-foreground h-[55px] !px-5 xl:!px-12 !rounded-[15px] font-semibold !flex items-center justify-center">
                         <?php esc_html_e( 'Go back to form', 'smoothh' ); ?>
