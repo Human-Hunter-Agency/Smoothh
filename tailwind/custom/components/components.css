@@ -729,7 +729,7 @@ i[data-tm-tooltip-html] {
 	@apply transition duration-300
 }
 
-.wpcf7-response-output{
+.wpcf7-response-output:before{
 	content: '!';
-	@apply bg-primary text-white font-semibold rounded-full inline-block px-2 mr-7
+	@apply bg-primary text-white font-semibold rounded-full inline-block px-2 mr-5
 }
