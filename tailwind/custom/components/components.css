@@ -450,8 +450,8 @@ i.theChampLogin {
 	@apply whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center !justify-center !gap-5;
 }
 
-.awcdp_balance_pay p{
-	@apply flex items-center gap-5 justify-end
+.awcdp_balance_pay p {
+	@apply flex items-center gap-5 justify-end;
 }
 
 .woocommerce-error .button:after,
@@ -711,24 +711,32 @@ i[data-tm-tooltip-html] {
 	@apply !hidden;
 }
 
-.form-with-confirm-wrapper{
-	@apply relative
+.form-with-confirm-wrapper {
+	@apply relative;
 }
-.form-with-confirm-wrapper .wpcf7-acceptance-as-validation.sent .wpcf7-response-output{
-	@apply hidden
+.form-with-confirm-wrapper
+	.wpcf7-acceptance-as-validation.sent
+	.wpcf7-response-output {
+	@apply hidden;
 }
-.form-with-confirm-wrapper:has(.wpcf7-acceptance-as-validation.sent) .form-confirmation{
-	@apply opacity-100 pointer-events-auto
-}
-
-.form-cv-wrapper:has(.wpcf7-acceptance-as-validation.sent) .wpcf7{
-	@apply opacity-0 pointer-events-none
-}
-.form-cv-wrapper .wpcf7{
-	@apply !transition duration-300
+.form-with-confirm-wrapper:has(.wpcf7-acceptance-as-validation.sent)
+	.form-confirmation {
+	@apply opacity-100 pointer-events-auto;
 }
 
-.wpcf7-response-output:before{
-	content: '!';
-	@apply bg-primary text-white font-semibold rounded-full inline-block px-2 mr-5
+.form-cv-wrapper:has(.wpcf7-acceptance-as-validation.sent) .wpcf7 {
+	@apply opacity-0 pointer-events-none;
+}
+.form-cv-wrapper .wpcf7 {
+	@apply !transition duration-300;
+}
+
+.wpcf7-response-output:before {
+	content: "!";
+	@apply bg-primary text-white font-semibold rounded-full inline-block px-2 mr-5;
+}
+
+.archive .woocommerce-result-count,
+.archive .orderby {
+	@apply !hidden;
 }
