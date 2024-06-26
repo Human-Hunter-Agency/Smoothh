@@ -43,24 +43,19 @@ $header = $args['header'];
 
             ?>
                 <li>
-                    <a href="<?php echo get_term_link($cat->term_id, 'product_cat'); ?>" class="group h-full flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl">
-                        <div class="relative overflow-hidden rounded-t-[14px] w-full !h-[190px] md:!h-[220px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
-                            <?php
-                            $thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
-                            echo wp_get_attachment_image($thumbnail_id, 'medium', false, array('loading' => 'lazy', 'alt' => $cat->name)); ?>
-                            <div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
+                    <a href="<?php echo get_term_link($cat->term_id, 'product_cat'); ?>" class="group h-full flex items-center flex-col border-2 bg-white shadow-2xl">
+                        <div class="relative flex items-center justify-center overflow-hidden rounded-t-[14px] w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
+                            <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
+                            <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold">
+                                <?php echo $cat->name ?>
+                            </h4>
                         </div>
                         <div class="w-full flex-1 p-3 md:p-6">
-                            <div class="flex flex-col gap-2 justify-between mb-5">
-                                <h4 class="text-lg md:text-xl text-primary font-semibold">
-                                    <?php echo $cat->name ?>
-                                </h4>
-                            </div>
-                            <p class="text-sm md:text-base prose-strong:font-semibold">
+                            <p class="text-center text-sm md:text-base prose-strong:font-semibold">
                                 <?php echo $cat->description ?>
                             </p>
                         </div>
-                        <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary group-hover:bg-secondary transition duration-200">
+                        <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
                             <?php esc_html_e('Show products', 'smoothh') ?>
                         </span>
                     </a>
