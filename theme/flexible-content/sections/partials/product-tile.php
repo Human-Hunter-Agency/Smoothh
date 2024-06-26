@@ -19,7 +19,7 @@ if (isset($args['styles_basic']) && !empty($args['styles_basic'])) {
 ?>
 
 <?php
-echo $styles_basic;
+echo $styles_basic ? 'true' : 'false';;
 if ($product) : ?>
 
     <a href="<?php echo get_permalink($product->get_id()) ?>" class="bg-white shadow-2xl !flex items-center flex-col rounded-2xl group  <?php if ($is_swiper_slide) : ?> swiper-slide !h-auto opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 <?php else : ?> h-full<?php endif ?>">
