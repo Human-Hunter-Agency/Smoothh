@@ -45,8 +45,8 @@ $header = $args['header'];
 
                 ?>
                     <li>
-                        <a href="<?php echo get_term_link($cat->term_id, 'product_cat'); ?>" class="group h-full flex items-center flex-col bg-white shadow-2xl">
-                            <div class="relative flex items-center justify-center overflow-hidden rounded-t-[14px] w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
+                        <a href="<?php echo get_term_link($cat->term_id, 'product_cat'); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] overflow-hidden shadow-2xl">
+                            <div class="relative flex items-center justify-center overflow-hidden w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                                 <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold">
                                     <?php echo $cat->name ?>
