@@ -1345,7 +1345,7 @@ function initMenuSubmenus() {
 function initHideFormConfirmation(){
 	const closeBtns = document.querySelectorAll('[data-js-form-reset]')
 	closeBtns.forEach(btn=>{
-		const form = document.querySelector(`.${btn.dataset.formReset} form`)
+		const form = document.querySelector(`.${btn.dataset.jsFormReset} form`)
 		if (form && wpcf7) {
 			btn.addEventListener('click',()=>{
 				wpcf7.reset(form)
