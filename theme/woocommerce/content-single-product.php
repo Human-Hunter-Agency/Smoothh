@@ -65,7 +65,7 @@ else :
 
 ?>
 	<div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
-		<div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
+		<div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
 
 			<?php smoothh_post_thumbnail(); ?>
 
@@ -183,15 +183,16 @@ else :
 											<circle cx="62.5" cy="62.5" r="60.5" stroke="url(#paint1_linear_560_1182)" stroke-width="4"></circle>
 											<path d="M38.5713 62.5L54.2856 77.8571L85.7141 47.1428" stroke="url(#paint1_linear_560_1182)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
 											<defs>
-											<linearGradient id="paint1_linear_560_1182" x1="2.357" y1="1.8214" x2="94.357" y2="90.8214" gradientUnits="userSpaceOnUse">
-											<stop stop-color="#8117EE"></stop><stop offset="1" stop-color="#1F97D4"></stop>
-											</linearGradient>
+												<linearGradient id="paint1_linear_560_1182" x1="2.357" y1="1.8214" x2="94.357" y2="90.8214" gradientUnits="userSpaceOnUse">
+													<stop stop-color="#8117EE"></stop>
+													<stop offset="1" stop-color="#1F97D4"></stop>
+												</linearGradient>
 											</defs>
 										</svg>
-										<h4 class="text-center text-lg md:text-[20px] max-w-[460px] font-bold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
-										<p class="text-center text-base max-w-[460px] mb-10 md:mb-16"><?php esc_html_e( 'Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh' ); ?></p>
+										<h4 class="text-center text-lg md:text-[20px] max-w-[460px] font-bold mb-5"><?php esc_html_e('Thank you for sending your message', 'smoothh'); ?></h4>
+										<p class="text-center text-base max-w-[460px] mb-10 md:mb-16"><?php esc_html_e('Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh'); ?></p>
 										<button data-js-form-reset="form-quote-wrapper" class="w-full max-w-[520px] border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 !rounded-[15px] font-semibold !flex items-center justify-center">
-											<?php esc_html_e( 'Go back to form', 'smoothh' ); ?>
+											<?php esc_html_e('Go back to form', 'smoothh'); ?>
 										</button>
 									</div>
 								</div>
@@ -226,15 +227,16 @@ else :
 										<circle cx="62.5" cy="62.5" r="60.5" stroke="url(#paint1_linear_560_1182)" stroke-width="4"></circle>
 										<path d="M38.5713 62.5L54.2856 77.8571L85.7141 47.1428" stroke="url(#paint1_linear_560_1182)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
 										<defs>
-										<linearGradient id="paint1_linear_560_1182" x1="2.357" y1="1.8214" x2="94.357" y2="90.8214" gradientUnits="userSpaceOnUse">
-										<stop stop-color="#8117EE"></stop><stop offset="1" stop-color="#1F97D4"></stop>
-										</linearGradient>
+											<linearGradient id="paint1_linear_560_1182" x1="2.357" y1="1.8214" x2="94.357" y2="90.8214" gradientUnits="userSpaceOnUse">
+												<stop stop-color="#8117EE"></stop>
+												<stop offset="1" stop-color="#1F97D4"></stop>
+											</linearGradient>
 										</defs>
 									</svg>
-									<h4 class="text-center text-lg md:text-[20px] max-w-[460px] font-bold mb-5"><?php esc_html_e( 'Thank you for sending your form', 'smoothh' ); ?></h4>
-									<p class="text-center text-base max-w-[460px] mb-10 md:mb-16"><?php esc_html_e( 'We will send a message to the e-mail address provided with a link to download the e-book', 'smoothh' ); ?></p>
+									<h4 class="text-center text-lg md:text-[20px] max-w-[460px] font-bold mb-5"><?php esc_html_e('Thank you for sending your form', 'smoothh'); ?></h4>
+									<p class="text-center text-base max-w-[460px] mb-10 md:mb-16"><?php esc_html_e('We will send a message to the e-mail address provided with a link to download the e-book', 'smoothh'); ?></p>
 									<button data-js-popup-toggle="download-form" class="w-full max-w-[520px] border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 !rounded-[15px] font-semibold !flex items-center justify-center">
-										<?php esc_html_e( 'Go back to page', 'smoothh' ); ?>
+										<?php esc_html_e('Go back to page', 'smoothh'); ?>
 									</button>
 								</div>
 							</div>

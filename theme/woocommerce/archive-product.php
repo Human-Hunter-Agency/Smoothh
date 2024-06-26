@@ -47,7 +47,7 @@ do_action('woocommerce_before_main_content');
 </header>
 
 <div class="container">
-    <div class="mb-7 md:mb-[50px] text-center prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7">
+    <div class="hidden mb-7 md:mb-[50px] text-center prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7">
         <?php
         /**
          * Hook: woocommerce_archive_description.
