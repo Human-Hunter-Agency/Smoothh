@@ -72,6 +72,13 @@ do_action('woocommerce_before_main_content');
         do_action('woocommerce_before_shop_loop');
 
     ?>
+
+        <div class="mb-10 md:mb-[50px]">
+            <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] text-foreground">
+                <?php esc_html_e('Choose your product', 'woocommerce'); ?>
+            </h2>
+        </div>
+
         <ul class="w-full mb-10 md:mb-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-[90px]">
             <?php
             //woocommerce_product_loop_start();
