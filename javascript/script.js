@@ -392,7 +392,7 @@ function initCaseStudiesList(){
 
 	const loadMoreBtn = document.querySelector('[data-js-case-studies="load-more"]');
 	const loaderEl = document.querySelector('[data-js-case-studies="loader"]');
-	const postCount = contentEl.querySelectorAll('.post-tile').length;
+	const postCount = container.querySelectorAll('.post-tile').length;
 
 	const listElParams = {
 		contentUlEl: container,
