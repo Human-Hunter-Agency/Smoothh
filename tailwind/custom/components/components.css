@@ -727,3 +727,8 @@ i[data-tm-tooltip-html] {
 .form-cv-wrapper .wpcf7{
 	@apply transition duration-300
 }
+
+.wpcf7-response-output{
+	content: '!';
+	@apply bg-primary text-white font-semibold rounded-full inline-block px-2 mr-7
+}
