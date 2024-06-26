@@ -109,8 +109,8 @@ if ($product && $styles_basic) : ?>
                 <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
             </div>
         </div>
-        <span class="rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-secondary group-hover:bg-secondary transition duration-200">
-            <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Show product', 'smoothh'); ?>
+        <span class="w-fit rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-secondary group-hover:bg-secondary transition duration-200">
+            <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Choose', 'smoothh'); ?>
         </span>
     </a>
 <?php endif ?>
