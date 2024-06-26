@@ -91,7 +91,7 @@ footer#page-footer .menu-item {
 }
 
 .wpcf7-response-output {
-	@apply rounded-2xl text-sm !mx-0 !mt-3 !py-3 !bg-white text-primary border-primary;
+	@apply rounded-2xl text-sm !mx-0 !mt-3 !py-3 !bg-white text-primary !border-primary;
 }
 
 .form-basic {
