@@ -443,13 +443,10 @@ i.theChampLogin {
 	@apply mt-5 rounded-[15px] max-w-screen-sm mx-auto !border !bg-transparent text-black;
 }
 
+.button.pay,
 .woocommerce-error .button,
 .woocommerce-info .button,
 .woocommerce-message .button {
-	@apply whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center !justify-center !gap-5;
-}
-
-.button.pay{
 	@apply whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center !justify-center !gap-5;
 }
 
@@ -712,4 +709,13 @@ i[data-tm-tooltip-html] {
 .woocommerce-checkout-review-order-table .variation-Wartozaliczki,
 .woocommerce-checkout-review-order-table .variation-Przyszapatno {
 	@apply !hidden;
+}
+
+
+.form-contact-wrapper .wpcf7-acceptance-as-validation{
+	@apply hidden
+}
+
+.form-contact-wrapper:has(.wpcf7-acceptance-as-validation) .form-confirmation{
+	@apply opacity-100 pointer-events-auto
 }
