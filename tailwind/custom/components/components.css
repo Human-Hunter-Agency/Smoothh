@@ -726,7 +726,7 @@ i[data-tm-tooltip-html] {
 	@apply opacity-0 pointer-events-none
 }
 .form-cv-wrapper .wpcf7{
-	@apply transition duration-300
+	@apply !transition duration-300
 }
 
 .wpcf7-response-output:before{
