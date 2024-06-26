@@ -79,7 +79,7 @@ do_action('woocommerce_before_main_content');
 
     ?>
 
-        <ul class="w-full mb-10 md:mb-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-[90px]">
+        <ul class="w-full mb-10 md:mb-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-12">
             <?php
             //woocommerce_product_loop_start();
 
