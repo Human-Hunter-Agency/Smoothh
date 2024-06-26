@@ -82,7 +82,7 @@ if ($product && $styles_basic) : ?>
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
             </div>
-            <p class="mb-10 h-[180px] text-sm md:text-base prose-strong:font-semibold">
+            <p class="text-sm md:text-base prose-strong:font-semibold">
                 <?php echo $product->get_short_description() ?>
             </p>
             <div class="flex text-lg md:text-xl flex-wrap shrink-0">
@@ -107,7 +107,7 @@ if ($product && $styles_basic) : ?>
                                                                                     echo '/h';
                                                                                 } ?></span>
             </div>
-            <span class="block mb-10 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
+            <span class="block text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
             <span class="block w-[220px] rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200 absolute -bottom-6">
                 <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Choose', 'smoothh'); ?>
             </span>
