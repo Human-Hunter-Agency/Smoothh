@@ -698,3 +698,10 @@ i[data-tm-tooltip-html] {
 .woocommerce-checkout-review-order-table .variation-FuturePayments {
 	@apply !hidden;
 }
+
+.woocommerce-cart-form .variation-Wartozaliczki,
+.woocommerce-cart-form .variation-Przyszapatno,
+.woocommerce-checkout-review-order-table .variation-Wartozaliczki,
+.woocommerce-checkout-review-order-table .variation-Przyszapatno {
+	@apply !hidden;
+}
