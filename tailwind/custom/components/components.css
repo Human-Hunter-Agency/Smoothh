@@ -712,10 +712,10 @@ i[data-tm-tooltip-html] {
 }
 
 
-.form-contact-wrapper .wpcf7-acceptance-as-validation{
+.form-contact-wrapper .wpcf7-acceptance-as-validation .wpcf7-response-output{
 	@apply hidden
 }
 
-.form-contact-wrapper:has(.wpcf7-acceptance-as-validation) .form-confirmation{
+.form-contact-wrapper:has(.wpcf7-acceptance-as-validation.sent) .form-confirmation{
 	@apply opacity-100 pointer-events-auto
 }

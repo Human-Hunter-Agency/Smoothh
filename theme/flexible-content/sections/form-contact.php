@@ -65,24 +65,19 @@ $address = $args['address'];
         <div class="form-contact-wrapper relative basis-[45%] py-10 lg:py-[60px] px-8 lg:px-10 bg-white rounded-[45px] drop-shadow-2xl text-sm md:text-base lg:-translate-y-[60px]">
             <?php echo do_shortcode('[contact-form-7 id="f3dc97a" title="Kontakt"]'); ?>
 
-            <div class="form-confirmation pointer-events-none opacity-0 absolute inset-0 bg-white rounded-[45px] flex flex-col items-center justify-center px-2.5 py-10 transition duration-300">
+            <div class="form-confirmation pointer-events-none opacity-0 absolute inset-0 bg-white rounded-[45px] flex flex-col items-center justify-center px-5 md:px-10 py-14 transition duration-300">
                 <svg class="max-w-full mb-4" width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="62.5" cy="62.5" r="60.5" stroke="url(#paint0_linear_560_1182)" stroke-width="4"/>
-                    <path d="M38.5713 62.5L54.2856 77.8571L85.7141 47.1428" stroke="url(#paint1_linear_560_1182)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="62.5" cy="62.5" r="60.5" stroke="url(#paint1_linear_560_1182)" stroke-width="4"></circle>
+                    <path d="M38.5713 62.5L54.2856 77.8571L85.7141 47.1428" stroke="url(#paint1_linear_560_1182)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
                     <defs>
-                    <linearGradient id="paint0_linear_560_1182" x1="31.25" y1="31.25" x2="31.25" y2="31.25" gradientUnits="userSpaceOnUse">
-                    <stop offset="1" stop-color="#1F97D4"/>
-                    <stop stop-color="#8117EE"/>
-                    </linearGradient>
-                    <linearGradient id="paint1_linear_560_1182" x1="50.357" y1="54.8214" x2="50.357" y2="54.8214" gradientUnits="userSpaceOnUse">
-                    <stop offset="1" stop-color="#1F97D4"/>
-                    <stop stop-color="#8117EE"/>
+                    <linearGradient id="paint1_linear_560_1182" x1="2.357" y1="1.8214" x2="94.357" y2="90.8214" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#8117EE"></stop><stop offset="1" stop-color="#1F97D4"></stop>
                     </linearGradient>
                     </defs>
                 </svg>
-                <h4 class="text-center text-xl md:text-2xl max-w-96 font-semibold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
+                <h4 class="text-center text-lg md:text-[20px] max-w-96 font-bold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
                 <p class="text-center text-base max-w-96 mb-10 md:mb-16"><?php esc_html_e( 'Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh' ); ?></p>
-                <button class="border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100   transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center">
+                <button data-js-form-reset="form-contact-wrapper" class="border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 !rounded-[15px] font-semibold !flex items-center justify-center">
                     <?php esc_html_e( 'Go back to form', 'smoothh' ); ?>
                 </button>
             </div>

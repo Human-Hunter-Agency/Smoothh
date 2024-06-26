@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initCalculator();
 	initFloatingNavBar();
 	initMenuSubmenus();
+	initHideFormConfirmation();
 });
 
 function initMenuCollapse() {
@@ -1339,4 +1340,16 @@ function initMenuSubmenus() {
 			}
 		});
 	});
+}
+
+function initHideFormConfirmation(){
+	const closeBtns = document.querySelectorAll('[data-js-form-reset]')
+	closeBtns.forEach(btn=>{
+		const form = document.querySelector(`.${btn.dataset.formReset} form`)
+		if (form && wpcf7) {
+			btn.addEventListener('click',()=>{
+				wpcf7.reset(form)
+			})
+		}
+	})
 }
