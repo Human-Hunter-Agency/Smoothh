@@ -33,7 +33,7 @@ $is_hourly = get_field('product_hourly');
                 <span class="text-foreground font-normal text-xl md:text-2xl mr-2"><?php esc_html_e('From', 'smoothh') ?></span>
             <?php endif ?>
             <span class="flex flex-col items-end [&_del]:opacity-50"><?php echo $product->get_price_html(); ?> </span>
-            <span class="net-label font-bold text-[22px] md:text-2xl whitespace-nowrap"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
+            <span class="net-label font-bold text-[18px] md:text-[22px] whitespace-nowrap"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
                                                                                                                                                                                     echo '/h';
                                                                                                                                                                                 } ?></span>
         </p>
