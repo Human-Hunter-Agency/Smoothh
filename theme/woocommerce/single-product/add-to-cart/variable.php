@@ -60,7 +60,7 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
 				<?php endforeach; ?>
 			</div>
 
-			<div class="single_variation_wrap w-full [&_single_variation]:pb-5 [&_.single_variation]:border-[#D6D6D6] [&_.single_variation]:border-b-[1px]">
+			<div class="single_variation_wrap w-full [&_div]:pb-5 [&_.single_variation]:border-[#D6D6D6] [&_.single_variation]:border-b-[1px]">
 				<?php
 				/**
 				 * Hook: woocommerce_before_single_variation.
