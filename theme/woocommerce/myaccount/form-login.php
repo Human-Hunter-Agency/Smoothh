@@ -116,7 +116,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
     </div>
   </div>
   <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
-    <div class="invisible h-0 py-10 [&.active]:h-auto overflow-hidden [&.active]:visible opacity-0 [&.active]:opacity-100 transition duration-300" data-js="register-wrapper">
+    <div class="invisible h-0 py-10 [&.active]:h-auto overflow-hidden [&.active]:overflow-visible [&.active]:visible opacity-0 [&.active]:opacity-100 transition duration-300" data-js="register-wrapper">
       <form method="post" class="woocommerce-form woocommerce-form-register register !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary shadow-2xl !rounded-[15px] h-full" <?php do_action('woocommerce_register_form_tag'); ?>>
   
         <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
@@ -190,7 +190,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
   
       </form>
       <div class="hidden" data-js="hidden-inputs"></div>
-      <span class="text-primary hover:underline cursor-pointer block mb-5" data-js="register-toggle"><?php esc_html_e("Back", 'smoothh'); ?></span>
+      <span class="text-primary hover:underline cursor-pointer block mt-5" data-js="register-toggle"><?php esc_html_e("Back", 'smoothh'); ?></span>
     </div>
   <?php endif; ?>
 </div>
