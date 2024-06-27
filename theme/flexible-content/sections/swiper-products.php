@@ -27,7 +27,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     <div class="container">
         <?php if ($header) : ?>
             <div class="relative z-0">
-                <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+                <div class="text-center font-bold lg:font-extrabold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
                     <?php echo $header; ?>
                 </div>
             </div>
