@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_cart'); ?>
 <div class="container mb-10">
-    <h1 class="text-3xl text-center text-primary font-extrabold"><?php echo __('Cart', 'woocommerce'); ?></h1>
+    <h1 class="text-3xl md:text-4xl text-center text-primary font-extrabold"><?php echo __('Cart', 'woocommerce'); ?></h1>
 </div>
 <div class="relative mb-20">
     <div class="-z-10 md:w-[85%] 2xl:w-[88%] absolute -top-14 bottom-20 lg:bottom-40 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
@@ -162,125 +162,6 @@ do_action('woocommerce_before_cart'); ?>
 
                 </table>
 
-                <!-- <div class="hidden md:flex gap-2.5 lg:gap-5 items-end border-b-2 border-b-[#D6D6D6]">
-                    <span class="product-name grow md:w-2/5 text-left text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?></span>
-                    <span class="product-price grow-0 w-[15%] text-right text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Price', 'woocommerce'); ?></span>
-                    <span class="product-quantity grow-0 w-[15%] min-w-28 text-right text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Quantity', 'woocommerce'); ?></span>
-                    <span class="product-subtotal grow-0 w-[15%] min-w-32 lg:min-w-40 text-right text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Subtotal', 'woocommerce'); ?></span>
-                    <?php if (WC()->cart->has_discount()) : ?>
-                        <span class="product-discount shrink-0 grow-0 w-[15%] 2xl:w-[10%] text-right text-base lg:text-xl font-bold pb-5 lg:pb-8 text-primary"><?php esc_html_e('Discount', 'smoothh'); ?></span>
-                    <?php endif; ?>
-                </div>
-                <?php do_action('woocommerce_before_cart_contents'); ?>
-
-                <ul class="text-xl">
-                    <?php
-                    foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
-                        $_product   = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
-                        $product_id = apply_filters('woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key);
-                        /**
-                         * Filter the product name.
-                         *
-                         * @since 2.1.0
-                         * @param string $product_name Name of the product in the cart.
-                         * @param array $cart_item The product in the cart.
-                         * @param string $cart_item_key Key for the product in the cart.
-                         */
-                        $product_name = apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key);
-
-                        if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
-                            $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
-                    ?>
-                            <li class="woocommerce-cart-form__cart-item cart_item flex flex-col md:flex-row gap-2.5 lg:gap-5 mb-5 md:mb-0 pt-3 pb-2 border-b-2 border-b-[#D6D6D6] <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
-
-                                <div class="product-name grow md:w-2/5 md:pb-5 lg:pb-8 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
-                                    <?php
-                                    if (!$product_permalink) {
-                                        echo wp_kses_post($product_name . '&nbsp;');
-                                    } else {
-                                        /**
-                                         * This filter is documented above.
-                                         *
-                                         * @since 2.1.0
-                                         */
-                                        echo wp_kses_post(apply_filters('woocommerce_cart_item_name', sprintf('<a class="hover:text-primary transition duration-200" href="%s">%s</a>', esc_url($product_permalink), $_product->get_name()), $cart_item, $cart_item_key));
-                                    }
-
-                                    do_action('woocommerce_after_cart_item_name', $cart_item, $cart_item_key);
-
-                                    // Meta data.
-                                    echo wc_get_formatted_cart_item_data($cart_item); // PHPCS: XSS ok.
-
-                                    // Backorder notification.
-                                    if ($_product->backorders_require_notification() && $_product->is_on_backorder($cart_item['quantity'])) {
-                                        echo wp_kses_post(apply_filters('woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__('Available on backorder', 'woocommerce') . '</p>', $product_id));
-                                    }
-                                    ?>
-                                </div>
-
-                                <div class="product-price flex justify-between md:justify-end grow-0 md:w-[15%] text-right" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
-                                    <span class="md:hidden text-base"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
-                                    <div class="flex flex-col items-end">
-                                        <div class="flex items-end">
-                                            <span class="[&_ins]:no-underline [&_del_bdi]:text-foreground [&_del_bdi]:opacity-50 [&_del_bdi]:text-lg md:[&_del]:-mb-2 [&_del]:mr-2 md:[&_del]:mr-0 flex md:flex-col items-end"><?php echo $_product->get_price_html(); ?></span>
-                                            <span class="ml-2"><?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {
-                                                                                                        echo '/h';
-                                                                                                    } ?></span>
-                                        </div>
-                                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap text-[#A7A7A7] "> <?php echo get_product_tax_formatted($_product); ?></span>
-                                    </div>
-                                </div>
-
-                                <div class="product-quantity flex justify-between md:justify-end grow-0 md:w-[15%] min-w-28 text-right" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
-                                    <span class="md:hidden text-base"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
-                                    <?php
-                                    if ($_product->is_sold_individually()) {
-                                        $min_quantity = 1;
-                                        $max_quantity = 1;
-                                    } else {
-                                        $min_quantity = 0;
-                                        $max_quantity = $_product->get_max_purchase_quantity();
-                                    }
-
-                                    $product_quantity = woocommerce_quantity_input(
-                                        array(
-                                            'input_name'   => "cart[{$cart_item_key}][qty]",
-                                            'input_value'  => $cart_item['quantity'],
-                                            'max_value'    => $max_quantity,
-                                            'min_value'    => $min_quantity,
-                                            'product_name' => $product_name,
-                                        ),
-                                        $_product,
-                                        false
-                                    );
-
-                                    echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
-                                    ?>
-                                </div>
-
-                                <div class="product-subtotal flex justify-between md:justify-end grow-0 min-w-32 lg:min-w-40 md:w-[15%] text-right" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
-                                    <span class="md:hidden text-base"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
-                                    <div class="flex flex-col items-end">
-                                        <span class="font-extrabold"><?php echo number_format($cart_item['line_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {
-                                                                                                                                                                                                                                                                                                            echo '/h';
-                                                                                                                                                                                                                                                                                                        } ?></span>
-                                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap text-[#A7A7A7] font-semibold"> <?php echo '( ' . $cart_item['line_total'] + $cart_item['line_tax'] . ' ' . get_woocommerce_currency_symbol(); ?> <?php echo  esc_html_e('gross', 'smoothh') . ' )'; ?></span>
-                                    </div>
-                                </div>
-                                <?php if (WC()->cart->has_discount()) : ?>
-                                    <div class="flex shrink-0 justify-between md:justify-end items-center md:items-start grow-0 md:w-[15%] 2xl:w-[10%] text-right ">
-                                        <span class="md:hidden text-base"><?php esc_html_e('Discount', 'smoothh'); ?>:</span>
-                                        <span class="text-primary p-2 md:p-0 ">
-                                            <?php echo wc_price($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
-                                        </span>
-                                    </div>
-                                <?php endif; ?>
-                            </li>
-                    <?php
-                        }
-                    }
-                    ?>
-                </ul> -->
                 <div class="flex flex-row justify-between text-xl mb-8">
                     <div class="pt-0.5 md:pt-2.5">
                         <span class="text-primary font-extrabold"><?php esc_html_e('Total', 'woocommerce'); ?></span>
