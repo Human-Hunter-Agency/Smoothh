@@ -264,10 +264,12 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
 remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10, 0);
 
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
-remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
 
-add_action('woocommerce_after_single_product_summary','comments_template',10);
+remove_action('woocommerce_after_single_product_summary', 'comments_template', 10);
+
+add_action('woocommerce_after_single_product_summary', 'comments_template', 10);
 
 add_action('wp_enqueue_scripts', 'smoothh_disable_woocommerce_cart_fragments', 200);
 
@@ -622,9 +624,9 @@ function smoothh_override_checkout_fields($fields)
 				'required' => 'required',
 				'pattern'  => '^([0-9]){10}$',
 				'title'    => __('NIP number requires 10 digits', 'smoothh')
-				),
-				);
-				
+			),
+		);
+
 		$fields['billing']['billing_company_nip'] = array(
 			'type'		   => 'text',
 			'label'  => __('NIP Number', 'smoothh'),
@@ -684,12 +686,12 @@ function smoothh_custom_input_and_info()
 	));
 	echo '<p class="text-xs mt-0">' . __('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).', 'smoothh') . '</p>';
 
-	$categories_with_consultations = [28,26];
+	$categories_with_consultations = [28, 26];
 
-	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+	foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
 		$product = wc_get_product($cart_item['product_id']);
 		$prod_categories = $product->get_category_ids();
-		$intersection = array_intersect($prod_categories,$categories_with_consultations);
+		$intersection = array_intersect($prod_categories, $categories_with_consultations);
 		if (count($intersection) > 0) {
 			echo woocommerce_form_field('consent_consultation', array(
 				'type'      => 'checkbox',
@@ -699,7 +701,6 @@ function smoothh_custom_input_and_info()
 			break;
 		}
 	}
-
 }
 
 function smoothh_checkout_extra_validation($data, $errors)
@@ -709,12 +710,12 @@ function smoothh_checkout_extra_validation($data, $errors)
 	}
 
 	$includes_consultation = false;
-	$catgrories_with_consultations = [28,26];
+	$catgrories_with_consultations = [28, 26];
 
-	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+	foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
 		$product = wc_get_product($cart_item['product_id']);
 		$prod_categories = $product->get_category_ids();
-		$intersection = array_intersect($prod_categories,$catgrories_with_consultations);
+		$intersection = array_intersect($prod_categories, $catgrories_with_consultations);
 		if (count($intersection) > 0) {
 			$includes_consultation = true;
 			break;
@@ -1096,36 +1097,37 @@ function get_best_fit_image_size($custom_width)
 
 add_action('wpcf7_before_send_mail', 'smoothh_wpcf7_mail_before_send', 10, 3);
 
-function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission){
+function smoothh_wpcf7_mail_before_send($contact_form, $abort, $submission)
+{
 	$form_id = $contact_form->id();
 	if ($form_id == '1064') {
-		$mail = $contact_form->prop( 'mail_2' );
+		$mail = $contact_form->prop('mail_2');
 
 		$posted_data = $submission->get_posted_data();
 		$prod_id = $posted_data['prod-id'];
-		$product = wc_get_product( $prod_id );
+		$product = wc_get_product($prod_id);
 
 		$files = array();
 
 		if ($product->is_downloadable()) {
 			$downloads = $product->get_downloads();
-			foreach( $downloads as $download ) {
+			foreach ($downloads as $download) {
 				$files[] = $download->get_file();
 			}
 		}
 
 		$mail['body'] .= '<br>';
-		$mail['body'] .= __('Download links: ','smoothh');
+		$mail['body'] .= __('Download links: ', 'smoothh');
 		$mail['body'] .= '<br>';
-		$mail['body'] .= implode('<br>',$files);
+		$mail['body'] .= implode('<br>', $files);
 
-		$contact_form->set_properties( array( 'mail_2' => $mail ) );
-		
+		$contact_form->set_properties(array('mail_2' => $mail));
 	}
 }
 
-add_action( 'comment_post', 'smoothh_review_set_gdpr', 10, 3 );
-function smoothh_review_set_gdpr($comment_id,$comment_approved,$commentdata){
+add_action('comment_post', 'smoothh_review_set_gdpr', 10, 3);
+function smoothh_review_set_gdpr($comment_id, $comment_approved, $commentdata)
+{
 	$author_email = $commentdata['comment_author_email'];
 	if (isset($_POST['gdpr_woo_consent']) && $_POST['gdpr_woo_consent'] === 'yes') {
 		$dataSubject = gdpr('data-subject')->getByEmail($author_email);
@@ -1133,10 +1135,11 @@ function smoothh_review_set_gdpr($comment_id,$comment_approved,$commentdata){
 	}
 }
 
-function tm_epo_js_loader(){
-	do_action( 'woocommerce_tm_epo_enqueue_scripts');
+function tm_epo_js_loader()
+{
+	do_action('woocommerce_tm_epo_enqueue_scripts');
 }
-add_action( 'wp_enqueue_scripts', 'tm_epo_js_loader' );
+add_action('wp_enqueue_scripts', 'tm_epo_js_loader');
 
 
 // add_filter( 'awcdp_product_deposit_amount', 'awcdp_product_deposit_amount', 10, 2 );
