@@ -23,19 +23,19 @@ do_action('woocommerce_before_cart'); ?>
     <h1 class="text-3xl text-center text-primary font-extrabold"><?php echo __('Cart', 'woocommerce'); ?></h1>
 </div>
 <div class="relative mb-20">
-    <div class="-z-10 md:w-[85%] 2xl:w-[88%] absolute -top-10 bottom-20 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
+    <div class="-z-10 md:w-[85%] 2xl:w-[88%] absolute -top-14 bottom-20 lg:bottom-40 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
     </div>
     <div class="container">
 
-        <form class="woocommerce-cart-form not-prose bg-white border border-primary rounded-[15px] p-5 lg:p-[30px] mt-10 lg:mt-[100px]" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
+        <form class="woocommerce-cart-form not-prose bg-white border border-primary shadow-2xl rounded-[15px] p-5 lg:p-[30px] mt-10 lg:mt-[100px]" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
             <?php do_action('woocommerce_before_cart_table'); ?>
 
-            <h2 class="text-2xl md:text-3xl text-primary !mb-5 !mt-0 font-bold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
+            <h2 class="text-2xl md:text-3xl text-primary !mb-8 !mt-0 font-bold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
             <?php if (!(WC()->cart->has_discount('EXTRA10'))) : ?>
                 <p class="mb-7"><?php echo __('For orders of at least 100USD, get a <b>10%</b> discount with the code <b>EXTRA10</b>.', 'smoothh'); ?></p>
             <?php endif; ?>
             <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
-                <div class="hidden md:flex gap-2.5 lg:gap-5 items-end border-b border-b-gray-500">
+                <div class="hidden md:flex gap-2.5 lg:gap-5 items-end border-b border-b-gray-300">
                     <span class="product-name grow md:w-2/5 text-left text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?>:</span>
                     <span class="product-price grow-0 w-[15%] text-right text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
                     <span class="product-quantity grow-0 w-[15%] min-w-28 text-right text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
@@ -64,7 +64,7 @@ do_action('woocommerce_before_cart'); ?>
                         if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
                             $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
                     ?>
-                            <li class="woocommerce-cart-form__cart-item cart_item flex flex-col md:flex-row gap-2.5 lg:gap-5 mb-5 md:mb-0 py-3 border-b border-b-gray-500 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+                            <li class="woocommerce-cart-form__cart-item cart_item flex flex-col md:flex-row gap-2.5 lg:gap-5 mb-5 md:mb-0 pt-3 pb-2 border-b border-b-gray-300 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
                                 <div class="product-name grow md:w-2/5 md:pb-5 lg:pb-8 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                                     <?php
@@ -100,7 +100,7 @@ do_action('woocommerce_before_cart'); ?>
                                                                                                         echo '/h';
                                                                                                     } ?></span>
                                         </div>
-                                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap text-gray-500 font-semibold"> <?php echo get_product_tax_formatted($_product); ?></span>
+                                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap text-gray-300 "> <?php echo get_product_tax_formatted($_product); ?></span>
                                     </div>
                                 </div>
 
@@ -137,7 +137,7 @@ do_action('woocommerce_before_cart'); ?>
                                         <span class="font-extrabold"><?php echo number_format($cart_item['line_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {
                                                                                                                                                                                                                                                                                         echo '/h';
                                                                                                                                                                                                                                                                                     } ?></span>
-                                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap text-gray-500 font-semibold"> <?php echo '( ' . $cart_item['line_total'] + $cart_item['line_tax'] . ' ' . get_woocommerce_currency_symbol(); ?> <?php echo  esc_html_e('gross', 'smoothh') . ' )'; ?></span>
+                                        <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap text-gray-300 font-semibold"> <?php echo '( ' . $cart_item['line_total'] + $cart_item['line_tax'] . ' ' . get_woocommerce_currency_symbol(); ?> <?php echo  esc_html_e('gross', 'smoothh') . ' )'; ?></span>
                                     </div>
                                 </div>
                                 <?php if (WC()->cart->has_discount()) : ?>
@@ -154,14 +154,14 @@ do_action('woocommerce_before_cart'); ?>
                     }
                     ?>
                 </ul>
-                <div class="flex flex-col gap-2.5 md:gap-0 md:flex-row justify-between text-xl mb-5">
+                <div class="flex flex-col gap-2.5 md:gap-0 md:flex-row justify-between text-xl mb-8">
                         <div class="pt-0.5 md:pt-2.5">
-                            <span class="text-primary font-bold"><?php esc_html_e('Total', 'woocommerce'); ?></span>
-                            <span class="text-base text-right text-gray-500 font-semibold block mt-1"><?php esc_html_e('Total taxed', 'smoothh'); ?></span>
+                            <span class="text-primary font-extrabold"><?php esc_html_e('Total', 'woocommerce'); ?></span>
+                            <span class="text-base text-right text-gray-300 font-semibold block mt-2.5"><?php esc_html_e('Total taxed', 'smoothh'); ?></span>
                         </div>
-                        <div class="flex flex-col lg:w-[calc(50%_+_20px)] pl-2.5 text-right md:pt-2.5 text-primary font-bold " data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
+                        <div class="flex flex-col lg:w-[calc(50%_+_20px)] pl-2.5 text-right md:pt-2.5 text-primary  " data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                             <span class="font-extrabold"><?php echo wc_price(WC()->cart->get_totals()['cart_contents_total']) ?> <?php esc_html_e('net', 'smoothh') ?></span>
-                            <span class="text-base text-right text-gray-500 font-semibold block mt-1">( <?php
+                            <span class="text-base text-right text-gray-300 font-semibold block mt-2.5">( <?php
                                                                                                 $tax_formatted = wc_price(WC()->cart->get_totals()['total']);
                                                                                                 echo  $tax_formatted . ' ' . __('gross', 'smoothh');
                                                                                                 ?>)</span>
@@ -170,7 +170,7 @@ do_action('woocommerce_before_cart'); ?>
 
                 <?php do_action('woocommerce_cart_contents'); ?>
 
-                <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-5">
+                <div class="flex flex-col lg:flex-row justify-between lg:items-end gap-5 mb-5">
                     <div>
                         <?php if (wc_coupons_enabled()) { ?>
                             <?php foreach (WC()->cart->get_coupons() as $code => $coupon) : ?>
@@ -183,7 +183,7 @@ do_action('woocommerce_before_cart'); ?>
                             <div class="coupon flex">
                                 <label for="coupon_code" class="screen-reader-text"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label>
                                 <input type="text" name="coupon_code" class="input-text h-[55px] w-full max-w-80 pl-3 md:pl-[18px] pr-4 min-w-0 text-base bg-transparent placeholder:text-foreground border border-r-0 border-primary rounded-l-2xl hover:border-secondary outline-1 -outline-offset-2 outline-transparent [outline-style:solid] focus:outline-1 focus:border-secondary focus:outline-secondary transition-all duration-200" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
-                                <button type="submit" class="!ml-[-15px] shrink-0 !relative z-10 h-auto !text-base !text-white !font-bold !text-center !rounded-2xl hover:!bg-gradient-to-b !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 !p-2 !px-5 xl:!px-[50px] button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>">
+                                <button type="submit" class="!ml-[-15px] shrink-0 !relative z-10 h-auto !text-base !text-white !font-bold !text-center !rounded-r-2xl hover:!bg-gradient-to-b !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 !p-2 !px-5 xl:!px-[50px] button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>">
                                     <?php esc_html_e('Apply coupon', 'woocommerce'); ?>
                                 </button>
                                 <?php do_action('woocommerce_cart_coupon'); ?>
@@ -198,7 +198,7 @@ do_action('woocommerce_before_cart'); ?>
                     </div>
 
                     <div class="text-base flex flex-col md:flex-row gap-5">
-                        <a href="/sklep" class="whitespace-nowrap w-full border-2 border-[#F2F2F2] hover:border-primary hover:text-primary transition duration-200 text-black min-h-[55px] px-5 xl:px-10 rounded-[15px] font-bold flex items-center justify-center gap-8">
+                        <a href="/sklep" class="whitespace-nowrap w-full border-2 border-foreground hover:border-primary hover:text-primary transition duration-200 text-foreground min-h-[55px] px-5 xl:px-10 rounded-[15px] font-bold flex items-center justify-center gap-8">
                             <?php esc_attr_e('Continue shopping', 'woocommerce'); ?>
                             <svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle class="stroke-black" cx="9.5" cy="9.5" r="9"></circle>
