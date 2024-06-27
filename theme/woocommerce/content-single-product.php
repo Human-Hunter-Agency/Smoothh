@@ -85,7 +85,7 @@ else :
 			<aside class="md:basis-1/4 md:grow-0 md:shrink-0 relative">
 				<div class="md:sticky top-[115px]">
 					<div class="p-[18px] pb-6 border border-primary rounded-[15px] shadow-2xl mb-5 md:mb-10">
-						<?php the_title('<h3 class="text-primary text-lg md:text-xl font-bold mb-5 pb-5 border border-b-[1px] border-[#D6D6D6]">', '</h3>'); ?>
+						<?php the_title('<h3 class="text-primary text-lg md:text-xl font-bold mb-5 pb-5 border-b-[1px] border-[#D6D6D6]">', '</h3>'); ?>
 						<div class="flex flex-col gap-5 lg:gap-[35px] justify-between items-end">
 							<?php if ($show_select_cat_products == true) :
 								$products_args = array(
