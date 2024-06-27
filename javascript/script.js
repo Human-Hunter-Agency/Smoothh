@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initFloatingNavBar();
 	initMenuSubmenus();
 	initHideFormConfirmation();
+	loginPageSectionToggleInit();
 });
 
 function initMenuCollapse() {
@@ -1372,5 +1373,20 @@ function initHideFormConfirmation(){
 				wpcf7.reset(form)
 			})
 		}
+	})
+}
+
+function loginPageSectionToggleInit(){
+	const tilesWrapper = document.querySelector('[data-js="tiles-wrapper]')
+	if(!tilesWrapper) return
+
+	const registerWrapper = document.querySelector('[data-js="register-wrapper"]')
+	const toggleBtns = document.querySelectorAll('[data-js="register-toggle"]')
+
+	toggleBtns.forEach(btn=>{
+		btn.addEventListener('click',()=>{
+			registerWrapper.classList.toggle('active')
+			tilesWrapper.classList.toggle('disabled')
+		})
 	})
 }
