@@ -29,7 +29,7 @@ if ($product && $styles_basic) : ?>
             </h4>
         </div>
         <div class="w-full flex-1 p-3 md:p-6 min-h-[300px]">
-            <div class="mb-8 text-sm md:text-base prose-strong:font-semibold">
+            <div class="mb-8 text-sm md:text-base prose-strong:font-semibold text-center">
                 <?php echo $product->get_short_description() ?>
             </div>
         </div>
