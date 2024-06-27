@@ -235,7 +235,7 @@ else :
 		/**
 		 * Hook: woocommerce_after_single_product_summary.
 		 *
-		 * @hooked comments_template - 10
+		 * @hooked comments_template - 10 - removed
 		 * @hooked woocommerce_output_product_data_tabs - 10 - removed
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
@@ -249,7 +249,6 @@ else :
 		$client_logos = get_field('client_logos', 'option');
 		if ($above_footer_fields) {
 			$header_logos = $above_footer_fields['header_logos'];
-			$header_case_studies = $above_footer_fields['header_case_studies'];
 			$cta_header = $above_footer_fields['cta_header'];
 			$cta_btn = $above_footer_fields['cta_btn'];
 			$cta_bg = $above_footer_fields['cta_bg'];
@@ -292,21 +291,6 @@ else :
 			</div>
 		</section>
 
-		<section class="relative py-10 md:py-[60px] mb:pb-[60px]">
-			<?php if (isset($header_case_studies) && $header_case_studies) : ?>
-				<div class="container">
-					<div class="relative z-0">
-						<h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
-							<?php echo esc_html($header_case_studies); ?>
-						</h2>
-					</div>
-				</div>
-			<?php endif;
-
-			get_template_part('flexible-content/sections/partials/case-studies-swiper', '');
-			?>
-
-		</section>
 		<section>
 			<?php if ($cta_bg || $cta_header || $cta_btn) :
 
