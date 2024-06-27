@@ -32,7 +32,7 @@ if ($related_products) : ?>
         ?>
             <div class="container">
                 <div class="relative z-0">
-                    <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-9 md:mb-14">
+                    <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] mb-9 md:mb-14">
                         <?php echo esc_html($heading); ?><span class="text-primary"><?php echo esc_html($headingColored); ?></span>
                     </h2>
                 </div>
