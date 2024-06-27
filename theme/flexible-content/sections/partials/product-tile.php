@@ -77,16 +77,17 @@ if ($product && $styles_basic) : ?>
             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
         </div>
         <div class="relative w-full min-h-[450px] flex-1 p-6 flex flex-col justify-between ">
-            <div class="flex flex-col gap-2 justify-between mb-5">
-                <h4 class="text-lg md:text-xl text-primary font-bold">
+            
+            <div class="mb-5 flex flex-col">
+                <h4 class="text-lg md:text-xl text-primary font-bold mb-5">
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
+                <p class="text-sm md:text-base prose-strong:font-semibold">
+                    <?php echo $product->get_short_description() ?>
+                </p>
             </div>
-            <p class="text-sm md:text-base prose-strong:font-semibold">
-                <?php echo $product->get_short_description() ?>
-            </p>
 
-            <div class="mt-5">
+            <div>
                 <div class="flex text-lg md:text-xl flex-wrap shrink-0">
                     <?php
                     $has_variable_price = get_field('variable_price', $product->get_id());
