@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Single variation display
  *
@@ -10,20 +11,20 @@
  * @version 2.5.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 ?>
 <script type="text/template" id="tmpl-variation-template">
-	<div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+    <div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
 	<div class="woocommerce-variation-price flex items-end justify-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-primary [&_bdi]:text-4xl [&_del_bdi]:!text-xl [&_bdi]:!font-normal [&_bdi]:text-primary [&_ins]:no-underline [&_del_bdi]:!text-foreground [&_del]:h-8 [&_del]:!decoration-foreground [&_del_bdi]:mr-1.5">
-        <span class="[&_.price]:flex [&_.price]:flex-col [&_.price]:items-end">
+        <span class="[&_.price]:flex [&_.price]:flex-col [&_.price]:items-end [&_.price]:text-foreground [&_.price]:text-[22px] [&_.price]:font-bold">
             {{{ data.variation.price_html }}}
         </span>    
-        <span class="net-label text-primary font-normal text-xl md:text-2xl whitespace-nowrap"><?php echo get_woocommerce_currency_symbol()?> <?php esc_html_e('net','smoothh') ?>{{{ data.variation.hourly_text }}}</span>
+        <span class="net-label text-primary font-normal text-xl md:text-2xl whitespace-nowrap"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?>{{{ data.variation.hourly_text }}}</span>
     </div>
     <span class="woocommerce-variation-tax mb-2 text-foreground text-lg md:text-base text-right ml-auto block">{{{ data.variation.tax_text }}}</span>
 	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
 </script>
 <script type="text/template" id="tmpl-unavailable-variation-template">
-	<p><?php esc_html_e( 'Sorry, this product is unavailable. Please choose a different combination.', 'woocommerce' ); ?></p>
+    <p><?php esc_html_e('Sorry, this product is unavailable. Please choose a different combination.', 'woocommerce'); ?></p>
 </script>
