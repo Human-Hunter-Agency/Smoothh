@@ -61,7 +61,7 @@ do_action('woocommerce_before_main_content');
 
     <div class="mx-auto pt-10 mb-10 md:mb-20">
         <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] text-foreground prose-strong:text-primary">
-            <?php __('Choose product for <strong>yourself</strong>', 'smoothh'); ?>
+            <?php echo __('Choose product for <strong>yourself</strong>', 'smoothh'); ?>
         </h2>
     </div>
 
