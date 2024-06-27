@@ -22,11 +22,11 @@ if (!defined('ABSPATH')) {
 
 do_action('woocommerce_before_customer_login_form'); ?>
 
-<div class="relative my-10">
+<div class="relative my-16">
   <div class="-z-10 lg:w-[85%] 2xl:w-[88%] absolute inset-y-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
   </div>
   <div class="container h-auto [&.disabled]:h-0 [&.disabled]:overflow-hidden [&.disabled]:invisible [&.disabled]:opacity-0 transition duration-300" data-js="tiles-wrapper">
-    <div class="py-10 max-w-screen-md mx-auto flex flex-col md:flex-row justify-center gap-5" id="customer_login">
+    <div class="pt-20 pb-1 max-w-screen-md mx-auto flex flex-col md:flex-row justify-center gap-5" id="customer_login">
       
       <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
     
@@ -116,7 +116,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
   </div>
   <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
     <div class="container invisible h-0 [&.active]:h-auto overflow-hidden [&.active]:overflow-visible [&.active]:visible opacity-0 [&.active]:opacity-100 transition duration-300" data-js="register-wrapper">
-      <div class="py-10">
+      <div class="pt-20 pb-1">
         <form method="post" class="woocommerce-form woocommerce-form-register register bg-white !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary shadow-2xl !rounded-[15px] h-full" <?php do_action('woocommerce_register_form_tag'); ?>>
     
           <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
@@ -190,7 +190,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
     
         </form>
         <div class="hidden" data-js="hidden-inputs"></div>
-        <span class="text-primary hover:underline cursor-pointer block mt-5" data-js="register-toggle"><?php esc_html_e("Back", 'smoothh'); ?></span>
+        <span class="text-primary hover:underline cursor-pointer block mt-5 w-fit" data-js="register-toggle">< <?php esc_html_e("Back", 'smoothh'); ?></span>
       </div>
     </div>
   <?php endif; ?>
