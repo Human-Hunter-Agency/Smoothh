@@ -133,7 +133,7 @@ do_action('woocommerce_before_main_content');
         <?php if (isset($header_logos) && $header_logos) : ?>
             <div class="container">
                 <div class="relative z-0">
-                    <div class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-5">
+                    <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                         <?php echo esc_html($header_logos); ?>
                     </div>
                 </div>
@@ -142,8 +142,8 @@ do_action('woocommerce_before_main_content');
         <?php if (isset($description_logos) && $description_logos) : ?>
             <div class="container">
                 <div class="relative z-0">
-                    <div class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-5">
-                        <?php echo esc_html($header_logos); ?>
+                    <div class="mb-12 mx-auto max-w-[800px] text-[16px] font-normal leading-[26px]">
+                        <?php echo esc_html($description_logos); ?>
                     </div>
                 </div>
             </div>
