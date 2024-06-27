@@ -22,16 +22,73 @@ if (!defined('ABSPATH')) {
 
 do_action('woocommerce_before_customer_login_form'); ?>
 
+<h1 class="text-3xl mt-10 font-bold"><?php esc_html_e("Login/Register", 'smoothh'); ?></h1>
 <div class="relative my-16">
   <div class="-z-10 lg:w-[85%] 2xl:w-[88%] absolute inset-y-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
   </div>
   <div class="container h-auto [&.disabled]:h-0 [&.disabled]:overflow-hidden [&.disabled]:invisible [&.disabled]:opacity-0 transition duration-300" data-js="tiles-wrapper">
     <div class="pt-20 pb-1 max-w-screen-md mx-auto flex flex-col md:flex-row justify-center gap-5" id="customer_login">
+
+    <div class="basis-1/2">
+    
+      <form class="woocommerce-form woocommerce-form-login login bg-white !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary shadow-2xl !rounded-[15px]" method="post">
+
+        <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e('Log in', 'woocommerce'); ?></h2>
+
+        <?php do_action('woocommerce_login_form_start'); ?>
+
+        <p class="woocommerce-form-row woocommerce-form-row--wide _form-row form-row-wide p-0 mb-5">
+          <!-- <label for="username !hidden"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label> -->
+          <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition-all duration-200 hover:border-secondary accent-primary w-full outline-1 -outline-offset-2 outline-transparent [outline-style:solid] focus:outline-1 focus:border-secondary focus:outline-secondary " name="username" id="username" placeholder="Login" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
+                                                                                                                                                                                                                                                                                                                                                                                                                                    ?>
+        </p>
+        <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !p-0 !mb-5">
+          <!-- <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
+          <input class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition-all duration-200 hover:border-secondary accent-primary w-full !outline-1 !-outline-offset-2 !outline-transparent ![outline-style:solid] focus:!outline-1 focus:border-secondary focus:!outline-secondary " type="password" name="password" id="password" autocomplete="current-password" placeholder="Hasło" />
+        </p>
+
+        <?php do_action('woocommerce_login_form'); ?>
+
+        <div class="_form-row">
+          <div class="flex gap-5 mb-5">
+            <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+              <input class="woocommerce-form__input woocommerce-form__input-checkbox !border-red-500 !border-[2px]" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e('Remember me', 'woocommerce'); ?></span>
+            </label>
+            <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
+            <p class="woocommerce-LostPassword lost_password text-primary">
+              <a class="font-semibold hover:underline" href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Lost your password?', 'woocommerce'); ?></a>
+            </p>
+          </div>
+
+          <button type="submit" class="woocommerce-button button woocommerce-form-login__submit h-[55px] w-full !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>">
+            <?php esc_html_e('Log in', 'woocommerce'); ?>
+            <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
+              <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
+            </svg>
+          </button>
+
+          <div class="login-with-socials w-full">
+            <p class="mb-3 text-center"><?php esc_html_e('or continue with', 'smoothh'); ?></p>
+            <div class="mb-5 [&_ul]:flex [&_ul]:gap-2 [&_ul]:justify-center [&_ul]:items-center">
+              <?php echo do_shortcode('[TheChamp-Login]') ?>
+            </div>
+
+          </div>
+        </div>
+
+        <?php do_action('woocommerce_login_form_end'); ?>
+
+      </form>
+      <?php do_action('woocommerce_after_customer_login_form'); ?>
+
+    </div>
       
       <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
     
         <div class="basis-1/2 bg-white px-5 md:px-8 pt-9 pb-6 border border-primary shadow-2xl !rounded-[15px]">
             <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e("I don't have an account", 'smoothh'); ?></h2>
+            <p class="mb-10 block"><?php esc_html_e("No account text", 'smoothh'); ?></p>
             
             <?php
             $login_page_id = 848;
@@ -39,15 +96,15 @@ do_action('woocommerce_before_customer_login_form'); ?>
             ?>
               <a href="<?php echo get_permalink(wc_get_page_id('checkout')) . '?is_guest=true'; ?>" class="group w-full !mb-5 flex items-center justify-center gap-4 !font-semibold rounded-2xl border border-primary bg-white text-primary hover:bg-primary hover:text-white disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100 transition-all duration-200 py-[15px] px-5 xl:px-8">
                 <?php esc_html_e('Continue as a guest', 'smoothh'); ?>
-                <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="inline-block -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle class="stroke-primary group-hover:stroke-white transition duration-200" cx="9.5" cy="9.5" r="9"></circle>
                   <path class="fill-primary group-hover:fill-white transition duration-200" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
                 </svg>
               </a>
             <?php endif; ?>
-            <button data-js="register-toggle" class="w-full h-[55px] !mb-3 flex items-center gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-[50px] ">
+            <button data-js="register-toggle" class="w-full h-[55px] !mb-3 flex justify-center items-center gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-8 ">
               <?php esc_html_e('Create an account', 'smoothh'); ?>
-              <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg class="inline-block -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
                 <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
               </svg>
@@ -55,62 +112,6 @@ do_action('woocommerce_before_customer_login_form'); ?>
         </div>
     
       <?php endif; ?>
-    
-        <div class="basis-1/2">
-    
-          <form class="woocommerce-form woocommerce-form-login login bg-white !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary shadow-2xl !rounded-[15px]" method="post">
-    
-            <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e('Log in', 'woocommerce'); ?></h2>
-    
-            <?php do_action('woocommerce_login_form_start'); ?>
-    
-            <p class="woocommerce-form-row woocommerce-form-row--wide _form-row form-row-wide p-0 mb-5">
-              <!-- <label for="username !hidden"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label> -->
-              <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition-all duration-200 hover:border-secondary accent-primary w-full outline-1 -outline-offset-2 outline-transparent [outline-style:solid] focus:outline-1 focus:border-secondary focus:outline-secondary " name="username" id="username" placeholder="Login" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
-                                                                                                                                                                                                                                                                                                                                                                                                                                        ?>
-            </p>
-            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !p-0 !mb-5">
-              <!-- <label for="password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
-              <input class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition-all duration-200 hover:border-secondary accent-primary w-full !outline-1 !-outline-offset-2 !outline-transparent ![outline-style:solid] focus:!outline-1 focus:border-secondary focus:!outline-secondary " type="password" name="password" id="password" autocomplete="current-password" placeholder="Hasło" />
-            </p>
-    
-            <?php do_action('woocommerce_login_form'); ?>
-    
-            <div class="_form-row">
-              <div class="flex gap-5 mb-5">
-                <label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
-                  <input class="woocommerce-form__input woocommerce-form__input-checkbox !border-red-500 !border-[2px]" name="rememberme" type="checkbox" id="rememberme" value="forever" /> <span><?php esc_html_e('Remember me', 'woocommerce'); ?></span>
-                </label>
-                <?php wp_nonce_field('woocommerce-login', 'woocommerce-login-nonce'); ?>
-                <p class="woocommerce-LostPassword lost_password text-primary">
-                  <a class="font-semibold hover:underline" href="<?php echo esc_url(wp_lostpassword_url()); ?>"><?php esc_html_e('Lost your password?', 'woocommerce'); ?></a>
-                </p>
-              </div>
-    
-              <button type="submit" class="woocommerce-button button woocommerce-form-login__submit h-[55px] w-full !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('Log in', 'woocommerce'); ?>">
-                <?php esc_html_e('Log in', 'woocommerce'); ?>
-                <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
-                  <path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
-                </svg>
-              </button>
-    
-              <div class="login-with-socials w-full">
-                <p class="mb-3 text-center"><?php esc_html_e('or continue with', 'smoothh'); ?></p>
-                <div class="mb-5 [&_ul]:flex [&_ul]:gap-2 [&_ul]:justify-center [&_ul]:items-center">
-                  <?php echo do_shortcode('[TheChamp-Login]') ?>
-                </div>
-    
-              </div>
-            </div>
-    
-            <?php do_action('woocommerce_login_form_end'); ?>
-    
-          </form>
-    
-        </div>
-    
-        <?php do_action('woocommerce_after_customer_login_form'); ?>
         
     </div>
   </div>
@@ -122,20 +123,20 @@ do_action('woocommerce_before_customer_login_form'); ?>
           <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
     
           <div class="register-fields smoothh-inputs-basic smoothh-inputs-validation">
-            <div class="w-full mb-5 flex flex-col md:flex-row md:items-center justify-end" data-priority="5">
+            <div class="w-full mb-5 flex flex-col md:flex-row md:items-center" data-priority="5">
               <p class="block mb-2 md:mb-0 mr-3 font-bold text-lg">
                 <?php esc_html_e('Account type:', 'smoothh'); ?>
               </p>
-              <ul class="flex items-center gap-2">
+              <ul class="flex items-center flex-wrap gap-2 md:gap-4">
                 <li>
                   <input type="radio" class="hidden peer" name="account_type" id="candidate" value="candidate" checked/>
-                  <label for="candidate" class="px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
+                  <label for="candidate" class="block px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
                     <?php esc_html_e('Candidate', 'smoothh'); ?>
                   </label>
                 </li>
                 <li>
                   <input type="radio" class="hidden peer" name="account_type" id="client" value="client"/>
-                  <label for="client" class="px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
+                  <label for="client" class="block px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
                     <?php esc_html_e('Client', 'smoothh'); ?>
                   </label>
                 </li>
