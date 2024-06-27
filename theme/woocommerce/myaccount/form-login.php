@@ -22,9 +22,7 @@ if (!defined('ABSPATH')) {
 
 do_action('woocommerce_before_customer_login_form'); ?>
 
-<div class="container mt-5">
-  <h1 class="mx-auto max-w-screen-md text-3xl font-bold"><?php esc_html_e("Login/Register", 'smoothh'); ?></h1>
-</div>
+  <h1 class="container text-3xl font-bold"><?php esc_html_e("Login/Register", 'smoothh'); ?></h1>
 <div class="relative md:my-16 mb-16">
   <div class="-z-10 lg:w-[85%] 2xl:w-[88%] absolute inset-y-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
   </div>
