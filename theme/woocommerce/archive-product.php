@@ -117,84 +117,78 @@ do_action('woocommerce_before_main_content');
     }
     ?>
 
-</div>
+    <?php
+    $above_footer_fields = get_field('category_sections_settings', 'option');
+    $client_logos = get_field('client_logos', 'option');
+    if ($above_footer_fields) {
+        $header_logos = $above_footer_fields['header_logos'];
+        $cta_header = $above_footer_fields['cta_header'];
+        $cta_btn = $above_footer_fields['cta_btn'];
+    }
 
-<?php
-$above_footer_fields = get_field('category_sections_settings', 'option');
-$client_logos = get_field('client_logos', 'option');
-if ($above_footer_fields) {
-    $header_logos = $above_footer_fields['header_logos'];
-    $cta_header = $above_footer_fields['cta_header'];
-    $cta_btn = $above_footer_fields['cta_btn'];
-}
+    ?>
 
-?>
-
-<section class="relative py-10 md:py-[60px] mb:pb-[60px]">
-    <?php if (isset($header_logos) && $header_logos) : ?>
-        <div class="container">
-            <div class="relative z-0">
-                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-5">
-                    <?php echo esc_html($header_logos); ?>
-                </h2>
-            </div>
-        </div>
-    <?php endif; ?>
-    <div class="relative z-0 w-full overflow-hidden !pb-5">
-        <?php if ($client_logos) : ?>
-            <div class="swiper !container !overflow-visible" data-js="swiper-logos">
-                <div class="swiper-wrapper items-center">
-                    <?php foreach ($client_logos as $logo) : ?>
-                        <div class="swiper-slide mr-5 md:px-5 opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
-                            <?php echo smoothh_img_responsive($logo, 'object-contain max-h-28', array(300, 112), 'lazy'); ?>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <div class="swiper-button-prev">
-                    <svg width="12" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M-0.00195312 8.99988L11.998 0.33962L11.998 17.6601L-0.00195312 8.99988Z" fill="white" />
-                    </svg>
-                </div>
-                <div class="swiper-button-next">
-                    <svg width="12" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 9L0 17.6603V0.339746L12 9Z" fill="white" />
-                    </svg>
+    <section class="relative py-10 md:py-[60px] mb:pb-[60px]">
+        <?php if (isset($header_logos) && $header_logos) : ?>
+            <div class="container">
+                <div class="relative z-0">
+                    <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-5">
+                        <?php echo esc_html($header_logos); ?>
+                    </h2>
                 </div>
             </div>
         <?php endif; ?>
-    </div>
-</section>
-
-<section>
-    <?php if ($cta_bg || $cta_header || $cta_btn) :
-
-        if ($cta_bg['url']) {
-            $bg_url = $cta_bg['url'];
-        }
-    ?>
-        <div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
-            <?php if (isset($bg_url)) : ?>
-                <?php echo smoothh_img_responsive($cta_bg, 'absolute inset-0 -z-20 object-cover !h-full w-full', null, 'lazy'); ?>
+        <div class="relative z-0 w-full overflow-hidden !pb-5">
+            <?php if ($client_logos) : ?>
+                <div class="swiper !container !overflow-visible" data-js="swiper-logos">
+                    <div class="swiper-wrapper items-center">
+                        <?php foreach ($client_logos as $logo) : ?>
+                            <div class="swiper-slide mr-5 md:px-5 opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
+                                <?php echo smoothh_img_responsive($logo, 'object-contain max-h-28', array(300, 112), 'lazy'); ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <svg width="12" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M-0.00195312 8.99988L11.998 0.33962L11.998 17.6601L-0.00195312 8.99988Z" fill="white" />
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next">
+                        <svg width="12" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 9L0 17.6603V0.339746L12 9Z" fill="white" />
+                        </svg>
+                    </div>
+                </div>
             <?php endif; ?>
-
-            <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
-
-            <div class="relative z-0 flex flex-col items-center justify-center container">
-                <?php if (isset($cta_header)) : ?>
-                    <h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9"><?php echo esc_html($cta_header); ?></h1>
-                    <?php endif; ?>
-
-                    <?php if (isset($cta_btn)) :
-                        $btn_url = $cta_btn['url'];
-                        $btn_title = $cta_btn['title'];
-                        $btn_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
-                    ?>
-                        <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-[14px] text-[13px] font-bold py-2 px-7 md:px-[70px] border-2 border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
-                    <?php endif; ?>
-            </div>
         </div>
-    <?php endif; ?>
-</section>
+    </section>
+
+    <section>
+        <?php if ($cta_header || $cta_btn) :
+        ?>
+            <div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
+                <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
+
+                <div class="relative z-0 flex flex-col items-center justify-center container">
+                    <?php if (isset($cta_header)) : ?>
+                        <h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9"><?php echo esc_html($cta_header); ?></h1>
+                        <?php endif; ?>
+
+                        <?php if (isset($cta_btn)) :
+                            $btn_url = $cta_btn['url'];
+                            $btn_title = $cta_btn['title'];
+                            $btn_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
+                        ?>
+                            <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-[14px] text-[13px] font-bold py-2 px-7 md:px-[70px] border-2 border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
+                        <?php endif; ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    </section>
+
+</div>
+
+
 
 
 
