@@ -37,7 +37,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
             $login_page_id = 848;
             if (get_the_ID() == $login_page_id) :
             ?>
-              <a href="<?php echo get_permalink(wc_get_page_id('checkout')) . '?is_guest=true'; ?>" class="group w-full !mb-5 flex items-center justify-center gap-4 !font-semibold rounded-2xl border border-primary bg-white text-primary hover:bg-primary hover:text-white disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100 transition-all duration-200 py-[15px] px-5 xl:px-[50px] 2xl:px-8">
+              <a href="<?php echo get_permalink(wc_get_page_id('checkout')) . '?is_guest=true'; ?>" class="group w-full !mb-5 flex items-center justify-center gap-4 !font-semibold rounded-2xl border border-primary bg-white text-primary hover:bg-primary hover:text-white disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100 transition-all duration-200 py-[15px] px-5 xl:px-8">
                 <?php esc_html_e('Continue as a guest', 'smoothh'); ?>
                 <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle class="stroke-primary group-hover:stroke-white transition duration-200" cx="9.5" cy="9.5" r="9"></circle>
