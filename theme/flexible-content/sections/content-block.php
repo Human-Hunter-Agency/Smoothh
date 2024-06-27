@@ -9,7 +9,7 @@ $has_bg = $args['has_bg'];
 
 ?>
 
-<div class="relative py-10 md:py-20 mb-10 md:mb-20 ">
+<div class="relative py-10 md:py-20 mb-10  ">
     <?php if ($has_bg) : ?>
         <div class="z-[-1] w-full h-full absolute top-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]  "></div>
     <?php endif; ?>
@@ -21,7 +21,7 @@ $has_bg = $args['has_bg'];
                 </div>
             <?php endif; ?>
             <?php if ($content) : ?>
-                <div class="m-8 !mt-0 mx-auto max-w-[900px] text-[16px] font-normal leading-[26px] prose-ul:list-inside prose-li:marker:content-['●'] prose-li:marker:text-foreground prose-li:my-1 <?php if ($has_bg) : ?> [&_*]:!text-white <?php endif; ?> [&_.circled]:size-12 md:[&_.circled]:size-[70px] [&_.circled]:text-white [&_.circled]:rounded-full [&_.circled]:bg-primary  [&_.circled]:inline-flex [&_.circled]:items-center [&_.circled]:justify-center [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
+                <div class="m-8 !mt-0 mx-auto max-w-[900px] text-[16px] font-normal leading-[26px] prose-ul:list-inside prose-li:marker:content-['●'] prose-li:marker:text-foreground prose-li:my-1 [&_.circled]:size-12 md:[&_.circled]:size-[70px] [&_.circled]:text-white [&_.circled]:rounded-full [&_.circled]:bg-primary  [&_.circled]:inline-flex [&_.circled]:items-center [&_.circled]:justify-center [&_.circled]:font-bold [&_.circled]:whitespace-nowrap">
                     <?php echo $content; ?>
                 </div>
             <?php endif; ?>
