@@ -740,3 +740,7 @@ i[data-tm-tooltip-html] {
 .archive .orderby {
 	@apply !hidden;
 }
+
+.open-popup-link{
+	@apply !hidden
+}
