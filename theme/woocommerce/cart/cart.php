@@ -36,15 +36,15 @@ do_action('woocommerce_before_cart'); ?>
             <?php endif; ?>
             <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
 
-                <table class="w-full text-left mb-10">
+                <table class="w-full text-left mb-8">
                     <thead>
                         <tr class="hidden md:table-row border-b-2 border-b-[#D6D6D6] md:prose-th:!pr-2">
-                            <th class="product-name grow text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?></th>
-                            <th class="product-price grow-0 text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Price', 'woocommerce'); ?></th>
-                            <th class="product-quantity grow-0 min-w-28  text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
-                            <th class="product-subtotal grow-0 text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
+                            <th class="product-name grow text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Product', 'woocommerce'); ?></th>
+                            <th class="product-price grow-0 text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Price', 'woocommerce'); ?></th>
+                            <th class="product-quantity grow-0 min-w-28  text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
+                            <th class="product-subtotal grow-0 text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
                             <?php if (WC()->cart->has_discount()) : ?>
-                                <th class="product-discount shrink-0 grow-0 text-base lg:text-xl font-bold pb-5 lg:pb-8 text-primary"><?php esc_html_e('Discount', 'smoothh'); ?></th>
+                                <th class="product-discount shrink-0 grow-0 text-base lg:text-xl font-bold pb-5  text-primary"><?php esc_html_e('Discount', 'smoothh'); ?></th>
                             <?php endif; ?>
                         </tr>
                     </thead>
