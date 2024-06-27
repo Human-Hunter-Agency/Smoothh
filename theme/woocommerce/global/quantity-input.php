@@ -33,13 +33,13 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
 	 */
 	do_action( 'woocommerce_before_quantity_input_field' );
 	?>
-    <div data-js="qty-control" class="flex">
+    <div data-js="qty-control" class="flex items-center gap-1">
         <label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
         <input
         type="<?php echo esc_attr( $type ); ?>"
             <?php echo $readonly ? 'readonly="readonly"' : ''; ?>
             id="<?php echo esc_attr( $input_id ); ?>"
-            class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?> text-xl appearance-none !w-12 h-12 bg-transparent border border-primary rounded-md overflow-hidden text-primary"
+            class="<?php echo esc_attr( join( ' ', (array) $classes ) ); ?> text-xl font-bold appearance-none !size-10 bg-transparent border border-primary rounded-md overflow-hidden text-primary"
             name="<?php echo esc_attr( $input_name ); ?>"
             value="<?php echo esc_attr( $input_value ); ?>"
             aria-label="<?php esc_attr_e( 'Product quantity', 'woocommerce' ); ?>"
@@ -53,14 +53,15 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
                 autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
                 <?php endif; ?>
                 />
-            <button data-js="down" type="button" class="group appearance-none size-4 p-1 cursor-pointer">
-                <svg class="w-full stroke-primary stroke-2 group-hover:stroke-foreground transition duration-200" width="12" height="1" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button data-js="down" type="button" class="group appearance-none size-4 p-1 ml-1 cursor-pointer">
+                <svg class="w-full stroke-primary stroke-2 group-hover:stroke-foreground transition duration-200" width="16" height="1" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0.193359" y1="0.5" x2="12" y2="0.5"/>
                 </svg>
             </button>
             <button data-js="up" type="button" class="group appearance-none size-4 p-1 cursor-pointer">
-                <svg class="w-full stroke-primary stroke-2 group-hover:stroke-foreground transition duration-200" width="12" height="1" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0.193359" y1="0.5" x2="12" y2="0.5"/>
+                <svg class="w-full stroke-primary stroke-2 group-hover:stroke-foreground transition duration-200" width="16" height="15" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.193359" y1="0.5" x2="12" y2="0.5" stroke-width="1px"></line>
+                    <line x1="0.193359" y1="0.5" x2="15" y2="0.5" transform="rotate(90 7 -0.5)" stroke-width="1px"></line>
                 </svg>
             </button>
     </div>
