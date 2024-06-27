@@ -24,7 +24,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
   <h1 class="container text-3xl font-bold"><?php esc_html_e("Login/Register", 'smoothh'); ?></h1>
 <div class="relative md:my-16 mb-16">
-  <div class="-z-10 lg:w-[85%] 2xl:w-[88%] absolute inset-y-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
+  <div class="-z-10 md:w-[85%] 2xl:w-[88%] absolute inset-y-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
   </div>
   <div class="container h-auto [&.disabled]:h-0 [&.disabled]:overflow-hidden [&.disabled]:invisible [&.disabled]:opacity-0 transition duration-300" data-js="tiles-wrapper">
     <div class="pt-10 md:pt-20 pb-1 max-w-screen-md mx-auto flex flex-col md:flex-row justify-center gap-5" id="customer_login">
