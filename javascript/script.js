@@ -1377,7 +1377,7 @@ function initHideFormConfirmation(){
 }
 
 function loginPageSectionToggleInit(){
-	const tilesWrapper = document.querySelector('[data-js="tiles-wrapper]')
+	const tilesWrapper = document.querySelector('[data-js="tiles-wrapper"]')
 	if(!tilesWrapper) return
 
 	const registerWrapper = document.querySelector('[data-js="register-wrapper"]')
