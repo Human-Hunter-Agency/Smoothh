@@ -14,7 +14,7 @@ global $product;
 
 $is_hourly = get_field('product_hourly', $product->get_id());
 ?>
-<div class="woocommerce-variation-add-to-cart variations_button !mt-8 flex items-center">
+<div class="woocommerce-variation-add-to-cart variations_button !mt-8 flex justify-end items-center">
 	<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
 	<?php
