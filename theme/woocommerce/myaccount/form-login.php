@@ -122,20 +122,20 @@ do_action('woocommerce_before_customer_login_form'); ?>
           <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
     
           <div class="register-fields smoothh-inputs-basic smoothh-inputs-validation">
-            <div class="w-full mb-5" data-priority="5">
-              <p class="mb-2">
+            <div class="w-full mb-5 flex flex-col md:flex-row md:items-center justify-end" data-priority="5">
+              <p class="block mb-2 md:mb-0 mr-3 font-bold text-lg">
                 <?php esc_html_e('Account type:', 'smoothh'); ?>
               </p>
               <ul class="flex items-center gap-2">
                 <li>
                   <input type="radio" class="hidden peer" name="account_type" id="candidate" value="candidate" checked/>
-                  <label for="candidate" class="px-4 py-2 rounded-lg text-base border border-primary bg-transparent peer-checked:bg-primary/5 hover:bg-primary/[0.03] transition-all duration-200 cursor-pointer outline-1 -outline-offset-2 outline-transparent [outline-style:solid] peer-checked:outline-1 peer-checked:outline-primary">
+                  <label for="candidate" class="px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
                     <?php esc_html_e('Candidate', 'smoothh'); ?>
                   </label>
                 </li>
                 <li>
                   <input type="radio" class="hidden peer" name="account_type" id="client" value="client"/>
-                  <label for="client" class="px-4 py-2 rounded-lg text-base border border-primary bg-transparent peer-checked:bg-primary/5 hover:bg-primary/[0.03] transition-all duration-200 cursor-pointer outline-1 -outline-offset-2 outline-transparent [outline-style:solid] peer-checked:outline-1 peer-checked:outline-primary">
+                  <label for="client" class="px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
                     <?php esc_html_e('Client', 'smoothh'); ?>
                   </label>
                 </li>
@@ -175,9 +175,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
             <?php do_action('woocommerce_register_form'); ?>
           </div>
     
-          <div class="woocommerce-form-row form-row !mt-5">
+          <div class="woocommerce-form-row form-row !mt-5 flex justify-center">
             <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
-            <button type="submit" class="woocommerce-Button woocommerce-button button h-[55px] !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
+            <button type="submit" class="woocommerce-Button woocommerce-button button h-[55px] w-full max-w-80 !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
               <?php esc_html_e('Register', 'woocommerce'); ?>
               <svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
