@@ -5,7 +5,11 @@
 
 ?>
 <?php if (isset($shortcode) && $shortcode) : ?>
-    <div class="container">
-        <?php echo do_shortcode($shortcode); ?>
-    </div>
+    <?php if($shortcode == '[woocommerce_my_account]' && !is_user_logged_in()): ?>
+            <?php echo do_shortcode($shortcode); ?>    
+    <?php else: ?>
+        <div class="container">
+            <?php echo do_shortcode($shortcode); ?>
+        </div>
+    <?php endif; ?>
 <?php endif ; ?>
