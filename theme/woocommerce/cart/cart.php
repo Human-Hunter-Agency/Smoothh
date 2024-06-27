@@ -154,10 +154,8 @@ do_action('woocommerce_before_cart'); ?>
                     }
                     ?>
                 </ul>
-                <div class="flex flex-col gap-2.5 md:gap-0 md:flex-row justify-end text-xl mb-5">
-                    <div class="grow border-t border-[#F2F2F2]"></div>
-                    <div class="flex justify-between md:justify-end md:w-[calc(30%_+_20px)] lg:w-[calc(30%_+_40px)]">
-                        <span class="lg:w-[calc(50%_+_20px)] lg:min-w-28 text-right pt-0.5 md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]"><?php esc_html_e('Total', 'woocommerce'); ?>:</span>
+                <div class="flex flex-col gap-2.5 md:gap-0 md:flex-row justify-between text-xl mb-5">
+                        <span class="pt-0.5 md:pt-2.5 text-primary font-semibold"><?php esc_html_e('Total', 'woocommerce'); ?>:</span>
                         <div class="flex flex-col lg:w-[calc(50%_+_20px)] pl-2.5 <?php if (WC()->cart->has_discount()) : ?> md:mr-2.5 lg:mr-5 <?php endif; ?> text-right md:pt-2.5 text-primary font-semibold md:border-t border-[#F2F2F2]" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                             <span><?php echo wc_price(WC()->cart->get_totals()['cart_contents_total']) ?> <?php esc_html_e('net', 'smoothh') ?></span>
                             <span class="text-base text-right text-foreground font-normal">( <?php
@@ -165,13 +163,6 @@ do_action('woocommerce_before_cart'); ?>
                                                                                                 echo  $tax_formatted . ' ' . __('gross', 'smoothh');
                                                                                                 ?>)</span>
                         </div>
-                    </div>
-                    <?php if (WC()->cart->has_discount()) : ?>
-                        <div class="flex flex-row justify-between md:justify-end items-center grow-0 shrink-0 md:w-[15%] 2xl:w-[10%] rounded-b-[15px] min-w-32 lg:min-w-40 ">
-                            <span class="md:hidden text-base"><?php esc_html_e('Discount sum', 'smoothh'); ?>:</span>
-                            <div class="text-right text-primary font-semibold md:border-t border-white"><?php echo WC()->cart->get_total_discount(); ?></div>
-                        </div>
-                    <?php endif; ?>
                 </div>
 
                 <?php do_action('woocommerce_cart_contents'); ?>
