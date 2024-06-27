@@ -32,37 +32,6 @@ if ($product && $styles_basic) : ?>
             <div class="mb-8 text-sm md:text-base prose-strong:font-semibold">
                 <?php echo $product->get_short_description() ?>
             </div>
-            <div class="flex flex-col justify-between mb-5">
-
-                <?php // if (is_user_logged_in() || is_prod_guest_available($product)) : 
-                ?>
-                <div class="flex text-lg md:text-xl flex-wrap shrink-0 font-bold">
-                    <?php
-                    $has_variable_price = get_field('variable_price', $product->get_id());
-                    $is_hourly = get_field('product_hourly');
-                    if (isset($has_variable_price) && $has_variable_price) :
-                    ?>
-                        <span class="text-foreground font-normal text-base leading-loose mr-1"><?php esc_html_e('From', 'smoothh') ?></span>
-                    <?php endif ?>
-                    <div class="flex flex-col items-end mr-2 whitespace-nowrap">
-                        <span>
-                            <?php echo number_format(wc_get_price_excluding_tax($product), wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?>
-                        </span>
-                        <?php if (has_sale($product)) : ?>
-                            <span class="!text-lg !leading-4 h-5 text-black opacity-50 line-through font-normal">
-                                <?php echo get_product_regular_price_formatted($product); ?>
-                            </span>
-                        <?php endif ?>
-                    </div>
-                    <span><?php esc_html_e('net', 'smoothh') ?><?php if ($is_hourly) {
-                                                                    echo '/h';
-                                                                } ?></span>
-
-                </div>
-                <span class="text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap"> <?php echo get_product_tax_formatted($product);; ?></span>
-                <?php //endif; 
-                ?>
-            </div>
         </div>
         <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
             <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Show product', 'smoothh'); ?>
