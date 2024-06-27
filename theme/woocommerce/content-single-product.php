@@ -78,7 +78,7 @@ else :
 
 		<div class="container flex flex-col md:flex-row md:justify-between gap-5 md:gap-6 lg:gap-10">
 			<div class="w-full">
-				<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-9 md:mb-[55px] text-primary">
+				<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-9 md:mb-[55px] md:prose-h2:text-primary">
 					<?php the_content() ?>
 				</div>
 			</div>
