@@ -25,15 +25,12 @@ if ($related_products) : ?>
     <section class="relative pb-10 mb:pb-[60px]">
 
         <?php
-        $heading = apply_filters('woocommerce_product_related_products_heading', __('Related ', 'woocommerce'));
-        $headingColored = apply_filters('woocommerce_product_related_products_heading', __('products', 'woocommerce'));
-
         if ($heading) :
         ?>
             <div class="container">
                 <div class="relative z-0">
-                    <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] mb-9 md:mb-14">
-                        <?php echo esc_html($heading); ?><span class="text-primary"><?php echo esc_html($headingColored); ?></span>
+                    <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] mb-9 md:mb-14 prose-strong:text-primary">
+                        <?php echo __('Related <strong>products</strong>', 'smoothh') ?>
                     </h2>
                 </div>
             </div>
