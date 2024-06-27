@@ -122,6 +122,7 @@ do_action('woocommerce_before_main_content');
     $client_logos = get_field('client_logos', 'option');
     if ($above_footer_fields) {
         $header_logos = $above_footer_fields['header_logos'];
+        $description_logos = $above_footer_fields['description_logos'];
         $cta_header = $above_footer_fields['cta_header'];
         $cta_btn = $above_footer_fields['cta_btn'];
     }
@@ -132,9 +133,18 @@ do_action('woocommerce_before_main_content');
         <?php if (isset($header_logos) && $header_logos) : ?>
             <div class="container">
                 <div class="relative z-0">
-                    <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl mb-5">
+                    <div class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-5">
                         <?php echo esc_html($header_logos); ?>
-                    </h2>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if (isset($description_logos) && $description_logos) : ?>
+            <div class="container">
+                <div class="relative z-0">
+                    <div class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-5">
+                        <?php echo esc_html($header_logos); ?>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>
