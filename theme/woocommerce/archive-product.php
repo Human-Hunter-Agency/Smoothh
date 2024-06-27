@@ -133,8 +133,8 @@ do_action('woocommerce_before_main_content');
         <?php if (isset($header_logos) && $header_logos) : ?>
             <div class="container">
                 <div class="relative z-0">
-                    <div class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-5">
-                        <?php echo esc_html($header_logos); ?>
+                    <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+                        <?php echo $header_logos; ?>
                     </div>
                 </div>
             </div>
@@ -142,8 +142,8 @@ do_action('woocommerce_before_main_content');
         <?php if (isset($description_logos) && $description_logos) : ?>
             <div class="container">
                 <div class="relative z-0">
-                    <div class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-5">
-                        <?php echo esc_html($header_logos); ?>
+                    <div class="mb-12 mx-auto max-w-[800px] text-[16px] font-normal leading-[26px]">
+                        <?php echo $description_logos ?>
                     </div>
                 </div>
             </div>
@@ -176,22 +176,18 @@ do_action('woocommerce_before_main_content');
     <section>
         <?php if ($cta_header || $cta_btn) :
         ?>
-            <div class="relative w-full flex flex-col items-center justify-center py-10 md:py-[70px]">
-                <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/70"></div>
+            <div class="mx-auto w-full translate-y-1/2 px-4 md:px-8 lg:px-24 py-8 md:py-14 flex flex-col md:flex-row gap-2 items-center justify-between drop-shadow-2xl rounded-3xl bg-gradient-to-b from-secondary to-primary">
+                <?php if (isset($cta_header)) : ?>
+                    <h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-left"><?php echo esc_html($cta_header); ?></h1>
+                    <?php endif; ?>
 
-                <div class="relative z-0 flex flex-col items-center justify-center container">
-                    <?php if (isset($cta_header)) : ?>
-                        <h3 class="text-3xl md:text-5xl text-bold text-white font-bold mb-9"><?php echo esc_html($cta_header); ?></h1>
-                        <?php endif; ?>
-
-                        <?php if (isset($cta_btn)) :
-                            $btn_url = $cta_btn['url'];
-                            $btn_title = $cta_btn['title'];
-                            $btn_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
-                        ?>
-                            <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-[14px] text-[13px] font-bold py-2 px-7 md:px-[70px] border-2 border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
-                        <?php endif; ?>
-                </div>
+                    <?php if (isset($cta_btn)) :
+                        $btn_url = $cta_btn['url'];
+                        $btn_title = $cta_btn['title'];
+                        $btn_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
+                    ?>
+                        <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="rounded-3xl text-lg md:text-xl font-semibold md:font-bold py-2 px-5 md:px-12 border-[1px] border-white text-white bg-transparent hover:bg-white/20 transition duration-200"><?php echo esc_html($btn_title); ?></a>
+                    <?php endif; ?>
             </div>
         <?php endif; ?>
     </section>
