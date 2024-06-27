@@ -38,7 +38,7 @@ do_action('woocommerce_before_cart'); ?>
 
                 <table class="w-full text-left mb-8">
                     <thead>
-                        <tr class="hidden md:table-row border-b-2 border-b-[#D6D6D6] md:prose-th:!pr-2">
+                        <tr class="hidden md:table-row border-b border-b-[#D6D6D6] md:prose-th:!pr-2">
                             <th class="product-name grow text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Product', 'woocommerce'); ?></th>
                             <th class="product-price grow-0 text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Price', 'woocommerce'); ?></th>
                             <th class="product-quantity grow-0 min-w-28  text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
@@ -69,7 +69,7 @@ do_action('woocommerce_before_cart'); ?>
                             if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
                                 $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
                         ?>
-                                <tr class="woocommerce-cart-form__cart-item cart_item flex flex-col md:table-row gap-2.5 mb-5 md:mb-0 pt-3 pb-2 md:py-0 border-b-2 border-b-[#D6D6D6] md:prose-td:!py-3 md:prose-td:!pr-2 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+                                <tr class="woocommerce-cart-form__cart-item cart_item flex flex-col md:table-row gap-2.5 mb-5 md:mb-0 pt-3 pb-2 md:py-0 border-b border-b-[#D6D6D6] md:prose-td:!py-3 md:prose-td:!pr-2 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
                                     <td class="product-name grow md:w-1/3 lg:w-2/5 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                                         <?php
