@@ -20,9 +20,9 @@ defined('ABSPATH') || exit;
         <span class="[&_.price]:flex [&_.price]:flex-col [&_.price]:items-end">
             {{{ data.variation.price_html }}}
         </span>    
-        <span class="net-label text-primary font-normal text-xl md:text-2xl whitespace-nowrap"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?>{{{ data.variation.hourly_text }}}</span>
+        <span class="net-label text-foreground font-normal text-xl md:text-[22px] whitespace-nowrap"><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?>{{{ data.variation.hourly_text }}}</span>
     </div>
-    <span class="woocommerce-variation-tax mb-2 text-foreground text-lg md:text-base text-right ml-auto block">{{{ data.variation.tax_text }}}</span>
+    <span class="woocommerce-variation-tax mb-2 text-[#A7A7A7] text-lg md:text-base text-right ml-auto block">{{{ data.variation.tax_text }}}</span>
 	<div class="woocommerce-variation-availability">{{{ data.variation.availability_html }}}</div>
 </script>
 <script type="text/template" id="tmpl-unavailable-variation-template">
