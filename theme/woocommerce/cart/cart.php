@@ -35,7 +35,7 @@ do_action('woocommerce_before_cart'); ?>
                 <p class="mb-7"><?php echo __('For orders of at least 100USD, get a <b>10%</b> discount with the code <b>EXTRA10</b>.', 'smoothh'); ?></p>
             <?php endif; ?>
             <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
-                <div class="hidden md:flex gap-2.5 lg:gap-5 items-end border-b border-b-gray-300">
+                <div class="hidden md:flex gap-2.5 lg:gap-5 items-end border-b-2 border-b-gray-300">
                     <span class="product-name grow md:w-2/5 text-left text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Product', 'woocommerce'); ?></span>
                     <span class="product-price grow-0 w-[15%] text-right text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Price', 'woocommerce'); ?></span>
                     <span class="product-quantity grow-0 w-[15%] min-w-28 text-right text-base lg:text-xl font-bold pb-5 lg:pb-8"><?php esc_html_e('Quantity', 'woocommerce'); ?></span>
@@ -64,7 +64,7 @@ do_action('woocommerce_before_cart'); ?>
                         if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $cart_item, $cart_item_key)) {
                             $product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
                     ?>
-                            <li class="woocommerce-cart-form__cart-item cart_item flex flex-col md:flex-row gap-2.5 lg:gap-5 mb-5 md:mb-0 pt-3 pb-2 border-b border-b-gray-300 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
+                            <li class="woocommerce-cart-form__cart-item cart_item flex flex-col md:flex-row gap-2.5 lg:gap-5 mb-5 md:mb-0 pt-3 pb-2 border-b-2 border-b-gray-300 <?php echo esc_attr(apply_filters('woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key)); ?>">
 
                                 <div class="product-name grow md:w-2/5 md:pb-5 lg:pb-8 overflow-hidden text-ellipsis" data-title="<?php esc_attr_e('Product', 'woocommerce'); ?>">
                                     <?php
@@ -160,9 +160,9 @@ do_action('woocommerce_before_cart'); ?>
                             <span class="text-base text-gray-300 font-semibold block mt-2.5"><?php esc_html_e('Total taxed', 'smoothh'); ?></span>
                         </div>
                         <div class="flex flex-col lg:w-[calc(50%_+_20px)] pl-2.5 text-right md:pt-2.5 text-primary  " data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
-                            <span class="font-extrabold"><?php echo wc_price(WC()->cart->get_totals()['cart_contents_total']) ?> <?php esc_html_e('net', 'smoothh') ?></span>
+                            <span class="font-extrabold"><?php echo wc_price(WC()->cart->get_cart_total()) ?> <?php esc_html_e('net', 'smoothh') ?></span>
                             <span class="text-base text-right text-gray-300 font-semibold block mt-2.5">( <?php
-                                                                                                $tax_formatted = wc_price(WC()->cart->get_totals()['total']);
+                                                                                                $tax_formatted = wc_price(WC()->cart->get_total_ex_tax());
                                                                                                 echo  $tax_formatted . ' ' . __('gross', 'smoothh');
                                                                                                 ?>)</span>
                         </div>
