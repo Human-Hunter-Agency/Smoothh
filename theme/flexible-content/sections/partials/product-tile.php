@@ -76,7 +76,7 @@ if ($product && $styles_basic) : ?>
             <?php echo $product->get_image() ?>
             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
         </div>
-        <div class="relative w-full min-h-[450px] flex-1 p-6">
+        <div class="relative w-full min-h-[450px] flex-1 p-6 flex flex-col justify-between ">
             <div class="flex flex-col gap-2 justify-between mb-5">
                 <h4 class="text-lg md:text-xl text-primary font-bold">
                     <?php echo get_the_title($product->get_id()) ?>
@@ -86,7 +86,7 @@ if ($product && $styles_basic) : ?>
                 <?php echo $product->get_short_description() ?>
             </p>
 
-            <div class="absolute bottom-6">
+            <div class="mt-5">
                 <div class="flex text-lg md:text-xl flex-wrap shrink-0">
                     <?php
                     $has_variable_price = get_field('variable_price', $product->get_id());
