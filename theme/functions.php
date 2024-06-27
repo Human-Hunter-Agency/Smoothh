@@ -784,7 +784,7 @@ function login_page_redirects()
 	if (!is_user_logged_in() && is_page($checkout_pageid) && !$is_guest && !is_wc_endpoint_url('order-received')) {
 		$url = add_query_arg(
 			'redirect_to',
-			get_permalink($pageid),
+			get_permalink($checkout_pageid),
 			site_url('/logowanie/')
 		);
 		wp_redirect($url);
