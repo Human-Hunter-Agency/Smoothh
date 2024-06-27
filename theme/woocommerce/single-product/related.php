@@ -23,18 +23,13 @@ if (!defined('ABSPATH')) {
 if ($related_products) : ?>
 
     <section class="relative pb-10 mb:pb-[60px]">
-
-        <?php
-        if ($heading) :
-        ?>
-            <div class="container">
-                <div class="relative z-0">
-                    <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] mb-9 md:mb-14 prose-strong:text-primary">
-                        <?php echo __('Related <strong>products</strong>', 'smoothh') ?>
-                    </h2>
-                </div>
+        <div class="container">
+            <div class="relative z-0">
+                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] mb-9 md:mb-14 prose-strong:text-primary">
+                    <?php echo __('Related <strong>products</strong>', 'smoothh') ?>
+                </h2>
             </div>
-        <?php endif; ?>
+        </div>
 
         <?php get_template_part('flexible-content/sections/partials/products-swiper-wrapper', '', array('products' => $related_products)); ?>
 
