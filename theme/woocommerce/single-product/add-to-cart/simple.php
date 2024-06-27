@@ -31,7 +31,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 
 	<?php do_action('woocommerce_before_add_to_cart_form'); ?>
 
-	<form class="cart !mb-0 flex items-center" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
+	<form class="cart !mb-0 mt-8 flex items-center" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
 		<?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
 		<?php
@@ -171,15 +171,16 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 								<circle cx="62.5" cy="62.5" r="60.5" stroke="url(#paint1_linear_560_1182)" stroke-width="4"></circle>
 								<path d="M38.5713 62.5L54.2856 77.8571L85.7141 47.1428" stroke="url(#paint1_linear_560_1182)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
 								<defs>
-								<linearGradient id="paint1_linear_560_1182" x1="2.357" y1="1.8214" x2="94.357" y2="90.8214" gradientUnits="userSpaceOnUse">
-								<stop stop-color="#8117EE"></stop><stop offset="1" stop-color="#1F97D4"></stop>
-								</linearGradient>
+									<linearGradient id="paint1_linear_560_1182" x1="2.357" y1="1.8214" x2="94.357" y2="90.8214" gradientUnits="userSpaceOnUse">
+										<stop stop-color="#8117EE"></stop>
+										<stop offset="1" stop-color="#1F97D4"></stop>
+									</linearGradient>
 								</defs>
 							</svg>
-							<h4 class="text-center text-lg md:text-[20px] max-w-[460px] font-bold mb-5"><?php esc_html_e( 'Thank you for sending your message', 'smoothh' ); ?></h4>
-							<p class="text-center text-base max-w-[460px] mb-10 md:mb-16"><?php esc_html_e( 'Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh' ); ?></p>
+							<h4 class="text-center text-lg md:text-[20px] max-w-[460px] font-bold mb-5"><?php esc_html_e('Thank you for sending your message', 'smoothh'); ?></h4>
+							<p class="text-center text-base max-w-[460px] mb-10 md:mb-16"><?php esc_html_e('Our experts are already verifying your message, we will get back to you soon with the information you need', 'smoothh'); ?></p>
 							<button data-js-form-reset="form-negotiate-wrapper" class="w-full max-w-[520px] border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 !rounded-[15px] font-semibold !flex items-center justify-center">
-								<?php esc_html_e( 'Go back to form', 'smoothh' ); ?>
+								<?php esc_html_e('Go back to form', 'smoothh'); ?>
 							</button>
 						</div>
 					</div>
