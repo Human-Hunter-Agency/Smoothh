@@ -78,7 +78,7 @@ else :
 
 		<div class="container flex flex-col md:flex-row md:justify-between gap-5 md:gap-6 lg:gap-10">
 			<div class="w-full">
-				<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-9 md:mb-[55px] text-primary">
+				<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-9 md:mb-[55px] md:prose-h2:text-primary">
 					<?php the_content() ?>
 				</div>
 			</div>
@@ -131,26 +131,6 @@ else :
 								?>
 							</div>
 						</div>
-					</div>
-
-					<div class="px-[18px]">
-						<h5 class="mb-4 md:mb-6 text-2xl md:text-3xl font-semibold text-primary"><?php esc_html_e('Product categories', 'smoothh'); ?></h5>
-						<?php
-						$args = array(
-							'taxonomy'     => 'product_cat',
-							'title_li'     => '',
-						);
-						$all_categories = get_categories($args);
-
-						if ($all_categories) : ?>
-
-							<ul class="list-none [&_.cat-item]:mb-4 md:[&_.cat-item]:mb-6 font-semibold [&_.cat-item]:text-base md:[&_.cat-item]:text-xl [&_a]:transition [&_a]:duration-200 hover:[&_a]:text-primary">
-								<?php foreach ($all_categories as $cat) {
-									echo '<li class="cat-item"><a href="' . get_term_link($cat->slug, 'product_cat') . '">' . $cat->name . '</a></li>';
-								} ?>
-							</ul>
-
-						<?php endif ?>
 					</div>
 				</div>
 

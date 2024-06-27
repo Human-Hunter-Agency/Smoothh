@@ -27,7 +27,7 @@ $is_hourly = get_field('product_hourly');
 ?>
 <?php if (!$product->is_type('variable')) : // if (is_user_logged_in() || is_prod_guest_available($product)) : 
 ?>
-    <div class="<?php echo esc_attr(apply_filters('woocommerce_product_price_class', 'price')); ?> pb-5 flex flex-col gap-1 border-b-[1px] border-[#D6D6D6]">
+    <div class="<?php echo esc_attr(apply_filters('woocommerce_product_price_class', 'price')); ?> w-full pb-5 flex flex-col items-end gap-1 border-b-[1px] border-[#D6D6D6]">
         <p class="flex items-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden [&_bdi]:text-[26px] [&_del_bdi]:!text-xl [&_bdi]:!font-bold [&_ins]:no-underline [&_del_bdi]:!text-foreground [&_del]:h-8 [&_del]:!decoration-foreground [&_del_bdi]:mr-1.5">
             <?php if (isset($has_variable_price) && $has_variable_price) : ?>
                 <span class="text-foreground font-normal text-xl md:text-2xl mr-2"><?php esc_html_e('From', 'smoothh') ?></span>
