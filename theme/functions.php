@@ -269,8 +269,6 @@ remove_action('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30
 
 remove_action('woocommerce_after_single_product_summary', 'comments_template', 10);
 
-add_action('woocommerce_after_single_product_summary', 'comments_template', 10);
-
 add_action('wp_enqueue_scripts', 'smoothh_disable_woocommerce_cart_fragments', 200);
 
 function smoothh_disable_woocommerce_cart_fragments()
