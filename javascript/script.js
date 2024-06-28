@@ -195,7 +195,7 @@ function initDefaultSwipers() {
 		'[data-js="swiper-tiles-default"]'
 	);
 	swiperContainers.forEach((el) => {
-		new Swiper(el, {
+		const swiper = new Swiper(el, {
 			spaceBetween: 20,
 			slidesPerView: 1.2,
 			modules: [Navigation],
@@ -225,6 +225,9 @@ function initDefaultSwipers() {
 				},
 			},
 		});
+		//TEMP lock fix
+		swiper.slideNext()
+		swiper.slidePrev()
 	});
 }
 
