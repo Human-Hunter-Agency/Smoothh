@@ -1331,7 +1331,7 @@ function stringToPriceFormat(val) {
 		val = parseFloat(val.replace(',', '.'));
 	}
 
-	return val.toFixed(2).replace('.', ',');
+	return val.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
 function initFloatingNavBar() {
