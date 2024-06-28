@@ -4,6 +4,7 @@
 
 $header = $args['header'];
 $description = $args['description'];
+$button = $args['button'];
 
 if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = $args['products_list'];
@@ -29,14 +30,23 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                 <?php echo $description; ?>
             </div>
         <?php endif; ?>
+
+        <ul class="w-full mb-10 md:mb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-12">
+            <?php foreach ($products as $product) : ?>
+                <li>
+                    <?php get_template_part('flexible-content/sections/partials/product-tile', '', array('product' => $product, 'swiper' => false,'styles_basic' => false)); ?>
+                </li>
+            <?php endforeach; ?>  
+        </ul>
+        <?php if( $button ): 
+            $btn_url = $button['url'];
+            $btn_title = $button['title'];
+            $btn_target = $button['target'] ? $button['target'] : '_self';
+            ?>
+            <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="p-2 text-foreground hover:text-primary w-fit mx-auto font-bold transition duration-200" >
+                <?php echo esc_html( $btn_title ); ?>
+        <?php endif; ?>
     </div>
 
-    <ul class="w-full mb-10 md:mb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-12">
-        <?php foreach ($products as $product) : ?>
-            <li>
-                <?php get_template_part('flexible-content/sections/partials/product-tile', '', array('product' => $product, 'swiper' => false,'styles_basic' => false)); ?>
-            </li>
-        <?php endforeach; ?>  
-    </ul>
 </section>
 <?php endif; ?>
