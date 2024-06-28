@@ -569,11 +569,11 @@ i.theChampLogin {
 }
 
 .job-offer-tile a .offer-wrapper {
-	@apply p-5 pb-10 flex flex-col justify-between transition duration-200;
+	@apply relative p-5 pb-10 flex flex-col justify-between transition duration-200;
 }
 
 .job-offer-tile .offer-title {
-	@apply text-lg md:text-xl font-semibold text-primary mb-5 max-w-80 relative;
+	@apply text-lg md:text-xl font-semibold text-primary mb-5 max-w-80;
 }
 
 .job-offer-tile .offer-new {
