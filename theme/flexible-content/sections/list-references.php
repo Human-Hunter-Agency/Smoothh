@@ -45,9 +45,8 @@ $list = $args['list'];
                             <?php if ($item['button']) :
                                 $btn_url = $item['button']['url'];
                                 $btn_title = $item['button']['title'];
-                                $btn_target = $item['button']['target'] ? $item['button']['target'] : '_self';
                             ?>
-                                <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="ml-auto text-[13px] font-bold py-2 px-7 text-secondary hover:text-primary transition duration-200"><?php echo esc_html($btn_title); ?></a>
+                                <a href="<?php echo esc_url($btn_url); ?>" target="_blank" class="ml-auto text-[13px] font-bold py-2 px-7 text-secondary hover:text-primary transition duration-200"><?php echo esc_html($btn_title); ?></a>
                             <?php endif; ?>
                         </div>
                     </div>
