@@ -43,14 +43,14 @@ $tiles_list = $args['tiles_list'];
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap xl:justify-center xl:gap-y-12 <?php endif; ?>">
                     <?php foreach ($tiles_list as $tile) : ?>
-                        <div class="swiper-slide !h-[580px] <?php if (!$tile['description']) : ?>!h-auto<?php endif; ?> !flex items-center flex-col <?php if (!$isSwiper) :  ?> xl:!basis-[calc(33%_-_56px)] <?php endif; ?> bg-white drop-shadow-lg lg:shadow-2xl rounded-2xl">
+                        <div class="swiper-slide !h-auto min-h-[460px] md:min-h-[580px] <?php if (!$tile['description']) : ?>!h-auto<?php endif; ?> !flex items-center flex-col <?php if (!$isSwiper) :  ?> xl:!basis-[calc(33%_-_56px)] <?php endif; ?> bg-white drop-shadow-lg lg:shadow-2xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
                                 <div class="w-full relative mb-5 <?php if (!$isSwiper) :  ?> !mb-0  <?php endif; ?> rounded-t-[14px] overflow-hidden">
                                     <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-[190px] md:!h-[220px]', array(360, 220), 'lazy'); ?>
                                     <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 </div>
                             <?php endif; ?>
-                            <div class="text-center px-3 md:px-6 !pt-0">
+                            <div class="text-center px-3 md:px-6 pb-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
                                     <h3 class="text-base md:text-[20px] mb-6 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-bold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
                                 <?php endif; ?>
