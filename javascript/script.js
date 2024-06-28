@@ -1046,6 +1046,11 @@ function initCalculator() {
 		return;
 	}
 
+	if (document.querySelector('.calculator .woocommerce-message')) {
+		const calcWrapper = document.querySelector('#calculator-wrapper')
+		window.scrollTo({top: calcWrapper.offsetTop,  behavior: 'smooth'})
+	}
+
 	const tabButtons = document.querySelectorAll('[data-js-calc-tab-btn]');
 	const calcTabs = document.querySelectorAll('[data-js-calc-content]');
 
