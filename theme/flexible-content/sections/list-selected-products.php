@@ -45,6 +45,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
             ?>
             <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="block p-2 text-[20px] text-foreground hover:text-primary w-fit mx-auto font-bold transition duration-200" >
                 <?php echo esc_html( $btn_title ); ?>
+            </a>
         <?php endif; ?>
     </div>
 
