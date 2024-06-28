@@ -199,7 +199,7 @@ function initDefaultSwipers() {
 			spaceBetween: 20,
 			slidesPerView: 1.2,
 			modules: [Navigation],
-			watchSlidesProgress: false,
+			watchSlidesProgress: true,
 			navigation: {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
