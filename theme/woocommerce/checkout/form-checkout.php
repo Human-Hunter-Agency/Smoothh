@@ -56,7 +56,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
       <div class="md:sticky md:top-[115px]">
         <?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
         <?php do_action('woocommerce_checkout_before_order_review'); ?>
-        <div id="order_review" class="woocommerce-checkout-review-order p-5 xl:p-8 border border-[#888] rounded-[15px] mb-8 md:mb-10">
+        <div id="order_review" class="woocommerce-checkout-review-order p-5 xl:p-8 border border-primary shadow-2xl rounded-[15px] mb-8 md:mb-10">
           <h3 id="order_review_heading" class="!mt-0 mb-9 text-2xl text-primary"><?php esc_html_e('Your order', 'woocommerce'); ?></h3>
           <?php do_action('woocommerce_checkout_order_review'); ?>
         </div>
