@@ -35,7 +35,7 @@
 }
 
 #primary-menu a {
-	@apply transition duration-200 hover:text-primary;
+	@apply cursor-pointer transition duration-200 hover:text-primary;
 }
 
 [aria-expanded="true"].menu-btn ~ #site-navigation {
