@@ -573,11 +573,11 @@ i.theChampLogin {
 }
 
 .job-offer-tile .offer-title {
-	@apply text-lg md:text-xl font-semibold text-primary mb-5 max-w-80;
+	@apply text-lg md:text-xl font-semibold text-primary mb-5 max-w-80 relative;
 }
 
 .job-offer-tile .offer-new {
-	@apply w-fit text-white bg-secondary px-7 py-1 rounded-full font-semibold absolute -translate-y-1/2;
+	@apply w-fit text-white bg-secondary px-7 py-1 rounded-full font-semibold absolute top-0;
 }
 
 [data-js-job-hidden="true"].job-offer-tile {
