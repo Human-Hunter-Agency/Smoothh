@@ -888,7 +888,7 @@ function createCategoriesEl(categories) {
 	let inputsHtml = '';
 	for (let i = 0; i < categories.length; i++) {
 		const value = categories[i];
-		let checkedAttr = i == 0 ? 'checked' : '';
+		let checkedAttr = i == categories.length - 1 ? 'checked' : '';
 		inputsHtml += `<label><input type="radio" name="category" value="${value}" ${checkedAttr}><span>${value}</span></label>`;
 	}
 	categoriesEl.innerHTML = inputsHtml;

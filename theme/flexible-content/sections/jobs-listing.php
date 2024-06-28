@@ -23,11 +23,11 @@ $endpoint_url = $args['endpoint'];
             <div data-js-jobs="container" data-js-endpoint="<?php echo $endpoint_url; ?>">
                 <div data-js-jobs="categories" class="!hidden p-2 rounded-2xl flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-3">
                 </div>
-                <form data-js-jobs="searchbar" class="!hidden px-10 py-12 lg:bg-[#F2F2F2] bg-white mx-auto max-w-screen-lg rounded-t-2xl flex">
+                <form data-js-jobs="searchbar" class="!hidden px-10 py-12 bg-white mx-auto max-w-screen-lg rounded-t-2xl flex">
                     <input type="text" class="bg-white h-[55px] w-full pl-3 md:pl-[18px] pr-4 min-w-0 text-base bg-transparent placeholder:text-foreground border border-r-0 border-primary rounded-l-2xl hover:border-secondary outline-1 -outline-offset-2 outline-transparent [outline-style:solid] focus:outline-1 focus:border-secondary focus:outline-secondary transition-all duration-200">
                     <button class="!ml-[-15px] shrink-0 !relative z-10 h-auto !text-base !text-white !font-bold !text-center !rounded-tr-2xl !rounded-br-2xl hover:!bg-gradient-to-b !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100 transition-all duration-200 !p-2 !px-5 xl:!px-[50px]"><?php echo __('Search', 'smoothh') ?></button>
                 </form>
-                <ul data-js-jobs="filters" class="mx-auto max-w-screen-lg p-4 pb-10 lg:p-10 lg:bg-[#F2F2F2] bg-white !hidden flex justify-center lg:flex-wrap gap-x-5 gap-y-2.5 mb-10 md:mb-14 rounded-b-2xl">
+                <ul data-js-jobs="filters" class="mx-auto max-w-screen-lg p-4 pb-10 lg:p-10 bg-white !hidden flex justify-center gap-x-5 gap-y-2.5 mb-10 md:mb-14 rounded-b-2xl">
                 </ul>
                 <ul data-js-jobs="list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 </ul>
