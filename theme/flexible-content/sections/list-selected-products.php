@@ -1,6 +1,6 @@
 <?php
 
-/** Template to display 'Swiper z produktami' - swiper_products */
+/** Template to display 'Lista z wybranymi produktami' - list_selected_products */
 
 $header = $args['header'];
 $description = $args['description'];
@@ -12,7 +12,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     }
 }
 ?>
-
+<?php if ($isset($products) && !empty($products)) : ?>
 <section class="relative py-10 mb:py-[60px] md:pt-[70px] md:!pb-[70px]">
     <div class="container">
         <?php if ($header) : ?>
@@ -31,14 +31,12 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
         <?php endif; ?>
     </div>
 
-    <?php if ($isset($products) && !empty($products)) : ?>
-        <ul class="w-full mb-10 md:mb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-12">
-            <?php foreach ($products as $product) : ?>
-                <li>
-                    <?php get_template_part('flexible-content/sections/partials/product-tile', '', array('product' => $product, 'swiper' => false,'styles_basic' => false)); ?>
-                </li>
-            <?php endforeach; ?>  
-        </ul>
-    <?php endif; ?>
-
+    <ul class="w-full mb-10 md:mb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-12">
+        <?php foreach ($products as $product) : ?>
+            <li>
+                <?php get_template_part('flexible-content/sections/partials/product-tile', '', array('product' => $product, 'swiper' => false,'styles_basic' => false)); ?>
+            </li>
+        <?php endforeach; ?>  
+    </ul>
 </section>
+<?php endif; ?>
