@@ -43,7 +43,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
             $btn_title = $button['title'];
             $btn_target = $button['target'] ? $button['target'] : '_self';
             ?>
-            <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="p-2 text-foreground hover:text-primary w-fit mx-auto font-bold transition duration-200" >
+            <a href="<?php echo esc_url( $btn_url ); ?>" target="<?php echo esc_attr( $btn_target ); ?>" class="block p-2 text-[20px] text-foreground hover:text-primary w-fit mx-auto font-bold transition duration-200" >
                 <?php echo esc_html( $btn_title ); ?>
         <?php endif; ?>
     </div>
