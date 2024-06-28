@@ -12,7 +12,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     }
 }
 ?>
-<?php if ($isset($products) && !empty($products)) : ?>
+<?php if (isset($products) && !empty($products)) : ?>
 <section class="relative py-10 mb:py-[60px] md:pt-[70px] md:!pb-[70px]">
     <div class="container">
         <?php if ($header) : ?>
