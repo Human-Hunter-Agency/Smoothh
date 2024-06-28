@@ -43,8 +43,7 @@ $tiles_list = $args['tiles_list'];
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap xl:justify-center xl:gap-y-12 <?php endif; ?>">
                     <?php foreach ($tiles_list as $tile) : ?>
-                        <a href="#" class="swiper-slide"></a>
-                        <!-- <div class="swiper-slide !h-auto <?php if ($tile['description']) : ?>min-h-[460px] md:min-h-[580px]<?php endif; ?> !flex items-center flex-col <?php if (!$isSwiper) :  ?> xl:!basis-[calc(33%_-_56px)] <?php endif; ?> bg-white drop-shadow-lg lg:shadow-2xl rounded-2xl">
+                        <div class="swiper-slide !h-auto <?php if ($tile['description']) : ?>min-h-[460px] md:min-h-[580px]<?php endif; ?> !flex items-center flex-col <?php if (!$isSwiper) :  ?> xl:!basis-[calc(33%_-_56px)] <?php endif; ?> bg-white drop-shadow-lg lg:shadow-2xl rounded-2xl">
                             <?php if ($tile['image'] && $tile['image']['url']) : ?>
                                 <div class="w-full relative mb-5 <?php if (!$isSwiper) :  ?> !mb-0  <?php endif; ?> rounded-t-[14px] overflow-hidden">
                                     <?php echo smoothh_img_responsive($tile['image'], 'object-cover w-full !h-[190px] md:!h-[220px]', array(360, 220), 'lazy'); ?>
@@ -66,7 +65,7 @@ $tiles_list = $args['tiles_list'];
                             ?>
                                 <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="absolute bottom-0 translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200"><?php echo esc_html($btn_title); ?></a>
                             <?php endif; ?>
-                        </div> -->
+                        </div>
                     <?php endforeach; ?>
                 </div>
                 <div class="swiper-nav w-28  h-20 hidden lg:flex gap-5 !absolute !top-auto !bottom-[-100px] left-[50%] -translate-x-1/2 <?php if (!$isSwiper) :  ?> xl:hidden <?php endif; ?>">
