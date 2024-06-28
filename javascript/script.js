@@ -200,6 +200,7 @@ function initDefaultSwipers() {
 			slidesPerView: 1.2,
 			modules: [Navigation],
 			watchSlidesProgress: true,
+			watchOverflow: true,
 			navigation: {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
