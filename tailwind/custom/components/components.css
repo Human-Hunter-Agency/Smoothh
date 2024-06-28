@@ -569,7 +569,7 @@ i.theChampLogin {
 }
 
 .job-offer-tile a .offer-wrapper {
-	@apply p-5 pb-10 pt-0 flex flex-col justify-between transition duration-200;
+	@apply p-5 pb-10 flex flex-col justify-between transition duration-200;
 }
 
 .job-offer-tile .offer-title {
@@ -577,7 +577,7 @@ i.theChampLogin {
 }
 
 .job-offer-tile .offer-new {
-	@apply w-fit text-white bg-secondary px-7 py-1 rounded-full font-semibold -translate-y-1/2;
+	@apply w-fit text-white bg-secondary px-7 py-1 rounded-full font-semibold absolute -translate-y-1/2;
 }
 
 [data-js-job-hidden="true"].job-offer-tile {
