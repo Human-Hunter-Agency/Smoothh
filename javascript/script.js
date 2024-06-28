@@ -226,8 +226,10 @@ function initDefaultSwipers() {
 			},
 		});
 		//TEMP lock fix
-		swiper.slideNext()
-		swiper.slidePrev()
+		swiper.on('init',()=>{
+			swiper.slideNext()
+			swiper.slidePrev()
+		})
 	});
 }
 
