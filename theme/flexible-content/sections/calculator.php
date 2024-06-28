@@ -1,9 +1,15 @@
 <?php
 
-/** Template to display 'Sekcja z listą ikon' - list_icons */
+/** Template to display 'Kalkulator */
 
 $header = $args['header'];
 
+?>
+
+<?php 
+    $user_id = get_current_user_id();
+
+	if ($user_id && ($account_type = get_user_meta($user_id, 'account_type', true)) && $account_type == 'client'):
 ?>
 
 <div id="calculator-wrapper" class="relative py-10 md:py-[70px]">
@@ -36,3 +42,5 @@ $header = $args['header'];
         </div>
     </div>
 </div>
+
+<?php endif;?>
