@@ -198,6 +198,7 @@ else :
 									</svg>
 								</button>
 							</div>
+							<h3 class="mb-8 text-2xl md:text-3xl font-semibold"><?php echo __('Fill this form and receive a free e-book','smoothh') ?></h3>
 							<div class="form-download-wrapper form-with-confirm-wrapper">
 								<?php
 								$shortcode = '[contact-form-7 id="a486d87" prod-id="' . $product->get_id() . '" prod-name="' . $product->get_title() . '" title="Pobierz e-book"]';
