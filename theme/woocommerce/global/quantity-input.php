@@ -35,6 +35,11 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
 	?>
     <div data-js="qty-control" class="flex items-center gap-1">
         <label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php echo esc_attr( $label ); ?></label>
+        <button data-js="down" type="button" class="group appearance-none p-1 shrink-0 cursor-pointer">
+            <svg class="w-full stroke-primary group-hover:stroke-foreground transition duration-200" width="16" height="15" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.193359" y1="0.5" x2="12" y2="0.5" stroke-width="1px"></line>
+            </svg>
+        </button>
         <input
         type="<?php echo esc_attr( $type ); ?>"
             <?php echo $readonly ? 'readonly="readonly"' : ''; ?>
@@ -53,17 +58,12 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
                 autocomplete="<?php echo esc_attr( isset( $autocomplete ) ? $autocomplete : 'on' ); ?>"
                 <?php endif; ?>
                 />
-            <button data-js="down" type="button" class="group appearance-none p-1 shrink-0 cursor-pointer">
-                <svg class="w-full stroke-primary group-hover:stroke-foreground transition duration-200" width="16" height="15" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0.193359" y1="0.5" x2="12" y2="0.5" stroke-width="1px"></line>
-                </svg>
-            </button>
-            <button data-js="up" type="button" class="group appearance-none p-1 shrink-0 cursor-pointer">
-                <svg class="w-full stroke-primary group-hover:stroke-foreground transition duration-200" width="16" height="15" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0.193359" y1="0.5" x2="12" y2="0.5" stroke-width="1px"></line>
-                    <line x1="0.193359" y1="0.5" x2="15" y2="0.5" transform="rotate(90 7 -0.5)" stroke-width="1px"></line>
-                </svg>
-            </button>
+        <button data-js="up" type="button" class="group appearance-none p-1 shrink-0 cursor-pointer">
+            <svg class="w-full stroke-primary group-hover:stroke-foreground transition duration-200" width="16" height="15" viewBox="0 0 12 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.193359" y1="0.5" x2="12" y2="0.5" stroke-width="1px"></line>
+                <line x1="0.193359" y1="0.5" x2="15" y2="0.5" transform="rotate(90 7 -0.5)" stroke-width="1px"></line>
+            </svg>
+        </button>
     </div>
 	<?php
 	/**
