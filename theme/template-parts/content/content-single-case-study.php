@@ -29,7 +29,7 @@ $logoHeader = get_field('header_clients_logos');
 		<meta itemprop="image" content="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0] ?>">
 	<?php endif; ?>
 
-	<div class="relative w-full h-[300px] md:h-[600px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
+	<div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
 
 		<?php smoothh_post_thumbnail(); ?>
 
