@@ -6,11 +6,6 @@ $header = $args['header'];
 
 ?>
 
-<?php 
-    $user_id = get_current_user_id();
-
-	if (($user_id && ($account_type = get_user_meta($user_id, 'account_type', true)) && $account_type == 'client') || current_user_can( 'administrator' )):
-?>
 
 <div id="calculator-wrapper" class="relative py-10 md:py-[70px]">
     <div data-calc-bg class="z-[-1] w-[100%] lg:w-[97%] h-full absolute top-0 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
@@ -42,5 +37,3 @@ $header = $args['header'];
         </div>
     </div>
 </div>
-
-<?php endif;?>
