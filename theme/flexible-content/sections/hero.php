@@ -40,7 +40,7 @@ $marquee_text = $args['marquee_text'];
         <div>
             <div class="swiper bg-primary !py-2" data-js="swiper-hero-marquee">
                 <div class="swiper-wrapper !ease-linear">
-                    <?php for ($i = 1; $i <= 3; $i++) : ?>
+                    <?php for ($i = 1; $i <= 4; $i++) : ?>
                         <div class="swiper-slide !flex items-center pr-7 !w-auto">
                             <span class="text-base md:text-[22px] font-bold text-nowrap text-white pr-7"><?php echo $marquee_text; ?></span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
