@@ -74,7 +74,7 @@ $social_links = get_field('social_links', 'option');
 					<ul class="flex gap-3">
 						<?php if ($social_links['linkedin']) : ?>
 							<li class="shrink-0">
-								<a class="block rounded-full transition duration-200" href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank">
+								<a class="block rounded-full transition duration-200" <?php if($social_links['linkedin'] != ' '): ?> href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank" <?php endif; ?>>
 									<span class="hidden">Linkedin</span>
 									<svg class="group" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
 										<circle class="group-hover:fill-primary/10 transition duration-200" cx="18.9404" cy="18.9648" r="18.9404" fill="white" />
@@ -85,7 +85,7 @@ $social_links = get_field('social_links', 'option');
 						<?php endif; ?>
 						<?php if ($social_links['facebook']) : ?>
 							<li class="shrink-0">
-								<a class="block transition duration-200" href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank">
+								<a class="block transition duration-200" <?php if($social_links['facebook'] != ' '): ?> href="<?php echo esc_attr($social_links['facebook']) ?>" target="_blank" <?php endif; ?>>
 									<span class="hidden">Facebook</span>
 									<svg class="group" xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
 										<circle class="group-hover:fill-primary/10 transition duration-200" cx="19.4482" cy="18.9648" r="18.9404" fill="white" />
@@ -96,7 +96,7 @@ $social_links = get_field('social_links', 'option');
 						<?php endif; ?>
 						<?php if ($social_links['twitter']) : ?>
 							<li class="shrink-0">
-								<a class="block transition duration-200" href="<?php echo esc_attr($social_links['twitter']) ?>" target="_blank">
+								<a class="block transition duration-200" <?php if($social_links['twitter'] != ' '): ?> href="<?php echo esc_attr($social_links['twitter']) ?>" target="_blank" <?php endif; ?>>
 									<span class="hidden">Twitter</span>
 									<svg class="group" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" fill="none">
 										<circle class="group-hover:fill-primary/10 transition duration-200" cx="18.9561" cy="18.9648" r="18.9404" fill="white" />
