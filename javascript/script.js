@@ -623,7 +623,7 @@ function initPopups() {
 			);
 			if (!popupContainer) return;
 
-			if (popupContainerName == 'pdf-img' && toggle.dataset.jsImgUrl) {
+			if (popupContainerName == 'img-popup' && toggle.dataset.jsImgUrl) {
 				popupContainer.querySelector('img').src = toggle.dataset.jsImgUrl
 			}
 			popupContainer.classList.toggle('popup-hidden');
