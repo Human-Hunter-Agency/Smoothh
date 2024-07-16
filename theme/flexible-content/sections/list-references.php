@@ -44,7 +44,7 @@ $list = $args['list'];
 
                             <?php if ($item['file']) :
                             ?>
-                                <!-- <button data-js-popup-toggle="pdf-<?= $key ?>" class="ml-auto text-[13px] font-bold py-2 px-7 text-secondary hover:text-primary transition duration-200"><?php echo __('Show', 'smoothh'); ?></button>
+                                <!-- <button data-js-popup-toggle="pdf-<?= $key ?>" class="ml-auto text-[13px] font-bold py-2 px-7 text-secondary hover:text-primary transition duration-200"><?php echo __('Show', 'smoothh'); ?></button> -->
                                 <div data-js-popup-container="pdf-<?= $key ?>" class="popup-container popup-hidden not-prose">
                                     <div class="popup-inner w-full h-full">
                                         <div class="flex justify-end p-1">
@@ -63,7 +63,7 @@ $list = $args['list'];
                                             <iframe src="<?= $item['file'] ?>" class="w-full h-full" frameborder="0"></iframe>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                             <?php endif; ?>
                         </div>
                     </div>
