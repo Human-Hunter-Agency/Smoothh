@@ -64,11 +64,13 @@ $list = $args['list'];
                             </svg>
                         </button>
                     </div>
-                    <div class="h-full w-full relative pt-5 overflow-auto">
+                    <div class="h-full w-full relative pt-5">
                         <div class="px-10 py-20 flex justify-center items-center absolute inset-0 z-0">
                             <span class="block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
                         </div>
-                        <img src="" class="w-full h-auto relative z-10 object-contain aspect-[1/1.414]" />
+                        <div class="w-full overflow-auto aspect-[1/1.414]">
+                            <img src="" class="w-full h-auto relative z-10 object-contain" />
+                        </div>
                     </div>
                 </div>
             </div>
