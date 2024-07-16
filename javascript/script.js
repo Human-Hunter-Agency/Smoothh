@@ -623,14 +623,9 @@ function initPopups() {
 			);
 			if (!popupContainer) return;
 
-			if (popupContainerName == 'img-popup') {
-				if (toggle.dataset.jsImgUrl) {
-					popupContainer.querySelector('img').src = toggle.dataset.jsImgUrl
-				}else{
-					setTimeout(()=>{
-						popupContainer.querySelector('img').src = ''
-					},300)
-				}
+			if (popupContainerName == 'img-popup' && toggle.dataset.jsImgUrl) {
+				popupContainer.querySelector('img').src = ''
+				popupContainer.querySelector('img').src = toggle.dataset.jsImgUrl
 			}
 			popupContainer.classList.toggle('popup-hidden');
 		});
