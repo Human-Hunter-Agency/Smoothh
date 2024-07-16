@@ -59,7 +59,7 @@ $list = $args['list'];
                                                 </svg>
                                             </button>
                                         </div>
-                                        <div class="pt-5 md:pt-10">
+                                        <div class="h-full pt-5">
                                             <iframe src="<?= $item['file'] ?>" class="w-full h-full" frameborder="0"></iframe>
                                         </div>
                                     </div>
