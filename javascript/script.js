@@ -623,12 +623,8 @@ function initPopups() {
 			);
 			if (!popupContainer) return;
 
-			if (popupContainerName == 'pdf-popup') {
-				if (toggle.dataset.jsIframeUrl) {
-					popupContainer.querySelector('iframe').src = toggle.dataset.jsIframeUrl
-				}else{
-					popupContainer.querySelector('iframe').src = ''
-				}
+			if (popupContainerName == 'pdf-popup' && toggle.dataset.jsIframeUrl) {
+				popupContainer.querySelector('iframe').src = toggle.dataset.jsIframeUrl
 			}
 			popupContainer.classList.toggle('popup-hidden');
 		});
