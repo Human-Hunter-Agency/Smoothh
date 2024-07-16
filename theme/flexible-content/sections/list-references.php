@@ -42,18 +42,18 @@ $list = $args['list'];
 
                             </div>
 
-                            <?php if ($item['file']) :
+                            <?php if ($item['pdf-image']) :
                             ?>
-                                <button data-js-popup-toggle="pdf-popup" data-js-iframe-url="<?= $item['file'] ?>" class="ml-auto text-[13px] font-bold py-2 px-7 text-secondary hover:text-primary transition duration-200"><?php echo __('Show', 'smoothh'); ?></button>
+                                <button data-js-popup-toggle="img-popup" data-js-img-url="<?= $item['pdf-image'] ?>" class="ml-auto text-[13px] font-bold py-2 px-7 text-secondary hover:text-primary transition duration-200"><?php echo __('Show', 'smoothh'); ?></button>
                             <?php endif; ?>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
-            <div data-js-popup-container="pdf-popup" class="popup-container popup-hidden not-prose">
+            <div data-js-popup-container="img-popup" class="popup-container popup-hidden not-prose">
                 <div class="popup-inner w-full h-full">
                     <div class="flex justify-end p-1">
-                        <button data-js-popup-toggle="pdf-popup" class="p-1 md:p-2 group">
+                        <button data-js-popup-toggle="img-popup" class="p-1 md:p-2 group">
                             <svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
                                 <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
                         c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
@@ -65,7 +65,7 @@ $list = $args['list'];
                         </button>
                     </div>
                     <div class="h-full w-full pt-5">
-                        <iframe src="" class="relative w-full h-full" frameborder="0"></iframe>
+                        <img src="" class="w-full h-auto object-contain" />
                     </div>
                 </div>
             </div>

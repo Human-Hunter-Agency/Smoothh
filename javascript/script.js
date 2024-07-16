@@ -623,8 +623,8 @@ function initPopups() {
 			);
 			if (!popupContainer) return;
 
-			if (popupContainerName == 'pdf-popup' && toggle.dataset.jsIframeUrl) {
-				popupContainer.querySelector('iframe').src = toggle.dataset.jsIframeUrl
+			if (popupContainerName == 'pdf-img' && toggle.dataset.jsImgUrl) {
+				popupContainer.querySelector('img').src = toggle.dataset.jsImgUrl
 			}
 			popupContainer.classList.toggle('popup-hidden');
 		});
