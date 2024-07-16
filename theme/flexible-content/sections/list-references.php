@@ -51,7 +51,7 @@ $list = $args['list'];
                 </div>
             <?php endforeach; ?>
             <div data-js-popup-container="img-popup" class="popup-container popup-hidden not-prose">
-                <div class="popup-inner w-full h-full">
+                <div class="popup-inner w-full">
                     <div class="flex justify-end p-1">
                         <button data-js-popup-toggle="img-popup" class="p-1 md:p-2 group">
                             <svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
@@ -68,7 +68,7 @@ $list = $args['list'];
                         <div class="px-10 py-20 flex justify-center items-center absolute inset-0 z-0">
                             <span class="block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
                         </div>
-                        <img src="" class="w-full h-auto relative z-10 object-contain" />
+                        <img src="" class="w-full h-auto relative z-10 object-contain aspect-[1/1.414]" />
                     </div>
                 </div>
             </div>
