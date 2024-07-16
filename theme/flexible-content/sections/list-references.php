@@ -64,11 +64,8 @@ $list = $args['list'];
                             </svg>
                         </button>
                     </div>
-                    <div class="h-full w-full pt-5 relative">
-                        <div class="px-10 py-20 flex justify-center items-center absolute inset-0 z-0">
-                            <span class="block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
-                        </div>
-                        <iframe src="" class="relative z-10 w-full h-full" frameborder="0"></iframe>
+                    <div class="h-full w-full pt-5">
+                        <iframe src="" class="relative w-full h-full" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
