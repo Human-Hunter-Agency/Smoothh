@@ -623,6 +623,13 @@ function initPopups() {
 			);
 			if (!popupContainer) return;
 
+			if (popupContainerName == 'pdf-popup') {
+				if (toggle.dataset.jsIframeUrl) {
+					popupContainer.querySelector('iframe').src = toggle.dataset.jsIframeUrl
+				}else{
+					popupContainer.querySelector('iframe').src = ''
+				}
+			}
 			popupContainer.classList.toggle('popup-hidden');
 		});
 	});
