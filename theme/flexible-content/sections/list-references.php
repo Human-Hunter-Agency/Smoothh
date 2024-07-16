@@ -46,7 +46,7 @@ $list = $args['list'];
                             ?>
                                 <button data-js-popup-toggle="pdf-<?= $key ?>" class="ml-auto text-[13px] font-bold py-2 px-7 text-secondary hover:text-primary transition duration-200"><?php echo __('Show', 'smoothh'); ?></button>
                                 <div data-js-popup-container="pdf-<?= $key ?>" class="popup-container popup-hidden not-prose">
-                                    <div class="popup-inner">
+                                    <div class="popup-inner w-full h-full">
                                         <div class="flex justify-end p-1">
                                             <button data-js-popup-toggle="pdf-<?= $key ?>" class="p-1 md:p-2 group">
                                                 <svg class="fill-black transition duration-200 group-hover:fill-primary" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.775 460.775" xml:space="preserve">
@@ -59,8 +59,8 @@ $list = $args['list'];
                                                 </svg>
                                             </button>
                                         </div>
-                                        <div class="form-leave-numer-wrapper form-with-confirm-wrapper pt-5 md:pt-10">
-                                            <iframe src="<?= $item['file'] ?>" frameborder="0"></iframe>
+                                        <div class="pt-5 md:pt-10">
+                                            <iframe src="<?= $item['file'] ?>" class="w-full h-full" frameborder="0"></iframe>
                                         </div>
                                     </div>
                                 </div>
