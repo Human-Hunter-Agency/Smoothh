@@ -751,5 +751,5 @@ i[data-tm-tooltip-html] {
 }
 
 #breadcrumbs span a{
-	@apply transitio nduration-200 hover:text-primary 
+	@apply transition duration-200 hover:text-primary 
 }
