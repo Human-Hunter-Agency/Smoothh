@@ -21,8 +21,9 @@ get_header();
 		<?php
 
 		/* Start the Loop */
+		$queriedObject = get_queried_object();
 		while (have_posts()) :
-			$sections = get_field('sections');
+			$sections = get_field('sections',$queriedObject);
 			$no_fade_sections = ['hero'];
 
 			if (function_exists('yoast_breadcrumb') && (!$sections || $sections[0]['acf_fc_layout'] != 'hero')){
