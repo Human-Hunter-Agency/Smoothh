@@ -758,7 +758,7 @@ i[data-tm-tooltip-html] {
 	@apply text-white
 }
 .breadcrumbs-banner .breadcrumb_last{
-	@apply text-[#f2f2f2]
+	@apply text-[#dadada]
 }
 
 .breadcrumbs-default{
