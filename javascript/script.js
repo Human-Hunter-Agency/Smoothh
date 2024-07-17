@@ -1338,13 +1338,13 @@ function stringToPriceFormat(val) {
 }
 
 function initMenuSubmenus() {
-	dropdownIcons = document.querySelectorAll('.menu-item-has-children .link-wrapper');
-	dropdownIcons.forEach((item) => {
+	dropdownLinks = document.querySelectorAll('.menu-item-has-children .link-wrapper');
+	dropdownLinks.forEach((item) => {
 		item.addEventListener('click', () => {
-			const menuItem = item.parentElement.parentElement;
+			const menuItem = item.parentElement;
 			menuItem.classList.toggle('expanded');
 			const subMenu =
-				item.parentElement.parentElement.querySelector('.sub-menu');
+				item.parentElement.querySelector('.sub-menu');
 			if (menuItem.classList.contains('expanded')) {
 				subMenu.style.height = subMenu.scrollHeight + 'px';
 			} else {
