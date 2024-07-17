@@ -25,6 +25,8 @@ if (is_shop()) {
     // load the page template for the current theme
     include get_template_directory() . "/" . "page.php";
 
+    exit;
+
 }else{
 
     get_header();
