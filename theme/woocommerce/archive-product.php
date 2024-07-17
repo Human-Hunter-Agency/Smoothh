@@ -20,9 +20,11 @@ defined('ABSPATH') || exit;
 
 if (is_shop()) {
 
+    query_posts('page_id=18');
+
     // load the page template for the current theme
     include get_template_directory() . "/" . "page.php";
-    
+
 }else{
 
     get_header();
