@@ -758,7 +758,7 @@ i[data-tm-tooltip-html] {
 	@apply text-white
 }
 .breadcrumbs-banner .breadcrumb_last{
-	@apply text-[#dadada]
+	@apply opacity-75
 }
 
 .breadcrumbs-default{
