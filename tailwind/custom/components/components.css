@@ -133,6 +133,10 @@ footer#page-footer .menu-item {
 	@apply !size-5 mr-4 accent-primary shrink-0 align-sub;
 }
 
+.form-quote-wrapper .form-basic p:has(input[name="your-company"],input[name="your-job"]){
+	@apply max-lg:w-calc[50%_-_9px]
+}
+
 .swiper .swiper-button-next,
 .swiper .swiper-button-prev {
 	@apply !hidden xl:!flex after:hidden transition duration-300 items-center justify-center;
