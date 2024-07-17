@@ -15,12 +15,14 @@ $marquee_text = $args['marquee_text'];
 
 <?php if(!(is_account_page() && !is_user_logged_in())): ?>
     <?php
-    if ( function_exists('yoast_breadcrumb') ) {
-    yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
-    }
-    ?>
+    if ( function_exists('yoast_breadcrumb') && !is_home() ): ?>
+    <?php endif;?>
     <div class="relative w-full h-[300px] md:h-[600px] <?php if ($lowerHeight) : ?> md:!h-[400px] <?php endif; ?> flex flex-col items-center justify-center">
-        <?php if (isset($hero_bg_url)) :
+        <div class="absolute top-0 inset-x-0">
+            <?php yoast_breadcrumb( '<div id="breadcrumbs" class="container overflow-auto scrollbar-none">','</div>' ); ?>
+        </div>
+
+    <?php if (isset($hero_bg_url)) :
             echo smoothh_img_responsive($hero_background, 'absolute inset-0 -z-20 object-cover !h-full w-full', array(1800, 600), 'eager');
         endif; ?>
     
