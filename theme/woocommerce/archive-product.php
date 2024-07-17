@@ -29,7 +29,7 @@ if (is_shop()) {
 
     exit;
 
-}else{
+}else{ 
 
     get_header();
     
@@ -48,7 +48,7 @@ if (is_shop()) {
         <div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
             <?php if (function_exists('yoast_breadcrumb')) : ?>
                 <div class="absolute top-0 inset-x-0">
-                    <?php yoast_breadcrumb('<div id="breadcrumbs" class="text-white">', '</div>'); ?>
+                    <?php yoast_breadcrumb('<div id="breadcrumbs" class="breadcrumbs-banner">', '</div>'); ?>
                 </div>
             <?php endif; ?>
     

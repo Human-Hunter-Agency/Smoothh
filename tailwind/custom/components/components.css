@@ -753,3 +753,20 @@ i[data-tm-tooltip-html] {
 #breadcrumbs span a{
 	@apply transition duration-200 hover:text-primary 
 }
+
+.breadcrumbs-banner{
+	@apply text-white
+}
+.breadcrumbs-banner .breadcrumb_last{
+	@apply text-[#A7A7A7]
+}
+
+.breadcrumbs-default{
+	@apply text-primary
+}
+.breadcrumbs-default > span span{
+	@apply text-foreground
+}
+.breadcrumbs-default .breadcrumb_last{
+	@apply text-[#A7A7A7]
+}
