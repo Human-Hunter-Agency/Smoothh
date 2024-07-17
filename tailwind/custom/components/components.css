@@ -743,7 +743,7 @@ i[data-tm-tooltip-html] {
 }
 
 #breadcrumbs{
-	@apply container pt-3
+	@apply container pt-3 text-sm md:text-base
 }
 
 #breadcrumbs > span {
