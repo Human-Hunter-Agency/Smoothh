@@ -65,6 +65,27 @@ $social_links = get_field('social_links', 'option');
 				<?php endif; ?>
 			</div>
 
+		</div>
+
+		<div class="w-full lg:w-4/12">
+			<h3><?php esc_html_e('Sign up for the newsletter and stay up to date', 'smoothh'); ?></h3>
+			<div class="mb-6">
+				<?php echo do_shortcode('[contact-form-7 id="49bd164" title="Newsletter"]') ?>
+			</div>
+
+			<h3 class="mb-6"><?php esc_html_e('Check how they rate us:', 'smoothh'); ?></h3>
+			<ul class="flex gap-2.5">
+				<?php for ($i = 0; $i < 5; $i++) : ?>
+					<li class="grow-0 shrink-0">
+						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0 5C0 2.23858 2.23858 0 5 0H35C37.7614 0 40 2.23858 40 5V35C40 37.7614 37.7614 40 35 40H5C2.23858 40 0 37.7614 0 35V5Z" fill="#288CD7" />
+							<path d="M20.1313 8L31.5016 26.7112L8.76095 26.7112L20.1313 8Z" fill="white" />
+							<path d="M20.1285 32.9536L8.75814 14.2424L31.4988 14.2424L20.1285 32.9536Z" fill="white" />
+						</svg>
+					</li>
+				<?php endfor; ?>
+			</ul>
+
 			<div class="w-full sm:pr-5 mb-6">
 				<?php
 				$socials_count = count(array_filter(array_values($social_links)));
@@ -109,26 +130,6 @@ $social_links = get_field('social_links', 'option');
 				<?php endif; ?>
 			</div>
 
-		</div>
-
-		<div class="w-full lg:w-4/12">
-			<h3><?php esc_html_e('Sign up for the newsletter and stay up to date', 'smoothh'); ?></h3>
-			<div class="mb-6">
-				<?php echo do_shortcode('[contact-form-7 id="49bd164" title="Newsletter"]') ?>
-			</div>
-
-			<h3 class="mb-6"><?php esc_html_e('Check how they rate us:', 'smoothh'); ?></h3>
-			<ul class="flex gap-2.5">
-				<?php for ($i = 0; $i < 5; $i++) : ?>
-					<li class="grow-0 shrink-0">
-						<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M0 5C0 2.23858 2.23858 0 5 0H35C37.7614 0 40 2.23858 40 5V35C40 37.7614 37.7614 40 35 40H5C2.23858 40 0 37.7614 0 35V5Z" fill="#288CD7" />
-							<path d="M20.1313 8L31.5016 26.7112L8.76095 26.7112L20.1313 8Z" fill="white" />
-							<path d="M20.1285 32.9536L8.75814 14.2424L31.4988 14.2424L20.1285 32.9536Z" fill="white" />
-						</svg>
-					</li>
-				<?php endfor; ?>
-			</ul>
 
 		</div>
 

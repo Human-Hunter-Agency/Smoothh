@@ -642,13 +642,6 @@ i.theChampLogin {
 	@apply bg-white px-10 py-12 rounded-2xl;
 }
 
-.animateIn {
-	@apply translate-y-0;
-}
-.animateOut {
-	@apply -translate-y-full;
-}
-
 .sub-menu {
 	@apply !pl-5;
 }

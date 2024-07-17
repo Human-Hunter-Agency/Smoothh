@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	initJobListing();
 	initCounter();
 	initCalculator();
-	initFloatingNavBar();
 	initMenuSubmenus();
 	initHideFormConfirmation();
 	loginPageSectionToggleInit();
@@ -1336,30 +1335,6 @@ function stringToPriceFormat(val) {
 	}
 
 	return val.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
-
-function initFloatingNavBar() {
-	const siteHeader = document.querySelector('#masthead');
-	const siteContent = document.querySelector('#main');
-	let siteHeaderHeight = siteHeader.offsetHeight;
-	let refOffset = 0;
-
-	const headerAppearsOnScrollUp = () => {
-		const newOffset = window.scrollY || window.pageYOffset;
-
-		if (newOffset > siteHeaderHeight) {
-			if (newOffset > refOffset) {
-				siteHeader.classList.remove('animateIn');
-				siteHeader.classList.add('animateOut');
-			} else {
-				siteHeader.classList.remove('animateOut');
-				siteHeader.classList.add('animateIn');
-			}
-			refOffset = newOffset;
-		}
-	};
-
-	window.addEventListener('scroll', headerAppearsOnScrollUp, false);
 }
 
 function initMenuSubmenus() {
