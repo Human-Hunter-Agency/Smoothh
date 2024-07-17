@@ -20,7 +20,14 @@ defined('ABSPATH') || exit;
 
 if (is_shop()) {
     
+    $shop_page_id = get_option( 'woocommerce_shop_page_id' ); 
+
+    query_posts('page_id=' . $shop_page_id);
+
+    // load the page template for the current theme
     include get_template_directory() . "/" . "page.php";
+
+    exit;
 
 }else{
 
