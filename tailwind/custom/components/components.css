@@ -738,10 +738,10 @@ i[data-tm-tooltip-html] {
 	@apply !hidden
 }
 
-#breadcrumb{
+#breadcrumbs{
 	@apply container overflow-auto scrollbar-none flex pt-3
 }
 
-#breadcrumb span{
+#breadcrumbs span{
 	@apply shrink-0
 }

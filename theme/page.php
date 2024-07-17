@@ -32,7 +32,6 @@ get_header();
 			if ($sections) :
 				if (function_exists('yoast_breadcrumb') && $sections[0]['acf_fc_layout'] != 'hero') : ?>
 					<?php yoast_breadcrumb('<div id="breadcrumbs" class="text-foreground">', '</div>'); ?>
-
 				<?php endif;
 
 				foreach ($sections as $section) :
@@ -49,8 +48,9 @@ get_header();
 					</div>
 		<?php
 				endforeach;
+			elseif(function_exists('yoast_breadcrumb')):
+				yoast_breadcrumb('<div id="breadcrumbs" class="text-foreground">', '</div>');
 			endif;
-
 
 		endwhile; // End of the loop.
 		?>
