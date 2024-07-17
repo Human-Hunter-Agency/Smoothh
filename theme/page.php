@@ -26,7 +26,7 @@ get_header();
 			$no_fade_sections = ['hero'];
 
 			if (function_exists('yoast_breadcrumb') && (!$sections || $sections[0]['acf_fc_layout'] != 'hero')){
-				yoast_breadcrumb('<div id="breadcrumbs" class="text-foreground">', '</div>');
+				yoast_breadcrumb('<div id="breadcrumbs" class="text-[#A7A7A7]">', '</div>');
 			}
 
 			the_post();

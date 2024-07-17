@@ -739,9 +739,17 @@ i[data-tm-tooltip-html] {
 }
 
 #breadcrumbs{
-	@apply container overflow-auto scrollbar-none flex pt-3
+	@apply container overflow-auto scrollbar-none pt-3
 }
 
-#breadcrumbs span{
+#breadcrumbs > span {
+	@apply flex gap-4
+}
+
+#breadcrumbs > span span{
 	@apply shrink-0
+}
+
+#breadcrumbs span a{
+	@apply transitio nduration-200 hover:text-primary 
 }
