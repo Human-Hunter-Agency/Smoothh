@@ -737,3 +737,11 @@ i[data-tm-tooltip-html] {
 .open-popup-link{
 	@apply !hidden
 }
+
+#breadcrumb{
+	@apply container overflow-auto scrollbar-none flex pt-3
+}
+
+#breadcrumb span{
+	@apply shrink-0
+}

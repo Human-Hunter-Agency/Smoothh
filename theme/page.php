@@ -28,11 +28,19 @@ get_header();
 			$sections = get_field('sections');
 			$no_fade_sections = ['hero'];
 
+
 			if ($sections) :
-				foreach ($sections as $section) : 
+				if (function_exists('yoast_breadcrumb') && $sections[0]['acf_fc_layout'] != 'hero') : ?>
+					<?php yoast_breadcrumb('<div id="breadcrumbs" class="text-foreground">', '</div>'); ?>
+
+				<?php endif;
+
+				foreach ($sections as $section) :
 					$template = str_replace('_', '-', $section['acf_fc_layout']);
-					?>
-					<div <?php if (!in_array($template,$no_fade_sections)) { echo 'data-aos="fade" data-aos-delay="50"'; }?> >
+				?>
+					<div <?php if (!in_array($template, $no_fade_sections)) {
+								echo 'data-aos="fade" data-aos-delay="50"';
+							} ?>>
 						<?php
 						$section_visible = $section['isSectionVisible'];
 						if (isset($section_visible) && $section_visible == true) {
