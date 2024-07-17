@@ -18,6 +18,16 @@
 
 defined('ABSPATH') || exit;
 
+if (is_shop()) {
+    
+    // load the page template for the current theme
+    include get_template_directory() . "/" . "page.php";
+    
+    // stop any other woocommerce code executing
+    exit;
+}
+
+
 get_header();
 
 /**
@@ -38,7 +48,7 @@ do_action('woocommerce_before_main_content');
                 <?php yoast_breadcrumb('<div id="breadcrumbs" class="text-white">', '</div>'); ?>
             </div>
         <?php endif; ?>
-        
+
         <?php smoothh_post_thumbnail(); ?>
 
         <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/80"></div>

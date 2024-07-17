@@ -743,7 +743,7 @@ i[data-tm-tooltip-html] {
 }
 
 #breadcrumbs > span {
-	@apply flex gap-4
+	@apply flex gap-4 w-max
 }
 
 #breadcrumbs > span span{
