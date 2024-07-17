@@ -25,7 +25,7 @@ get_header();
 			$sections = get_field('sections');
 			$no_fade_sections = ['hero'];
 
-			if (function_exists('yoast_breadcrumb') && $sections[0]['acf_fc_layout'] != 'hero'){
+			if (function_exists('yoast_breadcrumb') && (!$sections || $sections[0]['acf_fc_layout'] != 'hero')){
 				yoast_breadcrumb('<div id="breadcrumbs" class="text-foreground">', '</div>');
 			}
 
