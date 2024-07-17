@@ -52,16 +52,23 @@ $tiles_list = $args['tiles_list'];
                             <?php endif; ?>
                             <div class="text-center px-3 md:px-6 pb-6 !pt-0">
                                 <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-[20px] mb-6 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-bold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>"><?php echo $tile['title']; ?></h3>
+                                    <h3 class="text-base md:text-[20px] mb-6 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-bold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>">
+                                        <?php if ($tile['button']) :
+                                            $btn_url = $tile['button']['url'];
+                                            $btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
+                                        ?>
+                                            <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>"><?php echo $tile['title']; ?></a>
+                                        <?php else: ?>
+                                            <?php echo $tile['title']; ?>
+                                        <?php endif; ?>
+                                    </h3>
                                 <?php endif; ?>
                                 <?php if ($tile['description']) : ?>
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
                                 <?php endif; ?>
                             </div>
                             <?php if ($tile['button']) :
-                                $btn_url = $tile['button']['url'];
                                 $btn_title = $tile['button']['title'];
-                                $btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
                             ?>
                                 <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="absolute bottom-0 translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200"><?php echo esc_html($btn_title); ?></a>
                             <?php endif; ?>
