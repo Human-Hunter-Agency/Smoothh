@@ -22,18 +22,19 @@ get_header();
 
 		/* Start the Loop */
 		while (have_posts()) :
-			the_post();
-			get_template_part('template-parts/content/content', 'page');
-
 			$sections = get_field('sections');
 			$no_fade_sections = ['hero'];
 
+			if (function_exists('yoast_breadcrumb') && $sections[0]['acf_fc_layout'] != 'hero'){
+				yoast_breadcrumb('<div id="breadcrumbs" class="text-foreground">', '</div>');
+			}
+
+			the_post();
+			get_template_part('template-parts/content/content', 'page');
+
+
 
 			if ($sections) :
-				if (function_exists('yoast_breadcrumb') && $sections[0]['acf_fc_layout'] != 'hero') : ?>
-					<?php yoast_breadcrumb('<div id="breadcrumbs" class="text-foreground">', '</div>'); ?>
-				<?php endif;
-
 				foreach ($sections as $section) :
 					$template = str_replace('_', '-', $section['acf_fc_layout']);
 				?>
@@ -48,9 +49,8 @@ get_header();
 					</div>
 		<?php
 				endforeach;
-			elseif(function_exists('yoast_breadcrumb')):
-				yoast_breadcrumb('<div id="breadcrumbs" class="text-foreground">', '</div>');
 			endif;
+
 
 		endwhile; // End of the loop.
 		?>
