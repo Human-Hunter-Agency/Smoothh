@@ -1338,7 +1338,7 @@ function stringToPriceFormat(val) {
 }
 
 function initMenuSubmenus() {
-	dropdownIcons = document.querySelectorAll('.menu-item-has-children span');
+	dropdownIcons = document.querySelectorAll('.menu-item-has-children .link-wrapper');
 	dropdownIcons.forEach((item) => {
 		item.addEventListener('click', () => {
 			const menuItem = item.parentElement.parentElement;
