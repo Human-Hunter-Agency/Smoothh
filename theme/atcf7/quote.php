@@ -8,14 +8,14 @@ if (!defined('ABSPATH')) {
 ?>
 
 <div class="form-basic">
-  <div class="mb-[18px] flex flex-col lg:flex-row lg:flex-wrap gap-[18px] lg:[&_p]:grow lg:[&_p]:w-[calc(33%_-_12px)] ">
+  <div class="mb-[18px] flex flex-wrap gap-[18px] [&_p]:w-full lg:[&_p]:grow lg:[&_p]:w-[calc(33%_-_12px)] ">
 
     [email* your-email placeholder "Adres e-mail*"]
 
     [tel* your-phone placeholder "Numer tel.*"]
 
     [text* your-location placeholder "Lokalizacja zatrudnienia*"]
-    
+
     [text* your-job placeholder "Stanowisko*"]
 
     [text your-company placeholder "Firma"]
