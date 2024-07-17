@@ -129,3 +129,9 @@ label.checkbox, .wpcf7-list-item-label {
 .calculator-details > .price{
 	@apply hidden
 }
+
+/* WP 6.6 update fix */
+:root :where(a:where(:not(.wp-block-navigation))),
+:root :where(a:where(:not(.wp-element-button))) {
+    text-decoration: initial;
+}
