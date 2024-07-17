@@ -19,8 +19,8 @@
 defined('ABSPATH') || exit;
 
 if (is_shop()) {
-    
-    $shop_page_id = get_option( 'woocommerce_shop_page_id' ); 
+
+    $shop_page_id = get_option('woocommerce_shop_page_id');
 
     query_posts('page_id=' . $shop_page_id);
 
@@ -28,11 +28,10 @@ if (is_shop()) {
     include get_template_directory() . "/" . "page.php";
 
     exit;
-
-}else{ 
+} else {
 
     get_header();
-    
+
     /**
      * Hook: woocommerce_before_main_content.
      *
@@ -41,21 +40,22 @@ if (is_shop()) {
      * @hooked WC_Structured_Data::generate_website_data() - 30
      */
     do_action('woocommerce_before_main_content');
-    
-    ?>
+
+?>
     <header class="woocommerce-products-header">
-    
+
         <div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
             <?php if (function_exists('yoast_breadcrumb')) : ?>
-                <div class="absolute top-0 inset-x-0">
+                <div class="breadcrumbs-container absolute top-0 inset-x-0">
                     <?php yoast_breadcrumb('<div id="breadcrumbs" class="breadcrumbs-banner">', '</div>'); ?>
                 </div>
+
             <?php endif; ?>
-    
+
             <?php smoothh_post_thumbnail(); ?>
-    
+
             <div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/80"></div>
-    
+
             <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
                 <div class="relative z-0 flex flex-col items-center justify-center container">
                     <h1 class="text-5xl md:text-[46px] leading-[55px] text-center text-bold text-white font-bold"><?php woocommerce_page_title(); ?></h1>
@@ -63,7 +63,7 @@ if (is_shop()) {
             <?php endif; ?>
         </div>
     </header>
-    
+
     <div class="container">
         <div class="hidden mb-7 md:mb-[50px] text-center prose-smoothh prose md:prose-xl prose-h3:text-2xl md:prose-h3:text-5xl lg:prose-h3:text-5xl prose-img:mt-0 prose-img:mx-auto prose-img:px-5 md:prose-p:leading-7">
             <?php
@@ -76,16 +76,16 @@ if (is_shop()) {
             do_action('woocommerce_archive_description');
             ?>
         </div>
-    
+
         <div class="mx-auto pt-10 mb-10 md:mb-20">
             <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] text-foreground prose-strong:text-primary">
                 <?php echo __('Choose product for <strong>yourself</strong>', 'smoothh'); ?>
             </h2>
         </div>
-    
+
         <?php
         if (woocommerce_product_loop()) {
-    
+
             /**
              * Hook: woocommerce_before_shop_loop.
              *
@@ -94,31 +94,31 @@ if (is_shop()) {
              * @hooked woocommerce_catalog_ordering - 30 -removed
              */
             do_action('woocommerce_before_shop_loop');
-    
+
         ?>
-    
+
             <ul class="w-full mb-10 md:mb-20 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-12">
                 <?php
                 //woocommerce_product_loop_start();
-    
+
                 if (wc_get_loop_prop('total')) {
                     while (have_posts()) {
                         the_post();
-    
+
                         /**
                          * Hook: woocommerce_shop_loop.
                          */
                         do_action('woocommerce_shop_loop');
-    
+
                         wc_get_template_part('content', 'product');
                     }
                 }
-    
+
                 //woocommerce_product_loop_end();
                 ?>
             </ul>
         <?php
-    
+
             /**
              * Hook: woocommerce_after_shop_loop.
              *
@@ -134,7 +134,7 @@ if (is_shop()) {
             do_action('woocommerce_no_products_found');
         }
         ?>
-    
+
         <?php
         $above_footer_fields = get_field('category_sections_settings', 'option');
         $client_logos = get_field('client_logos', 'option');
@@ -144,9 +144,9 @@ if (is_shop()) {
             $cta_header = $above_footer_fields['cta_header'];
             $cta_btn = $above_footer_fields['cta_btn'];
         }
-    
+
         ?>
-    
+
         <section class="relative py-10 md:py-[60px] mb:pb-[60px]">
             <?php if (isset($header_logos) && $header_logos) : ?>
                 <div class="container">
@@ -190,7 +190,7 @@ if (is_shop()) {
                 <?php endif; ?>
             </div>
         </section>
-    
+
         <section>
             <?php if ($cta_header || $cta_btn) :
             ?>
@@ -198,7 +198,7 @@ if (is_shop()) {
                     <?php if (isset($cta_header)) : ?>
                         <h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-left"><?php echo esc_html($cta_header); ?></h1>
                         <?php endif; ?>
-    
+
                         <?php if (isset($cta_btn)) :
                             $btn_url = $cta_btn['url'];
                             $btn_title = $cta_btn['title'];
@@ -209,24 +209,22 @@ if (is_shop()) {
                 </div>
             <?php endif; ?>
         </section>
-    
+
     </div>
-    
-    
-    
-    
-    
-    
-    <?php
-    
+
+
+
+
+
+
+<?php
+
     /**
      * Hook: woocommerce_after_main_content.
      *
      * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
      */
     do_action('woocommerce_after_main_content');
-    
+
     get_footer();
 }
-
-

@@ -16,7 +16,7 @@ $marquee_text = $args['marquee_text'];
 <?php if (!(is_account_page() && !is_user_logged_in())) : ?>
     <div class="relative w-full h-[300px] md:h-[600px] <?php if ($lowerHeight) : ?> md:!h-[400px] <?php endif; ?> flex flex-col items-center justify-center">
         <?php if (function_exists('yoast_breadcrumb') && !is_front_page()) : ?>
-            <div class="absolute top-0 inset-x-0">
+            <div class="breadcrumbs-container absolute top-0 inset-x-0">
                 <?php yoast_breadcrumb('<div id="breadcrumbs" class="breadcrumbs-banner">', '</div>'); ?>
             </div>
         <?php endif; ?>

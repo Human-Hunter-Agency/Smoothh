@@ -738,8 +738,12 @@ i[data-tm-tooltip-html] {
 	@apply !hidden
 }
 
+.breadcrumbs-container{
+	@apply overflow-auto scrollbar-none
+}
+
 #breadcrumbs{
-	@apply container overflow-auto scrollbar-none pt-3
+	@apply container pt-3
 }
 
 #breadcrumbs > span {
@@ -752,6 +756,10 @@ i[data-tm-tooltip-html] {
 
 #breadcrumbs span a{
 	@apply transition duration-200 hover:text-primary 
+}
+
+.breadcrumb_last{
+	@apply pr-6
 }
 
 .breadcrumbs-banner{
