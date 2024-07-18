@@ -15,6 +15,8 @@ if (!defined('ABSPATH')) {
 
     [email* your-email placeholder "Adres e-mail*"]
 
+    [text your-company placeholder "Firma"]
+
     [hidden prod-id default:shortcode_attr]
 
     [hidden prod-name default:shortcode_attr]
