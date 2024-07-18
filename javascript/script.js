@@ -882,11 +882,11 @@ function createFilteredOffers(offers, itemsPerPage) {
 					)))
 	);
 
-	if (searchInput.length >= 3) {
+	if (searchInput.length >= 2) {
 		const fuseOptions = {
 			keys: ['name', 'location', 'type', 'category'],
 			includeScore: true,
-			minMatchCharLength: 3,
+			minMatchCharLength: 2,
 			threshold: 0.4,		
 		};
 		const fuse = new Fuse(filteredOffers, fuseOptions);
