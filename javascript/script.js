@@ -687,6 +687,8 @@ function initCalculatorFields() {
 			select: fieldEl,
 			settings: {
 				showSearch: true,
+				searchText: translations['No results'] ?? 'No results',
+				searchPlaceholder: translations['Search'] ?? 'Search',
 			},
 			events: {
 				afterChange: () => {

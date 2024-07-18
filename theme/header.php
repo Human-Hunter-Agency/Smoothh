@@ -54,6 +54,7 @@ if ($hero_img_url == false && $post && get_post_thumbnail_id($post->ID) && get_p
 			'Read more': '<?php echo __('Read more', 'smoothh')?>',
 			'All': '<?php echo __('All', 'smoothh')?>',
 			'Search': '<?php echo __('Search', 'smoothh')?>',
+			'No results': '<?php echo __('No results', 'smoothh')?>',
 			'#TOPoffer': '<?php echo __('#TOPoffer', 'smoothh')?>',
 			'New': '<?php echo __('New', 'smoothh')?>',
 		}
