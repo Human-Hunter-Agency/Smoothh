@@ -444,14 +444,14 @@ i.theChampLogin {
 .woocommerce-error,
 .woocommerce-info,
 .woocommerce-message {
-	@apply mt-5 rounded-[15px] max-w-screen-sm mx-auto !border !bg-transparent text-black;
+	@apply mt-5 rounded-[15px] max-w-screen-sm mx-auto !border !bg-transparent text-black flex flex-col md:block;
 }
 
 .button.pay,
 .woocommerce-error .button,
 .woocommerce-info .button,
 .woocommerce-message .button {
-	@apply whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center !justify-center !gap-5;
+	@apply order-last whitespace-nowrap !border-solid !border-2 !border-[#F2F2F2] hover:!border-primary hover:!text-primary transition duration-200 !text-black !min-h-[55px] !px-5 !rounded-[15px] !font-semibold !bg-transparent !flex !items-center self-end !justify-center !gap-5 !mt-3 md:!mt-0;
 }
 
 .awcdp_balance_pay p {
