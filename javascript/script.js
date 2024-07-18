@@ -801,7 +801,8 @@ async function initJobListing() {
 	const itemsPerPage = 6;
 
 	const endpointUrl = container.dataset.jsEndpoint;
-	const jobsDataRaw = await fetchJobs(endpointUrl);
+	const limit = container.dataset.limit;
+	const jobsDataRaw = await fetchJobs(endpointUrl,limit);
 	loader.classList.add('hidden');
 
 	setupListingElements(jobsDataRaw, itemsPerPage);
@@ -977,9 +978,13 @@ function showMoreJobs(itemsPerPage) {
 	}
 }
 
-async function fetchJobs(url) {
+async function fetchJobs(url, limit) {
 	try {
-		const response = await fetch(url);
+		const response = await fetch(url, {
+			headers: {
+				'X-Request-Page-Size': limit,
+			},
+		});
 		if (!response.ok) {
 			throw new Error('Failed to fetch data');
 		}

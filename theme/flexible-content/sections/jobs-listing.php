@@ -4,6 +4,7 @@
 
 $header = $args['header'];
 $endpoint_url = $args['endpoint'];
+$offers_limit = $args['offers_limit'];
 
 ?>
 
@@ -20,7 +21,7 @@ $endpoint_url = $args['endpoint'];
         endif;
         if ($endpoint_url) :
         ?>
-            <div data-js-jobs="container" data-js-endpoint="<?php echo $endpoint_url; ?>">
+            <div data-js-jobs="container" data-js-endpoint="<?php echo $endpoint_url; ?>" data-js-limit="<?php echo $offers_limit ?>">
                 <div data-js-jobs="categories" class="!hidden p-2 rounded-2xl flex items-center justify-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-3">
                 </div>
                 <form data-js-jobs="searchbar" class="!hidden px-10 py-12 bg-white mx-auto max-w-screen-lg rounded-t-2xl flex">
