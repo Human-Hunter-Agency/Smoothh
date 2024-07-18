@@ -884,7 +884,7 @@ function createFilteredOffers(offers, itemsPerPage) {
 
 	if (searchInput.length >= 2) {
 		const fuseOptions = {
-			keys: ['name', 'location', 'type', 'category', 'details'],
+			keys: ['name', 'location', 'type', 'category'],
 		};
 		const fuse = new Fuse(filteredOffers, fuseOptions);
 		filteredOffers = fuse.search(searchInput).map((obj) => obj.item);
