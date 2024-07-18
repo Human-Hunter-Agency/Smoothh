@@ -801,7 +801,7 @@ async function initJobListing() {
 	const itemsPerPage = 6;
 
 	const endpointUrl = container.dataset.jsEndpoint;
-	const limit = container.dataset.limit;
+	const limit = container.dataset.jsLimit;
 	const jobsDataRaw = await fetchJobs(endpointUrl,limit);
 	loader.classList.add('hidden');
 
