@@ -834,7 +834,7 @@ function initSearchEvents(offers, itemsPerPage) {
 	});
 
 	searchInput.addEventListener('input',()=>{
-		if (searchInput.value.length > 3) {
+		if (searchInput.value.length >= 3) {
 			createFilteredOffers(offers,itemsPerPage)
 		}
 	})
@@ -882,9 +882,12 @@ function createFilteredOffers(offers, itemsPerPage) {
 					)))
 	);
 
-	if (searchInput.length >= 2) {
+	if (searchInput.length >= 3) {
 		const fuseOptions = {
 			keys: ['name', 'location', 'type', 'category'],
+			includeScore: true,
+			minMatchCharLength: 3,
+			threshold: 0.4,		
 		};
 		const fuse = new Fuse(filteredOffers, fuseOptions);
 		filteredOffers = fuse.search(searchInput).map((obj) => obj.item);
