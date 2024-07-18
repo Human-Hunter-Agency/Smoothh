@@ -827,10 +827,17 @@ function setupListingElements(data, itemsPerPage) {
 
 function initSearchEvents(offers, itemsPerPage) {
 	const searchbarForm = document.querySelector('[data-js-jobs="searchbar"]');
+	const searchInput = searchbarForm.querySelector('input') 
 	searchbarForm.addEventListener('submit', (event) => {
 		event.preventDefault();
 		createFilteredOffers(offers, itemsPerPage);
 	});
+
+	searchInput.addEventListener('input',()=>{
+		if (searchInput.value.length > 3) {
+			createFilteredOffers(offers,itemsPerPage)
+		}
+	})
 
 	const filterInputs = document.querySelectorAll(
 		'[data-js-jobs="categories"] input,[data-js-jobs="filters"] input'
@@ -946,6 +953,8 @@ function createOffersItems(offers, itemsPerPage) {
 		listEmptyEl.classList.add('hidden');
 		if (offers.length > itemsPerPage) {
 			loadMoreBtn.classList.remove('!hidden');
+		}else{
+			loadMoreBtn.classList.add('!hidden');
 		}
 	}
 }
