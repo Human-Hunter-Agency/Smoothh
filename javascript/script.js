@@ -1307,7 +1307,7 @@ function copyFormToTextarea(form, textarea) {
 		const element = document.querySelector(`[name='${key}']`);
 		if (!element) return;
 
-		if (key.startsWith('tmcp') && !key.includes('hidden')) {
+		if (key.startsWith('tmcp') && !key.includes('hidden') && element.dataset.placeholder !== 'hidden') {
 			const name = element.dataset.placeholder || element.placeholder;
 			let valueFormatted = '';
 			if (typeof value == 'object' && key.includes('upload')) {
