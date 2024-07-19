@@ -45,7 +45,7 @@ if ($product && $styles_basic) : ?>
             <?php echo $product->get_image() ?>
             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
         </div>
-        <div class="relative w-full min-h-[450px] flex-1 p-6 flex flex-col justify-between ">
+        <div class="relative w-full lg:min-h-[450px] flex-1 p-6 flex flex-col justify-between ">
             
             <div class="mb-5 flex flex-col">
                 <h4 class="text-lg md:text-xl text-primary font-bold mb-5">
