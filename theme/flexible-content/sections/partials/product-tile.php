@@ -52,7 +52,11 @@ if ($product && $styles_basic) : ?>
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
                 <p class="text-sm md:text-base prose-strong:font-semibold">
-                    <?php echo truncate($product->get_short_description(),300,array('html' => true)); ?>
+                    <?php 
+                    $title_length = strlen(get_the_title($product->get_id()));
+                    $truncate_length = max(100, 350 - $title_length);
+                    echo truncate($product->get_short_description(),$truncate_length,array('html' => true)); 
+                    ?>
                 </p>
             </div>
 
