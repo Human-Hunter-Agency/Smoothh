@@ -1181,13 +1181,13 @@ function initCalculator() {
 					const vacancySurpassing =
 						calcEl
 							.querySelector(
-								'[data-uniqid="66702e257bd420.53200121"]'
+								'[data-uniqid="66702e257bd420.53200121"] input'
 							)
 							.value >= MIN_NEGOTIATE_VACANCY;
 
 					orderBtn.disabled = isPositionOther;
 
-					if (priceNegotiable || vacancySurpassing || positionOther) {
+					if (priceNegotiable || vacancySurpassing || isPositionOther) {
 						negotiateBtn.classList.remove('!hidden');
 						const textArea = document.querySelector(
 							'textarea[name="calc-data"]'
