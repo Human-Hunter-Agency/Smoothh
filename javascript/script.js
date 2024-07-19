@@ -699,7 +699,7 @@ function initCalculatorFields() {
 		new SlimSelect(options);
 	});
 
-	const vacancyInput = document.querySelector('data-uniqid="66702e257bd420.53200121" input[type="number"]')
+	const vacancyInput = document.querySelector('[data-uniqid="66702e257bd420.53200121"] input[type="number"]')
 	if (vacancyInput) {
 		vacancyInput.addEventListener('change', validateMinMax);
 		vacancyInput.addEventListener('input', validateMinMax);
