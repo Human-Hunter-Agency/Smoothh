@@ -708,8 +708,8 @@ function initCalculatorFields() {
 	
 		function validateMinMax(e) {
 			const inputEl = e.currentTarget 
-			if (inputEl.max && (inputEl.value  > inputEl.max)) inputEl.value = parseInt(inputEl.max);
-			if (inputEl.min && (inputEl.value  < inputEl.min)) inputEl.value = parseInt(inputEl.min);
+			if (inputEl.max && (parseInt(inputEl.value)  > parseInt(inputEl.max))) inputEl.value = parseInt(inputEl.max);
+			if (inputEl.min && (parseInt(inputEl.value)  < parseInt(inputEl.min))) inputEl.value = parseInt(inputEl.min);
 		}
 	}
 }
