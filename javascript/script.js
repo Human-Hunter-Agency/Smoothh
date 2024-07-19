@@ -652,8 +652,7 @@ function initCalculatorFields() {
 	const simpleSelectFields = document.querySelectorAll(
 		`[data-uniqid="6662fdb4c3d466.61257484"] select,
 		[data-uniqid="666febd02fcf64.88984826"] select,
-		[data-uniqid="667026ee7bd1f5.04499964"] select,
-		[data-uniqid="66702e257bd420.53200121"] select`
+		[data-uniqid="667026ee7bd1f5.04499964"] select`
 	);
 
 	simpleSelectFields.forEach((fieldEl) => {
@@ -699,6 +698,20 @@ function initCalculatorFields() {
 		};
 		new SlimSelect(options);
 	});
+
+	const vacancyInput = document.querySelector('data-uniqid="66702e257bd420.53200121" input[type="number"]')
+	if (vacancyInput) {
+		vacancyInput.addEventListener('change', validateMinMax);
+		vacancyInput.addEventListener('input', validateMinMax);
+		vacancyInput.addEventListener('keyup', validateMinMax);
+		vacancyInput.addEventListener('paste', validateMinMax);
+	
+		function validateMinMax(e) {
+			const inputEl = e.currentTarget 
+			if (inputEl.max && (inputEl.value  > inputEl.max)) inputEl.value = parseInt(inputEl.max);
+			if (inputEl.min && (inputEl.value  < inputEl.min)) inputEl.value = parseInt(inputEl.min);
+		}
+	}
 }
 
 function initProdSelectRedirect() {
@@ -1149,6 +1162,7 @@ function initCalculator() {
 				if (isCalcAdvanced) {
 					const MIN_NEGOTIATE_PRICE = 25000;
 					const MIN_NEGOTIATE_VACANCY = 3;
+					
 					const orderBtn = calcEl.querySelector(
 						'.single_add_to_cart_button'
 					);
@@ -1167,9 +1181,9 @@ function initCalculator() {
 					const vacancySurpassing =
 						calcEl
 							.querySelector(
-								'[data-uniqid="66702e257bd420.53200121"] select'
+								'[data-uniqid="66702e257bd420.53200121"]'
 							)
-							.value.split('_')[0] > MIN_NEGOTIATE_VACANCY;
+							.value >= MIN_NEGOTIATE_VACANCY;
 
 					orderBtn.disabled = isPositionOther;
 
