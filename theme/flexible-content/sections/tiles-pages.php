@@ -67,7 +67,7 @@ $tiles_list = $args['tiles_list'];
                                     <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
                                 <?php endif; ?>
                             </div>
-                            <?php if ($tile['button']) :
+                            <?php if ($tile['button'] && $isSwiper) :
                                 $btn_title = $tile['button']['title'];
                             ?>
                                 <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="absolute bottom-0 translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200"><?php echo esc_html($btn_title); ?></a>
