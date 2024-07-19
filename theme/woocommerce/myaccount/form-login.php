@@ -22,8 +22,8 @@ if (!defined('ABSPATH')) {
 
 do_action('woocommerce_before_customer_login_form'); ?>
 
-  <h1 class="container text-3xl font-bold"><?php esc_html_e("Login/Register", 'smoothh'); ?></h1>
-<div class="relative md:my-16 mb-16">
+  <h1 class="container text-3xl font-bold mt-6"><?php esc_html_e("Login/Register", 'smoothh'); ?></h1>
+<div class="relative md:mt-12 mb-16">
   <div class="-z-10 md:w-[85%] 2xl:w-[88%] absolute inset-y-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]">
   </div>
   <div class="container h-auto [&.disabled]:h-0 [&.disabled]:overflow-hidden [&.disabled]:invisible [&.disabled]:opacity-0 transition duration-300" data-js="tiles-wrapper">
