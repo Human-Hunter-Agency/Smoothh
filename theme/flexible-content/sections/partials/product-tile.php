@@ -45,14 +45,14 @@ if ($product && $styles_basic) : ?>
             <?php echo $product->get_image() ?>
             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
         </div>
-        <div class="relative w-full lg:min-h-[450px] flex-1 p-6 flex flex-col justify-between ">
+        <div class="relative w-full flex-1 p-6 flex flex-col justify-between ">
             
             <div class="mb-5 flex flex-col">
                 <h4 class="text-lg md:text-xl text-primary font-bold mb-5">
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
                 <p class="text-sm md:text-base prose-strong:font-semibold">
-                    <?php echo $product->get_short_description() ?>
+                    <?php echo force_balance_tags( html_entity_decode( wp_trim_words( htmlentities( $product->get_short_description() ), 300, '...' ) ) ); ?>
                 </p>
             </div>
 
