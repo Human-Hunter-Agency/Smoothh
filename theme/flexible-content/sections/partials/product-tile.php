@@ -52,7 +52,7 @@ if ($product && $styles_basic) : ?>
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
                 <p class="text-sm md:text-base prose-strong:font-semibold">
-                    <?php echo force_balance_tags( mb_strimwidth(html_entity_decode($product->get_short_description()),0, 300, '...')); ?>
+                    <?php echo truncate($product->get_short_description(),300,array('html' => true)); ?>
                 </p>
             </div>
 
