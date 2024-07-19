@@ -646,6 +646,17 @@ i.theChampLogin {
 	@apply bg-white px-10 py-12 rounded-2xl;
 }
 
+.calculator-details input[type="number"]::-webkit-outer-spin-button,
+.calculator-details input[type="number"]::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.calculator-details input[type="number"]{
+	-moz-appearance: textfield;
+	appearance: textfield
+}
+
 .sub-menu {
 	@apply !pl-5;
 }
