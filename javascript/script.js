@@ -650,9 +650,7 @@ function initProdSelectStyles() {
 
 function initCalculatorFields() {
 	const simpleSelectFields = document.querySelectorAll(
-		`[data-uniqid="6662fdb4c3d466.61257484"] select,
-		[data-uniqid="666febd02fcf64.88984826"] select,
-		[data-uniqid="667026ee7bd1f5.04499964"] select`
+		`[data-uniqid="667026ee7bd1f5.04499964"] select`
 	);
 
 	simpleSelectFields.forEach((fieldEl) => {
@@ -675,11 +673,13 @@ function initCalculatorFields() {
 	});
 
 	const searchSelectFields = document.querySelectorAll(
-		`[data-uniqid="6662fcfdc3d441.95856961"] select,
+		`[data-uniqid="6662fdb4c3d466.61257484"] select,
+		[data-uniqid="6662fcfdc3d441.95856961"] select,
 		[data-uniqid="667024ab7bd120.95046821"] select,
 		[data-uniqid="666febd02fcf31.57374088"] select,
 		[data-uniqid="6662fc70c3d429.14367225"] select,
-		[data-uniqid="666febd02fcf49.12361043"] select`
+		[data-uniqid="666febd02fcf49.12361043"] select,
+		[data-uniqid="666febd02fcf64.88984826"] select`
 	);
 	searchSelectFields.forEach((fieldEl) => {
 		const options = {
