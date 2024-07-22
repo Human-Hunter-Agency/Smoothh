@@ -5,9 +5,6 @@
 $header = $args['header'];
 $description = $args['description'];
 $image_3x3 = $args['image_3x3'];
-$title2 = $args['title2'];
-$description2 = $args['description2'];
-$logo = $args['logo'];
 ?>
 
 <div class="relative py-10 md:py-20 mt-20">
