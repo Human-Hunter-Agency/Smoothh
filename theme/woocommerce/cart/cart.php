@@ -31,7 +31,7 @@ do_action('woocommerce_before_cart'); ?>
             <?php do_action('woocommerce_before_cart_table'); ?>
 
             <h2 class="text-2xl md:text-3xl text-primary !mb-8 !mt-0 font-bold"><?php esc_html_e('Your order', 'woocommerce'); ?>:</h2>
-            <?php if (!(WC()->cart->has_discount('EXTRA10'))) : ?>
+            <?php if (!(WC()->cart->has_discount('EXTRA10')) && wc_get_coupon_id_by_code('EXTRA10')) : ?>
                 <p class="mb-7"><?php echo __('For orders of at least 100USD, get a <b>10%</b> discount with the code <b>EXTRA10</b>.', 'smoothh'); ?></p>
             <?php endif; ?>
             <div class="shop_table_responsive cart woocommerce-cart-form__contents w-full">
