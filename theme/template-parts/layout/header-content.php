@@ -10,11 +10,15 @@
 
 ?>
 
-<header id="masthead" class="sticky z-20 <?php if (current_user_can( 'administrator' )) {echo 'top-8';} else { echo 'top-0';} ?> w-full bg-white transition-all duration-300 shadow-md">
+<header id="masthead" class="sticky z-20 <?php if (current_user_can('administrator')) {
+																						echo 'top-8';
+																					} else {
+																						echo 'top-0';
+																					} ?> w-full bg-white transition-all duration-300 shadow-md">
 	<div class="container py-5 flex justify-between items-center">
 		<div>
 			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block max-w-[140px] md:max-w-[190px] 2xl:max-w-[220px]">
-				<?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/logo.svg'); ?>
+				<?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/logo-smoothh-png.png'); ?>
 			</a>
 		</div>
 		<div class="flex gap-4 items-center">
