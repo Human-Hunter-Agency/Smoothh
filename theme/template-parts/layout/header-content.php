@@ -18,7 +18,7 @@
 	<div class="container py-5 flex justify-between items-center">
 		<div>
 			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block max-w-[140px] md:max-w-[190px] 2xl:max-w-[220px]">
-				<?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/logo-smoothh-png.png'); ?>
+				<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/logo-smoothh-png.png'; ?>" alt="logo">
 			</a>
 		</div>
 		<div class="flex gap-4 items-center">
