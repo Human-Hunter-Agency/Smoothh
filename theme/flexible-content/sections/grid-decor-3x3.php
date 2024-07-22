@@ -11,7 +11,7 @@ $logo = $args['logo'];
 ?>
 
 <div class="relative py-10 md:py-20 mt-20">
-    <div class="z-[-1] lg:w-[85%] 2xl:w-[88%] lg:h-[1200px] absolute top-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]"></div>
+    <div class="z-[-1] lg:w-[85%] 2xl:w-[88%] lg:h-[calc(100%_-_150px)] absolute top-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]"></div>
     <div class="container">
         <div class=" mb-20 lg:mb-44 flex flex-col lg:flex-row gap-10 lg:gap-24">
             <div class="z-0 w-full lg:w-1/2">
@@ -37,27 +37,6 @@ $logo = $args['logo'];
                     </div>
                 <?php endif; ?>
             </div>
-        </div>
-
-        <div>
-            <?php if ($title2) : ?>
-                <div class="mb-12 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
-                    <?php echo $title2; ?>
-                </div>
-            <?php endif; ?>
-
-            <?php if ($description2) : ?>
-                <div class="lg:py-12 p-8 lg:px-28 bg-white rounded-[45px] drop-shadow-2xl">
-                    <div class="mb-20 text-[16px] font-normal leading-[26px]">
-                        <?php echo $description2; ?>
-                    </div>
-                    <?php if ($logo) : ?>
-                        <div class="w-full flex items-center justify-center">
-                            <?php echo smoothh_img_responsive($logo, '', null, 'lazy') ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
         </div>
     </div>
 
