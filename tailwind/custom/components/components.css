@@ -723,6 +723,13 @@ i[data-tm-tooltip-html] {
 	@apply whitespace-nowrap
 }
 
+#billing_country_field:has(input[type="hidden"][name="billing_country"][readonly="readonly"]) .woocommerce-input-wrapper{
+	@apply placeholder:text-foreground h-[55px] rounded-[15px] border border-primary px-5 hover:border-secondary focus:border-secondary accent-primary w-full !outline-1 !-outline-offset-2 !outline-transparent ![outline-style:solid] focus:!outline-1 focus:!outline-secondary transition-all duration-200 opacity-50 pointer-events-none 
+}
+#billing_country_field:has(input[type="hidden"][name="billing_country"][readonly="readonly"]) .woocommerce-input-wrapper strong{
+	@apply !font-normal
+}
+
 .cpf-img-on-cart img{
 	@apply !size-16 rounded-sm border border-[#F2F2F2]
 }
