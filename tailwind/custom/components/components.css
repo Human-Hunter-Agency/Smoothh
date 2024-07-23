@@ -719,6 +719,10 @@ i[data-tm-tooltip-html] {
 	@apply !hidden;
 }
 
+.woocommerce-checkout-review-order-table .woocommerce-Price-amount{
+	@apply whitespace-nowrap
+}
+
 .cpf-img-on-cart img{
 	@apply !size-16 rounded-sm border border-[#F2F2F2]
 }
