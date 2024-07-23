@@ -24,11 +24,11 @@ defined('ABSPATH') || exit;
 $separator = THEMECOMPLETE_EPO_DATA_STORE()->get('tm_epo_separator_cart_text');
 ?>
 <div data-js="dropdown">
-    <button type="button" data-js="dropdown-toggle" class="text-sm md:text-sm mt-3 mb-2 w-fit border-2 border-[#F2F2F2] hover:border-primary hover:text-primary transition duration-200 text-black py-3 px-5 rounded-[15px] font-semibold flex items-center justify-center gap-5">
+    <button type="button" data-js="dropdown-toggle" class="text-sm mt-3 mb-2 w-fit border-2 border-[#F2F2F2] hover:border-primary hover:text-primary aria-expanded:border-primary transition duration-200 text-black py-2.5 px-4 rounded-[15px] font-semibold flex items-center justify-center gap-5">
         <?= __('Show configuration', 'smoothh');  ?>
     </button>
     <div class="overflow-hidden h-0 transition-all duration-300" data-js="dropdown-container">
-        <dl class="tc-epo-metadata variation text-sm p-3">
+        <dl class="tc-epo-metadata variation text-sm md:px-3 py-3">
             <?php
             if (isset($item_data)) :
                 foreach ($item_data as $data) :
