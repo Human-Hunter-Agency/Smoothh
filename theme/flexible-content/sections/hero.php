@@ -30,7 +30,7 @@ $marquee_text = $args['marquee_text'];
         <div class="relative z-0 flex flex-col items-center justify-center container">
             <?php if ($display_logo && is_front_page()) : ?>
                 <div class="md:max-w-[620px]">
-                    <?php echo file_get_contents(get_stylesheet_directory_uri() . '/assets/img/logo-white.svg'); ?>
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/logo-white-smoothh.png'; ?>" alt="logo">
                 </div>
             <?php elseif ($display_logo && !is_front_page()) : ?>
                 <span class="text-5xl md:text-[66px] text-white font-bold leading-tight">SMOOTHH®</span>
