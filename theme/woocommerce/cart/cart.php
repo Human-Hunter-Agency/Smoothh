@@ -96,7 +96,7 @@ do_action('woocommerce_before_cart'); ?>
                                         ?>
                                     </td>
 
-                                    <td class="product-price flex justify-between md:table-cell md:align-middle" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
+                                    <td class="product-price flex justify-between md:table-cell md:align-top" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
                                         <span class="md:hidden text-base"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
                                         <div class="flex flex-col">
                                             <div class="flex items-end">
@@ -109,7 +109,7 @@ do_action('woocommerce_before_cart'); ?>
                                         </div>
                                     </td>
 
-                                    <td class="product-quantity flex justify-between grow-0 md:table-cell md:align-middle min-w-28 [&_.quantity]:w-fit " data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+                                    <td class="product-quantity flex justify-between grow-0 md:table-cell md:align-top min-w-28 [&_.quantity]:w-fit " data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                                         <span class="md:hidden text-base"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
                                         <?php
                                         if ($_product->is_sold_individually()) {
@@ -136,7 +136,7 @@ do_action('woocommerce_before_cart'); ?>
                                         ?>
                                     </div>
 
-                                    <td class="product-subtotal flex md:table-cell md:align-middle justify-between " data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
+                                    <td class="product-subtotal flex md:table-cell md:align-top justify-between " data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                                         <span class="md:hidden text-base"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
                                         <div class="flex flex-col">
                                             <span class="font-extrabold"><?php echo number_format($cart_item['line_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {
@@ -146,7 +146,7 @@ do_action('woocommerce_before_cart'); ?>
                                         </div>
                                     </td>
                                     <?php if (WC()->cart->has_discount()) : ?>
-                                        <td class="flex md:table-cell md:align-middle shrink-0 justify-between items-center  ">
+                                        <td class="flex md:table-cell md:align-top shrink-0 justify-between items-center  ">
                                             <span class="md:hidden text-base"><?php esc_html_e('Discount', 'smoothh'); ?>:</span>
                                             <span class="text-primary p-2 md:p-0 ">
                                                 <?php echo wc_price($cart_item['line_subtotal'] - $cart_item['line_total']); ?>
