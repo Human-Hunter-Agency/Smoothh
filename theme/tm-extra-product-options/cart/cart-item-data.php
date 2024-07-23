@@ -74,7 +74,7 @@ if (!is_checkout()) :
                 <?php endif; ?>
             </dl>
         </div>
-        <button type="button" data-js="dropdown-toggle" class="text-primary font-semibold appearance-none group text-sm my-2 flex items-center gap-3">
+        <button type="button" data-js="dropdown-toggle" class="text-primary font-semibold appearance-none group text-sm my-2 flex items-center gap-2">
             <span class="group-aria-expanded:hidden">
                 <?= __('Show configuration', 'smoothh');  ?>
             </span>
