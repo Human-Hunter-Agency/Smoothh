@@ -74,14 +74,16 @@ if (!is_checkout()) :
                 <?php endif; ?>
             </dl>
         </div>
-        <button type="button" data-js="dropdown-toggle" class="text-primary appearance-none group text-sm my-2 flex items-center gap-3">
+        <button type="button" data-js="dropdown-toggle" class="text-primary font-semibold appearance-none group text-sm my-2 flex items-center gap-3">
             <span class="group-aria-expanded:hidden">
                 <?= __('Show configuration', 'smoothh');  ?>
             </span>
             <span class="hidden group-aria-expanded:block">
                 <?= __('Hide configuration', 'smoothh');  ?>                
             </span>
-            <svg class="transition duration-200 group-aria-expanded:rotate-180 stroke-primary" viewBox="0 0 100 100"><path d="M10,30 L50,70 L90,30"></path></svg>
+            <svg class="transition duration-200 group-aria-expanded:rotate-180" width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.9595 0.75L7 9.1368L1.04047 0.75H12.9595Z" fill="#8117EE" stroke="#8117EE"></path>
+            </svg>
 
         </button>
     </div>
