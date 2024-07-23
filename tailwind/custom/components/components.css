@@ -719,6 +719,10 @@ i[data-tm-tooltip-html] {
 	@apply !hidden;
 }
 
+.cpf-img-on-cart img{
+	@apply !size-16 rounded-sm border border-[#F2F2F2]
+}
+
 .form-with-confirm-wrapper {
 	@apply relative;
 }
