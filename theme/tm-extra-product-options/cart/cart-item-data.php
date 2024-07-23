@@ -65,7 +65,7 @@ if (!is_checkout()) :
                             <dt class="<?php echo esc_attr(sanitize_html_class($class_name)); ?> tc-hidden-variation">&nbsp;</dt>
                         <?php endif; ?>
                         <?php if ($show_dd) : ?>
-                            <dd class="<?php echo esc_attr(sanitize_html_class($class_value)); ?>!mb-2 variation-<?php echo esc_attr(sanitize_html_class($data['key'])); ?>"><?php echo apply_filters('wc_epo_kses', wp_kses_post(wpautop($data['display'])), wpautop($data['display']), false); // phpcs:ignore WordPress.Security.EscapeOutput 
+                            <dd class="<?php echo esc_attr(sanitize_html_class($class_value)); ?> !mb-0.5 prose-a:text-primary prose-a:underline variation-<?php echo esc_attr(sanitize_html_class($data['key'])); ?>"><?php echo apply_filters('wc_epo_kses', wp_kses_post(wpautop($data['display'])), wpautop($data['display']), false); // phpcs:ignore WordPress.Security.EscapeOutput 
                                                                                                                                                                                 ?></dd>
                         <?php else : ?>
                             <dd class="<?php echo esc_attr(sanitize_html_class($class_value)); ?> tc-hidden-variation">&nbsp;</dd>

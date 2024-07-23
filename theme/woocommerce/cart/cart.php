@@ -109,31 +109,33 @@ do_action('woocommerce_before_cart'); ?>
                                         </div>
                                     </td>
 
-                                    <td class="product-quantity flex justify-between grow-0 md:table-cell md:align-top min-w-28 [&_.quantity]:w-fit " data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+                                    <td class="product-quantity flex justify-between grow-0 md:table-cell md:align-top min-w-24 [&_.quantity]:w-fit " data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
                                         <span class="md:hidden text-base"><?php esc_html_e('Quantity', 'woocommerce'); ?>:</span>
-                                        <?php
-                                        if ($_product->is_sold_individually()) {
-                                            $min_quantity = 1;
-                                            $max_quantity = 1;
-                                        } else {
-                                            $min_quantity = 0;
-                                            $max_quantity = $_product->get_max_purchase_quantity();
-                                        }
+                                        <div class="md:mt-3">
+                                            <?php
+                                            if ($_product->is_sold_individually()) {
+                                                $min_quantity = 1;
+                                                $max_quantity = 1;
+                                            } else {
+                                                $min_quantity = 0;
+                                                $max_quantity = $_product->get_max_purchase_quantity();
+                                            }
 
-                                        $product_quantity = woocommerce_quantity_input(
-                                            array(
-                                                'input_name'   => "cart[{$cart_item_key}][qty]",
-                                                'input_value'  => $cart_item['quantity'],
-                                                'max_value'    => $max_quantity,
-                                                'min_value'    => $min_quantity,
-                                                'product_name' => $product_name,
-                                            ),
-                                            $_product,
-                                            false
-                                        );
+                                            $product_quantity = woocommerce_quantity_input(
+                                                array(
+                                                    'input_name'   => "cart[{$cart_item_key}][qty]",
+                                                    'input_value'  => $cart_item['quantity'],
+                                                    'max_value'    => $max_quantity,
+                                                    'min_value'    => $min_quantity,
+                                                    'product_name' => $product_name,
+                                                ),
+                                                $_product,
+                                                false
+                                            );
 
-                                        echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
-                                        ?>
+                                            echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
+                                            ?>
+                                        </div>
                                     </div>
 
                                     <td class="product-subtotal flex md:table-cell md:align-top justify-between " data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
