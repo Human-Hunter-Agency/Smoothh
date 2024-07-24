@@ -1326,6 +1326,7 @@ function initDynamicSalaryValidation(input, minValSelect, dataSelect) {
 					min: 'Proponowane wynagrodzenie jest poniżej wartości oczekiwanych przez kandydatów na tym stanowisku pracy',
 				},
 			});
+			jQuery(input).tc_valid();
 		} else {
 			jQuery(input).tc_rules('remove', 'min');
 		}
