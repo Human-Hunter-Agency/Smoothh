@@ -1086,25 +1086,25 @@ function initCalculator() {
 		window.scrollTo({top: calcWrapper.offsetTop,  behavior: 'smooth'})
 	}
 
-	const tabButtons = document.querySelectorAll('[data-js-calc-tab-btn]');
+	// const tabButtons = document.querySelectorAll('[data-js-calc-tab-btn]');
 	const calcTabs = document.querySelectorAll('[data-js-calc-content]');
 
-	tabButtons.forEach((tabBtn) => {
-		tabBtn.addEventListener('click', () => {
-			tabButtons.forEach((btn) => {
-				btn.classList.remove('active');
-			});
-			calcTabs.forEach((calc) => {
-				calc.classList.add('hidden');
-			});
-			tabBtn.classList.add('active');
-			document
-				.querySelector(
-					`[data-js-calc-content="${tabBtn.dataset.jsCalcTabBtn}"]`
-				)
-				.classList.remove('hidden');
-		});
-	});
+	// tabButtons.forEach((tabBtn) => {
+	// 	tabBtn.addEventListener('click', () => {
+	// 		tabButtons.forEach((btn) => {
+	// 			btn.classList.remove('active');
+	// 		});
+	// 		calcTabs.forEach((calc) => {
+	// 			calc.classList.add('hidden');
+	// 		});
+	// 		tabBtn.classList.add('active');
+	// 		document
+	// 			.querySelector(
+	// 				`[data-js-calc-content="${tabBtn.dataset.jsCalcTabBtn}"]`
+	// 			)
+	// 			.classList.remove('hidden');
+	// 	});
+	// });
 
 	calcTabs.forEach((calcEl) => {
 		const form = calcEl.querySelector('.calculator-details form');
