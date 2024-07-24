@@ -1076,12 +1076,14 @@ function initCounter() {
 	}
 }
 
-function initCalculator() {
+async function initCalculator() {
 	if (!document.querySelector('.calculator')) {
 		return;
 	}
+	
+	const calcCookie = await cookieStore.get('calc-data')
 
-	if (document.querySelector('.calculator .woocommerce-message')) {
+	if (document.querySelector('.calculator .woocommerce-message') || calcCookie) {
 		const calcWrapper = document.querySelector('#calculator-wrapper')
 		window.scrollTo({top: calcWrapper.offsetTop,  behavior: 'smooth'})
 	}
@@ -1111,6 +1113,12 @@ function initCalculator() {
 		if (!form) return;
 
 		const isCalcAdvanced = calcEl.dataset.jsCalcContent == 2;
+		
+		if (isCalcAdvanced && calcCookie) {
+			console.log(calcCookie.value)
+
+			cookieStore.delete('calc-data')
+		}
 
 		const container = calcEl.querySelector('[data-js-calc-container]');
 		const calcBtn = calcEl.querySelector('[data-js-calc-btn]');
@@ -1161,7 +1169,7 @@ function initCalculator() {
 						tableSubtotalTaxed.innerHTML =
 						tableTotalTaxed.innerHTML =
 							stringToPriceFormat(priceTaxed);
-							
+
 					const MIN_NEGOTIATE_PRICE = 25000;
 					const MIN_NEGOTIATE_VACANCY = 3;
 					
@@ -1206,6 +1214,15 @@ function initCalculator() {
 					} else {
 						negotiateBtn.classList.add('!hidden');
 					}
+				}else{
+					const formData = new FormData(form)
+					const values = {
+						field: formData.get('tmcp_select_0_tcform1'),
+						position:formData.get('tmcp_select_1_tcform1 '),
+						country:formData.get('tmcp_select_2_tcform1'),
+						city:formData.get('tmcp_textfield_3_tcform1 ')
+					}
+					cookieStore.set('calc-data',JSON.stringify(values))
 				}
 
 				// tableFee.innerHTML = feeEl.innerHTML
