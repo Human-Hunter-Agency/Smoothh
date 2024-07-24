@@ -1216,30 +1216,33 @@ function initCalculator() {
 	});
 
 	const fileBtn = document.querySelector('[data-js-file-upload-btn]');
-	const fileInput = document.querySelector(
-		'[data-uniqid="667028857bd280.91689368"] input'
-	);
-	const fileRemoveBtn = document.querySelector('[data-js-file-remove]');
-	const fileNameEl = document.querySelector('[data-js-file-name]');
 
-	fileBtn.addEventListener('click', () => {
-		fileInput.click();
-	});
-	fileRemoveBtn.addEventListener('click', () => {
-		fileInput.value = '';
-		fileInput.dispatchEvent(new Event('change', { bubbles: true }));
-	});
-	fileInput.addEventListener('change', (e) => {
-		const file = e.target.files[0];
-		if (file) {
-			fileNameEl.innerText = file.name;
-			fileRemoveBtn.classList.remove('!hidden');
-			fileBtn.classList.add('!hidden');
-		} else {
-			fileRemoveBtn.classList.add('!hidden');
-			fileBtn.classList.remove('!hidden');
-		}
-	});
+	if (fileBtn) {
+		const fileInput = document.querySelector(
+			'[data-uniqid="667028857bd280.91689368"] input'
+		);
+		const fileRemoveBtn = document.querySelector('[data-js-file-remove]');
+		const fileNameEl = document.querySelector('[data-js-file-name]');
+	
+		fileBtn.addEventListener('click', () => {
+			fileInput.click();
+		});
+		fileRemoveBtn.addEventListener('click', () => {
+			fileInput.value = '';
+			fileInput.dispatchEvent(new Event('change', { bubbles: true }));
+		});
+		fileInput.addEventListener('change', (e) => {
+			const file = e.target.files[0];
+			if (file) {
+				fileNameEl.innerText = file.name;
+				fileRemoveBtn.classList.remove('!hidden');
+				fileBtn.classList.add('!hidden');
+			} else {
+				fileRemoveBtn.classList.add('!hidden');
+				fileBtn.classList.remove('!hidden');
+			}
+		});
+	}
 
 	const selectMainBasic = document.querySelector(
 		'[data-uniqid="6662fcfdc3d441.95856961"] select'
@@ -1248,7 +1251,7 @@ function initCalculator() {
 		'[data-uniqid="6662fc70c3d429.14367225"] select'
 	);
 
-	initDynamicOptions(selectMainBasic, selectSecondaryBasic);
+	if (selectMainBasic && selectSecondaryBasic) initDynamicOptions(selectMainBasic, selectSecondaryBasic);
 
 	const selectMainAdvanced = document.querySelector(
 		'[data-uniqid="666febd02fcf31.57374088"] select'
@@ -1257,7 +1260,7 @@ function initCalculator() {
 		'[data-uniqid="666febd02fcf49.12361043"] select'
 	);
 
-	initDynamicOptions(selectMainAdvanced, selectSecondaryAdvanced);
+	if (selectMainAdvanced && selectSecondaryAdvanced) initDynamicOptions(selectMainAdvanced, selectSecondaryAdvanced);
 
 	const salaryInput = document.querySelector(
 		'[data-uniqid="667029037bd2c3.23900713"] input'
@@ -1265,11 +1268,8 @@ function initCalculator() {
 	const salaryDataSelect = document.querySelector(
 		'[data-uniqid="66793187083b70.87204096"] select'
 	);
-	initDynamicSalaryValidation(
-		salaryInput,
-		selectSecondaryAdvanced,
-		salaryDataSelect
-	);
+
+	if (salaryInput && selectSecondaryAdvanced && salaryDataSelect) initDynamicSalaryValidation(salaryInput,selectSecondaryAdvanced,salaryDataSelect);
 }
 
 function initDynamicOptions(selectMain, selectSecondary) {
