@@ -1143,25 +1143,25 @@ function initCalculator() {
 			jQuery(form).tc_validate().form();
 			if (form.checkValidity()) {
 
-				if(isCalcAdvanced){
-					tablePrice.innerHTML =
-					tableSubtotal.innerHTML =
-					tableTotal.innerHTML =
-						stringToPriceFormat(sumEl.innerText);
-
-				const taxEl = calcEl.querySelector(
-					'.tm-vat-options-totals .price'
-				);
-				const priceTaxed =
-					parseFloat(sumEl.innerText.replace(',', '.')) +
-					parseFloat(taxEl.innerText.replace(',', '.'));
-
-				tablePriceTaxed.innerHTML =
-					tableSubtotalTaxed.innerHTML =
-					tableTotalTaxed.innerHTML =
-						stringToPriceFormat(priceTaxed);
-
+				
 				if (isCalcAdvanced) {
+					tablePrice.innerHTML =
+						tableSubtotal.innerHTML =
+						tableTotal.innerHTML =
+							stringToPriceFormat(sumEl.innerText);
+	
+					const taxEl = calcEl.querySelector(
+						'.tm-vat-options-totals .price'
+					);
+					const priceTaxed =
+						parseFloat(sumEl.innerText.replace(',', '.')) +
+						parseFloat(taxEl.innerText.replace(',', '.'));
+	
+					tablePriceTaxed.innerHTML =
+						tableSubtotalTaxed.innerHTML =
+						tableTotalTaxed.innerHTML =
+							stringToPriceFormat(priceTaxed);
+							
 					const MIN_NEGOTIATE_PRICE = 25000;
 					const MIN_NEGOTIATE_VACANCY = 3;
 					
@@ -1209,12 +1209,8 @@ function initCalculator() {
 				}
 
 				// tableFee.innerHTML = feeEl.innerHTML
-				document.querySelector('[data-calc-bg]').style.height = '75%';
-					
-				}
-				
-
 				container.classList.remove('hidden');
+				document.querySelector('[data-calc-bg]').style.height = '75%';
 			} else {
 				container.classList.add('hidden');
 			}

@@ -71,7 +71,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 			</button>
 
 			<?php
-				if ($product->get_id() == 1186) :
+				if ($product->get_id() == 1253) :
 			?>
 
 			<div data-js-calc-container class="hidden p-5 lg:px-8 rounded-2xl border-2 border-[#EFEFEF] bg-white w-full drop-shadow-2xl">
