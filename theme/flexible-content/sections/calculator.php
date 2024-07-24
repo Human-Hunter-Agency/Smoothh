@@ -26,13 +26,13 @@ $header = $args['header'];
             </li>
         </ul> -->
         <?php if (!is_user_logged_in()) : ?>
-            <div data-js-calc-content="1" class="">
+            <div data-js-calc-content="1">
                 <?php
                 echo do_shortcode('[product_page id="1186"]');
                 ?>
             </div>
         <?php else: ?>
-            <div data-js-calc-content="2" class="hidden">
+            <div data-js-calc-content="2">
                 <?php
                 echo do_shortcode('[product_page id="1253"]');
                 ?>
