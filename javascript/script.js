@@ -1142,7 +1142,9 @@ function initCalculator() {
 		calcBtn.addEventListener('click', () => {
 			jQuery(form).tc_validate().form();
 			if (form.checkValidity()) {
-				tablePrice.innerHTML =
+
+				if(isCalcAdvanced){
+					tablePrice.innerHTML =
 					tableSubtotal.innerHTML =
 					tableTotal.innerHTML =
 						stringToPriceFormat(sumEl.innerText);
@@ -1207,8 +1209,12 @@ function initCalculator() {
 				}
 
 				// tableFee.innerHTML = feeEl.innerHTML
-				container.classList.remove('hidden');
 				document.querySelector('[data-calc-bg]').style.height = '75%';
+					
+				}
+				
+
+				container.classList.remove('hidden');
 			} else {
 				container.classList.add('hidden');
 			}
@@ -1326,11 +1332,11 @@ function initDynamicSalaryValidation(input, minValSelect, dataSelect) {
 					min: 'Proponowane wynagrodzenie jest poniżej wartości oczekiwanych przez kandydatów na tym stanowisku pracy',
 				},
 			});
-			if (input.value.length >0) {
-				jQuery(input).tc_valid();
-			}
 		} else {
 			jQuery(input).tc_rules('remove', 'min');
+		}
+		if (input.value.length >0) {
+			jQuery(input).tc_valid();
 		}
 	});
 }
