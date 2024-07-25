@@ -29,7 +29,7 @@ $promo_text_button = $promo_text['button'];
 				$btn_url = $promo_text_button['url'];
 				$btn_title = $promo_text_button['title'];
 			?>
-				<a href="<?= esc_url($btn_url); ?>" class="rounded-[14px] uppercase text-[13px] font-bold py-2 px-5 text-primary bg-white hover:bg-secondary transition duration-200">
+				<a href="<?= esc_url($btn_url); ?>" class="rounded-[14px] uppercase text-[13px] font-bold leading-tight py-2 px-5 text-primary bg-white hover:bg-secondary hover:text-white transition duration-200">
 					<?= esc_html($btn_title) ?>
 				</a>
 			<?php endif; ?>
