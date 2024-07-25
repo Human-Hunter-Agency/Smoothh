@@ -1117,6 +1117,17 @@ async function initCalculator() {
 		
 		if (isCalcAdvanced && calcCookie) {
 			console.log(calcCookie.value)
+			const calcCookieData = JSON.parse(calcCookie.value)
+
+			const fieldSelect = document.querySelector('[data-uniqid="666febd02fcf31.57374088"] select').slim
+			const positionSelect = document.querySelector('[data-uniqid="666febd02fcf49.12361043"] select').slim
+			const countrySelect = document.querySelector('[data-uniqid="666febd02fcf64.88984826"] select').slim
+			const cityInput = document.querySelector('[data-uniqid="666febd02fcf79.20232136"] input')
+			
+			fieldSelect.slim.setSelected([calcCookieData.field])
+			positionSelect.slim.setSelected([calcCookieData.position])
+			countrySelect.slim.setSelected([calcCookieData.country])
+			cityInput.value = calcCookieData.city
 
 			cookieStore.delete('calc-data')
 		}
