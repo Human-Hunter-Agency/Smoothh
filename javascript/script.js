@@ -1064,7 +1064,7 @@ async function initCalculator() {
 	const calcCookie = await cookieStore.get('calc-data')
 
 	if (document.querySelector('.calculator .woocommerce-message') || calcCookie) {
-		const calcWrapper = document.querySelector('#calculator-wrapper')
+		const calcWrapper = document.querySelector('#calculator')
 		window.scrollTo({top: calcWrapper.offsetTop,  behavior: 'smooth'})
 	}
 

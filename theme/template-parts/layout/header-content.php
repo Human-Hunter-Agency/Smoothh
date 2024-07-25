@@ -10,20 +10,33 @@
 
 ?>
 
-<div class="bg-primary">
-	<div class="container flex justify-center items-center flex-wrap gap-2 py-2">
-		<span class="text-base md:text-lg font-bold text-nowrap text-white text-center">
-			Gotowi na testy? Pierwsza rekrutacja w Smoothh® = 20% zniżki na start!
-		</span>
-		<a href="" class="rounded-[14px] uppercase text-[13px] font-bold py-2 px-5 text-primary bg-white hover:bg-white/50 transition duration-200">
-			Sprawdź
-		</a>
-		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-			<path d="M15.5861 11.2717L10.1001 14.5217V12.5717L13.0511 10.8037L10.1001 8.95772V7.11171L15.5861 10.4267V11.2717Z" fill="white" />
-			<circle cx="12.5" cy="12" r="11.5" stroke="white" />
-		</svg>
+<?php
+$promo_text = get_field('promo_text', 'option');
+$promo_text_enabled = $promo_text['visible'];
+$promo_text_content = $promo_text['text'];
+$promo_text_button = $promo_text['button'];
+
+
+?>
+
+<?php if (isset($promo_text_enabled) && $promo_text_enabled && !is_checkout() && !is_cart() ) : ?>
+	<div class="bg-primary">
+		<div class="container flex justify-center items-center flex-wrap gap-2 md:gap-5 py-2">
+			<span class="text-base md:text-lg font-bold text-white text-center">
+				<?= esc_html($promo_text_content) ?>
+			</span>
+			<?php if (isset($promo_text_button) && $promo_text_button) :
+				$btn_url = $promo_text_button['url'];
+				$btn_title = $promo_text_button['title'];
+			?>
+				<a href="<?= esc_url($btn_url); ?>" class="rounded-[14px] uppercase text-[13px] font-bold py-2 px-5 text-primary bg-white hover:bg-secondary transition duration-200">
+					<?= esc_html($btn_title) ?>
+				</a>
+			<?php endif; ?>
+
+		</div>
 	</div>
-</div>
+<?php endif; ?>
 
 <header id="masthead" class="sticky z-20 <?php if (current_user_can('administrator')) {
 												echo 'top-8';
