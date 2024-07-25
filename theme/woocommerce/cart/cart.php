@@ -166,15 +166,17 @@ do_action('woocommerce_before_cart'); ?>
 
                 <div class="flex flex-row justify-between text-xl mb-8">
                     <div class="pt-0.5 md:pt-2.5">
-                        <span class="text-primary font-extrabold"><?php esc_html_e('Total', 'woocommerce'); ?></span>
-                        <span class="text-base text-[#A7A7A7] font-semibold block mt-2.5"><?php esc_html_e('Total taxed', 'smoothh'); ?></span>
+                        <span class="text-primary font-extrabold"><?php esc_html_e('Total taxed', 'smoothh'); ?></span>
+                        <span class="text-base text-[#A7A7A7] font-semibold block mt-2.5"><?php esc_html_e('Net value', 'smoothh'); ?></span>
                     </div>
                     <div class="flex flex-col lg:w-[calc(50%_+_20px)] pl-2.5 text-right md:pt-2.5 text-primary  " data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
-                        <span class="font-extrabold"><?php echo WC()->cart->get_total_ex_tax() ?> <?php esc_html_e('net', 'smoothh') ?></span>
-                        <span class="text-base text-right text-[#A7A7A7] font-semibold block mt-2.5">( <?php
-                                                                                                        $taxed_price = WC()->cart->get_total();
-                                                                                                        echo  $taxed_price . ' ' . __('gross', 'smoothh');
-                                                                                                        ?>)</span>
+                        <span class="font-extrabold">
+                            <?php
+                                $taxed_price = WC()->cart->get_total();
+                                echo  $taxed_price . ' ' . __('gross', 'smoothh');
+                            ?>
+                        </span>
+                        <span class="text-base text-right text-[#A7A7A7] font-semibold block mt-2.5">( <?php echo WC()->cart->get_total_ex_tax() ?> <?php esc_html_e('net', 'smoothh') ?>)</span>
                     </div>
                 </div>
 
