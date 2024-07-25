@@ -1159,16 +1159,14 @@ async function initCalculator() {
 							stringToPriceFormat(sumEl.innerText);
 	
 					const taxEl = calcEl.querySelector(
-						'.tm-vat-options-totals .price'
+						'[data-uniqid="66a2061f44c461.49174290"] .tc-result'
 					);
-					const priceTaxed =
-						parseFloat(sumEl.innerText.replace(',', '.')) +
-						parseFloat(taxEl.innerText.replace(',', '.'));
+
 	
 					tablePriceTaxed.innerHTML =
 						tableSubtotalTaxed.innerHTML =
 						tableTotalTaxed.innerHTML =
-							stringToPriceFormat(priceTaxed);
+							stringToPriceFormat(taxEl.innerText);
 
 					const MIN_NEGOTIATE_PRICE = 25000;
 					const MIN_NEGOTIATE_VACANCY = 3;
