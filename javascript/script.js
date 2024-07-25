@@ -1228,9 +1228,9 @@ async function initCalculator() {
 					const formData = new FormData(form)
 					const values = {
 						field: formData.get('tmcp_select_0_tcform1'),
-						position:formData.get('tmcp_select_1_tcform1 '),
+						position:formData.get('tmcp_select_1_tcform1'),
 						country:formData.get('tmcp_select_2_tcform1'),
-						city:formData.get('tmcp_textfield_3_tcform1 ')
+						city:formData.get('tmcp_textfield_3_tcform1')
 					}
 					cookieStore.set('calc-data',JSON.stringify(values))
 				}
