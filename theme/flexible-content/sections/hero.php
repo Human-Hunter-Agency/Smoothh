@@ -9,8 +9,6 @@ if ($hero_background['url']) {
 $lowerHeight = $args['lowerHeight'];
 $display_logo = $args['display_logo'];
 $hero_text = $args['hero_text'];
-$marquee_active = $args['display_marquee'];
-$marquee_text = $args['marquee_text'];
 ?>
 
 <?php if (!(is_account_page() && !is_user_logged_in())) : ?>
