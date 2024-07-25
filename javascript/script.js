@@ -43,7 +43,6 @@ AOS.init({
 
 document.addEventListener('DOMContentLoaded', () => {
 	initMenuCollapse();
-	initHeroMarqueeSwiper();
 	initMobileSwipers();
 	initMobileNarrowSwipers();
 	initLogosSwipers();
@@ -98,26 +97,6 @@ function initMenuCollapse() {
 			document.body.classList.remove('overflow-hidden');
 		}
 	});
-}
-
-function initHeroMarqueeSwiper() {
-	const swiperContainer = document.querySelector(
-		'[data-js="swiper-hero-marquee"]'
-	);
-	if (swiperContainer) {
-		new Swiper(swiperContainer, {
-			modules: [Autoplay],
-			spaceBetween: 0,
-			speed: 12000,
-			autoplay: {
-				delay: 1,
-			},
-			loop: true,
-			slidesPerView: 'auto',
-			allowTouchMove: false,
-			disableOnInteraction: true,
-		});
-	}
 }
 
 function initMobileSwipers() {

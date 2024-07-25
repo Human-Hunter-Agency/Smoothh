@@ -42,21 +42,4 @@ $marquee_text = $args['marquee_text'];
         </div>
 
     </div>
-    <?php if ($marquee_active && $marquee_text) : ?>
-        <div>
-            <div class="swiper bg-primary !py-2" data-js="swiper-hero-marquee">
-                <div class="swiper-wrapper !ease-linear">
-                    <?php for ($i = 1; $i <= 4; $i++) : ?>
-                        <div class="swiper-slide !flex items-center pr-7 !w-auto">
-                            <span class="text-base md:text-[22px] font-bold text-nowrap text-white pr-7"><?php echo $marquee_text; ?></span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-                                <path d="M15.5861 11.2717L10.1001 14.5217V12.5717L13.0511 10.8037L10.1001 8.95772V7.11171L15.5861 10.4267V11.2717Z" fill="white" />
-                                <circle cx="12.5" cy="12" r="11.5" stroke="white" />
-                            </svg>
-                        </div>
-                    <?php endfor; ?>
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
 <?php endif; ?>
