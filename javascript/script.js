@@ -604,6 +604,7 @@ function initCart() {
 			() => {
 				initQtyInputs();
 				initCartUpdate();
+				initDropdowns()
 				jQuery(document.body).trigger('wc_fragment_refresh');
 			}
 		);
