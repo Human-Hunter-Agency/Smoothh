@@ -1124,9 +1124,9 @@ async function initCalculator() {
 			const countrySelect = document.querySelector('[data-uniqid="666febd02fcf64.88984826"] select').slim
 			const cityInput = document.querySelector('[data-uniqid="666febd02fcf79.20232136"] input')
 			
-			fieldSelect.slim.setSelected([calcCookieData.field])
-			positionSelect.slim.setSelected([calcCookieData.position])
-			countrySelect.slim.setSelected([calcCookieData.country])
+			fieldSelect.setSelected([calcCookieData.field])
+			positionSelect.setSelected([calcCookieData.position])
+			countrySelect.setSelected([calcCookieData.country])
 			cityInput.value = calcCookieData.city
 
 			cookieStore.delete('calc-data')
