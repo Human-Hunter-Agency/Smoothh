@@ -43,6 +43,7 @@ do_action('woocommerce_before_cart'); ?>
                             <th class="product-price grow-0 text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Price', 'woocommerce'); ?></th>
                             <th class="product-quantity grow-0 min-w-28  text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Quantity', 'woocommerce'); ?></th>
                             <th class="product-subtotal grow-0 text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
+                            <th class="product-subtotal grow-0 text-base lg:text-xl font-bold pb-5 "><?php esc_html_e('VAT', 'smoothh'); ?></th>
                             <?php if (WC()->cart->has_discount()) : ?>
                                 <th class="product-discount shrink-0 grow-0 text-base lg:text-xl font-bold pb-5  text-primary"><?php esc_html_e('Discount', 'smoothh'); ?></th>
                             <?php endif; ?>
@@ -100,7 +101,7 @@ do_action('woocommerce_before_cart'); ?>
                                         <span class="md:hidden text-base"><?php esc_html_e('Price', 'woocommerce'); ?>:</span>
                                         <div class="flex flex-col">
                                             <div class="flex items-end">
-                                                <span class="[&_ins]:no-underline [&_del_bdi]:text-foreground [&_del_bdi]:opacity-50 [&_del_bdi]:text-lg md:[&_del]:-mb-2 [&_del]:mr-2 md:[&_del]:mr-0 flex md:flex-col items-end"><?php echo $_product->get_price_html(); ?></span>
+                                                <span class="md:text-lg [&_ins]:no-underline [&_del_bdi]:text-foreground [&_del_bdi]:opacity-50 [&_del_bdi]:text-base md:[&_del]:-mb-2 [&_del]:mr-2 md:[&_del]:mr-0 flex md:flex-col items-end"><?php echo $_product->get_price_html(); ?></span>
                                                 <span class="ml-2"><?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {
                                                                                                             echo '/h';
                                                                                                         } ?></span>
@@ -141,10 +142,16 @@ do_action('woocommerce_before_cart'); ?>
                                     <td class="product-subtotal flex md:table-cell md:align-top justify-between " data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
                                         <span class="md:hidden text-base"><?php esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
                                         <div class="flex flex-col">
-                                            <span class="font-extrabold"><?php echo number_format($cart_item['line_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {
+                                            <span class="font-extrabold md:text-lg"><?php echo number_format($cart_item['line_total'], wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?><?php if (get_field('product_hourly', $_product->get_id())) {
                                                                                                                                                                                                                                                                                                                 echo '/h';
                                                                                                                                                                                                                                                                                                             } ?></span>
                                             <span class="ml-2 text-sm md:text-base mt-1.5 md:mt-0.5 whitespace-nowrap text-[#A7A7A7] font-semibold"> <?php echo '( ' . number_format($cart_item['line_total'] + $cart_item['line_tax'],wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol(); ?> <?php echo  esc_html_e('gross', 'smoothh') . ' )'; ?></span>
+                                        </div>
+                                    </td>
+                                    <td class="flex md:table-cell md:align-top justify-between " data-title="<?php esc_html_e('VAT', 'smoothh'); ?>">
+                                        <span class="md:hidden text-base"><?php esc_html_e('VAT', 'smoothh'); ?>:</span>
+                                        <div class="flex flex-col">
+                                            <span class="md:text-lg"><?php echo number_format($cart_item['line_tax'],wc_get_price_decimals(), wc_get_price_decimal_separator(), wc_get_price_thousand_separator()) . ' ' . get_woocommerce_currency_symbol(); ?></span>
                                         </div>
                                     </td>
                                     <?php if (WC()->cart->has_discount()) : ?>
