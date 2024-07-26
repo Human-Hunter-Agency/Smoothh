@@ -624,7 +624,7 @@ function initProdSelectStyles() {
 				customProdSelect.dispatchEvent(changeEvent);
 			},
 			beforeOpen: function(){
-				console.log(this)
+				customProdSelect.slim.render.content.main.scrollTo(0,0)
 			}
 		},
 	};
@@ -651,7 +651,7 @@ function initCalculatorFields() {
 					fieldEl.dispatchEvent(changeEvent);
 				},
 				beforeOpen: function(){
-					console.log(this)
+					fieldEl.slim.render.content.main.scrollTo(0,0)
 				}
 			},
 		};
@@ -681,7 +681,7 @@ function initCalculatorFields() {
 					fieldEl.dispatchEvent(changeEvent);
 				},
 				beforeOpen: function(){
-					console.log(this)
+					fieldEl.slim.render.content.main.scrollTo(0,0)
 				}
 			},
 		};
