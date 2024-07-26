@@ -623,6 +623,9 @@ function initProdSelectStyles() {
 				let changeEvent = new Event('change', { bubbles: true });
 				customProdSelect.dispatchEvent(changeEvent);
 			},
+			afterOpen: () =>{
+				console.log(this)
+			}
 		},
 	};
 	new SlimSelect(options);
@@ -647,6 +650,9 @@ function initCalculatorFields() {
 					let changeEvent = new Event('change', { bubbles: true });
 					fieldEl.dispatchEvent(changeEvent);
 				},
+				afterOpen: () =>{
+					console.log(this)
+				}
 			},
 		};
 		new SlimSelect(options);
@@ -674,6 +680,9 @@ function initCalculatorFields() {
 					let changeEvent = new Event('change', { bubbles: true });
 					fieldEl.dispatchEvent(changeEvent);
 				},
+				afterOpen: () =>{
+					console.log(this)
+				}
 			},
 		};
 		new SlimSelect(options);
