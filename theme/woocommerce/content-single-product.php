@@ -77,7 +77,7 @@ else :
 
 			<div class="absolute inset-0 -z-10 bg-gradient-to-b from-primary/60 to-secondary/80"></div>
 
-			<div class="relative z-0 flex flex-col items-center justify-center container">
+			<div class="relative z-0 flex flex-col items-center justify-center container pt-8">
 				<?php the_title('<h1 class="text-5xl md:text-[66px] leading-tight text-center text-bold text-white font-bold">', '</h1>'); ?>
 			</div>
 		</div>
