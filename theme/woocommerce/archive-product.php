@@ -44,7 +44,7 @@ if (is_shop()) {
 ?>
     <header class="woocommerce-products-header">
 
-        <div class="relative w-full h-min-[300px] md:min-h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
+        <div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
             <?php if (function_exists('yoast_breadcrumb')) : ?>
                 <div class="breadcrumbs-container absolute top-0 inset-x-0">
                     <?php yoast_breadcrumb('<div id="breadcrumbs" class="breadcrumbs-banner">', '</div>'); ?>
