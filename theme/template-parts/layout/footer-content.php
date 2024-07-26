@@ -146,25 +146,7 @@ $social_links = get_field('social_links', 'option');
 				<?php
 				endif;
 				?>
-
-				<div class="flex gap-12 items-center">
-
-					<?php if (has_nav_menu('menu-4')) : ?>
-						<nav aria-label="<?php esc_attr_e('Footer Bottom Menu', 'smoothh'); ?>">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'menu-4',
-									'menu_class'     => 'footer-bottom-menu',
-									'depth'          => 1,
-								)
-							);
-							?>
-						</nav>
-					<?php endif; ?>
-				</div>
-			</div>
-			<div class="pb-5 md:pb-5">
+			<div class="pb-5 md:pb-5 grow-0 order-3 md:order-none">
 				<div class="flex gap-2.5 justify-center items-center flex-wrap md:px-5">
 					<svg width="50" height="35" viewBox="0 0 50 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<rect x="0.5" y="0.5" width="49" height="34" rx="3.5" stroke="#A7A7A7" />
@@ -244,6 +226,24 @@ $social_links = get_field('social_links', 'option');
 
 
 
+				</div>
+			</div>
+
+				<div class="flex gap-12 items-center">
+
+					<?php if (has_nav_menu('menu-4')) : ?>
+						<nav aria-label="<?php esc_attr_e('Footer Bottom Menu', 'smoothh'); ?>">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'menu-4',
+									'menu_class'     => 'footer-bottom-menu',
+									'depth'          => 1,
+								)
+							);
+							?>
+						</nav>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
