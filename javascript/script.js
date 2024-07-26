@@ -1153,21 +1153,24 @@ async function initCalculator() {
 			if (form.checkValidity()) {
 
 				
-				if (isCalcAdvanced) {
-					tablePrice.innerHTML =
-						tableSubtotal.innerHTML =
-						tableTotal.innerHTML =
-							stringToPriceFormat(sumEl.innerText);
-	
-					const taxEl = calcEl.querySelector(
-						'[data-uniqid="66a2061f44c461.49174290"] .tc-result'
-					);
+				tablePrice.innerHTML =
+					tableSubtotal.innerHTML =
+					tableTotal.innerHTML =
+						stringToPriceFormat(sumEl.innerText);
 
-	
-					tablePriceTaxed.innerHTML =
-						tableSubtotalTaxed.innerHTML =
-						tableTotalTaxed.innerHTML =
-							stringToPriceFormat(taxEl.innerText);
+				const taxEl = calcEl.querySelector(
+					!isCalcAdvanced
+					? '[data-uniqid="66a3a56700d399.24760968"] .tc-result'
+					: '[data-uniqid="66a2061f44c461.49174290"] .tc-result'
+				);
+
+
+				tablePriceTaxed.innerHTML =
+					tableSubtotalTaxed.innerHTML =
+					tableTotalTaxed.innerHTML =
+						stringToPriceFormat(taxEl.innerText);
+
+				if (isCalcAdvanced) {
 
 					const MIN_NEGOTIATE_PRICE = 25000;
 					const MIN_NEGOTIATE_VACANCY = 3;
