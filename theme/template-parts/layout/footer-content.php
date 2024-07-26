@@ -146,7 +146,7 @@ $social_links = get_field('social_links', 'option');
 				<?php
 				endif;
 				?>
-			<div class="pb-5 md:pb-5 grow-0 order-3 md:order-none">
+			<div class="pb-5 md:pb-5 grow-0 md:order-3 lg:order-none">
 				<div class="flex gap-2.5 justify-center items-center flex-wrap md:px-5">
 					<svg width="50" height="35" viewBox="0 0 50 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<rect x="0.5" y="0.5" width="49" height="34" rx="3.5" stroke="#A7A7A7" />
