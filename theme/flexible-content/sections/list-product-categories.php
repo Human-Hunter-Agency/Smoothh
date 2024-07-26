@@ -52,14 +52,14 @@ $header = $args['header'];
                                     <?php echo $cat->name ?>
                                 </h4>
                             </div>
-                            <div class="w-full flex-1 p-3 md:p-6">
+                            <div class="w-full flex-1 p-3 md:p-6 flex flex-col justify-between">
                                 <p class="text-center text-sm md:text-base prose-strong:font-semibold">
                                     <?php echo $cat->description ?>
                                 </p>
+                                <span class="block w-[220px] mx-auto rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
+                                    <?php esc_html_e('Show products', 'smoothh') ?>
+                                </span>
                             </div>
-                            <span class="translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
-                                <?php esc_html_e('Show products', 'smoothh') ?>
-                            </span>
                         </a>
                     </li>
                 <?php endforeach; ?>
