@@ -1258,5 +1258,5 @@ function truncate($text, $length = 100, $options = array()) {
 }
 
 function is_in_cart($product_id) {
-    return WC()->cart->find_product_in_cart( WC()->cart->generate_cart_id( $product_id ));
+    return in_array( $product_id, array_column( WC()->cart->get_cart(), 'product_id' ) );
 }
