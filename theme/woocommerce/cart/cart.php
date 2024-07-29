@@ -222,11 +222,10 @@ do_action('woocommerce_before_cart'); ?>
                 </div>
                 <?php
                     $recruitment_product_id = 1253;
-                    echo is_in_cart($recruitment_product_id) ? 'true' : 'false';
                     if(is_in_cart($recruitment_product_id)) : 
                 ?>
 
-                    <div>
+                    <div class="max-w-72 ml-auto font-medium">
                         <p><?php esc_html_e('Pay now only a 10% advance payment for recruitment and place your order!', 'smoothh'); ?></p>
                     </div>
 
