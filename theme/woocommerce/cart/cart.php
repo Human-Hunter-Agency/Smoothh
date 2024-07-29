@@ -220,6 +220,16 @@ do_action('woocommerce_before_cart'); ?>
                         <?php do_action('woocommerce_proceed_to_checkout'); ?>
                     </div>
                 </div>
+                <?php
+                    $recruitment_product_id = 1253;
+                    if(is_in_cart($recruitment_product_id)) : 
+                ?>
+
+                    <div>
+                        <p><?php esc_html_e('Pay now only a 10% advance payment for recruitment and place your order!', 'smoothh'); ?></p>
+                    </div>
+
+                <?php endif; ?>
 
                 <?php do_action('woocommerce_after_cart_contents'); ?>
             </div>
