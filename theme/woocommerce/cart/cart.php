@@ -225,8 +225,8 @@ do_action('woocommerce_before_cart'); ?>
                     if(is_in_cart($recruitment_product_id)) : 
                 ?>
 
-                    <div class="max-w-72 ml-auto font-medium">
-                        <p><?php esc_html_e('Pay now only a 10% advance payment for recruitment and place your order!', 'smoothh'); ?></p>
+                    <div class="w-full md:w-[calc(50%_-_10px)] lg:w-[230px] ml-auto font-medium text-center">
+                        <p><?php __('Pay now only a 10% advance payment for recruitment and place your order!', 'smoothh'); ?></p>
                     </div>
 
                 <?php endif; ?>
