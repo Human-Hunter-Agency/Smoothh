@@ -231,7 +231,7 @@ add_action('rest_api_init', 'register_rest_images');
 function register_rest_images()
 {
 	register_rest_field(
-		array('post'),
+		array('post','case-study'),
 		'fimg_url',
 		array(
 			'get_callback'    => 'get_rest_featured_image',
