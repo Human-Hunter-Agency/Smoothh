@@ -50,28 +50,32 @@ $tiles_list = $args['tiles_list'];
                                     <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 </div>
                             <?php endif; ?>
-                            <div class="text-center px-3 md:px-6 pb-6 !pt-0">
-                                <?php if ($tile['title']) : ?>
-                                    <h3 class="text-base md:text-[20px] mb-6 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-bold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>">
-                                        <?php if ($tile['button']) :
-                                            $btn_url = $tile['button']['url'];
-                                            $btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
-                                        ?>
-                                            <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>"><?php echo $tile['title']; ?></a>
-                                        <?php else: ?>
-                                            <?php echo $tile['title']; ?>
-                                        <?php endif; ?>
-                                    </h3>
-                                <?php endif; ?>
-                                <?php if ($tile['description']) : ?>
-                                    <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
+                            <div class="text-center px-3 md:px-6 pb-6 !pt-0 flex flex-col justify-between">
+                                <div class="w-full">
+                                    <?php if ($tile['title']) : ?>
+                                        <h3 class="text-base md:text-[20px] mb-6 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-bold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>">
+                                            <?php if ($tile['button']) :
+                                                $btn_url = $tile['button']['url'];
+                                                $btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
+                                            ?>
+                                                <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>"><?php echo $tile['title']; ?></a>
+                                            <?php else: ?>
+                                                <?php echo $tile['title']; ?>
+                                            <?php endif; ?>
+                                        </h3>
+                                    <?php endif; ?>
+                                    <?php if ($tile['description']) : ?>
+                                        <p class="text-sm md:text-base"><?php echo $tile['description']; ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <?php if ($tile['button'] && $isSwiper) :
+                                    $btn_title = $tile['button']['title'];
+                                ?>
+                                    <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="block w-[220px] mt-6 mx-auto rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
+                                        <?php echo esc_html($btn_title); ?>
+                                    </a>
                                 <?php endif; ?>
                             </div>
-                            <?php if ($tile['button'] && $isSwiper) :
-                                $btn_title = $tile['button']['title'];
-                            ?>
-                                <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="absolute bottom-0 translate-y-1/2 rounded-[14px] text-[13px] font-bold py-2 px-7 text-white bg-primary hover:bg-secondary transition duration-200"><?php echo esc_html($btn_title); ?></a>
-                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
