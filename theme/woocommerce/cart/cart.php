@@ -222,6 +222,7 @@ do_action('woocommerce_before_cart'); ?>
                 </div>
                 <?php
                     $recruitment_product_id = 1253;
+                    echo is_in_cart($recruitment_product_id);
                     if(is_in_cart($recruitment_product_id)) : 
                 ?>
 
