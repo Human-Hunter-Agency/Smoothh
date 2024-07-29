@@ -7,7 +7,21 @@
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
 
- .scrollbar-none{
-    -ms-overflow-style: none !important;
-    scrollbar-width: none !important;
- }
+.scrollbar-none {
+	-ms-overflow-style: none !important;
+	scrollbar-width: none !important;
+}
+
+.scrollbar-minimal::-webkit-scrollbar-track {
+	background-color: #fff;
+}
+.scrollbar-minimal::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+	background-color: #ffffff;
+}
+.scrollbar-minimal::-webkit-scrollbar-thumb {
+	background-color: #8117ee;
+	border-radius: 8px;
+	border: 3px solid #fff;
+}

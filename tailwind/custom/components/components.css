@@ -273,8 +273,7 @@ footer#page-footer .menu-item {
 	@apply !text-foreground;
 }
 .tmcp-field-wrap .tmcp-selectmultiple.ss-main .ss-values {
-	scrollbar-width: thin;
-	@apply !overflow-auto !flex-nowrap items-center;
+	@apply !overflow-auto !flex-nowrap items-center scrollbar-minimal;
 }
 .tmcp-selectmultiple {
 	@apply !py-0;
