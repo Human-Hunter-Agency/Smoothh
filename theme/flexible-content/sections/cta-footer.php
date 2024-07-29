@@ -15,7 +15,7 @@ $isAboveFooter = $args['isAboveFooter'];
             <div>
                 <h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-center md:text-left"><?php echo esc_html($header); ?></h3>
                 <?php if ($description) : ?>
-                    <p class="mt-1 text-[16px] text-white font-normal text-center md:text-left"><?php echo esc_html($description); ?></p>
+                    <p class="mt-1 text-[16px] text-white font-normal text-center md:text-left"><?php echo $description; ?></p>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
