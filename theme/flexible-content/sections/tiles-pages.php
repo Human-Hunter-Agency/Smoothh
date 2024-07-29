@@ -71,7 +71,7 @@ $tiles_list = $args['tiles_list'];
                                 <?php if ($tile['button'] && $isSwiper) :
                                     $btn_title = $tile['button']['title'];
                                 ?>
-                                    <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="block w-[220px] mt-6 mx-auto rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
+                                    <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>" class="block w-[220px] mt-6 mx-auto rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary hover:bg-primary transition duration-200">
                                         <?php echo esc_html($btn_title); ?>
                                     </a>
                                 <?php endif; ?>
