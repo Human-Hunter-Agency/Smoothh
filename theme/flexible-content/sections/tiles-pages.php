@@ -50,7 +50,7 @@ $tiles_list = $args['tiles_list'];
                                     <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 </div>
                             <?php endif; ?>
-                            <div class="text-center px-3 md:px-6 pb-6 !pt-0 flex flex-col justify-between">
+                            <div class="grwo text-center px-3 md:px-6 pb-6 !pt-0 flex flex-col justify-between">
                                 <div class="w-full">
                                     <?php if ($tile['title']) : ?>
                                         <h3 class="text-base md:text-[20px] mb-6 <?php if (!$isSwiper) :  ?> !mb-0 py-6 <?php endif; ?> font-bold <?php if ($titles_primary) : ?> text-primary <?php endif; ?>">
