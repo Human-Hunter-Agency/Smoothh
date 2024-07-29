@@ -196,7 +196,7 @@ if (is_shop()) {
             ?>
                 <div class="mx-auto w-full -mb-20 px-4 md:px-8 lg:px-24 py-8 md:py-14 flex flex-col md:flex-row gap-2 items-center justify-between drop-shadow-2xl rounded-3xl bg-gradient-to-b from-secondary to-primary">
                     <?php if (isset($cta_header)) : ?>
-                        <h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-left"><?php echo esc_html($cta_header); ?></h1>
+                        <h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-left"><?php echo $cta_header; ?></h1>
                         <?php endif; ?>
 
                         <?php if (isset($cta_btn)) :
