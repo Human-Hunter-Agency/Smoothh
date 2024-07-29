@@ -8,9 +8,9 @@ $offers_limit = $args['offers_limit'];
 
 ?>
 
-<div class="relative py-10 md:py-[70px]">
+<div class="relative pt-10 md:pt-[70px] mb-10">
     <div class="z-[-1] w-[100%] lg:w-[95%] h-full absolute top-0 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
-    <div class="container">
+    <div class="container pb-6">
         <?php if ($header) : ?>
             <div class="container mb-10 md:mb-[50px]">
                 <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-foreground">
@@ -38,7 +38,7 @@ $offers_limit = $args['offers_limit'];
                 <div data-js-jobs="empty" class="hidden w-full mx-auto text-center py-20 text-lg md:text-xl font-semibold">
                     <?php echo __('No offers found', 'smoothh') ?>
                 </div>
-                <button data-js-jobs="load-more" class="!hidden flex mx-auto mt-14 gap-4 items-center  text-base font-bold py-[15px] px-5 md:px-8 hover:text-secondary disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 disabled:pointer-events-none">
+                <button data-js-jobs="load-more" class="!hidden flex mx-auto mt-14 gap-4 items-center  text-base font-bold py-[15px] px-5 md:px-8 hover:text-primary disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 disabled:pointer-events-none">
                     <?php echo __('Load more', 'smoothh') ?>
                 </button>
             </div>
