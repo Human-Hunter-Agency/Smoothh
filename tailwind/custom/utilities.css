@@ -16,8 +16,8 @@
 	background-color: #fff;
 }
 .scrollbar-minimal::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
+	width: 9px;
+	height: 9px;
 	background-color: #ffffff;
 }
 .scrollbar-minimal::-webkit-scrollbar-thumb {

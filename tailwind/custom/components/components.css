@@ -282,7 +282,7 @@ footer#page-footer .menu-item {
 	@apply !bg-primary !rounded-[10px] h-[30px];
 }
 .tmcp-selectmultiple .ss-values .ss-value-text {
-	@apply !text-base whitespace-nowrap;
+	@apply !text-sm whitespace-nowrap;
 }
 .tmcp-field-wrap .ss-main .ss-single,
 .dropdown-custom.ss-main .ss-single {
