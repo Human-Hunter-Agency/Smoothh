@@ -226,7 +226,7 @@ do_action('woocommerce_before_cart'); ?>
                 ?>
 
                     <div class="w-full md:w-[calc(50%_-_10px)] lg:w-[230px] ml-auto font-medium text-center">
-                        <p><?php __('Pay now only a 10% advance payment for recruitment and place your order!', 'smoothh'); ?></p>
+                        <p><?php echo __('Pay now only a 10% advance payment for recruitment and place your order!', 'smoothh'); ?></p>
                     </div>
 
                 <?php endif; ?>
