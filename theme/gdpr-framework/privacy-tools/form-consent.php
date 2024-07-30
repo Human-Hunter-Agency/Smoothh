@@ -14,7 +14,7 @@
                                 <?= $item['title']; ?>
                             </strong>
                         </p>
-                        <p><?= $item['description']; ?></p>
+                        <p class="[&_a]:!text-primary"><?= $item['description']; ?></p>
                     </div>
                     <div class="shrink-0">
                         <?php if ('privacy-policy' !== $item['slug']): ?>

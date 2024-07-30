@@ -58,6 +58,10 @@ body {
 	@apply mt-0
 }
 
+.woocommerce-privacy-policy-text a{
+	@apply text-primary no-underline font-semibold
+}
+
 form .form-basic .wpcf7-list-item input[type=checkbox]{
 	@apply !size-auto
 }
@@ -83,7 +87,7 @@ label.checkbox, .wpcf7-list-item-label {
 	@apply text-[10px]
 }
 .tooltip .tooltip-text a {
-	@apply text-primary font-medium
+	@apply !text-primary font-medium no-underline
 }
 .tooltip .tooltip-text::after {
 	content: " ";
