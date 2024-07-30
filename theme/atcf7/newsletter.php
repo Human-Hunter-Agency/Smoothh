@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
           [submit "Zapisz mnie"]
       </div>
   </div>
-  <div class="has-tooltip mt-3">
+  <div class="has-tooltip mt-3 [&_.wpcf7-list-item-label_a]:text-primary [&_.wpcf7-list-item-label_a]:font-medium">
       [acceptance consent_marketing] <?php
       $termsPageUrl = get_permalink(wc_terms_and_conditions_page_id());
 
