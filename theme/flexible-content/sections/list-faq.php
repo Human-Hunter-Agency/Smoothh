@@ -31,7 +31,7 @@ $list = $args['list'];
                                                                                                                     } else {
                                                                                                                         echo 'false';
                                                                                                                     } ?>" data-js="dropdown-toggle">
-                        <h3 class="text-base md:text-[20px] md:leading-5 group-hover:text-primary transition duration-200 font-semibold" itemprop="name"><?php echo esc_html($question); ?></h3>
+                        <h3 class="text-base md:text-[20px] md:leading-5 group-hover:text-primary transition duration-200 font-semibold" itemprop="name"><?php echo $question; ?></h3>
                         <div class="p-1 relative">
                             <svg class="group-aria-expanded:rotate-180 transition duration-300" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line y1="10.0015" x2="20" y2="10.0015" stroke="#8117EE" stroke-width="2" />
@@ -44,7 +44,7 @@ $list = $args['list'];
                     <div class="overflow-hidden h-0 transition-all duration-300" data-js="dropdown-container">
                         <div class="pb-5 px-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
                             <p class="text-sm md:text-base" itemprop="text">
-                                <?php echo esc_html($answer); ?>
+                                <?php echo $answer; ?>
                             </p>
                         </div>
                     </div>

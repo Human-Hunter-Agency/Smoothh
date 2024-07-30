@@ -28,9 +28,9 @@ $logoDescription = get_field('description_clients_logos');
 
 	<div class="relative w-full h-[300px] md:h-[400px] flex flex-col items-center justify-center mb-[50px] md:mb-[100px]">
 		<?php if (function_exists('yoast_breadcrumb')) : ?>
-            <div class="breadcrumbs-container absolute top-0 inset-x-0">
-                <?php yoast_breadcrumb('<div id="breadcrumbs" class="breadcrumbs-banner">', '</div>'); ?>
-            </div>
+			<div class="breadcrumbs-container absolute top-0 inset-x-0">
+				<?php yoast_breadcrumb('<div id="breadcrumbs" class="breadcrumbs-banner">', '</div>'); ?>
+			</div>
 
 		<?php endif; ?>
 
@@ -119,7 +119,7 @@ $logoDescription = get_field('description_clients_logos');
 		<div class="container mx-auto relative">
 			<div class="mx-auto w-full -mb-20 px-4 md:px-8 lg:px-24 py-8 md:py-14 flex flex-col md:flex-row gap-2 items-center justify-between drop-shadow-2xl rounded-3xl bg-gradient-to-b from-secondary to-primary">
 				<?php if (isset($header)) : ?>
-					<h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-left"><?php echo esc_html($header); ?></h3>
+					<h3 class="mb-0 text-xl sm:text-2xl md:text-3xl lg:text-5xl text-bold text-white font-bold text-left"><?php echo $header; ?></h3>
 				<?php endif; ?>
 
 				<?php if (isset($button) && $button) :
