@@ -14,8 +14,10 @@ if (!defined('ABSPATH')) {
       </div>
   </div>
   <div class="has-tooltip mt-3">
-      [acceptance consent_marketing] <?=
-      __('I consent to the processing of my personal data (name, e-mail address) by the Service Provider (here please provide the name and surname / name and address of the Service Provider) for marketing purposes.', 'smoothh' )
+      [acceptance consent_marketing] <?php
+      $termsPageUrl = get_permalink(wc_terms_and_conditions_page_id());
+
+      echo sprintf(__('I consent to the processing of my personal data (name, e-mail address) by the Service Provider (here please provide the name and surname / name and address of the Service Provider) for newsletter purposes, according to the %sterms and conditions%s.', 'smoothh' ),"<a href='{$termsPageUrl}' target='_blank'>","</a>")
       ?> 
       <div class="tooltip">
         <div class="tooltip-icon">i</div>
