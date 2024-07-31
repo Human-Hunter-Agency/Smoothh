@@ -833,7 +833,7 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 }
 .tm-epo-field-label:has(input.tm-epo-field[required]:placeholder-shown):after{
 	left: var(--placeholder-offset);
-	@apply absolute top-2 content-['*'] text-primary ml-1.5 inline text-base font-bold
+	@apply absolute top-[15px] content-['*'] text-primary ml-1.5 inline text-base font-bold
 }
 
 .woocommerce-checkout-review-order .order-paid th{
