@@ -825,8 +825,8 @@ i[data-tm-tooltip-html] {
 }
 
 select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after,
-input.tm-epo-field[required]:placeholder-shown:after{
-	@apply content-['*'] text-primary ml-2 inline text-base
+input.tm-epo-field[required]:placeholder-shown ~ .ss-main .ss-single:after:after{
+	@apply content-['*'] text-primary ml-1.5 inline text-base font-bold
 }
 
 .woocommerce-checkout-review-order .order-paid th{
