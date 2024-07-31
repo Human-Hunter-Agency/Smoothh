@@ -824,9 +824,16 @@ i[data-tm-tooltip-html] {
 	@apply !text-primary
 }
 
-select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after,
-input.tm-epo-field[required]:placeholder-shown ~ .ss-main .ss-single:after{
+select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 	@apply content-['*'] text-primary ml-1.5 inline text-base font-bold
+}
+
+.tm-epo-field-label{
+	@apply relative
+}
+.tm-epo-field-label:has(input.tm-epo-field[required]:placeholder-shown):after{
+	left: --placeholder-offset;
+	@apply absolute top-2 content-['*'] text-primary ml-1.5 inline text-base font-bold
 }
 
 .woocommerce-checkout-review-order .order-paid th{

@@ -702,6 +702,12 @@ function initCalculatorFields() {
 			if (inputEl.min && (parseInt(inputEl.value)  < parseInt(inputEl.min))) inputEl.value = parseInt(inputEl.min);
 		}
 	}
+
+	document.querySelector('input[type="text"].tmcp-textfield').forEach(input=>{
+		const placeHolderLength = (placeholder.length) ? placeholder.length : 1 ;
+		const placeHolderCalculate = placeHolderLength * 10 + 'px';
+		input.style.setProperty('--placeholder-offset', placeHolderCalculate);
+	})
 }
 
 function initProdSelectRedirect() {
