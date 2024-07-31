@@ -705,7 +705,7 @@ function initCalculatorFields() {
 
 	document.querySelectorAll('input[required].tmcp-textfield').forEach(input=>{
 		const placeHolderLength = (input.placeholder.length) ? input.placeholder.length : 1 ;
-		const placeHolderCalculate = placeHolderLength * 8 + 20 + 'px';
+		const placeHolderCalculate = placeHolderLength * 9 + 20 + 'px';
 		input.parentElement.style.setProperty('--placeholder-offset', placeHolderCalculate);
 	})
 }
