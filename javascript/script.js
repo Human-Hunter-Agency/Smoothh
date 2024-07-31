@@ -218,36 +218,35 @@ function initIconsSwipers() {
 
 	const commonSwiperOptions = {
 		spaceBetween: 20,
-		slidesPerView: 1.2,
 		modules: [Navigation],
 		watchSlidesProgress: true,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
 		},
+		breakpoints: {
+			560: {
+				slidesPerView: 1.5,
+				spaceBetween: 20,
+			},
+			768: {
+				slidesPerView: 2.2,
+				spaceBetween: 25,
+			},
+			1180: {
+				slidesPerView: 2.5,
+				spaceBetween: 20,
+			},
+			1380: {
+				slidesPerView: 4,
+				spaceBetween: 20,
+			},
+		},
 	};
-
 	swiperContainers.forEach((el) => {
 		new Swiper(el, {
 			...commonSwiperOptions,
-			breakpoints: {
-				560: {
-					slidesPerView: 1.5,
-					spaceBetween: 20,
-				},
-				768: {
-					slidesPerView: 2.2,
-					spaceBetween: 25,
-				},
-				1180: {
-					slidesPerView: 2.5,
-					spaceBetween: 20,
-				},
-				1380: {
-					slidesPerView: 4,
-					spaceBetween: 20,
-				},
-			},
+			slidesPerView: 1.2
 		});
 	});
 
@@ -258,24 +257,7 @@ function initIconsSwipers() {
 	swiperMobileTightContainers.forEach((el) => {
 		new Swiper(el, {
 			...commonSwiperOptions,
-			breakpoints: {
-				560: {
-					slidesPerView: 1.75,
-					spaceBetween: 20,
-				},
-				768: {
-					slidesPerView: 2.2,
-					spaceBetween: 25,
-				},
-				1180: {
-					slidesPerView: 2.5,
-					spaceBetween: 20,
-				},
-				1380: {
-					slidesPerView: 4,
-					spaceBetween: 20,
-				},
-			},
+			slidesPerView: 1.5
 		});
 	});
 }
