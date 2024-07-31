@@ -8,6 +8,7 @@ $tiles_list = $args['tiles_list'];
 $text_below = $args['text_below'];
 $button = $args['button'];
 $gridStyle = $args['gridStyle'];
+$tighten = $args['tighten_on_mobile'];
 ?>
 
 <div class="relative py-10 md:py-[80px] mb:pb-[60px]">
@@ -29,7 +30,7 @@ $gridStyle = $args['gridStyle'];
 
     <div class="relative z-0 w-full overflow-hidden">
         <?php if ($tiles_list) : ?>
-            <div class="swiper lg:mt-8 !container !overflow-visible" data-js="swiper-tiles-icons">
+            <div class="swiper lg:mt-8 !container !overflow-visible" <?php if ($tighten) : ?> data-js="swiper-tiles-icons-tight" <?php else : ?> data-js="swiper-tiles-icons" <?php endif; ?> >
                 <div class="swiper-wrapper  
                     <?php if ($gridStyle == '4 Kolumny') : ?> xl:!transform-none xl:box-border xl:flex-wrap xl:!gap-x-[10px] xl:!gap-y-9 xl:justify-center xl:[&_.swiper-slide]:basis-[calc(25%_-_50px)] 
                     <?php endif; ?>
