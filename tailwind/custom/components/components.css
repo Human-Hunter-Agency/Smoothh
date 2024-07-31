@@ -832,7 +832,7 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 	@apply relative
 }
 .tm-epo-field-label:has(input.tm-epo-field[required]:placeholder-shown):after{
-	left: --placeholder-offset;
+	left: var(--placeholder-offset);
 	@apply absolute top-2 content-['*'] text-primary ml-1.5 inline text-base font-bold
 }
 

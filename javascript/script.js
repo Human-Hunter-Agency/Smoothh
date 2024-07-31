@@ -703,9 +703,9 @@ function initCalculatorFields() {
 		}
 	}
 
-	document.querySelector('input[type="text"].tmcp-textfield').forEach(input=>{
+	document.querySelectorAll('input[type="text"].tmcp-textfield').forEach(input=>{
 		const placeHolderLength = (placeholder.length) ? placeholder.length : 1 ;
-		const placeHolderCalculate = placeHolderLength * 10 + 'px';
+		const placeHolderCalculate = placeHolderLength * 10 + 20 + 'px';
 		input.style.setProperty('--placeholder-offset', placeHolderCalculate);
 	})
 }
