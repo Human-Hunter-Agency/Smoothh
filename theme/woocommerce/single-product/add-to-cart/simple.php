@@ -41,7 +41,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 		?>
 
 		<div class="<?php if ((isset($is_hourly) && $is_hourly)) {
-									echo '';
+									echo 'max-md:[&_button]:hidden';
 								} else {
 									echo 'hidden';
 								} ?>">
