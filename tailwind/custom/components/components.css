@@ -825,7 +825,7 @@ i[data-tm-tooltip-html] {
 }
 
 select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after,
-input.tm-epo-field[required]:placeholder-shown ~ .ss-main .ss-single:after:after{
+input.tm-epo-field[required]:placeholder-shown ~ .ss-main .ss-single:after{
 	@apply content-['*'] text-primary ml-1.5 inline text-base font-bold
 }
 
