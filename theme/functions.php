@@ -231,7 +231,7 @@ add_action('rest_api_init', 'register_rest_images');
 function register_rest_images()
 {
 	register_rest_field(
-		array('post','case-study'),
+		array('post', 'case-study'),
 		'fimg_url',
 		array(
 			'get_callback'    => 'get_rest_featured_image',
@@ -600,7 +600,7 @@ function smoothh_show_extra_account_details($user)
 		<?php endif; ?>
 
 	</table>
-<?php
+	<?php
 }
 
 add_action('show_user_profile', 'smoothh_show_extra_account_details', 15);
@@ -1147,7 +1147,7 @@ add_action('wp_enqueue_scripts', 'tm_epo_js_loader');
 // 	$DEPOSIT_AMOUNT_MIN = 990;
 //     $product = wc_get_product($product_id);
 //     $price = $product->get_price();
-// 	$deposit_temp = $price * 0.1; 
+// 	$deposit_temp = $price * 0.1;
 //     if($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
 //         return 10;
 //     } else {
@@ -1156,107 +1156,2176 @@ add_action('wp_enqueue_scripts', 'tm_epo_js_loader');
 // }
 
 // add_filter( 'awcdp_product_deposit_type', 'awcdp_product_deposit_type', 10, 2 );
-// function awcdp_product_deposit_type($type,$product_id) { 
+// function awcdp_product_deposit_type($type,$product_id) {
 // 	$DEPOSIT_AMOUNT_MIN = 990;
 //     $product = wc_get_product($product_id);
 //     $price = $product->get_price();
-// 	$deposit_temp = $price * 0.1; 
+// 	$deposit_temp = $price * 0.1;
 //     if($deposit_temp > $DEPOSIT_AMOUNT_MIN ){
 //         return 'percent';
 //     } else {
 //         return 'fixed';
-//     }    
+//     }
 // }
 
-function truncate($text, $length = 100, $options = array()) {
-    $default = array(
-        'ending' => '...', 'exact' => true, 'html' => false
-    );
-    $options = array_merge($default, $options);
-    extract($options);
+function truncate($text, $length = 100, $options = array())
+{
+	$default = array(
+		'ending' => '...', 'exact' => true, 'html' => false
+	);
+	$options = array_merge($default, $options);
+	extract($options);
 
-    if ($html) {
-        if (mb_strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
-            return $text;
-        }
-        $totalLength = mb_strlen(strip_tags($ending));
-        $openTags = array();
-        $truncate = '';
+	if ($html) {
+		if (mb_strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
+			return $text;
+		}
+		$totalLength = mb_strlen(strip_tags($ending));
+		$openTags = array();
+		$truncate = '';
 
-        preg_match_all('/(<\/?([\w+]+)[^>]*>)?([^<>]*)/', $text, $tags, PREG_SET_ORDER);
-        foreach ($tags as $tag) {
-            if (!preg_match('/img|br|input|hr|area|base|basefont|col|frame|isindex|link|meta|param/s', $tag[2])) {
-                if (preg_match('/<[\w]+[^>]*>/s', $tag[0])) {
-                    array_unshift($openTags, $tag[2]);
-                } else if (preg_match('/<\/([\w]+)[^>]*>/s', $tag[0], $closeTag)) {
-                    $pos = array_search($closeTag[1], $openTags);
-                    if ($pos !== false) {
-                        array_splice($openTags, $pos, 1);
-                    }
-                }
-            }
-            $truncate .= $tag[1];
+		preg_match_all('/(<\/?([\w+]+)[^>]*>)?([^<>]*)/', $text, $tags, PREG_SET_ORDER);
+		foreach ($tags as $tag) {
+			if (!preg_match('/img|br|input|hr|area|base|basefont|col|frame|isindex|link|meta|param/s', $tag[2])) {
+				if (preg_match('/<[\w]+[^>]*>/s', $tag[0])) {
+					array_unshift($openTags, $tag[2]);
+				} else if (preg_match('/<\/([\w]+)[^>]*>/s', $tag[0], $closeTag)) {
+					$pos = array_search($closeTag[1], $openTags);
+					if ($pos !== false) {
+						array_splice($openTags, $pos, 1);
+					}
+				}
+			}
+			$truncate .= $tag[1];
 
-            $contentLength = mb_strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', ' ', $tag[3]));
-            if ($contentLength + $totalLength > $length) {
-                $left = $length - $totalLength;
-                $entitiesLength = 0;
-                if (preg_match_all('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', $tag[3], $entities, PREG_OFFSET_CAPTURE)) {
-                    foreach ($entities[0] as $entity) {
-                        if ($entity[1] + 1 - $entitiesLength <= $left) {
-                            $left--;
-                            $entitiesLength += mb_strlen($entity[0]);
-                        } else {
-                            break;
-                        }
-                    }
-                }
+			$contentLength = mb_strlen(preg_replace('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', ' ', $tag[3]));
+			if ($contentLength + $totalLength > $length) {
+				$left = $length - $totalLength;
+				$entitiesLength = 0;
+				if (preg_match_all('/&[0-9a-z]{2,8};|&#[0-9]{1,7};|&#x[0-9a-f]{1,6};/i', $tag[3], $entities, PREG_OFFSET_CAPTURE)) {
+					foreach ($entities[0] as $entity) {
+						if ($entity[1] + 1 - $entitiesLength <= $left) {
+							$left--;
+							$entitiesLength += mb_strlen($entity[0]);
+						} else {
+							break;
+						}
+					}
+				}
 
-                $truncate .= mb_substr($tag[3], 0 , $left + $entitiesLength);
-                break;
-            } else {
-                $truncate .= $tag[3];
-                $totalLength += $contentLength;
-            }
-            if ($totalLength >= $length) {
-                break;
-            }
-        }
-    } else {
-        if (mb_strlen($text) <= $length) {
-            return $text;
-        } else {
-            $truncate = mb_substr($text, 0, $length - mb_strlen($ending));
-        }
-    }
-    if (!$exact) {
-        $spacepos = mb_strrpos($truncate, ' ');
-        if (isset($spacepos)) {
-            if ($html) {
-                $bits = mb_substr($truncate, $spacepos);
-                preg_match_all('/<\/([a-z]+)>/', $bits, $droppedTags, PREG_SET_ORDER);
-                if (!empty($droppedTags)) {
-                    foreach ($droppedTags as $closingTag) {
-                        if (!in_array($closingTag[1], $openTags)) {
-                            array_unshift($openTags, $closingTag[1]);
-                        }
-                    }
-                }
-            }
-            $truncate = mb_substr($truncate, 0, $spacepos);
-        }
-    }
-    $truncate .= $ending;
+				$truncate .= mb_substr($tag[3], 0, $left + $entitiesLength);
+				break;
+			} else {
+				$truncate .= $tag[3];
+				$totalLength += $contentLength;
+			}
+			if ($totalLength >= $length) {
+				break;
+			}
+		}
+	} else {
+		if (mb_strlen($text) <= $length) {
+			return $text;
+		} else {
+			$truncate = mb_substr($text, 0, $length - mb_strlen($ending));
+		}
+	}
+	if (!$exact) {
+		$spacepos = mb_strrpos($truncate, ' ');
+		if (isset($spacepos)) {
+			if ($html) {
+				$bits = mb_substr($truncate, $spacepos);
+				preg_match_all('/<\/([a-z]+)>/', $bits, $droppedTags, PREG_SET_ORDER);
+				if (!empty($droppedTags)) {
+					foreach ($droppedTags as $closingTag) {
+						if (!in_array($closingTag[1], $openTags)) {
+							array_unshift($openTags, $closingTag[1]);
+						}
+					}
+				}
+			}
+			$truncate = mb_substr($truncate, 0, $spacepos);
+		}
+	}
+	$truncate .= $ending;
 
-    if ($html) {
-        foreach ($openTags as $tag) {
-            $truncate .= '</'.$tag.'>';
-        }
-    }
+	if ($html) {
+		foreach ($openTags as $tag) {
+			$truncate .= '</' . $tag . '>';
+		}
+	}
 
-    return $truncate;
+	return $truncate;
 }
 
-function is_in_cart($product_id) {
-    return in_array( $product_id, array_column( WC()->cart->get_cart(), 'product_id' ) );
+function is_in_cart($product_id)
+{
+	return in_array($product_id, array_column(WC()->cart->get_cart(), 'product_id'));
+}
+
+function custom_order_before_calculate_totals($and_taxes, $order)
+{
+	// The loop to get the order items which are WC_Order_Item_Product objects since WC 3+
+	// loop all products and calculate total deposit
+	$total_deposit = 0;
+	foreach ($order->get_items() as $item_id => $item) {
+
+		if ($item->get_product_id() == 1253 && empty($item->get_meta('_tmdata'))) {
+			$item->update_meta_data('_tmdata', array(
+				0 =>
+				array(
+					'tmcp_post_fields' =>
+					array(
+						'tmcp_select_0_tcform1' => 'ESG (ang. Environmental, Social & Governance)_1',
+						'tmcp_select_1_tcform1' => 'CO2 Reduction & Energy Optimization Manager_1',
+						'tmcp_select_2_tcform1_hidden' => '97920',
+						'tmcp_select_2_tcform1' => 'Austria_2',
+						'tmcp_textfield_3_tcform1' => 'test',
+						'tmcp_checkbox_4_1_tcform1' => 'Rekrutacja pilna_1',
+						'tmcp_dynamic_5_tcform1' => '1',
+					),
+					'product_id' => 1186,
+					'per_product_pricing' => true,
+					'cpf_product_price' => false,
+					'variation_id' => false,
+					'form_prefix' => '_tcform1',
+					'tc_added_in_currency' => 'PLN',
+					'tc_default_currency' => 'PLN',
+					'tmcartepo_data' =>
+					array(
+						0 =>
+						array(
+							'key' => 'ESG (ang. Environmental, Social & Governance)_1',
+							'attribute' => 'tmcp_select_0_tcform1',
+						),
+						1 =>
+						array(
+							'key' => 'CO2 Reduction & Energy Optimization Manager_1',
+							'attribute' => 'tmcp_select_1_tcform1',
+						),
+						2 =>
+						array(
+							'key' => 'Austria_2',
+							'attribute' => 'tmcp_select_2_tcform1',
+						),
+						3 =>
+						array(
+							'key' => 'test',
+							'attribute' => 'tmcp_textfield_3_tcform1',
+						),
+						4 =>
+						array(
+							'key' => 'Rekrutacja pilna_1',
+							'attribute' => 'tmcp_checkbox_4_1_tcform1',
+						),
+						5 =>
+						array(
+							'key' => '1',
+							'attribute' => 'tmcp_dynamic_5_tcform1',
+						),
+					),
+				),
+			));
+			$item->update_meta_data('_tmpost_data', array(
+				0 =>
+				array(
+					'tm-epo-counter' => '1',
+					'tcaddtocart' => '1253',
+					'tmcp_select_0_tcform1' => 'DE&I (ang. Diversity, Equity & Inclusion)_1',
+					'tmcp_select_1_tcform1' => 'Dyrektor DE&I_1',
+					'tmcp_select_2_tcform1' => '',
+					'tmcp_select_3_tcform1_hidden' => '0',
+					'tmcp_select_3_tcform1' => 'Polska_0',
+					'tmcp_textfield_4_tcform1' => 'Test',
+					'tmcp_select_5_tcform1' => 'DE&I (ang. Diversity, Equity & Inclusion)_0',
+					'tmcp_textarea_7_tcform1' => '',
+					'tmcp_textfield_8_tcform1' => '50000',
+					'tmcp_textfield_10_tcform1' => '',
+					'tmcp_textfield_11_tcform1' => '',
+					'tmcp_date_12_tcform1' => '',
+					'tmcp_textfield_13_tcform1' => '',
+					'tmcp_textfield_14_tcform1' => '',
+					'tmcp_textfield_15_tcform1' => '',
+					'tmcp_textarea_16_tcform1' => '',
+					'tmcp_dynamic_19_tcform1' => '1',
+					'tmcp_dynamic_20_tcform1' => '1',
+					'cpf_product_pricetcform1' => '0',
+					'dynamic_product_pricetcform1' => '',
+					'override_product_pricetcform1' => '',
+					'tc_form_prefix' => 'tcform1',
+					'quantity' => '1',
+					'add-to-cart' => '1253',
+				),
+			));
+			$item->update_meta_data(
+				'_tm_epo',
+				array(
+					0 => 1,
+				)
+			);
+			$item->update_meta_data('_tm_epo_options_prices', array(
+				0 => 1,
+			));
+			$item->update_meta_data('_tm_epo_product_original_price', array(
+				0 => '',
+			));
+			$item->update_meta_data('_tmcartepo_data', array(
+				0 =>
+				array(
+					'mode' => 'builder',
+					'cssclass' => '',
+					'hidelabelincart' => '',
+					'hidevalueincart' => 'noprice',
+					'hidelabelinorder' => '',
+					'hidevalueinorder' => 'noprice',
+					'shippingmethodsenable' => '',
+					'shippingmethodsenablelogicrules' => '',
+					'shippingmethodsdisable' => '',
+					'shippingmethodsdisablelogicrules' => '',
+					'element' =>
+					array(
+						'type' => 'select',
+						'rules' =>
+						array(
+							'Inny_0' =>
+							array(
+								0 => '',
+							),
+							'DE&amp;I (ang. Diversity, Equity &amp; Inclusion)_1' =>
+							array(
+								0 => '',
+							),
+							'ESG (ang. Environmental, Social &amp; Governance)_2' =>
+							array(
+								0 => '',
+							),
+							'Finanse, Księgowość, Audyt_3' =>
+							array(
+								0 => '',
+							),
+							'Bankowość i Instytucje Finansowe_4' =>
+							array(
+								0 => '',
+							),
+							'SSC/BPO_5' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie Zasobami Ludzkimi_6' =>
+							array(
+								0 => '',
+							),
+							'Produkcja_7' =>
+							array(
+								0 => '',
+							),
+							'Logistyka &amp; CSR_8' =>
+							array(
+								0 => '',
+							),
+							'FMCG_9' =>
+							array(
+								0 => '',
+							),
+							'Sprzedaż Detaliczna_10' =>
+							array(
+								0 => '',
+							),
+							'E-commerce &amp; Digital_11' =>
+							array(
+								0 => '',
+							),
+							'IT/Technologia_12' =>
+							array(
+								0 => '',
+							),
+							'Utrzymanie Ruchu_13' =>
+							array(
+								0 => '',
+							),
+							'Jakość_14' =>
+							array(
+								0 => '',
+							),
+						),
+						'rules_type' =>
+						array(
+							'Inny_0' =>
+							array(
+								0 => '',
+							),
+							'DE&amp;I (ang. Diversity, Equity &amp; Inclusion)_1' =>
+							array(
+								0 => '',
+							),
+							'ESG (ang. Environmental, Social &amp; Governance)_2' =>
+							array(
+								0 => '',
+							),
+							'Finanse, Księgowość, Audyt_3' =>
+							array(
+								0 => '',
+							),
+							'Bankowość i Instytucje Finansowe_4' =>
+							array(
+								0 => '',
+							),
+							'SSC/BPO_5' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie Zasobami Ludzkimi_6' =>
+							array(
+								0 => '',
+							),
+							'Produkcja_7' =>
+							array(
+								0 => '',
+							),
+							'Logistyka &amp; CSR_8' =>
+							array(
+								0 => '',
+							),
+							'FMCG_9' =>
+							array(
+								0 => '',
+							),
+							'Sprzedaż Detaliczna_10' =>
+							array(
+								0 => '',
+							),
+							'E-commerce &amp; Digital_11' =>
+							array(
+								0 => '',
+							),
+							'IT/Technologia_12' =>
+							array(
+								0 => '',
+							),
+							'Utrzymanie Ruchu_13' =>
+							array(
+								0 => '',
+							),
+							'Jakość_14' =>
+							array(
+								0 => '',
+							),
+						),
+						'_' =>
+						array(
+							'price_type' => false,
+						),
+					),
+					'name' => 'Obszar',
+					'value' => 'DE&I (ang. Diversity, Equity & Inclusion)',
+					'post_name' => 'tmcp_select_0_tcform1',
+					'price' => 0.0,
+					'section' => '666febd02fcf31.57374088',
+					'section_label' => 'Obszar',
+					'percentcurrenttotal' => 0,
+					'fixedcurrenttotal' => 0,
+					'currencies' =>
+					array(),
+					'price_per_currency' =>
+					array(
+						'PLN' => '',
+					),
+					'quantity' => '1',
+					'quantity_selector' => '',
+					'multiple' => '1',
+					'key' => 'DE&amp;I (ang. Diversity, Equity &amp; Inclusion)_1',
+					'use_images' => '',
+					'use_colors' => '',
+					'changes_product_image' => '',
+					'imagesp' => '',
+					'images' => '',
+					'imagesc' => '',
+					'color' => '',
+					'key_id' => 0,
+					'keyvalue_id' => 0,
+					'weight' => 0.0,
+				),
+				1 =>
+				array(
+					'mode' => 'builder',
+					'cssclass' => '',
+					'hidelabelincart' => '',
+					'hidevalueincart' => 'noprice',
+					'hidelabelinorder' => '',
+					'hidevalueinorder' => 'noprice',
+					'shippingmethodsenable' => '',
+					'shippingmethodsenablelogicrules' =>
+					array(
+						'toggle' => 'show',
+						'rules' =>
+						array(),
+					),
+					'shippingmethodsdisable' => '',
+					'shippingmethodsdisablelogicrules' =>
+					array(
+						'toggle' => 'show',
+						'rules' =>
+						array(),
+					),
+					'element' =>
+					array(
+						'type' => 'select',
+						'rules' =>
+						array(
+							'Inne_0' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.2',
+							),
+							'Dyrektor DE&amp;I_1' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'CO2 Reduction &amp; Energy Optimization Manager_2' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Specjalista ds. Należności/Windykacji_3' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Dyrektor Audytu Wewnętrznego_4' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Analityk Inwestycyjny_5' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Prezes Zarządu_6' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Aktuariusz_7' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Underwriter_8' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Dyrektor ds. Rozwoju Produktów_9' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Dyrektor PR i komunikacji_10' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Kierownik Zespołu Sprzedaży do Małych i Średnich Przedsiębiorstw_11' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Doradca Klienta Bankowości Prywatnej_12' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Account Manager_13' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Dyrektor Sprzedaży (Leasing)_14' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Kierownik Techniczny (Leasing)_15' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Dyrektor Bankowości Inwestycyjnej_16' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Team Leader AML/KYC_17' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Specialist AML/KYC_18' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'HR Operations Manager_19' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Talent Acquisition Manager_20' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'HR Team Leader_21' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'HR Administration Specialist_22' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'HR Payroll Specialist_23' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Talent Acquisition Specialist_24' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'HR Reporting Specialist_25' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Customer Service Specialist_26' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Procurement Manager_27' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Kierownik Biura (Office Manager)_28' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Asystent/ka Zarządu (Executive Assistant)_29' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Asystent/ka Zespołu_30' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Regionalny Dyrektor Personalny (&gt;1000 pracowników w regionie)_31' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Dyrektor Personalny (&gt;1000 pracowników)_32' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Dyrektor Personalny (250-1000 pracowników)_33' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Kierownik ds. Personalnych (&lt;250 pracowników)_34' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Senior HR Business Partner_35' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'HR Business Partner_36' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'HR Generalist_37' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Dyrektor ds. Wynagrodzeń i Benefitów_38' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Kierownik ds. Wynagrodzeń i Benefitów_39' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Specjalista ds. Wynagrodzeń i Benefitów_40' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Analityk HR_41' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Dyrektor ds. Szkoleń i Rozwoju_42' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Kierownik ds. Szkoleń i Rozwoju_43' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Specjalista ds. Szkoleń i Rozwoju_44' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Trener Wewnętrzny_45' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Dyrektor Rekrutacji_46' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Kierownik Rekrutacji_47' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Specjalista ds. Rekrutacji_48' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Kierownik ds. Kadr i Płac_49' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Specjalista ds. Kadr i Płac_50' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Specjalista ds. Komunikacji Wewnętrznej_51' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Specjalista ds. Employer Brandingu_52' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'R&amp;D Engineer_53' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Automation Engineer_54' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Specjalista Obsługi Klienta (z angielskim)_55' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Kierownik Obsługi Klienta_56' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Digital Marketing Specialist_57' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Chief Marketing Officer_58' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Trade Marketing Specialist_59' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Category Director_60' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Sales Analyst_61' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Junior Buyer_62' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.2',
+							),
+							'Junior Category Manager_63' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'General Manager (&gt;500 pracowników)_64' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'General Manager (&lt;250 pracowników)_65' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Digital Marketing Specialist_66' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Chief Marketing Officer_67' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'UX Designer_68' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Infrastructure Director_69' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'IT Manager_70' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'PMO_71' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Software Development Manager_72' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Manual QA Engineer_73' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Dyrektor zakładu_74' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+							'Inżynier Utrzymania Ruchu_75' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Kierownik Jakości_76' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Planista Produkcji_77' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Specjalista ds. Ciągłego Doskonalenia_78' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Specjalista_79' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 2.3',
+							),
+							'Kierownik_80' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 6.4',
+							),
+							'Dyrektor_81' =>
+							array(
+								0 => '{field.667029037bd2c3.23900713.value} * 0.9',
+							),
+						),
+						'rules_type' =>
+						array(
+							'Inne_0' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor DE&amp;I_1' =>
+							array(
+								0 => 'math',
+							),
+							'CO2 Reduction &amp; Energy Optimization Manager_2' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista ds. Należności/Windykacji_3' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor Audytu Wewnętrznego_4' =>
+							array(
+								0 => 'math',
+							),
+							'Analityk Inwestycyjny_5' =>
+							array(
+								0 => 'math',
+							),
+							'Prezes Zarządu_6' =>
+							array(
+								0 => 'math',
+							),
+							'Aktuariusz_7' =>
+							array(
+								0 => 'math',
+							),
+							'Underwriter_8' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor ds. Rozwoju Produktów_9' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor PR i komunikacji_10' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik Zespołu Sprzedaży do Małych i Średnich Przedsiębiorstw_11' =>
+							array(
+								0 => 'math',
+							),
+							'Doradca Klienta Bankowości Prywatnej_12' =>
+							array(
+								0 => 'math',
+							),
+							'Account Manager_13' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor Sprzedaży (Leasing)_14' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik Techniczny (Leasing)_15' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor Bankowości Inwestycyjnej_16' =>
+							array(
+								0 => 'math',
+							),
+							'Team Leader AML/KYC_17' =>
+							array(
+								0 => 'math',
+							),
+							'Specialist AML/KYC_18' =>
+							array(
+								0 => 'math',
+							),
+							'HR Operations Manager_19' =>
+							array(
+								0 => 'math',
+							),
+							'Talent Acquisition Manager_20' =>
+							array(
+								0 => 'math',
+							),
+							'HR Team Leader_21' =>
+							array(
+								0 => 'math',
+							),
+							'HR Administration Specialist_22' =>
+							array(
+								0 => 'math',
+							),
+							'HR Payroll Specialist_23' =>
+							array(
+								0 => 'math',
+							),
+							'Talent Acquisition Specialist_24' =>
+							array(
+								0 => 'math',
+							),
+							'HR Reporting Specialist_25' =>
+							array(
+								0 => 'math',
+							),
+							'Customer Service Specialist_26' =>
+							array(
+								0 => 'math',
+							),
+							'Procurement Manager_27' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik Biura (Office Manager)_28' =>
+							array(
+								0 => 'math',
+							),
+							'Asystent/ka Zarządu (Executive Assistant)_29' =>
+							array(
+								0 => 'math',
+							),
+							'Asystent/ka Zespołu_30' =>
+							array(
+								0 => 'math',
+							),
+							'Regionalny Dyrektor Personalny (&gt;1000 pracowników w regionie)_31' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor Personalny (&gt;1000 pracowników)_32' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor Personalny (250-1000 pracowników)_33' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik ds. Personalnych (&lt;250 pracowników)_34' =>
+							array(
+								0 => 'math',
+							),
+							'Senior HR Business Partner_35' =>
+							array(
+								0 => 'math',
+							),
+							'HR Business Partner_36' =>
+							array(
+								0 => 'math',
+							),
+							'HR Generalist_37' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor ds. Wynagrodzeń i Benefitów_38' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik ds. Wynagrodzeń i Benefitów_39' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista ds. Wynagrodzeń i Benefitów_40' =>
+							array(
+								0 => 'math',
+							),
+							'Analityk HR_41' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor ds. Szkoleń i Rozwoju_42' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik ds. Szkoleń i Rozwoju_43' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista ds. Szkoleń i Rozwoju_44' =>
+							array(
+								0 => 'math',
+							),
+							'Trener Wewnętrzny_45' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor Rekrutacji_46' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik Rekrutacji_47' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista ds. Rekrutacji_48' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik ds. Kadr i Płac_49' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista ds. Kadr i Płac_50' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista ds. Komunikacji Wewnętrznej_51' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista ds. Employer Brandingu_52' =>
+							array(
+								0 => 'math',
+							),
+							'R&amp;D Engineer_53' =>
+							array(
+								0 => 'math',
+							),
+							'Automation Engineer_54' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista Obsługi Klienta (z angielskim)_55' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik Obsługi Klienta_56' =>
+							array(
+								0 => 'math',
+							),
+							'Digital Marketing Specialist_57' =>
+							array(
+								0 => 'math',
+							),
+							'Chief Marketing Officer_58' =>
+							array(
+								0 => 'math',
+							),
+							'Trade Marketing Specialist_59' =>
+							array(
+								0 => 'math',
+							),
+							'Category Director_60' =>
+							array(
+								0 => 'math',
+							),
+							'Sales Analyst_61' =>
+							array(
+								0 => 'math',
+							),
+							'Junior Buyer_62' =>
+							array(
+								0 => 'math',
+							),
+							'Junior Category Manager_63' =>
+							array(
+								0 => 'math',
+							),
+							'General Manager (&gt;500 pracowników)_64' =>
+							array(
+								0 => 'math',
+							),
+							'General Manager (&lt;250 pracowników)_65' =>
+							array(
+								0 => 'math',
+							),
+							'Digital Marketing Specialist_66' =>
+							array(
+								0 => 'math',
+							),
+							'Chief Marketing Officer_67' =>
+							array(
+								0 => 'math',
+							),
+							'UX Designer_68' =>
+							array(
+								0 => 'math',
+							),
+							'Infrastructure Director_69' =>
+							array(
+								0 => 'math',
+							),
+							'IT Manager_70' =>
+							array(
+								0 => 'math',
+							),
+							'PMO_71' =>
+							array(
+								0 => 'math',
+							),
+							'Software Development Manager_72' =>
+							array(
+								0 => 'math',
+							),
+							'Manual QA Engineer_73' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor zakładu_74' =>
+							array(
+								0 => 'math',
+							),
+							'Inżynier Utrzymania Ruchu_75' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik Jakości_76' =>
+							array(
+								0 => 'math',
+							),
+							'Planista Produkcji_77' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista ds. Ciągłego Doskonalenia_78' =>
+							array(
+								0 => 'math',
+							),
+							'Specjalista_79' =>
+							array(
+								0 => 'math',
+							),
+							'Kierownik_80' =>
+							array(
+								0 => 'math',
+							),
+							'Dyrektor_81' =>
+							array(
+								0 => 'math',
+							),
+						),
+						'_' =>
+						array(
+							'price_type' => false,
+						),
+					),
+					'name' => 'Stanowisko',
+					'value' => 'Dyrektor DE&I',
+					'post_name' => 'tmcp_select_1_tcform1',
+					'price' => 0,
+					'section' => '666febd02fcf49.12361043',
+					'section_label' => 'Stanowisko',
+					'percentcurrenttotal' => 0,
+					'fixedcurrenttotal' => 0,
+					'currencies' =>
+					array(),
+					'price_per_currency' =>
+					array(
+						'PLN' => 0,
+					),
+					'quantity' => '1',
+					'quantity_selector' => '',
+					'multiple' => '1',
+					'key' => 'Dyrektor DE&amp;I_1',
+					'use_images' => '',
+					'use_colors' => '',
+					'changes_product_image' => '',
+					'imagesp' => '',
+					'images' => '',
+					'imagesc' => '',
+					'color' => '',
+					'key_id' => 0,
+					'keyvalue_id' => 0,
+					'weight' => 0.0,
+				),
+				2 =>
+				array(
+					'mode' => 'builder',
+					'cssclass' => '',
+					'hidelabelincart' => '',
+					'hidevalueincart' => 'noprice',
+					'hidelabelinorder' => '',
+					'hidevalueinorder' => 'noprice',
+					'shippingmethodsenable' => '',
+					'shippingmethodsenablelogicrules' => '',
+					'shippingmethodsdisable' => '',
+					'shippingmethodsdisablelogicrules' => '',
+					'element' =>
+					array(
+						'type' => 'select',
+						'rules' =>
+						array(
+							'Polska_0' =>
+							array(
+								0 => '0',
+							),
+							'Albania_1' =>
+							array(
+								0 => '50',
+							),
+							'Andora_2' =>
+							array(
+								0 => '50',
+							),
+							'Austria_3' =>
+							array(
+								0 => '50',
+							),
+							'Belgia_4' =>
+							array(
+								0 => '50',
+							),
+							'Białoruś_5' =>
+							array(
+								0 => '50',
+							),
+							'Bośnia i Hercegowina_6' =>
+							array(
+								0 => '50',
+							),
+							'Bułgaria_7' =>
+							array(
+								0 => '50',
+							),
+							'Chorwacja_8' =>
+							array(
+								0 => '50',
+							),
+							'Czarnogóra_9' =>
+							array(
+								0 => '50',
+							),
+							'Czechy_10' =>
+							array(
+								0 => '50',
+							),
+							'Dania_11' =>
+							array(
+								0 => '50',
+							),
+							'Estonia_12' =>
+							array(
+								0 => '50',
+							),
+							'Finlandia_13' =>
+							array(
+								0 => '50',
+							),
+							'Francja_14' =>
+							array(
+								0 => '150',
+							),
+							'Grecja_15' =>
+							array(
+								0 => '50',
+							),
+							'Hiszpania_16' =>
+							array(
+								0 => '50',
+							),
+							'Holandia_17' =>
+							array(
+								0 => '50',
+							),
+							'Irlandia_18' =>
+							array(
+								0 => '50',
+							),
+							'Islandia_19' =>
+							array(
+								0 => '50',
+							),
+							'Liechtenstein_20' =>
+							array(
+								0 => '50',
+							),
+							'Litwa_21' =>
+							array(
+								0 => '50',
+							),
+							'Luksemburg_22' =>
+							array(
+								0 => '50',
+							),
+							'Łotwa_23' =>
+							array(
+								0 => '50',
+							),
+							'Macedonia_24' =>
+							array(
+								0 => '50',
+							),
+							'Malta_25' =>
+							array(
+								0 => '50',
+							),
+							'Mołdawia_26' =>
+							array(
+								0 => '50',
+							),
+							'Monako_27' =>
+							array(
+								0 => '50',
+							),
+							'Niemcy_28' =>
+							array(
+								0 => '50',
+							),
+							'Norwegia_29' =>
+							array(
+								0 => '50',
+							),
+							'Portugalia_30' =>
+							array(
+								0 => '50',
+							),
+							'Rosja_31' =>
+							array(
+								0 => '50',
+							),
+							'Rumunia_32' =>
+							array(
+								0 => '50',
+							),
+							'San Marino_33' =>
+							array(
+								0 => '50',
+							),
+							'Serbia_34' =>
+							array(
+								0 => '50',
+							),
+							'Słowacja_35' =>
+							array(
+								0 => '50',
+							),
+							'Słowenia_36' =>
+							array(
+								0 => '50',
+							),
+							'Szwajcaria_37' =>
+							array(
+								0 => '50',
+							),
+							'Szwecja_38' =>
+							array(
+								0 => '50',
+							),
+							'Ukraina_39' =>
+							array(
+								0 => '50',
+							),
+							'Watykan_40' =>
+							array(
+								0 => '50',
+							),
+							'Węgry_41' =>
+							array(
+								0 => '50',
+							),
+							'Wielka Brytania_42' =>
+							array(
+								0 => '50',
+							),
+							'Włochy_43' =>
+							array(
+								0 => '50',
+							),
+						),
+						'rules_type' =>
+						array(
+							'Polska_0' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Albania_1' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Andora_2' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Austria_3' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Belgia_4' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Białoruś_5' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Bośnia i Hercegowina_6' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Bułgaria_7' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Chorwacja_8' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Czarnogóra_9' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Czechy_10' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Dania_11' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Estonia_12' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Finlandia_13' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Francja_14' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Grecja_15' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Hiszpania_16' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Holandia_17' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Irlandia_18' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Islandia_19' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Liechtenstein_20' =>
+							array(
+								0 => '',
+							),
+							'Litwa_21' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Luksemburg_22' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Łotwa_23' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Macedonia_24' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Malta_25' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Mołdawia_26' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Monako_27' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Niemcy_28' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Norwegia_29' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Portugalia_30' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Rosja_31' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Rumunia_32' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'San Marino_33' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Serbia_34' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Słowacja_35' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Słowenia_36' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Szwajcaria_37' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Szwecja_38' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Ukraina_39' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Watykan_40' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Węgry_41' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Wielka Brytania_42' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+							'Włochy_43' =>
+							array(
+								0 => 'percentcurrenttotal',
+							),
+						),
+						'_' =>
+						array(
+							'price_type' => false,
+						),
+					),
+					'name' => 'Kraj',
+					'value' => 'Polska',
+					'post_name' => 'tmcp_select_3_tcform1',
+					'price' => 0.0,
+					'section' => '666febd02fcf64.88984826',
+					'section_label' => 'Kraj',
+					'percentcurrenttotal' => 1,
+					'fixedcurrenttotal' => 0,
+					'currencies' =>
+					array(),
+					'price_per_currency' =>
+					array(
+						'PLN' => '',
+					),
+					'quantity' => '1',
+					'quantity_selector' => '',
+					'multiple' => '1',
+					'key' => 'Polska_0',
+					'use_images' => '',
+					'use_colors' => '',
+					'changes_product_image' => '',
+					'imagesp' => '',
+					'images' => '',
+					'imagesc' => '',
+					'color' => '',
+					'key_id' => 0,
+					'keyvalue_id' => 0,
+					'weight' => 0.0,
+				),
+				3 =>
+				array(
+					'mode' => 'builder',
+					'cssclass' => '',
+					'hidelabelincart' => '',
+					'hidevalueincart' => 'noprice',
+					'hidelabelinorder' => '',
+					'hidevalueinorder' => 'noprice',
+					'shippingmethodsenable' => '',
+					'shippingmethodsenablelogicrules' => '',
+					'shippingmethodsdisable' => '',
+					'shippingmethodsdisablelogicrules' => '',
+					'element' =>
+					array(
+						'type' => 'textfield',
+						'rules' =>
+						array(
+							0 =>
+							array(
+								0 => '',
+							),
+						),
+						'rules_type' =>
+						array(
+							0 =>
+							array(
+								0 => '',
+							),
+						),
+						'_' =>
+						array(
+							'price_type' => false,
+						),
+					),
+					'name' => 'Miasto',
+					'value' => 'Test',
+					'post_name' => 'tmcp_textfield_4_tcform1',
+					'price' => 0.0,
+					'section' => '666febd02fcf79.20232136',
+					'section_label' => 'Miasto',
+					'percentcurrenttotal' => 0,
+					'fixedcurrenttotal' => 0,
+					'currencies' =>
+					array(),
+					'price_per_currency' =>
+					array(),
+					'quantity' => '1',
+					'quantity_selector' => '',
+					'key_id' => 0,
+					'keyvalue_id' => 0,
+					'weight' => 0,
+				),
+				4 =>
+				array(
+					'mode' => 'builder',
+					'cssclass' => '',
+					'hidelabelincart' => '',
+					'hidevalueincart' => 'noprice',
+					'hidelabelinorder' => '',
+					'hidevalueinorder' => 'noprice',
+					'shippingmethodsenable' => '',
+					'shippingmethodsenablelogicrules' => '',
+					'shippingmethodsdisable' => '',
+					'shippingmethodsdisablelogicrules' => '',
+					'element' =>
+					array(
+						'type' => 'select',
+						'rules' =>
+						array(
+							'DE&amp;I (ang. Diversity, Equity &amp; Inclusion)_0' =>
+							array(
+								0 => '',
+							),
+							'ESG (ang. Environmental, Social &amp; Governance)_1' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie finansami_2' =>
+							array(
+								0 => '',
+							),
+							'Audyt, Prawo, Compliance_3' =>
+							array(
+								0 => '',
+							),
+							'Finanse inwestycyjne_4' =>
+							array(
+								0 => '',
+							),
+							'General Management_5' =>
+							array(
+								0 => '',
+							),
+							'Ryzyko i Aktuariat_6' =>
+							array(
+								0 => '',
+							),
+							'Ryzyko Kredytowe i Underwriting_7' =>
+							array(
+								0 => '',
+							),
+							'Rozwój produktów_8' =>
+							array(
+								0 => '',
+							),
+							'Marketing, Komunikacja i PR_9' =>
+							array(
+								0 => '',
+							),
+							'Sprzedaż i bankowość korporacyjna_10' =>
+							array(
+								0 => '',
+							),
+							'Bankowość detaliczna/ Domy maklerskie/ TFI/ Private Banking_11' =>
+							array(
+								0 => '',
+							),
+							'Ubezpieczenia_12' =>
+							array(
+								0 => '',
+							),
+							'Leasing i Factoring_13' =>
+							array(
+								0 => '',
+							),
+							'Operacje_14' =>
+							array(
+								0 => '',
+							),
+							'Bankowość inwestycyjna, Private Equity_15' =>
+							array(
+								0 => '',
+							),
+							'Fund Accounting_16' =>
+							array(
+								0 => '',
+							),
+							'HR_17' =>
+							array(
+								0 => '',
+							),
+							'Customer Service_18' =>
+							array(
+								0 => '',
+							),
+							'Supply Chain/ Procurement_19' =>
+							array(
+								0 => '',
+							),
+							'R&amp;D_20' =>
+							array(
+								0 => '',
+							),
+							'Utrzymanie Ruchu_21' =>
+							array(
+								0 => '',
+							),
+							'Łańcuch Dostaw_22' =>
+							array(
+								0 => '',
+							),
+							'Digital_23' =>
+							array(
+								0 => '',
+							),
+							'Marketing_24' =>
+							array(
+								0 => '',
+							),
+							'Trade Marketing_25' =>
+							array(
+								0 => '',
+							),
+							'Category Management_26' =>
+							array(
+								0 => '',
+							),
+							'Sale_27' =>
+							array(
+								0 => '',
+							),
+							'Sales_28' =>
+							array(
+								0 => '',
+							),
+							'IT Executive_29' =>
+							array(
+								0 => '',
+							),
+							'IT Managerial_30' =>
+							array(
+								0 => '',
+							),
+							'ITIL Management_31' =>
+							array(
+								0 => '',
+							),
+							'Software_32' =>
+							array(
+								0 => '',
+							),
+							'Quality Assurence_33' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie produkcją_34' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie technologią_35' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie jakością_36' =>
+							array(
+								0 => '',
+							),
+							'Logistyka produkcji_37' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie projektami_38' =>
+							array(
+								0 => '',
+							),
+							'Inny_39' =>
+							array(
+								0 => '',
+							),
+						),
+						'rules_type' =>
+						array(
+							'DE&amp;I (ang. Diversity, Equity &amp; Inclusion)_0' =>
+							array(
+								0 => '',
+							),
+							'ESG (ang. Environmental, Social &amp; Governance)_1' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie finansami_2' =>
+							array(
+								0 => '',
+							),
+							'Audyt, Prawo, Compliance_3' =>
+							array(
+								0 => '',
+							),
+							'Finanse inwestycyjne_4' =>
+							array(
+								0 => '',
+							),
+							'General Management_5' =>
+							array(
+								0 => '',
+							),
+							'Ryzyko i Aktuariat_6' =>
+							array(
+								0 => '',
+							),
+							'Ryzyko Kredytowe i Underwriting_7' =>
+							array(
+								0 => '',
+							),
+							'Rozwój produktów_8' =>
+							array(
+								0 => '',
+							),
+							'Marketing, Komunikacja i PR_9' =>
+							array(
+								0 => '',
+							),
+							'Sprzedaż i bankowość korporacyjna_10' =>
+							array(
+								0 => '',
+							),
+							'Bankowość detaliczna/ Domy maklerskie/ TFI/ Private Banking_11' =>
+							array(
+								0 => '',
+							),
+							'Ubezpieczenia_12' =>
+							array(
+								0 => '',
+							),
+							'Leasing i Factoring_13' =>
+							array(
+								0 => '',
+							),
+							'Operacje_14' =>
+							array(
+								0 => '',
+							),
+							'Bankowość inwestycyjna, Private Equity_15' =>
+							array(
+								0 => '',
+							),
+							'Fund Accounting_16' =>
+							array(
+								0 => '',
+							),
+							'HR_17' =>
+							array(
+								0 => '',
+							),
+							'Customer Service_18' =>
+							array(
+								0 => '',
+							),
+							'Supply Chain/ Procurement_19' =>
+							array(
+								0 => '',
+							),
+							'R&amp;D_20' =>
+							array(
+								0 => '',
+							),
+							'Utrzymanie Ruchu_21' =>
+							array(
+								0 => '',
+							),
+							'Łańcuch Dostaw_22' =>
+							array(
+								0 => '',
+							),
+							'Digital_23' =>
+							array(
+								0 => '',
+							),
+							'Marketing_24' =>
+							array(
+								0 => '',
+							),
+							'Trade Marketing_25' =>
+							array(
+								0 => '',
+							),
+							'Category Management_26' =>
+							array(
+								0 => '',
+							),
+							'Sale_27' =>
+							array(
+								0 => '',
+							),
+							'Sales_28' =>
+							array(
+								0 => '',
+							),
+							'IT Executive_29' =>
+							array(
+								0 => '',
+							),
+							'IT Managerial_30' =>
+							array(
+								0 => '',
+							),
+							'ITIL Management_31' =>
+							array(
+								0 => '',
+							),
+							'Software_32' =>
+							array(
+								0 => '',
+							),
+							'Quality Assurence_33' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie produkcją_34' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie technologią_35' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie jakością_36' =>
+							array(
+								0 => '',
+							),
+							'Logistyka produkcji_37' =>
+							array(
+								0 => '',
+							),
+							'Zarządzanie projektami_38' =>
+							array(
+								0 => '',
+							),
+							'Inny_39' =>
+							array(
+								0 => '',
+							),
+						),
+						'_' =>
+						array(
+							'price_type' => false,
+						),
+					),
+					'name' => 'Dział',
+					'value' => 'DE&I (ang. Diversity, Equity & Inclusion)',
+					'post_name' => 'tmcp_select_5_tcform1',
+					'price' => 0.0,
+					'section' => '667024ab7bd120.95046821',
+					'section_label' => 'Dział',
+					'percentcurrenttotal' => 0,
+					'fixedcurrenttotal' => 0,
+					'currencies' =>
+					array(),
+					'price_per_currency' =>
+					array(
+						'PLN' => '',
+					),
+					'quantity' => '1',
+					'quantity_selector' => '',
+					'multiple' => '1',
+					'key' => 'DE&amp;I (ang. Diversity, Equity &amp; Inclusion)_0',
+					'use_images' => '',
+					'use_colors' => '',
+					'changes_product_image' => '',
+					'imagesp' => '',
+					'images' => '',
+					'imagesc' => '',
+					'color' => '',
+					'key_id' => 0,
+					'keyvalue_id' => 0,
+					'weight' => 0.0,
+				),
+				5 =>
+				array(
+					'mode' => 'builder',
+					'cssclass' => '',
+					'hidelabelincart' => '',
+					'hidevalueincart' => 'noprice',
+					'hidelabelinorder' => '',
+					'hidevalueinorder' => 'noprice',
+					'shippingmethodsenable' => '',
+					'shippingmethodsenablelogicrules' => '',
+					'shippingmethodsdisable' => '',
+					'shippingmethodsdisablelogicrules' => '',
+					'element' =>
+					array(
+						'type' => 'textfield',
+						'rules' =>
+						array(
+							0 =>
+							array(
+								0 => '',
+							),
+						),
+						'rules_type' =>
+						array(
+							0 =>
+							array(
+								0 => '',
+							),
+						),
+						'_' =>
+						array(
+							'price_type' => false,
+						),
+					),
+					'name' => 'Wynagrodzenie',
+					'value' => '50000',
+					'post_name' => 'tmcp_textfield_8_tcform1',
+					'price' => 0.0,
+					'section' => '667029037bd2c3.23900713',
+					'section_label' => 'Wynagrodzenie',
+					'percentcurrenttotal' => 0,
+					'fixedcurrenttotal' => 0,
+					'currencies' =>
+					array(),
+					'price_per_currency' =>
+					array(),
+					'quantity' => '1',
+					'quantity_selector' => '',
+					'key_id' => 0,
+					'keyvalue_id' => 0,
+					'weight' => 0,
+				),
+				6 =>
+				array(
+					'mode' => 'builder',
+					'cssclass' => '',
+					'hidelabelincart' => 'hidden',
+					'hidevalueincart' => 'hidden',
+					'hidelabelinorder' => 'hidden',
+					'hidevalueinorder' => 'hidden',
+					'shippingmethodsenable' => '',
+					'shippingmethodsenablelogicrules' =>
+					array(
+						'toggle' => 'show',
+						'rules' =>
+						array(),
+					),
+					'shippingmethodsdisable' => '',
+					'shippingmethodsdisablelogicrules' =>
+					array(
+						'toggle' => 'show',
+						'rules' =>
+						array(),
+					),
+					'element' =>
+					array(
+						'type' => 'dynamic',
+						'rules' =>
+						array(
+							0 =>
+							array(
+								0 => '{product_price_plus_options_total}',
+							),
+						),
+						'rules_type' =>
+						array(
+							0 =>
+							array(
+								0 => 'math',
+							),
+						),
+						'_' =>
+						array(
+							'price_type' => false,
+						),
+					),
+					'name' => 'Suma',
+					'value' => '1',
+					'post_name' => 'tmcp_dynamic_19_tcform1',
+					'price' => 0,
+					'section' => '666febd02fcfa6.35759104',
+					'section_label' => 'Suma',
+					'percentcurrenttotal' => 0,
+					'fixedcurrenttotal' => 0,
+					'currencies' =>
+					array(),
+					'price_per_currency' =>
+					array(
+						'PLN' => '',
+					),
+					'quantity' => '1',
+					'quantity_selector' => '',
+					'dynamic' => 'calculation',
+					'price_formula' => '{product_price_plus_options_total}',
+					'key_id' => 0,
+					'keyvalue_id' => 0,
+					'weight' => 0,
+				),
+				7 =>
+				array(
+					'mode' => 'builder',
+					'cssclass' => '',
+					'hidelabelincart' => 'hidden',
+					'hidevalueincart' => 'hidden',
+					'hidelabelinorder' => 'hidden',
+					'hidevalueinorder' => 'hidden',
+					'shippingmethodsenable' => '',
+					'shippingmethodsenablelogicrules' => '',
+					'shippingmethodsdisable' => '',
+					'shippingmethodsdisablelogicrules' => '',
+					'element' =>
+					array(
+						'type' => 'dynamic',
+						'rules' =>
+						array(
+							0 =>
+							array(
+								0 => '{product_price_plus_options_total} * 1.23',
+							),
+						),
+						'rules_type' =>
+						array(
+							0 =>
+							array(
+								0 => 'math',
+							),
+						),
+						'_' =>
+						array(
+							'price_type' => false,
+						),
+					),
+					'name' => 'Suma z VAT',
+					'value' => '1',
+					'post_name' => 'tmcp_dynamic_20_tcform1',
+					'price' => 0,
+					'section' => '66a2061f44c461.49174290',
+					'section_label' => 'Suma z VAT',
+					'percentcurrenttotal' => 0,
+					'fixedcurrenttotal' => 0,
+					'currencies' =>
+					array(),
+					'price_per_currency' =>
+					array(
+						'PLN' => '',
+					),
+					'quantity' => '1',
+					'quantity_selector' => '',
+					'dynamic' => 'calculation',
+					'price_formula' => '{product_price_plus_options_total} * 1.23',
+					'key_id' => 0,
+					'keyvalue_id' => 0,
+					'weight' => 0,
+				),
+			));
+		};
+	}
+}
+add_action('woocommerce_order_before_calculate_totals', "custom_order_before_calculate_totals", 10, 3);
+
+//MERCHANT - ADD CART FUNCTIONALITY
+add_action('woocommerce_cart_actions', 'add_button_for_merchant');
+function add_button_for_merchant()
+{
+	if (is_user_logged_in() && is_site_admin()) {
+	?>
+		<a href="/merchant_actions?cart_as_order=1" class="w-full border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 text-white whitespace-nowrap min-h-[55px] !px-5 xl:!px-10 !rounded-[15px] font-bold !flex items-center justify-center gap-5 checkout-button button alt wc-forward">
+			Zakup w imieniu klienta<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<circle class="stroke-black" cx="9.5" cy="9.5" r="9"></circle>
+				<path class="fill-black" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
+			</svg>
+		</a>
+<?php
+	}
+}
+
+function is_site_admin()
+{
+	return in_array('administrator',  wp_get_current_user()->roles);
+}
+//https://smoothh.domain.org.pl/merchant_actions/?cart_as_order=1
+add_action('init', 'init_url_custom_function');
+function init_url_custom_function()
+{
+	add_rewrite_rule('^merchant_actions/?', 'index.php?cart_as_order=1', 'top');
+	add_rewrite_tag('%cart_as_order%', '([^&]+)');
+}
+
+add_action('wp', 'check_url_merchant_function');
+function check_url_merchant_function()
+{
+	global $cart_as_order;
+	if (isset($cart_as_order) && $cart_as_order == "1" && is_user_logged_in() && is_site_admin())
+		merchant_add_to_cart();
+}
+
+function merchant_add_to_cart()
+{
+
+	$cart = WC()->cart;
+	$checkout = WC()->checkout();
+	$order_id = $checkout->create_order(array());
+	$order = wc_get_order($order_id);
+	$order->set_payment_method('bacs');
+	update_post_meta($order_id, '_customer_user', get_current_user_id());
+	$order->calculate_totals();
+	//$cart->empty_cart();
+	wp_redirect(admin_url('/admin.php?page=wc-orders&action=edit&id=' . $order_id, 'http'), 301);
 }
