@@ -3281,7 +3281,7 @@ function custom_order_before_calculate_totals($and_taxes, $order)
 add_action('woocommerce_order_before_calculate_totals', "custom_order_before_calculate_totals", 10, 3);
 
 //MERCHANT - ADD CART FUNCTIONALITY
-add_action('woocommerce_cart_actions', 'add_button_for_merchant');
+//add_action('woocommerce_cart_actions', 'add_button_for_merchant'); - in tpl
 function add_button_for_merchant()
 {
 	if (is_user_logged_in() && is_site_admin()) {
