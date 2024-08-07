@@ -3326,6 +3326,6 @@ function merchant_add_to_cart()
 	$order->set_payment_method('bacs');
 	update_post_meta($order_id, '_customer_user', get_current_user_id());
 	$order->calculate_totals();
-	//$cart->empty_cart();
+	$cart->empty_cart();
 	wp_redirect(admin_url('/admin.php?page=wc-orders&action=edit&id=' . $order_id, 'http'), 301);
 }
