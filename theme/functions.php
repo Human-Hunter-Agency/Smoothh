@@ -1317,7 +1317,7 @@ function merchant_add_to_cart()
 function filter_wc_order_is_editable($editable, $order)
 {
 	// Compare
-	if (in_array('shop_manager', wp_get_current_user()->roles)) {
+	if (in_array('merchant', wp_get_current_user()->roles)) {
 		$editable = false;
 	}
 
