@@ -2,12 +2,14 @@
 
 /** Template to display 'Lista pytań / FAQ' - list_faq */
 
+$section_ID = $args['section_ID'];
 $header = $args['header'];
 $list = $args['list'];
 
 ?>
 
-<div class="relative pb-5 pt-10 md:pt-[60px]">
+<div id="<?php if ($section_ID) : echo $section_ID;
+            endif; ?>" class="relative pb-5 pt-10 md:pt-[60px]">
     <div class="container !max-w-[1410px]">
         <?php if ($header) : ?>
             <div class="mx-auto max-w-[800px] text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-14">
