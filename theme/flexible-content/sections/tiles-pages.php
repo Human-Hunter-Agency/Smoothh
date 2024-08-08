@@ -2,6 +2,7 @@
 
 /** Template to display 'Sekcja z kafelkami stron' - tiles_pages */
 
+$section_ID = $args['section_ID'];
 $header = $args['header'];
 $description = $args['description'];
 $decoration = $args['decoration'];
@@ -12,7 +13,8 @@ $tiles_list = $args['tiles_list'];
 
 ?>
 
-<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0">
+<div id="<?php if ($section_ID) : echo $section_ID;
+            endif; ?>" class="relative pb-10 pt-20 md:pt-28 md:pb-0">
     <?php if ($IsBackgroundColor) : ?>
         <div class="z-[-1] w-[100%] lg:w-[85%] h-full absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-l from-[rgba(31,151,212,0.1)] to-[rgba(31,151,212,0.03)] rounded-[45px]"></div>
     <?php endif; ?>
@@ -59,7 +61,7 @@ $tiles_list = $args['tiles_list'];
                                                 $btn_target = $tile['button']['target'] ? $tile['button']['target'] : '_self';
                                             ?>
                                                 <a href="<?php echo esc_url($btn_url); ?>" target="<?php echo esc_attr($btn_target); ?>"><?php echo $tile['title']; ?></a>
-                                            <?php else: ?>
+                                            <?php else : ?>
                                                 <?php echo $tile['title']; ?>
                                             <?php endif; ?>
                                         </h3>
