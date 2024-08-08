@@ -2,6 +2,7 @@
 
 /** Template to display 'Lista Case Studies' - list_case_studies */
 
+$section_ID = $args['section_ID'];
 $header = $args['header'];
 
 $posts = get_posts(array(
@@ -11,14 +12,15 @@ $posts = get_posts(array(
 
 ?>
 
-<div class="relative py-10 md:py-0 md:pt-[60px] ">
+<div id="<?php if ($section_ID) : echo $section_ID;
+            endif; ?>" class="relative py-10 md:py-0 md:pt-28">
 
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-            <div class="mx-auto max-w-[960px] text-center !font-bold prose-strong:font-bold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
-                <?php echo $header; ?>
-            </div>
+                <div class="mx-auto max-w-[960px] text-center !font-bold prose-strong:font-bold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
+                    <?php echo $header; ?>
+                </div>
             <?php endif; ?>
             <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14" data-js-case-studies='container'>
                 <?php foreach ($posts as $post) : ?>
@@ -40,15 +42,15 @@ $posts = get_posts(array(
                         </a>
                     </li>
                 <?php
-                    endforeach;
+                endforeach;
                 ?>
             </ul>
             <div class="w-full px-10 py-20 hidden" data-js-case-studies="loader">
-				<span class="mx-auto block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
-			</div>
-			<button data-js-case-studies="load-more" class=" flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
-				<?php esc_html_e('More posts', 'smoothh'); ?>
-			</button>
+                <span class="mx-auto block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
+            </div>
+            <button data-js-case-studies="load-more" class=" flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
+                <?php esc_html_e('More posts', 'smoothh'); ?>
+            </button>
         </div>
     </div>
 </div>
