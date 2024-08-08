@@ -9,7 +9,7 @@ $list = $args['list'];
 ?>
 
 <div id="<?php if ($section_ID) : echo $section_ID;
-            endif; ?>" class="relative pb-5 pt-10 md:pt-[60px]">
+            endif; ?>" class="relative pb-5 pt-10 md:pt-28">
     <div class="container !max-w-[1410px]">
         <?php if ($header) : ?>
             <div class="mx-auto max-w-[800px] text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-14">
