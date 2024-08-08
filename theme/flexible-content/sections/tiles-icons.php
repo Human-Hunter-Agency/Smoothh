@@ -13,7 +13,7 @@ $tighten = $args['tighten_on_mobile'];
 ?>
 
 <div id="<?php if ($section_ID) : echo $section_ID;
-            endif; ?>" class="relative py-10 md:pb-[80px] md:pt-[110px] mb:pb-[60px]">
+            endif; ?>" class="relative py-10 md:pb-[80px] md:pt-28 mb:pb-[60px]">
 
     <div class="container">
         <div class="relative z-0">
