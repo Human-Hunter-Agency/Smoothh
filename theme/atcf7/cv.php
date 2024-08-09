@@ -53,8 +53,8 @@ if (!defined('ABSPATH')) {
 
   <div class="btn-transparent group relative text-center max-w-full w-fit mx-auto [&_.wpcf7-spinner]:absolute [&_.wpcf7-spinner]:right-[-7px] [&_.wpcf7-spinner]:top-4 [&_svg_path]:hover:fill-secondary [&_svg_circle]:hover:stroke-secondary">
     [submit "Wyślij wiadomość"]
-    <svg class="absolute right-5 top-[18px]" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path class="fill-white group-hover:fill-primary transition duration-200" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z" />
+    <svg class="absolute right-5 top-[18px]" width="14" height="10" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="fill-white group-hover:fill-primary transition duration-200" d="M0.774525 0.500055L5.50054 5.75635L10.2266 0.500055" stroke="#8117EE" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
   </div>
 </div>
