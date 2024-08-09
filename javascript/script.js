@@ -1420,8 +1420,9 @@ function initMenuSubmenus() {
 		item.addEventListener('click', () => {
 			const menuItem = item.parentElement;
 			menuItem.classList.toggle('expanded');
-			const subMenu =
-				item.parentElement.querySelector('.sub-menu');
+			const subMenu = item.parentElement.querySelector('.sub-menu');
+			if (!subMenu) return
+			
 			if (menuItem.classList.contains('expanded')) {
 				subMenu.style.height = subMenu.scrollHeight + 'px';
 			} else {
