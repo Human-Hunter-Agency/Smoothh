@@ -1415,7 +1415,7 @@ function stringToPriceFormat(val) {
 }
 
 function initMenuSubmenus() {
-	dropdownLinks = document.querySelectorAll('.menu-item-has-children > .link-wrapper');
+	dropdownLinks = document.querySelectorAll('.menu-item-has-children>.link-wrapper');
 	dropdownLinks.forEach((item) => {
 		item.addEventListener('click', () => {
 			const menuItem = item.parentElement;
