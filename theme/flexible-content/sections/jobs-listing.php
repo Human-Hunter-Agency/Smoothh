@@ -10,7 +10,7 @@ $offers_limit = $args['offers_limit'];
 ?>
 
 <div id="<?php if ($section_ID) : echo $section_ID;
-            endif; ?>" class="relative pt-10 md:pt-[70px] mb-10">
+            endif; ?>" class="relative pt-24 md:pt-28 mb-10">
     <div class="z-[-1] w-[100%] lg:w-[95%] h-full absolute top-0 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <div class="container pb-6">
         <?php if ($header) : ?>
