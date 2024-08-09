@@ -18,7 +18,7 @@ $tighten = $args['tighten_on_mobile'];
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <div class="mx-auto max-w-[920px] mb-10 lg:mb-7 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+                <div class="mx-auto max-w-[940px] mb-10 lg:mb-7 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>

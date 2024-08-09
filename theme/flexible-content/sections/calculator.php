@@ -12,8 +12,8 @@ $header = $args['header'];
     <div class="container calculator">
         <?php if ($header) : ?>
             <div class="mb-10 md:mb-[50px]">
-                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-foreground">
-                    <?php echo esc_html($header); ?>
+                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-foreground prose-strong:text-primary">
+                    <?php echo __($header); ?>
                 </h2>
             </div>
         <?php endif; ?>
