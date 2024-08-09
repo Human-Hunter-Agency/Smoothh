@@ -13,7 +13,7 @@ $posts = get_posts(array(
 ?>
 
 <div id="<?php if ($section_ID) : echo $section_ID;
-            endif; ?>" class="relative py-10 md:py-0 md:pt-28">
+            endif; ?>" class="relative pb-10 pt-24 md:py-0 md:pt-28">
 
     <div class="container">
         <div class="relative z-0">
