@@ -1416,7 +1416,6 @@ function stringToPriceFormat(val) {
 
 function initMenuSubmenus() {
 	dropdownLinks = document.querySelectorAll('.menu-item-has-children>.link-wrapper');
-	console.log('test')
 	dropdownLinks.forEach((item) => {
 		item.addEventListener('click', () => {
 			const menuItem = item.parentElement;
