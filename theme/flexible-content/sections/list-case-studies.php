@@ -32,8 +32,10 @@ $posts = get_posts(array(
                                 <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold"><?php echo $post->post_title; ?></h4>
                             </div>
 
-                            <div class="p-[24px_30px] text-center">
-                                <p class="font-medium"><?php echo esc_html_e('Success fee:', 'smoothh'); ?><span class="text-primary"><?php echo $post->retainer_fee; ?></span></p>
+                            <div class="py-6 text-center">
+                                <p class="font-semibold mb-4"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary"><?php echo $post->retainer_fee; ?></span></p>
+                                <p class="font-semibold mb-4"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary"><?php echo $post->realization_time; ?></span></p>
+                                <p class="font-semibold"><?php echo esc_html_e('Location: ', 'smoothh'); ?><span class="text-primary"><?php echo $post->location; ?></span></p>
                             </div>
 
                             <span class="hidden" href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
