@@ -29,12 +29,12 @@ $posts = get_posts(array(
                         <a href="<?php echo get_permalink($post->ID); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
                             <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px]">
                                 <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
-                                <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold"><?php echo $post->post_title; ?></h4>
+                                <h4 class="p-6 z-[1] relative text-center text-[30px] md:text-[28px] text-white font-semibold"><?php echo $post->post_title; ?></h4>
                             </div>
 
                             <div class="py-6 text-center text-[20px]">
-                                <p class="font-semibold mb-4"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->retainer_fee; ?></span></p>
-                                <p class="font-semibold mb-4"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->realization_time; ?></span></p>
+                                <p class="font-semibold mb-1"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->retainer_fee; ?></span></p>
+                                <p class="font-semibold mb-1"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->realization_time; ?></span></p>
                                 <p class="font-semibold"><?php echo esc_html_e('Location: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->location; ?></span></p>
                             </div>
 
