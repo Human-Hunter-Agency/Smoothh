@@ -13,7 +13,7 @@ $posts = get_posts(array(
 ?>
 
 <div id="<?php if ($section_ID) : echo $section_ID;
-            endif; ?>" class="relative pb-10 pt-24 md:py-0 md:pt-28">
+            endif; ?>" class="relative pb-10 pt-24 md:pt-28">
 
     <div class="container">
         <div class="relative z-0">
@@ -25,20 +25,15 @@ $posts = get_posts(array(
             <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14" data-js-case-studies='container'>
                 <?php foreach ($posts as $post) : ?>
                     <li class="post-tile">
-                        <a href="<?php echo get_permalink($post->ID); ?>">
-                            <?php
-                            $thumbnail_id = get_post_thumbnail_id($post);
-                            if (!$thumbnail_id) {
-                                echo '<img src="" />';
-                            } else {
-                                echo wp_get_attachment_image($thumbnail_id, 'medium', false, array('loading' => 'lazy', 'alt' => $post->post_title));
-                            }
-                            ?>
-                            <div class="title-wrapper">
-                                <h3><?php echo $post->post_title; ?></h3>
+                        <a href="<?php echo get_permalink($post->ID); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
+                            <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
+                                <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
+                                <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold"><?php echo $post->post_title; ?></h4>
+
+                                <p class="hidden"><?php echo get_the_excerpt($post->ID); ?></p>
+
+                                <span href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
                             </div>
-                            <p><?php echo get_the_excerpt($post->ID); ?></p>
-                            <span href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
                         </a>
                     </li>
                 <?php
