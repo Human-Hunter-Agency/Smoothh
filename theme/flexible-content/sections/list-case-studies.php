@@ -4,7 +4,6 @@
 
 $section_ID = $args['section_ID'];
 $header = $args['header'];
-$retainer_fee = get_field('retainer_fee');
 
 
 $posts = get_posts(array(
@@ -34,7 +33,7 @@ $posts = get_posts(array(
                             </div>
 
                             <div class="p-[24px_30px] text-center">
-                                <p class="font-medium"><?php echo esc_html_e('Success fee:', 'smoothh'); ?><span class="text-primary"><?php echo $retainer_fee; ?></span></p>
+                                <p class="font-medium"><?php echo esc_html_e('Success fee:', 'smoothh'); ?><span class="text-primary"><?php echo $post->retainer_fee; ?></span></p>
                             </div>
 
                             <span class="hidden" href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
