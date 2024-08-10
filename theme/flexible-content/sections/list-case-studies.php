@@ -4,6 +4,8 @@
 
 $section_ID = $args['section_ID'];
 $header = $args['header'];
+$retainer_fee = get_field('retainer_fee');
+
 
 $posts = get_posts(array(
     'post_type'         => 'case-study',
@@ -26,15 +28,17 @@ $posts = get_posts(array(
                 <?php foreach ($posts as $post) : ?>
                     <li class="_post-tile">
                         <a href="<?php echo get_permalink($post->ID); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
-                            <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
-                                <div class="hidden z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
+                            <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px]">
+                                <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold"><?php echo $post->post_title; ?></h4>
-                                <div class="about p-[24px_30px] text-center">
-                                    <p class="font-medium"><?php echo esc_html_e('Success fee:', 'smoothh'); ?><span class="text-primary"><?php echo $post->retainer_fee; ?></span></p>
-                                </div>
-
-                                <span href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
                             </div>
+
+                            <div class="p-[24px_30px] text-center">
+                                <p class="font-medium"><?php echo esc_html_e('Success fee:', 'smoothh'); ?><span class="text-primary"><?php echo $retainer_fee; ?></span></p>
+                            </div>
+
+                            <span class="hidden" href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
+
                         </a>
                     </li>
                 <?php
