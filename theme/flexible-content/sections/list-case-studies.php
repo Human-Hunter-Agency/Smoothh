@@ -4,6 +4,10 @@
 
 $section_ID = $args['section_ID'];
 $header = $args['header'];
+$retainer_fee = $args['retainer_fee'];
+$retainer_fee_value = $args['retainer_fee_value'];
+$realization_time = $args['realization_time'];
+$location = $args['location'];
 
 $posts = get_posts(array(
     'post_type'         => 'case-study',
@@ -24,13 +28,15 @@ $posts = get_posts(array(
             <?php endif; ?>
             <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14" data-js-case-studies='container'>
                 <?php foreach ($posts as $post) : ?>
-                    <li class="post-tile">
+                    <li class="_post-tile">
                         <a href="<?php echo get_permalink($post->ID); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
                             <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
-                                <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
+                                <div class="hidden z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold"><?php echo $post->post_title; ?></h4>
-
-                                <p class="hidden"><?php echo get_the_excerpt($post->ID); ?></p>
+                                <div class="about p-[24px_30px] text-center">
+                                    <p class="hidden"><?php echo get_the_excerpt($post->ID); ?></p>
+                                    <p class="font-medium"><?php echo $retainer_fee . ':'; ?><span class="text-primary"><?php echo $retainer_fee_value; ?></span></p>
+                                </div>
 
                                 <span href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
                             </div>
