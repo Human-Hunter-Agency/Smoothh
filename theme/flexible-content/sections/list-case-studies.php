@@ -30,7 +30,7 @@ $posts = get_posts(array(
                                 <div class="hidden z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold"><?php echo $post->post_title; ?></h4>
                                 <div class="about p-[24px_30px] text-center">
-                                    <p class="font-medium"><?php echo esc_html_e('Success fee:', 'smoothh'); ?><span class="text-primary"><?php echo $$post->retainer_fee; ?></span></p>
+                                    <p class="font-medium"><?php echo esc_html_e('Success fee:', 'smoothh'); ?><span class="text-primary"><?php echo $post->retainer_fee; ?></span></p>
                                 </div>
 
                                 <span href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
