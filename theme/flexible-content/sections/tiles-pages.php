@@ -26,7 +26,7 @@ $tiles_list = $args['tiles_list'];
     <?php endif; ?>
 
     <div class="container">
-        <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-20">
+        <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-[74px]">
             <?php if ($header) : ?>
                 <div class="mb-6 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
