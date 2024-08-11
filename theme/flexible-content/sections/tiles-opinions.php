@@ -9,7 +9,7 @@ $isSwiper = $args['isSwiper'];
 
 ?>
 
-<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0 mb-20">
+<div class="relative pb-10 pt-20 md:pt-[90px] md:pb-0">
     <div class="container">
         <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-24">
             <?php if ($header) : ?>
