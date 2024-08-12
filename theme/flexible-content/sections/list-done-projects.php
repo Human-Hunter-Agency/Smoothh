@@ -11,13 +11,13 @@ $done_projects = $args['done_projects'];
             endif; ?>" class="relative pb-10 pt-24 md:pt-28">
 
     <div class="container">
-        <div class="relative z-0">
+        <div class="relative z-0" x-data="{open:false}">
             <?php if ($header) : ?>
                 <div class="mx-auto max-w-[960px] text-center !font-bold prose-strong:font-bold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
-            <ul x-data="{open:false}" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
                 <?php if ($done_projects) : ?>
 					<?php $i = 0; ?>
                     <?php foreach ($done_projects as $project) : ?>
