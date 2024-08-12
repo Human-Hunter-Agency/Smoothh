@@ -17,11 +17,11 @@ $done_projects = $args['done_projects'];
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
+            <ul x-data="{open:false}" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
                 <?php if ($done_projects) : ?>
 					<?php $i = 0; ?>
                     <?php foreach ($done_projects as $project) : ?>
-                        <li class="_post-tile" <?php if($i>5): ?>x-data="{ open: false }"<?php else: ?>x-data="{ open: true }"<?php endif; ?>>
+                        <li class="_post-tile" x-show="open" x-cloak <?php if($i>5): ?>text-data="{ open: false }"<?php else: ?>text-data="{ open: true }"<?php endif; ?>>
                             <div class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
                                 <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px]">
                                     <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
@@ -39,7 +39,7 @@ $done_projects = $args['done_projects'];
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
-            <button x-show="open" class="flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
+            <button @click="open=!open" class="flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
                 <?php esc_html_e('More posts', 'smoothh'); ?>
             </button>
         </div>
