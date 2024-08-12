@@ -19,6 +19,7 @@ $done_projects = $args['done_projects'];
             <?php endif; ?>
             <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
                 <?php if ($done_projects) : ?>
+					<?php $i = 0; ?>
                     <?php foreach ($done_projects as $project) : ?>
                         <li class="_post-tile" <?php if($i>6): ?>x-data="{ open: false }"<?php else: ?>x-data="{ open: true }"<?php endif; ?>>
                             <div class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
