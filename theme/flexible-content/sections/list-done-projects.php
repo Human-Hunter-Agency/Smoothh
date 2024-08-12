@@ -35,6 +35,7 @@ $done_projects = $args['done_projects'];
                                 </div>
                             </div>
                         </li>
+						<?php $i++; ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
