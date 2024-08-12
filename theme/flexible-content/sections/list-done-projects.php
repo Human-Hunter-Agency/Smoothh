@@ -4,6 +4,8 @@
 
 $section_ID = $args['section_ID'];
 $header = $args['header'];
+$done_projects = $args['done_projects'];
+
 
 
 $posts = get_posts(array(
@@ -24,27 +26,29 @@ $posts = get_posts(array(
                 </div>
             <?php endif; ?>
             <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14" data-js-case-studies='container'>
-                <?php foreach ($posts as $post) : ?>
-                    <li class="_post-tile">
-                        <a href="<?php echo get_permalink($post->ID); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
-                            <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px]">
-                                <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
-                                <h4 class="p-6 z-[1] relative text-center text-[30px] text-white font-semibold"><?php echo $post->post_title; ?></h4>
-                            </div>
+                <?php if ($done_projects) : ?>
+                    <?php foreach ($done_projects as $project) : ?>
+                        <li class="_post-tile">
+                            <a href="<?php echo get_permalink($post->ID); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
+                                <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px]">
+                                    <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
+                                    <h4 class="p-6 z-[1] relative text-center text-[30px] text-white font-semibold"><?php echo $done_projects['title']; ?></h4>
+                                </div>
 
-                            <div class="py-6 text-center text-[20px]">
-                                <p class="font-semibold mb-1"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->retainer_fee; ?></span></p>
-                                <p class="font-semibold mb-1"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->realization_time; ?></span></p>
-                                <p class="font-semibold"><?php echo esc_html_e('Location: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->location; ?></span></p>
-                            </div>
+                                <div class="py-6 text-center text-[20px]">
+                                    <p class="font-semibold mb-1"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $done_project['retainer_fee']; ?></span></p>
+                                    <p class="font-semibold mb-1"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $done_project['realization_time']; ?></span></p>
+                                    <p class="font-semibold"><?php echo esc_html_e('Location: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $done_project['location']; ?></span></p>
+                                </div>
 
-                            <span class="hidden" href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
+                                <span class="hidden" href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
 
-                        </a>
-                    </li>
-                <?php
-                endforeach;
-                ?>
+                            </a>
+                        </li>
+                    <?php
+                    endforeach;
+                    ?>
+                <?php endif; ?>
             </ul>
             <div class="w-full px-10 py-20 hidden" data-js-case-studies="loader">
                 <span class="mx-auto block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
