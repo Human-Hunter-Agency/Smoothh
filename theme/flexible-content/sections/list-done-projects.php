@@ -21,7 +21,7 @@ $done_projects = $args['done_projects'];
                 <?php if ($done_projects) : ?>
 					<?php $i = 0; ?>
                     <?php foreach ($done_projects as $project) : ?>
-                        <li class="_post-tile" x-show="open" x-cloak <?php if($i>5): ?>text-data="{ open: false }"<?php else: ?>text-data="{ open: true }"<?php endif; ?>>
+                        <li class="_post-tile" <?php if($i>5): ?>text-data="{ open: false }"<?php else: ?>x-show="open" x-cloak<?php endif; ?>>
                             <div class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
                                 <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px]">
                                     <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
