@@ -5,14 +5,6 @@
 $section_ID = $args['section_ID'];
 $header = $args['header'];
 $done_projects = $args['done_projects'];
-
-
-
-$posts = get_posts(array(
-    'post_type'         => 'case-study',
-    'numberposts'       => 3,
-));
-
 ?>
 
 <div id="<?php if ($section_ID) : echo $section_ID;
@@ -25,7 +17,7 @@ $posts = get_posts(array(
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14" data-js-case-studies='container'>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
                 <?php if ($done_projects) : ?>
                     <?php foreach ($done_projects as $project) : ?>
                         <li class="_post-tile">
