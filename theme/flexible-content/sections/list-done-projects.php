@@ -21,7 +21,7 @@ $done_projects = $args['done_projects'];
                 <?php if ($done_projects) : ?>
 					<?php $i = 0; ?>
                     <?php foreach ($done_projects as $project) : ?>
-                        <li class="_post-tile" <?php if($i>5): ?>x-show="open" x-cloak<?php endif; ?>>
+                        <li class="_post-tile" <?php if($i>5): ?>x-show="open" x-cloak x-transition<?php endif; ?>>
                             <div class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
                                 <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px]">
                                     <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
@@ -39,7 +39,7 @@ $done_projects = $args['done_projects'];
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
-            <button @click="open=!open" x-show="!open" class="flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
+            <button @click="open=!open" x-show="!open" x-transition class="flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
                 <?php esc_html_e('More posts', 'smoothh'); ?>
             </button>
         </div>
