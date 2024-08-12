@@ -39,7 +39,7 @@ $done_projects = $args['done_projects'];
                     <?php endforeach; ?>
                 <?php endif; ?>
             </ul>
-            <button @click="open=!open" class="flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
+            <button @click="open=!open" x-show="!open" class="flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
                 <?php esc_html_e('More posts', 'smoothh'); ?>
             </button>
         </div>
