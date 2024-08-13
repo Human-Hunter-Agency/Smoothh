@@ -146,20 +146,22 @@ label.checkbox, .wpcf7-list-item-label {
     justify-content: center;
     max-width: 600px;
     width: auto;
-    margin: 50px auto 50px auto;
-    color: #8117EE;
+    margin: 50px auto;
+    color: #8117ee;
     font-family: Raleway;
     font-size: 16px;
     font-weight: 500;
     line-height: 15px;
     text-align: center;
     padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .box:before{
-	content: '';
+    content: "";
     position: absolute;
-    background: linear-gradient(0deg, rgba(129, 23, 238, 0), rgba(129, 23, 238, 0.101961) 0%, rgba(129, 23, 238, 0));
+    background: linear-gradient(0deg, rgba(129, 23, 238, .102), #8117ee00);
     width: 100%;
     top: 0;
     right: 0;
