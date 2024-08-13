@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
   exit;
 }
 /**
- * Template Name: CV
+ * Template Name: Plik
  * */
 ?>
 
