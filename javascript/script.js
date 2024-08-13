@@ -1464,15 +1464,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	menuMobileClose();
 });
 function menuMobileClose(){
-	const closebtn = document.querySelectorAll('#primary-menu a');
+	const linkBtn = document.querySelectorAll('#primary-menu a');
 	const toggleBtn = document.querySelector('[data-js="nav-toggle"]');
 	const menuContainer = document.querySelector('[data-js="nav-container"]');
 
-	closebtn.addEventListener('click', () => {
-		toggleBtn.setAttribute('aria-expanded', false);
-		menuContainer.style.removeProperty('height');
-		document.body.classList.remove('overflow-hidden');
-	});
-
+	for (i = 0; i < linkBtn.length; i++) {
+		linkBtn[i].addEventListener('click', function(i) {
+			toggleBtn.setAttribute('aria-expanded', false);
+			menuContainer.style.removeProperty('height');
+			document.body.classList.remove('overflow-hidden');
+		}.bind(this, i));
+	}
 }
 
