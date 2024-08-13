@@ -1,6 +1,6 @@
 <?php
 
-/** Template to display 'Formularz CV' - form_cv */
+/** Template to display 'Formularz z plikiem' - plik */
 
 $header = $args['header'];
 $description = $args['description'];
