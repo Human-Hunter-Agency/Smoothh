@@ -1,6 +1,6 @@
 <?php
 
-/** Template to display 'Formularz z plikiem' - plik */
+/** Template to display 'Formularz z plikiem' - form_contact_file */
 
 $header = $args['header'];
 $description = $args['description'];
