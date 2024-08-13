@@ -51,7 +51,7 @@ body {
 }
 
 .woocommerce-privacy-policy-text{
-	@apply !text-xs mb-5 
+	@apply !text-xs mb-5
 }
 
 .woocommerce-privacy-policy-text p{
@@ -138,4 +138,32 @@ label.checkbox, .wpcf7-list-item-label {
 :root :where(a:where(:not(.wp-block-navigation))),
 :root :where(a:where(:not(.wp-element-button))) {
     text-decoration: initial;
+}
+
+//BOX homepage
+.box{
+    position: relative;
+    justify-content: center;
+    max-width: 600px;
+    width: auto;
+    margin: 50px auto 50px auto;
+    color: #8117EE;
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: center;
+    padding: 25px;
+}
+
+.box:before{
+	content: '';
+    position: absolute;
+    background: linear-gradient(0deg, rgba(129, 23, 238, 0), rgba(129, 23, 238, 0.101961) 0%, rgba(129, 23, 238, 0));
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 39px;
 }
