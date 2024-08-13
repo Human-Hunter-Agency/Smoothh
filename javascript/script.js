@@ -385,6 +385,25 @@ function initCvFileLabelText() {
 	});
 }
 
+function initStandardFileLabelText() {
+	const labelEl = document.querySelector('[data-js="standard-file"]');
+	const inputEl = document.querySelector('input#your-file');
+	if (!labelEl || !inputEl) return;
+
+	const textEl = labelEl.querySelector('[data-js="standard-file-name"]');
+	const labelBtn = document.querySelector('[data-js="standard-file-icon"]');
+	inputEl.addEventListener('change', (e) => {
+		const file = e.target.files[0];
+		if (file) {
+			textEl.innerText = file.name;
+			labelBtn.classList.add('hidden');
+		} else {
+			textEl.innerText = translations['Include file'] ?? 'Include file*';
+			labelBtn.classList.remove('hidden');
+		}
+	});
+}
+
 function initCaseStudiesList(){
 	const container = document.querySelector('[data-js-case-studies="container"]')
 	if (!container) return
