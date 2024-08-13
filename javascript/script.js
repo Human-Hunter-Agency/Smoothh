@@ -420,8 +420,29 @@ function initCaseStudiesList(){
 		page: postCount > 0 ? 1 : 0,
 	}
 
-	loadMoreBtn.addEventListener('click', () => loadMore(listElParams,'case-study',3));
+	loadMoreBtn.addEventListener('click', () => loadMore(listElParams,'case-study',3, 'list'));
 }
+
+function initCaseStudiesGrid(){
+	const container = document.querySelector('[data-js-case-studies-grid="container"]')
+	if (!container) return
+
+	const loadMoreBtn = document.querySelector('[data-js-case-studies-grid="load-more"]');
+	const loaderEl = document.querySelector('[data-js-case-studies-grid="loader"]');
+
+	const listElParams = {
+		contentUlEl: container,
+		loaderEl: loaderEl,
+		loadMoreBtn: loadMoreBtn,
+		postCount: 6,
+		page: postCount > 0 ? 1 : 0,
+	}
+
+	loadMoreBtn.addEventListener('click', () => loadMore(listElParams,'case-study',3, 'grid'));
+}
+document.addEventListener('DOMContentLoaded', () => {
+	initCaseStudiesGrid();
+});
 
 function initRelatedPosts() {
 	const container = document.getElementById('posts-related');
@@ -491,7 +512,7 @@ function switchTabBySlug(slug, buttons, container) {
 	}
 }
 
-async function loadMore(tab,slug,perPage) {
+async function loadMore(tab,slug,perPage,variant) {
 	const currentPostEl = document.querySelector('[data-js-post-id]');
 	let currentPostId = '';
 	if (currentPostEl) {
@@ -502,7 +523,7 @@ async function loadMore(tab,slug,perPage) {
 	const postsData = await loadPosts(tab.id, ++tab.page, currentPostId,slug,perPage);
 	if (postsData.posts) {
 		let postsList = postsData.posts;
-		insertPosts(tab.contentUlEl, postsList);
+		insertPosts(tab.contentUlEl, postsList, variant);
 		tab.postCount += postsList.length;
 
 		if (postsData.totalPages > tab.page) {
@@ -534,10 +555,26 @@ async function loadPosts(catId, page, exclude = '',slug='posts', perPage = 6) {
 	}
 }
 
-function insertPosts(container, posts) {
+function insertPosts(container, posts, variant) {
 	let combinedHTML = '';
 	posts.forEach((post) => {
-		combinedHTML += `<li class="post-tile">
+		if(variant == 'grid'){
+			combinedHTML += `<li class="post-tile">
+			<a href="${post.link}" class="group swiper-slide !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 _drop-shadow-lg shadow-xl lg:shadow-2xl xl:!basis-[calc(33%_-_40px)] xl:!mr-0">
+				<div class="w-full relative rounded-t-[14px] overflow-hidden [&_img]:object-cover [&_img]:w-full [&_img]:!h-[190px] [&_img]:md:!h-[220px]">
+					<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
+					<div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
+				</div>
+				<div class="text-center p-3 md:p-6 !pt-0">
+					<h3 class="bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold">${post.title.rendered}</h3>
+				</div>
+				<p class="text-sm md:text-base italic font-normal">${post.excerpt.rendered}</p>
+				<span class="ml-0 mr-auto rounded-[14px] text-[16px] font-bold py-2 px-7 text-secondary  group-hover:text-primary transition duration-200">${translations['Read more'] ?? 'Read more'}<span class="ml-2">></span></span>
+			</a>
+		</li>`;
+
+		} else {
+			combinedHTML += `<li class="post-tile">
 			<a href="${post.link}">
 				<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
 				<div class="title-wrapper">
@@ -547,6 +584,7 @@ function insertPosts(container, posts) {
 				<span>${translations['Read more'] ?? 'Read more'}<span class="!-ml-4">&gt;</span></span>
 			</a>
 		</li>`;
+		}
 	});
 	container.insertAdjacentHTML('beforeend', combinedHTML);
 }
