@@ -709,9 +709,9 @@ function initCalculatorFields() {
 		vacancyInput.addEventListener('input', validateMinMax);
 		vacancyInput.addEventListener('keyup', validateMinMax);
 		vacancyInput.addEventListener('paste', validateMinMax);
-	
+
 		function validateMinMax(e) {
-			const inputEl = e.currentTarget 
+			const inputEl = e.currentTarget
 			if (inputEl.max && (parseInt(inputEl.value)  > parseInt(inputEl.max))) inputEl.value = parseInt(inputEl.max);
 			if (inputEl.min && (parseInt(inputEl.value)  < parseInt(inputEl.min))) inputEl.value = parseInt(inputEl.min);
 		}
@@ -853,7 +853,7 @@ function setupListingElements(data, itemsPerPage) {
 
 function initSearchEvents(offers, itemsPerPage) {
 	const searchbarForm = document.querySelector('[data-js-jobs="searchbar"]');
-	const searchInput = searchbarForm.querySelector('input') 
+	const searchInput = searchbarForm.querySelector('input')
 	searchbarForm.addEventListener('submit', (event) => {
 		event.preventDefault();
 		createFilteredOffers(offers, itemsPerPage);
@@ -1090,7 +1090,7 @@ async function initCalculator() {
 	if (!document.querySelector('.calculator')) {
 		return;
 	}
-	
+
 	const calcCookie = await cookieStore.get('calc-data')
 
 	if (document.querySelector('.calculator .woocommerce-message') || calcCookie) {
@@ -1123,7 +1123,7 @@ async function initCalculator() {
 		if (!form) return;
 
 		const isCalcAdvanced = calcEl.dataset.jsCalcContent == 2;
-		
+
 		if (isCalcAdvanced && calcCookie) {
 			console.log(calcCookie.value)
 			const calcCookieData = JSON.parse(calcCookie.value)
@@ -1132,7 +1132,7 @@ async function initCalculator() {
 			const positionSelect = document.querySelector('[data-uniqid="666febd02fcf49.12361043"] select').slim
 			const countrySelect = document.querySelector('[data-uniqid="666febd02fcf64.88984826"] select').slim
 			const cityInput = document.querySelector('[data-uniqid="666febd02fcf79.20232136"] input')
-			
+
 			fieldSelect.setSelected([calcCookieData.field])
 			positionSelect.setSelected([calcCookieData.position])
 			countrySelect.setSelected([calcCookieData.country])
@@ -1172,7 +1172,7 @@ async function initCalculator() {
 			jQuery(form).tc_validate().form();
 			if (form.checkValidity()) {
 
-				
+
 				tablePrice.innerHTML =
 					tableSubtotal.innerHTML =
 					tableTotal.innerHTML =
@@ -1194,7 +1194,7 @@ async function initCalculator() {
 
 					const MIN_NEGOTIATE_PRICE = 25000;
 					const MIN_NEGOTIATE_VACANCY = 3;
-					
+
 					const orderBtn = calcEl.querySelector(
 						'.single_add_to_cart_button'
 					);
@@ -1264,7 +1264,7 @@ async function initCalculator() {
 		);
 		const fileRemoveBtn = document.querySelector('[data-js-file-remove]');
 		const fileNameEl = document.querySelector('[data-js-file-name]');
-	
+
 		fileBtn.addEventListener('click', () => {
 			fileInput.click();
 		});
@@ -1422,7 +1422,7 @@ function initMenuSubmenus() {
 			menuItem.classList.toggle('expanded');
 			const subMenu = item.parentElement.querySelector('.sub-menu');
 			if (!subMenu) return
-			
+
 			if (menuItem.classList.contains('expanded')) {
 				subMenu.style.height = subMenu.scrollHeight + 'px';
 			} else {
@@ -1458,3 +1458,21 @@ function loginPageSectionToggleInit(){
 		})
 	})
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+	menuMobileClose();
+});
+function menuMobileClose(){
+	const closebtn = document.querySelectorAll('#primary-menu a');
+	const toggleBtn = document.querySelector('[data-js="nav-toggle"]');
+	const menuContainer = document.querySelector('[data-js="nav-container"]');
+
+	closebtn.addEventListener('click', () => {
+		toggleBtn.setAttribute('aria-expanded', false);
+		menuContainer.style.removeProperty('height');
+		document.body.classList.remove('overflow-hidden');
+	});
+
+}
+
