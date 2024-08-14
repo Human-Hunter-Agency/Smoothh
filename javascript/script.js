@@ -568,7 +568,7 @@ function insertPosts(container, posts, variant) {
 				<div class="text-center p-3 md:p-6 !pt-0">
 					<h3 class="bg-secondary rounded-[14px] p-2 -translate-y-1/2 text-base md:text-xl text-white mb-4 font-semibold">${post.title.rendered}</h3>
 				</div>
-				<p class="text-sm md:text-base italic font-normal">${post.excerpt.rendered}</p>
+				${post.excerpt.rendered.replace("p","p class=\"text-sm md:text-base italic font-normal\"" )}
 				<span class="ml-0 mr-auto rounded-[14px] text-[16px] font-bold py-2 px-7 text-secondary  group-hover:text-primary transition duration-200">${translations['Read more'] ?? 'Read more'}<span class="ml-2">></span></span>
 			</a>
 		`;
