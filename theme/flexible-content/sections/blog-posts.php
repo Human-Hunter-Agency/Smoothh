@@ -1,6 +1,7 @@
 <?php
-$header = $args['header'];
-$description = $args['description'];
+$header_data = get_field('blog_posts_data', 'option');
+$header = $header_data['header'];
+$description = $header_data['description'];
 $hide_message_field = $args['hide_message_field'];
 
 ?>
