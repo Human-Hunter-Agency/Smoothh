@@ -35,7 +35,7 @@ $hero_text = $args['hero_text'];
             <?php endif; ?>
 
             <?php if ($hero_text) : ?>
-                <h1 class="<?php if ($display_logo) : ?>text-3xl md:text-[46px]<?php else : ?>text-5xl md:text-[46px] max-w-[760px] [.woocommerce-cart_&]:max-w-[880px] md:leading-[55px]<?php endif; ?> text-bold text-white font-bold text-center"><?php echo $hero_text; ?></h1>
+                <h1 class="<?php if ($display_logo) : ?>text-3xl md:text-[46px]<?php else : ?>text-5xl md:text-[46px] max-w-[760px] [.woocommerce-cart_&]:max-w-[880px] md:leading-[55px]<?php endif; ?> text-bold text-white font-bold text-center"><?php echo str_replace("®","<pre>®</pre>",$hero_text); ?></h1>
             <?php endif; ?>
         </div>
 
