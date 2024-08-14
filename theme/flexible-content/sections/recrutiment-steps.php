@@ -57,7 +57,9 @@ $list = $args['list'];
                                     </svg>' ?></p>
                                     </div>
 
+									<?php if (!($i+1 == $listLength && ($i+1)%2 != 0)): //not last one that isn't 2,4,6,8 ?>
                                     <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[67px] left-[-36px] z-[-1]"></div>
+									<?php endif; ?>
 
                                     <?php if ($item['description']) : ?>
                                         <div class="prose prose-sm md:prose-base"><?php echo $item['description']; ?></div>
