@@ -559,7 +559,7 @@ function insertPosts(container, posts, variant) {
 	let combinedHTML = '';
 	posts.forEach((post) => {
 		if(variant == 'grid'){
-			combinedHTML += `<li class="post-tile">
+			combinedHTML += `
 			<a href="${post.link}" class="group swiper-slide !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 _drop-shadow-lg shadow-xl lg:shadow-2xl xl:!basis-[calc(33%_-_40px)] xl:!mr-0">
 				<div class="w-full relative rounded-t-[14px] overflow-hidden [&_img]:object-cover [&_img]:w-full [&_img]:!h-[190px] [&_img]:md:!h-[220px]">
 					<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
@@ -571,7 +571,7 @@ function insertPosts(container, posts, variant) {
 				<p class="text-sm md:text-base italic font-normal">${post.excerpt.rendered}</p>
 				<span class="ml-0 mr-auto rounded-[14px] text-[16px] font-bold py-2 px-7 text-secondary  group-hover:text-primary transition duration-200">${translations['Read more'] ?? 'Read more'}<span class="ml-2">></span></span>
 			</a>
-		</li>`;
+		`;
 
 		} else {
 			combinedHTML += `<li class="post-tile">
