@@ -926,47 +926,49 @@ add_action('init', 'gdpr_register_smoothh_consents');
 function gdpr_register_smoothh_consents()
 {
 
-	gdpr('consent')->register(
-		'terms',
-		sprintf(__('<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh'), get_permalink(wc_terms_and_conditions_page_id())),
-		wc_replace_policy_page_link_placeholders(wc_get_terms_and_conditions_checkbox_text()),
-		true
-	);
+	if(is_callable('gdpr')){
+		gdpr('consent')->register(
+			'terms',
+			sprintf(__('<a href="%s" target="_blank">Terms and Conditions</a> consent', 'smoothh'), get_permalink(wc_terms_and_conditions_page_id())),
+			wc_replace_policy_page_link_placeholders(wc_get_terms_and_conditions_checkbox_text()),
+			true
+		);
 
-	$policyPageUrl = get_permalink(wc_privacy_policy_page_id());
-	gdpr('consent')->register(
-		'gdpr_woo_consent',
-		sprintf(__('<a href="%s" target="_blank">Policy privacy </a> consent', 'smoothh'), $policyPageUrl),
-		wc_replace_policy_page_link_placeholders(wc_get_privacy_policy_text('registration')),
-		true
-	);
+		$policyPageUrl = get_permalink(wc_privacy_policy_page_id());
+		gdpr('consent')->register(
+			'gdpr_woo_consent',
+			sprintf(__('<a href="%s" target="_blank">Policy privacy </a> consent', 'smoothh'), $policyPageUrl),
+			wc_replace_policy_page_link_placeholders(wc_get_privacy_policy_text('registration')),
+			true
+		);
 
-	gdpr('consent')->register(
-		'consent_digital_commerce',
-		__('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh'),
-		__('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).', 'smoothh'),
-		true
-	);
+		gdpr('consent')->register(
+			'consent_digital_commerce',
+			__('I confirm that if I purchase a service or digital content, I want their performance or delivery to commence before the deadline for withdrawal from the contract expires.', 'smoothh'),
+			__('Fully performing the service or starting the delivery of digital content before this date results in the loss of the right to withdraw from the contract referred to in the Act of May 30, 2014 on consumer rights (Journal of Laws of 2014, item 827, as amended).', 'smoothh'),
+			true
+		);
 
-	gdpr('consent')->register(
-		'consent_consultation',
-		__('I consent to the processing of my personal data by the service provider for the purpose of arranging a consultation.', 'smoothh'),
-		null,
-		true
-	);
+		gdpr('consent')->register(
+			'consent_consultation',
+			__('I consent to the processing of my personal data by the service provider for the purpose of arranging a consultation.', 'smoothh'),
+			null,
+			true
+		);
 
-	gdpr('consent')->register(
-		'consent_marketing',
-		__('I consent to the processing of my personal data (name, e-mail address) by the Service Provider (here please provide the name and surname / name and address of the Service Provider) for marketing purposes.', 'smoothh'),
-		sprintf(
-			__('Expressing consent is voluntary. I have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal. I have the right to access my data and rectify it, delete it, limit processing, and the right to transfer data on the terms contained in the %sprivacy policy%s of the website. Personal data on the website are processed in accordance with the %sprivacy policy%s. We encourage you to read the policy before agreeing.', 'smoothh'),
-			"<a href='{$policyPageUrl}' target='_blank'>",
-			"</a>",
-			"<a href='{$policyPageUrl}' target='_blank'>",
-			"</a>"
-		),
-		true
-	);
+		gdpr('consent')->register(
+			'consent_marketing',
+			__('I consent to the processing of my personal data (name, e-mail address) by the Service Provider (here please provide the name and surname / name and address of the Service Provider) for marketing purposes.', 'smoothh'),
+			sprintf(
+				__('Expressing consent is voluntary. I have the right to withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal. I have the right to access my data and rectify it, delete it, limit processing, and the right to transfer data on the terms contained in the %sprivacy policy%s of the website. Personal data on the website are processed in accordance with the %sprivacy policy%s. We encourage you to read the policy before agreeing.', 'smoothh'),
+				"<a href='{$policyPageUrl}' target='_blank'>",
+				"</a>",
+				"<a href='{$policyPageUrl}' target='_blank'>",
+				"</a>"
+			),
+			true
+		);
+	}
 }
 
 function get_product_tax_formatted($product, $quantity = 1)
