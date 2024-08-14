@@ -1,5 +1,20 @@
+<?php
+$header = $args['header'];
+$description = $args['description'];
+$hide_message_field = $args['hide_message_field'];
+
+?>
+
 <section id="posts-related" class="container mt-10 mb-20 md:my-20">
-	<h2 class="mx-auto max-w-[1040px] mb-10 lg:mb-7 !text-2xl md:!text-4xl lg:!text-[46px] prose-strong:text-primary font-bold lg:!font-extrabold lg:leading-[55px] text-center"><?php echo __('See expert materials from <strong>our blog</strong>','smoothh') ?></h2>
+	<h2 class="mx-auto max-w-[1040px] mb-10 lg:mb-7 !text-2xl md:!text-4xl lg:!text-[46px] prose-strong:text-primary font-bold lg:!font-extrabold lg:leading-[55px] text-center">
+		<?php echo __('See expert materials from <strong>our blog</strong>','smoothh') ?>
+	</h2>
+	<?php if ($header) : ?>
+		<h2 class="mx-auto max-w-[1040px] text-3xl md:text-5xl font-semibold mb-9 text-center !leading-[50px]"><?php echo esc_html($header); ?></h2>
+	<?php endif; ?>
+	<?php if ($description) : ?>
+		<div class="prose-smoothh prose md:prose-xl text-white !font-light text-center mb-10 prose-h2:!text-white prose-h2:font-bold prose-h2:text-3xl prose-h2:md:text-5xl prose-h2:mb-9"><?php echo $description; ?></div>
+	<?php endif; ?>
 	<ul class="p-2 rounded-2xl flex items-center gap-2 max-w-screen-md w-fit flex-wrap mx-auto mb-5 md:mb-10">
 		<?php
 		$categories = get_categories();
