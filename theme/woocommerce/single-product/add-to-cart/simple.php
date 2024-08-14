@@ -60,7 +60,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 		do_action('woocommerce_after_add_to_cart_quantity');
 		?>
 
-		<?php // if (is_user_logged_in() || is_prod_guest_available($product)) : 
+		<?php // if (is_user_logged_in() || is_prod_guest_available($product)) :
 		if ($product->get_id() == 1186 || $product->get_id() == 1253) :
 		?>
 			<button data-js-calc-btn type="button" class=" button whitespace-nowrap button border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 !mt-10 !mb-14"><?php echo esc_html_e('calculate', 'smoothh'); ?>
@@ -104,13 +104,15 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 
 				<div class="flex justify-center flex-wrap gap-5">
 					<?php if ($product->get_id() == 1253) : ?>
-						<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class=" single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> whitespace-nowrap button border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html_e('Complete the quote', 'smoothh'); ?>
-							<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
-								<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
-							</svg>
-						</button>
-
+						<div class="w-full md:w-[calc(50%_-_10px)] lg:w-[233px] xl:w-[273px] font-medium text-center">
+							<button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class=" single_add_to_cart_button button alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> whitespace-nowrap button border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 alt<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>"><?php echo esc_html_e('Complete the quote', 'smoothh'); ?>
+								<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
+									<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
+								</svg>
+							</button>
+							<p class="block mt-5"><?php echo __('Pay now only a 10% advance payment for recruitment and place your order!', 'smoothh'); ?></p>
+						</div>
 						<button data-js-popup-toggle="negotiate-form" type="button" value="<?php echo esc_attr($product->get_id()); ?>" class="!hidden whitespace-nowrap border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold flex items-center justify-center gap-5">
 							<?php echo esc_html_e('Negotiate price', 'smoothh'); ?>
 							<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +120,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 								<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
 							</svg>
 						</button>
-					<?php else : 
+					<?php else :
 						$panel_page_id = 650;
 					?>
 
@@ -148,7 +150,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 	</form>
 
 	<?php do_action('woocommerce_after_add_to_cart_form'); ?>
-	<?php // if (is_user_logged_in() || is_prod_guest_available($product)) : 
+	<?php // if (is_user_logged_in() || is_prod_guest_available($product)) :
 	if ($product->get_id() == 1253) :
 	?>
 		<div data-js-popup-container="negotiate-form" class="popup-container popup-hidden">
