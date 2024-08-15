@@ -32,7 +32,7 @@ $categories = $args['categories'];
 									<?php echo $term->description ; ?>
                                 </p>
                                 <span class="block w-[220px] mt-6 mx-auto rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
-                                    <?php esc_html_e('Show poducts', 'smoothh') ?>
+                                    <?php esc_html_e('Show products', 'smoothh') ?>
                                 </span>
                             </div>
                         </a>
