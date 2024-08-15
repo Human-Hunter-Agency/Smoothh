@@ -1,14 +1,13 @@
 <?php
 
-/** Template to display 'Lista kategorii produktów' - products-category */
+/** Template to display 'Lista kategorii produktów' - products_category */
 
 $header = $args['header'];
 $categories = $args['categories'];
+
 ?>
 
 <div class="relative">
-    <div data-calc-bg="" class="z-[-1] w-[100%] lg:w-[85%] h-[calc(100%_-_270px)] absolute top-80 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
-
     <div class="container mb-10">
         <?php if ($header) : ?>
             <div class="mx-auto max-w-[1100px] text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-9">
@@ -33,7 +32,8 @@ $categories = $args['categories'];
 									<?php echo esc_html( $term->description ); ?>
                                 </p>
                                 <span class="block w-[220px] mt-6 mx-auto rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
-                                    <?php esc_html_e('Show products', 'smoothh') ?>
+                                    <?php esc_html_e('Show category', 'smoothh') ?>
+									<?php echo esc_html( $term->name ); ?>
                                 </span>
                             </div>
                         </a>
