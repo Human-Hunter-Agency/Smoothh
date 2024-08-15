@@ -17,10 +17,9 @@ $categories = $args['categories'];
         <?php endif; ?>
 
         <?php
-			$terms = get_field('taxonomy_field_name');
 			if( $categories ): ?>
 				<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-[90px]">
-				<?php foreach( $terms as $term ): ?>
+				<?php foreach( $categories as $term ): ?>
 					<li>
 						<a href="<?php echo esc_url( get_term_link( $term ) ); ?>" class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
                             <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
