@@ -1,6 +1,6 @@
 <?php
 
-/** Template to display 'Lista kategorii produktów' - list_product_categories */
+/** Template to display 'Lista kategorii produktów' - products-category */
 
 $header = $args['header'];
 $categories = $args['categories'];
