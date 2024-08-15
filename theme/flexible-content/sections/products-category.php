@@ -24,16 +24,15 @@ $categories = $args['categories'];
                             <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
                                 <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
                                 <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold">
-									<?php echo esc_html( $term->name ); ?>
+									<?php echo $term->name ; ?>
                                 </h4>
                             </div>
                             <div class="w-full flex-1 p-3 md:p-6 flex flex-col justify-between">
                                 <p class="text-center text-sm md:text-base prose-strong:font-semibold">
-									<?php echo esc_html( $term->description ); ?>
+									<?php echo $term->description ; ?>
                                 </p>
                                 <span class="block w-[220px] mt-6 mx-auto rounded-[14px] text-[16px] text-center font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
-                                    <?php esc_html_e('Show category', 'smoothh') ?>
-									<?php echo esc_html( $term->name ); ?>
+                                    <?php esc_html_e('Show poducts', 'smoothh') ?>
                                 </span>
                             </div>
                         </a>
