@@ -16,6 +16,9 @@ $shortDescription = get_field('short_description');
 $headerPostRelated = get_field('header_post_related');
 $cta = get_field('cta');
 $logoHeader = get_field('header_clients_logos');
+$logoHeaderTitle = get_field('product_sections_settings' , 'option')['header_logos'];
+$logoHeaderDescription = get_field('product_sections_settings' , 'option')['description_logos'];
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
@@ -114,7 +117,7 @@ $logoHeader = get_field('header_clients_logos');
 </section>
 
 <section id="clients-logos">
-	<?php get_template_part('flexible-content/sections/swiper-customer-logos', '', array('header' => $logoHeader, 'description' => false)); ?>
+	<?php get_template_part('flexible-content/sections/swiper-customer-logos', '', array('header' => $logoHeaderTitle , 'description' => $logoHeaderDescription)); ?>
 </section>
 
 <section class="cta container mx-auto relative">
