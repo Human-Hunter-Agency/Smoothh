@@ -14,7 +14,7 @@ $hide_message_field = $args['hide_message_field'];
             <h2 class="mx-auto max-w-[1040px] text-3xl md:text-[40px] font-bold mb-9 text-center !leading-[50px]"><?php echo esc_html($header); ?></h2>
         <?php endif; ?>
         <?php if ($description) : ?>
-            <div class="prose-smoothh prose md:prose-[20px] text-white !font-light text-center mb-10 prose-h2:!text-white prose-h2:font-bold prose-h2:text-3xl prose-h2:md:text-5xl prose-h2:mb-9"><?php echo $description; ?></div>
+            <div class="prose-smoothh prose md:prose-xl text-white !font-light text-center mb-10 prose-h2:!text-white prose-h2:font-bold prose-h2:text-3xl prose-h2:md:text-5xl prose-h2:mb-9"><?php echo $description; ?></div>
         <?php endif; ?>
         <div class="!max-w-[1410px] mx-auto <?php if ($hide_message_field) {
                                                 echo '[&_.message-container]:hidden';
