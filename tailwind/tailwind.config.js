@@ -29,15 +29,13 @@ module.exports = {
 		},
 		extend: {
 			typography: {
-				DEFAULT: {
-					x: { // and this is for prose-sm.
-						css: {
-							p: {
-								fontSize: '20px',
-							},
+				x: { // and this is for prose-sm.
+					css: {
+						p: {
+							fontSize: '20px',
 						},
 					},
-			 	},
+				},
 			},
 			fontFamily: {
 				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
