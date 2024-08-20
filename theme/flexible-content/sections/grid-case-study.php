@@ -19,7 +19,7 @@ $posts = get_posts(array(
     <div class="container">
         <div class="relative z-0">
             <?php if ($header) : ?>
-                <div class="mx-auto max-w-[960px] text-center !font-bold prose-strong:font-extrabold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
+                <div class="mx-auto max-w-[960px] text-center !font-extrabold prose-strong:font-extrabold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>

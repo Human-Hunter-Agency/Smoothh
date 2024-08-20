@@ -13,7 +13,7 @@ $done_projects = $args['done_projects'];
     <div class="container">
         <div class="relative z-0" x-data="{open:false}">
             <?php if ($header) : ?>
-                <div class="mx-auto max-w-[960px] text-center !font-bold prose-strong:font-bold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
+                <div class="mx-auto max-w-[960px] text-center !font-extrabold prose-strong:font-extrabold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>
@@ -29,9 +29,9 @@ $done_projects = $args['done_projects'];
                                 </div>
 
                                 <div class="py-6 text-center text-[20px]">
-                                    <p class="font-semibold mb-1"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $project['retainer_fee']; ?></span></p>
-                                    <p class="font-semibold mb-1"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $project['realization_time']; ?></span></p>
-                                    <p class="font-semibold"><?php echo esc_html_e('Location: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $project['location']; ?></span></p>
+                                    <p class="font-bold mb-1"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $project['retainer_fee']; ?></span></p>
+                                    <p class="font-bold mb-1"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $project['realization_time']; ?></span></p>
+                                    <p class="font-bold"><?php echo esc_html_e('Location: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $project['location']; ?></span></p>
                                 </div>
                             </div>
                         </li>
