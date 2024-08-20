@@ -33,7 +33,7 @@ $list = $args['list'];
                                                                                                                     } else {
                                                                                                                         echo 'false';
                                                                                                                     } ?>" data-js="dropdown-toggle">
-                        <h3 class="text-base md:text-[20px] md:leading-5 group-hover:text-primary transition duration-200 font-semibold" itemprop="name"><?php echo $question; ?></h3>
+                        <h3 class="text-base md:text-[20px] md:leading-5 group-hover:text-primary transition duration-200 font-extrabold" itemprop="name"><?php echo $question; ?></h3>
                         <div class="p-1 relative">
                             <svg class="group-aria-expanded:rotate-180 transition duration-300" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line y1="10.0015" x2="20" y2="10.0015" stroke="#8117EE" stroke-width="2" />
