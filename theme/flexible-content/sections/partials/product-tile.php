@@ -24,7 +24,7 @@ if ($product && $styles_basic) : ?>
     <a href="<?php echo get_permalink($product->get_id()) ?>" class="bg-white shadow-2xl !flex items-center flex-col rounded-2xl group  <?php if ($is_swiper_slide) : ?> swiper-slide !h-auto opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 <?php else : ?> h-full<?php endif ?>">
         <div class="relative flex items-center justify-center overflow-hidden rounded-t-[14px] w-full !h-[140px] [&_img]:object-cover [&_img]:w-full [&_img]:h-full">
             <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
-            <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-semibold">
+            <h4 class="p-6 z-[1] relative text-center text-lg md:text-[28px] text-white font-bold">
                 <?php echo get_the_title($product->get_id()) ?>
             </h4>
         </div>
@@ -46,16 +46,16 @@ if ($product && $styles_basic) : ?>
             <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
         </div>
         <div class="relative w-full flex-1 p-6 flex flex-col justify-between ">
-            
+
             <div class="mb-5 flex flex-col">
                 <h4 class="text-lg md:text-xl text-primary font-bold mb-5">
                     <?php echo get_the_title($product->get_id()) ?>
                 </h4>
                 <p class="text-sm md:text-base prose-strong:font-semibold">
-                    <?php 
+                    <?php
                     $title_length = strlen(get_the_title($product->get_id()));
                     $truncate_length = max(100, 350 - $title_length);
-                    echo truncate($product->get_short_description(),$truncate_length,array('html' => true)); 
+                    echo truncate($product->get_short_description(),$truncate_length,array('html' => true));
                     ?>
                 </p>
             </div>
