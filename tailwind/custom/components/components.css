@@ -584,7 +584,7 @@ i.theChampLogin {
 }
 
 .job-offer-tile .offer-new {
-	@apply w-fit text-white text-sm bg-secondary px-5 py-1 rounded-full font-semibold absolute top-[-14px];
+	@apply w-fit text-white text-sm bg-secondary px-5 py-1 rounded-full font-bold absolute top-[-14px];
 }
 
 [data-js-job-hidden="true"].job-offer-tile {
