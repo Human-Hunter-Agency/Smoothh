@@ -34,7 +34,6 @@ module.exports = {
 						css: {
 							p: {
 								fontSize: '20px',
-								lineHeight: round(20 / 20),
 							},
 						},
 					},
