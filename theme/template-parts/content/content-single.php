@@ -39,7 +39,7 @@ $logoDescription = get_field('description_clients_logos');
 		<div class="absolute inset-0 -z-10 bg-gradient-to-b from-secondary to-primary opacity-80"></div>
 
 		<div class="relative z-0 flex flex-col items-center justify-center container">
-			<?php the_title('<h1 class="text-5xl md:text-[66px] leading-tight text-center text-bold text-white font-bold">', '</h1>'); ?>
+			<?php the_title('<h1 class="text-5xl md:text-[46px] leading-tight text-center text-bold text-white font-bold">', '</h1>'); ?>
 		</div>
 	</div>
 
@@ -88,7 +88,7 @@ $logoDescription = get_field('description_clients_logos');
 					$categories = get_categories();
 
 					foreach ($categories as $cat) :
-						#wp_list_categories(array('title_li' => '')) 
+						#wp_list_categories(array('title_li' => ''))
 					?>
 						<li class="mb-4">
 							<a href="<?php echo get_permalink($blog_page_id) . '?tab=' . $cat->slug ?>" class="font-bold text-base md:text-[20px] transition duration-200 hover:text-primary"><?php echo $cat->name ?></a>
