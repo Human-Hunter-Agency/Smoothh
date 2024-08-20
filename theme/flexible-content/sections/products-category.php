@@ -10,7 +10,7 @@ $categories = $args['categories'];
 <div class="relative">
     <div class="container mb-10">
         <?php if ($header) : ?>
-            <div class="mx-auto max-w-[1100px] text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-9">
+            <div class="mx-auto max-w-[1100px] text-center font-extrabold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] mb-9">
                 <?php echo $header; ?>
             </div>
         <?php endif; ?>
