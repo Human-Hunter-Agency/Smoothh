@@ -15,7 +15,7 @@ $offers_limit = $args['offers_limit'];
     <div class="container pb-6">
         <?php if ($header) : ?>
             <div class="container mb-10 md:mb-[50px]">
-                <div class="text-center font-bold text-2xl md:text-3xl lg:text-5xl text-foreground">
+                <div class="text-center font-extrabold text-2xl md:text-3xl lg:text-[46px] text-foreground">
                     <?php echo $header; ?>
                 </div>
             </div>
