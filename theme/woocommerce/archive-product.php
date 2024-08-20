@@ -58,7 +58,7 @@ if (is_shop()) {
 
             <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
                 <div class="relative z-0 flex flex-col items-center justify-center container">
-                    <h1 class="text-5xl md:text-[46px] leading-[55px] text-center text-bold text-white font-bold"><?php woocommerce_page_title(); ?></h1>
+                    <h1 class="text-5xl md:text-[46px] leading-[55px] text-center text-bold text-white font-extrabold"><?php woocommerce_page_title(); ?></h1>
                 </div>
             <?php endif; ?>
         </div>
@@ -78,7 +78,7 @@ if (is_shop()) {
         </div>
 
         <div class="mx-auto pt-10 mb-10 md:mb-20">
-            <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] text-foreground prose-strong:text-primary">
+            <h2 class="text-center font-extrabold text-2xl md:text-3xl lg:text-[46px] lg:leading-[55px] text-foreground prose-strong:text-primary">
                 <?php echo __('Choose product for <strong>yourself</strong>', 'smoothh'); ?>
             </h2>
         </div>
