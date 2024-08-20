@@ -58,7 +58,7 @@ $tighten = $args['tighten_on_mobile'];
                                 <h3 class="text-[20px] mb-6 lg:min-h-10 px-5 lg:px-0 font-bold leading-[24px]"><?php echo $tile['title']; ?></h3>
                             <?php endif; ?>
                             <?php if ($tile['description']) : ?>
-                                <div class="prose-smooth prose-strong:font-semibold <?php if (!$tile['description']) : ?> prose-base md:prose-lg <?php else : ?> !leading-6 <?php endif; ?> "><?php echo $tile['description']; ?></div>
+                                <div class="prose-smooth prose-strong:font-bold <?php if (!$tile['description']) : ?> prose-base md:prose-lg <?php else : ?> !leading-6 <?php endif; ?> "><?php echo $tile['description']; ?></div>
                             <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
