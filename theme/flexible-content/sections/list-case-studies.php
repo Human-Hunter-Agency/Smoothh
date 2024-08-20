@@ -33,9 +33,9 @@ $posts = get_posts(array(
                             </div>
 
                             <div class="py-6 text-center text-[20px]">
-                                <p class="font-semibold mb-1"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->retainer_fee; ?></span></p>
-                                <p class="font-semibold mb-1"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->realization_time; ?></span></p>
-                                <p class="font-semibold"><?php echo esc_html_e('Location: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->location; ?></span></p>
+                                <p class="font-bold mb-1"><?php echo esc_html_e('Success fee: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->retainer_fee; ?></span></p>
+                                <p class="font-bold mb-1"><?php echo esc_html_e('Realization time: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->realization_time; ?></span></p>
+                                <p class="font-bold"><?php echo esc_html_e('Location: ', 'smoothh'); ?><span class="text-primary font-normal"><?php echo $post->location; ?></span></p>
                             </div>
 
                             <span class="hidden" href="<?php echo get_permalink($post->ID); ?>"><?php esc_html_e('Read more', 'smoothh'); ?><span class="!-ml-4">></span></span>
