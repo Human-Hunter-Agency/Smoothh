@@ -40,7 +40,7 @@ $offers_limit = $args['offers_limit'];
                 <div data-js-jobs="empty" class="hidden w-full mx-auto text-center py-20 text-lg md:text-xl font-semibold">
                     <?php echo __('No offers found', 'smoothh') ?>
                 </div>
-                <button data-js-jobs="load-more" class="!hidden flex mx-auto mt-14 gap-4 items-center  text-base font-bold py-[15px] px-5 md:px-8 hover:text-primary disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 disabled:pointer-events-none">
+                <button data-js-jobs="load-more" class="!hidden flex mx-auto mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8 hover:text-primary disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 disabled:pointer-events-none">
                     <?php echo __('Load more', 'smoothh') ?>
                 </button>
             </div>
