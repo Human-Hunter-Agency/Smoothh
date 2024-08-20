@@ -27,17 +27,17 @@ module.exports = {
 				'3xl': '10rem',
 			},
 		},
+		typography: (theme) => ({
+			x: { // and this is for prose-sm.
+				css: {
+					p: {
+						fontSize: '20px',
+						lineHeight: round(20 / 20),
+					  },
+				},
+			  },
+		  }),
 		extend: {
-			typography: (theme) => ({
-				x: { // and this is for prose-sm.
-					css: {
-						p: {
-							fontSize: '20px',
-							lineHeight: round(20 / 20),
-						  },
-					},
-				  },
-			  }),
 			fontFamily: {
 				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
 			},
