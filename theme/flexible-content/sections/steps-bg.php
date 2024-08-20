@@ -34,10 +34,10 @@ $steps_list = $args['steps_list'];
                                 <?php endif; ?>
                                 <div class="min-h-[90px] lg:min-h-[110px] font-bold">
                                     <?php if ($step['title']) : ?>
-                                        <h3 class="text-lg md:text-[20px]"><?php echo $step['title']; ?></h3>
+                                        <h3 class="text-lg md:text-[20px] leading-[24px]"><?php echo $step['title']; ?></h3>
                                     <?php endif; ?>
                                     <?php if ($step['subtitle']) : ?>
-                                        <h4 class="text-lg md:text-[20px]"><?php echo $step['subtitle']; ?></h4>
+                                        <h4 class="text-lg md:text-[20px] leading-[24px]"><?php echo $step['subtitle']; ?></h4>
                                     <?php endif; ?>
                                 </div>
                                 <?php if ($step['description']) : ?>
