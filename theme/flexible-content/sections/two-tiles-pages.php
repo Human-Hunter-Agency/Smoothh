@@ -20,7 +20,7 @@ $tiles_list = $args['tiles_list'];
                         <?php endif; ?>
 
                         <?php if ($tile['title']) : ?>
-                            <h3 class="max-w-[300px] text-center text-white text-base md:text-[20px] font-semibold group-hover:hidden"><?php echo $tile['title']; ?></h3>
+                            <h3 class="max-w-[300px] text-center text-white text-base md:text-[20px] font-bold group-hover:hidden"><?php echo $tile['title']; ?></h3>
                         <?php endif; ?>
 
                         <?php if ($tile['description']) : ?>
