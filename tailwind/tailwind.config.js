@@ -32,6 +32,7 @@ module.exports = {
 				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
 			},
 			fontSize: {
+				x: '1.25rem',
 				xl: '1.375rem',
 				'5xl': ['2.625rem', '2.625rem'],
 			},
