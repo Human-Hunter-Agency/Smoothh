@@ -25,7 +25,7 @@ $done_projects = $args['done_projects'];
                             <div class="group h-full flex items-center flex-col bg-white rounded-[14px] shadow-2xl">
                                 <div class="relative flex items-center justify-center rounded-t-[14px] overflow-hidden w-full !h-[140px]">
                                     <div class="z-0 absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
-                                    <h4 class="p-6 z-[1] relative text-center text-[30px] leading-[35px] text-white font-semibold"><?php echo $project['title']; ?></h4>
+                                    <h4 class="p-6 z-[1] relative text-center text-[30px] leading-[35px] text-white font-bold"><?php echo $project['title']; ?></h4>
                                 </div>
 
                                 <div class="py-6 text-center text-[20px]">
