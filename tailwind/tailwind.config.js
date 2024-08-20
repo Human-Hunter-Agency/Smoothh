@@ -28,6 +28,13 @@ module.exports = {
 			},
 		},
 		extend: {
+			typography: (theme) => ({
+				DEFAULT: {
+					fontSize: {
+						x: '1.25rem',
+					},
+				},
+			  }),
 			fontFamily: {
 				sans: ['Raleway', ...defaultTheme.fontFamily.sans],
 			},
