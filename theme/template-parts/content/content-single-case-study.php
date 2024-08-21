@@ -109,7 +109,7 @@ $logoHeaderDescription = get_field('product_sections_settings' , 'option')['desc
 </article><!-- #post-${ID} -->
 
 <section id="posts-related" class="relative py-10 md:py-[120px] mb:pb-[60px]">
-	<h2 class="container text-3xl md:text-5xl text-bold font-bold mb-5 md:mb-14 text-center"><?php echo $headerPostRelated; ?></h2>
+	<h2 class="container text-3xl md:text-5xl text-bold font-extrabold mb-5 md:mb-14 text-center"><?php echo $headerPostRelated; ?></h2>
 
 	<?php
 	get_template_part('flexible-content/sections/partials/case-studies-swiper', '');
