@@ -7,7 +7,7 @@ $description = $args['description'];
 $logo = $args['logo'];
 ?>
 
-<div class="relative py-10 mt-10">
+<div class="relative py-10 mt-10 md:mb-[150px]">
     <div class="container">
         <?php if ($header) : ?>
             <div class="mb-12 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
