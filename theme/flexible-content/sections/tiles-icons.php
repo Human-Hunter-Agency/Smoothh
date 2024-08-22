@@ -14,7 +14,7 @@ $tighten = $args['tighten_on_mobile'];
 ?>
 
 <div id="<?php if ($section_ID) : echo $section_ID;
-            endif; ?>" class="relative pb-10 pt-24 md:pb-10 md:pt-28 mb:pb-[60px]">
+            endif; ?>" class="relative  pt-24  md:pt-28 ">
 
     <div class="container">
         <div class="relative z-0">
@@ -31,7 +31,7 @@ $tighten = $args['tighten_on_mobile'];
         </div>
     </div>
 
-    <div class="relative z-0 w-full overflow-hidden">
+    <div class="relative z-0 w-full overflow-hidden pb-10 md:pb-10 mb:pb-[60px]">
 	<?php if ($blueBg) : ?>
         <div class="z-[-1] w-[100%] lg:w-[97%] h-[150%] absolute top-0 left-0 bg-gradient-to-l to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-r-[45px]"></div>
     <?php endif; ?>
