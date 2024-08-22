@@ -173,3 +173,11 @@ label.checkbox, .wpcf7-list-item-label {
 #wynajmij-eksperta h3{
 font-size: 16px;
 }
+
+.only-on-some-show{
+display: none;
+}
+
+.page-id-2589 .only-on-some-show{
+	display: block;
+}
