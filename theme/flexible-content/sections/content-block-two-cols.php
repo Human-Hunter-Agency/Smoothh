@@ -9,7 +9,7 @@ $isDecorationOverflow = $args['isDecorationOverflow'];
 
 ?>
 
-<div class="relative py-10 md:py-28 md:pt-20 md:pb-0 <?php if (!$isDecorationOverflow) : ?> overflow-hidden <?php endif; ?>">
+<div class="relative py-10 md:py-28 md:pt-20 md:pb-0 md:mt-[50px] <?php if (!$isDecorationOverflow) : ?> overflow-hidden <?php endif; ?>">
     <div class="z-[-1] lg:w-[85%] 2xl:w-[88%] lg:h-[1200px] absolute top-0 right-0 bg-white rounded-[45px] <?php if (!$isDecorationOverflow) : ?> !rounded-none bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)] <?php endif; ?> "></div>
 
     <div class="container <?php if (!$isDecorationOverflow) : ?> overflow-visible <?php endif; ?>">
@@ -36,7 +36,7 @@ $isDecorationOverflow = $args['isDecorationOverflow'];
         </div>
     </div>
     <?php if ($decoration_img && $isDecorationOverflow) : ?>
-        <div class="hidden lg:block absolute right-0 -top-10 w-[45%] 2xl:w-auto">
+        <div class="hidden lg:block absolute right-0 -top-10 w-[36%] 2xl:w-auto">
             <?php echo smoothh_img_responsive($decoration_img, '', array(768, 768), 'lazy') ?>
         </div>
     <?php endif; ?>
