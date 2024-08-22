@@ -178,7 +178,8 @@ font-size: 16px;
 display: none;
 }
 
-.page-id-2589 .only-on-some-show{
+.page-id-2589 .only-on-some-show,
+.page-id-650 .only-on-some-show{
 	display: block;
 }
 
