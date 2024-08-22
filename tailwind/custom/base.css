@@ -12,6 +12,17 @@
  * editor.
 */
 
+//Admin
+.post-edit-link{
+	position: absolute;
+    right: 0;
+    padding: 20px;
+    color: #000;
+    background: #fff;
+    border-radius: 5px;
+    margin: 10px;
+    pointer-events: all;
+}
 
 body {
 	@apply bg-background text-foreground font-sans;
@@ -186,3 +197,4 @@ display: none;
 .page-id-2589 #calculator{
     margin-bottom: 50px;
 }
+
