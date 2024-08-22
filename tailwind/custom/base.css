@@ -181,3 +181,7 @@ display: none;
 .page-id-2589 .only-on-some-show{
 	display: block;
 }
+
+.page-id-2589 #calculator{
+    margin-bottom: 50px;
+}
