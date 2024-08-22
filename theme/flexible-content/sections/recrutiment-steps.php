@@ -58,7 +58,7 @@ $list = $args['list'];
                                     </div>
 
 
-                                    <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[67px] left-[-36px] z-[-1] <?php if (!($i+1 == $listLength && ($i+1)%2 != 0)): ?>md:hide<?php endif; ?>"></div>
+                                    <div class="w-1/2 h-[2px] border-t-[2px] border-solid border-t-primary absolute top-[67px] left-[-36px] z-[-1] <?php if (!($i+1 == $listLength && ($i+1)%2 != 0)): ?>xl:hidden<?php endif; ?>"></div>
 
 
                                     <?php if ($item['description']) : ?>
