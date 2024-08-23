@@ -9,7 +9,7 @@ $has_bg = $args['has_bg'];
 
 ?>
 
-<div class="relative py-10 md:pt-20 mb-10  ">
+<div class="relative py-10 md:pt-20 mb-10 md:pb-5">
     <?php if ($has_bg) : ?>
         <div class="z-[-1] w-full h-full absolute top-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]  "></div>
     <?php endif; ?>
