@@ -13,7 +13,7 @@ $isDecorationOverflow = $args['isDecorationOverflow'];
     <div class="bg-fix z-[-1] lg:w-[85%] 2xl:w-[88%] lg:h-[1200px] absolute top-0 right-0 bg-white rounded-[45px] <?php if (!$isDecorationOverflow) : ?> !rounded-none bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)] <?php endif; ?> "></div>
 
     <div class="container <?php if (!$isDecorationOverflow) : ?> overflow-visible <?php endif; ?>">
-        <div class="flex flex-col lg:flex-row gap-10">
+        <div class="flex flex-col lg:flex-row gap-10 items-center">
             <div class="z-0 w-full lg:w-1/2 mb-[50px]">
                 <?php if ($header) : ?>
                     <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
