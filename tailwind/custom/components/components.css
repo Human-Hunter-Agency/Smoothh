@@ -840,3 +840,13 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 .page-id-8 .calculator .button{
     margin: 10px !important;
 }
+
+
+#post-2743 .bg-fix{
+	border-radius: 50px !important;
+    width: 80%;
+    left: 0;
+    height: 90%;
+    top: 45px;
+    bottom: auto;
+}
