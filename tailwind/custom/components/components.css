@@ -834,3 +834,9 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 .woocommerce-checkout-review-order .order-paid th{
 	@apply !font-semibold
 }
+
+.page-id-8 .calculator .button,
+.page-id-8 .calculator .button,
+.page-id-8 .calculator .button{
+    margin: 10px !important;
+}
