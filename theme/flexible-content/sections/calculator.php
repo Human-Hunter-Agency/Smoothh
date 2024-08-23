@@ -7,7 +7,7 @@ $header = $args['header'];
 ?>
 
 
-<div id="calculator" class="relative py-10 md:py-[60px]">
+<div id="calculator" class="relative py-10 md:py-[70px]">
     <div data-calc-bg class="only-on-some-show z-[-1] w-[100%] lg:w-[97%] h-full absolute top-0 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
     <div class="container calculator">
         <?php if ($header) : ?>
