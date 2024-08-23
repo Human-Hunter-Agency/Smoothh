@@ -842,7 +842,7 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 }
 
 
-#post-2743 .bg-fix{
+.page-id-2743 .bg-fix{
 	border-radius: 50px !important;
     width: 80% !important;
     left: 0 !important;
