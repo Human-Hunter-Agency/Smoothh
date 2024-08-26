@@ -87,13 +87,12 @@ else :
 				<div class="prose-smoothh prose prose-base md:prose-h2:text-xl mb-9 md:mb-[55px] md:prose-h2:text-primary">
 					<?php 
 					if ( $product->is_type( 'variable' ) ) {
-						$default_attributes  = $product->get_variation_default_attribute('variation_description');
-						print_r($default_attributes );
+						$variations = $product->get_available_variations();
+						   echo $variation[0]['variation_description'];
 						// foreach ( $variations as $variation ) {
-						//    get_default_attributes
-						//    echo $variation['variation_description'];
-						// }
+						//    print_r($variation);
 
+						// }
 					 }else{
 						the_content();
 					 } ?>
