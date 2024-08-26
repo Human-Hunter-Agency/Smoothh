@@ -33,7 +33,7 @@ if ($product && $styles_basic) : ?>
                 <?php echo $product->get_short_description() ?>
             </div>
         </div>
-        <span class="translate-y-1/2 rounded-[14px] text-base md:text-[20px] font-bold py-2 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
+        <span class="translate-y-1/2 rounded-[14px] text-base md:text-[20px] font-bold py-3 px-7 text-white bg-secondary group-hover:bg-primary transition duration-200">
             <?php $product->is_downloadable() ? esc_html_e('Download e-book', 'smoothh') : esc_html_e('Show product', 'smoothh'); ?>
         </span>
     </a>
