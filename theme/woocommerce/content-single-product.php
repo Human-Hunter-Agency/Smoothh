@@ -88,7 +88,7 @@ else :
 					<?php 
 					if ( $product->is_type( 'variable' ) ) {
 						$variations = $product->get_available_variations();
-						   echo $variation[0]['variation_description'];
+						   echo $variations[0]['variation_description'];
 						// foreach ( $variations as $variation ) {
 						//    print_r($variation);
 
