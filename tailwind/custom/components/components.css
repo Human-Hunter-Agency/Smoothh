@@ -853,3 +853,8 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
     top: 45px !important;
     bottom: auto !important;
 }
+
+.page-id-2589 #rekrutacja,
+.page-id-2589 #korzysci{
+	@apply !pt-0 md:!pt-28
+}
