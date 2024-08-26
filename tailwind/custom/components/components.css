@@ -841,6 +841,9 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
     margin: 10px !important;
 }
 
+.page-id-8 .calculator-details .tm-extra-product-options-fields{
+	@apply !pt-0 md:!pt-12
+}
 
 .page-id-2743 .bg-fix{
 	border-radius: 50px !important;

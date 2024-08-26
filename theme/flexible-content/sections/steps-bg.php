@@ -22,7 +22,7 @@ $steps_list = $args['steps_list'];
             </div>
         <?php endif; ?>
     </div>
-    <div class="w-full overflow-hidden pb-[40px]">
+    <div class="w-full overflow-hidden md:pb-20">
         <?php if ($steps_list) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
                 <div class="swiper-wrapper xl:!transform-none">
