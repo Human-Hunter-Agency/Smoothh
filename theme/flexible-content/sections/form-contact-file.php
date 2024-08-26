@@ -11,7 +11,7 @@ $hide_message_field = $args['hide_message_field'];
 <div class="w-full py-10 md:py-[70px] mb:pb-20 text-white bg-gradient-to-b from-secondary to-primary">
     <div class="container">
         <?php if ($header) : ?>
-            <h2 class="mx-auto max-w-[1040px] text-3xl md:text-[40px] font-bold mb-9 text-center !leading-[50px]"><?php echo esc_html($header); ?></h2>
+            <h2 class="mx-auto max-w-[1040px] text-2xl md:text-[40px] font-bold mb-9 text-center md:!leading-[50px]"><?php echo esc_html($header); ?></h2>
         <?php endif; ?>
         <?php if ($description) : ?>
             <div class="prose-smoothh prose md:prose-x text-white !font-light text-center mb-10 prose-h2:!text-white prose-h2:font-bold prose-h2:text-3xl prose-h2:md:text-5xl prose-h2:mb-9"><?php echo $description; ?></div>
