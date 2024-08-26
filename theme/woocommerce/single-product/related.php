@@ -25,7 +25,7 @@ if ($related_products) : ?>
     <section class="relative pb-10 mb:pb-[60px]">
         <div class="container">
             <div class="relative z-0">
-                <h2 class="text-center font-bold text-2xl md:text-3xl lg:text-[46px] mb-9 md:mb-14 prose-strong:text-primary">
+                <h2 class="text-center font-extrabold text-2xl md:text-3xl lg:text-[46px] mb-9 md:mb-14 prose-strong:text-primary">
                     <?php echo __('Related <strong>products</strong>', 'smoothh') ?>
                 </h2>
             </div>
