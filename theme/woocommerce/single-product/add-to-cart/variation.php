@@ -15,7 +15,7 @@ defined('ABSPATH') || exit;
 
 ?>
 <script type="text/template" id="tmpl-variation-template">
-    <div class="woocommerce-variation-description">{{{ data.variation.variation_description }}}</div>
+    <div class="woocommerce-variation-description !hidden">{{{ data.variation.variation_description }}}</div>
 	<div class="woocommerce-variation-price !mt-5 flex items-end justify-end shrink-0 [&_.woocommerce-Price-currencySymbol]:hidden text-foreground [&_bdi]:text-[22px] [&_del_bdi]:!text-[22px] [&_bdi]:!font-bold [&_bdi]:text-foreground [&_ins]:no-underline [&_del_bdi]:!text-foreground [&_del]:h-8 [&_del]:!decoration-foreground [&_del_bdi]:mr-1.5">
         <span class="[&_.price]:flex [&_.price]:flex-col [&_.price]:items-end">
             {{{ data.variation.price_html }}}
