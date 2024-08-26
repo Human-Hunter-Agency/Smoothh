@@ -1538,8 +1538,7 @@ function menuMobileClose(){
 function initVariationDescriptionReplace(){
 	if (typeof jQuery !== 'undefined') {
 		jQuery( ".single_variation_wrap" ).on( "show_variation", function ( event, variation ) {
-			console.log(variation)
-			const descriptionHTML = document.querySelector('.woocommerce-variation-description')?.innerHTML
+			const descriptionHTML = variation.variation_description
 			const descriptionContainer = document.querySelector('#description')
 			if (descriptionHTML && descriptionContainer) {
 				descriptionContainer.innerHTML = descriptionHTML
