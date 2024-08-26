@@ -13,7 +13,7 @@ $isSwiper = $args['isSwiper'];
     <div class="container">
         <div class="mx-auto relative z-0 max-w-[900px] mb-12 lg:mb-24">
             <?php if ($header) : ?>
-                <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+                <div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-extrabold lg:leading-[55px]">
                     <?php echo $header; ?>
                 </div>
             <?php endif; ?>

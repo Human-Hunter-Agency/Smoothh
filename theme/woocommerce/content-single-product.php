@@ -267,7 +267,7 @@ else :
 			<?php if (isset($header_logos) && $header_logos) : ?>
 				<div class="container">
 					<div class="relative z-0">
-						<div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-bold lg:font-extrabold lg:leading-[55px]">
+						<div class="mb-10 text-2xl md:text-4xl lg:text-[46px] font-extrabold lg:leading-[55px]">
 							<?php echo $header_logos; ?>
 						</div>
 					</div>
