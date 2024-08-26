@@ -855,6 +855,7 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 }
 
 .page-id-2589 #rekrutacja,
-.page-id-2589 #korzysci{
+.page-id-2589 #korzysci,
+.page-id-1508 #korzysci {
 	@apply !pt-0 md:!pt-28
 }
