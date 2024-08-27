@@ -1227,6 +1227,7 @@ async function initCalculator() {
 		});
 
 		calcBtn.addEventListener('click', () => {
+			alert('Calc btn clicked');
 			jQuery(form).tc_validate().form();
 			if (form.checkValidity()) {
 
