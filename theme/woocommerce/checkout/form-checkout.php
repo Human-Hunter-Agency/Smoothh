@@ -34,7 +34,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
   <?php if ($checkout->get_checkout_fields()) : ?>
 
-    <div class="flex flex-col md:flex-row justify-between gap-6 xl:gap-12 [&_.form-row]:!p-0 mb-20 mt-10">
+    <div class="flex flex-col lg:flex-row justify-between gap-6 xl:gap-12 [&_.form-row]:!p-0 mb-20 mt-10">
       <div id="customer_details" class="flex-1 smoothh-inputs-validation">
         <?php do_action('woocommerce_checkout_before_customer_details'); ?>
         <div class="p-5 xl:p-8 border border-[#888] rounded-[15px] mb-6">
@@ -52,8 +52,8 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
     <?php endif; ?>
 
-    <div class="md:w-1/2 xl:w-1/3 relative shrink-0">
-      <div class="md:sticky md:top-[115px]">
+    <div class="lg:w-1/2 xl:w-1/3 relative shrink-0">
+      <div class="lg:sticky lg:top-[115px]">
         <?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
         <?php do_action('woocommerce_checkout_before_order_review'); ?>
         <div id="order_review" class="woocommerce-checkout-review-order p-5 xl:p-8 border border-primary shadow-2xl rounded-[15px] mb-8 md:mb-10">
