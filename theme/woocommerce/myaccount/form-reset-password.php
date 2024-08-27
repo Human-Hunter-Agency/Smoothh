@@ -31,7 +31,7 @@ defined('ABSPATH') || exit; ?>
 		<p class="woocommerce-form-row woocommerce-form-row--first form-row p-0 mb-5 w-full max-w-80">
 			<input type="password" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition-all duration-200 hover:border-secondary accent-primary w-full !outline-1 !-outline-offset-2 !outline-transparent ![outline-style:solid] focus:!outline-1 focus:border-secondary focus:!outline-secondary " name="password_1" id="password_1" autocomplete="new-password" placeholder="<?php esc_html_e('New password', 'woocommerce'); ?> *" />
 		</p>
-		<p class="woocommerce-form-row woocommerce-form-row--last form-row p-0 mb-5 w-full max-w-80">
+		<p class="woocommerce-form-row woocommerce-form-row--last form-row p-0 mb-12 w-full max-w-80">
 			<input type="password" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition-all duration-200 hover:border-secondary accent-primary w-full !outline-1 !-outline-offset-2 !outline-transparent ![outline-style:solid] focus:!outline-1 focus:border-secondary focus:!outline-secondary " name="password_2" id="password_2" autocomplete="new-password" placeholder="<?php esc_html_e('Re-enter new password', 'woocommerce'); ?> *" />
 		</p>
 
@@ -42,7 +42,7 @@ defined('ABSPATH') || exit; ?>
 
 		<p class="woocommerce-form-row form-row">
 			<input type="hidden" name="wc_reset_password" value="true" />
-			<button type="submit" class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> h-[55px] w-max !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-[50px]" value="<?php esc_attr_e('Save', 'woocommerce'); ?>">
+			<button type="submit" class="woocommerce-Button button<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> h-[55px] w-max !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-8 xl:!px-[50px]" value="<?php esc_attr_e('Save', 'woocommerce'); ?>">
 				<?php esc_html_e('Save', 'woocommerce'); ?>
 				<svg class="inline-block ml-3 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
