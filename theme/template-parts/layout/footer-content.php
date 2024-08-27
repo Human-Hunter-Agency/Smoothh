@@ -92,7 +92,7 @@ $social_links = get_field('social_links', 'option');
 				if ($socials_count > 0) :
 				?>
 					<h3 class="!mb-6"><?php esc_html_e('Follow us:', 'smoothh'); ?></h3>
-					<ul class="flex gap-3">
+					<ul class="flex gap-3 flex-wrap md:flex-nowrap">
 						<?php if ($social_links['linkedin']) : ?>
 							<li class="shrink-0">
 								<a class="block rounded-full transition duration-200" <?php if ($social_links['linkedin'] != ' ') : ?> href="<?php echo esc_attr($social_links['linkedin']) ?>" target="_blank" <?php endif; ?>>
