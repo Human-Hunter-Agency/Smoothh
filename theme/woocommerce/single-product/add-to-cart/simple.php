@@ -63,12 +63,12 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 		<?php // if (is_user_logged_in() || is_prod_guest_available($product)) :
 		if ($product->get_id() == 1186 || $product->get_id() == 1253) :
 		?>
-			<div data-js-calc-btn type="button" class=" button whitespace-nowrap button border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 !mt-10 !mb-14"><?php echo esc_html_e('calculate', 'smoothh'); ?>
+			<button data-js-calc-btn type="button" class=" button whitespace-nowrap button border-none !bg-gradient-to-b from-primary via-secondary to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100  disabled:!bg-[#C9C9C9] [&.disabled]:!bg-[#C9C9C9] disabled:!bg-none [&.disabled]:!bg-none disabled:!opacity-100 [&.disabled]:!opacity-100  transition-all duration-200 !text-white h-[55px] !px-5 xl:!px-12 xl:!pr-8 !rounded-[15px] font-bold !flex items-center justify-center gap-5 !mt-10 !mb-14"><?php echo esc_html_e('calculate', 'smoothh'); ?>
 				<svg class="shrink-0 -rotate-90" width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<circle class="stroke-white" cx="9.5" cy="9.5" r="9"></circle>
 					<path class="fill-white" d="M9 12.986L5.75 7.5H7.7L9.468 10.451L11.314 7.5H13.16L9.845 12.986H9Z"></path>
 				</svg>
-			</div>
+			</button>
 
 			<div data-js-calc-container class="hidden p-5 lg:px-8 rounded-2xl border-2 border-[#EFEFEF] bg-white w-full drop-shadow-2xl">
 				<h4 class="text-2xl md:text-3xl font-semibold text-primary mb-4"><?php echo esc_html_e('Your calculation:', 'smoothh'); ?></h4>
