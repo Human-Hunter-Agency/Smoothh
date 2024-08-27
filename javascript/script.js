@@ -1196,7 +1196,7 @@ async function initCalculator() {
 			countrySelect.setSelected([calcSessionData.country])
 			cityInput.value = calcSessionData.city
 
-			calcSession.removeItem('calc-data')
+			sessionStorage.removeItem('calc-data')
 		}
 
 		const container = calcEl.querySelector('[data-js-calc-container]');
