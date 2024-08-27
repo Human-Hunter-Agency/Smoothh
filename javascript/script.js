@@ -1149,9 +1149,9 @@ async function initCalculator() {
 		return;
 	}
 
-	const calcCookie = await cookieStore.get('calc-data')
+	const calcSession = sessionStorage.getItem('calc-data')
 
-	if (document.querySelector('.calculator .woocommerce-message') || calcCookie) {
+	if (document.querySelector('.calculator .woocommerce-message') || calcSession) {
 		const calcWrapper = document.querySelector('#calculator')
 		window.scrollTo({top: calcWrapper.offsetTop,  behavior: 'smooth'})
 	}
@@ -1182,21 +1182,21 @@ async function initCalculator() {
 
 		const isCalcAdvanced = calcEl.dataset.jsCalcContent == 2;
 
-		if (isCalcAdvanced && calcCookie) {
-			console.log(calcCookie.value)
-			const calcCookieData = JSON.parse(calcCookie.value)
+		if (isCalcAdvanced && calcSession) {
+			console.log(calcSession)
+			const calcSessionData = JSON.parse(calcSession)
 
 			const fieldSelect = document.querySelector('[data-uniqid="666febd02fcf31.57374088"] select').slim
 			const positionSelect = document.querySelector('[data-uniqid="666febd02fcf49.12361043"] select').slim
 			const countrySelect = document.querySelector('[data-uniqid="666febd02fcf64.88984826"] select').slim
 			const cityInput = document.querySelector('[data-uniqid="666febd02fcf79.20232136"] input')
 
-			fieldSelect.setSelected([calcCookieData.field])
-			positionSelect.setSelected([calcCookieData.position])
-			countrySelect.setSelected([calcCookieData.country])
-			cityInput.value = calcCookieData.city
+			fieldSelect.setSelected([calcSessionData.field])
+			positionSelect.setSelected([calcSessionData.position])
+			countrySelect.setSelected([calcSessionData.country])
+			cityInput.value = calcSessionData.city
 
-			cookieStore.delete('calc-data')
+			calcSession.removeItem('calc-data')
 		}
 
 		const container = calcEl.querySelector('[data-js-calc-container]');
@@ -1227,7 +1227,6 @@ async function initCalculator() {
 		});
 
 		calcBtn.addEventListener('click', () => {
-			alert('Calc btn clicked');
 			jQuery(form).tc_validate().form();
 			if (form.checkValidity()) {
 
@@ -1303,7 +1302,7 @@ async function initCalculator() {
 						country:formData.get('tmcp_select_2_tcform1'),
 						city:formData.get('tmcp_textfield_3_tcform1')
 					}
-					cookieStore.set('calc-data',JSON.stringify(values))
+					sessionStorage.setItem('calc-data',JSON.stringify(values))
 				}
 
 				// tableFee.innerHTML = feeEl.innerHTML
