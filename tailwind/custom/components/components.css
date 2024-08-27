@@ -62,7 +62,7 @@ footer#page-footer .menu-item {
 	@apply w-fit;
 }
 
-.menu-dla-kandydata-container ul li:nth-child(2) {
+.menu-dla-kandydata-container ul li:nth-child(3) {
 	@apply mb-[38px];
 }
 
