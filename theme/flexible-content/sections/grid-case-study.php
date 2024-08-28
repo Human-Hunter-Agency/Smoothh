@@ -5,10 +5,10 @@
 $section_ID = $args['section_ID'];
 $header = $args['header'];
 
-$visible_posts = 5;
+$visible_posts = 6;
 $posts = get_posts(array(
     'post_type'         => 'case-study',
-    'numberposts'       => $visible_posts,
+    'numberposts'       => 5,
 ));
 
 ?>
