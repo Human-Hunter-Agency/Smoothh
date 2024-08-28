@@ -866,32 +866,43 @@ add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_
 remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
 
 function filter_wp_nav_menu_objects($sorted_menu_items, $args) {
-    if ($args->menu->slug !== 'dla-kandydata') {
-        return $sorted_menu_items;
-    }
+	$user_id = get_current_user_id();
+	$account_type = get_user_meta($user_id, 'account_type', true);
 
-    $client_panel_page_id = 650;
-    $candidate_panel_page_id = 2743;
+	// Hide calculator links for candidates
+	if ($account_type === 'candidate') {
+		$sorted_menu_items = array_filter($sorted_menu_items,function ($item) {
+			return !str_contains($item->url,'#calculator');
+		});
+	}
+    
+	
+	if ($args->menu->slug == 'dla-kandydata') {
+        
+		$client_panel_page_id = 650;
+		$candidate_panel_page_id = 2743;
+	
+		// Show both for root user
+		if ($user_id == 1) {
+			return $sorted_menu_items;
+		}
+	
+		$sorted_menu_items = array_filter($sorted_menu_items, function ($item) use ($account_type, $client_panel_page_id, $candidate_panel_page_id) {
+			$menu_item_id = $item->object_id;
+			if (empty($account_type)) {
+				return $menu_item_id != $client_panel_page_id && $menu_item_id != $candidate_panel_page_id;
+			} elseif ($account_type === 'client') {
+				return $menu_item_id != $candidate_panel_page_id;
+			} elseif ($account_type === 'candidate') {
+				return $menu_item_id != $client_panel_page_id;
+			}
+			return true;
+		});
+    
+	}
 
-    $user_id = get_current_user_id();
-    $account_type = get_user_meta($user_id, 'account_type', true);
 
-    // Show both for root user
-    if ($user_id == 1) {
-        return $sorted_menu_items;
-    }
-
-	return array_filter($sorted_menu_items, function ($item) use ($account_type, $client_panel_page_id, $candidate_panel_page_id) {
-        $menu_item_id = $item->object_id;
-		if (empty($account_type)) {
-            return $menu_item_id != $client_panel_page_id && $menu_item_id != $candidate_panel_page_id;
-        } elseif ($account_type === 'client') {
-            return $menu_item_id != $candidate_panel_page_id;
-        } elseif ($account_type === 'candidate') {
-            return $menu_item_id != $client_panel_page_id;
-        }
-        return true;
-    });
+	return $sorted_menu_items;
 }
 
 add_filter( 'wp_nav_menu_objects', 'filter_wp_nav_menu_objects', 10, 2 ); 
