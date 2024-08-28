@@ -19,7 +19,7 @@ $posts = get_posts(array(
     <div class="container">
             <?php if ($header) : ?>
                 <div class="mx-auto max-w-[960px] text-center font-extrabold prose-strong:font-extrabold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
-                    <?php echo $header; ?>
+                    <?php echo wp_count_posts('case-study'); ?>
                 </div>
             <?php endif; ?>
 		<div class="pb-20">
