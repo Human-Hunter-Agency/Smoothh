@@ -865,6 +865,14 @@ remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_f
 add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 20);
 remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
 
+function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
+	print_r($sorted_menu_items);
+	echo '---';
+	print_r($args); 
+    return $sorted_menu_items; 
+}; 
+
+add_filter( 'wp_nav_menu_objects', 'filter_wp_nav_menu_objects', 10, 2 ); 
 
 // Add consents page
 function register_new_item_endpoint()
