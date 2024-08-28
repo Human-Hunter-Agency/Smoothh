@@ -867,7 +867,7 @@ remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment
 
 function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
 	echo '<pre>';
-	print_r($args); 
+	print_r($args['menu']); 
 	echo '</pre>';
 	// if ($args['menu']['slug'] === 'dla-kandydata') {
 
