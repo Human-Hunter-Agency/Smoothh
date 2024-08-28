@@ -823,6 +823,8 @@ function after_login_redirect($redirect_to)
 	if (is_user_logged_in() && $redirect_param !== false) {
 		return $redirect_param;
 	} elseif (empty($_GET)) {
+		$user_id = get_current_user_id();
+		print_r($user_id);
 		return $panel_page_link;
 	} else {
 		return $redirect_to;
