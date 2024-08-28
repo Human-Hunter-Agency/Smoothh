@@ -875,7 +875,7 @@ function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
 		$account_type = get_user_meta($user_id, 'account_type', true);
 
 		echo '<pre>';
-		echo $user_id;
+		print_r($user_id);
 		if ($account_type === 'client') {
 			$sorted_menu_items = array_filter($sorted_menu_items, function ($item,$key){
 				echo $item->object_id;
