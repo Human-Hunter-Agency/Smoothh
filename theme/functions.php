@@ -824,7 +824,10 @@ function after_login_redirect($redirect_to,$user)
 		return $redirect_param;
 	} elseif (empty($_GET)) {
 		$account_type = get_user_meta($user->ID, 'account_type', true);
-		return $panel_page_link . '?' . $account_type;
+		if ($account_type == 'candidate') {
+			return get_permalink( wc_get_page_id( 'myaccount' ) );
+		}
+		return $panel_page_link;
 	} else {
 		return $redirect_to;
 	}
