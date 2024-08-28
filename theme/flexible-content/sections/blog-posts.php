@@ -35,9 +35,7 @@ $hide_message_field = $args['hide_message_field'];
 			'exclude' => get_the_ID()
 		);
 	?>
-		<div class="w-full relative min-h-32 <?php if ($i !== 0) {
-																						echo 'hidden';
-																					} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
+		<div class="w-full relative min-h-32 <?php if ($i !== 0) {echo 'hidden';} ?>" data-js="<?php echo 'tab-content-' . $category->term_id; ?>">
 			<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
 				<?php if ($i === 0) :
 					++$i;

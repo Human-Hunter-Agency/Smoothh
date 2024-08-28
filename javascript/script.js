@@ -436,7 +436,7 @@ function initCaseStudiesGrid(){
 		loaderEl: loaderEl,
 		loadMoreBtn: loadMoreBtn,
 		postCount: 6,
-		page: 1,
+		page: 2,
 	}
 
 	loadMoreBtn.addEventListener('click', () => loadMore(listElParams,'case-study',3, 'grid'));
