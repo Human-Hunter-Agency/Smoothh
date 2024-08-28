@@ -430,16 +430,18 @@ function initCaseStudiesGrid(){
 
 	const loadMoreBtn = document.querySelector('[data-js-case-studies-grid="load-more"]');
 	const loaderEl = document.querySelector('[data-js-case-studies-grid="loader"]');
+	const postCount = container.children.length
+	const perPage = 3
 
 	const listElParams = {
 		contentUlEl: container,
 		loaderEl: loaderEl,
 		loadMoreBtn: loadMoreBtn,
-		postCount: 6,
-		page: 2,
+		postCount: postCount,
+		page: postCount > 0 ? Math.max(1,parseInt(postCount/perPage)) : 0,
 	}
 
-	loadMoreBtn.addEventListener('click', () => loadMore(listElParams,'case-study',3, 'grid'));
+	loadMoreBtn.addEventListener('click', () => loadMore(listElParams,'case-study',perPage, 'grid'));
 }
 document.addEventListener('DOMContentLoaded', () => {
 	initCaseStudiesGrid();
