@@ -887,6 +887,10 @@ function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
 			});
 		}
 
+		echo '<pre>';
+		print_r($sorted_menu_items); 
+		echo '</pre>';
+
 	}
     return $sorted_menu_items; 
 }; 
