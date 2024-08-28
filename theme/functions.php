@@ -814,7 +814,7 @@ function login_page_redirects()
 add_action('template_redirect', 'login_page_redirects');
 
 
-function after_login_redirect($redirect_to)
+function after_login_redirect($redirect_to,$user)
 {
 	$redirect_param = isset($_GET['redirect_to']) ? $_GET['redirect_to'] : false;
 	$panel_page_id = 650;
@@ -823,9 +823,8 @@ function after_login_redirect($redirect_to)
 	if (is_user_logged_in() && $redirect_param !== false) {
 		return $redirect_param;
 	} elseif (empty($_GET)) {
-		$user_id = get_current_user_id();
-		print_r($user_id);
-		return $panel_page_link;
+		$account_type = get_user_meta($user->ID, 'account_type', true);
+		return $panel_page_link . '?' . $account_type;
 	} else {
 		return $redirect_to;
 	}
