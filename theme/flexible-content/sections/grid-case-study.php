@@ -19,7 +19,8 @@ $posts = get_posts(array(
     <div class="container">
             <?php if ($header) : ?>
                 <div class="mx-auto max-w-[960px] text-center font-extrabold prose-strong:font-extrabold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
-                    <?php echo wp_count_posts('case-study'); ?>
+                <?php print_r(wp_count_posts('case-study')) ?>
+				<?php echo $header; ?>
                 </div>
             <?php endif; ?>
 		<div class="pb-20">
@@ -46,7 +47,7 @@ $posts = get_posts(array(
 			<div class="w-full px-10 py-20 hidden" data-js-case-studies-grid="loader">
 				<span class="mx-auto block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
 			</div>
-			<button data-js-case-studies-grid="load-more" class="<?php if ((wp_count_posts('case-study') <= $visible_posts)) {echo '!hidden';} ?> flex mx-auto xl:mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
+			<button data-js-case-studies-grid="load-more" class="<?php if ((wp_count_posts('case-study')->publish <= $visible_posts)) {echo '!hidden';} ?> flex mx-auto xl:mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
 				<?php esc_html_e('More posts', 'smoothh'); ?>
 			</button>
 		</div>
