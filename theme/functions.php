@@ -874,19 +874,23 @@ function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
 		$user_id = get_current_user_id();
 		$account_type = get_user_meta($user_id, 'account_type', true);
 
+		
+		echo '<pre>';
 		if ($account_type === 'client') {
-			$test = array_filter($sorted_menu_items, function ($item){
-				return true;
+			$sorted_menu_items = array_filter($sorted_menu_items, function ($item) use ($candidate_panel_page_id){
+				echo $item->object_id;
+				return $item->object_id !== $candidate_panel_page_id;
 			});
 		}
 	
 		if ($account_type === 'candidate') {
-			$test = array_filter($sorted_menu_items, function ($item){
-				return true;
+			$sorted_menu_items = array_filter($sorted_menu_items, function ($item) use ($client_panel_page_id) {
+				echo $item->object_id;
+				return $item->object_id !== $client_panel_page_id;
 			});
 		}
-		echo '<pre>';
-		print_r($test); 
+
+		// print_r($sorted_menu_items); 
 		echo '</pre>';
 
 	}
