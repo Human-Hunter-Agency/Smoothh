@@ -866,15 +866,11 @@ add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_
 remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
 
 function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
-	if ($args['menu']['slug'] === 'dla-kandydata') {
-		echo '<pre>';
-		print_r($sorted_menu_items);
-		echo '</pre>';
-		echo '---';
-		echo '<pre>';
-		print_r($args); 
-		echo '</pre>';
-		
+	echo '<pre>';
+	print_r($args); 
+	echo '</pre>';
+	// if ($args['menu']['slug'] === 'dla-kandydata') {
+
 		// $client_panel_page_id = 650;
 		// $candidate_panel_page_id = 2743;
 
@@ -893,7 +889,8 @@ function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
 		// 		return $item['object_id'] !== $client_panel_page_id;
 		// 	});
 		// }
-	}
+
+	// }
     return $sorted_menu_items; 
 }; 
 
