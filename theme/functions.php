@@ -867,9 +867,6 @@ remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment
 
 function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
 	if ($args->menu->slug === 'dla-kandydata') {
-		echo '<pre>';
-		print_r($args->menu->slug); 
-		echo '</pre>';
 
 		$client_panel_page_id = 650;
 		$candidate_panel_page_id = 2743;
