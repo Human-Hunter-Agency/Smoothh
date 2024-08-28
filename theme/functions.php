@@ -800,15 +800,29 @@ function login_page_redirects()
 		exit;
 	}
 
-	$panel_page_id = 650;
-	if (!is_user_logged_in() && is_page($panel_page_id)) {
-		$url = add_query_arg(
-			'redirect_to',
-			get_permalink($panel_page_id),
-			get_permalink(wc_get_page_id('myaccount'))
-		);
-		wp_redirect($url);
-		exit;
+
+	$client_panel_page_id = 650;
+	$candidate_panel_page_id = 2743;
+
+	if (!is_user_logged_in()) {
+		if (is_page($client_panel_page_id) || is_page($candidate_panel_page_id)) {
+			wp_redirect(get_permalink(wc_get_page_id('myaccount')));
+			exit;
+		}
+	}
+
+	if (is_user_logged_in()) {
+		$user_id = get_current_user_id();
+		$account_type = get_user_meta($user_id, 'account_type', true);
+
+		if ($account_type === 'client' && is_page($candidate_panel_page_id)) {
+			wp_redirect(get_permalink($client_panel_page_id));
+			exit;
+		}
+		if ($account_type === 'candidate' && is_page($client_panel_page_id)) {
+			wp_redirect(get_permalink($candidate_panel_page_id));
+			exit;
+		}
 	}
 }
 add_action('template_redirect', 'login_page_redirects');
