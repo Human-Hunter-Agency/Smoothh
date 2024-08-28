@@ -561,7 +561,7 @@ function insertPosts(container, posts, variant) {
 	posts.forEach((post) => {
 		if(variant == 'grid'){
 			combinedHTML += `
-			<a href="${post.link}" class="group !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 _drop-shadow-lg shadow-xl lg:shadow-2xl xl:!basis-[calc(33%_-_40px)] xl:!mr-0">
+			<a href="${post.link}"class="group !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl shadow-xl lg:shadow-2xl">
 				<div class="w-full relative rounded-t-[14px] overflow-hidden [&_img]:object-cover [&_img]:w-full [&_img]:!h-[190px] [&_img]:md:!h-[220px]">
 					<img src="${post.fimg_url || ''}" alt="${post.title.rendered}">
 					<div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>

@@ -26,7 +26,7 @@ $posts = get_posts(array(
 			<?php if ($posts) : ?>
 					<div data-js-case-studies-grid='container' class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-14 sm:gap-y-14">
 						<?php foreach ($posts as $post) : ?>
-							<a href="<?php echo get_permalink($post->ID) ?>" class="group !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100 _drop-shadow-lg shadow-xl lg:shadow-2xl xl:!basis-[calc(33%_-_40px)] xl:!mr-0">
+							<a href="<?php echo get_permalink($post->ID) ?>" class="group !h-auto pb-5 !flex items-center flex-col border-2 border-[#EFEFEF] rounded-2xl shadow-xl lg:shadow-2xl">
 								<div class="w-full relative rounded-t-[14px] overflow-hidden [&_img]:object-cover [&_img]:w-full [&_img]:!h-[190px] [&_img]:md:!h-[220px]">
 									<?php echo wp_get_attachment_image(get_post_thumbnail_id($post), 'medium', false, array('loading' => 'lazy')); ?>
 									<div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
