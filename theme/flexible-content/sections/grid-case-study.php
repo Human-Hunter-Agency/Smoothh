@@ -5,7 +5,7 @@
 $section_ID = $args['section_ID'];
 $header = $args['header'];
 
-$visible_posts = 6;
+$visible_posts = 3;
 $posts = get_posts(array(
     'post_type'         => 'case-study',
     'numberposts'       => 5,
@@ -46,7 +46,7 @@ $posts = get_posts(array(
 			<div class="w-full px-10 py-20 hidden" data-js-case-studies-grid="loader">
 				<span class="mx-auto block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
 			</div>
-			<button data-js-case-studies-grid="load-more" class="<?php if ((count($posts) <= $visible_posts)) {echo '!hidden';} ?> flex mx-auto xl:mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
+			<button data-js-case-studies-grid="load-more" class="<?php if ((wp_count_posts('case-study') <= $visible_posts)) {echo '!hidden';} ?> flex mx-auto xl:mt-14 gap-4 items-center text-[20px] font-bold py-[15px] px-5 md:px-8  hover:text-primary disabled:!opacity-20 transition-all duration-200 disabled:pointer-events-none ">
 				<?php esc_html_e('More posts', 'smoothh'); ?>
 			</button>
 		</div>
