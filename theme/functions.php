@@ -875,18 +875,18 @@ function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
 		$account_type = get_user_meta($user_id, 'account_type', true);
 
 		if ($account_type === 'client') {
-			$sorted_menu_items = array_filter($sorted_menu_items, function ($item,$key){
+			$test = array_filter($sorted_menu_items, function ($item,$key){
 				return true;
 			});
 		}
 	
 		if ($account_type === 'candidate') {
-			$sorted_menu_items = array_filter($sorted_menu_items, function ($item,$key){
+			$test = array_filter($sorted_menu_items, function ($item,$key){
 				return true;
 			});
 		}
 
-		print_r($sorted_menu_items); 
+		print_r($test); 
 
 	}
     return $sorted_menu_items; 
