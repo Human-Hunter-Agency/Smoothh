@@ -866,13 +866,13 @@ add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_
 remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
 
 function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
-	echo '<pre>'
+	echo '<pre>';
 	print_r($sorted_menu_items);
-	echo '</pre>'
+	echo '</pre>';
 	echo '---';
-	echo '<pre>'
+	echo '<pre>';
 	print_r($args); 
-	echo '</pre>'
+	echo '</pre>';
     return $sorted_menu_items; 
 }; 
 
