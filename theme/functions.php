@@ -814,7 +814,7 @@ function login_page_redirects()
 add_action('template_redirect', 'login_page_redirects');
 
 
-function after_login_redirect($redirect_to)
+function after_login_redirect($redirect_to,$user)
 {
 	$redirect_param = isset($_GET['redirect_to']) ? $_GET['redirect_to'] : false;
 	$panel_page_id = 650;
@@ -823,9 +823,16 @@ function after_login_redirect($redirect_to)
 	if (is_user_logged_in() && $redirect_param !== false) {
 		return $redirect_param;
 	} elseif (empty($_GET)) {
-		$user_id  = get_current_user_id();
-		$account_type = get_user_meta($user_id, 'account_type', true);
-		return 'https://smoothh.domain.org.pl/?test=' . $user_id;
+		if (isset($user) && is_a( $user, 'WP_User' ) && $user->ID > 0) {
+			return 'https://smoothh.domain.org.pl/?test_log=' . $user->ID;
+		}else{
+			$user_id  = get_current_user_id();
+			if ($user_id > 0) {
+				// $account_type = get_user_meta($user_id, 'account_type', true);
+				return 'https://smoothh.domain.org.pl/?test_reg=' . $user_id;
+			}
+
+		}
 		// if ($account_type == 'candidate') {
 		// 	return get_permalink( wc_get_page_id( 'myaccount' ) );
 		// }else{
@@ -835,8 +842,8 @@ function after_login_redirect($redirect_to)
 		return $redirect_to;
 	}
 }
-add_filter('woocommerce_login_redirect', 'after_login_redirect', 999);
-add_action('woocommerce_registration_redirect', 'after_login_redirect', 2);
+add_filter('woocommerce_login_redirect', 'after_login_redirect', 999,2);
+add_action('woocommerce_registration_redirect', 'after_login_redirect', 2,2);
 
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_login_form', 10);
 remove_action('woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10);
