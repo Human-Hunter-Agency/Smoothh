@@ -866,31 +866,31 @@ add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_
 remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
 
 function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
-	echo '<pre>';
-	print_r($args->menu); 
-	echo '</pre>';
-	// if ($args['menu']['slug'] === 'dla-kandydata') {
+	if ($args->menu->slug === 'dla-kandydata') {
+		echo '<pre>';
+		print_r($args->menu->slug); 
+		echo '</pre>';
 
-		// $client_panel_page_id = 650;
-		// $candidate_panel_page_id = 2743;
+		$client_panel_page_id = 650;
+		$candidate_panel_page_id = 2743;
 
-		// $user_id = get_current_user_id();
-		// $account_type = get_user_meta($user_id, 'account_type', true);
+		$user_id = get_current_user_id();
+		$account_type = get_user_meta($user_id, 'account_type', true);
 
 		
-		// if ($account_type === 'client') {
-		// 	$sorted_menu_items = array_filter($sorted_menu_items, function ($item) use ($candidate_panel_page_id) {
-		// 		return $item['object_id'] !== $candidate_panel_page_id;
-		// 	});
-		// }
+		if ($account_type === 'client') {
+			$sorted_menu_items = array_filter($sorted_menu_items, function ($item) use ($candidate_panel_page_id) {
+				return $item['object_id'] !== $candidate_panel_page_id;
+			});
+		}
 	
-		// if ($account_type === 'candidate') {
-		// 	$sorted_menu_items = array_filter($sorted_menu_items, function ($item) use ($client_panel_page_id) {
-		// 		return $item['object_id'] !== $client_panel_page_id;
-		// 	});
-		// }
+		if ($account_type === 'candidate') {
+			$sorted_menu_items = array_filter($sorted_menu_items, function ($item) use ($client_panel_page_id) {
+				return $item['object_id'] !== $client_panel_page_id;
+			});
+		}
 
-	// }
+	}
     return $sorted_menu_items; 
 }; 
 
