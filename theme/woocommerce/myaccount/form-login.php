@@ -88,7 +88,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
     
         <div class="basis-1/2 bg-white px-5 md:px-8 pt-9 pb-6 border border-primary shadow-2xl !rounded-[15px]">
             <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e("I don't have an account", 'smoothh'); ?></h2>
-            <p class="mb-10 block"><?php esc_html_e("No account text", 'smoothh'); ?></p>
+            <p class="mb-10 block prose"><?php __("No account text", 'smoothh'); ?></p>
             
             <?php
             $login_page_id = 848;
