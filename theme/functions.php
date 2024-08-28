@@ -875,18 +875,19 @@ function filter_wp_nav_menu_objects( $sorted_menu_items, $args ) {
 		$account_type = get_user_meta($user_id, 'account_type', true);
 
 		if ($account_type === 'client') {
-			$test = array_filter($sorted_menu_items, function ($item,$key){
+			$test = array_filter($sorted_menu_items, function ($item){
 				return true;
 			});
 		}
 	
 		if ($account_type === 'candidate') {
-			$test = array_filter($sorted_menu_items, function ($item,$key){
+			$test = array_filter($sorted_menu_items, function ($item){
 				return true;
 			});
 		}
-
+		echo '<pre>';
 		print_r($test); 
+		echo '</pre>';
 
 	}
     return $sorted_menu_items; 
