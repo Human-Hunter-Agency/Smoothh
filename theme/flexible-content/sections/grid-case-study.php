@@ -5,10 +5,10 @@
 $section_ID = $args['section_ID'];
 $header = $args['header'];
 
-$visible_posts = 3;
+$visible_posts = 6;
 $posts = get_posts(array(
     'post_type'         => 'case-study',
-    'numberposts'       => 5,
+    'numberposts'       => $visible_posts,
 ));
 
 ?>
@@ -19,8 +19,7 @@ $posts = get_posts(array(
     <div class="container">
             <?php if ($header) : ?>
                 <div class="mx-auto max-w-[960px] text-center font-extrabold prose-strong:font-extrabold prose-strong:text-primary text-2xl md:text-3xl lg:text-[46px] lg:leading-[60px] mb-9 md:mb-[70px]">
-                <?php print_r(wp_count_posts('case-study')) ?>
-				<?php echo $header; ?>
+					<?php echo $header; ?>
                 </div>
             <?php endif; ?>
 		<div class="pb-20">
