@@ -65,7 +65,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 		?>
 
 			<?php if ($product->get_id() == 1253) :?>
-				<button data-js-calc-expand type="button" aria-expanded="false" class="">
+				<button data-js-calc-expand type="button" aria-expanded="false" class="group -mt-10 font-semibold hover:text-primary transition p-1">
 					<span class="group-aria-expanded:hidden">
 						<?= __('Show more', 'smoothh');  ?>
 					</span>

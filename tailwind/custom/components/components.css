@@ -641,7 +641,7 @@ i.theChampLogin {
 }
 
 .calculator-details .tm-extra-product-options-fields {
-	@apply bg-white px-10 py-12 rounded-2xl;
+	@apply bg-white px-10 pt-12 pb-16 rounded-2xl;
 }
 
 .calculator-details [data-uniqid="667029037bd2c3.23900713"] input[type="number"]::-webkit-outer-spin-button,
@@ -869,8 +869,8 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 }
 
 .calculator-details [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16) .tc-element-inner-wrap{
-	@apply transition-all duration-500 !h-0
+	@apply transition-all duration-500 h-0
 }
 .calculator-details.expanded [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16) .tc-element-inner-wrap{
-	@apply transition-all duration-500 !h-[55px] 
+	@apply transition-all duration-500 h-[55px] 
 }
