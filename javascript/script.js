@@ -299,7 +299,7 @@ function initLogosSwipers() {
 	swiperContainers.forEach((el) => {
 		new Swiper(el, {
 			spaceBetween: 20,
-			watchOverflow: true,
+			centerInsufficientSlides: true,
 			slidesPerView: 2.5,
 			modules: [Navigation, Autoplay],
 			autoplay: true,
