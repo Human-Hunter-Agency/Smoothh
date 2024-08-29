@@ -866,16 +866,9 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 	@apply !pt-0 md:!pt-10 lg:!pt-28
 }
 
-.calculator-details [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16){
-	@apply transition-all duration-500 -mt-5 opacity-0 pointer-events-none
-}
-.calculator-details.expanded [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16){
-	@apply mt-0 opacity-100 pointer-events-auto
-}
-
 .calculator-details [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16) .tc-element-inner-wrap{
 	@apply transition-all duration-500 h-0 opacity-0 pointer-events-none !mb-0
 }
 .calculator-details.expanded [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16) .tc-element-inner-wrap{
-	@apply transition-all duration-500 h-[55px] opacity-100 pointer-events-auto
+	@apply transition-all duration-500 h-[55px] opacity-100 pointer-events-auto !mb-[15px]
 }
