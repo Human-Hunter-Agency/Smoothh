@@ -626,7 +626,12 @@ i.theChampLogin {
 
 [data-uniqid="6662fc70c3d414.09442511"] .tc-field-label-wrap,
 [data-uniqid="666febd02fce86.50944214"] .tc-field-label-wrap {
-	@apply !block mb-[15px];
+	@apply !block;
+}
+
+[data-uniqid="6662fc70c3d414.09442511"] .tc-element-inner-wrap,
+[data-uniqid="666febd02fce86.50944214"] .tc-element-inner-wrap {
+	@apply mb-[15px];
 }
 
 [data-uniqid="667030837bd441.00184058"],
@@ -861,9 +866,16 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 	@apply !pt-0 md:!pt-10 lg:!pt-28
 }
 
+.calculator-details [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16){
+	@apply transition-all duration-500 -mt-5 opacity-0 pointer-events-none
+}
+.calculator-details.expanded [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16){
+	@apply mt-0 opacity-100 pointer-events-auto
+}
+
 .calculator-details [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16) .tc-element-inner-wrap{
-	@apply transition-all duration-500 h-0 !mb-0 opacity-0 pointer-events-none
+	@apply transition-all duration-500 h-0 opacity-0 pointer-events-none !mb-0
 }
 .calculator-details.expanded [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16) .tc-element-inner-wrap{
-	@apply h-[55px] opacity-100 pointer-events-auto
+	@apply transition-all duration-500 h-[55px] opacity-100 pointer-events-auto
 }
