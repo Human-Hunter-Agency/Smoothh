@@ -840,11 +840,9 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 	@apply !font-semibold
 }
 
-.page-id-8 .calculator .button,
-.page-id-8 .calculator .button,
-.page-id-8 .calculator .button{
+.page-id-8 .calculator [data-js-calc-btn].button{
     margin-top: 30px !important;
-    margin-top: 10px !important;
+    margin-bottom: 56px !important;
 }
 
 .page-id-8 .calculator-details .tm-extra-product-options-fields{
