@@ -1146,7 +1146,25 @@ function initCounter() {
 	}
 }
 
-async function initCalculator() {
+function initCalculatorAdvancedExpand(){
+	const expandBtn = document.querySelector('[data-js-calc-expand]')
+	const calcContainer = document.querySelector('.calculator-details')
+
+	if (!expandBtn || !calcContainer) return
+
+	expandBtn.addEventListener('click',()=>{
+		let isExpanded = expandBtn.getAttribute('aria-expanded') === 'true' || false
+		expandBtn.setAttribute('aria-expanded',!isExpanded)
+		if (!isExpanded) {
+			calcContainer.classList.add('expanded')
+		}else{
+			calcContainer.classList.remove('expanded')
+		}
+	})
+
+}
+
+function initCalculator() {
 	if (!document.querySelector('.calculator')) {
 		return;
 	}
@@ -1183,6 +1201,8 @@ async function initCalculator() {
 		if (!form) return;
 
 		const isCalcAdvanced = calcEl.dataset.jsCalcContent == 2;
+
+		if (isCalcAdvanced) initCalculatorAdvancedExpand()
 
 		if (isCalcAdvanced && calcSession) {
 			console.log(calcSession)

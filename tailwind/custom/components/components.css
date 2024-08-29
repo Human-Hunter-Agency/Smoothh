@@ -860,3 +860,10 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 .page-id-1260 #co_oferujemy {
 	@apply !pt-0 md:!pt-10 lg:!pt-28
 }
+
+.calculator-details [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16){
+	@apply transition-all duration-500 -mt-5 opacity-0 h-0 pointer-events-none
+}
+.calculator-details.expanded [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16){
+	@apply mt-0 opacity-100 h-[55px] pointer-events-auto
+}
