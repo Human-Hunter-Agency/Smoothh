@@ -4,7 +4,7 @@
 
 $header = $args['header'];
 $description = $args['description'];
-$opinions_logos = get_field('opinions_logos', 'option');
+$logos = $args['logos'];
 
 ?>
 
@@ -29,9 +29,15 @@ $opinions_logos = get_field('opinions_logos', 'option');
         <?php if ($opinions_logos) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-logos">
                 <div class="swiper-wrapper items-center justify-center">
-                    <?php foreach ($opinions_logos as $logo) : ?>
+                    <?php foreach ($logos as $logo) : ?>
                         <div class="swiper-slide mr-5 md:px-5 opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
-                            <?php echo smoothh_img_responsive($logo, 'object-contain max-h-28', array(300, 112), 'lazy'); ?>
+                            <?php if ($logo['link']) : ?>
+                                <a href="$logo['link']" target="_blank">
+                            <?php endif; ?>
+                                    <?php echo smoothh_img_responsive($logo['image'], 'object-contain max-h-28', array(300, 112), 'lazy'); ?>
+                            <?php if ($logo['link']) : ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
