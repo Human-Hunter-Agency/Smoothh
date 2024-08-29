@@ -843,7 +843,8 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 .page-id-8 .calculator .button,
 .page-id-8 .calculator .button,
 .page-id-8 .calculator .button{
-    margin: 10px !important;
+    margin-top: 30px !important;
+    margin-top: 10px !important;
 }
 
 .page-id-8 .calculator-details .tm-extra-product-options-fields{
