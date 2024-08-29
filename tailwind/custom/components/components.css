@@ -873,6 +873,6 @@ select.tm-epo-field[required]:invalid ~ .ss-main .ss-single:after{
 	@apply mt-0 opacity-100 pointer-events-auto
 }
 
-.calculator-details.test [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16) .tc-element-inner-wrap{
+.calculator-details.expanded [data-uniqid="666febd02fce86.50944214"] .tcwidth-100 .tc-row div:nth-child(n+8):nth-child(-n+16) .tc-element-inner-wrap{
 	@apply transition-all duration-500 h-[55px] 
 }
