@@ -26,7 +26,7 @@ $logos = $args['logos'];
     </div>
 
     <div class="relative z-0 w-full overflow-hidden !pb-5">
-        <?php if ($opinions_logos) : ?>
+        <?php if ($logos) : ?>
             <div class="swiper !container !overflow-visible" data-js="swiper-logos">
                 <div class="swiper-wrapper items-center justify-center">
                     <?php foreach ($logos as $logo) : ?>
