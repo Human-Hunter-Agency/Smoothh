@@ -27,7 +27,7 @@ $logos = $args['logos'];
 
     <div class="relative z-0 w-full overflow-hidden !pb-5">
         <?php if ($logos) : ?>
-            <div class="swiper !container !overflow-visible [&:not(.slider-active)_>_div]:justify-center" data-js="swiper-logos">
+            <div class="swiper !container !overflow-visible" data-js="swiper-logos">
                 <div class="swiper-wrapper items-center">
                     <?php foreach ($logos as $logo) : ?>
                         <div class="swiper-slide mr-5 md:px-5 opacity-0 !transition duration-500 [&.swiper-slide-visible]:opacity-100">
