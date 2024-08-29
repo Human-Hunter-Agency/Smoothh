@@ -72,7 +72,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 					<span class="hidden group-aria-expanded:block">
 						<?= __('Collapse fields', 'smoothh');  ?>                
 					</span>
-					<svg class="transition duration-500 group-aria-expanded:rotate-180" width="14" height="10" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.774525 0.500055L5.50054 5.75635L10.2266 0.500055" stroke="#161616" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+					<svg class="transition-transform duration-500 group-aria-expanded:rotate-180 stroke-current" width="14" height="10" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.774525 0.500055L5.50054 5.75635L10.2266 0.500055" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 				</button>
 			<?php endif;?>
 			
