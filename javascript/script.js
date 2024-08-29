@@ -1333,14 +1333,6 @@ function initCalculator() {
 			} else {
 				container.classList.add('hidden');
 
-				const salaryAdvancedField = document.querySelector('[data-uniqid="667029037bd2c3.23900713"] input')
-				if (salaryAdvancedField && salaryAdvancedField.classList.contains('tm-error')) {
-					const expandAdvancedBtn = document.querySelector('[data-js-calc-expand]')
-					if (expandAdvancedBtn.getAttribute('aria-expanded') === 'false') {
-						expandAdvancedBtn.click()
-					}
-				}
-
 			}
 		});
 	});

@@ -65,13 +65,14 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 		?>
 
 			<?php if ($product->get_id() == 1253) :?>
-				<button data-js-calc-expand type="button" aria-expanded="false" class="group -mt-10 font-semibold hover:text-primary transition p-1">
+				<button data-js-calc-expand type="button" aria-expanded="false" class="group -mt-10 font-semibold hover:text-primary transition p-1 flex items-baseline gap-3">
 					<span class="group-aria-expanded:hidden">
-						<?= __('Show more', 'smoothh');  ?>
+						<?= __('Expand fields', 'smoothh');  ?>
 					</span>
 					<span class="hidden group-aria-expanded:block">
-						<?= __('Show less', 'smoothh');  ?>                
+						<?= __('Collapse fields', 'smoothh');  ?>                
 					</span>
+					<svg class="transition duration-500 group-aria-expanded:rotate-180" width="14" height="10" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.774525 0.500055L5.50054 5.75635L10.2266 0.500055" stroke="#161616" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 				</button>
 			<?php endif;?>
 			
