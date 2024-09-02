@@ -1269,6 +1269,7 @@ function initCalculator() {
 					)
 
 					quantityInput.value = Math.max(vacanciesInput.value,1)
+					quantityInput.dispatchEvent(new Event('change'));
 
 					const orderBtn = calcEl.querySelector(
 						'.single_add_to_cart_button'
