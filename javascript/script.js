@@ -1284,7 +1284,7 @@ function initCalculator() {
 					const isPositionOther =
 						positionSelect.value.startsWith('Inne');
 					const priceNegotiable =
-						parseFloat(sumEl.innerText.replace(',', '.')) >
+						parseFloat(sumTotalEl.innerText.replace(',', '.')) >
 						MIN_NEGOTIATE_PRICE;
 					const vacancySurpassing = vacanciesInput.value >= MIN_NEGOTIATE_VACANCY;
 
