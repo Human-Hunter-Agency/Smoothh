@@ -1229,6 +1229,9 @@ function initCalculator() {
 				? '[data-uniqid="666582c02fa7e2.99896643"] .tc-result'
 				: '[data-uniqid="666febd02fcfa6.35759104"] .tc-result'
 		);
+
+		const sumTotalEl = !isCalcAdvanced ? sumEl : calcEl.querySelector('[data-uniqid="66d57ea13782d2.79322149"] .tc-result');
+
 		// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
 
 		const tablePrice = calcEl.querySelector('[data-js-calc-price]');
@@ -1253,28 +1256,19 @@ function initCalculator() {
 			jQuery(form).tc_validate().form();
 			if (form.checkValidity()) {
 
-
-				tablePrice.innerHTML =
-					tableSubtotal.innerHTML =
-					tableTotal.innerHTML =
-						stringToPriceFormat(sumEl.innerText);
-
-				const taxEl = calcEl.querySelector(
-					!isCalcAdvanced
-					? '[data-uniqid="66a3a56700d399.24760968"] .tc-result'
-					: '[data-uniqid="66a2061f44c461.49174290"] .tc-result'
-				);
-
-
-				tablePriceTaxed.innerHTML =
-					tableSubtotalTaxed.innerHTML =
-					tableTotalTaxed.innerHTML =
-						stringToPriceFormat(taxEl.innerText);
-
 				if (isCalcAdvanced) {
 
 					const MIN_NEGOTIATE_PRICE = 25000;
 					const MIN_NEGOTIATE_VACANCY = 3;
+
+
+					const quantityInput = calcEl.querySelector('.quantity input')
+
+					const vacanciesInput = calcEl.querySelector(
+						'[data-uniqid="66702e257bd420.53200121"] input'
+					)
+
+					quantityInput.value = Math.max(vacanciesInput.value,1)
 
 					const orderBtn = calcEl.querySelector(
 						'.single_add_to_cart_button'
@@ -1291,12 +1285,7 @@ function initCalculator() {
 					const priceNegotiable =
 						parseFloat(sumEl.innerText.replace(',', '.')) >
 						MIN_NEGOTIATE_PRICE;
-					const vacancySurpassing =
-						calcEl
-							.querySelector(
-								'[data-uniqid="66702e257bd420.53200121"] input'
-							)
-							.value >= MIN_NEGOTIATE_VACANCY;
+					const vacancySurpassing = vacanciesInput.value >= MIN_NEGOTIATE_VACANCY;
 
 					orderBtn.disabled = isPositionOther;
 
@@ -1327,6 +1316,26 @@ function initCalculator() {
 					}
 					sessionStorage.setItem('calc-data',JSON.stringify(values))
 				}
+
+				
+				tablePrice.innerHTML = stringToPriceFormat(sumEl.innerText);
+				tableSubtotal.innerHTML =
+				tableTotal.innerHTML =
+					stringToPriceFormat(sumTotalEl.innerText);
+
+				const taxEl = calcEl.querySelector(
+					!isCalcAdvanced
+					? '[data-uniqid="66a3a56700d399.24760968"] .tc-result'
+					: '[data-uniqid="66a2061f44c461.49174290"] .tc-result'
+				);
+
+				const taxTotalEl = !isCalcAdvanced ? taxEl : calcEl.querySelector('[data-uniqid="66d57ea43782e2.32829426"] .tc-result');
+
+				tablePriceTaxed.innerHTML = stringToPriceFormat(taxEl.innerText);
+
+				tableSubtotalTaxed.innerHTML =
+				tableTotalTaxed.innerHTML =
+					stringToPriceFormat(taxTotalEl.innerText);
 
 				// tableFee.innerHTML = feeEl.innerHTML
 				container.classList.remove('hidden');
