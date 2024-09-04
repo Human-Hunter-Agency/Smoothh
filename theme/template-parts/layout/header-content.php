@@ -45,7 +45,7 @@ $promo_text_button = $promo_text['button'];
 																					} ?> w-full bg-white transition-all duration-300 shadow-md">
 	<div class="container py-5 flex justify-between items-center">
 		<div>
-			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block max-w-[140px] md:max-w-[190px] 2xl:max-w-[220px]">
+			<a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="block max-w-[140px] md:max-w-[190px] lg:max-w-[140px] xl:max-w-[190px] 2xl:max-w-[220px]">
 				<img src="<?php echo get_stylesheet_directory_uri() . '/assets/img/logo-smoothh-png.png'; ?>" alt="logo">
 			</a>
 		</div>
