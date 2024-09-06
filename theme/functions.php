@@ -123,6 +123,9 @@ if (!function_exists('smoothh_setup')) :
 		remove_theme_support('block-templates');
 
 		remove_theme_support('html5', 'comment-form');
+
+		remove_action('woocommerce_add_to_cart','wac_apply_coupons',10);
+		remove_action('woocommerce_cart_loaded_from_session','wac_apply_coupons',10);
 	}
 endif;
 add_action('after_setup_theme', 'smoothh_setup');
@@ -837,8 +840,8 @@ function after_login_redirect($redirect_to, $user = '') {
 
     if (is_user_logged_in() && $redirect_param !== false) {
         return $redirect_param;
-    } 
-    
+    }
+
     if (empty($_GET)) {
         if (isset($user) && is_a($user, 'WP_User') && $user->ID > 0) {
             $user_id = $user->ID;
@@ -853,7 +856,7 @@ function after_login_redirect($redirect_to, $user = '') {
 			}
 
     }
-    
+
     return $redirect_to;
 }
 add_filter('woocommerce_login_redirect', 'after_login_redirect', 999,2);
@@ -875,18 +878,18 @@ function filter_wp_nav_menu_objects($sorted_menu_items, $args) {
 			return !str_contains($item->url,'#calculator');
 		});
 	}
-    
-	
+
+
 	if ($args->menu->slug == 'dla-kandydata') {
-        
+
 		$client_panel_page_id = 650;
 		$candidate_panel_page_id = 2743;
-	
+
 		// Show both for root user
 		if ($user_id == 1) {
 			return $sorted_menu_items;
 		}
-	
+
 		$sorted_menu_items = array_filter($sorted_menu_items, function ($item) use ($account_type, $client_panel_page_id, $candidate_panel_page_id) {
 			$menu_item_id = $item->object_id;
 			if (empty($account_type)) {
@@ -898,14 +901,14 @@ function filter_wp_nav_menu_objects($sorted_menu_items, $args) {
 			}
 			return true;
 		});
-    
+
 	}
 
 
 	return $sorted_menu_items;
 }
 
-add_filter( 'wp_nav_menu_objects', 'filter_wp_nav_menu_objects', 10, 2 ); 
+add_filter( 'wp_nav_menu_objects', 'filter_wp_nav_menu_objects', 10, 2 );
 
 // Add consents page
 function register_new_item_endpoint()
