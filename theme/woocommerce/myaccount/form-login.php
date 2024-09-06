@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Login Form 
+ * Login Form
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/myaccount/form-login.php.
  *
@@ -13,7 +13,7 @@
  *
  * @see     https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.0.1
+ * @version 9.2.0
  */
 
 if (!defined('ABSPATH')) {
@@ -30,7 +30,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
     <div class="pt-10 md:pt-20 pb-1 max-w-screen-md mx-auto flex flex-col md:flex-row justify-center gap-5" id="customer_login">
 
     <div class="basis-1/2">
-    
+
       <form class="woocommerce-form woocommerce-form-login login bg-white !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary shadow-2xl !rounded-[15px]" method="post">
 
         <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e('Log in', 'woocommerce'); ?></h2>
@@ -39,7 +39,7 @@ do_action('woocommerce_before_customer_login_form'); ?>
 
         <p class="woocommerce-form-row woocommerce-form-row--wide _form-row form-row-wide p-0 mb-5">
           <!-- <label for="username !hidden"><?php esc_html_e('Username or email address', 'woocommerce'); ?>&nbsp;<span class="required">*</span></label> -->
-          <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition-all duration-200 hover:border-secondary accent-primary w-full outline-1 -outline-offset-2 outline-transparent [outline-style:solid] focus:outline-1 focus:border-secondary focus:outline-secondary " name="username" id="username" placeholder="Login" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine 
+          <input type="text" class="woocommerce-Input woocommerce-Input--text input-text placeholder:text-foreground h-[55px] rounded-[15px] border border-primary pl-5 pr-10 transition-all duration-200 hover:border-secondary accent-primary w-full outline-1 -outline-offset-2 outline-transparent [outline-style:solid] focus:outline-1 focus:border-secondary focus:outline-secondary " name="username" id="username" placeholder="Login" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine
                                                                                                                                                                                                                                                                                                                                                                                                                                     ?>
         </p>
         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide !p-0 !mb-5">
@@ -83,13 +83,13 @@ do_action('woocommerce_before_customer_login_form'); ?>
       <?php do_action('woocommerce_after_customer_login_form'); ?>
 
     </div>
-      
+
       <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
-    
+
         <div class="basis-1/2 bg-white px-5 md:px-8 pt-9 pb-6 border border-primary shadow-2xl !rounded-[15px]">
             <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e("I don't have an account", 'smoothh'); ?></h2>
             <p class="mb-10 block prose"><?php echo __("No account text", 'smoothh'); ?></p>
-            
+
             <?php
             $login_page_id = 848;
             if (get_the_ID() == $login_page_id) :
@@ -110,18 +110,18 @@ do_action('woocommerce_before_customer_login_form'); ?>
               </svg>
             </button>
         </div>
-    
+
       <?php endif; ?>
-        
+
     </div>
   </div>
   <?php if ('yes' === get_option('woocommerce_enable_myaccount_registration')) : ?>
     <div class="container invisible h-0 [&.active]:h-auto overflow-hidden [&.active]:overflow-visible [&.active]:visible opacity-0 [&.active]:opacity-100 transition duration-300" data-js="register-wrapper">
       <div class="pt-10 md:pt-20 pb-1">
         <form method="post" class="woocommerce-form woocommerce-form-register register bg-white !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary shadow-2xl !rounded-[15px] h-full" <?php do_action('woocommerce_register_form_tag'); ?>>
-    
+
           <h2 class="mb-10 text-2xl font-bold"><?php esc_html_e('Register', 'woocommerce'); ?></h2>
-    
+
           <div class="register-fields smoothh-inputs-basic smoothh-inputs-validation">
             <div class="w-full mb-5 flex flex-col md:flex-row md:items-center" data-priority="5">
               <p class="block mb-2 md:mb-0 mr-3 font-bold text-lg">
@@ -142,40 +142,40 @@ do_action('woocommerce_before_customer_login_form'); ?>
                 </li>
               </ul>
             </div>
-    
+
             <?php do_action('woocommerce_register_form_start'); ?>
-    
+
             <?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
-    
+
               <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <!-- <label for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
                 <input type="text" class="woocommerce-Input woocommerce-Input--text input-text " required name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
               </p>
-    
+
             <?php endif; ?>
-    
+
             <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
               <!-- <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
               <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="woocommerce-Input woocommerce-Input--text input-text" required name="email" placeholder="Adres e-mail*" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" />
             </p>
-    
+
             <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
               <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                 <!-- <label for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?>&nbsp;<span class="required hidden">*</span></label> -->
                 <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" required name="password" id="reg_password" autocomplete="new-password" placeholder="Hasło*" />
               </p>
             <?php else : ?>
-    
+
               <p class="mb-5"><?php esc_html_e('A link to set a new password will be sent to your email address.', 'woocommerce'); ?></p>
-    
+
             <?php endif; ?>
           </div>
-    
-    
+
+
           <div class="[&_label_a]:text-primary [&_label_a]:font-semibold [&_label_a:hover]:underline">
             <?php do_action('woocommerce_register_form'); ?>
           </div>
-    
+
           <div class="woocommerce-form-row form-row !mt-5 flex justify-center">
             <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
             <button type="submit" class="woocommerce-Button woocommerce-button button h-[55px] w-full max-w-80 !mb-3 flex gap-4 !text-white !font-semibold !rounded-2xl !bg-gradient-to-b !from-primary !via-secondary !to-secondary bg-size-200 bg-pos-0 hover:bg-pos-100 focus:bg-pos-100 disabled:!bg-[#C9C9C9] disabled:!bg-none disabled:!opacity-100 transition-all duration-200 !cursor-pointer !py-2 !px-5 xl:!px-[50px] <?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>">
@@ -186,9 +186,9 @@ do_action('woocommerce_before_customer_login_form'); ?>
               </svg>
             </button>
           </div>
-    
+
           <?php do_action('woocommerce_register_form_end'); ?>
-    
+
         </form>
         <div class="hidden" data-js="hidden-inputs"></div>
         <span class="text-primary hover:underline cursor-pointer block mt-5 w-fit" data-js="register-toggle">< <?php esc_html_e("Back", 'smoothh'); ?></span>

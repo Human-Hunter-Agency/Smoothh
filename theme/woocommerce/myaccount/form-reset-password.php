@@ -13,7 +13,7 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 7.0.1
+ * @version 9.2.0
  */
 
 defined('ABSPATH') || exit; ?>
@@ -21,7 +21,7 @@ defined('ABSPATH') || exit; ?>
 
 <div class="relative w-full py-10 pb-5 md:pt-[70px] mt-10 mb-20 container">
 	<div class="z-[-1] w-[100%] h-[80%] absolute top-0 left-0 bg-gradient-to-r from-[rgba(129,23,238,0)] to-[rgba(129,23,238,0.102)] rounded-r-[45px]"></div>
-	
+
 	<?php do_action('woocommerce_before_reset_password_form');?>
 
 	<form method="post" class="woocommerce-ResetPassword lost_reset_password mx-auto max-w-[800px] !px-5 md:!px-8 !pt-9 !pb-6 !my-0 !border-primary border-[1px] shadow-2xl bg-white !rounded-[15px] flex flex-col items-center">

@@ -13,7 +13,7 @@
  *
  * @see     https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 2.6.0
+ * @version 9.0.0
  */
 
 if (!defined('ABSPATH')) {
@@ -32,7 +32,7 @@ do_action('woocommerce_before_account_navigation');
         <li class="py-1 <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
           <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>" class="text-lg transition duration-200 hover:text-primary"><?php echo esc_html($label); ?></a>
         </li>
-      <?php endforeach; 
+      <?php endforeach;
         $client_panel_page_id = 650;
         $candidate_panel_page_id = 2743;
         $account_type = get_user_meta(get_current_user_id(), 'account_type', true);

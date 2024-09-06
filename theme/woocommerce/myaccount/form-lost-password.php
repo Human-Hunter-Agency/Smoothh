@@ -13,7 +13,7 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 9.0.0
+ * @version 9.2.0
  */
 
 defined('ABSPATH') || exit;
@@ -28,7 +28,7 @@ do_action('woocommerce_before_lost_password_form');
 
     <h4 class="mb-5 text-[20px] font-semibold"><?php esc_html_e('Reset password', 'woocommerce'); ?></h4>
 
-    <p class="mb-10 text-lg font-medium !max-w-[720px]"><?php echo apply_filters('woocommerce_lost_password_message', esc_html__('Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine 
+    <p class="mb-10 text-lg font-medium !max-w-[720px]"><?php echo apply_filters('woocommerce_lost_password_message', esc_html__('Lost your password? Please enter your username or email address. You will receive a link to create a new password via email.', 'woocommerce')); ?></p><?php // @codingStandardsIgnoreLine
                                                                                                                                                                                                                                                                                         ?>
 
     <div class="smoothh-inputs-basic flex-col">
