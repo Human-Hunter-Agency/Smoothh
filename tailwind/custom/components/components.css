@@ -753,6 +753,11 @@ i[data-tm-tooltip-html] {
 .form-cv-wrapper:has(.wpcf7-acceptance-as-validation.sent) .wpcf7 {
 	@apply opacity-0 pointer-events-none;
 }
+
+.form-cv-wrapper .wpcf7-not-valid-tip{
+	@apply bg-white/75 w-fit py-1 px-2 mt-1 rounded-md border border-[#dc3232]
+}
+
 .form-cv-wrapper .wpcf7 {
 	@apply !transition duration-300;
 }
