@@ -100,7 +100,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
           </svg>
         </button>
       </div>
-      <div class="form-leave-numer-wrapper form-with-confirm-wrapper pt-5 md:pt-10">
+      <div class="overflow-auto form-leave-numer-wrapper form-with-confirm-wrapper pt-5 md:pt-10">
         <?php 
           $shortcode = '[contact-form-7 id="fd3ecea" title="Zostaw numer"]';
           echo do_shortcode($shortcode); ?>
