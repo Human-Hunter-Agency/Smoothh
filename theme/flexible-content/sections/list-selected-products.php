@@ -1,6 +1,3 @@
-
-<pre><?php print_r($args['products_list'])  ?></pre>
-
 <?php
 
 /** Template to display 'Lista z wybranymi produktami' - list_selected_products */
@@ -33,6 +30,11 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
                 <?php echo $description; ?>
             </div>
         <?php endif; ?>
+        <?php foreach ($products as $product) : ?>
+                <li>
+                    <?php echo get_the_title($product->get_id())?>
+                </li>
+            <?php endforeach; ?>  
 
         <ul class="w-full mb-10 md:mb-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 sm:gap-x-10 sm:gap-y-14 xl:gap-12">
             <?php foreach ($products as $product) : ?>
