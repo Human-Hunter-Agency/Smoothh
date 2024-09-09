@@ -1,3 +1,6 @@
+
+<pre><?php print_r($args['products_list'])  ?></pre>
+
 <?php
 
 /** Template to display 'Lista z wybranymi produktami' - list_selected_products */
