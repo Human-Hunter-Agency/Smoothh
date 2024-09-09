@@ -755,7 +755,7 @@ i[data-tm-tooltip-html] {
 }
 
 .form-cv-wrapper .wpcf7-not-valid-tip{
-	@apply bg-white/75 w-fit py-1 px-2 mt-1 rounded-md border border-[#dc3232]
+	@apply bg-white/90 w-fit py-1 px-2 mt-1 rounded-md border border-[#dc3232]
 }
 
 .form-cv-wrapper .wpcf7 {
