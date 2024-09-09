@@ -1230,7 +1230,7 @@ function initCalculator() {
 				: '[data-uniqid="666febd02fcfa6.35759104"] .tc-result'
 		);
 
-		const sumTotalEl = !isCalcAdvanced ? sumEl : calcEl.querySelector('[data-uniqid="66d57ea13782d2.79322149"] .tc-result');
+		const sumTotalEl = !isCalcAdvanced ? sumEl : calcEl.querySelector('[data-uniqid="66dec511e3f581.25524641"] .tc-result');
 
 		// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
 
@@ -1330,7 +1330,7 @@ function initCalculator() {
 					: '[data-uniqid="66a2061f44c461.49174290"] .tc-result'
 				);
 
-				const taxTotalEl = !isCalcAdvanced ? taxEl : calcEl.querySelector('[data-uniqid="66d57ea43782e2.32829426"] .tc-result');
+				const taxTotalEl = !isCalcAdvanced ? taxEl : calcEl.querySelector('[data-uniqid="66dec517e3f597.09603968"] .tc-result');
 
 				tablePriceTaxed.innerHTML = stringToPriceFormat(taxEl.innerText);
 
