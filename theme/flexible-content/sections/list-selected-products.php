@@ -9,11 +9,10 @@ $button = $args['button'];
 if (isset($args['products_list']) && !empty($args['products_list'])) {
     $products = $args['products_list'];
     foreach ($products as &$product) {
-        $product = wc_get_product_object('variable', $product->ID);
+        $product = wc_get_product($product->ID);
     }
 }
 ?>
-<pre><?php print_r($products)  ?></pre>
 <?php if (isset($products) && !empty($products)) : ?>
 <section class="relative py-10 mb:py-[60px] md:pt-[70px] md:!pb-[70px]">
     <div class="container">
