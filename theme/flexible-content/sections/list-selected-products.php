@@ -11,6 +11,7 @@ if (isset($args['products_list']) && !empty($args['products_list'])) {
     foreach ($products as &$product) {
         $product = wc_get_product($product->ID);
     }
+    unset($product);
 }
 ?>
 <?php if (isset($products) && !empty($products)) : ?>
