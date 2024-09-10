@@ -25,3 +25,17 @@
 	border-radius: 8px;
 	border: 3px solid #fff;
 }
+
+.scrollbar-minimal-gray::-webkit-scrollbar-track {
+	background-color: #fff;
+}
+.scrollbar-minimal-gray::-webkit-scrollbar {
+	width: 9px;
+	height: 9px;
+	background-color: #ffffff;
+}
+.scrollbar-minimal-gray::-webkit-scrollbar-thumb {
+	background-color: #efefef;
+	border-radius: 8px;
+	border: 3px solid #fff;
+}

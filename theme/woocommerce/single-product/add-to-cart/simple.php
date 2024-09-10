@@ -181,7 +181,7 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 						</svg>
 					</button>
 				</div>
-				<div class="overflow-auto">
+				<div class="overflow-auto scrollbar-minimal-gray">
 					<h3 class="mb-2 text-2xl md:text-3xl font-semibold"><?php esc_html_e('Negotiate price', 'smoothh'); ?></h3>
 					<p class="mb-8 text-base"><?php echo $product->get_title() ?></p>
 					<div class="form-negotiate-wrapper form-with-confirm-wrapper">

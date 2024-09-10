@@ -163,7 +163,7 @@ else :
 									</svg>
 								</button>
 							</div>
-							<div class="overflow-auto">
+							<div class="overflow-auto scrollbar-minimal-gray">
 								<h3 class="mb-2 text-2xl md:text-3xl font-semibold"><?php esc_html_e('Ask about this service', 'smoothh'); ?></h3>
 								<p class="mb-8 text-base"><?php echo $product->get_title() ?></p>
 								<div class="form-quote-wrapper form-with-confirm-wrapper">
@@ -210,7 +210,7 @@ else :
 									</svg>
 								</button>
 							</div>
-							<div class="overflow-auto">
+							<div class="overflow-auto scrollbar-minimal-gray">
 								<h3 class="mb-8 text-2xl md:text-3xl font-semibold"><?php echo __('Fill this form and receive a free e-book', 'smoothh') ?></h3>
 								<div class="form-download-wrapper form-with-confirm-wrapper">
 									<?php
