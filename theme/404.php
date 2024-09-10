@@ -13,15 +13,10 @@ get_header();
 	<section id="primary">
 		<main id="main">
 
-			<div>
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Page Not Found', 'smoothh' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div <?php smoothh_content_class( 'page-content' ); ?>>
-					<p><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'smoothh' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
+			<div class="prose container text-center py-20">
+				<span class="text-4xl md:text-6xl text-primary font-semibold">404</span>
+				<h1 class="mx-auto max-w-3xl"><?php esc_html_e( 'Page Not Found', 'smoothh' ); ?></h1>
+				<p class="mx-auto max-w-3xl"><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'smoothh' ); ?></p>
 			</div>
 
 		</main><!-- #main -->
