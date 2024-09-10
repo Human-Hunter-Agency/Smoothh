@@ -1412,4 +1412,4 @@ function disable_search_query( $query, $error = true ) {
 		}
 	}
 }
-add_action( 'parse_query', 'disable_search_query' );
+// add_action( 'parse_query', 'disable_search_query' );
