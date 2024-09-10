@@ -1403,7 +1403,7 @@ add_filter('wc_order_is_editable', 'filter_wc_order_is_editable', 10, 2);
 
 // Remove search
 function disable_search_query( $query, $error = true ) {
-	if ( is_search() ) {
+	if ( is_search() && !is_admin() ) {
 		$query->is_search       = false;
 		$query->query_vars['s'] = false;
 		$query->query['s']      = false;
@@ -1412,4 +1412,4 @@ function disable_search_query( $query, $error = true ) {
 		}
 	}
 }
-// add_action( 'parse_query', 'disable_search_query' );
+add_action( 'parse_query', 'disable_search_query' );
