@@ -6,7 +6,7 @@ $hide_message_field = $args['hide_message_field'];
 
 ?>
 
-<section id="posts-related" class="container mt-10 mb-20 md:my-20">
+<section id="posts-related" class="container mt-10 mb-20 md:pt-20 scroll-mt-5">
 	<?php if ($header) : ?>
 		<h2 class="mx-auto max-w-[1040px] mb-10 lg:mb-7 !text-2xl md:!text-4xl lg:!text-[46px] prose-strong:text-primary font-bold lg:!font-extrabold lg:leading-[55px] text-center"><?php echo $header; ?></h2>
 	<?php endif; ?>
