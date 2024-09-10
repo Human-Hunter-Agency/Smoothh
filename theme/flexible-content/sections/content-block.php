@@ -6,10 +6,11 @@ $header = $args['header'];
 $content = $args['content'];
 $decoration = $args['decoration'];
 $has_bg = $args['has_bg'];
+$section_ID = $args['section_ID'];
 
 ?>
 
-<div class="relative py-10 md:pt-20 mb-10 md:pb-5">
+<div <?php if ($section_ID){ echo 'id="'. $section_ID . '"';} ?> class="relative py-10 md:pt-20 mb-10 md:pb-5 scroll-mt-14">
     <?php if ($has_bg) : ?>
         <div class="z-[-1] w-full h-full absolute top-0 right-0 bg-gradient-to-l to-[rgba(129,23,238,0)] from-[rgba(129,23,238,0.102)]  "></div>
     <?php endif; ?>
