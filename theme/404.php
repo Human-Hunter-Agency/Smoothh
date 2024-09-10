@@ -14,9 +14,9 @@ get_header();
 		<main id="main">
 
 			<div class="prose container text-center py-20">
-				<span class="text-4xl md:text-6xl text-primary font-semibold">404</span>
-				<h1 class="mx-auto max-w-3xl"><?php esc_html_e( 'Page Not Found', 'smoothh' ); ?></h1>
-				<p class="mx-auto max-w-3xl"><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'smoothh' ); ?></p>
+				<span class="text-5xl md:text-7xl text-primary font-semibold">404</span>
+				<h2 class="mx-auto max-w-2xl text-foreground"><?php esc_html_e( 'Page Not Found', 'smoothh' ); ?></h2>
+				<p class="mx-auto max-w-2xl text-foreground"><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'smoothh' ); ?></p>
 			</div>
 
 		</main><!-- #main -->
