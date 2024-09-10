@@ -64,7 +64,7 @@ $list = $args['list'];
                             </svg>
                         </button>
                     </div>
-                    <div class="h-full w-full overflow-auto relative pt-5 scrollbar-minimal-gray">
+                    <div class="h-full w-full overflow-auto relative pt-5 scrollbar-minimal -mx-4 px-4">
                         <div class="px-10 py-20 flex justify-center items-center absolute inset-0 z-0">
                             <span class="block size-10 border-2 border-solid border-primary rounded-full border-b-transparent animate-spin"></span>
                         </div>
