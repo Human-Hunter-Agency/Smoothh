@@ -1234,18 +1234,16 @@ function initCalculator() {
 
 		// const feeEl = document.querySelector('[data-uniqid="66659bd09aac33.89075695"] .tc-result')
 
+		const tableQty = calcEl.querySelector('[data-js-calc-qty]');
 		const tablePrice = calcEl.querySelector('[data-js-calc-price]');
 		const tablePriceTaxed = calcEl.querySelector(
 			'[data-js-calc-price-taxed]'
-		);
-		const tableSubtotal = calcEl.querySelector('[data-js-calc-subtotal]');
-		const tableSubtotalTaxed = calcEl.querySelector(
-			'[data-js-calc-subtotal-taxed]'
 		);
 		const tableTotal = calcEl.querySelector('[data-js-calc-total]');
 		const tableTotalTaxed = calcEl.querySelector(
 			'[data-js-calc-total-taxed]'
 		);
+		const quantityInput = calcEl.querySelector('.quantity input')
 		// const tableFee = document.querySelector('[data-js-calc-fee]');
 
 		form.addEventListener('change', () => {
@@ -1260,9 +1258,6 @@ function initCalculator() {
 
 					const MIN_NEGOTIATE_PRICE = 25000;
 					const MIN_NEGOTIATE_VACANCY = 3;
-
-
-					const quantityInput = calcEl.querySelector('.quantity input')
 
 					const vacanciesInput = calcEl.querySelector(
 						'[data-uniqid="66702e257bd420.53200121"] input'
@@ -1319,10 +1314,9 @@ function initCalculator() {
 				}
 
 				
+				tableQty.innerHTML = quantityInput.value
 				tablePrice.innerHTML = stringToPriceFormat(sumEl.innerText);
-				tableSubtotal.innerHTML =
-				tableTotal.innerHTML =
-					stringToPriceFormat(sumTotalEl.innerText);
+				tableTotal.innerHTML = stringToPriceFormat(sumTotalEl.innerText);
 
 				const taxEl = calcEl.querySelector(
 					!isCalcAdvanced
@@ -1333,10 +1327,7 @@ function initCalculator() {
 				const taxTotalEl = !isCalcAdvanced ? taxEl : calcEl.querySelector('[data-uniqid="66dec517e3f597.09603968"] .tc-result');
 
 				tablePriceTaxed.innerHTML = stringToPriceFormat(taxEl.innerText);
-
-				tableSubtotalTaxed.innerHTML =
-				tableTotalTaxed.innerHTML =
-					stringToPriceFormat(taxTotalEl.innerText);
+				tableTotalTaxed.innerHTML = stringToPriceFormat(taxTotalEl.innerText);
 
 				// tableFee.innerHTML = feeEl.innerHTML
 				container.classList.remove('hidden');
