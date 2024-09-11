@@ -25,7 +25,6 @@ $feed_classes    = SB_Instagram_Display_Elements::get_feed_container_css_classes
  *
  * @since 2.2
  */
-do_action( 'sbi_before_feed', $posts, $settings );
 
 sbi_header_html( $settings, $header_data, 'outside' );
 ?>
@@ -35,9 +34,8 @@ sbi_header_html( $settings, $header_data, 'outside' );
 
     <div id="sbi_images" >
 		<div class="relative z-0 w-full overflow-hidden pb-10 lg:!pb-32">
-			<?php if ($tiles_list) : ?>
 				<div class="swiper !container !overflow-visible" data-js="swiper-tiles-default">
-					<div class="swiper-wrapper <?php if (!$isSwiper) :  ?> xl:!transform-none xl:!flex-wrap xl:justify-center xl:gap-y-12 <?php endif; ?>">
+					<div class="swiper-wrapper">
 						
 						<?php
 							if ( ! in_array( 'ajaxPostLoad', $flags, true ) ) {
@@ -46,7 +44,7 @@ sbi_header_html( $settings, $header_data, 'outside' );
 						?>
 
 					</div>
-					<div class="swiper-nav w-[100px]  h-20 hidden lg:flex gap-5 !absolute !top-auto !bottom-[-120px] left-[50%] -translate-x-1/2 <?php if (!$isSwiper) :  ?> xl:hidden <?php endif; ?>">
+					<div class="swiper-nav w-[100px]  h-20 hidden lg:flex gap-5 !absolute !top-auto !bottom-[-120px] left-[50%] -translate-x-1/2 ">
 						<div class="swiper-button-prev rotate-180 scale-150">
 							<svg xmlns="http://www.w3.org/2000/svg" width="39" height="40" viewBox="0 0 39 40" fill="none">
 								<path d="M19.6177 38.1958C9.57757 38.1958 1.43846 30.0567 1.43846 20.0166C1.43846 9.97651 9.57757 1.8374 19.6177 1.8374C29.6578 1.8374 37.7969 9.97651 37.7969 20.0166C37.7969 30.0567 29.6578 38.1958 19.6177 38.1958Z" stroke="#8117EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -63,7 +61,6 @@ sbi_header_html( $settings, $header_data, 'outside' );
 						</div>
 					</div>
 				</div>
-			<?php endif; ?>
 		</div>
     </div>
 
@@ -81,5 +78,3 @@ sbi_header_html( $settings, $header_data, 'outside' );
 	 */
 	do_action( 'sbi_before_feed_end', $this, $feed_id ); ?>
 </div>
-
-<?php do_action( 'sbi_after_feed', $posts, $settings );?>
