@@ -91,20 +91,13 @@ if ($product->is_in_stock() && $has_variable_price == false && !$product->is_dow
 						<span class="font-semibold text-xl hidden md:block">
 							<?php echo esc_html_e('Service:', 'smoothh'); ?>
 						</span>
-						<span class="text-xl"><?php echo $product->get_title() ?></span>
+						<p class="text-xl"><span data-js-calc-qty></span>x <?php echo $product->get_title() ?></p>
 					</div>
 					<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
-						<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Price', 'woocommerce'); ?>:</span>
+						<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Single price', 'woocommerce'); ?>:</span>
 						<div class="flex flex-col items-end">
 							<p class="text-xl"><span data-js-calc-price></span> <span><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?></span></p>
 							<p class="text-sm md:text-base mt-1.5 md:mt-0.5">( <span data-js-calc-price-taxed></span> ) <span><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('gross', 'smoothh') ?></span></p>
-						</div>
-					</div>
-					<div class="grow-0 flex justify-between md:flex-col gap-3 items-end">
-						<span class="md:font-semibold text-base md:text-xl"><?php echo esc_html_e('Subtotal', 'woocommerce'); ?>:</span>
-						<div class="flex flex-col items-end">
-							<p class="text-xl"><span data-js-calc-subtotal></span> <span><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('net', 'smoothh') ?></span></p>
-							<p class="text-sm md:text-base mt-1.5 md:mt-0.5">( <span data-js-calc-subtotal-taxed></span> ) <span><?php echo get_woocommerce_currency_symbol() ?> <?php esc_html_e('gross', 'smoothh') ?></span></p>
 						</div>
 					</div>
 				</div>
