@@ -129,15 +129,15 @@ do_action('woocommerce_before_customer_login_form'); ?>
               </p>
               <ul class="flex items-center flex-wrap gap-2 md:gap-4">
                 <li>
-                  <input type="radio" class="hidden peer" name="account_type" id="candidate" value="candidate"/>
-                  <label for="candidate" class="block px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
-                    <?php esc_html_e('Candidate', 'smoothh'); ?>
-                  </label>
-                </li>
-                <li>
                   <input type="radio" class="hidden peer" name="account_type" id="client" value="client" checked/>
                   <label for="client" class="block px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
                     <?php esc_html_e('Client', 'smoothh'); ?>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" class="hidden peer" name="account_type" id="candidate" value="candidate"/>
+                  <label for="candidate" class="block px-8 py-2 font-bold rounded-[15px] text-base bg-white text-primary peer-checked:text-white peer-checked:!bg-primary hover:bg-primary/5 transition-all duration-200 cursor-pointer">
+                    <?php esc_html_e('Candidate', 'smoothh'); ?>
                   </label>
                 </li>
               </ul>
