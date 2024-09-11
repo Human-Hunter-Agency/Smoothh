@@ -47,17 +47,13 @@ $img_screenreader = apply_filters( 'sbi_img_screenreader', $img_screenreader, $p
 ?>
 
 <div class="swiper-slide !h-auto min-h-[460px] md:min-h-[580px] !flex items-center flex-col bg-white drop-shadow-lg lg:shadow-2xl rounded-2xl">
-    <?php if ($tile['image'] && $tile['image']['url']) : ?>
-        <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
-            <img class="object-cover w-full !h-[190px] md:!h-[220px]" src="<?php echo esc_url( $media_url ); ?>" alt="<?php echo esc_attr( $img_alt ); ?>">
-            <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
-        </div>
-    <?php endif; ?>
+    <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
+        <img class="object-cover w-full !h-[190px] md:!h-[220px]" src="<?php echo esc_url( $media_url ); ?>" alt="<?php echo esc_attr( $img_alt ); ?>">
+        <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
+    </div>
     <div class="grow text-center px-3 md:px-6 pb-6 !pt-0 flex flex-col justify-between">
         <div class="w-full">
-            <?php if ($tile['description']) : ?>
-                <p class="text-sm md:text-base"><?php echo esc_attr( $img_alt ); ?></p>
-            <?php endif; ?>
+            <p class="text-sm md:text-base"><?php echo esc_attr( $img_alt ); ?></p>
         </div>
 
             <a href="<?php echo esc_url( $permalink ); ?>" target="_blank" class="block w-[220px] mt-6 mx-auto rounded-[14px] text-base md:text-[20px] text-center font-bold py-3 px-7 text-white bg-secondary hover:bg-primary transition duration-200">
