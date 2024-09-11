@@ -48,7 +48,7 @@ $img_screenreader = apply_filters( 'sbi_img_screenreader', $img_screenreader, $p
 
 <div class="swiper-slide !h-auto min-h-[460px] md:min-h-[580px] !flex items-center flex-col bg-white drop-shadow-lg lg:shadow-2xl rounded-2xl">
     <div class="w-full relative mb-5 rounded-t-[14px] overflow-hidden">
-        <img class="object-cover w-full !h-[190px] md:!h-[220px]" src="<?php echo esc_url( $media_url ); ?>" alt="<?php echo esc_attr( $img_alt ); ?>">
+        <img class="object-cover w-full !h-[190px] md:!h-[220px]" src="<?php echo esc_url( $media_full_res ); ?>" alt="<?php echo esc_attr( $img_alt ); ?>">
         <div class="absolute inset-0 bg-gradient-to-b from-secondary to-primary mix-blend-multiply opacity-90"></div>
     </div>
     <div class="grow text-center px-3 md:px-6 pb-6 !pt-0 flex flex-col justify-between">
