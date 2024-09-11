@@ -854,7 +854,6 @@ function registerClientFieldsToggle() {
 		),
 	};
 
-	toggleFieldsPlacement(false);
 	accountTypeRadios.forEach(function (radio) {
 		radio.addEventListener('change', function () {
 			let value = document.querySelector(
