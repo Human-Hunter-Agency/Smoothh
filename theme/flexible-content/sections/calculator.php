@@ -6,10 +6,6 @@ $header = $args['header'];
 
 ?>
 
-<?php 
-	$account_type = get_user_meta(get_current_user_id(), 'account_type', true);
-    if ($account_type !== 'candidate'):
-?>
     <div id="calculator" class="relative py-10 md:py-[70px]">
         <div data-calc-bg class="only-on-some-show z-[-1] w-[100%] lg:w-[97%] h-full absolute top-0 left-0 bg-gradient-to-r to-[rgba(31,151,212,0.1)] from-[rgba(31,151,212,0)] rounded-[45px]"></div>
         <div class="container calculator">
@@ -28,7 +24,9 @@ $header = $args['header'];
                     <button data-js-calc-tab-btn="2" class="tab-btn"><?php echo __('Advanced', 'smoothh') ?></button>
                 </li>
             </ul> -->
-            <?php if (!is_user_logged_in()) : ?>
+            <?php
+                $account_type = get_user_meta(get_current_user_id(), 'account_type', true); 
+                if (!is_user_logged_in() || $account_type == 'candidate') : ?>
                 <div data-js-calc-content="1">
                     <?php
                     echo do_shortcode('[product_page id="1186"]');
@@ -43,4 +41,3 @@ $header = $args['header'];
             <?php endif; ?>
         </div>
     </div>
-<?php endif; ?>
